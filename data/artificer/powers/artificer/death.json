@@ -1,0 +1,54 @@
+{
+  "type": "origins:multiple",
+  "name": "Final Act",
+  "description": "You explode upon death",
+  "death": {
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "function artificer:artificer/death"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "particle minecraft:explosion_emitter ~ ~ ~ 1 1 1 1 10 force"
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 2,
+          "action": {
+            "type": "origins:change_resource",
+            "change": 1,
+            "operation": "set",
+            "resource": "*:*_explode_stop"
+          }
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:health",
+          "comparison": "==",
+          "compare_to": 0
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:*_explode_stop"
+        }
+      ]
+    }
+  },
+  "explode_stop": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0,
+    "hud_render": { "should_render": false }
+  }
+}

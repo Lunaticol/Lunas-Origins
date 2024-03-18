@@ -1,0 +1,8 @@
+{
+  "name": "Blinded by rage",
+  "description": "As you tear through your enemies, you fill with rage and eventually explode in a wrathful fit, gaining speed & strength",
+  "type": "origins:multiple",
+  "rage": {
+    "type": "origins:"
+  }
+}

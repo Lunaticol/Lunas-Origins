@@ -1,0 +1,161 @@
+{
+  "name": "Timed Explosives",
+  "description": "Using Hunger you can fire projectiles that explode after 2.5 seconds",
+  "type": "origins:multiple",
+  "badges": [
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/star.png",
+      "text": "Warning! This abilty could delete your enchanted eleytra! You have been warned!"
+    },
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/info.png",
+      "text": "To use arrows, hold a bow/crossbow and then arrows in your off hand"
+    },
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/info.png",
+      "text": "To use a trident, hold a trident in your main hand and tnt in your offhand"
+    }
+  ],
+  "explosive_arrows": {
+    "type": "origins:fire_projectile",
+    "hud_render": {
+      "should_render": true
+    },
+    "key": "key.loadToolbarActivator",
+    "cooldown": 50,
+    "entity_type": "minecraft:arrow",
+    "tag": "{pickup:0b,crit:1b}",
+    "projectile_action": {
+      "type": "origins:delay",
+      "ticks": 50,
+      "action": {
+        "type": "origins:execute_command",
+        "command": "summon tnt"
+      }
+    },
+    "shooter_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:exhaust",
+          "amount": 15
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "clear @s arrow 1"
+        }
+      ]
+    },
+    "speed": 2,
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:or",
+            "conditions": [
+              {
+                "type": "origins:ingredient",
+                "ingredient": {
+                  "item": "minecraft:bow"
+                }
+              },
+              {
+                "type": "origins:ingredient",
+                "ingredient": {
+                  "item": "minecraft:crossbow"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "offhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "item": "minecraft:arrow"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "explosive_tridents": {
+    "type": "origins:fire_projectile",
+    "key": "key.loadToolbarActivator",
+    "cooldown": 50,
+    "entity_type": "minecraft:trident",
+    "tag": "{pickup:0b,crit:1b}",
+    "projectile_action": {
+      "type": "origins:delay",
+      "ticks": 50,
+      "action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:execute_command",
+            "command": "summon tnt"
+          },
+          {
+            "type": "origins:execute_command",
+            "command": "summon tnt"
+          },
+          {
+            "type": "origins:execute_command",
+            "command": "kill @e[tag=artificer_trident,distance=..2]"
+          }
+        ]
+      }
+    },
+    "shooter_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:exhaust",
+          "amount": 25
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "clear @s trident 1"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "clear @s tnt 1"
+        }
+      ]
+    },
+    "speed": 2.5,
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "item": "minecraft:trident"
+            }
+          }
+        },
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "offhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "item": "minecraft:tnt"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

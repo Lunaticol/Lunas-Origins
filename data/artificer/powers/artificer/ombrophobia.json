@@ -1,0 +1,118 @@
+{
+  "type": "origins:multiple",
+  "name": "Ombrophobia",
+  "description": "You have ombrophobia, you are scared of the rain.",
+  "ombrophobia_timer": {
+    "type": "origins:resource",
+    "max": 60,
+    "min": 0,
+    "start_value": 60,
+    "hud_render": {
+      "should_render": true,
+      "condition": {
+        "type": "origins:in_rain"
+      }
+    }
+  },
+  "timer_drain": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "change": -1,
+          "resource": "*:*_ombrophobia_timer"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:in_rain"
+        }
+      ]
+    }
+  },
+  "timer_fill": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "change": 1,
+          "resource": "*:*_ombrophobia_timer"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:in_rain",
+          "inverted": true
+        }
+      ]
+    }
+  },
+  "if_timer_empty": {
+    "type": "origins:damage_over_time",
+    "interval": 20,
+    "onset_delay": 0,
+    "damage": 10,
+    "damage_easy": 5,
+    "damage_source": {
+      "name": "hurt_by_water",
+      "unblockable": true,
+      "bypasses_armor": true
+    },
+    "protection_enchantment": "origins:water_protection",
+    "protection_effectiveness": 0.5,
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:in_rain"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:*_ombrophobia_timer"
+        }
+      ]
+    }
+  },
+  "if_timer_empty_speed": {
+    "type": "origins:action_over_time",
+    "interval": 10,
+    "entity_action": {
+      "type": "origins:apply_effect",
+      "effect": {
+        "effect": "speed",
+        "amplifier": 2,
+        "duration": 40,
+        "show_icon": true,
+        "show_particles": false
+      }
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:in_rain"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:*_ombrophobia_timer"
+        }
+      ]
+    }
+  }
+}

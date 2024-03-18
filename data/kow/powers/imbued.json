@@ -1,0 +1,161 @@
+{
+  "name": "Imbued by Wrath",
+  "description": "Over time while you fight, your claws become stronger and you improve. You can reach level 20, your level resets when you leave.",
+  "type": "origins:multiple",
+  "levels": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 20,
+    "hud_render": { "should_render": true },
+    "start_value": 1
+  },
+  "hits": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 4,
+    "hud_render": { "should_render": false },
+    "start_value": 0
+  },
+  "hits_reset": {
+    "type": "origins:action_when_hit",
+    "cooldown": 0,
+    "bientity_action": {
+      "type": "origins:target_action",
+      "action": {
+        "type": "origins:change_resource",
+        "change": 0,
+        "operation": "set",
+        "resource": "*:*_hits"
+      }
+    }
+  },
+  "combos": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 4,
+    "hud_render": { "should_render": true },
+    "start_value": 0
+  },
+  "gaining_hits": {
+    "type": "origins:self_action_on_hit",
+    "cooldown": 0,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "change": 1,
+          "operation": "add",
+          "resource": "*:*_hits"
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 20,
+          "operation": "set",
+          "resource": "*:*_timer"
+        }
+      ]
+    }
+  },
+  "gaining_combos": {
+    "type": "origins:self_action_on_hit",
+    "cooldown": 0,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 1,
+      "operation": "add",
+      "resource": "*:*_combos"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 4,
+      "comparison": "==",
+      "resource": "*:*_hits"
+    }
+  },
+  "gaining_levels": {
+    "type": "origins:self_action_on_hit",
+    "cooldown": 0,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "change": 1,
+          "operation": "add",
+          "resource": "*:*_levels"
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 0,
+          "operation": "set",
+          "resource": "*:*_combos"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 4,
+      "comparison": "==",
+      "resource": "*:*_combos"
+    }
+  },
+  "timer_levels": {
+    "type": "origins:resource",
+    "max": 60,
+    "min": 0,
+    "start_value": 60,
+    "hud_render": { "should_render": true }
+  },
+  "timer_drain": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "action": {
+            "type": "origins:change_resource",
+            "change": -1,
+            "operation": "add",
+            "resource": "*:*_timer"
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 6,
+            "comparison": "<=",
+            "resource": "*:*_levels"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:change_resource",
+            "change": -2,
+            "operation": "add",
+            "resource": "*:*_timer"
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 12,
+            "comparison": "<=",
+            "resource": "*:*_levels"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:change_resource",
+            "change": -3,
+            "operation": "add",
+            "resource": "*:*_timer"
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 13,
+            "comparison": ">=",
+            "resource": "*:*_levels"
+          }
+        }
+      ]
+    }
+  }
+}

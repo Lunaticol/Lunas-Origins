@@ -1,0 +1,47 @@
+{
+  "type": "origins:multiple",
+  "name": "Unexplodable",
+  "description": "You are immune to any explosion",
+  "unexplodeable": {
+    "type": "origins:invulnerability",
+    "damage_condition": {
+      "type": "origins:name",
+      "name": "explosion"
+    }
+  },
+  "unexplodeable_byplayer": {
+    "type": "origins:invulnerability",
+    "damage_condition": {
+      "type": "origins:name",
+      "name": "explosion.player"
+    }
+  },
+  "unexplodeable_by_badrespawn": {
+    "type": "origins:invulnerability",
+    "damage_condition": {
+      "type": "origins:name",
+      "name": "badRespawnPoint"
+    }
+  },
+  "unexplodeable_by_firework": {
+    "type": "origins:invulnerability",
+    "damage_condition": {
+      "type": "origins:name",
+      "name": "fireworks"
+    }
+  },
+  "unexplodeable_by_fireworkplayer": {
+    "type": "origins:invulnerability",
+    "damage_condition": {
+      "type": "origins:name",
+      "name": "fireworks.player"
+    }
+  },
+  "unexplodeable_by_fireworkitem": {
+    "type": "origins:invulnerability",
+    "damage_condition": {
+      "type": "origins:name",
+      "name": "fireworks.item"
+    }
+  }
+}

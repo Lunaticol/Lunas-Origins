@@ -1,0 +1,1 @@
+summon creeper ~ ~ ~ {NoAI:1b,powered:1b,Fuse:0,ignited:1b,Tags:["death"]}

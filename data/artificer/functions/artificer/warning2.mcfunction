@@ -1,0 +1,1 @@
+title @s actionbar {"text":"Warning! Switch two active! press [Primary] to Suicide! Press [Load Hotbar] to cancel!","color":"red","bold":true}

@@ -1,0 +1,44 @@
+{
+  "name": "Explosives Expert",
+  "description": "You can make TNT easier",
+  "type": "origins:multiple",
+  "make_easier_tnt": {
+    "type": "origins:recipe",
+    "recipe": {
+      "id": "artificer:tnt",
+      "type": "minecraft:crafting_shaped",
+      "pattern": ["XC", "CX"],
+      "key": {
+        "X": {
+          "item": "minecraft:gunpowder"
+        },
+        "C": {
+          "item": "minecraft:paper"
+        }
+      },
+      "result": {
+        "item": "minecraft:tnt"
+      }
+    }
+  },
+  "make_exploding_arrows": {
+    "type": "origins:recipe",
+    "recipe": {
+      "id": "artificer:tnt_arrow",
+      "type": "minecraft:crafting_shaped",
+      "pattern": ["X  ", "C  ", "   "],
+      "key": {
+        "X": {
+          "item": "minecraft:tnt"
+        },
+        "A": {
+          "item": "minecraft:arrow"
+        }
+      },
+      "result": {
+        "item": "minecraft:arrow",
+        "data": { "tag": "artificer_arrow" }
+      }
+    }
+  }
+}

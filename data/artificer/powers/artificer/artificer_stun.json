@@ -1,0 +1,78 @@
+{
+  "type": "origins:multiple",
+  "name": "Concussive Blast",
+  "description": "The Artificer can create an explosion around itself which can stun enemys",
+  "explode_jump": {
+    "type": "origins:active_self",
+    "key": {
+      "key": "secondary"
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "function artificer:artificer/explodejumpartificer"
+        },
+        {
+          "type": "origins:add_velocity",
+          "y": 1,
+          "space": "local"
+        },
+        {
+          "type": "origins:apply_effect",
+          "effect": {
+            "effect": "slow_falling",
+            "duration": 10,
+            "show_icon": true
+          }
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "particle minecraft:explosion ~ ~ ~ 1 1 1 1 10"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "playsound minecraft:entity.generic.explode master @s ~ ~ ~ 100 1"
+        },
+        {
+          "type": "origins:area_of_effect",
+          "radius": 5,
+          "bientity_action": {
+            "type": "origins:target_action",
+            "action": {
+              "type": "origins:apply_effect",
+              "effects": [
+                {
+                  "effect": "weakness",
+                  "duration": 100,
+                  "amplifier": 2
+                },
+                {
+                  "effect": "slowness",
+                  "duration": 100,
+                  "amplifier": 2
+                },
+                {
+                  "effect": "blindness",
+                  "duration": 100,
+                  "amplifier": 2
+                }
+              ]
+            }
+          }
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 20,
+          "operation": "add",
+          "resource": "artificer:artificer/artificer_explode_resource"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "particle minecraft:explosion_emitter ~ ~ ~ 0 0 0 1 1"
+        }
+      ]
+    }
+  }
+}
