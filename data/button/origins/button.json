@@ -1,0 +1,18 @@
+{
+  "powers": [
+    "button:button",
+    "button:phase_one/button_one",
+    "button:phase_one/button_two",
+    "button:phase_one/button_three",
+    "button:phase_one/button_four",
+    "button:phase_one/button_five",
+    "button:phase_one/button_six",
+    "button:phase_one/button_seven"
+  ],
+  "icon": "minecraft:oak_button",
+  "unchoosable": true,
+  "order": 9,
+  "impact": 3,
+  "name": "The Button Lord",
+  "description": "Long ago, 7 buttons were created by the button lord. This is his fight."
+}

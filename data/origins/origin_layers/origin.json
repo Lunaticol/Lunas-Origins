@@ -1,4 +1,4 @@
 {
   "order": 2,
-  "origins": ["kow:kow", "artificer:artificer"]
+  "origins": ["kow:kow", "artificer:artificer", "button:button"]
 }

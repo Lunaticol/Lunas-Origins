@@ -1,1 +1,0 @@
-give @s iron_sword{Damage:247}

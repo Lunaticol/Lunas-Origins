@@ -1,0 +1,63 @@
+{
+  "type": "origins:multiple",
+  "warden_trick": {
+    "type": "origins:active_self",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "scale set pehkui:height 0.5 @s"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "scale set pehkui:width 0.5 @s"
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 600,
+          "action": {
+            "type": "origins:execute_command",
+            "command": "scale reset @s"
+          }
+        },
+        {
+          "type": "origins:apply_effect",
+          "effects": [
+            {
+              "effect": "minecraft:strength",
+              "duration": 200,
+              "amplifier": 1,
+              "show_particles": false
+            },
+            {
+              "effect": "minecraft:resistance",
+              "duration": 200,
+              "amplifier": 1,
+              "show_particles": false
+            }
+          ]
+        }
+      ]
+    },
+    "cooldown": 1200,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+      "bar_index": 19
+    },
+    "key": {
+      "key": "key.origins.primary_active"
+    },
+    "condition": {
+      "type": "origins:equipped_item",
+      "equipment_slot": "offhand",
+      "item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": {
+          "item": "minecraft:crimson_button"
+        }
+      }
+    }
+  }
+}

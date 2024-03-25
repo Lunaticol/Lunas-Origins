@@ -1,0 +1,277 @@
+{
+  "type": "origins:multiple",
+  "immune": {
+    "type": "origins:effect_immunity",
+    "effects": [
+      "minecraft:blindness",
+      "minecraft:weakness",
+      "minecraft:poison",
+      "minecraft:slowness",
+      "minecraft:wither"
+    ]
+  },
+  "boss_bar": {
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "function button:boss_bar_work"
+        }
+      ]
+    }
+  },
+  "bar_on_callback": {
+    "type": "origins:action_on_callback",
+    "entity_action_added": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "function button:boss_bar"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "effect give @s minecraft:instant_health 20 255"
+        }
+      ]
+    },
+    "entity_action_removed": {
+      "type": "origins:execute_command",
+      "command": "bossbar remove minecraft:button"
+    },
+    "entity_action_respawned": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "function button:boss_bar"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "heal @s"
+        }
+      ]
+    },
+    "entity_action_lost": {
+      "type": "origins:execute_command",
+      "command": "bossbar remove minecraft:button"
+    }
+  },
+  "more_health": {
+    "type": "origins:attribute",
+    "update_health": true,
+    "modifiers": [
+      {
+        "name": "Origin modifier",
+        "attribute": "generic.max_health",
+        "operation": "addition",
+        "value": 980
+      }
+    ]
+  },
+  "food": {
+    "type": "origins:modify_exhaustion",
+    "modifier": {
+      "name": "food",
+      "operation": "set_total",
+      "value": 0
+    }
+  },
+  "unexplodeable": {
+    "type": "origins:invulnerability",
+    "damage_condition": {
+      "type": "origins:name",
+      "name": "explosion"
+    }
+  },
+  "unexplodeable_byplayer": {
+    "type": "origins:invulnerability",
+    "damage_condition": {
+      "type": "origins:name",
+      "name": "explosion.player"
+    }
+  },
+  "unexplodeable_by_badrespawn": {
+    "type": "origins:invulnerability",
+    "damage_condition": {
+      "type": "origins:name",
+      "name": "badRespawnPoint"
+    }
+  },
+  "unexplodeable_by_firework": {
+    "type": "origins:invulnerability",
+    "damage_condition": {
+      "type": "origins:name",
+      "name": "fireworks"
+    }
+  },
+  "unexplodeable_by_fireworkplayer": {
+    "type": "origins:invulnerability",
+    "damage_condition": {
+      "type": "origins:name",
+      "name": "fireworks.player"
+    }
+  },
+  "unexplodeable_by_fireworkitem": {
+    "type": "origins:invulnerability",
+    "damage_condition": {
+      "type": "origins:name",
+      "name": "fireworks.item"
+    }
+  },
+  "phase_change": {
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "function button:boss_bar_phase_two"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "function button:phase_two"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:health",
+      "compare_to": 500,
+      "comparison": "<="
+    }
+  },
+  "phase_change_one": {
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "function button:boss_bar_phase_one"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "function button:phase_one"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:health",
+      "compare_to": 501,
+      "comparison": ">="
+    }
+  },
+  "loot": {
+    "type": "origins:action_when_hit",
+    "cooldown": 100,
+    "bientity_action": {
+      "type": "origins:actor_action",
+      "action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:chance",
+            "chance": 0.5,
+            "action": {
+              "type": "origins:execute_command",
+              "command": "give @s stick"
+            }
+          },
+          {
+            "type": "origins:chance",
+            "chance": 0.7,
+            "action": {
+              "type": "origins:execute_command",
+              "command": "give @s oak_button"
+            }
+          },
+          {
+            "type": "origins:chance",
+            "chance": 0.3,
+            "action": {
+              "type": "origins:execute_command",
+              "command": "give @s diamond"
+            }
+          },
+          {
+            "type": "origins:chance",
+            "chance": 0.05,
+            "action": {
+              "type": "origins:execute_command",
+              "command": "give @s netherite_ingot"
+            }
+          },
+          {
+            "type": "origins:chance",
+            "chance": 0.05,
+            "action": {
+              "type": "origins:execute_command",
+              "command": "give @s enderism:pirpell_ingot"
+            }
+          },
+          {
+            "type": "origins:chance",
+            "chance": 0.4,
+            "action": {
+              "type": "origins:execute_command",
+              "command": "give @s iron_ingot"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "death": {
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "function button:death"
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 1,
+          "operation": "set",
+          "resource": "*:*_death_stop"
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:entity.ender_dragon.death",
+          "volume": 1,
+          "pitch": 0.5,
+          "category": "master"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:health",
+          "comparison": "==",
+          "compare_to": 0
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:*_death_stop"
+        }
+      ]
+    }
+  },
+  "death_stop": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0,
+    "hud_render": { "should_render": false }
+  }
+}

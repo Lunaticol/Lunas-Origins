@@ -5,11 +5,6 @@
   "badges": [
     {
       "type": "origins:tooltip",
-      "sprite": "origins:textures/gui/badge/star.png",
-      "text": "Warning! This abilty could delete your enchanted eleytra! You have been warned!"
-    },
-    {
-      "type": "origins:tooltip",
       "sprite": "origins:textures/gui/badge/info.png",
       "text": "To use arrows, hold a bow/crossbow and then arrows in your off hand"
     },
@@ -27,14 +22,10 @@
     "key": "key.loadToolbarActivator",
     "cooldown": 50,
     "entity_type": "minecraft:arrow",
-    "tag": "{pickup:0b,crit:1b}",
+    "tag": "{Tags:[\"bomb_projectile\"],pickup:2b,life:200,crit:1b,Passengers:[{id:\"minecraft:armor_stand\",Tags:[\"bomb\"],Invisible:1b}]}",
     "projectile_action": {
-      "type": "origins:delay",
-      "ticks": 50,
-      "action": {
-        "type": "origins:execute_command",
-        "command": "summon tnt"
-      }
+      "type": "origins:execute_command",
+      "command": "power grant @e[tag=bomb,distance=..2] artificer:artificer/explode_on_land"
     },
     "shooter_action": {
       "type": "origins:and",
@@ -49,7 +40,6 @@
         }
       ]
     },
-    "speed": 2,
     "condition": {
       "type": "origins:and",
       "conditions": [
@@ -80,7 +70,7 @@
           "item_condition": {
             "type": "origins:ingredient",
             "ingredient": {
-              "item": "minecraft:arrow"
+              "tag": "artificer:arrow"
             }
           }
         }
@@ -89,30 +79,16 @@
   },
   "explosive_tridents": {
     "type": "origins:fire_projectile",
+    "hud_render": {
+      "should_render": true
+    },
     "key": "key.loadToolbarActivator",
-    "cooldown": 50,
+    "cooldown": 100,
     "entity_type": "minecraft:trident",
-    "tag": "{pickup:0b,crit:1b}",
+    "tag": "{Tags:[\"bomb_projectile\"],pickup:2b,life:200,crit:1b,Passengers:[{id:\"minecraft:armor_stand\",Tags:[\"bomb\"],Invisible:1b}]}",
     "projectile_action": {
-      "type": "origins:delay",
-      "ticks": 50,
-      "action": {
-        "type": "origins:and",
-        "actions": [
-          {
-            "type": "origins:execute_command",
-            "command": "summon tnt"
-          },
-          {
-            "type": "origins:execute_command",
-            "command": "summon tnt"
-          },
-          {
-            "type": "origins:execute_command",
-            "command": "kill @e[tag=artificer_trident,distance=..2]"
-          }
-        ]
-      }
+      "type": "origins:execute_command",
+      "command": "power grant @e[tag=bomb,distance=..2] artificer:artificer/explode_on_land"
     },
     "shooter_action": {
       "type": "origins:and",
@@ -123,11 +99,7 @@
         },
         {
           "type": "origins:execute_command",
-          "command": "clear @s trident 1"
-        },
-        {
-          "type": "origins:execute_command",
-          "command": "clear @s tnt 1"
+          "command": "clear @s tnt 2"
         }
       ]
     },
@@ -156,6 +128,119 @@
           }
         }
       ]
+    }
+  },
+  "condition": {
+    "type": "origins:saturation_level",
+    "compare_to": 3,
+    "comparison": ">"
+  },
+  "explosion": {
+    "type": "origins:target_action_on_hit",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:explode",
+          "power": 3,
+          "destruction_type": "none",
+          "damage_self": false,
+          "create_fire": false
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "particle minecraft:explosion ~ ~ ~ 1 1 1 1 10"
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:entity.generic.explode",
+          "category": "master",
+          "pitch": 1,
+          "volume": 1
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "power revoke @e[tag=bomb,distance=..2] artificer:artificer/explode_on_land artificer:artificer"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "kill @e[tag=bomb,distance=..2]"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "kill @e[tag=bomb_projectile,distance=..2]"
+        },
+        {
+          "type": "origins:exhaust",
+          "amount": 15
+        }
+      ]
+    },
+    "damage_condition": {
+      "type": "origins:projectile",
+      "projectile": "minecraft:arrow"
+    },
+    "cooldown": 1
+  },
+  "explosion_trident": {
+    "type": "origins:target_action_on_hit",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:explode",
+          "power": 3.5,
+          "destruction_type": "none",
+          "damage_self": false,
+          "create_fire": false
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "particle minecraft:explosion ~ ~ ~ 1 1 1 1 10"
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:entity.generic.explode",
+          "category": "master",
+          "pitch": 1,
+          "volume": 1
+        },
+        {
+          "type": "origins:exhaust",
+          "amount": 25
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "power revoke @e[tag=bomb,distance=..2] artificer:artificer/explode_on_land artificer:artificer"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "kill @e[tag=bomb,distance=..2]"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "kill @e[tag=bomb_projectile,distance=..2]"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "clear @s tnt 2"
+        }
+      ]
+    },
+    "damage_condition": {
+      "type": "origins:projectile",
+      "projectile": "minecraft:trident"
+    },
+    "cooldown": 1,
+    "condition": {
+      "type": "origins:equipped_item",
+      "equipment_slot": "offhand",
+      "item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": {
+          "item": "minecraft:tnt"
+        }
+      }
     }
   }
 }

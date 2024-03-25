@@ -9,8 +9,11 @@
       "type": "origins:and",
       "actions": [
         {
-          "type": "origins:execute_command",
-          "command": "function artificer:artificer/death"
+          "type": "origins:explode",
+          "create_fire": false,
+          "damage_self": true,
+          "destruction_type": "none",
+          "power": 6
         },
         {
           "type": "origins:execute_command",
@@ -18,13 +21,17 @@
         },
         {
           "type": "origins:delay",
-          "ticks": 2,
+          "ticks": 5,
           "action": {
             "type": "origins:change_resource",
             "change": 1,
             "operation": "set",
             "resource": "*:*_explode_stop"
           }
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "playsound minecraft:entity.generic.explode master @s ~ ~ ~ 100 1"
         }
       ]
     },
@@ -50,5 +57,32 @@
     "max": 1,
     "min": 0,
     "hud_render": { "should_render": false }
+  },
+  "death_warning": {
+    "type": "origins:action_over_time",
+    "interval": 2,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "particle minecraft:smoke ~ ~ ~ 1 1 1 .1 20 force"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "particle minecraft:lava ~ ~ ~ 1 1 1 1 1 force"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:health",
+          "comparison": "<=",
+          "compare_to": 4
+        }
+      ]
+    }
   }
 }

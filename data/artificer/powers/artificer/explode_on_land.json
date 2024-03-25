@@ -1,0 +1,43 @@
+{
+  "type": "origins:multiple",
+  "explode_on_land": {
+    "type": "origins:action_over_time",
+    "interval": 50,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:explode",
+          "power": 3.5,
+          "destruction_type": "none",
+          "damage_self": false,
+          "create_fire": false
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "particle minecraft:explosion ~ ~ ~ 1 1 1 1 10"
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:entity.generic.explode",
+          "category": "master",
+          "pitch": 1,
+          "volume": 1
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "kill @e[tag=bomb,distance=..2]"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:entity_type",
+          "entity_type": "minecraft:armor_stand"
+        }
+      ]
+    }
+  }
+}

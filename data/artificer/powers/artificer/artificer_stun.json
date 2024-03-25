@@ -32,8 +32,11 @@
           "command": "particle minecraft:explosion ~ ~ ~ 1 1 1 1 10"
         },
         {
-          "type": "origins:execute_command",
-          "command": "playsound minecraft:entity.generic.explode master @s ~ ~ ~ 100 1"
+          "type": "origins:play_sound",
+          "sound": "minecraft:entity.generic.explode",
+          "category": "master",
+          "pitch": 1,
+          "volume": 1
         },
         {
           "type": "origins:area_of_effect",
