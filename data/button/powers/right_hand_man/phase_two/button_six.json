@@ -1,0 +1,49 @@
+{
+  "type": "origins:multiple",
+  "warden_trick": {
+    "type": "origins:action_over_time",
+    "interval": 1200,
+    "entity_action": {
+      "type": "origins:chance",
+      "chance": 0.9,
+      "action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:execute_command",
+            "command": "scale set pehkui:height 0.5 @s"
+          },
+          {
+            "type": "origins:execute_command",
+            "command": "scale set pehkui:width 0.5 @s"
+          },
+          {
+            "type": "origins:delay",
+            "ticks": 600,
+            "action": {
+              "type": "origins:execute_command",
+              "command": "scale reset @s"
+            }
+          },
+          {
+            "type": "origins:apply_effect",
+            "effects": [
+              {
+                "effect": "minecraft:strength",
+                "duration": 200,
+                "amplifier": 1,
+                "show_particles": false
+              },
+              {
+                "effect": "minecraft:resistance",
+                "duration": 200,
+                "amplifier": 1,
+                "show_particles": false
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -85,7 +85,7 @@
     "key": "key.loadToolbarActivator",
     "cooldown": 100,
     "entity_type": "minecraft:trident",
-    "tag": "{Tags:[\"bomb_projectile\"],pickup:2b,life:200,crit:1b,Passengers:[{id:\"minecraft:armor_stand\",Tags:[\"bomb\"],Invisible:1b}]}",
+    "tag": "{Tags:[\"bomb_projectile\"],pickup:2b,life:20,crit:1b,Passengers:[{id:\"minecraft:armor_stand\",Tags:[\"bomb\"],Invisible:1b}]}",
     "projectile_action": {
       "type": "origins:execute_command",
       "command": "power grant @e[tag=bomb,distance=..2] artificer:artificer/explode_on_land"
@@ -169,10 +169,6 @@
         {
           "type": "origins:execute_command",
           "command": "kill @e[tag=bomb_projectile,distance=..2]"
-        },
-        {
-          "type": "origins:exhaust",
-          "amount": 15
         }
       ]
     },

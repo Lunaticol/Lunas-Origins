@@ -1,1 +1,0 @@
-give @a[distance=..128] jungle_button{display:{Name:'{"text":"Great Button","color":"gold","bold":true,"italic":true}',Lore:['{"text":"\'Down with the Button Lord!\'","color":"gray"}','{"text":"Button Lord Boss Fight","bold":true,"italic":true}']},Enchantments:[{}]} 1

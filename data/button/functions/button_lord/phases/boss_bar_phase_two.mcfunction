@@ -1,0 +1,1 @@
+bossbar set minecraft:button color pink

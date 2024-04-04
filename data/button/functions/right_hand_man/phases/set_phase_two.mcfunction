@@ -1,0 +1,1 @@
+damage @e[tag=BRH,limit=1] 524 minecraft:out_of_world

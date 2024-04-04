@@ -1,0 +1,236 @@
+{
+  "type": "origins:multiple",
+  "raycast": {
+    "type": "origins:active_self",
+    "key": {
+      "key": "key.origins.primary_active"
+    },
+    "cooldown": 1,
+    "hud_render": { "should_render": true },
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "function button:button_lord/armor_stands"
+    },
+    "condition": {
+      "type": "origins:equipped_item",
+      "equipment_slot": "offhand",
+      "item_condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:ingredient",
+            "ingredient": { "item": "minecraft:cherry_button" }
+          },
+          {
+            "type": "origins:nbt",
+            "nbt": "{Enchantments:[{}]}"
+          }
+        ]
+      }
+    }
+  },
+  "thing": {
+    "type": "origins:active_self",
+    "key": {
+      "key": "key.origins.primary_active"
+    },
+    "hud_render": { "should_render": true },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:delay",
+          "ticks": 40,
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "execute at @e[tag=armor_button_1] run particle minecraft:lava ~ ~ ~ 0 4 0 0.01 20 normal"
+              },
+              {
+                "type": "origins:play_sound",
+                "category": "master",
+                "pitch": 0.5,
+                "sound": "minecraft:entity.blaze.shoot",
+                "volume": 1
+              },
+              {
+                "type": "origins:explode",
+                "power": 2,
+                "damage_self": false,
+                "destruction_type": "none"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "kill @e[tag=armor_button_1]"
+              }
+            ]
+          }
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 60,
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "execute at @e[tag=armor_button_2] run particle minecraft:lava ~ ~ ~ 0 4 0 0.01 20 normal"
+              },
+              {
+                "type": "origins:play_sound",
+                "category": "master",
+                "pitch": 0.5,
+                "sound": "minecraft:entity.blaze.shoot",
+                "volume": 1
+              },
+              {
+                "type": "origins:explode",
+                "power": 2,
+                "damage_self": false,
+                "destruction_type": "none"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "kill @e[tag=armor_button_2]"
+              }
+            ]
+          }
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 80,
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "execute at @e[tag=armor_button_3] run particle minecraft:lava ~ ~ ~ 0 4 0 0.01 20 normal"
+              },
+              {
+                "type": "origins:play_sound",
+                "category": "master",
+                "pitch": 0.5,
+                "sound": "minecraft:entity.blaze.shoot",
+                "volume": 1
+              },
+              {
+                "type": "origins:explode",
+                "power": 2,
+                "damage_self": false,
+                "destruction_type": "none"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "kill @e[tag=armor_button_3]"
+              }
+            ]
+          }
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 100,
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "execute at @e[tag=armor_button_4] run particle minecraft:lava ~ ~ ~ 0 4 0 0.01 20 normal"
+              },
+              {
+                "type": "origins:play_sound",
+                "category": "master",
+                "pitch": 0.5,
+                "sound": "minecraft:entity.blaze.shoot",
+                "volume": 1
+              },
+              {
+                "type": "origins:explode",
+                "power": 2,
+                "damage_self": false,
+                "destruction_type": "none"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "kill @e[tag=armor_button_4]"
+              }
+            ]
+          }
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 120,
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "execute at @e[tag=armor_button_5] run particle minecraft:lava ~ ~ ~ 0 4 0 0.01 20 normal"
+              },
+              {
+                "type": "origins:play_sound",
+                "category": "master",
+                "pitch": 0.5,
+                "sound": "minecraft:entity.blaze.shoot",
+                "volume": 1
+              },
+              {
+                "type": "origins:explode",
+                "power": 2,
+                "damage_self": false,
+                "destruction_type": "none"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "kill @e[tag=armor_button_5]"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:equipped_item",
+      "equipment_slot": "offhand",
+      "item_condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:ingredient",
+            "ingredient": { "item": "minecraft:cherry_button" }
+          },
+          {
+            "type": "origins:nbt",
+            "nbt": "{Enchantments:[{}]}"
+          }
+        ]
+      }
+    }
+  },
+  "particles": {
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "function button:button_lord/armor_stands_particles"
+    },
+    "condition": {
+      "type": "origins:equipped_item",
+      "equipment_slot": "offhand",
+      "item_condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:ingredient",
+            "ingredient": { "item": "minecraft:cherry_button" }
+          },
+          {
+            "type": "origins:nbt",
+            "nbt": "{Enchantments:[{}]}"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+summon zombie ~ ~ ~ {PersistenceRequired:1b,CanPickUpLoot:0b,InWaterTime:-999999999,Tags:["BRH"],HandItems:[{id:"betterend:aeternium_sword",Count:1b,tag:{Unbreakable:1b,Enchantments:[{id:"minecraft:knockback",lvl:3s},{id:"minecraft:sharpness",lvl:6s}]}},{}],HandDropChances:[0.000F,0.000F],ArmorItems:[{id:"betterend:aeternium_boots",Count:1b,tag:{Unbreakable:1b,Enchantments:[{id:"minecraft:protection",lvl:4s},{id:"minecraft:frost_walker",lvl:3s}]}},{id:"betterend:aeternium_leggings",Count:1b,tag:{Unbreakable:1b,Enchantments:[{id:"minecraft:protection",lvl:4s}]}},{id:"betterend:aeternium_chestplate",Count:1b,tag:{Unbreakable:1b,Enchantments:[{id:"minecraft:protection",lvl:4s}]}},{id:"betterend:aeternium_helmet",Count:1b,tag:{Unbreakable:1b,Enchantments:[{id:"minecraft:protection",lvl:4s}]}}],ArmorDropChances:[0.000F,0.000F,0.000F,0.000F],Attributes:[{Name:"generic.max_health",Base:1000},{Name:"generic.follow_range",Base:256}]}
+power grant @e[tag=BRH] button:right_hand_man/button
+effect give @e[tag=BRH] speed infinite 4 true
+effect give @e[tag=BRH] glowing infinite 1 true
+team add Button_Mobs
+team join Button_Mobs @e[tag=BRH]
