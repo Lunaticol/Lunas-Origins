@@ -1,0 +1,62 @@
+{
+  "name": "Axolotl Totem",
+  "description": "When low on health, your Axolotl Totem will save you.",
+  "type": "origins:multiple",
+  "toggle": {
+    "type": "origins:toggle",
+    "active_by_default": true,
+    "key": {
+      "key": "primary"
+    }
+  },
+  "fake_death": {
+    "type": "origins:action_when_damage_taken",
+    "cooldown": 6000,
+    "hud_render": {
+      "should_render": true
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:apply_effect",
+          "effect": {
+            "effect": "minecraft:regeneration",
+            "amplifier": 1,
+            "duration": 900
+          }
+        },
+        {
+          "type": "origins:apply_effect",
+          "effect": {
+            "effect": "minecraft:fire_resistance",
+            "duration": 800
+          }
+        },
+        {
+          "type": "origins:apply_effect",
+          "effect": {
+            "effect": "minecraft:absorption",
+            "amplifier": 1,
+            "duration": 900
+          }
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "playsound minecraft:item.totem.use ambient @s ~ ~ ~ 1 1"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "particle minecraft:totem_of_undying ~ ~ ~ .5 1 .5 .5 500 force"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        { "type": "origins:health", "comparison": "<", "compare_to": 6 },
+        { "type": "origins:power_active", "power": "*:*_toggle" }
+      ]
+    }
+  }
+}

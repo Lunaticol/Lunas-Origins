@@ -1,0 +1,14 @@
+{
+  "name": "Kouvaphobia",
+  "description": "You are unable to use buckets!",
+  "type": "origins:multiple",
+  "bucket": {
+    "type": "origins:prevent_item_use",
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "tag": "axolotl:axolotl/these_are_buckets"
+      }
+    }
+  }
+}

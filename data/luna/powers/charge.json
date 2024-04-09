@@ -1,0 +1,192 @@
+{
+  "type": "origins:multiple",
+  "charge_bar": {
+    "type": "origins:resource",
+    "max": 100,
+    "min": 0,
+    "hud_render": {
+      "should_render": true
+    }
+  },
+  "charging": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0,
+    "hud_render": {
+      "should_render": true
+    }
+  },
+  "charge": {
+    "type": "origins:active_self",
+    "key": {
+      "key": "key.origins.primary_active",
+      "continuous": true
+    },
+    "hud_render": {
+      "should_render": false
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "change": 2,
+          "operation": "add",
+          "resource": "*:*_charge_bar"
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 1,
+          "operation": "set",
+          "resource": "*:*_charging"
+        }
+      ]
+    }
+  },
+  "charge_drain": {
+    "type": "origins:action_over_time",
+    "interval": 10,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": -1,
+      "operation": "add",
+      "resource": "*:*_charge_bar"
+    }
+  },
+  "charge_reset": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 0,
+      "operation": "set",
+      "resource": "*:*_charge_bar"
+    },
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:*_charging"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 100,
+          "comparison": "==",
+          "resource": "*:*_charge_bar"
+        }
+      ]
+    }
+  },
+  "charge_full": {
+    "type": "origins:active_self",
+    "cooldown": 10,
+    "entity_action": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "action": {
+            "type": "origins:add_velocity",
+            "z": 1,
+            "space": "local"
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 50,
+            "comparison": ">=",
+            "resource": "*:*_charge_bar"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:add_velocity",
+            "z": 1.2,
+            "space": "local"
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 60,
+            "comparison": ">=",
+            "resource": "*:*_charge_bar"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:add_velocity",
+            "z": 1.4,
+            "space": "local"
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 70,
+            "comparison": ">=",
+            "resource": "*:*_charge_bar"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:add_velocity",
+            "z": 1.8,
+            "space": "local"
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 80,
+            "comparison": ">=",
+            "resource": "*:*_charge_bar"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:add_velocity",
+            "z": 2,
+            "space": "local"
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 100,
+            "comparison": ">=",
+            "resource": "*:*_charge_bar"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:change_resource",
+            "change": 0,
+            "operation": "set",
+            "resource": "*:*_charge_bar"
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 49,
+            "comparison": ">=",
+            "resource": "*:*_charge_bar"
+          }
+        }
+      ]
+    },
+    "key": {
+      "key": "key.origins.primary_active",
+      "continuous": true
+    },
+    "hud_render": { "should_render": false }
+  },
+  "charge_stopped": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": -1,
+      "operation": "add",
+      "resource": "*:*_charging"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 49,
+      "comparison": "<=",
+      "resource": "*:*_charge_bar"
+    }
+  }
+}

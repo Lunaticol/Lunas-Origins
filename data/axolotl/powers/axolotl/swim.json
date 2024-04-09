@@ -1,0 +1,32 @@
+{
+  "type": "origins:multiple",
+  "name": "Aquatic Fins",
+  "description": "While in water, you swim much faster then the average human",
+  "swim": {
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:fluid_height",
+          "fluid": "minecraft:water",
+          "comparison": ">",
+          "compare_to": 0.1
+        }
+      ]
+    },
+    "entity_action": {
+      "type": "origins:apply_effect",
+      "effects": [
+        {
+          "effect": "dolphins_grace",
+          "amplifier": 2,
+          "duration": 2,
+          "show_particles": false,
+          "is_ambient": false
+        }
+      ]
+    }
+  }
+}

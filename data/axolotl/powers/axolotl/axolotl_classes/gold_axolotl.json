@@ -1,0 +1,47 @@
+{
+  "name": "Gold Rush",
+  "description": "You can mine quicker underwater",
+  "type": "origins:multiple",
+  "color": {
+    "type": "origins:model_color",
+    "red": 1,
+    "green": 0.8196078431,
+    "blue": 0.1058823529
+  },
+  "glow": {
+    "type": "origins:self_glow",
+    "use_teams": false,
+    "red": 1,
+    "green": 0.8196078431,
+    "blue": 0.1058823529,
+    "bientity_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:can_see"
+        },
+        {
+          "type": "origins:distance",
+          "comparison": "<=",
+          "compare_to": 5
+        }
+      ]
+    }
+  },
+  "water_mine": {
+    "type": "origins:modify_break_speed",
+    "modifier": {
+      "operation": "addition",
+      "value": 0.1
+    },
+    "condition": {
+      "type": "origins:submerged_in",
+      "fluid": "minecraft:water"
+    },
+    "block_condition": {
+      "type": "origins:hardness",
+      "compare_to": 0.1,
+      "comparison": ">="
+    }
+  }
+}

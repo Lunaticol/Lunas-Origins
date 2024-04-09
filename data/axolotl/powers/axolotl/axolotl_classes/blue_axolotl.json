@@ -1,0 +1,30 @@
+{
+  "name": "Blue",
+  "description": "YOU'RE BLUE NOW. THAT'S MY ATTACK! NYEH HEH HEH HEH HEH HEH HEH HEH HEH!!!",
+  "type": "origins:multiple",
+  "color": {
+    "type": "origins:model_color",
+    "red": 0.6862745098,
+    "green": 0.6980392157,
+    "blue": 1
+  },
+  "helping_hand": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:area_of_effect",
+      "radius": 8,
+      "shape": "sphere",
+      "bientity_action": {
+        "type": "origins:target_action",
+        "action": {
+          "type": "origins:apply_effect",
+          "effect": {
+            "effect": "minecraft:conduit_power",
+            "duration": 100
+          }
+        }
+      }
+    }
+  }
+}

@@ -38,7 +38,7 @@
             "ticks": 1,
             "action": {
               "type": "origins:execute_command",
-              "command": "function function button:right_hand_man/mob"
+              "command": "function button:right_hand_man/mob"
             }
           }
         ]

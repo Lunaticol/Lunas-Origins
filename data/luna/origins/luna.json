@@ -1,0 +1,9 @@
+{
+  "powers": ["luna:charge"],
+  "icon": "minecraft:tnt",
+  "unchoosable": true,
+  "order": 9,
+  "impact": 0,
+  "name": "Luna",
+  "description": "Luna.exe is not responding"
+}

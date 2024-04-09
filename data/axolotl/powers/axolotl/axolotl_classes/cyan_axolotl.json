@@ -1,0 +1,54 @@
+{
+  "name": "Fast paced",
+  "description": "You have a need for speed! \n You can eat any ocean blocks!",
+  "type": "origins:multiple",
+  "color": {
+    "type": "origins:model_color",
+    "red": 0.8862745098,
+    "green": 0.9333333333,
+    "blue": 1
+  },
+  "swim": {
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:fluid_height",
+          "fluid": "minecraft:water",
+          "comparison": ">",
+          "compare_to": 0.1
+        }
+      ]
+    },
+    "entity_action": {
+      "type": "origins:apply_effect",
+      "effects": [
+        {
+          "effect": "dolphins_grace",
+          "amplifier": 3,
+          "duration": 2,
+          "show_particles": false,
+          "is_ambient": false
+        }
+      ]
+    }
+  },
+  "sea_food": {
+    "type": "apugli:edible_item",
+    "food_component": {
+      "always_edible": false,
+      "meat": false,
+      "hunger": 8,
+      "saturation": 0.4,
+      "snack": false
+    },
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "tag": "axolotl:axolotl/cyan_eat"
+      }
+    }
+  }
+}

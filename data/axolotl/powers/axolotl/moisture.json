@@ -1,0 +1,282 @@
+{
+  "name": "Moisture",
+  "description": "When you run out of moisture, you dry out and take more damage.\n- Slowness when dried out\n- Mining fatigue when dried out\n- Fragile when dried out",
+  "type": "origins:multiple",
+  "stage": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 3,
+    "hud_render": {
+      "should_render": false
+    }
+  },
+  "stage_detect": {
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "entity_action": {
+      "type": "origins:if_else",
+      "condition": {
+        "type": "origins:submerged_in",
+        "fluid": "minecraft:water"
+      },
+      "if_action": {
+        "type": "origins:execute_command",
+        "command": "resource set @s axolotl:axolotl/moisture_stage 3"
+      },
+      "else_action": {
+        "type": "origins:if_else",
+        "condition": {
+          "type": "origins:or",
+          "conditions": [
+            {
+              "type": "origins:in_rain"
+            },
+            {
+              "type": "origins:and",
+              "conditions": [
+                {
+                  "type": "origins:fluid_height",
+                  "fluid": "minecraft:water",
+                  "comparison": ">=",
+                  "compare_to": 0.01
+                },
+                {
+                  "type": "origins:submerged_in",
+                  "inverted": true,
+                  "fluid": "minecraft:water"
+                }
+              ]
+            },
+            {
+              "type": "origins:and",
+              "conditions": [
+                {
+                  "type": "origins:resource",
+                  "resource": "*:*_meter",
+                  "comparison": ">",
+                  "compare_to": 3000
+                },
+                {
+                  "type": "origins:submerged_in",
+                  "inverted": true,
+                  "fluid": "minecraft:water"
+                }
+              ]
+            },
+            {
+              "type": "origins:in_block",
+              "block_condition": {
+                "type": "origins:block_state",
+                "property": "level",
+                "compare_to": 1,
+                "comparison": ">="
+              }
+            }
+          ]
+        },
+        "if_action": {
+          "type": "origins:execute_command",
+          "command": "resource set @s axolotl:axolotl/moisture_stage 2"
+        },
+        "else_action": {
+          "type": "origins:if_else",
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:resource",
+                "resource": "*:*_meter",
+                "comparison": "<",
+                "compare_to": 1200
+              },
+              {
+                "type": "origins:resource",
+                "resource": "*:*_meter",
+                "comparison": ">",
+                "compare_to": 0
+              },
+              {
+                "type": "origins:dimension",
+                "inverted": true,
+                "dimension": "minecraft:the_nether"
+              }
+            ]
+          },
+          "if_action": {
+            "type": "origins:execute_command",
+            "command": "resource set @s axolotl:axolotl/moisture_stage 1"
+          },
+          "else_action": {
+            "type": "origins:if_else",
+            "condition": {
+              "type": "origins:or",
+              "conditions": [
+                {
+                  "type": "origins:dimension",
+                  "dimension": "minecraft:the_nether"
+                },
+                {
+                  "type": "origins:resource",
+                  "resource": "*:*_meter",
+                  "comparison": "==",
+                  "compare_to": 0
+                }
+              ]
+            },
+            "if_action": {
+              "type": "origins:execute_command",
+              "command": "resource set @s axolotl:axolotl/moisture_stage 0"
+            }
+          }
+        }
+      }
+    }
+  },
+  "meter": {
+    "type": "origins:resource",
+    "start_value": 6000,
+    "min": 0,
+    "max": 6000,
+    "hud_render": {
+      "should_render": true,
+      "bar_index": 1
+    }
+  },
+  "drain_n_gain": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:if_else",
+      "condition": {
+        "type": "origins:resource",
+        "resource": "*:*_stage",
+        "comparison": "==",
+        "compare_to": 3
+      },
+      "if_action": {
+        "type": "origins:change_resource",
+        "resource": "*:*_meter",
+        "change": 300
+      },
+      "else_action": {
+        "type": "origins:if_else",
+        "condition": {
+          "type": "origins:or",
+          "conditions": [
+            {
+              "type": "origins:in_rain"
+            },
+            {
+              "type": "origins:and",
+              "conditions": [
+                {
+                  "type": "origins:fluid_height",
+                  "fluid": "minecraft:water",
+                  "comparison": ">=",
+                  "compare_to": 0.01
+                },
+                {
+                  "type": "origins:submerged_in",
+                  "fluid": "minecraft:water"
+                }
+              ]
+            },
+            {
+              "type": "origins:in_block",
+              "block_condition": {
+                "type": "origins:block_state",
+                "property": "level",
+                "compare_to": 1,
+                "comparison": ">="
+              }
+            }
+          ]
+        },
+        "if_action": {
+          "type": "origins:change_resource",
+          "resource": "*:*_meter",
+          "change": 100
+        },
+        "else_action": {
+          "type": "origins:if_else",
+          "condition": {
+            "type": "origins:dimension",
+            "dimension": "minecraft:the_nether"
+          },
+          "if_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_meter",
+            "change": -600
+          },
+          "else_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_meter",
+            "change": -20
+          }
+        }
+      }
+    }
+  },
+  "dry_damage": {
+    "type": "origins:damage_over_time",
+    "interval": 60,
+    "onset_delay": 0,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_meter",
+      "comparison": "==",
+      "compare_to": 0
+    },
+    "damage": 1,
+    "damage_easy": 1,
+    "damage_source": {
+      "name": "dryout",
+      "unblockable": true,
+      "bypasses_armor": true
+    }
+  },
+  "dry_fatigues": {
+    "type": "origins:stacking_status_effect",
+    "tick_rate": 1,
+    "min_stacks": 0,
+    "max_stacks": 1,
+    "duration_per_stack": 20,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_stage",
+      "comparison": "==",
+      "compare_to": 0
+    },
+    "effects": [
+      {
+        "effect": "minecraft:mining_fatigue",
+        "amplifier": 0,
+        "show_icon": true,
+        "show_particles": true,
+        "is_ambient": true
+      },
+      {
+        "effect": "minecraft:weakness",
+        "amplifier": 0,
+        "show_icon": true,
+        "show_particles": true,
+        "is_ambient": true
+      }
+    ]
+  },
+  "damp_slowness": {
+    "type": "origins:conditioned_attribute",
+    "tick_rate": 1,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_stage",
+      "comparison": "==",
+      "compare_to": 1
+    },
+    "modifier": {
+      "attribute": "minecraft:generic.movement_speed",
+      "operation": "multiply_total",
+      "value": -0.25
+    }
+  }
+}

@@ -68,6 +68,10 @@
               {
                 "type": "origins:execute_command",
                 "command": "scoreboard objectives remove button"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "kill @e[tag=rain]"
               }
             ]
           }

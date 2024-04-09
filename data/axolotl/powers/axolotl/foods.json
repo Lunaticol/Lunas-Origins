@@ -1,0 +1,33 @@
+{
+  "name": "Fish Diet",
+  "description": "You are limited to fished based foods",
+  "type": "origins:multiple",
+  "bucket": {
+    "type": "origins:prevent_item_use",
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "tag": "axolotl:axolotl/no_eat"
+      }
+    }
+  },
+  "fulfilling_fish": {
+    "type": "origins:modify_food",
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "tag": "axolotl:axolotl/fish"
+      }
+    },
+    "food_modifier": {
+      "name": "Increased Food",
+      "operation": "addition",
+      "value": 3
+    },
+    "saturation_modifier": {
+      "name": "Increased Saturation",
+      "operation": "addition",
+      "value": 0.4
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "name": "Unnatural",
+  "description": "drowns seem to dont like how bright you shine. \n You feel more slippery",
+  "type": "origins:multiple",
+  "color": {
+    "type": "origins:model_color",
+    "blue": 0.5176470588,
+    "green": 1,
+    "red": 0.6941176471
+  },
+  "glow": {
+    "type": "origins:self_glow",
+    "use_teams": false,
+    "blue": 0.5176470588,
+    "green": 1,
+    "red": 0.6941176471,
+    "bientity_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:can_see"
+        },
+        {
+          "type": "origins:distance",
+          "comparison": "<=",
+          "compare_to": 10
+        }
+      ]
+    }
+  },
+  "mob_neutrality_drowns": {
+    "type": "extraorigins:mob_neutrality",
+    "entity_types": ["drowned"]
+  },
+  "slippery": {
+    "type": "origins:modify_slipperiness",
+    "modifier": {
+      "operation": "addition",
+      "value": 0.4
+    }
+  }
+}
