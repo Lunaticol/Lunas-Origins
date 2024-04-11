@@ -20,25 +20,5 @@
         "item": "minecraft:tnt"
       }
     }
-  },
-  "make_exploding_arrows": {
-    "type": "origins:recipe",
-    "recipe": {
-      "id": "artificer:tnt_arrow",
-      "type": "minecraft:crafting_shaped",
-      "pattern": ["X  ", "C  ", "   "],
-      "key": {
-        "X": {
-          "item": "minecraft:tnt"
-        },
-        "A": {
-          "item": "minecraft:arrow"
-        }
-      },
-      "result": {
-        "item": "minecraft:arrow",
-        "data": { "tag": "artificer_arrow" }
-      }
-    }
   }
 }

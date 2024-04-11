@@ -1,0 +1,230 @@
+{
+  "name": "Ender Umbreon",
+  "description": "You come from unnatrual places. Giving you unwanted debuffs.",
+  "type": "origins:multiple",
+  "light_sensitive": {
+    "type": "origins:shader",
+    "shader": "minecraft:shaders/post/art.json",
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:block_in_radius",
+          "radius": 1,
+          "shape": "cube",
+          "block_condition": {
+            "type": "origins:light_level",
+            "light_type": "block",
+            "compare_to": 11,
+            "comparison": ">="
+          }
+        },
+        {
+          "type": "origins:and",
+          "conditions": [
+            {
+              "type": "origins:daytime"
+            },
+            {
+              "type": "origins:exposed_to_sky"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "light_weakness": {
+    "type": "origins:action_over_time",
+    "interval": 10,
+    "entity_action": {
+      "type": "origins:apply_effect",
+      "effects": [
+        {
+          "duration": 40,
+          "amplifier": 1,
+          "effect": "minecraft:weakness",
+          "show_icon": true,
+          "show_particles": false
+        },
+        {
+          "duration": 40,
+          "amplifier": 3,
+          "effect": "minecraft:mining_fatigue",
+          "show_icon": true,
+          "show_particles": false
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:block_in_radius",
+          "radius": 1,
+          "shape": "cube",
+          "block_condition": {
+            "type": "origins:light_level",
+            "light_type": "block",
+            "compare_to": 11,
+            "comparison": ">="
+          }
+        },
+        {
+          "type": "origins:and",
+          "conditions": [
+            {
+              "type": "origins:daytime"
+            },
+            {
+              "type": "origins:exposed_to_sky"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "endermen_nice": {
+    "type": "apugli:mobs_ignore",
+    "mob_condition": {
+      "type": "origins:entity_type",
+      "entity_type": "minecraft:enderman"
+    }
+  },
+  "reach": {
+    "type": "origins:attribute",
+    "modifiers": [
+      {
+        "name": "Extra Reach block reach",
+        "attribute": "reach-entity-attributes:reach",
+        "value": 2,
+        "operation": "addition"
+      },
+      {
+        "name": "Extra Reach entity reach",
+        "attribute": "reach-entity-attributes:attack_range",
+        "value": 0.5,
+        "operation": "addition"
+      }
+    ]
+  },
+  "height": {
+    "type": "origins:action_on_callback",
+    "execute_chosen_when_orb": true,
+    "entity_action_chosen": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:height .9 @s",
+      "permission_level": 4
+    },
+    "entity_action_respawned": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:height .9 @s",
+      "permission_level": 4
+    },
+    "entity_action_added": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:height .9 @s",
+      "permission_level": 4
+    },
+    "entity_action_lost": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:height 1 @s",
+      "permission_level": 4
+    },
+    "entity_action_removed": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:height 1 @s",
+      "permission_level": 4
+    }
+  },
+  "width": {
+    "type": "origins:action_on_callback",
+    "entity_action_chosen": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:width .9 @s",
+      "permission_level": 4
+    },
+    "entity_action_respawned": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:width .9 @s",
+      "permission_level": 4
+    },
+    "entity_action_added": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:width .9 @s",
+      "permission_level": 4
+    },
+    "entity_action_lost": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:width 1 @s",
+      "permission_level": 4
+    },
+    "entity_action_removed": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:width 1 @s",
+      "permission_level": 4
+    }
+  },
+  "water_damage": {
+    "type": "origins:damage_over_time",
+    "interval": 20,
+    "onset_delay": 100,
+    "damage": 10,
+    "damage_easy": 5,
+    "damage_source": {
+      "name": "hurt_by_water",
+      "unblockable": true,
+      "bypasses_armor": true
+    },
+    "protection_enchantment": "origins:water_protection",
+    "protection_effectiveness": 1,
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:fluid_height",
+          "fluid": "minecraft:water",
+          "comparison": ">",
+          "compare_to": 0.1
+        },
+        {
+          "type": "origins:in_rain"
+        }
+      ]
+    }
+  },
+  "silk_hands": {
+    "type": "origins:modify_harvest",
+    "allow": true,
+    "block_condition": {
+      "type": "origins:in_tag",
+      "tag": "ashley:ashley/silk_hands"
+    },
+    "condition": {
+      "type": "origins:equipped_item",
+      "equipment_slot": "mainhand",
+      "item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": {
+          "item": "minecraft:air"
+        }
+      }
+    }
+  },
+  "end_sight": {
+    "type": "origins:night_vision",
+    "strength": 0.7,
+    "condition": {
+      "type": "origins:dimension",
+      "dimension": "minecraft:the_end"
+    }
+  },
+  "particles": {
+    "type": "origins:action_over_time",
+    "interval": 10,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "particle minecraft:dragon_breath ~ ~ ~ 0.5 0.9 0.5 .01 10 normal"
+    },
+    "condition": { "type": "origins:sneaking", "inverted": true }
+  }
+}

@@ -91,6 +91,26 @@
                 "category": "master",
                 "pitch": 1,
                 "volume": 1
+              },
+              {
+                "type": "moborigins:damage_equipment",
+                "equipment_slot": "head",
+                "amount": 5
+              },
+              {
+                "type": "moborigins:damage_equipment",
+                "equipment_slot": "chest",
+                "amount": 5
+              },
+              {
+                "type": "moborigins:damage_equipment",
+                "equipment_slot": "legs",
+                "amount": 5
+              },
+              {
+                "type": "moborigins:damage_equipment",
+                "equipment_slot": "feet",
+                "amount": 5
               }
             ]
           },

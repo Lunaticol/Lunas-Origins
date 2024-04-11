@@ -1,0 +1,44 @@
+{
+  "type": "origins:multiple",
+  "dark_pulse": {
+    "type": "origins:active_self",
+    "cooldown": 600,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:add_velocity",
+          "space": "local",
+          "z": 1
+        },
+        {
+          "type": "origins:area_of_effect",
+          "radius": 3,
+          "shape": "sphere",
+          "bientity_action": {
+            "type": "origins:target_action",
+            "action": {
+              "type": "origins:damage",
+              "amount": 20,
+              "damage_type": "mob_attack_no_aggro",
+              "source": {
+                "bypasses_armor": false,
+                "magic": true,
+                "unblockable": true,
+                "name": "mob_attack_no_aggro"
+              }
+            }
+          }
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "particle minecraft:dust_color_transition 0.898 0.082 0.243 2 0.157 0.094 0.122 ~ ~ ~ 1 1 1 .1 100"
+        }
+      ]
+    },
+    "hud_render": { "should_render": true },
+    "key": {
+      "key": "key.saveToolbarActivator"
+    }
+  }
+}
