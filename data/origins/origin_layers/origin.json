@@ -1,5 +1,6 @@
 {
   "order": 2,
+
   "origins": [
     "kow:kow",
     "artificer:artificer",
@@ -7,6 +8,8 @@
     "button:button_lord",
     "axolotl:axolotl",
     "luna:luna",
-    "ashley:ashley"
+    "ashley:ashley",
+    "hideandseek:hider",
+    "hideandseek:seeker"
   ]
 }

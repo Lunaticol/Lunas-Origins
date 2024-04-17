@@ -4,7 +4,7 @@
     "type": "origins:active_self",
     "key": { "key": "key.saveToolbarActivator" },
     "hud_render": { "should_render": true },
-    "cooldown": 400,
+    "cooldown": 100,
     "entity_action": {
       "type": "origins:chance",
       "chance": 0.75,

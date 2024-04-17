@@ -1,6 +1,6 @@
 {
-  "name": "Trickery",
-  "description": "Use different tricks to fool your enemies.",
+  "name": "Moves",
+  "description": "Being a pokemon, you can only use one move at a time",
   "type": "extraorigins:radial_menu",
   "key": {
     "key": "key.loadToolbarActivator"

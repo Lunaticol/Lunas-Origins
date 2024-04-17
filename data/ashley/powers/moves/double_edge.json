@@ -1,48 +1,41 @@
 {
   "type": "origins:multiple",
   "double_edge": {
+    "type": "origins:attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.attack_damage",
+      "operation": "addition",
+      "value": 15
+    }
+  },
+  "on_hit": {
     "type": "origins:action_on_hit",
     "bientity_action": {
-      "type": "origins:and",
-      "actions": [
-        {
-          "type": "origins:actor_action",
-          "action": {
+      "type": "origins:actor_action",
+      "action": {
+        "type": "origins:and",
+        "actions": [
+          {
             "type": "origins:damage",
-            "amount": 5,
-            "damage_type": "minecraft:player_attack",
+            "amount": 6,
             "source": {
               "bypasses_armor": true,
               "magic": true,
               "unblockable": true,
-              "name": "player_attack"
+              "name": "magic.player"
             }
+          },
+          {
+            "type": "origins:execute_command",
+            "command": "particle dust_color_transition 0.957 0.357 0.180 2 1.000 0.984 1.000 ~ ~ ~ 1 1 1 1 100 normal"
           }
-        },
-        {
-          "type": "origins:target_action",
-          "action": {
-            "type": "origins:and",
-            "actions": [
-              {
-                "type": "origins:damage",
-                "amount": 20,
-                "damage_type": "minecraft:player_attack",
-                "source": {
-                  "bypasses_armor": false,
-                  "magic": true,
-                  "unblockable": false,
-                  "name": "player_attack"
-                }
-              },
-              {
-                "type": "origins:execute_command",
-                "command": "particle dust_color_transition 0.957 0.357 0.180 2 1.000 0.984 1.000 ~ ~ ~ 1 1 1 1 100 normal"
-              }
-            ]
-          }
-        }
-      ]
+        ]
+      }
+    },
+    "damage_condition": {
+      "type": "origins:name",
+      "inverted": true,
+      "name": "minecraft:thorns"
     }
   }
 }

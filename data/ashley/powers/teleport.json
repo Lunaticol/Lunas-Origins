@@ -168,6 +168,11 @@
           "resource": "*:*_rtp_hit_bar"
         }
       ]
+    },
+    "damage_condition": {
+      "type": "origins:name",
+      "name": "minecraft:on_fire",
+      "inverted": true
     }
   },
   "evade_projectiles": {

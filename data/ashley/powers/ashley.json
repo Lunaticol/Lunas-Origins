@@ -9,15 +9,25 @@
       "type": "origins:or",
       "conditions": [
         {
-          "type": "origins:block_in_radius",
-          "radius": 1,
-          "shape": "cube",
-          "block_condition": {
-            "type": "origins:light_level",
-            "light_type": "block",
-            "compare_to": 11,
-            "comparison": ">="
-          }
+          "type": "origins:and",
+          "conditions": [
+            {
+              "type": "origins:block_in_radius",
+              "radius": 1,
+              "shape": "cube",
+              "block_condition": {
+                "type": "origins:light_level",
+                "light_type": "block",
+                "compare_to": 11,
+                "comparison": ">="
+              }
+            },
+            {
+              "type": "origins:status_effect",
+              "effect": "minecraft:glowing",
+              "inverted": true
+            }
+          ]
         },
         {
           "type": "origins:and",
@@ -27,6 +37,11 @@
             },
             {
               "type": "origins:exposed_to_sky"
+            },
+            {
+              "type": "origins:status_effect",
+              "effect": "minecraft:glowing",
+              "inverted": true
             }
           ]
         }
@@ -41,7 +56,7 @@
       "effects": [
         {
           "duration": 40,
-          "amplifier": 1,
+          "amplifier": 9,
           "effect": "minecraft:weakness",
           "show_icon": true,
           "show_particles": false
@@ -59,15 +74,25 @@
       "type": "origins:or",
       "conditions": [
         {
-          "type": "origins:block_in_radius",
-          "radius": 1,
-          "shape": "cube",
-          "block_condition": {
-            "type": "origins:light_level",
-            "light_type": "block",
-            "compare_to": 11,
-            "comparison": ">="
-          }
+          "type": "origins:and",
+          "conditions": [
+            {
+              "type": "origins:block_in_radius",
+              "radius": 1,
+              "shape": "cube",
+              "block_condition": {
+                "type": "origins:light_level",
+                "light_type": "block",
+                "compare_to": 11,
+                "comparison": ">="
+              }
+            },
+            {
+              "type": "origins:status_effect",
+              "effect": "minecraft:glowing",
+              "inverted": true
+            }
+          ]
         },
         {
           "type": "origins:and",
@@ -77,6 +102,11 @@
             },
             {
               "type": "origins:exposed_to_sky"
+            },
+            {
+              "type": "origins:status_effect",
+              "effect": "minecraft:glowing",
+              "inverted": true
             }
           ]
         }
@@ -167,9 +197,9 @@
   "water_damage": {
     "type": "origins:damage_over_time",
     "interval": 20,
-    "onset_delay": 100,
-    "damage": 10,
-    "damage_easy": 5,
+    "onset_delay": 40,
+    "damage": 20,
+    "damage_easy": 10,
     "damage_source": {
       "name": "hurt_by_water",
       "unblockable": true,
@@ -220,11 +250,90 @@
   },
   "particles": {
     "type": "origins:action_over_time",
-    "interval": 10,
+    "interval": 5,
     "entity_action": {
       "type": "origins:execute_command",
-      "command": "particle minecraft:dragon_breath ~ ~ ~ 0.5 0.9 0.5 .01 10 normal"
+      "command": "particle minecraft:dragon_breath ~ ~ ~ 0.5 0.9 0.5 .01 5 normal"
     },
     "condition": { "type": "origins:sneaking", "inverted": true }
+  },
+  "xp": {
+    "type": "origins:modify_xp_gain",
+    "modifier": {
+      "operation": "multiply_base",
+      "value": 1.5
+    }
+  },
+  "glow_berry_death": {
+    "type": "origins:modify_food",
+    "always_edible": false,
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:glow_berries"
+      }
+    },
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "kill @s"
+    },
+    "condition": {
+      "type": "origins:status_effect",
+      "effect": "minecraft:glowing",
+      "inverted": true
+    }
+  },
+  "speed": {
+    "type": "origins:attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.movement_speed",
+      "operation": "addition",
+      "value": 0.02
+    }
+  },
+  "chorus_flowers": {
+    "type": "apugli:edible_item",
+    "food_component": {
+      "always_edible": true,
+      "meat": false,
+      "snack": false,
+      "hunger": 10,
+      "saturation": 1.7
+    },
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": { "item": "minecraft:chorus_flower" }
+    },
+    "entity_action": {
+      "type": "origins:apply_effect",
+      "effects": [
+        {
+          "effect": "minecraft:regeneration",
+          "duration": 100,
+          "show_particles": true,
+          "show_icon": true
+        },
+        {
+          "effect": "minecraft:glowing",
+          "duration": 3000,
+          "show_particles": false,
+          "show_icon": true
+        }
+      ]
+    }
+  },
+  "popped_chorus": {
+    "type": "apugli:edible_item",
+    "food_component": {
+      "always_edible": false,
+      "meat": false,
+      "snack": true,
+      "hunger": 6,
+      "saturation": 1
+    },
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": { "item": "minecraft:popped_chorus_fruit" }
+    }
   }
 }

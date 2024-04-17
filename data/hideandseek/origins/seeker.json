@@ -1,0 +1,9 @@
+{
+  "powers": ["hideandseek:hunter/hunter"],
+  "icon": "minecraft:iron_sword",
+  "unchoosable": true,
+  "order": 9,
+  "impact": 0,
+  "name": "Seeker",
+  "description": "Youre sole mission is to kill the Hiders."
+}

@@ -1,0 +1,9 @@
+{
+  "powers": ["hideandseek:hider/hider"],
+  "icon": "minecraft:barrier",
+  "unchoosable": true,
+  "order": 9,
+  "impact": 0,
+  "name": "Hider",
+  "description": "Youre a Hider! Hide from the Seekers until the timer runs out.."
+}

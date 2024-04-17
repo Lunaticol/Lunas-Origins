@@ -62,7 +62,7 @@
         "name": "Origin modifier",
         "attribute": "generic.max_health",
         "operation": "addition",
-        "value": 980
+        "value": 480
       }
     ]
   },
@@ -141,7 +141,7 @@
     },
     "condition": {
       "type": "origins:health",
-      "compare_to": 500,
+      "compare_to": 250,
       "comparison": "<="
     }
   },
@@ -163,7 +163,7 @@
     },
     "condition": {
       "type": "origins:health",
-      "compare_to": 501,
+      "compare_to": 251,
       "comparison": ">="
     }
   },

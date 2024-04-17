@@ -1,0 +1,12 @@
+{
+  "powers": [],
+  "icon": {
+    "item": "minecraft:barrier",
+    "tag": "{Enchantments:[{}]}"
+  },
+  "unchoosable": true,
+  "order": 9,
+  "impact": 0,
+  "name": "Powerless",
+  "description": "Your origin powers dont seem to work here."
+}

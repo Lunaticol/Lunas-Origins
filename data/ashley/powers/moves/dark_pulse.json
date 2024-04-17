@@ -2,7 +2,7 @@
   "type": "origins:multiple",
   "dark_pulse": {
     "type": "origins:active_self",
-    "cooldown": 600,
+    "cooldown": 100,
     "entity_action": {
       "type": "origins:and",
       "actions": [
@@ -13,7 +13,7 @@
         },
         {
           "type": "origins:area_of_effect",
-          "radius": 3,
+          "radius": 4,
           "shape": "sphere",
           "bientity_action": {
             "type": "origins:target_action",
