@@ -36,7 +36,7 @@
     "type": "origins:modify_slipperiness",
     "modifier": {
       "operation": "addition",
-      "value": 0.4
+      "value": 1.2
     }
   }
 }

@@ -1,0 +1,165 @@
+{
+  "type": "origins:multiple",
+  "name": "Air Manipulation",
+  "description": "You can manipulate the air around you to your advantage.\nYou can Push, Pull, and Launch entitys!",
+  "push": {
+    "type": "origins:active_self",
+    "cooldown": 100,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+      "bar_index": 16
+    },
+    "key": {
+      "key": "key.loadToolbarActivator"
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:selector_action",
+          "selector": "@s",
+          "bientity_action": {
+            "type": "origins:target_action",
+            "action": {
+              "type": "origins:area_of_effect",
+              "radius": 8,
+              "bientity_action": {
+                "type": "origins:and",
+                "actions": [
+                  {
+                    "type": "origins:add_velocity",
+                    "z": -1.5
+                  },
+                  {
+                    "type": "origins:actor_action",
+                    "action": {
+                      "type": "origins:execute_command",
+                      "command": "particle minecraft:dust 1.0 1.0 1.0 2.0 ~ ~ ~ 8 8 8 1 100 force"
+                    }
+                  }
+                ]
+              },
+              "bientity_condition": {
+                "type": "origins:target_condition",
+                "condition": {
+                  "type": "origins:origin",
+                  "layer": "origins:origin",
+                  "origin": "skyweaver:skyweaver",
+                  "inverted": true
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "pull": {
+    "type": "origins:active_self",
+    "cooldown": 100,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+      "bar_index": 17
+    },
+    "key": {
+      "key": "key.saveToolbarActivator"
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:selector_action",
+          "selector": "@s",
+          "bientity_action": {
+            "type": "origins:target_action",
+            "action": {
+              "type": "origins:area_of_effect",
+              "radius": 16,
+              "bientity_action": {
+                "type": "origins:and",
+                "actions": [
+                  {
+                    "type": "origins:add_velocity",
+                    "y": 1,
+                    "z": 1.5
+                  },
+                  {
+                    "type": "origins:actor_action",
+                    "action": {
+                      "type": "origins:execute_command",
+                      "command": "particle minecraft:dust 1.0 1.0 1.0 2.0 ~ ~ ~ 9 9 9 1 100 normal"
+                    }
+                  }
+                ]
+              },
+              "bientity_condition": {
+                "type": "origins:target_condition",
+                "condition": {
+                  "type": "origins:origin",
+                  "layer": "origins:origin",
+                  "origin": "skyweaver:skyweaver",
+                  "inverted": true
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "launch": {
+    "type": "origins:active_self",
+    "cooldown": 200,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+      "bar_index": 23
+    },
+    "key": {
+      "key": "key.origins.ternary_active"
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:selector_action",
+          "selector": "@s",
+          "bientity_action": {
+            "type": "origins:target_action",
+            "action": {
+              "type": "origins:area_of_effect",
+              "radius": 5,
+              "bientity_action": {
+                "type": "origins:and",
+                "actions": [
+                  {
+                    "type": "origins:add_velocity",
+                    "y": 2.5
+                  },
+                  {
+                    "type": "origins:actor_action",
+                    "action": {
+                      "type": "origins:execute_command",
+                      "command": "particle minecraft:dust 1.0 1.0 1.0 2.0 ~ ~ ~ 5 5 5 1 100 force"
+                    }
+                  }
+                ]
+              },
+              "bientity_condition": {
+                "type": "origins:target_condition",
+                "condition": {
+                  "type": "origins:origin",
+                  "layer": "origins:origin",
+                  "origin": "skyweaver:skyweaver",
+                  "inverted": true
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

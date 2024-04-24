@@ -2,14 +2,15 @@
   "order": 2,
 
   "origins": [
-    "kow:kow",
     "artificer:artificer",
+    "ashley:ashley",
+    "axolotl:axolotl",
     "button:right_hand_button",
     "button:button_lord",
-    "axolotl:axolotl",
-    "luna:luna",
-    "ashley:ashley",
     "hideandseek:hider",
-    "hideandseek:seeker"
+    "hideandseek:seeker",
+    "kow:kow",
+    "luna:luna",
+    "skyweaver:skyweaver"
   ]
 }

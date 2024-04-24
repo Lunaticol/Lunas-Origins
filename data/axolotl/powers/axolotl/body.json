@@ -195,7 +195,7 @@
           "radius": 1,
           "shape": "cube",
           "block_condition": {
-            "type": "origins:and",
+            "type": "origins:or",
             "conditions": [
               {
                 "type": "origins:in_tag",
@@ -217,6 +217,13 @@
           "fluid": "minecraft:water",
           "comparison": ">",
           "compare_to": 0.09
+        },
+        {
+          "type": "origins:enchantment",
+          "enchantment": "moborigins:ground_spikes",
+          "calculation": "sum",
+          "compare_to": 1,
+          "comparison": "=="
         }
       ]
     }

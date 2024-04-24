@@ -1,0 +1,110 @@
+{
+  "name": "Floaty",
+  "description": "You're a Skyweaver! You do not touch the ground unless you want to.\nYou can climb surfaces by floating up them\nUsing the air your projectiles hurt more!",
+  "type": "origins:multiple",
+  "floaty": {
+    "type": "origins:action_over_time",
+    "interval": 15,
+    "entity_action": {
+      "type": "origins:apply_effect",
+      "effects": [
+        {
+          "effect": "minecraft:levitation",
+          "duration": 13,
+          "show_particles": false,
+          "show_icon": false
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:block_collision",
+          "offset_y": -1
+        },
+        {
+          "type": "origins:sneaking",
+          "inverted": true
+        }
+      ]
+    }
+  },
+  "floaty_blockside": {
+    "type": "origins:action_over_time",
+    "interval": 15,
+    "entity_action": {
+      "type": "origins:apply_effect",
+      "effects": [
+        {
+          "effect": "minecraft:levitation",
+          "duration": 16,
+          "amplifier": 1,
+          "show_particles": false,
+          "show_icon": false
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:or",
+          "conditions": [
+            {
+              "type": "origins:block_collision",
+              "offset_z": -1,
+              "offset_x": -1
+            },
+            {
+              "type": "origins:block_collision",
+              "offset_z": 1,
+              "offset_x": 1
+            }
+          ]
+        },
+        {
+          "type": "origins:sneaking",
+          "inverted": true
+        }
+      ]
+    }
+  },
+  "perm_slowfalling": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:apply_effect",
+      "effect": {
+        "duration": -1,
+        "effect": "minecraft:slow_falling",
+        "show_particles": false,
+        "show_icon": false
+      }
+    }
+  },
+  "really_high_rn": {
+    "type": "origins:creative_flight",
+    "condition": {
+      "type": "origins:in_block_anywhere",
+      "compare_to": 1,
+      "comparison": ">=",
+      "block_condition": {
+        "type": "origins:height",
+        "compare_to": 185,
+        "comparison": ">="
+      }
+    }
+  },
+  "bow_expeirince": {
+    "type": "origins:modify_projectile_damage",
+    "damage_condition": {
+      "type": "origins:projectile",
+      "projectile": "minecraft:arrow"
+    },
+    "modifier": {
+      "operation": "addition",
+      "value": 10.0
+    }
+  }
+}

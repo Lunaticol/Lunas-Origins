@@ -4,7 +4,7 @@
   "type": "origins:multiple",
   "light_sensitive": {
     "type": "origins:shader",
-    "shader": "minecraft:shaders/post/art.json",
+    "shader": "minecraft:shaders/post/blobs2.json",
     "condition": {
       "type": "origins:or",
       "conditions": [
@@ -217,7 +217,29 @@
           "compare_to": 0.1
         },
         {
-          "type": "origins:in_rain"
+          "type": "origins:and",
+          "conditions": [
+            {
+              "type": "origins:in_rain"
+            },
+            {
+              "type": "origins:in_block",
+              "block_condition": {
+                "type": "origins:height",
+                "compare_to": 220,
+                "comparison": "<="
+              }
+            }
+          ]
+        },
+        {
+          "type": "origins:in_block",
+          "block_condition": {
+            "type": "origins:block_state",
+            "property": "level",
+            "compare_to": 1,
+            "comparison": ">="
+          }
         }
       ]
     }
