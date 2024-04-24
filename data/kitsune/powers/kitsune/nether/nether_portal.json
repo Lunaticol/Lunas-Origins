@@ -1,0 +1,131 @@
+{
+  "name": "Portable Portal",
+  "description": "You can go between the Overworld and the Nether without a portal.",
+  "type": "origins:multiple",
+  "badges": [
+    {
+      "type": "origins:tooltip",
+      "text": "You must enter the Nether first before using this ability.",
+      "sprite": "origins:textures/gui/badge/info.png"
+    },
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/info.png",
+      "text": "You cannot use this ability if you are below Y=1 in the Overworld"
+    },
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/info.png",
+      "text": "You might suffocate or fall if you use this ability"
+    },
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/info.png",
+      "text": "Use Quaternary to go to the Nether. Use Quinary to go to the Overworld."
+    }
+  ],
+  "quick_nether": {
+    "cooldown": 3000,
+    "key": {
+      "key": "key.origins.quaternary_active"
+    },
+    "type": "origins:active_self",
+    "hud_render": {
+      "should_render": true,
+      "bar_index": 7,
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png"
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "function kitsune:kitsune/nether_quick"
+        },
+        {
+          "type": "origins:change_resource",
+          "resource": "kitsune:kitsune/power_active_nether_portal",
+          "change": 1,
+          "operation": "set"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:dimension",
+          "dimension": "minecraft:overworld"
+        },
+        {
+          "type": "origins:advancement",
+          "advancement": "minecraft:nether/root"
+        },
+        {
+          "type": "origins:on_block",
+          "block_condition": {
+            "type": "origins:height",
+            "compare_to": 1,
+            "comparison": ">"
+          }
+        }
+      ]
+    }
+  },
+  "quick_overworld": {
+    "type": "origins:active_self",
+    "cooldown": 3000,
+    "hud_render": {
+      "should_render": true,
+      "bar_index": 7,
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png"
+    },
+    "key": {
+      "key": "key.origins.quinary_active"
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "function kitsune:kitsune/overworld_quick"
+        },
+        {
+          "type": "origins:change_resource",
+          "resource": "kitsune:kitsune/power_active_nether_portal",
+          "change": 1,
+          "operation": "set"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:dimension",
+          "dimension": "minecraft:the_nether"
+        },
+        {
+          "type": "origins:advancement",
+          "advancement": "minecraft:nether/root"
+        }
+      ]
+    }
+  },
+  "pa_reset": {
+    "type": "origins:action_over_time",
+    "interval": 3000,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 0,
+      "operation": "set",
+      "resource": "kitsune:kitsune/power_active_nether_portal"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "resource": "kitsune:kitsune/power_active_nether_portal",
+      "comparison": "=="
+    }
+  }
+}

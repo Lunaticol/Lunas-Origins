@@ -1,0 +1,275 @@
+{
+  "type": "origins:multiple",
+  "name": "Dash",
+  "description": "Dash in the direction you are facing up to 7 times.\nTwice with an elytra",
+  "dashes": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 35,
+    "start_value": 35,
+    "hud_render": {
+      "should_render": true,
+      "bar_index": 23,
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_points_01.png",
+      "order": 0
+    }
+  },
+  "dash": {
+    "type": "origins:active_self",
+    "entity_action": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:fall_flying",
+                "inverted": true
+              },
+              {
+                "type": "origins:resource",
+                "resource": "*:*_dashes",
+                "comparison": ">=",
+                "compare_to": 5
+              },
+              {
+                "type": "origins:origin",
+                "layer": "kitsune:kitsune_subclass",
+                "origin": "kitsune:kitsune_classes/overworld_kitsune"
+              }
+            ]
+          },
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:add_velocity",
+                "z": 2,
+                "space": "local"
+              },
+              {
+                "type": "origins:apply_effect",
+                "effect": {
+                  "effect": "slow_falling",
+                  "duration": 10,
+                  "show_icon": true
+                }
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "particle minecraft:explosion ~ ~ ~ 0.2 0.2 0.2 0.7 6 force"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "playsound minecraft:entity.shulker_bullet.hurt master @s ~ ~ ~ 100 1"
+              },
+              {
+                "type": "origins:change_resource",
+                "resource": "*:*_dashes",
+                "change": -5
+              },
+              {
+                "type": "origins:exhaust",
+                "amount": 1.5
+              }
+            ]
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:fall_flying"
+              },
+              {
+                "type": "origins:resource",
+                "resource": "*:*_dashes",
+                "comparison": ">=",
+                "compare_to": 15
+              }
+            ]
+          },
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:add_velocity",
+                "z": 1.5,
+                "space": "local"
+              },
+              {
+                "type": "origins:apply_effect",
+                "effect": {
+                  "effect": "slow_falling",
+                  "duration": 10,
+                  "show_icon": true
+                }
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "playsound minecraft:entity.shulker_bullet.hurt master @s ~ ~ ~ 100 1"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "particle minecraft:explosion ~ ~ ~ 0.2 0.2 0.2 0.7 6 force"
+              },
+              {
+                "type": "origins:change_resource",
+                "resource": "*:*_dashes",
+                "change": -15
+              },
+              {
+                "type": "origins:exhaust",
+                "amount": 1
+              }
+            ]
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:fall_flying",
+                "inverted": true
+              },
+              {
+                "type": "origins:resource",
+                "resource": "*:*_dashes",
+                "comparison": ">=",
+                "compare_to": 10
+              },
+              {
+                "type": "origins:origin",
+                "layer": "kitsune:kitsune_subclass",
+                "origin": "kitsune:kitsune_classes/ender_kitsune"
+              }
+            ]
+          },
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:add_velocity",
+                "z": 1,
+                "space": "local"
+              },
+              {
+                "type": "origins:apply_effect",
+                "effect": {
+                  "effect": "slow_falling",
+                  "duration": 10,
+                  "show_icon": true
+                }
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "particle minecraft:explosion ~ ~ ~ 0.2 0.2 0.2 0.7 6 force"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "playsound minecraft:entity.shulker_bullet.hurt master @s ~ ~ ~ 100 1"
+              },
+              {
+                "type": "origins:change_resource",
+                "resource": "*:*_dashes",
+                "change": -10
+              },
+              {
+                "type": "origins:exhaust",
+                "amount": 1
+              }
+            ]
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:fall_flying",
+                "inverted": true
+              },
+              {
+                "type": "origins:resource",
+                "resource": "*:*_dashes",
+                "comparison": ">=",
+                "compare_to": 15
+              },
+              {
+                "type": "origins:origin",
+                "layer": "kitsune:kitsune_subclass",
+                "origin": "kitsune:kitsune_classes/nether_kitsune"
+              }
+            ]
+          },
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:add_velocity",
+                "z": 1,
+                "space": "local"
+              },
+              {
+                "type": "origins:apply_effect",
+                "effect": {
+                  "effect": "slow_falling",
+                  "duration": 10,
+                  "show_icon": true
+                }
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "particle minecraft:explosion ~ ~ ~ 0.2 0.2 0.2 0.7 6 force"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "playsound minecraft:entity.shulker_bullet.hurt master @s ~ ~ ~ 100 1"
+              },
+              {
+                "type": "origins:change_resource",
+                "resource": "*:*_dashes",
+                "change": -15
+              },
+              {
+                "type": "origins:exhaust",
+                "amount": 0.5
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "key": {
+      "key": "secondary"
+    }
+  },
+  "recharge": {
+    "type": "origins:action_over_time",
+    "interval": 40,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 5,
+      "resource": "*:*_dashes"
+    },
+    "condition": {
+      "type": "origins:fall_flying",
+      "inverted": true
+    }
+  },
+  "recharge_elytra": {
+    "type": "origins:action_over_time",
+    "interval": 50,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 5,
+      "resource": "*:*_dashes"
+    },
+    "condition": {
+      "type": "origins:fall_flying"
+    }
+  }
+}

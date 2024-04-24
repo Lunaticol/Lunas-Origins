@@ -1,0 +1,117 @@
+{
+  "type": "origins:multiple",
+  "kitsune": {
+    "type": "origins:active_self",
+    "cooldown": 1200,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+      "bar_index": 1
+    },
+    "key": {
+      "key": "key.origins.ternary_active"
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "proviorigins:summon_clone",
+          "can_sit": true,
+          "can_attack": true,
+          "follow_owner": true,
+          "inherit_equipment": true,
+          "inherit_enchantments": false,
+          "bientity_action": {
+            "type": "origins:target_action",
+            "action": {
+              "type": "origins:and",
+              "actions": [
+                {
+                  "type": "proviorigins:set_summon_max_life_ticks",
+                  "amount": 1200
+                },
+                {
+                  "type": "origins:grant_power",
+                  "power": "kitsune:kitsune/end/tricks/clones_prevent",
+                  "source": "kitsune:kitsune/end/tricks/kitsune_trick"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "type": "proviorigins:summon_clone",
+          "can_sit": true,
+          "can_attack": true,
+          "follow_owner": true,
+          "inherit_equipment": true,
+          "inherit_enchantments": false,
+          "bientity_action": {
+            "type": "origins:target_action",
+            "action": {
+              "type": "origins:and",
+              "actions": [
+                {
+                  "type": "proviorigins:set_summon_max_life_ticks",
+                  "amount": 1200
+                },
+                {
+                  "type": "origins:grant_power",
+                  "power": "kitsune:kitsune/end/tricks/clones_prevent",
+                  "source": "kitsune:kitsune/end/tricks/kitsune_trick"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "type": "proviorigins:summon_clone",
+          "can_sit": true,
+          "can_attack": true,
+          "follow_owner": true,
+          "inherit_equipment": true,
+          "inherit_enchantments": false,
+          "bientity_action": {
+            "type": "origins:target_action",
+            "action": {
+              "type": "origins:and",
+              "actions": [
+                {
+                  "type": "proviorigins:set_summon_max_life_ticks",
+                  "amount": 1200
+                },
+                {
+                  "type": "origins:grant_power",
+                  "power": "kitsune:kitsune/end/tricks/clones_prevent",
+                  "source": "kitsune:kitsune/end/tricks/kitsune_trick"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 1,
+          "operation": "set",
+          "resource": "kitsune:kitsune/power_active_trick"
+        }
+      ]
+    }
+  },
+  "pa_reset": {
+    "type": "origins:action_over_time",
+    "interval": 1200,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 0,
+      "operation": "set",
+      "resource": "kitsune:kitsune/power_active_trick"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "kitsune:kitsune/power_active_trick"
+    }
+  }
+}

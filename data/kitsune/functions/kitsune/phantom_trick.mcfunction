@@ -1,0 +1,1 @@
+title @s actionbar {"text":"Currently playing \"Phantom Trick\" Shift to go invisible.","color":"#7700FF","bold":true}
