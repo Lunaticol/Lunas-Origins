@@ -1,1 +1,1 @@
-give @s oak_button{display:{Name:'{"text":"A Button","color":"gold","bold":true,"italic":true}',Lore:['{"text":"\'It may not be special, but its yours.\'","color":"gray"}']},Enchantments:[{}]} 1
+summon item ~ ~ ~ {Item:{id:"minecraft:oak_button",Count:1b,tag:{display:{Name:'{"text":"A Button","color":"gold","bold":true,"italic":true}',Lore:['{"text":"\'It may not be special, but its yours.\'","color":"gray"}']},Enchantments:[{}]}}}

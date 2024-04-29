@@ -7,11 +7,13 @@
     "axolotl:axolotl",
     "button:right_hand_button",
     "button:button_lord",
+    "button:powerless",
     "hideandseek:hider",
     "hideandseek:seeker",
     "kitsune:kitsune",
     "kow:kow",
     "luna:luna",
+    "scorch:scorch",
     "skyweaver:skyweaver"
   ]
 }

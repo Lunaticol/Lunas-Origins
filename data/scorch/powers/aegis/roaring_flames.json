@@ -1,0 +1,10 @@
+{
+  "type": "origins:multiple",
+  "name": "Roaring Flames",
+  "description": "Thermite damage is increased.\nUse [ITEM] To obtain this upgrade!",
+  "thermite_launcher_aegis": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
+  }
+}

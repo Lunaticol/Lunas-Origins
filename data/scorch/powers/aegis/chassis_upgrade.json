@@ -1,0 +1,25 @@
+{
+  "type": "origins:multiple",
+  "name": "Chassis Upgrade",
+  "description": "Your health is increased by 5 more hearts\nUse [ITEM] To obtain this upgrade!",
+  "aegis_health": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
+  },
+  "more_health": {
+    "type": "origins:conditioned_attribute",
+    "update_health": true,
+    "modifier": {
+      "attribute": "minecraft:generic.max_health",
+      "value": 10,
+      "operation": "addition"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_aegis_health"
+    }
+  }
+}

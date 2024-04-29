@@ -1,0 +1,16 @@
+{
+  "powers": [
+    "scorch:scorch",
+    "scorch:core",
+    "scorch:thermite_launcher",
+    "scorch:aegis/roaring_flames",
+    "scorch:aegis/hot_streak",
+    "scorch:aegis/chassis_upgrade"
+  ],
+  "icon": "minecraft:fire_charge",
+  "unchoosable": true,
+  "order": 9,
+  "impact": 3,
+  "name": "Scorch",
+  "description": "Scorch's primary offensive and defensive weapon is fire. Blunt and direct, Scorch can chain his abilities to force enemies out of cover, or trap them to deal maximum damage."
+}

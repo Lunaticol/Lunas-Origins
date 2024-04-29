@@ -180,7 +180,7 @@
             "chance": 0.5,
             "action": {
               "type": "origins:execute_command",
-              "command": "give @s stick"
+              "command": "summon item ~ ~ ~ {Item:{id:\"minecraft:stick\",Count:1b}}"
             }
           },
           {
@@ -188,7 +188,7 @@
             "chance": 0.7,
             "action": {
               "type": "origins:execute_command",
-              "command": "give @s oak_button"
+              "command": "summon item ~ ~ ~ {Item:{id:\"minecraft:oak_button\",Count:1b}}"
             }
           },
           {
@@ -196,7 +196,7 @@
             "chance": 0.2,
             "action": {
               "type": "origins:execute_command",
-              "command": "give @s diamond"
+              "command": "summon item ~ ~ ~ {Item:{id:\"minecraft:diamond\",Count:1b}}"
             }
           },
           {
@@ -204,7 +204,7 @@
             "chance": 0.05,
             "action": {
               "type": "origins:execute_command",
-              "command": "give @s netherite_ingot"
+              "command": "summon item ~ ~ ~ {Item:{id:\"minecraft:netherite_ingot\",Count:1b}}"
             }
           },
           {
@@ -212,7 +212,7 @@
             "chance": 0.4,
             "action": {
               "type": "origins:execute_command",
-              "command": "give @s iron_ingot"
+              "command": "summon item ~ ~ ~ {Item:{id:\"minecraft:iron_ingot\",Count:1b}}"
             }
           },
           {

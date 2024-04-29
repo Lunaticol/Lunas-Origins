@@ -1,0 +1,83 @@
+{
+  "type": "origins:multiple",
+  "name": "Scorched",
+  "description": "Yeah",
+  "height": {
+    "type": "origins:action_on_callback",
+    "execute_chosen_when_orb": true,
+    "entity_action_chosen": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:height 1.5 @s",
+      "permission_level": 4
+    },
+    "entity_action_respawned": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:height 1.5 @s",
+      "permission_level": 4
+    },
+    "entity_action_added": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:height 1.5 @s",
+      "permission_level": 4
+    },
+    "entity_action_lost": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:height 1 @s",
+      "permission_level": 4
+    },
+    "entity_action_removed": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:height 1 @s",
+      "permission_level": 4
+    }
+  },
+  "width": {
+    "type": "origins:action_on_callback",
+    "entity_action_chosen": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:width 1.5 @s",
+      "permission_level": 4
+    },
+    "entity_action_respawned": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:width 1.5 @s",
+      "permission_level": 4
+    },
+    "entity_action_added": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:width 1.5 @s",
+      "permission_level": 4
+    },
+    "entity_action_lost": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:width 1 @s",
+      "permission_level": 4
+    },
+    "entity_action_removed": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:width 1 @s",
+      "permission_level": 4
+    }
+  },
+  "health": {
+    "type": "origins:attribute",
+    "update_health": true,
+    "modifier": {
+      "attribute": "minecraft:generic.max_health",
+      "value": 10,
+      "operation": "addition"
+    }
+  },
+  "slow": {
+    "type": "origins:attribute",
+    "update_health": true,
+    "modifier": {
+      "attribute": "minecraft:generic.movement_speed",
+      "value": -0.05,
+      "operation": "addition"
+    }
+  },
+  "water": {
+    "type": "origins:ignore_water"
+  }
+}

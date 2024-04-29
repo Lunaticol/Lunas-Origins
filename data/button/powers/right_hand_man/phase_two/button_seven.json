@@ -44,7 +44,7 @@
           },
           {
             "type": "origins:spawn_effect_cloud",
-            "radius": 10,
+            "radius": 5,
             "radius_on_use": -0.5,
             "wait_time": 40,
             "effects": [
@@ -87,7 +87,7 @@
       "actions": [
         {
           "type": "origins:explode",
-          "power": 5,
+          "power": 3,
           "destruction_type": "none",
           "damage_self": false,
           "create_fire": false

@@ -11,7 +11,7 @@
         "actions": [
           {
             "type": "origins:spawn_effect_cloud",
-            "radius": 8,
+            "radius": 3,
             "radius_on_use": -0.5,
             "wait_time": 10,
             "effects": [

@@ -1,0 +1,41 @@
+{
+  "type": "origins:multiple",
+  "name": "Flame Core",
+  "description": "Creates a large, slow traveling ground bound wave of fire that deals 5 hearts of damage",
+  "core_bar": {
+    "type": "origins:resource",
+    "max": 100,
+    "min": 1
+  },
+  "core": {
+    "type": "origins:active_self",
+    "key": {
+      "key": "key.origins.primary_active"
+    },
+    "cooldown": 0,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "function scorch:armor_stands"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 100,
+      "comparison": "==",
+      "resource": "*:*_core_bar"
+    }
+  },
+  "particles": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "function scorch:armor_stands_particles"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 100,
+      "comparison": "==",
+      "resource": "*:*_core_bar"
+    }
+  }
+}

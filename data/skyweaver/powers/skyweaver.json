@@ -104,7 +104,27 @@
     },
     "modifier": {
       "operation": "addition",
-      "value": 10.0
+      "value": 25.0
+    }
+  },
+  "knockback": {
+    "type": "origins:attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.knockback_resistance",
+      "value": -0.5,
+      "operation": "addition"
+    }
+  },
+  "fire": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "attribute": "minecraft:generic.knockback_resistance",
+      "value": 0.5,
+      "operation": "addition"
+    },
+    "damage_condition": {
+      "type": "origins:name",
+      "name": "minecraft:on_fire"
     }
   }
 }

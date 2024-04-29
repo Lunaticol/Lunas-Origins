@@ -16,7 +16,7 @@
             "type": "apoli:apply_effect",
             "effect": {
               "effect": "minecraft:slowness",
-              "amplifier": 5,
+              "amplifier": 4,
               "duration": 100
             }
           }

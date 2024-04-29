@@ -1,0 +1,263 @@
+{
+  "type": "origins:multiple",
+  "flame_core": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "hud_render": { "should_render": true },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "change": 1,
+          "operation": "set",
+          "resource": "*:*_core"
+        },
+        {
+          "type": "origins:area_of_effect",
+          "radius": 3,
+          "shape": "cube",
+          "bientity_action": {
+            "type": "origins:target_action",
+            "action": {
+              "type": "origins:and",
+              "actions": [
+                {
+                  "type": "origins:delay",
+                  "ticks": 10,
+                  "action": {
+                    "type": "origins:and",
+                    "actions": [
+                      {
+                        "type": "origins:area_of_effect",
+                        "radius": 3,
+                        "shape": "cube",
+                        "bientity_action": {
+                          "type": "origins:target_action",
+                          "action": {
+                            "type": "origins:damage",
+                            "amount": 10,
+                            "damage_type": "minecraft:lava",
+                            "source": {
+                              "bypasses_armor": true,
+                              "fire": true,
+                              "magic": false,
+                              "out_of_world": true,
+                              "unblockable": true,
+                              "name": "lava.player"
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "type": "origins:play_sound",
+                        "category": "master",
+                        "pitch": 0.5,
+                        "sound": "minecraft:entity.blaze.shoot",
+                        "volume": 1
+                      },
+                      {
+                        "type": "origins:execute_command",
+                        "command": "kill @e[tag=armor_scorch_1]"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "origins:delay",
+                  "ticks": 20,
+                  "action": {
+                    "type": "origins:and",
+                    "actions": [
+                      {
+                        "type": "origins:area_of_effect",
+                        "radius": 3,
+                        "shape": "cube",
+                        "bientity_action": {
+                          "type": "origins:target_action",
+                          "action": {
+                            "type": "origins:damage",
+                            "amount": 10,
+                            "damage_type": "minecraft:lava",
+                            "source": {
+                              "bypasses_armor": true,
+                              "fire": true,
+                              "magic": false,
+                              "out_of_world": true,
+                              "unblockable": true,
+                              "name": "lava.player"
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "type": "origins:play_sound",
+                        "category": "master",
+                        "pitch": 0.5,
+                        "sound": "minecraft:entity.blaze.shoot",
+                        "volume": 1
+                      },
+                      {
+                        "type": "origins:execute_command",
+                        "command": "kill @e[tag=armor_scorch_2]"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "origins:delay",
+                  "ticks": 30,
+                  "action": {
+                    "type": "origins:and",
+                    "actions": [
+                      {
+                        "type": "origins:area_of_effect",
+                        "radius": 3,
+                        "shape": "cube",
+                        "bientity_action": {
+                          "type": "origins:target_action",
+                          "action": {
+                            "type": "origins:damage",
+                            "amount": 10,
+                            "damage_type": "minecraft:lava",
+                            "source": {
+                              "bypasses_armor": true,
+                              "fire": true,
+                              "magic": false,
+                              "out_of_world": true,
+                              "unblockable": true,
+                              "name": "lava.player"
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "type": "origins:play_sound",
+                        "category": "master",
+                        "pitch": 0.5,
+                        "sound": "minecraft:entity.blaze.shoot",
+                        "volume": 1
+                      },
+                      {
+                        "type": "origins:execute_command",
+                        "command": "kill @e[tag=armor_scorch_3]"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "origins:delay",
+                  "ticks": 40,
+                  "action": {
+                    "type": "origins:and",
+                    "actions": [
+                      {
+                        "type": "origins:area_of_effect",
+                        "radius": 3,
+                        "shape": "cube",
+                        "bientity_action": {
+                          "type": "origins:target_action",
+                          "action": {
+                            "type": "origins:damage",
+                            "amount": 10,
+                            "damage_type": "minecraft:lava",
+                            "source": {
+                              "bypasses_armor": true,
+                              "fire": true,
+                              "magic": false,
+                              "out_of_world": true,
+                              "unblockable": true,
+                              "name": "lava.player"
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "type": "origins:play_sound",
+                        "category": "master",
+                        "pitch": 0.5,
+                        "sound": "minecraft:entity.blaze.shoot",
+                        "volume": 1
+                      },
+                      {
+                        "type": "origins:execute_command",
+                        "command": "kill @e[tag=armor_scorch_4]"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "origins:delay",
+                  "ticks": 50,
+                  "action": {
+                    "type": "origins:and",
+                    "actions": [
+                      {
+                        "type": "origins:area_of_effect",
+                        "radius": 3,
+                        "shape": "cube",
+                        "bientity_action": {
+                          "type": "origins:target_action",
+                          "action": {
+                            "type": "origins:damage",
+                            "amount": 10,
+                            "damage_type": "minecraft:lava",
+                            "source": {
+                              "bypasses_armor": true,
+                              "fire": true,
+                              "magic": false,
+                              "out_of_world": true,
+                              "unblockable": true,
+                              "name": "lava.player"
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "type": "origins:play_sound",
+                        "category": "master",
+                        "pitch": 0.5,
+                        "sound": "minecraft:entity.blaze.shoot",
+                        "volume": 1
+                      },
+                      {
+                        "type": "origins:execute_command",
+                        "command": "kill @e[tag=armor_scorch_5]"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "origins:delay",
+                  "ticks": 51,
+                  "action": {
+                    "type": "origins:change_resource",
+                    "change": 0,
+                    "operation": "set",
+                    "resource": "*:*_core"
+                  }
+                }
+              ]
+            }
+          },
+          "bientity_condition": {
+            "type": "origins:distance",
+            "compare_to": 3,
+            "comparison": "<="
+          }
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 0,
+      "comparison": "==",
+      "resource": "*:*_core"
+    }
+  },
+  "core": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
+  }
+}

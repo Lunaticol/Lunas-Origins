@@ -1,0 +1,136 @@
+{
+  "type": "origins:multiple",
+  "name": "T-203 Thermite Launcher",
+  "description": "Low - moderate impact damage, single shot thermite projectiles that emits five to nine thermite pools upon contact with a surface.\nYou can upgrade this ability to get more shots! Use [ITEM] to upgrade!",
+  "charges": {
+    "type": "origins:resource",
+    "max": 3,
+    "min": 1
+  },
+  "aegis_charges": {
+    "type": "origins:resource",
+    "max": 2,
+    "min": 0
+  },
+  "thermite": {
+    "type": "origins:fire_projectile",
+    "count": 1,
+    "cooldown": 100,
+    "entity_type": "minecraft:fireball",
+    "tag": "{ExplosionPower:2b}",
+    "key": "key.use",
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "item": "minecraft:crossbow"
+            }
+          }
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": ">=",
+          "resource": "*:*_charges"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:aegis_roaring_flames_thermite_launcher_aegis"
+        }
+      ]
+    }
+  },
+  "recharge": {
+    "type": "origins:action_over_time",
+    "interval": 200,
+    "entity_action": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "action": {
+            "type": "origins:change_resource",
+            "change": 1,
+            "operation": "set",
+            "resource": "*:*_charges"
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 0,
+            "comparison": "==",
+            "resource": "*:*_aegis_charges"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:change_resource",
+            "change": 2,
+            "operation": "set",
+            "resource": "*:*_charges"
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 1,
+            "comparison": "==",
+            "resource": "*:*_aegis_charges"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:change_resource",
+            "change": 3,
+            "operation": "set",
+            "resource": "*:*_charges"
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 2,
+            "comparison": "==",
+            "resource": "*:*_aegis_charges"
+          }
+        }
+      ]
+    }
+  },
+  "thermite_aegis": {
+    "type": "origins:fire_projectile",
+    "count": 1,
+    "cooldown": 100,
+    "entity_type": "minecraft:fireball",
+    "tag": "{ExplosionPower:3b}",
+    "key": "key.use",
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "item": "minecraft:crossbow"
+            }
+          }
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": ">=",
+          "resource": "*:*_charges"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": "==",
+          "resource": "*:aegis_roaring_flames_thermite_launcher_aegis"
+        }
+      ]
+    }
+  }
+}
