@@ -49,17 +49,17 @@
                 {
                   "effect": "weakness",
                   "duration": 100,
-                  "amplifier": 2
+                  "amplifier": 3
                 },
                 {
                   "effect": "slowness",
                   "duration": 100,
-                  "amplifier": 2
+                  "amplifier": 3
                 },
                 {
                   "effect": "blindness",
                   "duration": 100,
-                  "amplifier": 2
+                  "amplifier": 3
                 }
               ]
             }
@@ -74,26 +74,6 @@
         {
           "type": "origins:execute_command",
           "command": "particle minecraft:explosion_emitter ~ ~ ~ 0 0 0 1 1"
-        },
-        {
-          "type": "moborigins:damage_equipment",
-          "equipment_slot": "head",
-          "amount": 10
-        },
-        {
-          "type": "moborigins:damage_equipment",
-          "equipment_slot": "chest",
-          "amount": 10
-        },
-        {
-          "type": "moborigins:damage_equipment",
-          "equipment_slot": "legs",
-          "amount": 10
-        },
-        {
-          "type": "moborigins:damage_equipment",
-          "equipment_slot": "feet",
-          "amount": 10
         }
       ]
     }

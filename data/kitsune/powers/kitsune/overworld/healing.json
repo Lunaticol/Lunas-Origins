@@ -16,7 +16,7 @@
       "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
       "bar_index": 4
     },
-    "cooldown": 600,
+    "cooldown": 300,
     "key": {
       "key": "key.saveToolbarActivator"
     },

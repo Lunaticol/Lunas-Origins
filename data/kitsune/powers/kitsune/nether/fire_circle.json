@@ -7,7 +7,7 @@
     "key": {
       "key": "key.loadToolbarActivator"
     },
-    "cooldown": 200,
+    "cooldown": 100,
     "hud_render": {
       "should_render": true,
       "bar_index": 7,
@@ -35,8 +35,8 @@
                   "type": "origins:apply_effect",
                   "effect": {
                     "effect": "minecraft:slowness",
-                    "amplifier": 1,
-                    "duration": 100
+                    "amplifier": 2,
+                    "duration": 200
                   }
                 }
               ]
@@ -95,8 +95,8 @@
                   "type": "origins:apply_effect",
                   "effect": {
                     "effect": "minecraft:slowness",
-                    "amplifier": 1,
-                    "duration": 100
+                    "amplifier": 2,
+                    "duration": 200
                   }
                 }
               ]
@@ -114,22 +114,6 @@
       "compare_to": 1,
       "comparison": "==",
       "resource": "kitsune:kitsune/nether/soul_mode_flame_bar"
-    }
-  },
-  "pa_reset": {
-    "type": "origins:action_over_time",
-    "interval": 200,
-    "entity_action": {
-      "type": "origins:change_resource",
-      "change": 0,
-      "operation": "set",
-      "resource": "kitsune:kitsune/power_active_fire_circle"
-    },
-    "condition": {
-      "type": "origins:resource",
-      "compare_to": 1,
-      "resource": "kitsune:kitsune/power_active_fire_circle",
-      "comparison": "=="
     }
   }
 }

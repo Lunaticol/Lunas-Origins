@@ -29,7 +29,7 @@
                 "actions": [
                   {
                     "type": "origins:add_velocity",
-                    "z": -1.5
+                    "z": -2
                   },
                   {
                     "type": "origins:actor_action",
@@ -83,7 +83,7 @@
                   {
                     "type": "origins:add_velocity",
                     "y": 1,
-                    "z": 1.5
+                    "z": 2
                   },
                   {
                     "type": "origins:actor_action",
@@ -136,7 +136,7 @@
                 "actions": [
                   {
                     "type": "origins:add_velocity",
-                    "y": 2.5
+                    "y": 4
                   },
                   {
                     "type": "origins:actor_action",

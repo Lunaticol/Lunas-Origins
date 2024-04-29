@@ -5,7 +5,7 @@
   "soul_bar": {
     "type": "origins:resource",
     "min": 0,
-    "max": 1000,
+    "max": 2000,
     "hud_render": {
       "should_render": true,
       "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
@@ -17,7 +17,7 @@
     "interval": 20,
     "entity_action": {
       "type": "origins:change_resource",
-      "change": 20,
+      "change": 100,
       "operation": "add",
       "resource": "*:*_soul_bar"
     },
@@ -164,22 +164,6 @@
       "compare_to": 0,
       "comparison": "==",
       "resource": "*:*_flame_bar"
-    }
-  },
-  "pa_reset": {
-    "type": "origins:action_over_time",
-    "interval": 300,
-    "entity_action": {
-      "type": "origins:change_resource",
-      "change": 0,
-      "operation": "set",
-      "resource": "kitsune:kitsune/power_active_soul_mode"
-    },
-    "condition": {
-      "type": "origins:resource",
-      "compare_to": 1,
-      "resource": "kitsune:kitsune/power_active_soul_mode",
-      "comparison": "=="
     }
   },
   "active_soul": {

@@ -27,7 +27,8 @@
           "type": "origins:apply_effect",
           "effect": {
             "duration": 600,
-            "effect": "minecraft:strength"
+            "effect": "minecraft:strength",
+            "amplifier": 1
           }
         },
         {
@@ -38,7 +39,7 @@
         }
       ]
     },
-    "cooldown": 1200,
+    "cooldown": 600,
     "hud_render": {
       "should_render": true,
       "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",

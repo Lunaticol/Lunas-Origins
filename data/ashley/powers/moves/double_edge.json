@@ -5,7 +5,7 @@
     "modifier": {
       "attribute": "minecraft:generic.attack_damage",
       "operation": "addition",
-      "value": 15
+      "value": 25
     }
   },
   "on_hit": {
@@ -17,7 +17,7 @@
         "actions": [
           {
             "type": "origins:damage",
-            "amount": 6,
+            "amount": 3,
             "source": {
               "bypasses_armor": true,
               "magic": true,

@@ -7,7 +7,8 @@
     "enchantments": [
       "minecraft:looting",
       "minecraft:knockback",
-      "minecraft:sweeping"
+      "minecraft:sweeping",
+      "minecraft:sharpness"
     ],
     "item_condition": {
       "type": "origins:ingredient",

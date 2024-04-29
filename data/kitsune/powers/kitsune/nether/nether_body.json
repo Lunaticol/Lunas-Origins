@@ -49,17 +49,6 @@
       "command": "scale set pehkui:width 1 @s"
     }
   },
-  "less_health": {
-    "type": "origins:attribute",
-    "modifiers": [
-      {
-        "name": "Origin modifier",
-        "attribute": "generic.max_health",
-        "operation": "addition",
-        "value": -2
-      }
-    ]
-  },
   "flame_trail": {
     "type": "origins:action_over_time",
     "interval": 5,
@@ -97,7 +86,7 @@
     "type": "origins:damage_over_time",
     "interval": 40,
     "onset_delay": 0,
-    "damage": 10,
+    "damage": 5,
     "damage_easy": 1,
     "damage_source": {
       "name": "hurt_by_water",

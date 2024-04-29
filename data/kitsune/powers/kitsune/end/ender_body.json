@@ -60,7 +60,7 @@
     "type": "origins:damage_over_time",
     "interval": 40,
     "onset_delay": 0,
-    "damage": 10,
+    "damage": 50,
     "damage_easy": 1,
     "damage_source": {
       "name": "hurt_by_water",
@@ -104,7 +104,7 @@
       "name": "weak",
       "attribute": "minecraft:generic.attack_damage",
       "operation": "addition",
-      "value": -0.5
+      "value": -0.25
     },
     "condition": {
       "type": "origins:and",

@@ -7,7 +7,7 @@
     "recipe": {
       "id": "artificer:tnt",
       "type": "minecraft:crafting_shaped",
-      "pattern": ["XC", "CX"],
+      "pattern": ["X", "C"],
       "key": {
         "X": {
           "item": "minecraft:gunpowder"

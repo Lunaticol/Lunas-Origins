@@ -1,7 +1,7 @@
 {
   "type": "origins:multiple",
-  "name": "Weak",
-  "description": "Because you are a healer, you cannot hurt others as easily.",
+  "name": "Pacifist'nt",
+  "description": "Becaaaaaaaaause you are a he-he-he-alerrrrrrrrrrrrrrrrrrrrrr\nIts time to get serious",
   "movement": {
     "type": "origins:conditioned_attribute",
     "tick_rate": 1,
@@ -15,7 +15,7 @@
       "name": "weak",
       "attribute": "minecraft:generic.attack_damage",
       "operation": "addition",
-      "value": -0.75
+      "value": 1
     }
   },
   "overworld_size": {

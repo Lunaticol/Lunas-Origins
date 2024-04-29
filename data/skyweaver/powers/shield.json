@@ -52,7 +52,7 @@
     "key": {
       "key": "key.origins.secondary_active"
     },
-    "cooldown": 1200,
+    "cooldown": 600,
     "entity_action": {
       "type": "origins:change_resource",
       "change": 1,
@@ -62,7 +62,7 @@
   },
   "reset": {
     "type": "origins:action_over_time",
-    "interval": 200,
+    "interval": 400,
     "entity_action": {
       "type": "origins:change_resource",
       "change": 0,

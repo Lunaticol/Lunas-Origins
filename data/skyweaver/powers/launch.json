@@ -4,7 +4,7 @@
   "description": "Launch yourself into the air",
   "dash": {
     "type": "origins:launch",
-    "speed": 2,
+    "speed": 4,
     "cooldown": 100,
     "hud_render": {
       "should_render": true,

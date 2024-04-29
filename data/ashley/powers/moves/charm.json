@@ -4,10 +4,10 @@
     "type": "origins:active_self",
     "key": { "key": "key.saveToolbarActivator" },
     "hud_render": { "should_render": true },
-    "cooldown": 100,
+    "cooldown": 1300,
     "entity_action": {
       "type": "origins:chance",
-      "chance": 0.75,
+      "chance": 1,
       "action": {
         "type": "origins:area_of_effect",
         "radius": 8,
@@ -21,7 +21,8 @@
                 "effects": [
                   {
                     "effect": "minecraft:resistance",
-                    "duration": 200,
+                    "duration": 1200,
+                    "amplifier": 3,
                     "show_icon": true,
                     "show_particles": true
                   }
@@ -35,8 +36,8 @@
                 "effects": [
                   {
                     "effect": "minecraft:weakness",
-                    "duration": 100,
-                    "amplifier": 1,
+                    "duration": 200,
+                    "amplifier": 3,
                     "show_icon": true,
                     "show_particles": true
                   }

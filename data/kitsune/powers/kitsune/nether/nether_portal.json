@@ -25,7 +25,7 @@
     }
   ],
   "quick_nether": {
-    "cooldown": 3000,
+    "cooldown": 1500,
     "key": {
       "key": "key.origins.quaternary_active"
     },
@@ -74,7 +74,7 @@
   },
   "quick_overworld": {
     "type": "origins:active_self",
-    "cooldown": 3000,
+    "cooldown": 1500,
     "hud_render": {
       "should_render": true,
       "bar_index": 7,
@@ -110,22 +110,6 @@
           "advancement": "minecraft:nether/root"
         }
       ]
-    }
-  },
-  "pa_reset": {
-    "type": "origins:action_over_time",
-    "interval": 3000,
-    "entity_action": {
-      "type": "origins:change_resource",
-      "change": 0,
-      "operation": "set",
-      "resource": "kitsune:kitsune/power_active_nether_portal"
-    },
-    "condition": {
-      "type": "origins:resource",
-      "compare_to": 1,
-      "resource": "kitsune:kitsune/power_active_nether_portal",
-      "comparison": "=="
     }
   }
 }

@@ -8,7 +8,7 @@
       "actions": [
         {
           "type": "origins:explode",
-          "power": 3.5,
+          "power": 4,
           "destruction_type": "none",
           "damage_self": false,
           "create_fire": false

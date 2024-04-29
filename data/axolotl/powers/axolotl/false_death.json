@@ -11,7 +11,7 @@
   },
   "fake_death": {
     "type": "origins:action_when_damage_taken",
-    "cooldown": 6000,
+    "cooldown": 3000,
     "hud_render": {
       "should_render": true
     },

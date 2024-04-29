@@ -19,7 +19,7 @@
             "type": "origins:target_action",
             "action": {
               "type": "origins:damage",
-              "amount": 20,
+              "amount": 40,
               "damage_type": "mob_attack_no_aggro",
               "source": {
                 "bypasses_armor": false,

@@ -13,7 +13,7 @@
           "create_fire": false,
           "damage_self": true,
           "destruction_type": "none",
-          "power": 4
+          "power": 6
         },
         {
           "type": "origins:execute_command",
@@ -32,26 +32,6 @@
         {
           "type": "origins:execute_command",
           "command": "playsound minecraft:entity.generic.explode master @s ~ ~ ~ 100 1"
-        },
-        {
-          "type": "moborigins:damage_equipment",
-          "equipment_slot": "head",
-          "amount": 100
-        },
-        {
-          "type": "moborigins:damage_equipment",
-          "equipment_slot": "chest",
-          "amount": 100
-        },
-        {
-          "type": "moborigins:damage_equipment",
-          "equipment_slot": "legs",
-          "amount": 100
-        },
-        {
-          "type": "moborigins:damage_equipment",
-          "equipment_slot": "feet",
-          "amount": 100
         }
       ]
     },

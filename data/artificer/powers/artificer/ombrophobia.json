@@ -4,7 +4,7 @@
   "description": "You have ombrophobia, you are scared of the rain.",
   "ombrophobia_timer": {
     "type": "origins:resource",
-    "max": 60,
+    "max": 180,
     "min": 0,
     "start_value": 60,
     "hud_render": {
@@ -63,7 +63,7 @@
     "type": "origins:damage_over_time",
     "interval": 20,
     "onset_delay": 0,
-    "damage": 10,
+    "damage": 5,
     "damage_easy": 5,
     "damage_source": {
       "name": "hurt_by_water",
