@@ -1,0 +1,10 @@
+{
+  "name": "Scorched Earth",
+  "unchoosable": true,
+  "description": "[SCROLL]",
+  "icon": "minecraft:magma_block",
+  "loading_priority": 1,
+  "impact": 2,
+  "order": 2,
+  "powers": ["scorch:kits/scorched_earth"]
+}

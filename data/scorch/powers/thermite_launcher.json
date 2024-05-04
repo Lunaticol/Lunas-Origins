@@ -1,0 +1,292 @@
+{
+  "type": "origins:multiple",
+  "name": "T-203 Thermite Launcher",
+  "description": "Shoot Thermite at unsuspecting enemys",
+  "charges": {
+    "type": "origins:resource",
+    "max": 3,
+    "min": 0,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png"
+    }
+  },
+  "wild_fire": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
+  },
+  "recharge": {
+    "type": "origins:action_over_time",
+    "interval": 200,
+    "entity_action": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "action": {
+            "type": "origins:change_resource",
+            "change": 1,
+            "operation": "set",
+            "resource": "*:*_charges"
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 0,
+            "comparison": "==",
+            "resource": "*:aegis/more_trouble_thermite_launcher_aegis"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:change_resource",
+            "change": 2,
+            "operation": "set",
+            "resource": "*:*_charges"
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 1,
+            "comparison": "==",
+            "resource": "*:aegis/more_trouble_thermite_launcher_aegis"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:change_resource",
+            "change": 3,
+            "operation": "set",
+            "resource": "*:*_charges"
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 2,
+            "comparison": "==",
+            "resource": "*:aegis/more_trouble_thermite_launcher_aegis"
+          }
+        }
+      ]
+    }
+  },
+  "thermite": {
+    "type": "origins:fire_projectile",
+    "count": 1,
+    "cooldown": 20,
+    "speed": 0.5,
+    "entity_type": "minecraft:fireball",
+    "hud_render": {
+      "should_render": true,
+      "condition": {
+        "type": "origins:resource",
+        "compare_to": 0,
+        "comparison": "==",
+        "resource": "*:aegis/more_trouble_thermite_launcher_aegis"
+      }
+    },
+    "tag": "{ExplosionPower:2b}",
+    "shooter_action": {
+      "type": "origins:change_resource",
+      "change": -1,
+      "operation": "add",
+      "resource": "*:*_charges"
+    },
+    "key": "key.use",
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": ">=",
+          "resource": "*:*_charges"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:aegis/more_trouble_thermite_launcher_aegis"
+        },
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "item": "minecraft:crossbow"
+            }
+          }
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:*_wild_fire"
+        }
+      ]
+    }
+  },
+  "thermite_aegis": {
+    "type": "origins:fire_projectile",
+    "count": 1,
+    "cooldown": 20,
+    "entity_type": "minecraft:fireball",
+    "hud_render": {
+      "should_render": true,
+      "condition": {
+        "type": "origins:resource",
+        "compare_to": 1,
+        "comparison": "==",
+        "resource": "*:aegis/more_trouble_thermite_launcher_aegis"
+      }
+    },
+    "tag": "{ExplosionPower:3b}",
+    "shooter_action": {
+      "type": "origins:change_resource",
+      "change": -1,
+      "resource": "*:*_charges"
+    },
+    "key": "key.use",
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "item": "minecraft:crossbow"
+            }
+          }
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": ">=",
+          "resource": "*:*_charges"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": ">=",
+          "resource": "*:aegis/more_trouble_thermite_launcher_aegis"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:*_wild_fire"
+        }
+      ]
+    }
+  },
+  "thermite_wild": {
+    "type": "origins:fire_projectile",
+    "count": 1,
+    "cooldown": 20,
+    "entity_type": "minecraft:fireball",
+    "hud_render": {
+      "should_render": true,
+      "condition": {
+        "type": "origins:resource",
+        "compare_to": 1,
+        "comparison": "==",
+        "resource": "*:aegis/more_trouble_thermite_launcher_aegis"
+      }
+    },
+    "tag": "{ExplosionPower:3b}",
+    "shooter_action": {
+      "type": "origins:change_resource",
+      "change": -1,
+      "resource": "*:*_charges"
+    },
+    "key": "key.use",
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "item": "minecraft:crossbow"
+            }
+          }
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": ">=",
+          "resource": "*:*_charges"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": ">=",
+          "resource": "*:aegis/more_trouble_thermite_launcher_aegis"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": "==",
+          "resource": "*:*_wild_fire"
+        }
+      ]
+    }
+  },
+  "thermite_wild_aegis": {
+    "type": "origins:fire_projectile",
+    "count": 1,
+    "cooldown": 20,
+    "entity_type": "minecraft:fireball",
+    "hud_render": {
+      "should_render": true,
+      "condition": {
+        "type": "origins:resource",
+        "compare_to": 1,
+        "comparison": "==",
+        "resource": "*:aegis/more_trouble_thermite_launcher_aegis"
+      }
+    },
+    "tag": "{ExplosionPower:4b}",
+    "shooter_action": {
+      "type": "origins:change_resource",
+      "change": -1,
+      "resource": "*:*_charges"
+    },
+    "key": "key.use",
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "item": "minecraft:crossbow"
+            }
+          }
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": ">=",
+          "resource": "*:*_charges"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": ">=",
+          "resource": "*:aegis/more_trouble_thermite_launcher_aegis"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": "==",
+          "resource": "*:*_wild_fire"
+        }
+      ]
+    }
+  }
+}

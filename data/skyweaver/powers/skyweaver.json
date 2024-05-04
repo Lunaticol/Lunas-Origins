@@ -104,7 +104,7 @@
     },
     "modifier": {
       "operation": "addition",
-      "value": 25.0
+      "value": 15.0
     }
   },
   "knockback": {

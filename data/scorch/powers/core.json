@@ -5,17 +5,39 @@
   "core_bar": {
     "type": "origins:resource",
     "max": 100,
-    "min": 1
+    "min": 1,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+      "bar_index": 15
+    }
   },
   "core": {
     "type": "origins:active_self",
     "key": {
-      "key": "key.origins.primary_active"
+      "key": "key.loadToolbarActivator"
     },
     "cooldown": 0,
     "entity_action": {
-      "type": "origins:execute_command",
-      "command": "function scorch:armor_stands"
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "function scorch:armor_stands"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "tag @s add initiated"
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 51,
+          "action": {
+            "type": "origins:execute_command",
+            "command": "tag @s remove initiated"
+          }
+        }
+      ]
     },
     "condition": {
       "type": "origins:resource",
@@ -36,6 +58,17 @@
       "compare_to": 100,
       "comparison": "==",
       "resource": "*:*_core_bar"
+    }
+  },
+  "core_build_up": {
+    "type": "origins:action_on_hit",
+    "bientity_action": {
+      "type": "origins:actor_action",
+      "action": {
+        "type": "origins:change_resource",
+        "change": 1,
+        "resource": "*:core_core_bar"
+      }
     }
   }
 }

@@ -1,0 +1,10 @@
+{
+  "name": "Wild Fire Launcher",
+  "unchoosable": false,
+  "description": "Thermite damage increased.",
+  "icon": "minecraft:fire_charge",
+  "loading_priority": 1,
+  "impact": 2,
+  "order": 2,
+  "powers": ["scorch:kits/wildfire_launcher"]
+}

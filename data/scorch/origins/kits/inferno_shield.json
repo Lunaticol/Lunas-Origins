@@ -1,0 +1,10 @@
+{
+  "name": "Inferno Shield",
+  "unchoosable": false,
+  "description": "Flame Shield lasts longer",
+  "icon": "minecraft:campfire",
+  "loading_priority": 1,
+  "impact": 2,
+  "order": 2,
+  "powers": ["scorch:kits/inferno_sheild"]
+}

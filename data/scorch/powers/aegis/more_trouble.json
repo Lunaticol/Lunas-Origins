@@ -1,10 +1,10 @@
 {
   "type": "origins:multiple",
-  "name": "Roaring Flames",
-  "description": "Thermite Launcher Damage is increased.\nUse [Gunpower (32)] To obtain this upgrade!",
+  "name": "More Thermite",
+  "description": "Thermite Launcher capacity is increased.\nUse [Netherite Scrap (x2 to fully upgrade)] To obtain this upgrade!",
   "thermite_launcher_aegis": {
     "type": "origins:resource",
-    "max": 1,
+    "max": 2,
     "min": 0
   },
   "roaring_flames": {
@@ -20,11 +20,11 @@
         },
         {
           "type": "origins:execute_command",
-          "command": "clear @s minecraft:gunpowder 32"
+          "command": "clear @s minecraft:netherite_scrap 1"
         },
         {
           "type": "origins:execute_command",
-          "command": "title @p actionbar {\"bold\":true,\"color\":\"gold\",\"text\":\"Roaring Flames Unlocked!\"}"
+          "command": "title @p actionbar {\"bold\":true,\"color\":\"gold\",\"text\":\"More Trouble Unlocked!\"}"
         }
       ]
     },
@@ -35,26 +35,16 @@
           "type": "origins:equipped_item",
           "equipment_slot": "mainhand",
           "item_condition": {
-            "type": "origins:and",
-            "conditions": [
-              {
-                "type": "origins:ingredient",
-                "ingredient": {
-                  "item": "minecraft:gunpowder"
-                }
-              },
-              {
-                "type": "origins:amount",
-                "compare_to": 32,
-                "comparison": ">="
-              }
-            ]
+            "type": "origins:ingredient",
+            "ingredient": {
+              "item": "minecraft:netherite_scrap"
+            }
           }
         },
         {
           "type": "origins:resource",
-          "compare_to": 0,
-          "comparison": "==",
+          "compare_to": 1,
+          "comparison": "<=",
           "resource": "*:*_thermite_launcher_aegis"
         }
       ]

@@ -1,0 +1,6 @@
+{
+  "hidden": true,
+  "name": "Counter Ready",
+  "description": "Have your Counter ready on spawn",
+  "type": "origins:multiple"
+}

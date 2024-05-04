@@ -1,0 +1,90 @@
+{
+  "name": "Fire Wall",
+  "description": "Shoot out a wall of fire, blocking enemys.",
+  "type": "origins:multiple",
+  "fire_wall": {
+    "type": "origins:active_self",
+    "key": {
+      "key": "key.origins.primary_active"
+    },
+    "hud_render": {
+      "should_render": true,
+      "bar_index": 24,
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png"
+    },
+    "cooldown": 200,
+    "entity_action": {
+      "type": "origins:fire_projectile",
+      "count": 1,
+      "speed": 3,
+      "entity_type": "minecraft:armor_stand",
+      "tag": "{Tags:[\"Firewall\"],Invisible:1b}",
+      "projectile_action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:grant_power",
+            "power": "scorch:armor_stand",
+            "source": "scorch:firewall"
+          },
+          {
+            "type": "origins:change_resource",
+            "change": 1,
+            "resource": "*:armor_stand_kill_armorstand"
+          }
+        ]
+      }
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 0,
+      "comparison": "==",
+      "resource": "*:*_fuel_for_fire"
+    }
+  },
+  "fire_wall_faster": {
+    "type": "origins:active_self",
+    "key": {
+      "key": "key.origins.primary_active"
+    },
+    "hud_render": {
+      "should_render": true,
+      "bar_index": 24,
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png"
+    },
+    "cooldown": 100,
+    "entity_action": {
+      "type": "origins:fire_projectile",
+      "count": 1,
+      "speed": 3,
+      "entity_type": "minecraft:armor_stand",
+      "tag": "{Tags:[\"Firewall\"],Invisible:1b}",
+      "projectile_action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:grant_power",
+            "power": "scorch:armor_stand",
+            "source": "scorch:firewall"
+          },
+          {
+            "type": "origins:change_resource",
+            "change": 1,
+            "resource": "*:armor_stand_kill_armorstand"
+          }
+        ]
+      }
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_fuel_for_fire"
+    }
+  },
+  "fuel_for_fire": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
+  }
+}

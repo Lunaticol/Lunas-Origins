@@ -1,26 +1,11 @@
 {
   "type": "origins:multiple",
-  "name": "Chassis Upgrade",
-  "description": "Your health is increased by 5 more hearts\nUse [Netherite Smithing Template] To obtain this upgrade!",
-  "aegis_health": {
+  "name": "Explosive Barrels",
+  "description": "Barrels explode upon being ignited\nUse [TNT] To obtain this upgrade!",
+  "exploding_barrels": {
     "type": "origins:resource",
     "max": 1,
     "min": 0
-  },
-  "more_health": {
-    "type": "origins:conditioned_attribute",
-    "update_health": true,
-    "modifier": {
-      "attribute": "minecraft:generic.max_health",
-      "value": 10,
-      "operation": "addition"
-    },
-    "condition": {
-      "type": "origins:resource",
-      "compare_to": 1,
-      "comparison": "==",
-      "resource": "*:*_aegis_health"
-    }
   },
   "roaring_flames": {
     "type": "origins:active_self",
@@ -30,16 +15,16 @@
       "actions": [
         {
           "type": "origins:change_resource",
-          "resource": "*:*_aegis_health",
+          "resource": "*:*_exploding_barrels",
           "change": 1
         },
         {
           "type": "origins:execute_command",
-          "command": "clear @s minecraft:netherite_upgrade_smithing_template 1"
+          "command": "clear @s minecraft:tnt 1"
         },
         {
           "type": "origins:execute_command",
-          "command": "title @p actionbar {\"bold\":true,\"color\":\"gold\",\"text\":\"Chasis Upgrade Unlocked!\"}"
+          "command": "title @p actionbar {\"bold\":true,\"color\":\"gold\",\"text\":\"Explosive Barrels Unlocked!\"}"
         }
       ]
     },
@@ -52,7 +37,7 @@
           "item_condition": {
             "type": "origins:ingredient",
             "ingredient": {
-              "item": "minecraft:netherite_upgrade_smithing_template"
+              "item": "minecraft:tnt"
             }
           }
         },
@@ -60,7 +45,7 @@
           "type": "origins:resource",
           "compare_to": 0,
           "comparison": "==",
-          "resource": "*:*_aegis_health"
+          "resource": "*:*_exploding_barrels"
         }
       ]
     }

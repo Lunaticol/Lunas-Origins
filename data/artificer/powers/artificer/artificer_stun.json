@@ -94,6 +94,13 @@
           "type": "moborigins:damage_equipment",
           "equipment_slot": "feet",
           "amount": 10
+        },
+        {
+          "type": "origins:explode",
+          "create_fire": false,
+          "damage_self": true,
+          "destruction_type": "none",
+          "power": 2
         }
       ]
     }

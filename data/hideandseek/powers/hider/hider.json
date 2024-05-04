@@ -51,24 +51,5 @@
     "condition": {
       "type": "origins:sneaking"
     }
-  },
-  "ping": {
-    "type": "origins:action_over_time",
-    "interval": 1200,
-    "entity_action": {
-      "type": "origins:apply_effect",
-      "effect": {
-        "effect": "minecraft:glowing",
-        "duration": 40
-      }
-    }
-  },
-  "timer": {
-    "type": "origins:action_over_time",
-    "interval": 1200,
-    "entity_action": {}
-  },
-  "timer_bar": {
-    "type": "origins:resource"
   }
 }

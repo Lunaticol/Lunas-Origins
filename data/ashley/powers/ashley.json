@@ -357,5 +357,83 @@
       "type": "origins:ingredient",
       "ingredient": { "item": "minecraft:popped_chorus_fruit" }
     }
+  },
+  "reduced_crystal": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "operation": "add_base_late",
+      "value": -10,
+      "name": "end_crystal"
+    },
+    "damage_condition": {
+      "type": "origins:name",
+      "name": "explosion"
+    },
+    "condition": {
+      "type": "origins:block_in_radius",
+      "compare_to": 1,
+      "comparison": ">=",
+      "radius": 6,
+      "shape": "cube",
+      "block_condition": {
+        "type": "origins:in_tag",
+        "tag": "ashley:ashley/crystal_placable"
+      }
+    }
+  },
+  "reduced_crystal_player": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "operation": "add_base_late",
+      "value": -10,
+      "name": "end_crystal"
+    },
+    "damage_condition": {
+      "type": "origins:name",
+      "name": "explosion.player"
+    },
+    "condition": {
+      "type": "origins:block_in_radius",
+      "compare_to": 1,
+      "comparison": ">=",
+      "radius": 6,
+      "shape": "cube",
+      "block_condition": {
+        "type": "origins:in_tag",
+        "tag": "ashley:ashley/crystal_placable"
+      }
+    }
+  },
+  "healing_crystals": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:apply_effect",
+      "effects": [
+        {
+          "effect": "minecraft:absorption",
+          "duration": 100,
+          "amplifier": 1
+        },
+        {
+          "effect": "minecraft:regeneration",
+          "duration": 100,
+          "amplifier": 1
+        }
+      ]
+    },
+    "condition": {
+      "type": "moborigins:nearby_entities",
+      "compare_to": 1,
+      "comparison": ">=",
+      "multiplier": 6,
+      "bientity_condition": {
+        "type": "origins:target_condition",
+        "condition": {
+          "type": "origins:entity_type",
+          "entity_type": "minecraft:end_crystal"
+        }
+      }
+    }
   }
 }
