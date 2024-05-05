@@ -1,7 +1,7 @@
 {
   "type": "origins:multiple",
   "name": "T-203 Thermite Launcher",
-  "description": "Shoot Thermite at unsuspecting enemys",
+  "description": "Shoot Thermite at unsuspecting enemys, requires crossbow",
   "charges": {
     "type": "origins:resource",
     "max": 3,
@@ -82,7 +82,7 @@
         "resource": "*:aegis/more_trouble_thermite_launcher_aegis"
       }
     },
-    "tag": "{ExplosionPower:2b}",
+    "tag": "{ExplosionPower:1b}",
     "shooter_action": {
       "type": "origins:change_resource",
       "change": -1,
@@ -128,6 +128,7 @@
     "type": "origins:fire_projectile",
     "count": 1,
     "cooldown": 20,
+    "speed": 0.5,
     "entity_type": "minecraft:fireball",
     "hud_render": {
       "should_render": true,
@@ -138,7 +139,7 @@
         "resource": "*:aegis/more_trouble_thermite_launcher_aegis"
       }
     },
-    "tag": "{ExplosionPower:3b}",
+    "tag": "{ExplosionPower:2b}",
     "shooter_action": {
       "type": "origins:change_resource",
       "change": -1,
@@ -183,6 +184,7 @@
     "type": "origins:fire_projectile",
     "count": 1,
     "cooldown": 20,
+    "speed": 0.5,
     "entity_type": "minecraft:fireball",
     "hud_render": {
       "should_render": true,
@@ -193,7 +195,7 @@
         "resource": "*:aegis/more_trouble_thermite_launcher_aegis"
       }
     },
-    "tag": "{ExplosionPower:3b}",
+    "tag": "{ExplosionPower:2b}",
     "shooter_action": {
       "type": "origins:change_resource",
       "change": -1,
@@ -238,6 +240,7 @@
     "type": "origins:fire_projectile",
     "count": 1,
     "cooldown": 20,
+    "speed": 0.5,
     "entity_type": "minecraft:fireball",
     "hud_render": {
       "should_render": true,
@@ -248,7 +251,7 @@
         "resource": "*:aegis/more_trouble_thermite_launcher_aegis"
       }
     },
-    "tag": "{ExplosionPower:4b}",
+    "tag": "{ExplosionPower:3b}",
     "shooter_action": {
       "type": "origins:change_resource",
       "change": -1,

@@ -107,18 +107,12 @@
                   "actions": [
                     {
                       "type": "origins:damage",
-                      "amount": 5,
+                      "amount": 10,
                       "damage_type": "minecraft:lava",
                       "source": {
                         "fire": true,
                         "name": "Explode"
                       }
-                    },
-                    {
-                      "type": "origins:explode",
-                      "create_fire": false,
-                      "destruction_type": "none",
-                      "power": 1
                     }
                   ]
                 }
@@ -126,8 +120,19 @@
               {
                 "type": "origins:actor_action",
                 "action": {
-                  "type": "origins:execute_command",
-                  "command": "particle minecraft:lava ~ ~ ~ 1 4 1 0.01 20 normal"
+                  "type": "origins:and",
+                  "actions": [
+                    {
+                      "type": "origins:explode",
+                      "create_fire": false,
+                      "destruction_type": "none",
+                      "power": 2
+                    },
+                    {
+                      "type": "origins:execute_command",
+                      "command": "particle minecraft:lava ~ ~ ~ 1 4 1 0.01 20 normal"
+                    }
+                  ]
                 }
               }
             ]

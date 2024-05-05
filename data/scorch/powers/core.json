@@ -36,6 +36,16 @@
             "type": "origins:execute_command",
             "command": "tag @s remove initiated"
           }
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 2,
+          "action": {
+            "type": "origins:change_resource",
+            "change": 0,
+            "operation": "set",
+            "resource": "*:*_core_bar"
+          }
         }
       ]
     },

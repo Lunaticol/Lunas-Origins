@@ -10,7 +10,8 @@
     "scorch:aegis/hot_streak",
     "scorch:aegis/chassis_upgrade",
     "scorch:aegis/explosive_barrels",
-    "scorch:aegis/more_trouble"
+    "scorch:aegis/more_trouble",
+    "scorch:aegis/aegis_restore"
   ],
   "icon": "minecraft:fire_charge",
   "unchoosable": false,

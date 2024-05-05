@@ -20,7 +20,7 @@
                 "actions": [
                   {
                     "type": "origins:damage",
-                    "amount": 10,
+                    "amount": 20,
                     "damage_type": "minecraft:lava",
                     "source": { "fire": true, "name": "shield" }
                   },
@@ -50,7 +50,7 @@
         },
         {
           "type": "origins:execute_command",
-          "command": "particle minecraft:flame ~ ~ ~ 0.2 0.2 0.2 0 10 force"
+          "command": "particle minecraft:flame ~ ~ ~ 0.2 0.2 0.2 0 5 force"
         }
       ]
     }

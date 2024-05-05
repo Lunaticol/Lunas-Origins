@@ -37,6 +37,12 @@
           "type": "origins:resource",
           "compare_to": 0,
           "comparison": "==",
+          "resource": "*:*_lock"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
           "resource": "*:*_inferno_shield"
         }
       ]
@@ -105,6 +111,47 @@
       "type": "origins:change_resource",
       "change": 1,
       "operation": "add",
+      "resource": "*:*_flame_fuel"
+    }
+  },
+  "lock": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
+  },
+  "lock_shield": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:delay",
+      "ticks": 20,
+      "action": {
+        "type": "origins:change_resource",
+        "change": 1,
+        "operation": "set",
+        "resource": "*:*_lock"
+      }
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 10,
+      "comparison": "<=",
+      "resource": "*:*_flame_fuel"
+    }
+  },
+  "unlock_shield": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 0,
+      "operation": "set",
+      "resource": "*:*_lock"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 11,
+      "comparison": ">=",
       "resource": "*:*_flame_fuel"
     }
   }

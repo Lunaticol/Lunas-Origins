@@ -221,17 +221,8 @@
       "name": "no_jump"
     }
   },
-  "reactor_no_healing": {
-    "type": "origins:modify_healing",
-    "modifier": {
-      "operation": "multiply_total",
-      "value": -1
-    },
-    "condition": {
-      "type": "origins:health",
-      "compare_to": 20,
-      "comparison": "<="
-    }
+  "no_healing": {
+    "type": "origins:disable_regen"
   },
   "no_elytra": {
     "type": "origins:restrict_armor",
@@ -261,141 +252,157 @@
       "command": "origin gui @s scorch:kits"
     }
   },
-  "reduced_regen": {
-    "type": "origins:modify_healing",
-    "modifier": {
-      "operation": "multiply_total",
-      "value": -0.5
-    },
-    "condition": {
-      "type": "origins:health",
-      "compare_to": 21,
-      "comparison": ">="
-    }
-  },
   "food": {
     "type": "origins:modify_exhaustion",
     "modifier": {
       "name": "food",
-      "operation": "set_total",
-      "value": 0
-    }
-  },
-  "titan_battery": {
-    "type": "origins:recipe",
-    "recipe": {
-      "id": "titan:battery",
-      "type": "minecraft:crafting_shaped",
-      "pattern": ["RRR", "RRR", "RRR"],
-      "key": {
-        "R": {
-          "item": "minecraft:redstone_block"
-        }
-      },
-      "result": {
-        "item": "minecraft:redstone_block",
-        "data": {
-          "display": {
-            "Name": "{\"text\":\"Titan Battery\",\"italic\":false,\"color\":\"green\"}",
-            "Lore": [
-              "{\"text\":\"'These batterys are used to power Titans'\",\"color\":\"dark_gray\",\"italic\":true}"
-            ]
-          },
-          "HideFlags": 127,
-          "Enchantments": [{}]
-        }
-      }
-    }
-  },
-  "amped_titan_battery": {
-    "type": "origins:recipe",
-    "recipe": {
-      "id": "titan:battery",
-      "type": "minecraft:crafting_shaped",
-      "pattern": ["RIR", "IRI", "RIR"],
-      "key": {
-        "R": {
-          "item": "minecraft:redstone_block",
-          "data": {
-            "display": {
-              "Name": "{\"text\":\"Titan Battery\",\"italic\":false,\"color\":\"gold\"}",
-              "Lore": [
-                "{\"text\":\"'These batterys are used to power Titans'\",\"color\":\"dark_gray\",\"italic\":true}"
-              ]
-            },
-            "HideFlags": 127,
-            "Enchantments": [{}]
-          }
-        },
-        "I": {
-          "item": "minecraft:iron_block"
-        }
-      },
-      "result": {
-        "item": "blockus:redstone_lantern_block",
-        "data": {
-          "display": {
-            "Name": "{\"text\":\"Amped Titan Battery\",\"italic\":false,\"color\":\"gold\"}",
-            "Lore": [
-              "{\"text\":\"'More powerful Titan Batterys'\",\"color\":\"dark_gray\",\"italic\":true}"
-            ]
-          },
-          "HideFlags": 127,
-          "Enchantments": [{}]
-        }
-      }
+      "operation": "multiply_total",
+      "value": -2
     }
   },
   "titan_battery_eat": {
     "type": "apugli:edible_item",
     "food_component": {
-      "always_edible": false,
+      "always_edible": true,
       "snack": false,
       "meat": false,
-      "saturation": 0,
-      "hunger": 0
+      "saturation": 2,
+      "hunger": 20
     },
     "entity_action": {
-      "type": "origins:heal",
-      "amount": 4
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:heal",
+          "amount": 8
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 25,
+          "operation": "add",
+          "resource": "*:core_core_bar"
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 1,
+          "operation": "set",
+          "resource": "*:*_battery_cooldown"
+        }
+      ]
     },
     "item_condition": {
-      "type": "origins:nbt",
-      "nbt": "{\"text\":\"'These batterys are used to power Titans'\",\"color\":\"dark_gray\",\"italic\":true}"
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:redstone_block"
+      }
     },
     "condition": {
-      "type": "origins:health",
-      "compare_to": 21,
-      "comparison": ">="
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:health",
+          "compare_to": 60,
+          "comparison": "<="
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:*_battery_cooldown"
+        }
+      ]
     }
   },
-  "amped_titan_battery_eat": {
-    "type": "apugli:edible_item",
-    "food_component": {
-      "always_edible": false,
-      "snack": false,
-      "meat": false,
-      "saturation": 0,
-      "hunger": 0
-    },
+  "death_warning": {
+    "type": "origins:action_over_time",
+    "interval": 2,
     "entity_action": {
-      "type": "origins:heal",
-      "amount": 8
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "particle minecraft:smoke ~ ~ ~ 0.5 0.5 0.5 .01 20 force"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "particle minecraft:lava ~ ~ ~ 0.5 0.5 0.5 1 1 force"
+        }
+      ]
     },
-    "item_condition": {
-      "type": "origins:nbt",
-      "nbt": "{\"text\":\"'More powerful Titan Batterys'\",\"color\":\"dark_gray\",\"italic\":true}"
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:health",
+          "comparison": "<=",
+          "compare_to": 20
+        }
+      ]
     }
   },
-  "burnt": {
-    "type": "origins:model_color",
-    "blue": 1,
-    "green": 1,
-    "red": 1,
+  "sprint": {
+    "type": "origins:prevent_sprinting"
+  },
+  "battery_cooldown": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
+  },
+  "battery_recharge": {
+    "type": "origins:action_over_time",
+    "interval": 100,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 0,
+      "operation": "set",
+      "resource": "*:*_battery_cooldown"
+    },
     "condition": {
-      "type": "origins:health",
-      "compare_to": 20,
-      "comparison": "<="
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_battery_cooldown"
+    }
+  },
+  "health_low": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "action": {
+            "type": "origins:execute_command",
+            "command": "particle minecraft:campfire_signal_smoke ~ ~1 ~ 0.5 1 0.5 0 1 force"
+          },
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:health",
+                "compare_to": 40,
+                "comparison": "<="
+              },
+              {
+                "type": "origins:health",
+                "compare_to": 31,
+                "comparison": ">="
+              }
+            ]
+          }
+        },
+        {
+          "action": {
+            "type": "origins:execute_command",
+            "command": "particle minecraft:campfire_signal_smoke ~ ~1 ~ 1 1 1 0.01 5 force"
+          },
+          "condition": {
+            "type": "origins:health",
+            "compare_to": 30,
+            "comparison": "<="
+          }
+        }
+      ]
     }
   }
 }

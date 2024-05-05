@@ -8,6 +8,7 @@
       "key": "key.saveToolbarActivator"
     },
     "hud_render": { "should_render": false },
+    "cooldown": 50,
     "entity_action": {
       "type": "origins:and",
       "actions": [
@@ -62,7 +63,7 @@
   },
   "recharge": {
     "type": "origins:action_over_time",
-    "interval": 100,
+    "interval": 200,
     "entity_action": {
       "type": "origins:change_resource",
       "change": 1,
