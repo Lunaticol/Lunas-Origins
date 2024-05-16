@@ -26,7 +26,7 @@
           "type": "origins:resource",
           "compare_to": 0,
           "comparison": "==",
-          "resource": "*:*_kill_armorstand"
+          "resource": "*:*kill_armorstand_trap_explode"
         },
         {
           "type": "origins:resource",
@@ -37,7 +37,7 @@
       ]
     }
   },
-  "kill_armorstand": {
+  "kill_armorstand_trap_explode": {
     "type": "origins:resource",
     "max": 1,
     "min": 0
@@ -56,7 +56,7 @@
         {
           "type": "origins:change_resource",
           "change": 1,
-          "resource": "*:*_kill_armorstand"
+          "resource": "*:*kill_armorstand_trap_explode"
         },
         {
           "type": "origins:execute_command",
@@ -71,7 +71,7 @@
           "type": "origins:resource",
           "compare_to": 0,
           "comparison": "==",
-          "resource": "*:*_kill_armorstand"
+          "resource": "*:*kill_armorstand_trap_explode"
         },
         {
           "type": "origins:resource",
@@ -179,7 +179,7 @@
           "type": "origins:resource",
           "compare_to": 0,
           "comparison": "==",
-          "resource": "*:*_kill_armorstand"
+          "resource": "*:*kill_armorstand_trap_explode"
         },
         {
           "type": "origins:resource",
@@ -199,7 +199,7 @@
         {
           "type": "origins:change_resource",
           "change": 1,
-          "resource": "*:*_kill_armorstand"
+          "resource": "*:*kill_armorstand_trap_explode"
         },
         {
           "type": "origins:execute_command",
@@ -214,7 +214,7 @@
           "type": "origins:resource",
           "compare_to": 0,
           "comparison": "==",
-          "resource": "*:*_kill_armorstand"
+          "resource": "*:*kill_armorstand_trap_explode"
         },
         {
           "type": "origins:resource",

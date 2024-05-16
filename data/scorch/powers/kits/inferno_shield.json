@@ -9,31 +9,31 @@
       "type": "origins:change_resource",
       "operation": "set",
       "change": 1,
-      "resource": "*:inferno_shield_inferno_shield"
+      "resource": "*:thermal_shield_inferno_shield"
     },
     "entity_action_gained": {
       "type": "origins:change_resource",
       "operation": "set",
       "change": 1,
-      "resource": "*:inferno_shield_inferno_shield"
+      "resource": "*:thermal_shield_inferno_shield"
     },
     "entity_action_respawned": {
       "type": "origins:change_resource",
       "operation": "set",
       "change": 1,
-      "resource": "*:inferno_shield_inferno_shield"
+      "resource": "*:thermal_shield_inferno_shield"
     },
     "entity_action_lost": {
       "type": "origins:change_resource",
       "operation": "set",
       "change": 0,
-      "resource": "*:inferno_shield_inferno_shield"
+      "resource": "*:thermal_shield_inferno_shield"
     },
     "entity_action_removed": {
       "type": "origins:change_resource",
       "operation": "set",
       "change": 0,
-      "resource": "*:inferno_shield_inferno_shield"
+      "resource": "*:thermal_shield_inferno_shield"
     }
   }
 }

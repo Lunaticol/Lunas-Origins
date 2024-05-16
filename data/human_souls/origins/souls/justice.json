@@ -1,0 +1,12 @@
+{
+  "powers": ["human_souls:justice"],
+  "icon": {
+    "item": "minecraft:yellow_wool",
+    "tag": "{CustomModelData:42700}"
+  },
+  "loading_priority": 9,
+  "order": 0,
+  "impact": 1,
+  "name": "Justice",
+  "description": "You stand for Justice."
+}

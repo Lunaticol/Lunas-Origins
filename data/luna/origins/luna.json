@@ -1,5 +1,5 @@
 {
-  "powers": ["luna:charge"],
+  "powers": ["luna:charge", "luna:bite"],
   "icon": "minecraft:tnt",
   "unchoosable": true,
   "order": 9,

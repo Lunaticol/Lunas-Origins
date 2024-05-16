@@ -1,0 +1,12 @@
+{
+  "powers": [],
+  "icon": {
+    "item": "minecraft:white_wool",
+    "tag": "{CustomModelData:42700}"
+  },
+  "loading_priority": 9,
+  "order": 0,
+  "impact": 0,
+  "name": "Humaniod",
+  "description": "You just want to play the game normally"
+}

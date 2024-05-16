@@ -1,0 +1,151 @@
+{
+  "name": "Paralysis",
+  "description": "When your prey is in its' final moments, when there is no hope for escape and the light of their eyes is fading... feast.",
+  "type": "origins:multiple",
+  "bite_active": {
+    "type": "origins:active_self",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:raycast",
+          "distance": 4,
+          "block": false,
+          "entity": true,
+          "shape_type": "outline",
+          "fluid_handling": "any",
+          "bientity_condition": {
+            "type": "origins:target_condition",
+            "condition": {
+              "type": "origins:health",
+              "comparison": "<=",
+              "compare_to": 4
+            }
+          },
+          "bientity_action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:delay",
+                "action": {
+                  "type": "origins:damage",
+                  "amount": 18,
+                  "source": {
+                    "name": "magic.player",
+                    "bypasses_armor": true,
+                    "unblockable": true
+                  },
+                  "damage_type": "minecraft:player_attack"
+                },
+                "ticks": 120
+              },
+              {
+                "type": "origins:target_action",
+                "action": {
+                  "type": "origins:apply_effect",
+                  "effect": {
+                    "effect": "minecraft:slowness",
+                    "duration": 120,
+                    "amplifier": 4,
+                    "show_particles": true,
+                    "show_icon": false
+                  },
+                  "effects": [
+                    {
+                      "effect": "minecraft:blindness",
+                      "duration": 120,
+                      "amplifier": 0,
+                      "show_particles": false,
+                      "show_icon": false
+                    },
+                    {
+                      "effect": "minecraft:wither",
+                      "duration": 20,
+                      "amplifier": 0,
+                      "show_particles": false,
+                      "show_icon": false
+                    },
+                    {
+                      "effect": "minecraft:mining_fatigue",
+                      "duration": 120,
+                      "amplifier": 0,
+                      "show_particles": false,
+                      "show_icon": false
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "origins:target_action",
+                "action": {
+                  "type": "origins:execute_command",
+                  "command": "tellraw @s [\"\",{\"text\":\"You feel an excruciating pain,\",\"italic\":true},{\"text\":\" venom\",\"bold\":true,\"italic\":true,\"color\":\"#5B0001\"},{\"text\":\" fills your body.\",\"italic\":true},{\"text\":\" The\",\"italic\":true,\"color\":\"white\"},{\"text\":\" light\",\"italic\":true,\"color\":\"#EFEFEF\"},{\"text\":\" of\",\"italic\":true,\"color\":\"#CCCCCC\"},{\"text\":\" life\",\"italic\":true,\"color\":\"#8A8A8A\"},{\"text\":\" fades.\",\"italic\":true,\"color\":\"#6B6B6B\"}]"
+                }
+              },
+              {
+                "type": "origins:actor_action",
+                "action": {
+                  "type": "origins:feed",
+                  "food": 16,
+                  "saturation": 4
+                }
+              },
+              {
+                "type": "origins:actor_action",
+                "action": {
+                  "type": "origins:add_velocity",
+                  "z": 0.5,
+                  "space": "local",
+                  "client": true,
+                  "server": true
+                }
+              },
+              {
+                "type": "origins:actor_action",
+                "action": {
+                  "type": "origins:execute_command",
+                  "command": "tellraw @s {\"text\":\"You sink your teeth into your prey, injecting a lethal dose of venom.\",\"italic\":true,\"color\":\"#560001\"}"
+                }
+              }
+            ]
+          },
+          "hit_action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:play_sound",
+                "sound": "minecraft:entity.spider.ambient",
+                "volume": 2,
+                "pitch": 0.5
+              },
+              {
+                "type": "origins:spawn_particles",
+                "particle": {
+                  "type": "minecraft:dust",
+                  "params": "1 0 0 2"
+                },
+                "count": 12,
+                "speed": 0.1,
+                "spread": {
+                  "x": 1,
+                  "y": 0.75,
+                  "z": 1
+                },
+                "offset_y": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "cooldown": 1200,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
+      "bar_index": 5
+    },
+    "key": {
+      "key": "key.origins.primary_active"
+    }
+  }
+}

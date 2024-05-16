@@ -22,7 +22,7 @@
       "resource": "*:*_aegis_health"
     }
   },
-  "roaring_flames": {
+  "upgrade_health": {
     "type": "origins:active_self",
     "key": "key.use",
     "entity_action": {

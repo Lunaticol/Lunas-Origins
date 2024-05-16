@@ -1,0 +1,215 @@
+{
+  "type": "origins:multiple",
+  "name": "Storm Summon",
+  "description": "You can expel your over charge by summoning a thunderstorm.",
+  "badges": [
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/info.png",
+      "text": "Go to Y = 300, Crouch, and hold down C to activate."
+    },
+    {
+      "type": "origins:keybind",
+      "sprite": "origins:textures/gui/badge/active.png",
+      "text": "Active ability, use with [Save Hotbar]"
+    }
+  ],
+  "storm_summon_bar": {
+    "type": "origins:resource",
+    "max": 1125,
+    "min": 0,
+    "hud_render": {
+      "should_render": true
+    }
+  },
+  "casting_storm": {
+    "type": "origins:active_self",
+    "key": {
+      "key": "key.saveToolbarActivator",
+      "continuous": true
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "change": 5,
+          "operation": "add",
+          "resource": "*:*_storm_summon_bar"
+        },
+        {
+          "type": "origins:if_else_list",
+          "actions": [
+            {
+              "action": {
+                "type": "origins:execute_command",
+                "command": "summon minecraft:lightning_bolt ~-4 ~ ~"
+              },
+              "condition": {
+                "type": "origins:resource",
+                "compare_to": 125,
+                "comparison": "==",
+                "resource": "*:*_storm_summon_bar"
+              }
+            },
+            {
+              "action": {
+                "type": "origins:execute_command",
+                "command": "summon minecraft:lightning_bolt ~-3 ~ ~3"
+              },
+              "condition": {
+                "type": "origins:resource",
+                "compare_to": 250,
+                "comparison": "==",
+                "resource": "*:*_storm_summon_bar"
+              }
+            },
+            {
+              "action": {
+                "type": "origins:execute_command",
+                "command": "summon minecraft:lightning_bolt ~ ~ ~4"
+              },
+              "condition": {
+                "type": "origins:resource",
+                "compare_to": 375,
+                "comparison": "==",
+                "resource": "*:*_storm_summon_bar"
+              }
+            },
+            {
+              "action": {
+                "type": "origins:execute_command",
+                "command": "summon minecraft:lightning_bolt ~3 ~ ~3"
+              },
+              "condition": {
+                "type": "origins:resource",
+                "compare_to": 500,
+                "comparison": "==",
+                "resource": "*:*_storm_summon_bar"
+              }
+            },
+            {
+              "action": {
+                "type": "origins:execute_command",
+                "command": "summon minecraft:lightning_bolt ~4 ~ ~"
+              },
+              "condition": {
+                "type": "origins:resource",
+                "compare_to": 625,
+                "comparison": "==",
+                "resource": "*:*_storm_summon_bar"
+              }
+            },
+            {
+              "action": {
+                "type": "origins:execute_command",
+                "command": "summon minecraft:lightning_bolt ~3 ~ ~-3"
+              },
+              "condition": {
+                "type": "origins:resource",
+                "compare_to": 750,
+                "comparison": "==",
+                "resource": "*:*_storm_summon_bar"
+              }
+            },
+            {
+              "action": {
+                "type": "origins:execute_command",
+                "command": "summon minecraft:lightning_bolt ~ ~ ~-4"
+              },
+              "condition": {
+                "type": "origins:resource",
+                "compare_to": 875,
+                "comparison": "==",
+                "resource": "*:*_storm_summon_bar"
+              }
+            },
+            {
+              "action": {
+                "type": "origins:execute_command",
+                "command": "summon minecraft:lightning_bolt ~-3 ~ ~-3"
+              },
+              "condition": {
+                "type": "origins:resource",
+                "compare_to": 1000,
+                "comparison": "==",
+                "resource": "*:*_storm_summon_bar"
+              }
+            },
+            {
+              "action": {
+                "type": "origins:execute_command",
+                "command": "function sf:stormscale/stormsummon"
+              },
+              "condition": {
+                "type": "origins:resource",
+                "compare_to": 1125,
+                "comparison": "==",
+                "resource": "*:*_storm_summon_bar"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 1000,
+          "comparison": "==",
+          "resource": "sf:stormscale/static_charge_static_bar"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 100,
+          "comparison": "==",
+          "resource": "sf:stormscale/static_charge_over_charge"
+        },
+        {
+          "type": "origins:on_block",
+          "block_condition": {
+            "type": "origins:height",
+            "compare_to": 300,
+            "comparison": ">="
+          }
+        },
+        {
+          "type": "origins:sneaking"
+        },
+        {
+          "type": "origins:dimension",
+          "dimension": "minecraft:overworld"
+        }
+      ]
+    }
+  },
+  "summoning_drain": {
+    "type": "origins:action_over_time",
+    "interval": 50,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": -125,
+      "operation": "add",
+      "resource": "*:*_storm_summon_bar"
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:on_block",
+          "block_condition": {
+            "type": "origins:height",
+            "compare_to": 299,
+            "comparison": "<="
+          }
+        },
+        {
+          "type": "origins:sneaking",
+          "inverted": true
+        }
+      ]
+    }
+  }
+}

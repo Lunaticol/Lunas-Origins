@@ -1,0 +1,184 @@
+{
+  "name": "§cDetermined Spirit§r",
+  "description": "When pitted in the most deadly of situations, You are §cDetermined§r.",
+  "type": "origins:multiple",
+  "determined": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "action": {
+            "type": "origins:apply_effect",
+            "effects": [
+              {
+                "effect": "minecraft:resistance",
+                "duration": 40,
+                "show_particles": false
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:health",
+                "compare_to": 3,
+                "comparison": ">"
+              },
+              {
+                "type": "origins:health",
+                "compare_to": 6,
+                "comparison": "<="
+              }
+            ]
+          }
+        },
+        {
+          "action": {
+            "type": "origins:apply_effect",
+            "effects": [
+              {
+                "effect": "minecraft:resistance",
+                "amplifier": 1,
+                "duration": 40,
+                "show_particles": false
+              },
+              {
+                "effect": "minecraft:strength",
+                "duration": 40,
+                "show_particles": false
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:health",
+            "compare_to": 3,
+            "comparison": "<="
+          }
+        }
+      ]
+    }
+  },
+  "soul_detection": {
+    "type": "origins:action_over_time",
+    "interval": 1200,
+    "entity_action": {
+      "type": "origins:area_of_effect",
+      "radius": 16,
+      "shape": "sphere",
+      "bientity_action": {
+        "type": "origins:target_action",
+        "action": {
+          "type": "origins:apply_effect",
+          "effects": [
+            {
+              "effect": "minecraft:absorption",
+              "duration": 1200,
+              "show_particles": false
+            }
+          ]
+        }
+      },
+      "bientity_condition": {
+        "type": "origins:target_condition",
+        "condition": {
+          "type": "origins:or",
+          "conditions": [
+            {
+              "type": "origins:origin",
+              "layer": "human_souls:souls",
+              "origin": "human_souls:souls/bravery"
+            },
+            {
+              "type": "origins:origin",
+              "layer": "human_souls:souls",
+              "origin": "human_souls:souls/justice"
+            },
+            {
+              "type": "origins:origin",
+              "layer": "human_souls:souls",
+              "origin": "human_souls:souls/kindness"
+            },
+            {
+              "type": "origins:origin",
+              "layer": "human_souls:souls",
+              "origin": "human_souls:souls/patience"
+            },
+            {
+              "type": "origins:origin",
+              "layer": "human_souls:souls",
+              "origin": "human_souls:souls/integrity"
+            },
+            {
+              "type": "origins:origin",
+              "layer": "human_souls:souls",
+              "origin": "human_souls:souls/perseverance"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "it_refused": {
+    "type": "origins:action_when_damage_taken",
+    "cooldown": 1,
+    "entity_action": {
+      "type": "origins:chance",
+      "chance": 0.1,
+      "action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:apply_effect",
+            "effects": [
+              {
+                "effect": "minecraft:regeneration",
+                "amplifier": 1,
+                "duration": 900
+              },
+              {
+                "effect": "minecraft:fire_resistance",
+                "duration": 900
+              },
+              {
+                "effect": "minecraft:absorption",
+                "amplifier": 1,
+                "duration": 900
+              },
+              {
+                "effect": "minecraft:strength",
+                "amplifier": 1,
+                "duration": 900
+              },
+              {
+                "effect": "minecraft:resistance",
+                "amplifier": 1,
+                "duration": 900
+              }
+            ]
+          },
+          {
+            "type": "origins:execute_command",
+            "command": "playsound minecraft:item.totem.use ambient @s ~ ~ ~ 1 1"
+          },
+          {
+            "type": "origins:execute_command",
+            "command": "particle minecraft:totem_of_undying ~ ~ ~ .5 1 .5 .5 500 force"
+          },
+          {
+            "type": "origins:execute_command",
+            "command": "title @p title {\"bold\":true,\"color\":\"red\",\"text\":\"But it Refused!\"}"
+          }
+        ]
+      }
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        { "type": "origins:health", "comparison": "==", "compare_to": 2 }
+      ]
+    }
+  }
+}

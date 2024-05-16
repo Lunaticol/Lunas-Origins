@@ -1,0 +1,45 @@
+{
+  "name": "Resilient Scales",
+  "description": "Your scales protect When attacked!",
+  "type": "origins:multiple",
+  "scales_strong": {
+    "type": "origins:action_when_hit",
+    "bientity_action": {
+      "type": "origins:actor_action",
+      "action": {
+        "type": "origins:apply_effect",
+        "effect": {
+          "duration": 100,
+          "effect": "resistance",
+          "show_icon": true,
+          "show_particles": false
+        }
+      }
+    },
+    "condition": {
+      "type": "origins:predicate",
+      "predicate": "sf:is_thundering",
+      "inverted": true
+    }
+  },
+  "scales_strong_storm": {
+    "type": "origins:action_when_hit",
+    "bientity_action": {
+      "type": "origins:actor_action",
+      "action": {
+        "type": "origins:apply_effect",
+        "effect": {
+          "duration": 100,
+          "effect": "resistance",
+          "amplifier": 1,
+          "show_icon": true,
+          "show_particles": false
+        }
+      }
+    },
+    "condition": {
+      "type": "origins:predicate",
+      "predicate": "sf:is_thundering"
+    }
+  }
+}

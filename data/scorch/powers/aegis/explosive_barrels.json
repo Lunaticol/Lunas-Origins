@@ -7,7 +7,7 @@
     "max": 1,
     "min": 0
   },
-  "roaring_flames": {
+  "barrels_upgrade": {
     "type": "origins:active_self",
     "key": "key.use",
     "entity_action": {

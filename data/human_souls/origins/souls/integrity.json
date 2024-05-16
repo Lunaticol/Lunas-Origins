@@ -1,0 +1,12 @@
+{
+  "powers": ["human_souls:integrity"],
+  "icon": {
+    "item": "minecraft:blue_wool",
+    "tag": "{CustomModelData:42700}"
+  },
+  "loading_priority": 9,
+  "order": 0,
+  "impact": 1,
+  "name": "Integrity",
+  "description": "You have Integrity."
+}

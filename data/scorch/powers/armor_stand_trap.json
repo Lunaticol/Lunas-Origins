@@ -26,7 +26,7 @@
           "type": "origins:resource",
           "compare_to": 0,
           "comparison": "==",
-          "resource": "*:*_kill_armorstand"
+          "resource": "*:*_kill_armorstan_trap_bar"
         },
         {
           "type": "origins:resource",
@@ -37,7 +37,7 @@
       ]
     }
   },
-  "kill_armorstand": {
+  "kill_armorstan_trap_bar": {
     "type": "origins:resource",
     "max": 1,
     "min": 0
@@ -47,7 +47,7 @@
     "max": 1,
     "min": 0
   },
-  "kill_armorstan": {
+  "kill_armorstand_trap": {
     "type": "origins:action_over_time",
     "interval": 200,
     "entity_action": {
@@ -56,7 +56,7 @@
         {
           "type": "origins:change_resource",
           "change": 1,
-          "resource": "*:*_kill_armorstand"
+          "resource": "*:*_kill_armorstan_trap_bar"
         },
         {
           "type": "origins:execute_command",
@@ -71,7 +71,7 @@
           "type": "origins:resource",
           "compare_to": 0,
           "comparison": "==",
-          "resource": "*:*_kill_armorstand"
+          "resource": "*:*_kill_armorstan_trap_bar"
         },
         {
           "type": "origins:resource",
@@ -151,7 +151,7 @@
           "type": "origins:resource",
           "compare_to": 0,
           "comparison": "==",
-          "resource": "*:*_kill_armorstand"
+          "resource": "*:*_kill_armorstan_trap_bar"
         },
         {
           "type": "origins:resource",
@@ -171,7 +171,7 @@
         {
           "type": "origins:change_resource",
           "change": 1,
-          "resource": "*:*_kill_armorstand"
+          "resource": "*:*_kill_armorstan_trap_bar"
         },
         {
           "type": "origins:execute_command",
@@ -186,7 +186,7 @@
           "type": "origins:resource",
           "compare_to": 0,
           "comparison": "==",
-          "resource": "*:*_kill_armorstand"
+          "resource": "*:*_kill_armorstan_trap_bar"
         },
         {
           "type": "origins:resource",

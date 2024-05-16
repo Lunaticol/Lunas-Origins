@@ -4,7 +4,7 @@
   "description": "Thermite damage increased.",
   "icon": "minecraft:fire_charge",
   "loading_priority": 1,
-  "impact": 2,
+  "impact": 0,
   "order": 2,
   "powers": ["scorch:kits/wildfire_launcher"]
 }

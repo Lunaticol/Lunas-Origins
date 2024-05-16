@@ -1,0 +1,12 @@
+{
+  "powers": ["human_souls:perseverance"],
+  "icon": {
+    "item": "minecraft:purple_wool",
+    "tag": "{CustomModelData:42700}"
+  },
+  "loading_priority": 9,
+  "order": 0,
+  "impact": 1,
+  "name": "Perseverance",
+  "description": "You have Perseverance."
+}

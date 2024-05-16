@@ -1,0 +1,12 @@
+{
+  "powers": ["human_souls:kindness"],
+  "icon": {
+    "item": "minecraft:green_wool",
+    "tag": "{CustomModelData:42700}"
+  },
+  "loading_priority": 9,
+  "order": 0,
+  "impact": 1,
+  "name": "Kindness",
+  "description": "You have Kindness."
+}

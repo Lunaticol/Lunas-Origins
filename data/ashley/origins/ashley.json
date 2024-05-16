@@ -1,5 +1,11 @@
 {
-  "powers": ["ashley:ashley", "ashley:dash", "ashley:teleport", "ashley:moves"],
+  "powers": [
+    "ashley:ashley",
+    "ashley:dash",
+    "ashley:teleport",
+    "ashley:moves",
+    "ashley:hallucinations"
+  ],
   "icon": "minecraft:ender_eye",
   "unchoosable": true,
   "order": 9,

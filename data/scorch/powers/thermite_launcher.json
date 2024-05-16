@@ -33,7 +33,7 @@
             "type": "origins:resource",
             "compare_to": 0,
             "comparison": "==",
-            "resource": "*:aegis/more_trouble_thermite_launcher_aegis"
+            "resource": "*:aegis/more_trouble_trouble_bar"
           }
         },
         {
@@ -47,7 +47,7 @@
             "type": "origins:resource",
             "compare_to": 1,
             "comparison": "==",
-            "resource": "*:aegis/more_trouble_thermite_launcher_aegis"
+            "resource": "*:aegis/more_trouble_trouble_bar"
           }
         },
         {
@@ -61,7 +61,7 @@
             "type": "origins:resource",
             "compare_to": 2,
             "comparison": "==",
-            "resource": "*:aegis/more_trouble_thermite_launcher_aegis"
+            "resource": "*:aegis/more_trouble_trouble_bar"
           }
         }
       ]
@@ -79,7 +79,7 @@
         "type": "origins:resource",
         "compare_to": 0,
         "comparison": "==",
-        "resource": "*:aegis/more_trouble_thermite_launcher_aegis"
+        "resource": "*:aegis/more_trouble_trouble_bar"
       }
     },
     "tag": "{ExplosionPower:1b}",
@@ -103,7 +103,7 @@
           "type": "origins:resource",
           "compare_to": 0,
           "comparison": "==",
-          "resource": "*:aegis/more_trouble_thermite_launcher_aegis"
+          "resource": "*:aegis/more_trouble_trouble_bar"
         },
         {
           "type": "origins:equipped_item",
@@ -136,7 +136,7 @@
         "type": "origins:resource",
         "compare_to": 1,
         "comparison": "==",
-        "resource": "*:aegis/more_trouble_thermite_launcher_aegis"
+        "resource": "*:aegis/more_trouble_trouble_bar"
       }
     },
     "tag": "{ExplosionPower:2b}",
@@ -169,7 +169,7 @@
           "type": "origins:resource",
           "compare_to": 1,
           "comparison": ">=",
-          "resource": "*:aegis/more_trouble_thermite_launcher_aegis"
+          "resource": "*:aegis/more_trouble_trouble_bar"
         },
         {
           "type": "origins:resource",
@@ -192,7 +192,7 @@
         "type": "origins:resource",
         "compare_to": 1,
         "comparison": "==",
-        "resource": "*:aegis/more_trouble_thermite_launcher_aegis"
+        "resource": "*:aegis/more_trouble_trouble_bar"
       }
     },
     "tag": "{ExplosionPower:2b}",
@@ -225,7 +225,7 @@
           "type": "origins:resource",
           "compare_to": 0,
           "comparison": ">=",
-          "resource": "*:aegis/more_trouble_thermite_launcher_aegis"
+          "resource": "*:aegis/more_trouble_trouble_bar"
         },
         {
           "type": "origins:resource",
@@ -248,7 +248,7 @@
         "type": "origins:resource",
         "compare_to": 1,
         "comparison": "==",
-        "resource": "*:aegis/more_trouble_thermite_launcher_aegis"
+        "resource": "*:aegis/more_trouble_trouble_bar"
       }
     },
     "tag": "{ExplosionPower:3b}",
@@ -281,7 +281,7 @@
           "type": "origins:resource",
           "compare_to": 1,
           "comparison": ">=",
-          "resource": "*:aegis/more_trouble_thermite_launcher_aegis"
+          "resource": "*:aegis/more_trouble_trouble_bar"
         },
         {
           "type": "origins:resource",

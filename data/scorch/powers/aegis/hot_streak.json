@@ -24,7 +24,7 @@
     "max": 1,
     "min": 0
   },
-  "fire_charge": {
+  "streak_upgrade": {
     "type": "origins:active_self",
     "key": "key.use",
     "entity_action": {

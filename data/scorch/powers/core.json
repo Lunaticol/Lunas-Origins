@@ -12,7 +12,7 @@
       "bar_index": 15
     }
   },
-  "core": {
+  "core_active": {
     "type": "origins:active_self",
     "key": {
       "key": "key.loadToolbarActivator"
