@@ -1,0 +1,153 @@
+{
+  "name": "Dark Magic",
+  "description": "Crimson Phantom's are born from a dark magic, This unpredictable magic comes with its perks and debuffs.\nThe dark magic has changed the color of your body.\nIt seems you can touch sunlight agian, however, you still take debuffs.\nYou take less physical damage, But magic hurts more.",
+  "type": "origins:multiple",
+  "color": {
+    "type": "origins:model_color",
+    "alpha": 0.8,
+    "red": 1,
+    "blue": 0.5,
+    "green": 0.5
+  },
+  "less_physical_damage": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "operation": "multiply_base",
+      "value": -0.25
+    },
+    "damage_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:name",
+          "name": "mob"
+        },
+        {
+          "type": "origins:name",
+          "name": "mob.item"
+        },
+        {
+          "type": "origins:name",
+          "name": "player"
+        },
+        {
+          "type": "origins:name",
+          "name": "player.item"
+        }
+      ]
+    }
+  },
+  "more_magic_damage": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "operation": "addition",
+      "value": 2
+    },
+    "damage_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:name",
+          "name": "magic"
+        },
+        {
+          "type": "origins:name",
+          "name": "magic.player"
+        }
+      ]
+    }
+  },
+  "light_sensitive": {
+    "type": "origins:shader",
+    "shader": "minecraft:shaders/post/blobs2.json",
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:and",
+          "conditions": [
+            {
+              "type": "origins:daytime"
+            },
+            {
+              "type": "origins:exposed_to_sky"
+            },
+            {
+              "type": "origins:power_active",
+              "power": "*:phase_phase_toggle",
+              "inverted": true
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "light_weakness": {
+    "type": "origins:action_over_time",
+    "interval": 10,
+    "entity_action": {
+      "type": "origins:apply_effect",
+      "effects": [
+        {
+          "duration": 40,
+          "amplifier": 2,
+          "effect": "minecraft:weakness",
+          "show_icon": true,
+          "show_particles": false
+        },
+        {
+          "duration": 40,
+          "amplifier": 1,
+          "effect": "minecraft:mining_fatigue",
+          "show_icon": true,
+          "show_particles": false
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:and",
+          "conditions": [
+            {
+              "type": "origins:daytime"
+            },
+            {
+              "type": "origins:exposed_to_sky"
+            },
+            {
+              "type": "origins:power_active",
+              "power": "*:phase_phase_toggle",
+              "inverted": true
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "no_regen": {
+    "type": "origins:disable_regen"
+  },
+  "fire": {
+    "type": "origins:modify_damage_taken",
+    "damage_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:name",
+          "name": "minecraft:on_fire"
+        },
+        {
+          "type": "origins:name",
+          "name": "minecraft:lava"
+        }
+      ]
+    },
+    "modifier": {
+      "operation": "addition",
+      "name": "fire",
+      "value": 2
+    }
+  }
+}

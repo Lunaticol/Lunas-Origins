@@ -7,7 +7,7 @@
   },
   "soul_detection": {
     "type": "origins:action_over_time",
-    "interval": 20,
+    "interval": 1200,
     "entity_action": {
       "type": "origins:area_of_effect",
       "radius": 16,
@@ -18,7 +18,7 @@
           "type": "origins:apply_effect",
           "effects": [
             {
-              "effect": "minecraft:jump_boost",
+              "effect": "minecraft:night_vision",
               "duration": 60,
               "show_particles": false
             }

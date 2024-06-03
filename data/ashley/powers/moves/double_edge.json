@@ -22,7 +22,7 @@
               "bypasses_armor": true,
               "magic": true,
               "unblockable": true,
-              "name": "magic.player"
+              "name": "double_edge"
             }
           },
           {

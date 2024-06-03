@@ -25,7 +25,7 @@
                 "bypasses_armor": false,
                 "magic": true,
                 "unblockable": true,
-                "name": "mob_attack_no_aggro"
+                "name": "dark_pulse"
               }
             }
           }

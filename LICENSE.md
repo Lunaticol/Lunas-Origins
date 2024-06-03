@@ -17,5 +17,6 @@ By downloading, using, or distributing the asset, you agree to be bound by the t
 
 Banned Users:
 People that the client has prohibited the use of their assets from. May include individual users or organizations.
-Zenith SMP
+Zenith SMP (Origins SMP)
+Stinky SMP (Origins SMP)
 Origins++

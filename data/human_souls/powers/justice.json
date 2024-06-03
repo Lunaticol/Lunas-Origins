@@ -32,7 +32,7 @@
           "type": "origins:apply_effect",
           "effects": [
             {
-              "effect": "minecraft:luck",
+              "effect": "minecraft:haste",
               "duration": 60,
               "show_particles": false
             }

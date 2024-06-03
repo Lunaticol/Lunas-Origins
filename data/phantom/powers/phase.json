@@ -1,0 +1,360 @@
+{
+  "name": "Crimson Phase",
+  "description": "Similiar to its Cousin, Crimson Phantoms can phase.\nThis phase comes with added speed, but requires more hunger",
+  "type": "origins:multiple",
+  "phase": {
+    "type": "origins:phasing",
+    "blacklist": true,
+    "render_type": "blindness",
+    "view_distance": 10,
+    "block_condition": {
+      "type": "origins:in_tag",
+      "tag": "origins:unphasable"
+    },
+    "phase_down_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:sneaking"
+        },
+        {
+          "type": "origins:on_block"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:food_level",
+          "compare_to": 6,
+          "comparison": ">"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": ">=",
+          "resource": "*:*_phase_bar"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:*_lock"
+        },
+        {
+          "type": "origins:power_active",
+          "power": "*:*_phase_toggle"
+        }
+      ]
+    }
+  },
+  "phase_bar": {
+    "type": "origins:resource",
+    "max": 250,
+    "min": 0,
+    "start_value": 200,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/luna_resource_bar.png",
+      "bar_index": 0
+    }
+  },
+  "phase_toggle": {
+    "type": "origins:toggle",
+    "active_by_default": false,
+    "retain_state": false,
+    "key": {
+      "key": "key.origins.primary_active"
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:food_level",
+          "compare_to": 6,
+          "comparison": ">"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": ">=",
+          "resource": "*:*_phase_bar"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:*_lock"
+        }
+      ]
+    }
+  },
+  "invis": {
+    "type": "origins:invisibility",
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:food_level",
+          "compare_to": 6,
+          "comparison": ">"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": ">=",
+          "resource": "*:*_phase_bar"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:*_lock"
+        },
+        {
+          "type": "origins:power_active",
+          "power": "*:*_phase_toggle"
+        }
+      ]
+    }
+  },
+  "lock": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
+  },
+  "lock_phase": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:delay",
+          "ticks": 40,
+          "action": {
+            "type": "origins:change_resource",
+            "change": 1,
+            "operation": "set",
+            "resource": "*:*_lock"
+          }
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 32,
+          "comparison": "<=",
+          "resource": "*:*_phase_bar"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:*_lock"
+        }
+      ]
+    }
+  },
+  "unlock_phase": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 0,
+      "operation": "set",
+      "resource": "*:*_lock"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 33,
+      "comparison": ">=",
+      "resource": "*:*_phase_bar"
+    }
+  },
+  "gain": {
+    "type": "origins:action_over_time",
+    "interval": 4,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 1,
+      "resource": "*:*_phase_bar"
+    }
+  },
+  "drain": {
+    "type": "origins:action_over_time",
+    "interval": 2,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": -2,
+      "resource": "*:*_phase_bar"
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:food_level",
+          "compare_to": 6,
+          "comparison": ">"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": ">=",
+          "resource": "*:*_phase_bar"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:*_lock"
+        },
+        {
+          "type": "origins:power_active",
+          "power": "*:*_phase_toggle"
+        }
+      ]
+    }
+  },
+  "red": {
+    "type": "origins:overlay",
+    "texture": "minecraft:textures/misc/nausea.png",
+    "red": 1,
+    "green": 0.2,
+    "blue": 0.2,
+    "strength": 0.7,
+    "draw_mode": "nausea",
+    "draw_phase": "above_hud",
+    "visible_in_third_person": true,
+    "hide_with_hud": true,
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:food_level",
+          "compare_to": 6,
+          "comparison": ">"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": ">=",
+          "resource": "*:*_phase_bar"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:*_lock"
+        },
+        {
+          "type": "origins:power_active",
+          "power": "*:*_phase_toggle"
+        }
+      ]
+    }
+  },
+  "effects": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.movement_speed",
+      "operation": "addition",
+      "value": 0.05
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:food_level",
+          "compare_to": 6,
+          "comparison": ">"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": ">=",
+          "resource": "*:*_phase_bar"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:*_lock"
+        },
+        {
+          "type": "origins:power_active",
+          "power": "*:*_phase_toggle"
+        }
+      ]
+    }
+  },
+  "exhaust": {
+    "type": "origins:exhaust",
+    "exhaustion": 2.5,
+    "interval": 20,
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:food_level",
+          "compare_to": 6,
+          "comparison": ">"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": ">=",
+          "resource": "*:*_phase_bar"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:*_lock"
+        },
+        {
+          "type": "origins:power_active",
+          "power": "*:*_phase_toggle"
+        }
+      ]
+    }
+  },
+  "damage": {
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+      "operation": "multiply_total",
+      "value": -0.5,
+      "name": "phase_hit"
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:food_level",
+          "compare_to": 6,
+          "comparison": ">"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": ">=",
+          "resource": "*:*_phase_bar"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:*_lock"
+        },
+        {
+          "type": "origins:power_active",
+          "power": "*:*_phase_toggle"
+        }
+      ]
+    }
+  }
+}

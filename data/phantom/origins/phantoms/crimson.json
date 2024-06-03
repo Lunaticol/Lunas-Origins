@@ -1,0 +1,17 @@
+{
+  "powers": [
+    "phantom:crimson",
+    "phantom:phase",
+    "phantom:dark_healing",
+    "phantom:blood_locate",
+    "phantom:night_dweller"
+  ],
+  "icon": {
+    "item": "minecraft:phantom_membrane",
+    "tag": "{CustomModelData:42700}"
+  },
+  "order": 9,
+  "impact": 3,
+  "name": "Crimson Phantom",
+  "description": "The Crimson Phantom evolved from a normal Phantom through a dark ritual that imbued it with a thirst for blood and greater powers."
+}

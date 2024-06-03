@@ -1,0 +1,79 @@
+{
+  "name": "Blood Location",
+  "description": "Using blood, you can detect mobs within a certain radius",
+  "type": "origins:multiple",
+  "glow": {
+    "type": "origins:entity_glow",
+    "red": 1,
+    "blue": 0.5,
+    "green": 0.5,
+    "use_teams": false,
+    "bientity_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:distance",
+          "compare_to": 32,
+          "comparison": "<="
+        },
+        {
+          "type": "origins:actor_condition",
+          "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_active_resource",
+            "compare_to": 1,
+            "comparison": "=="
+          }
+        }
+      ]
+    }
+  },
+  "active": {
+    "type": "origins:active_self",
+    "cooldown": 300,
+    "hud_render": { "should_render": true },
+    "key": { "key": "key.origins.secondary_active" },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "resource": "*:*_active_resource",
+          "change": 1,
+          "operation": "set"
+        },
+        {
+          "type": "origins:change_resource",
+          "resource": "*:dark_healing_blood",
+          "change": -30,
+          "operation": "add"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "playsound minecraft:block.sculk_shrieker.shriek player @s ~ ~ ~ 1 0.7"
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 150,
+          "action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_active_resource",
+            "change": 0,
+            "operation": "set"
+          }
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 49,
+      "comparison": ">",
+      "resource": "*:dark_healing_blood"
+    }
+  },
+  "active_resource": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
+  }
+}

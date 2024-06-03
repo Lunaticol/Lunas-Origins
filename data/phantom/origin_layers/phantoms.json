@@ -1,0 +1,17 @@
+{
+  "name": "Phantom",
+  "replace": false,
+  "order": 3,
+  "hidden": false,
+  "enabled": true,
+  "origins": [
+    {
+      "condition": {
+        "type": "origins:origin",
+        "layer": "origins:origin",
+        "origin": "origins:phantom"
+      },
+      "origins": ["phantom:phantoms/phantom", "phantom:phantoms/crimson"]
+    }
+  ]
+}

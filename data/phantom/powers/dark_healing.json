@@ -1,0 +1,311 @@
+{
+  "name": "Blood Thirsty",
+  "description": "It seems the dark magic has made you aquire a taste for blood. You must feast upon mobs to survive",
+  "type": "origins:multiple",
+  "blood": {
+    "type": "origins:resource",
+    "max": 100,
+    "min": 0,
+    "start_value": 100,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
+      "bar_index": 5
+    }
+  },
+  "gain": {
+    "type": "origins:action_on_entity_use",
+    "bientity_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:target_condition",
+          "condition": {
+            "type": "origins:living"
+          }
+        },
+        {
+          "type": "origins:actor_condition",
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 0,
+            "comparison": "==",
+            "resource": "*:*_cooldown"
+          }
+        }
+      ]
+    },
+    "bientity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:actor_action",
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:heal",
+                "amount": 6
+              },
+              {
+                "type": "origins:change_resource",
+                "resource": "*:*_blood",
+                "change": 20,
+                "operation": "add"
+              },
+              {
+                "type": "origins:trigger_cooldown",
+                "power": "*:*_cooldown"
+              },
+              {
+                "type": "origins:feed",
+                "food": 6,
+                "saturation": 0.6
+              }
+            ]
+          }
+        },
+        {
+          "type": "origins:target_action",
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "particle minecraft:dust 1.0 0.0 0.0 1.0 ~ ~1 ~ 0.1 0.1 0.1 1 100 force"
+              },
+              {
+                "type": "origins:damage",
+                "amount": 6,
+                "damage_type": "minecraft:player_attack",
+                "source": {
+                  "bypasses_armor": false,
+                  "fire": false,
+                  "magic": true,
+                  "unblockable": false,
+                  "out_of_world": false,
+                  "name": "dark_healing"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "gain_creeper": {
+    "type": "origins:action_on_entity_use",
+    "bientity_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:target_condition",
+          "condition": {
+            "type": "origins:entity_type",
+            "entity_type": "minecraft:creeper"
+          }
+        },
+        {
+          "type": "origins:actor_condition",
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 0,
+            "comparison": "==",
+            "resource": "*:*_cooldown"
+          }
+        }
+      ]
+    },
+    "bientity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:actor_action",
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:explode",
+                "create_fire": false,
+                "damage_self": true,
+                "destruction_type": "none",
+                "power": 2
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "particle minecraft:explosion ~ ~1 ~ 1 1 1 1 10"
+              },
+              {
+                "type": "origins:play_sound",
+                "sound": "minecraft:entity.generic.explode",
+                "category": "master",
+                "pitch": 1,
+                "volume": 1
+              },
+              {
+                "type": "origins:grant_advancement",
+                "advancement": "luna:crimson_leech_creeper"
+              },
+              {
+                "type": "origins:change_resource",
+                "resource": "*:*_blood",
+                "change": 20,
+                "operation": "add"
+              },
+              {
+                "type": "origins:trigger_cooldown",
+                "power": "*:*_cooldown"
+              },
+              {
+                "type": "origins:feed",
+                "food": 6,
+                "saturation": 0.6
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "gain_wither_skelton": {
+    "type": "origins:action_on_entity_use",
+    "bientity_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:target_condition",
+          "condition": {
+            "type": "origins:entity_type",
+            "entity_type": "minecraft:wither"
+          }
+        },
+        {
+          "type": "origins:actor_condition",
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 0,
+            "comparison": "==",
+            "resource": "*:*_cooldown"
+          }
+        }
+      ]
+    },
+    "bientity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:actor_action",
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:apply_effect",
+                "effect": { "effect": "minecraft:wither", "duration": 100 }
+              },
+              {
+                "type": "origins:grant_advancement",
+                "advancement": "luna:crimson_leech_wither"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "kill @s"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "gain_wither": {
+    "type": "origins:action_on_entity_use",
+    "bientity_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:target_condition",
+          "condition": {
+            "type": "origins:entity_type",
+            "entity_type": "minecraft:wither_skeleton"
+          }
+        },
+        {
+          "type": "origins:actor_condition",
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 0,
+            "comparison": "==",
+            "resource": "*:*_cooldown"
+          }
+        }
+      ]
+    },
+    "bientity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:actor_action",
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:apply_effect",
+                "effect": { "effect": "minecraft:wither", "duration": 100 }
+              },
+              {
+                "type": "origins:grant_advancement",
+                "advancement": "luna:crimson_leech_wither_skeleton"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "drain": {
+    "type": "origins:action_over_time",
+    "interval": 200,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": -2,
+      "resource": "*:*_blood"
+    },
+    "condition": {
+      "type": "origins:status_effect",
+      "effect": "minecraft:saturation",
+      "inverted": true
+    }
+  },
+  "cooldown": {
+    "type": "origins:cooldown",
+    "cooldown": 100,
+    "hud_render": {
+      "should_render": true
+    }
+  },
+  "no_blood_damage": {
+    "type": "origins:damage_over_time",
+    "damage": 2,
+    "interval": 20,
+    "damage_source": {
+      "bypasses_armor": true,
+      "unblockable": true,
+      "out_of_world": true,
+      "name": "out_of_blood"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 0,
+      "comparison": "==",
+      "resource": "*:*_blood"
+    }
+  },
+  "full_blood_on_respawn": {
+    "type": "origins:action_on_callback",
+    "entity_action_respawned": {
+      "type": "origins:change_resource",
+      "change": 100,
+      "operation": "set",
+      "resource": "*:*_blood"
+    }
+  }
+}
