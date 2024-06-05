@@ -11,10 +11,6 @@
       "type": "origins:and",
       "actions": [
         {
-          "type": "origins:execute_command",
-          "command": "function artificer:artificer/explodejumpartificer"
-        },
-        {
           "type": "origins:add_velocity",
           "y": 1,
           "space": "local"
@@ -73,27 +69,27 @@
         },
         {
           "type": "origins:execute_command",
-          "command": "particle minecraft:explosion_emitter ~ ~ ~ 0 0 0 1 1"
+          "command": "particle dust_color_transition 0.000 0.000 0.000 2 0.439 0.408 0.408 ~ ~ ~ 2 2 2 1 100 normal"
         },
         {
           "type": "moborigins:damage_equipment",
           "equipment_slot": "head",
-          "amount": 10
+          "amount": 5
         },
         {
           "type": "moborigins:damage_equipment",
           "equipment_slot": "chest",
-          "amount": 10
+          "amount": 5
         },
         {
           "type": "moborigins:damage_equipment",
           "equipment_slot": "legs",
-          "amount": 10
+          "amount": 5
         },
         {
           "type": "moborigins:damage_equipment",
           "equipment_slot": "feet",
-          "amount": 10
+          "amount": 5
         },
         {
           "type": "origins:explode",

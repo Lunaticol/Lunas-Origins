@@ -1,0 +1,24 @@
+{
+  "display": {
+    "title": {
+      "text": "§5Perseverance"
+    },
+    "description": {
+      "text": "Play as Perseverance"
+    },
+    "icon": {
+      "item": "minecraft:purple_wool",
+      "nbt": "{CustomModelData:42700}"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "origins": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "luna:souls/kill_or_be_killed"
+}

@@ -53,7 +53,7 @@
     "type": "origins:resource",
     "max": 250,
     "min": 0,
-    "start_value": 200,
+    "start_value": 250,
     "hud_render": {
       "should_render": true,
       "sprite_location": "origins:textures/gui/luna_resource_bar.png",

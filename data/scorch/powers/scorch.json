@@ -29,8 +29,18 @@
   "width": {
     "type": "origins:action_on_callback",
     "entity_action_chosen": {
-      "type": "origins:execute_command",
-      "command": "scale set pehkui:width 1.5 @s"
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "scale set pehkui:width 1.5 @s",
+          "permission_level": 4
+        },
+        {
+          "type": "origins:grant_advancement",
+          "advancement": "luna:artificer/artificer"
+        }
+      ]
     },
     "entity_action_respawned": {
       "type": "origins:execute_command",

@@ -1,0 +1,23 @@
+{
+  "display": {
+    "title": {
+      "text": "Its a bad day for rain..."
+    },
+    "description": {
+      "text": "Die from rain exposure"
+    },
+    "icon": {
+      "item": "minecraft:water_bucket"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "origins": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "luna:artificer/artificer"
+}

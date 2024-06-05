@@ -1,13 +1,13 @@
 {
   "display": {
     "title": {
-      "text": "That was really stupid"
+      "text": "August 6th, 1945"
     },
     "description": {
-      "text": "Did you not learn your lesson the first time?"
+      "text": "Die as artificer"
     },
     "icon": {
-      "item": "minecraft:wither_skeleton_skull"
+      "item": "minecraft:tnt"
     },
     "frame": "challenge",
     "show_toast": true,
@@ -15,9 +15,9 @@
     "hidden": true
   },
   "criteria": {
-    "leechedwither": {
+    "origins": {
       "trigger": "minecraft:impossible"
     }
   },
-  "parent": "luna:crimson_leech_wither_skeleton"
+  "parent": "luna:artificer/artificer"
 }

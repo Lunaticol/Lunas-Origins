@@ -10,5 +10,25 @@
         "tag": "axolotl:axolotl/these_are_buckets"
       }
     }
+  },
+  "advancement": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:grant_advancement",
+      "advancement": "luna:axolotl/bucket"
+    },
+    "condition": {
+      "type": "origins:inventory",
+      "compare_to": 1,
+      "comparison": ">=",
+      "process_mode": "items",
+      "item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": {
+          "tag": "axolotl:axolotl/these_are_buckets"
+        }
+      }
+    }
   }
 }

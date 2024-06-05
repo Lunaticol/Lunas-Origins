@@ -3,20 +3,10 @@
   "description": "You stand for §eJustice§r.",
   "type": "origins:multiple",
   "justice": {
-    "type": "origins:fire_projectile",
-    "cooldown": 1000,
-    "entity_type": "minecraft:spectral_arrow",
-    "tag": "{pickup:2b,life:20,damage:50d,crit:1b,PierceLevel:10b}",
-    "key": "key.use",
-    "condition": {
-      "type": "origins:equipped_item",
-      "equipment_slot": "mainhand",
-      "item_condition": {
-        "type": "origins:ingredient",
-        "ingredient": {
-          "item": "minecraft:bow"
-        }
-      }
+    "type": "origins:modify_projectile_damage",
+    "modifier": {
+      "operation": "addition",
+      "value": 4
     }
   },
   "soul_detection": {
@@ -137,6 +127,13 @@
       "conditions": [
         { "type": "origins:health", "comparison": "==", "compare_to": 2 }
       ]
+    }
+  },
+  "advancement": {
+    "type": "origins:action_on_callback",
+    "entity_action_chosen": {
+      "type": "origins:grant_advancement",
+      "advancement": "luna:souls/kill_or_be_killed"
     }
   }
 }

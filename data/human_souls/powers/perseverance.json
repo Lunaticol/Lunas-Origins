@@ -3,11 +3,21 @@
   "description": "With §5Perseverance§r you will get through this!",
   "type": "origins:multiple",
   "perseverance": {
-    "type": ""
+    "type": "origins:self_action_on_kill",
+    "cooldown": 0,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:heal",
+          "amount": 4
+        }
+      ]
+    }
   },
   "soul_detection": {
     "type": "origins:action_over_time",
-    "interval": 1200,
+    "interval": 20,
     "entity_action": {
       "type": "origins:area_of_effect",
       "radius": 16,
@@ -123,6 +133,13 @@
       "conditions": [
         { "type": "origins:health", "comparison": "==", "compare_to": 2 }
       ]
+    }
+  },
+  "advancement": {
+    "type": "origins:action_on_callback",
+    "entity_action_chosen": {
+      "type": "origins:grant_advancement",
+      "advancement": "luna:souls/kill_or_be_killed"
     }
   }
 }

@@ -1,0 +1,23 @@
+{
+  "display": {
+    "title": {
+      "text": "End"
+    },
+    "description": {
+      "text": "Transform into the Ender Kitsune"
+    },
+    "icon": {
+      "item": "minecraft:end_stone"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": true
+  },
+  "criteria": {
+    "origins": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "luna:kitsune/fall"
+}

@@ -70,6 +70,11 @@
                 "change": -5
               },
               {
+                "type": "origins:change_resource",
+                "resource": "*:*_was_falling",
+                "change": 1
+              },
+              {
                 "type": "origins:exhaust",
                 "amount": 1.5
               }
@@ -123,6 +128,11 @@
               {
                 "type": "origins:exhaust",
                 "amount": 1
+              },
+              {
+                "type": "origins:change_resource",
+                "resource": "*:*_was_falling",
+                "change": 1
               }
             ]
           }
@@ -180,6 +190,11 @@
               {
                 "type": "origins:exhaust",
                 "amount": 1
+              },
+              {
+                "type": "origins:change_resource",
+                "resource": "*:*_was_falling",
+                "change": 1
               }
             ]
           }
@@ -237,6 +252,11 @@
               {
                 "type": "origins:exhaust",
                 "amount": 0.5
+              },
+              {
+                "type": "origins:change_resource",
+                "resource": "*:*_was_falling",
+                "change": 1
               }
             ]
           }
@@ -270,6 +290,45 @@
     },
     "condition": {
       "type": "origins:fall_flying"
+    }
+  },
+  "was_falling": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
+  },
+  "advancement": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:grant_advancement",
+      "advancement": "luna:kitsune/fall"
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:health",
+          "compare_to": 0,
+          "comparison": "=="
+        },
+        {
+          "type": "origins:resource",
+          "resource": "*:*_was_falling",
+          "comparison": "==",
+          "compare_to": 1
+        }
+      ]
+    }
+  },
+  "was_falling_reset": {
+    "type": "origins:action_over_time",
+    "interval": 200,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 0,
+      "resource": "*:*_was_falling",
+      "operation": "set"
     }
   }
 }

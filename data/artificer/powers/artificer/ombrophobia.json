@@ -87,7 +87,7 @@
       ]
     }
   },
-  "if_timer_empty_speed": {
+  "if_rain_speed": {
     "type": "origins:action_over_time",
     "interval": 10,
     "entity_action": {
@@ -108,11 +108,20 @@
         },
         {
           "type": "origins:resource",
-          "compare_to": 0,
-          "comparison": "==",
+          "compare_to": 60,
+          "comparison": "<",
           "resource": "*:*_ombrophobia_timer"
         }
       ]
+    }
+  },
+  "full_timer_on_respawn": {
+    "type": "origins:action_on_callback",
+    "entity_action_respawned": {
+      "type": "origins:change_resource",
+      "change": 60,
+      "operation": "set",
+      "resource": "*:*_ombrophobia_timer"
     }
   }
 }

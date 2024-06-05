@@ -3,7 +3,19 @@
   "description": "§3Patience§r, you'll get through this eventually.",
   "type": "origins:multiple",
   "patience": {
-    "type": ""
+    "type": "origins:action_over_time",
+    "interval": 200,
+    "entity_action": {
+      "type": "origins:apply_effect",
+      "effect": {
+        "effect": "minecraft:regeneration",
+        "duration": 100
+      }
+    },
+    "condition": {
+      "type": "origins:moving",
+      "inverted": true
+    }
   },
   "soul_detection": {
     "type": "origins:action_over_time",
@@ -123,6 +135,13 @@
       "conditions": [
         { "type": "origins:health", "comparison": "==", "compare_to": 2 }
       ]
+    }
+  },
+  "advancement": {
+    "type": "origins:action_on_callback",
+    "entity_action_chosen": {
+      "type": "origins:grant_advancement",
+      "advancement": "luna:souls/kill_or_be_killed"
     }
   }
 }

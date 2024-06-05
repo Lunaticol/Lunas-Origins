@@ -4,7 +4,8 @@
     "phantom:phase",
     "phantom:dark_healing",
     "phantom:blood_locate",
-    "phantom:night_dweller"
+    "phantom:night_dweller",
+    "phantom:blood_requiem"
   ],
   "icon": {
     "item": "minecraft:phantom_membrane",

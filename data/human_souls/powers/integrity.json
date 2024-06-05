@@ -3,7 +3,11 @@
   "description": "Even when things are rough, keeping §1Integrity§r will get you through this.",
   "type": "origins:multiple",
   "Integrity": {
-    "type": ""
+    "type": "origins:modify_jump",
+    "modifier": {
+      "value": 0.1,
+      "operation": "addition"
+    }
   },
   "soul_detection": {
     "type": "origins:action_over_time",
@@ -123,6 +127,13 @@
       "conditions": [
         { "type": "origins:health", "comparison": "==", "compare_to": 2 }
       ]
+    }
+  },
+  "advancement": {
+    "type": "origins:action_on_callback",
+    "entity_action_chosen": {
+      "type": "origins:grant_advancement",
+      "advancement": "luna:souls/kill_or_be_killed"
     }
   }
 }

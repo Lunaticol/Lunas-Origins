@@ -1,13 +1,13 @@
 {
   "display": {
     "title": {
-      "text": "Boom"
+      "text": "Skyweaver"
     },
     "description": {
-      "text": "Leech blood from a creeper"
+      "text": "Play Skyweaver"
     },
     "icon": {
-      "item": "minecraft:creeper_head"
+      "item": "minecraft:white_wool"
     },
     "frame": "task",
     "show_toast": true,
@@ -15,7 +15,7 @@
     "hidden": true
   },
   "criteria": {
-    "leechedcreeper": {
+    "origins": {
       "trigger": "minecraft:impossible"
     }
   },

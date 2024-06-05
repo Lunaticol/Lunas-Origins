@@ -46,6 +46,10 @@
           "change": 1,
           "operation": "set",
           "resource": "kitsune:kitsune/mode_switch_mode_resource"
+        },
+        {
+          "type": "origins:grant_advancement",
+          "advancement": "luna:kitsune/kitsune"
         }
       ]
     },

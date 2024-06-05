@@ -1,0 +1,23 @@
+{
+  "display": {
+    "title": {
+      "text": "Boom"
+    },
+    "description": {
+      "text": "Leech blood from a creeper"
+    },
+    "icon": {
+      "item": "minecraft:creeper_head"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "leechedcreeper": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "luna:crimson/crimson"
+}

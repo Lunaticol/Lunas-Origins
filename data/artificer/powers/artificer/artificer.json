@@ -95,22 +95,22 @@
               {
                 "type": "moborigins:damage_equipment",
                 "equipment_slot": "head",
-                "amount": 5
+                "amount": 2
               },
               {
                 "type": "moborigins:damage_equipment",
                 "equipment_slot": "chest",
-                "amount": 5
+                "amount": 2
               },
               {
                 "type": "moborigins:damage_equipment",
                 "equipment_slot": "legs",
-                "amount": 5
+                "amount": 2
               },
               {
                 "type": "moborigins:damage_equipment",
                 "equipment_slot": "feet",
-                "amount": 5
+                "amount": 2
               }
             ]
           },
@@ -368,6 +368,10 @@
             "unblockable": true,
             "name": "explosion"
           }
+        },
+        {
+          "type": "origins:grant_advancement",
+          "advancement": "luna:artificer/hiroshima"
         }
       ]
     },
@@ -410,9 +414,18 @@
   "width": {
     "type": "origins:action_on_callback",
     "entity_action_chosen": {
-      "type": "origins:execute_command",
-      "command": "scale set pehkui:width 0.80 @s",
-      "permission_level": 4
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "scale set pehkui:width 0.80 @s",
+          "permission_level": 4
+        },
+        {
+          "type": "origins:grant_advancement",
+          "advancement": "luna:artificer/artificer"
+        }
+      ]
     },
     "entity_action_respawned": {
       "type": "origins:execute_command",

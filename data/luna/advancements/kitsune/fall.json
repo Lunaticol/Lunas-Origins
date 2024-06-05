@@ -1,0 +1,23 @@
+{
+  "display": {
+    "title": {
+      "text": "Freeeee Fallin"
+    },
+    "description": {
+      "text": "Die from falling after using a dash"
+    },
+    "icon": {
+      "item": "minecraft:sweet_berries"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "origins": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "luna:kitsune/kitsune"
+}

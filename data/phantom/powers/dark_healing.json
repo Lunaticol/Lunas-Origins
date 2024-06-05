@@ -6,7 +6,7 @@
     "type": "origins:resource",
     "max": 100,
     "min": 0,
-    "start_value": 100,
+    "start_value": 20,
     "hud_render": {
       "should_render": true,
       "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
@@ -15,26 +15,6 @@
   },
   "gain": {
     "type": "origins:action_on_entity_use",
-    "bientity_condition": {
-      "type": "origins:and",
-      "conditions": [
-        {
-          "type": "origins:target_condition",
-          "condition": {
-            "type": "origins:living"
-          }
-        },
-        {
-          "type": "origins:actor_condition",
-          "condition": {
-            "type": "origins:resource",
-            "compare_to": 0,
-            "comparison": "==",
-            "resource": "*:*_cooldown"
-          }
-        }
-      ]
-    },
     "bientity_action": {
       "type": "origins:and",
       "actions": [
@@ -50,7 +30,7 @@
               {
                 "type": "origins:change_resource",
                 "resource": "*:*_blood",
-                "change": 20,
+                "change": 10,
                 "operation": "add"
               },
               {
@@ -61,6 +41,26 @@
                 "type": "origins:feed",
                 "food": 6,
                 "saturation": 0.6
+              }
+            ]
+          },
+          "bientity_condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:target_condition",
+                "condition": {
+                  "type": "origins:living"
+                }
+              },
+              {
+                "type": "origins:actor_condition",
+                "condition": {
+                  "type": "origins:resource",
+                  "compare_to": 0,
+                  "comparison": "==",
+                  "resource": "*:*_cooldown"
+                }
               }
             ]
           }
@@ -279,6 +279,7 @@
     "type": "origins:cooldown",
     "cooldown": 100,
     "hud_render": {
+      "bar_index": 3,
       "should_render": true
     }
   },
