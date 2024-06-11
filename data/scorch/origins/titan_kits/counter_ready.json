@@ -1,6 +1,5 @@
 {
   "name": "Counter Ready",
-  "unchoosable": true,
   "description": "Have your Counter ready on spawn",
   "icon": "minecraft:lightning_rod",
   "loading_priority": 1,

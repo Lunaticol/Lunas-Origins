@@ -63,7 +63,7 @@
   },
   "recharge": {
     "type": "origins:action_over_time",
-    "interval": 200,
+    "interval": 300,
     "entity_action": {
       "type": "origins:change_resource",
       "change": 1,
