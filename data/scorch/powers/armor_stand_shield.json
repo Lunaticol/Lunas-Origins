@@ -20,9 +20,16 @@
                 "actions": [
                   {
                     "type": "origins:damage",
-                    "amount": 20,
+                    "amount": 10,
                     "damage_type": "minecraft:lava",
-                    "source": { "fire": true, "name": "shield" }
+                    "source": {
+                      "fire": true,
+                      "bypasses_armor": false,
+                      "out_of_world": false,
+                      "magic": false,
+                      "unblockable": false,
+                      "name": "shield"
+                    }
                   },
                   {
                     "type": "origins:set_on_fire",

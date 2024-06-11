@@ -101,7 +101,7 @@
             "type": "origins:target_action",
             "action": {
               "type": "origins:damage",
-              "amount": 10,
+              "amount": 5,
               "damage_type": "minecraft:lava",
               "source": {
                 "fire": true,

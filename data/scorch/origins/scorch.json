@@ -2,6 +2,7 @@
   "powers": [
     "scorch:scorch",
     "scorch:core",
+    "scorch:counter",
     "scorch:thermite_launcher",
     "scorch:firewall",
     "scorch:thermal_shield",
