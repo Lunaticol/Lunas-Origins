@@ -1,4 +1,6 @@
 {
+  "name": "Healing Pulse",
+  "description": "Heal others within an area",
   "type": "origins:multiple",
   "healing_others": {
     "type": "origins:active_self",
