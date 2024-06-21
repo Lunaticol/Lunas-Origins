@@ -38,7 +38,7 @@
         },
         {
           "type": "origins:grant_advancement",
-          "advancement": "luna:artificer/artificer"
+          "advancement": "luna:scorch/scorch"
         }
       ]
     },

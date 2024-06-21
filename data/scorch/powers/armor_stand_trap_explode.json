@@ -141,16 +141,28 @@
       ]
     },
     "condition": {
-      "type": "origins:block_in_radius",
-      "block_condition": {
-        "type": "origins:or",
-        "conditions": [
-          { "type": "origins:block", "block": "minecraft:fire" },
-          { "type": "origins:block", "block": "minecraft:soul_fire" }
-        ]
-      },
-      "shape": "cube",
-      "radius": 6
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:block_in_radius",
+          "block_condition": {
+            "type": "origins:or",
+            "conditions": [
+              { "type": "origins:block", "block": "minecraft:fire" },
+              { "type": "origins:block", "block": "minecraft:soul_fire" }
+            ]
+          },
+          "shape": "cube",
+          "radius": 6
+        },
+        {
+          "inverted": true,
+          "type": "origins:command",
+          "command": "flan claimInfo",
+          "comparison": "==",
+          "compare_to": 1
+        }
+      ]
     }
   },
   "fire_ignited": {

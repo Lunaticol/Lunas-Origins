@@ -43,26 +43,6 @@
                 "saturation": 0.6
               }
             ]
-          },
-          "bientity_condition": {
-            "type": "origins:and",
-            "conditions": [
-              {
-                "type": "origins:target_condition",
-                "condition": {
-                  "type": "origins:living"
-                }
-              },
-              {
-                "type": "origins:actor_condition",
-                "condition": {
-                  "type": "origins:resource",
-                  "compare_to": 0,
-                  "comparison": "==",
-                  "resource": "*:*_cooldown"
-                }
-              }
-            ]
           }
         },
         {
@@ -88,6 +68,26 @@
                 }
               }
             ]
+          }
+        }
+      ]
+    },
+    "bientity_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:target_condition",
+          "condition": {
+            "type": "origins:living"
+          }
+        },
+        {
+          "type": "origins:actor_condition",
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 0,
+            "comparison": "==",
+            "resource": "*:*_cooldown"
           }
         }
       ]
