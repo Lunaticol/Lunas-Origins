@@ -1,0 +1,10 @@
+{
+  "name": "Faith",
+  "order": 9,
+  "origins": [
+    "norb:cozy_gods/gods/azura",
+    "norb:cozy_gods/gods/aeirlys",
+    "norb:cozy_gods/gods/argon",
+    "norb:cozy_gods/gods/ashryn"
+  ]
+}
