@@ -3,7 +3,7 @@
   "icon": "minecraft:barrier",
   "unchoosable": false,
   "order": 9,
-  "impact": 3,
+  "impact": 0,
   "name": "No Faith",
   "description": "You follow your own faith"
 }
