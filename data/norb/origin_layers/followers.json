@@ -6,6 +6,7 @@
     "norb:cozy_gods/gods/aeirlys",
     "norb:cozy_gods/gods/argon",
     "norb:cozy_gods/gods/ashryn",
-    "norb:cozy_gods/gods/no_faith"
+    "norb:cozy_gods/gods/no_faith",
+    "command:follower/command_block"
   ]
 }

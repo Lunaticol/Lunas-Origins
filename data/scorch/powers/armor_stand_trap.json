@@ -60,7 +60,7 @@
         },
         {
           "type": "origins:execute_command",
-          "command": "kill @e[tag=Trap,distance=..2]"
+          "command": "kill @s"
         }
       ]
     },
@@ -187,7 +187,7 @@
         },
         {
           "type": "origins:execute_command",
-          "command": "kill @e[tag=Trap,distance=..2]"
+          "command": "kill @s"
         }
       ]
     },

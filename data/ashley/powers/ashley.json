@@ -4,7 +4,7 @@
   "type": "origins:multiple",
   "light_sensitive": {
     "type": "origins:shader",
-    "shader": "minecraft:shaders/post/blobs2.json",
+    "shader": "minecraft:shaders/post/phosphor.json",
     "condition": {
       "type": "origins:or",
       "conditions": [
@@ -283,7 +283,7 @@
     "type": "origins:modify_xp_gain",
     "modifier": {
       "operation": "multiply_base",
-      "value": 1.5
+      "value": 3.5
     }
   },
   "glow_berry_death": {

@@ -31,5 +31,13 @@
       "type": "origins:execute_command",
       "command": "kill @s"
     }
+  },
+  "kill_armorstand_backup": {
+    "type": "origins:action_over_time",
+    "interval": 200,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "kill @s"
+    }
   }
 }

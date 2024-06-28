@@ -1,7 +1,6 @@
 {
   "values": [
     "minecraft:cooked_salmon",
-    "minecraft:cooked_cod",
-    "betterend:end_fish_cooked"
+    "minecraft:cooked_cod"
   ]
 }

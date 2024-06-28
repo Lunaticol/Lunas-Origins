@@ -53,7 +53,7 @@
           "effects": [
             {
               "duration": 40,
-              "effect": "minecraft:regeneration",
+              "effect": "minecraft:night_vision",
               "show_icon": true,
               "show_particles": false
             },
