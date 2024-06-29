@@ -1,0 +1,65 @@
+{
+  "type": "origins:multiple",
+  "flame_shield": {
+    "type": "origins:action_over_time",
+    "interval": 2,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:delay",
+          "ticks": 1,
+          "action": {
+            "type": "origins:area_of_effect",
+            "radius": 1,
+            "shape": "cube",
+            "bientity_action": {
+              "type": "origins:target_action",
+              "action": {
+                "type": "origins:and",
+                "actions": [
+                  {
+                    "type": "origins:damage",
+                    "amount": 10,
+                    "damage_type": "minecraft:lava",
+                    "source": {
+                      "fire": true,
+                      "bypasses_armor": false,
+                      "out_of_world": false,
+                      "magic": false,
+                      "unblockable": false,
+                      "name": "shield"
+                    }
+                  },
+                  {
+                    "type": "origins:set_on_fire",
+                    "duration": 6
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "origins:play_sound",
+          "category": "master",
+          "pitch": 2,
+          "sound": "minecraft:block.fire.ambient",
+          "volume": 1
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 2,
+          "action": {
+            "type": "origins:execute_command",
+            "command": "kill @s"
+          }
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "particle minecraft:flame ~ ~ ~ 0.2 0.2 0.2 0 5 force"
+        }
+      ]
+    }
+  }
+}

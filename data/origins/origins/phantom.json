@@ -1,5 +1,5 @@
 {
-  "powers": [],
+  "powers": ["phantom:desc/crimson", "phantom:desc/phantom"],
   "icon": {
     "item": "minecraft:phantom_membrane"
   },
@@ -7,6 +7,5 @@
   "impact": 3,
   "name": "Phantom",
   "loading_priority": 1,
-  "unchoosable": true,
   "description": "These creatures, Half-Human, Half-Phantom, Have branched off into two diffrent species."
 }

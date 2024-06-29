@@ -1,0 +1,246 @@
+{
+  "type": "origins:multiple",
+  "name": "Scorched",
+  "description": "An Ogre Class Titan with an array of Fire Abilitys.",
+  "height": {
+    "type": "origins:action_on_callback",
+    "execute_chosen_when_orb": true,
+    "entity_action_chosen": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:height 1.5 @s"
+    },
+    "entity_action_respawned": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:height 1.5 @s"
+    },
+    "entity_action_added": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:height 1.5 @s"
+    },
+    "entity_action_lost": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:height 1 @s"
+    },
+    "entity_action_removed": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:height 1 @s"
+    }
+  },
+  "width": {
+    "type": "origins:action_on_callback",
+    "entity_action_chosen": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "scale set pehkui:width 1.5 @s",
+          "permission_level": 4
+        },
+        {
+          "type": "origins:grant_advancement",
+          "advancement": "luna:scorch/scorch"
+        }
+      ]
+    },
+    "entity_action_respawned": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:width 1.5 @s"
+    },
+    "entity_action_added": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:width 1.5 @s"
+    },
+    "entity_action_lost": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:width 1 @s"
+    },
+    "entity_action_removed": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:width 1 @s"
+    }
+  },
+  "step_height": {
+    "type": "origins:action_on_callback",
+    "entity_action_chosen": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:step_height 2 @s"
+    },
+    "entity_action_respawned": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:step_height 2 @s"
+    },
+    "entity_action_added": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:step_height 2 @s"
+    },
+    "entity_action_lost": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:step_height 1 @s"
+    },
+    "entity_action_removed": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:step_height 1 @s"
+    }
+  },
+  "health": {
+    "type": "origins:attribute",
+    "update_health": true,
+    "modifier": {
+      "attribute": "minecraft:generic.max_health",
+      "value": 30,
+      "operation": "addition"
+    }
+  },
+  "slow": {
+    "type": "origins:attribute",
+    "update_health": true,
+    "modifier": {
+      "attribute": "minecraft:generic.movement_speed",
+      "value": -0.05,
+      "operation": "addition"
+    }
+  },
+  "water": {
+    "type": "origins:ignore_water"
+  },
+  "reactor_exposed_shader": {
+    "type": "origins:shader",
+    "shader": "minecraft:shaders/post/deconverge.json",
+    "toggleable": false,
+    "condition": {
+      "type": "origins:health",
+      "compare_to": 20,
+      "comparison": "<="
+    }
+  },
+  "exposed_reactor": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "value": 1,
+      "operation": "multiply_total"
+    },
+    "condition": {
+      "type": "origins:health",
+      "compare_to": 20,
+      "comparison": "<="
+    }
+  },
+  "dash": {
+    "type": "origins:active_self",
+    "key": {
+      "key": "key.jump"
+    },
+    "cooldown": 150,
+    "hud_render": {
+      "should_render": true,
+      "bar_index": 23,
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+      "condition": {
+        "type": "origins:resource",
+        "compare_to": 0,
+        "comparison": "==",
+        "resource": "*:*_turbo_engine"
+      }
+    },
+    "entity_action": {
+      "type": "origins:add_velocity",
+      "space": "local",
+      "z": 1
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:*_turbo_engine"
+        }
+      ]
+    }
+  },
+  "dash_turbo_engine": {
+    "type": "origins:active_self",
+    "key": {
+      "key": "key.jump"
+    },
+    "hud_render": {
+      "should_render": true,
+      "bar_index": 23,
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+      "condition": {
+        "type": "origins:resource",
+        "compare_to": 1,
+        "comparison": "==",
+        "resource": "*:*_turbo_engine"
+      }
+    },
+    "cooldown": 75,
+    "entity_action": {
+      "type": "origins:add_velocity",
+      "space": "local",
+      "z": 1
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": "==",
+          "resource": "*:*_turbo_engine"
+        }
+      ]
+    }
+  },
+  "fuck_your_shield": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "moborigins:damage_equipment",
+      "equipment_slot": "offhand",
+      "amount": 1
+    },
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "offhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": { "item": "minecraft:shield" }
+          }
+        },
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": { "item": "minecraft:shield" }
+          }
+        }
+      ]
+    }
+  },
+  "jump": {
+    "type": "origins:modify_jump",
+    "modifier": {
+      "operation": "multiply_total",
+      "value": -2,
+      "name": "no_jump"
+    }
+  },
+  "no_healing": {
+    "type": "origins:disable_regen"
+  },
+  "no_elytra": {
+    "type": "origins:restrict_armor",
+    "chest": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:elytra"
+      }
+    }
+  }
+}

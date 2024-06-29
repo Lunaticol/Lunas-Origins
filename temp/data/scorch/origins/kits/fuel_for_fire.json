@@ -1,0 +1,10 @@
+{
+  "name": "Fuel for the Fire",
+  "unchoosable": false,
+  "description": "Flame Wall cooldown reduced.",
+  "icon": "minecraft:lava_bucket",
+  "loading_priority": 1,
+  "impact": 0,
+  "order": 2,
+  "powers": ["scorch:kits/fuel_for_fire"]
+}

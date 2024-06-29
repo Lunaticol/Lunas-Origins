@@ -9,7 +9,7 @@
       "condition": {
         "type": "origins:origin",
         "layer": "origins:origin",
-        "origin": "phantom:phantom"
+        "origin": "origins:phantom"
       },
       "origins": ["phantom:phantoms/phantom", "phantom:phantoms/crimson"]
     }

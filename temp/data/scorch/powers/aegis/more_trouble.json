@@ -1,0 +1,53 @@
+{
+  "type": "origins:multiple",
+  "name": "More Thermite",
+  "description": "Thermite Launcher capacity is increased.\nUse [Netherite Scrap (x2 to fully upgrade)] To obtain this upgrade!",
+  "trouble_bar": {
+    "type": "origins:resource",
+    "max": 2,
+    "min": 0
+  },
+  "trouble_upgrade": {
+    "type": "origins:active_self",
+    "key": "key.use",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "resource": "*:*_trouble_bar",
+          "change": 1
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "clear @s minecraft:netherite_scrap 1"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "title @p actionbar {\"bold\":true,\"color\":\"gold\",\"text\":\"More Trouble Unlocked!\"}"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "item": "minecraft:netherite_scrap"
+            }
+          }
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": "<=",
+          "resource": "*:*_trouble_bar"
+        }
+      ]
+    }
+  }
+}

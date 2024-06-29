@@ -1,0 +1,27 @@
+{
+  "hidden": true,
+  "name": "Counter Ready",
+  "description": "Have your Counter ready on spawn",
+  "type": "origins:multiple",
+  "overcore": {
+    "type": "origins:action_on_callback",
+    "entity_action_chosen": {
+      "type": "origins:change_resource",
+      "resource": "*:counter_counter",
+      "change": 1,
+      "operation": "add"
+    },
+    "entity_action_added": {
+      "type": "origins:change_resource",
+      "resource": "*:counter_counter",
+      "change": 1,
+      "operation": "add"
+    },
+    "entity_action_respawned": {
+      "type": "origins:change_resource",
+      "resource": "*:counter_counter",
+      "change": 1,
+      "operation": "add"
+    }
+  }
+}

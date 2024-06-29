@@ -1,0 +1,9 @@
+{
+  "name": "Counter Ready",
+  "description": "Have your Counter ready on spawn",
+  "icon": "minecraft:lightning_rod",
+  "loading_priority": 1,
+  "impact": 0,
+  "order": 1,
+  "powers": ["scorch:titan_kit/counter_ready"]
+}

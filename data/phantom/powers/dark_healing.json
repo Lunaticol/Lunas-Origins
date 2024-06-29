@@ -1,6 +1,6 @@
 {
   "name": "Blood Thirsty",
-  "description": "It seems the dark magic has made you aquire a taste for blood. You must feast upon mobs to survive",
+  "description": "It seems the dark magic has made you acquire a taste for blood. You must feast upon mobs to survive",
   "type": "origins:multiple",
   "blood": {
     "type": "origins:resource",
@@ -84,10 +84,19 @@
         {
           "type": "origins:actor_condition",
           "condition": {
-            "type": "origins:resource",
-            "compare_to": 0,
-            "comparison": "==",
-            "resource": "*:*_cooldown"
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:resource",
+                "compare_to": 0,
+                "comparison": "==",
+                "resource": "*:*_cooldown"
+              },
+              {
+                "type": "origins:sneaking",
+                "inverted": true
+              }
+            ]
           }
         }
       ]
@@ -167,7 +176,7 @@
       ]
     }
   },
-  "gain_wither_skelton": {
+  "gain_wither": {
     "type": "origins:action_on_entity_use",
     "bientity_condition": {
       "type": "origins:and",
@@ -216,7 +225,7 @@
       ]
     }
   },
-  "gain_wither": {
+  "gain_wither_skeleton": {
     "type": "origins:action_on_entity_use",
     "bientity_condition": {
       "type": "origins:and",
@@ -270,7 +279,7 @@
       "resource": "*:*_blood"
     },
     "condition": {
-      "type": "origins:or",
+      "type": "origins:and",
       "conditions": [
         {
           "type": "origins:status_effect",
@@ -278,8 +287,7 @@
           "inverted": true
         },
         {
-          "type": "origins:moving",
-          "inverted": true
+          "type": "origins:moving"
         }
       ]
     }
@@ -309,11 +317,11 @@
       "resource": "*:*_blood"
     }
   },
-  "full_blood_on_respawn": {
+  "twenty_blood_on_respawn": {
     "type": "origins:action_on_callback",
     "entity_action_respawned": {
       "type": "origins:change_resource",
-      "change": 100,
+      "change": 20,
       "operation": "set",
       "resource": "*:*_blood"
     }

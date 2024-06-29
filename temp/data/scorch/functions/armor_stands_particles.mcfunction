@@ -1,0 +1,10 @@
+execute at @e[tag=armor_scorch_1] run particle minecraft:flame ~ ~ ~ 2 0 2 0.01 20 normal
+execute at @e[tag=armor_scorch_1] run particle minecraft:dust 1.0 0.0 0.0 1.0 ~ ~.5 ~ 0.5 0 0.5 0.01 1 force
+execute at @e[tag=armor_scorch_2] run particle minecraft:flame ~ ~ ~ 2 0 2 0.01 20 normal
+execute at @e[tag=armor_scorch_2] run particle minecraft:dust 1.0 0.0 0.0 1.0 ~ ~.5 ~ 0.5 0 0.5 0.01 1 force
+execute at @e[tag=armor_scorch_3] run particle minecraft:flame ~ ~ ~ 2 0 2 0.01 20 normal
+execute at @e[tag=armor_scorch_3] run particle minecraft:dust 1.0 0.0 0.0 1.0 ~ ~.5 ~ 0.5 0 0.5 0.01 1 force
+execute at @e[tag=armor_scorch_4] run particle minecraft:flame ~ ~ ~ 2 0 2 0.01 20 normal
+execute at @e[tag=armor_scorch_4] run particle minecraft:dust 1.0 0.0 0.0 1.0 ~ ~.5 ~ 0.5 0 0.5 0.01 1 force
+execute at @e[tag=armor_scorch_5] run particle minecraft:flame ~ ~ ~ 2 0 2 0.01 20 normal
+execute at @e[tag=armor_scorch_5] run particle minecraft:dust 1.0 0.0 0.0 1.0 ~ ~.5 ~ 0.5 0 0.5 0.01 1 force

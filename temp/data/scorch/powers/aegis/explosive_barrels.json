@@ -1,0 +1,53 @@
+{
+  "type": "origins:multiple",
+  "name": "Explosive Barrels",
+  "description": "Barrels explode upon being ignited\nUse [TNT] To obtain this upgrade!",
+  "exploding_barrels": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
+  },
+  "barrels_upgrade": {
+    "type": "origins:active_self",
+    "key": "key.use",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "resource": "*:*_exploding_barrels",
+          "change": 1
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "clear @s minecraft:tnt 1"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "title @p actionbar {\"bold\":true,\"color\":\"gold\",\"text\":\"Explosive Barrels Unlocked!\"}"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "item": "minecraft:tnt"
+            }
+          }
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:*_exploding_barrels"
+        }
+      ]
+    }
+  }
+}

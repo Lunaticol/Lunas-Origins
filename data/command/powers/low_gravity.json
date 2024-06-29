@@ -1,0 +1,34 @@
+{
+  "type": "origins:multiple",
+  "intruder": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:area_of_effect",
+      "radius": 8,
+      "shape": "cube",
+      "bientity_action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:target_action",
+            "action": {
+              "type": "origins:apply_effect",
+              "effects": [
+                {
+                  "effect": "minecraft:slow_falling",
+                  "duration": 40
+                },
+                {
+                  "effect": "minecraft:jump_boost",
+                  "duration": 40,
+                  "amplifier": 1
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}

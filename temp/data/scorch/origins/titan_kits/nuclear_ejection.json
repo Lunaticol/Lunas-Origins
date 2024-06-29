@@ -1,0 +1,9 @@
+{
+  "name": "Nuclear Blast",
+  "description": "At your reactor level, you can unleash a violent explosion.",
+  "icon": "minecraft:end_crystal",
+  "loading_priority": 1,
+  "impact": 0,
+  "order": 1,
+  "powers": ["scorch:titan_kit/nuclear_ejection"]
+}
