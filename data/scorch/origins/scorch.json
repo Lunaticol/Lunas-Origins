@@ -1,7 +1,6 @@
 {
   "powers": [
     "scorch:scorch",
-    "scorch:scorchh",
     "scorch:core",
     "scorch:counter",
     "scorch:thermite_launcher",

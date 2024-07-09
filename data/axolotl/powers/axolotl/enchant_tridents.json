@@ -7,7 +7,11 @@
     "enchantments": [
       "minecraft:looting",
       "minecraft:knockback",
-      "minecraft:sweeping"
+      "minecraft:sweeping",
+      "minecraft:sharpness",
+      "betterarcheology:penetrating_strike",
+      "minecraft:bane_of_arthropods",
+      "minecraft:smite"
     ],
     "item_condition": {
       "type": "origins:ingredient",

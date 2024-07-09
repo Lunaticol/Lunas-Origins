@@ -106,8 +106,8 @@
         },
         {
           "type": "origins:resource",
-          "compare_to": 1,
-          "comparison": "!=",
+          "compare_to": 0,
+          "comparison": "==",
           "resource": "*:counter_counter"
         }
       ]

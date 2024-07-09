@@ -10,11 +10,7 @@
     }
   },
   "fake_death": {
-    "type": "origins:action_when_damage_taken",
-    "cooldown": 6000,
-    "hud_render": {
-      "should_render": true
-    },
+    "type": "origins:prevent_death",
     "entity_action": {
       "type": "origins:and",
       "actions": [
@@ -54,9 +50,36 @@
     "condition": {
       "type": "origins:and",
       "conditions": [
-        { "type": "origins:health", "comparison": "<", "compare_to": 6 },
-        { "type": "origins:power_active", "power": "*:*_toggle" }
+        {
+          "type": "origins:power_active",
+          "power": "*:*_toggle"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:*_cooldown"
+        }
       ]
+    }
+  },
+  "cooldown": {
+    "type": "origins:cooldown",
+    "cooldown": 6000,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
+      "bar_index": 4
+    }
+  },
+  "totem_not_use": {
+    "type": "moborigins:totem_chance",
+    "chance": 1,
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 0,
+      "comparison": "==",
+      "resource": "*:*_cooldown"
     }
   }
 }

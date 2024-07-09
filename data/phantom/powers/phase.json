@@ -9,7 +9,7 @@
     "view_distance": 10,
     "block_condition": {
       "type": "origins:in_tag",
-      "tag": "phantom:unphasable"
+      "tag": "origins:unphasable"
     },
     "phase_down_condition": {
       "type": "origins:and",
@@ -51,9 +51,9 @@
   },
   "phase_bar": {
     "type": "origins:resource",
-    "max": 250,
+    "max": 300,
     "min": 0,
-    "start_value": 250,
+    "start_value": 300,
     "hud_render": {
       "should_render": true,
       "sprite_location": "origins:textures/gui/luna_resource_bar.png",
@@ -429,6 +429,10 @@
           "compare_to": 0,
           "comparison": "==",
           "resource": "*:*_lock"
+        },
+        {
+          "type": "origins:power_active",
+          "power": "*:*_phase_toggle"
         }
       ]
     }

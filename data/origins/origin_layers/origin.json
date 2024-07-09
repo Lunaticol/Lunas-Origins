@@ -7,6 +7,8 @@
     "button:right_hand_button",
     "button:button_lord",
     "button:powerless",
+    "command:command",
+    "command:warrior/warrior",
     "hideandseek:hider",
     "hideandseek:seeker",
     "kitsune:kitsune",
@@ -14,6 +16,7 @@
     "luna:luna",
     "scorch:scorch",
     "skyweaver:skyweaver",
-    "phantom:phantom"
+    "phantom:phantom",
+    "commandarmor:commandarmor"
   ]
 }

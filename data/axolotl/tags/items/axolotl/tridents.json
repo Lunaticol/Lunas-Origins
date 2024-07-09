@@ -1,4 +1,4 @@
 {
   "replace": false,
-  "values": ["minecraft:trident"]
+  "values": ["minecraft:trident", "dragonloot:dragon_trident"]
 }

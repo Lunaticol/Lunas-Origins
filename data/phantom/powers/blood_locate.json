@@ -58,7 +58,7 @@
         },
         {
           "type": "origins:delay",
-          "ticks": 150,
+          "ticks": 200,
           "action": {
             "type": "origins:change_resource",
             "resource": "*:*_active_resource",

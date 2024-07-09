@@ -103,7 +103,7 @@
     "modifier": {
       "name": "weak",
       "attribute": "minecraft:generic.attack_damage",
-      "operation": "addition",
+      "operation": "multiply_base",
       "value": -0.5
     },
     "condition": {

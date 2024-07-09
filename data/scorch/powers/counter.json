@@ -21,6 +21,23 @@
           }
         ]
       }
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 99,
+          "comparison": "<=",
+          "resource": "*:core_core_bar"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": "==",
+          "resource": "*:*_counter"
+        }
+      ]
     }
   },
   "counter": {
@@ -54,23 +71,12 @@
           "resource": "*:*_counter"
         }
       ]
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_counter"
     }
-  },
-  "condition": {
-    "type": "origins:and",
-    "conditions": [
-      {
-        "type": "origins:resource",
-        "compare_to": 100,
-        "comparison": "<",
-        "resource": "*:core_core_bar"
-      },
-      {
-        "type": "origins:resource",
-        "compare_to": 1,
-        "comparison": "!=",
-        "resource": "*:*_counter"
-      }
-    ]
   }
 }

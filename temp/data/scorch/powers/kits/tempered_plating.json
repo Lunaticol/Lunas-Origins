@@ -1,7 +1,0 @@
-{
-  "type": "origins:multiple",
-  "hidden": true,
-  "immune_fire": {
-    "type": "origins:fire_immunity"
-  }
-}

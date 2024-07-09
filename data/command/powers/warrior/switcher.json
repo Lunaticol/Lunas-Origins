@@ -1,0 +1,78 @@
+{
+  "name": "Command Block Imbued",
+  "description": "The Command Block has Imbued you with powers.",
+  "type": "origins:multiple",
+  "mode_resource": {
+    "type": "origins:resource",
+    "max": 3,
+    "min": 0,
+    "hud_render": {
+      "should_render": false
+    }
+  },
+  "mode_switch": {
+    "type": "origins:active_self",
+    "key": {
+      "key": "key.origins.primary_active"
+    },
+    "cooldown": 100,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+      "bar_index": 5
+    },
+    "entity_action": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "action": {
+            "type": "origins:execute_command",
+            "command": "function command:command/artificer"
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 0,
+            "comparison": "==",
+            "resource": "*:*_mode_resource"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:execute_command",
+            "command": "function command:command/scorch"
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 1,
+            "comparison": "==",
+            "resource": "*:*_mode_resource"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:execute_command",
+            "command": "function command:command/inchling"
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 2,
+            "comparison": "==",
+            "resource": "*:*_mode_resource"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:execute_command",
+            "command": "function command:command/doubleedge"
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 3,
+            "comparison": "==",
+            "resource": "*:*_mode_resource"
+          }
+        }
+      ]
+    }
+  }
+}

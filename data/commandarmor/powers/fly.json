@@ -1,0 +1,24 @@
+{
+  "name": "Flight",
+  "description": "Utilizing the power of the command block, you are able to give yourself creative flight.",
+  "type": "origins:multiple",
+  "flying": {
+    "type": "origins:creative_flight"
+  },
+  "flightparticles": {
+    "condition": {
+      "type": "origins:creative_flying"
+    },
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "particle minecraft:end_rod ~ ~1 ~ 0.4 0.75 0.4 0 1 normal"
+        }
+      ]
+    }
+  }
+}

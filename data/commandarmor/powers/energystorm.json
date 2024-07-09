@@ -1,0 +1,183 @@
+{
+    "name": "Energy Storm",
+    "description": "Channel the violent energy of the command block into an extremely powerful blast, knocking back everyone around you.",
+    "type": "origins:multiple",
+    "expode": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:block.note_block.harp",
+                    "volume": 1,
+                    "pitch": 1
+                },
+                {
+                    "type": "origins:apply_effect",
+                    "effect": {
+                        "effect": "minecraft:slowness",
+                        "duration": 40,
+                        "amplifier": 5,
+                        "show_particles": false,
+                        "show_icon": false
+                    }
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:fly_flightresource",
+                    "change": 0,
+                    "operation": "set"
+                },
+                {
+                    "type": "origins:spawn_particles",
+                    "particle": "minecraft:crit",
+                    "count": 100,
+                    "force": true,
+                    "spread": {
+                        "x": 5,
+                        "y": 0.2,
+                        "z": 5
+                    },
+                    "offset_y": 0.2
+                },
+                {
+                    "type": "origins:delay",
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:play_sound",
+                                "sound": "minecraft:block.note_block.harp",
+                                "volume": 1,
+                                "pitch": 1
+                            },
+                            {
+                                "type": "origins:spawn_particles",
+                                "particle": "minecraft:crit",
+                                "count": 100,
+                                "force": true,
+                                "spread": {
+                                    "x": 5,
+                                    "y": 0.2,
+                                    "z": 5
+                                },
+                                "offset_y": 0.2
+                            },
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:fly_flightresource",
+                                "change": 0,
+                                "operation": "set"
+                            },
+                            {
+                                "type": "origins:delay",
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:play_sound",
+                                            "sound": "minecraft:block.note_block.harp",
+                                            "volume": 1,
+                                            "pitch": 1
+                                        },
+                                        {
+                                            "type": "origins:spawn_particles",
+                                            "particle": "minecraft:crit",
+                                            "count": 100,
+                                            "force": true,
+                                            "spread": {
+                                                "x": 5,
+                                                "y": 0.2,
+                                                "z": 5
+                                            },
+                                            "offset_y": 0.2
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:fly_flightresource",
+                                            "change": 0,
+                                            "operation": "set"
+                                        },
+                                        {
+                                            "type": "origins:delay",
+                                            "action": {
+                                                "type": "origins:and",
+                                                "actions": [
+                                                    {
+                                                        "type": "origins:play_sound",
+                                                        "sound": "minecraft:item.totem.use",
+                                                        "volume": 1,
+                                                        "pitch": 1
+                                                    },
+                                                    {
+                                                        "type": "origins:play_sound",
+                                                        "sound": "minecraft:entity.wither.break_block",
+                                                        "volume": 1,
+                                                        "pitch": 1
+                                                    },
+                                                    {
+                                                        "type": "origins:play_sound",
+                                                        "sound": "minecraft:item.trident.thunder",
+                                                        "volume": 1,
+                                                        "pitch": 1
+                                                    },
+                                                    {
+                                                        "type": "origins:spawn_particles",
+                                                        "particle": "minecraft:end_rod",
+                                                        "count": 500,
+                                                        "speed": 0,
+                                                        "force": true,
+                                                        "spread": {
+                                                            "x": 5,
+                                                            "y": 0.2,
+                                                            "z": 5
+                                                        },
+                                                        "offset_y": 0.2
+                                                    },
+                                                    {
+                                                        "type": "origins:and",
+                                                        "actions": [
+                                                            {
+                                                                "type": "origins:area_of_effect",
+                                                                "radius": 5,
+                                                                "bientity_action": {
+                                                                    "type": "origins:and",
+                                                                    "actions": [
+                                                                        {
+                                                                            "type": "origins:damage",
+                                                                            "amount": 20,
+                                                                            "source": {
+                                                                                "name": "explosion"
+                                                                            }
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            "ticks": 10
+                                        }
+                                    ]
+                                },
+                                "ticks": 10
+                            }
+                        ]
+                    },
+                    "ticks": 10
+                }
+            ]
+        },
+        "cooldown": 1000,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+            "bar_index": 6
+        },
+        "key": {
+            "key": "key.loadToolbarActivator"
+        }
+    }
+}

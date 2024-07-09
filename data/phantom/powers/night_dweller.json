@@ -14,12 +14,21 @@
             {
               "duration": 40,
               "effect": "minecraft:strength",
+              "amplifier": 1,
               "show_icon": true,
               "show_particles": false
             },
             {
               "duration": 40,
               "effect": "minecraft:speed",
+              "amplifier": 1,
+              "show_icon": true,
+              "show_particles": false
+            },
+            {
+              "duration": 100,
+              "effect": "minecraft:regeneration",
+              "amplifier": 1,
               "show_icon": true,
               "show_particles": false
             }
@@ -39,36 +48,6 @@
       "type": "origins:power_active",
       "power": "*:phase_phase_toggle",
       "inverted": true
-    }
-  },
-  "on_kill": {
-    "type": "origins:self_action_on_kill",
-    "cooldown": 0,
-    "entity_action": {
-      "type": "origins:and",
-      "actions": [
-        {
-          "type": "origins:apply_effect",
-          "effects": [
-            {
-              "duration": 100,
-              "effect": "minecraft:saturation",
-              "show_icon": true,
-              "show_particles": false
-            },
-            {
-              "duration": 100,
-              "effect": "minecraft:speed",
-              "show_icon": true,
-              "show_particles": false
-            }
-          ]
-        },
-        {
-          "type": "origins:heal",
-          "amount": 4
-        }
-      ]
     }
   },
   "night_vision": {

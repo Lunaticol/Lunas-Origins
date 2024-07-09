@@ -1,0 +1,1 @@
+tellraw @a[distance=..200] [{"text":"<","color":"white"},{"text":"Command Block","color":"gold","bold":true},{"text":">"},{"text":" This is the end, Its time to purge this world of imperfect beings. G o o d b y e"}]
