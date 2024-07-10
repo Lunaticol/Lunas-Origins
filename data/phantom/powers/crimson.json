@@ -13,7 +13,7 @@
     "type": "origins:modify_damage_taken",
     "modifier": {
       "operation": "multiply_base",
-      "value": -0.25
+      "value": -0.5
     },
     "damage_condition": {
       "type": "origins:or",
@@ -33,6 +33,12 @@
         {
           "type": "origins:name",
           "name": "player.item"
+        },
+        {
+          "type": "origins:attacker",
+          "entity_condition": {
+            "type": "origins:exists"
+          }
         }
       ]
     }
@@ -53,6 +59,12 @@
         {
           "type": "origins:name",
           "name": "magic.player"
+        },
+        {
+          "type": "moborigins:is_magic"
+        },
+        {
+          "type": "apugli:magic"
         }
       ]
     }
@@ -61,23 +73,27 @@
     "type": "origins:shader",
     "shader": "minecraft:shaders/post/blobs2.json",
     "condition": {
-      "type": "origins:or",
+      "type": "origins:and",
       "conditions": [
         {
-          "type": "origins:and",
-          "conditions": [
-            {
-              "type": "origins:daytime"
-            },
-            {
-              "type": "origins:exposed_to_sky"
-            },
-            {
-              "type": "origins:power_active",
-              "power": "*:phase_phase_toggle",
-              "inverted": true
-            }
-          ]
+          "type": "origins:daytime"
+        },
+        {
+          "type": "origins:exposed_to_sky"
+        },
+        {
+          "type": "origins:power_active",
+          "power": "*:phase_phase_toggle",
+          "inverted": true
+        },
+        {
+          "type": "origins:in_rain",
+          "inverted": true
+        },
+        {
+          "type": "origins:status_effect",
+          "effect": "minecraft:fire_resistance",
+          "inverted": true
         }
       ]
     }
@@ -120,6 +136,15 @@
               "type": "origins:power_active",
               "power": "*:phase_phase_toggle",
               "inverted": true
+            },
+            {
+              "type": "origins:status_effect",
+              "effect": "minecraft:fire_resistance",
+              "inverted": true
+            },
+            {
+              "type": "origins:in_rain",
+              "inverted": true
             }
           ]
         }
@@ -148,6 +173,13 @@
       "operation": "addition",
       "name": "fire",
       "value": 2
+    }
+  },
+  "advancement": {
+    "type": "origins:action_on_callback",
+    "entity_action_chosen": {
+      "type": "origins:grant_advancement",
+      "advancement": "luna:crimson/crimson"
     }
   }
 }

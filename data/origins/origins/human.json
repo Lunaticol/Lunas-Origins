@@ -1,9 +1,0 @@
-{
-  "powers": [],
-  "icon": "minecraft:player_head",
-  "loading_priority": 1,
-  "order": 0,
-  "impact": 0,
-  "name": "Human",
-  "description": "A regular human. Far from your ordinary Minecraft experience!"
-}

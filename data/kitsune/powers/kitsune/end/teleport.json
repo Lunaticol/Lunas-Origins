@@ -135,7 +135,7 @@
             ]
           },
           "condition": {
-            "type": "origins:and",
+            "type": "origins:or",
             "conditions": [
               {
                 "type": "origins:on_block",
@@ -144,6 +144,11 @@
                   "compare_to": 62,
                   "comparison": "<="
                 }
+              },
+              {
+                "type": "origins:dimension",
+                "dimension": "minecraft:the_nether",
+                "inverted": true
               }
             ]
           }
@@ -283,7 +288,7 @@
             ]
           },
           "condition": {
-            "type": "origins:and",
+            "type": "origins:or",
             "conditions": [
               {
                 "type": "origins:on_block",
@@ -292,9 +297,29 @@
                   "compare_to": 62,
                   "comparison": "<="
                 }
+              },
+              {
+                "type": "origins:dimension",
+                "dimension": "minecraft:the_nether",
+                "inverted": true
               }
             ]
           }
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:power_active",
+          "power": "*:*_toggle"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": "==",
+          "resource": "*:*_rtp_hit_bar"
         }
       ]
     }

@@ -46,7 +46,7 @@
         },
         {
           "type": "origins:grant_advancement",
-          "advancement": "luna:artificer/artificer"
+          "advancement": "luna:axolotl/axolotl"
         }
       ]
     },
@@ -235,6 +235,13 @@
           "comparison": "=="
         }
       ]
+    }
+  },
+  "change_origin": {
+    "type": "origins:action_on_callback",
+    "entity_action_lost": {
+      "type": "origins:execute_command",
+      "command": "origin set @s axolotl:axolotl_subclass axolotl:axolotl_classes/empty"
     }
   }
 }

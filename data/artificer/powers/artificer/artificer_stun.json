@@ -44,18 +44,15 @@
               "effects": [
                 {
                   "effect": "weakness",
-                  "duration": 100,
-                  "amplifier": 2
+                  "duration": 100
                 },
                 {
                   "effect": "slowness",
-                  "duration": 100,
-                  "amplifier": 2
+                  "duration": 100
                 },
                 {
                   "effect": "blindness",
-                  "duration": 100,
-                  "amplifier": 2
+                  "duration": 100
                 }
               ]
             }

@@ -11,53 +11,33 @@
           "command": "summon falling_block ~ ~ ~ {BlockState:{Name:\"minecraft:fire\"},Time:1}"
         }
       ]
-    }
-  },
-  "condition": {
-    "type": "origins:and",
-    "conditions": [
-      {
-        "inverted": true,
-        "type": "origins:command",
-        "command": "flan claimInfo",
-        "comparison": "==",
-        "compare_to": 1
-      },
-      {
-        "type": "origins:resource",
-        "compare_to": 1,
-        "comparison": "==",
-        "resource": "*:*_kill_armorstand"
-      }
-    ]
-  },
-  "kill_armorstand": {
-    "type": "origins:resource",
-    "max": 1,
-    "min": 0
-  },
-  "kill_armorstan": {
-    "type": "origins:action_over_time",
-    "interval": 100,
-    "entity_action": {
-      "type": "origins:and",
-      "actions": [
-        {
-          "type": "origins:change_resource",
-          "change": 0,
-          "resource": "*:*_kill_armorstand"
-        },
-        {
-          "type": "origins:execute_command",
-          "command": "kill @e[tag=Firewall,distance=..2]"
-        }
-      ]
     },
     "condition": {
-      "type": "origins:resource",
-      "compare_to": 1,
-      "comparison": "==",
-      "resource": "*:*_kill_armorstand"
+      "type": "origins:and",
+      "conditions": [
+        {
+          "inverted": true,
+          "type": "origins:command",
+          "command": "flan claimInfo",
+          "comparison": "==",
+          "compare_to": 1
+        }
+      ]
+    }
+  },
+  "kill_armorstan": {
+    "type": "origins:action_on_land",
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "kill @s"
+    }
+  },
+  "kill_armorstand_backup": {
+    "type": "origins:action_over_time",
+    "interval": 200,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "kill @s"
     }
   }
 }

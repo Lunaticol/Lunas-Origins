@@ -1,6 +1,6 @@
 {
   "name": "Crimson Phase",
-  "description": "Similiar to its Cousin, Crimson Phantoms can phase.\nThis phase comes with added speed, but requires more hunger",
+  "description": "The Crimson Phase is a more enchanced version of Phantom Phase. You are able to completely hide yourself & youre faster. However this takes more energy.",
   "type": "origins:multiple",
   "phase": {
     "type": "origins:phasing",
@@ -51,9 +51,9 @@
   },
   "phase_bar": {
     "type": "origins:resource",
-    "max": 250,
+    "max": 300,
     "min": 0,
-    "start_value": 250,
+    "start_value": 300,
     "hud_render": {
       "should_render": true,
       "sprite_location": "origins:textures/gui/luna_resource_bar.png",
@@ -92,6 +92,8 @@
   },
   "invis": {
     "type": "origins:invisibility",
+    "render_armor": false,
+    "render_outline": true,
     "condition": {
       "type": "origins:and",
       "conditions": [
@@ -329,6 +331,84 @@
       "operation": "multiply_total",
       "value": -0.5,
       "name": "phase_hit"
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:food_level",
+          "compare_to": 6,
+          "comparison": ">"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": ">=",
+          "resource": "*:*_phase_bar"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:*_lock"
+        },
+        {
+          "type": "origins:power_active",
+          "power": "*:*_phase_toggle"
+        }
+      ]
+    }
+  },
+  "mobs_ignore": {
+    "type": "apugli:mobs_ignore",
+    "mob_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:entity_type",
+          "entity_type": "minecraft:skeleton"
+        },
+        {
+          "type": "origins:entity_type",
+          "entity_type": "minecraft:zombie"
+        },
+        {
+          "type": "origins:entity_type",
+          "entity_type": "minecraft:husk"
+        },
+        {
+          "type": "origins:entity_type",
+          "entity_type": "minecraft:spider"
+        },
+        {
+          "type": "origins:entity_type",
+          "entity_type": "minecraft:cave_spider"
+        },
+        {
+          "type": "origins:entity_type",
+          "entity_type": "minecraft:drowned"
+        },
+        {
+          "type": "origins:entity_type",
+          "entity_type": "minecraft:stray"
+        },
+        {
+          "type": "origins:entity_type",
+          "entity_type": "minecraft:wither_skeleton"
+        },
+        {
+          "type": "origins:entity_type",
+          "entity_type": "minecraft:zombified_piglin"
+        },
+        {
+          "type": "origins:entity_type",
+          "entity_type": "minecraft:piglin"
+        },
+        {
+          "type": "origins:entity_type",
+          "entity_type": "minecraft:piglin_brute"
+        }
+      ]
     },
     "condition": {
       "type": "origins:and",

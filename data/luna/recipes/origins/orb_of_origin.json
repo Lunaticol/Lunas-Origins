@@ -1,0 +1,16 @@
+{
+  "type": "crafting_shaped",
+  "key": {
+    "N": { "item": "minecraft:netherite_ingot" },
+    "A": { "item": "minecraft:nautilus_shell" },
+    "D": { "item": "minecraft:diamond_block" },
+    "R": { "item": "minecraft:dragon_breath" },
+    "E": { "item": "minecraft:ender_eye" },
+    "M": { "item": "minecraft:magma_cream" },
+    "S": { "item": "minecraft:sculk" }
+  },
+  "pattern": ["NAD", "REM", "DSN"],
+  "result": {
+    "item": "origins:orb_of_origin"
+  }
+}

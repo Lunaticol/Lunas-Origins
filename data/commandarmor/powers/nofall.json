@@ -1,0 +1,12 @@
+{
+    "name": "Fall Dampening",
+    "description": "Your command block will automatically dampen any fall, making you take no damage.",
+    "type": "origins:modify_damage_taken",
+    "damage_condition": {
+        "type": "origins:from_falling"
+    },
+    "modifier": {
+        "operation": "set_total",
+        "value": 0
+    }
+}

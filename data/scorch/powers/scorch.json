@@ -227,7 +227,7 @@
     "type": "origins:modify_jump",
     "modifier": {
       "operation": "multiply_total",
-      "value": -1,
+      "value": -2,
       "name": "no_jump"
     }
   },
@@ -413,6 +413,33 @@
           }
         }
       ]
+    }
+  },
+  "change_origin": {
+    "type": "origins:action_on_callback",
+    "entity_action_lost": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "origin set @s scorch:kits origins:empty"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "origin set @s scorch:titan_kits origins:empty"
+        }
+      ]
+    }
+  },
+  "powers": {
+    "type": "origins:action_on_callback",
+    "entity_action_gained": {
+      "type": "origins:execute_command",
+      "command": "function scorch:powers"
+    },
+    "entity_action_added": {
+      "type": "origins:execute_command",
+      "command": "function scorch:powers"
     }
   }
 }

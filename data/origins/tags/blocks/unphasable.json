@@ -1,0 +1,27 @@
+{
+  "replace": false,
+  "values": [
+    "#chipped:obsidian",
+    "#chipped:crying_obsidian",
+    "regions_unexplored:cobalt_obsidian",
+    "moredecorativeblocks:obsidian_button",
+    "moredecorativeblocks:obsidian_door",
+    "moredecorativeblocks:obsidian_fence",
+    "moredecorativeblocks:obsidian_gate",
+    "moredecorativeblocks:obsidian_pressure_plate",
+    "moredecorativeblocks:obsidian_slab",
+    "moredecorativeblocks:obsidian_stairs",
+    "moredecorativeblocks:obsidian_trapdoor",
+    "moredecorativeblocks:obsidian_wall",
+    "minecraft:bedrock",
+    "moredecorativeblocks:bedrock_button",
+    "moredecorativeblocks:bedrock_door",
+    "moredecorativeblocks:bedrock_fence",
+    "moredecorativeblocks:bedrock_gate",
+    "moredecorativeblocks:bedrock_pressure_plate",
+    "moredecorativeblocks:bedrock_slab",
+    "moredecorativeblocks:bedrock_stairs",
+    "moredecorativeblocks:bedrock_trapdoor",
+    "moredecorativeblocks:bedrock_wall"
+  ]
+}

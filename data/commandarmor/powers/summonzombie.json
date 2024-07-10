@@ -1,0 +1,40 @@
+{
+  "name": "Summon Minion",
+  "description": "Summon command controlled minions to your aid.",
+  "type": "origins:multiple",
+  "summonzombers": {
+    "type": "origins:active_self",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "function command:mob"
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:item.totem.use",
+          "volume": 1,
+          "pitch": 1
+        },
+        {
+          "type": "origins:delay",
+          "action": {
+            "type": "origins:execute_command",
+            "command": "kill @e[tag=commandzombieminionepic]"
+          },
+          "ticks": 2000
+        }
+      ]
+    },
+    "cooldown": 2200,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+      "bar_index": 1
+    },
+    "key": {
+      "key": "key.saveToolbarActivator"
+    }
+  }
+}

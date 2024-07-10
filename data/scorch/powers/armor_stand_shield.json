@@ -52,7 +52,7 @@
           "ticks": 2,
           "action": {
             "type": "origins:execute_command",
-            "command": "kill @e[tag=flame_shield,distance=..3]"
+            "command": "kill @s"
           }
         },
         {

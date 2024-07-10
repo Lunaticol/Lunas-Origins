@@ -46,6 +46,13 @@
           "compare_to": 0,
           "comparison": "==",
           "resource": "*:aegis/explosive_barrels_exploding_barrels"
+        },
+        {
+          "inverted": true,
+          "type": "origins:command",
+          "command": "flan claimInfo",
+          "comparison": "==",
+          "compare_to": 1
         }
       ]
     }

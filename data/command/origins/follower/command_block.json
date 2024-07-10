@@ -1,0 +1,9 @@
+{
+  "powers": [],
+  "icon": "minecraft:command_block",
+  "unchoosable": true,
+  "order": 9,
+  "impact": 0,
+  "name": "Follower of Command.",
+  "description": "You follow the one true god."
+}

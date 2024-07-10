@@ -1,6 +1,6 @@
 {
   "name": "Blood Thirsty",
-  "description": "It seems the dark magic has made you aquire a taste for blood. You must feast upon mobs to survive",
+  "description": "It seems the dark magic has made you acquire a taste for blood. You must feast upon mobs to survive",
   "type": "origins:multiple",
   "blood": {
     "type": "origins:resource",
@@ -43,26 +43,6 @@
                 "saturation": 0.6
               }
             ]
-          },
-          "bientity_condition": {
-            "type": "origins:and",
-            "conditions": [
-              {
-                "type": "origins:target_condition",
-                "condition": {
-                  "type": "origins:living"
-                }
-              },
-              {
-                "type": "origins:actor_condition",
-                "condition": {
-                  "type": "origins:resource",
-                  "compare_to": 0,
-                  "comparison": "==",
-                  "resource": "*:*_cooldown"
-                }
-              }
-            ]
           }
         },
         {
@@ -91,6 +71,72 @@
           }
         }
       ]
+    },
+    "bientity_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:target_condition",
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:living"
+              },
+              {
+                "type": "origins:origin",
+                "layer": "origins:origin",
+                "origin": "apocalypse:hexblade",
+                "inverted": true
+              },
+              {
+                "type": "origins:health",
+                "compare_to": 5,
+                "comparison": ">="
+              },
+              {
+                "type": "origins:entity_type",
+                "entity_type": "minecraft:skeleton",
+                "inverted": true
+              },
+              {
+                "type": "origins:entity_type",
+                "entity_type": "minecraft:wither_skeleton",
+                "inverted": true
+              },
+              {
+                "type": "origins:entity_type",
+                "entity_type": "minecraft:stray",
+                "inverted": true
+              }
+            ]
+          }
+        },
+        {
+          "type": "origins:actor_condition",
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:resource",
+                "compare_to": 0,
+                "comparison": "==",
+                "resource": "*:*_cooldown"
+              },
+              {
+                "type": "origins:sneaking",
+                "inverted": true
+              },
+              {
+                "type": "origins:resource",
+                "compare_to": 0,
+                "comparison": "==",
+                "resource": "phantom:crimson_return_died"
+              }
+            ]
+          }
+        }
+      ]
     }
   },
   "gain_creeper": {
@@ -108,10 +154,21 @@
         {
           "type": "origins:actor_condition",
           "condition": {
-            "type": "origins:resource",
-            "compare_to": 0,
-            "comparison": "==",
-            "resource": "*:*_cooldown"
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:resource",
+                "compare_to": 0,
+                "comparison": "==",
+                "resource": "*:*_cooldown"
+              },
+              {
+                "type": "origins:resource",
+                "compare_to": 0,
+                "comparison": "==",
+                "resource": "phantom:crimson_return_died"
+              }
+            ]
           }
         }
       ]
@@ -144,7 +201,7 @@
               },
               {
                 "type": "origins:grant_advancement",
-                "advancement": "luna:crimson_leech_creeper"
+                "advancement": "luna:crimson/crimson_leech_creeper"
               },
               {
                 "type": "origins:change_resource",
@@ -167,7 +224,7 @@
       ]
     }
   },
-  "gain_wither_skelton": {
+  "gain_wither": {
     "type": "origins:action_on_entity_use",
     "bientity_condition": {
       "type": "origins:and",
@@ -182,10 +239,21 @@
         {
           "type": "origins:actor_condition",
           "condition": {
-            "type": "origins:resource",
-            "compare_to": 0,
-            "comparison": "==",
-            "resource": "*:*_cooldown"
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:resource",
+                "compare_to": 0,
+                "comparison": "==",
+                "resource": "*:*_cooldown"
+              },
+              {
+                "type": "origins:resource",
+                "compare_to": 0,
+                "comparison": "==",
+                "resource": "phantom:crimson_return_died"
+              }
+            ]
           }
         }
       ]
@@ -199,12 +267,8 @@
             "type": "origins:and",
             "actions": [
               {
-                "type": "origins:apply_effect",
-                "effect": { "effect": "minecraft:wither", "duration": 100 }
-              },
-              {
                 "type": "origins:grant_advancement",
-                "advancement": "luna:crimson_leech_wither"
+                "advancement": "luna:crimson/crimson_leech_wither"
               },
               {
                 "type": "origins:execute_command",
@@ -216,7 +280,7 @@
       ]
     }
   },
-  "gain_wither": {
+  "gain_wither_skeleton": {
     "type": "origins:action_on_entity_use",
     "bientity_condition": {
       "type": "origins:and",
@@ -231,10 +295,21 @@
         {
           "type": "origins:actor_condition",
           "condition": {
-            "type": "origins:resource",
-            "compare_to": 0,
-            "comparison": "==",
-            "resource": "*:*_cooldown"
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:resource",
+                "compare_to": 0,
+                "comparison": "==",
+                "resource": "*:*_cooldown"
+              },
+              {
+                "type": "origins:resource",
+                "compare_to": 0,
+                "comparison": "==",
+                "resource": "phantom:crimson_return_died"
+              }
+            ]
           }
         }
       ]
@@ -253,7 +328,11 @@
               },
               {
                 "type": "origins:grant_advancement",
-                "advancement": "luna:crimson_leech_wither_skeleton"
+                "advancement": "luna:crimson/crimson_leech_wither_skeleton"
+              },
+              {
+                "type": "origins:trigger_cooldown",
+                "power": "*:*_cooldown"
               }
             ]
           }
@@ -263,21 +342,35 @@
   },
   "drain": {
     "type": "origins:action_over_time",
-    "interval": 200,
+    "interval": 400,
     "entity_action": {
       "type": "origins:change_resource",
       "change": -2,
       "resource": "*:*_blood"
     },
     "condition": {
-      "type": "origins:status_effect",
-      "effect": "minecraft:saturation",
-      "inverted": true
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:status_effect",
+          "effect": "minecraft:saturation",
+          "inverted": true
+        },
+        {
+          "type": "origins:moving"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "phantom:crimson_return_died"
+        }
+      ]
     }
   },
   "cooldown": {
     "type": "origins:cooldown",
-    "cooldown": 100,
+    "cooldown": 60,
     "hud_render": {
       "bar_index": 3,
       "should_render": true
@@ -300,11 +393,11 @@
       "resource": "*:*_blood"
     }
   },
-  "full_blood_on_respawn": {
+  "twenty_blood_on_respawn": {
     "type": "origins:action_on_callback",
     "entity_action_respawned": {
       "type": "origins:change_resource",
-      "change": 100,
+      "change": 20,
       "operation": "set",
       "resource": "*:*_blood"
     }

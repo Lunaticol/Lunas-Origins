@@ -1,0 +1,141 @@
+{
+  "hidden": true,
+  "type": "origins:multiple",
+  "on_hit": {
+    "cooldown": 40,
+    "type": "origins:action_when_damage_taken",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "damage @e[tag=Command,limit=1] 5"
+        }
+      ]
+    }
+  },
+  "on_kill": {
+    "type": "origins:self_action_on_kill",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:chance",
+          "chance": 0.1,
+          "action": {
+            "type": "origins:execute_command",
+            "command": "function command:messages/message_1"
+          },
+          "fail_action": {
+            "type": "origins:chance",
+            "chance": 0.1,
+            "action": {
+              "type": "origins:execute_command",
+              "command": "function command:messages/message_2"
+            },
+            "fail_action": {
+              "type": "origins:chance",
+              "chance": 0.1,
+              "action": {
+                "type": "origins:execute_command",
+                "command": "function command:messages/message_3"
+              },
+              "fail_action": {
+                "type": "origins:chance",
+                "chance": 0.1,
+                "action": {
+                  "type": "origins:execute_command",
+                  "command": "function command:messages/message_4"
+                },
+                "fail_action": {
+                  "type": "origins:chance",
+                  "chance": 0.1,
+                  "action": {
+                    "type": "origins:execute_command",
+                    "command": "function command:messages/message_5"
+                  },
+                  "fail_action": {
+                    "type": "origins:chance",
+                    "chance": 0.1,
+                    "action": {
+                      "type": "origins:execute_command",
+                      "command": "function command:messages/message_6"
+                    },
+                    "fail_action": {
+                      "type": "origins:chance",
+                      "chance": 0.1,
+                      "action": {
+                        "type": "origins:execute_command",
+                        "command": "function command:messages/message_7"
+                      },
+                      "fail_action": {
+                        "type": "origins:chance",
+                        "chance": 0.1,
+                        "action": {
+                          "type": "origins:execute_command",
+                          "command": "function command:messages/message_8"
+                        },
+                        "fail_action": {
+                          "type": "origins:chance",
+                          "chance": 0.1,
+                          "action": {
+                            "type": "origins:execute_command",
+                            "command": "function command:messages/message_9"
+                          },
+                          "fail_action": {
+                            "type": "origins:chance",
+                            "chance": 1,
+                            "action": {
+                              "type": "origins:execute_command",
+                              "command": "function command:messages/message_10"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "swirl": {
+    "type": "apugli:energy_swirl",
+    "texture_location": "minecraft:textures/entity/creeper/creeper_armor.png",
+    "speed": 0.01,
+    "size": 1.01
+  },
+  "on_spawn": {
+    "type": "origins:action_on_callback",
+    "entity_action_added": {
+      "type": "origins:execute_command",
+      "command": "team join Command"
+    },
+    "entity_action_gained": {
+      "type": "origins:execute_command",
+      "command": "team join Command"
+    }
+  },
+  "effects": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:apply_effect",
+      "effects": [
+        {
+          "effect": "minecraft:resistance",
+          "amplifier": 9,
+          "duration": 100
+        },
+        {
+          "effect": "minecraft:regeneration",
+          "amplifier": 9,
+          "duration": 100
+        }
+      ]
+    }
+  }
+}

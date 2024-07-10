@@ -76,10 +76,22 @@
       }
     },
     "condition": {
-      "type": "origins:resource",
-      "compare_to": 1,
-      "comparison": "==",
-      "resource": "*:*_fuel_for_fire"
+     "type": "origins:and",
+     "conditions": [
+      {
+        "type": "origins:resource",
+        "compare_to": 1,
+        "comparison": "==",
+        "resource": "*:*_fuel_for_fire"
+      },
+      {
+        "inverted": true,
+        "type": "origins:command",
+        "command": "flan claimInfo",
+        "comparison": "==",
+        "compare_to": 1
+      }
+     ]
     }
   },
   "fuel_for_fire": {

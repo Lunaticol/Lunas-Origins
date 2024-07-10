@@ -29,14 +29,14 @@
             {
               "duration": 1200,
               "effect": "minecraft:strength",
-              "amplifier": 1,
+              "amplifier": 2,
               "show_icon": true,
               "show_particles": false
             },
             {
               "duration": 1200,
               "effect": "minecraft:speed",
-              "amplifier": 1,
+              "amplifier": 2,
               "show_icon": true,
               "show_particles": false
             }
@@ -63,7 +63,7 @@
             "actions": [
               {
                 "type": "origins:change_resource",
-                "change": 20,
+                "change": 10,
                 "resource": "*:dark_healing_blood",
                 "operation": "set"
               },
@@ -73,13 +73,14 @@
                   {
                     "duration": 200,
                     "effect": "minecraft:slowness",
-                    "amplifier": 1,
+                    "amplifier": 2,
                     "show_icon": true,
                     "show_particles": false
                   },
                   {
-                    "duration": 200,
+                    "duration": 300,
                     "effect": "minecraft:weakness",
+                    "amplifier": 1,
                     "show_icon": true,
                     "show_particles": false
                   }
@@ -122,7 +123,7 @@
       "actions": [
         {
           "type": "origins:change_resource",
-          "change": 250,
+          "change": 300,
           "resource": "*:phase_phase_bar",
           "operation": "set"
         }
@@ -140,7 +141,7 @@
     "tick_rate": 10,
     "modifier": {
       "attribute": "minecraft:generic.attack_speed",
-      "value": 1.5,
+      "value": 2,
       "operation": "addition"
     },
     "condition": {
