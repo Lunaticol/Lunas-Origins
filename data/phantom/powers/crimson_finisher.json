@@ -90,6 +90,10 @@
                 "type": "origins:health",
                 "compare_to": 4,
                 "comparison": "<="
+              },
+              {
+                "type": "origins:entity_type",
+                "entity_type": "minecraft:player"
               }
             ]
           }

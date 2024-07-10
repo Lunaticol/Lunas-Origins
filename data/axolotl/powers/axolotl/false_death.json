@@ -44,6 +44,10 @@
         {
           "type": "origins:execute_command",
           "command": "particle minecraft:totem_of_undying ~ ~ ~ .5 1 .5 .5 500 force"
+        },
+        {
+          "type": "origins:trigger_cooldown",
+          "power": "*:*_cooldown"
         }
       ]
     },

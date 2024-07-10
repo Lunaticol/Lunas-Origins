@@ -103,6 +103,11 @@
                 "type": "origins:entity_type",
                 "entity_type": "minecraft:wither_skeleton",
                 "inverted": true
+              },
+              {
+                "type": "origins:entity_type",
+                "entity_type": "minecraft:stray",
+                "inverted": true
               }
             ]
           }
@@ -324,6 +329,10 @@
               {
                 "type": "origins:grant_advancement",
                 "advancement": "luna:crimson/crimson_leech_wither_skeleton"
+              },
+              {
+                "type": "origins:trigger_cooldown",
+                "power": "*:*_cooldown"
               }
             ]
           }
