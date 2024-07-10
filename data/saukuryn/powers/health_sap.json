@@ -1,5 +1,5 @@
 {
-  "name": "",
-  "description": "",
+  "name": "Health Sap",
+  "description": "Sap health from your opponents, healing you and damaging them.",
   "type": "origins:multiple"
 }
