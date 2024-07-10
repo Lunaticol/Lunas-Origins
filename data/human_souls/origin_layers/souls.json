@@ -4,7 +4,7 @@
   "exclude_random": ["human_souls:souls/weird"],
   "replace": false,
   "order": 4,
-  "enabled": false,
+  "enabled": true,
   "origins": [
     {
       "condition": {
