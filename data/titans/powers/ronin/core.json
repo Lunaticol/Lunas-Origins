@@ -1,0 +1,155 @@
+{
+  "type": "origins:multiple",
+  "name": "Sword Core",
+  "description": "Empowers his melee and sword abilities, and gives access to new sword attacks.",
+  "core_bar": {
+    "type": "origins:resource",
+    "max": 100,
+    "min": 1,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/luna_resource_bar.png",
+      "bar_index": 6,
+      "icon_index": 1
+    }
+  },
+  "core_activate": {
+    "type": "origins:active_self",
+    "key": "key.loadToolbarActivator",
+    "cooldown": 0,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "change": 1,
+          "resource": "*:*_core_active"
+        }
+      ]
+    }
+  },
+  "extra_damage_dealt": {
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+      "operation": "addition",
+      "value": 4
+    },
+    "damage_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:name",
+          "name": "player"
+        },
+        {
+          "type": "origins:name",
+          "name": "player.item"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_core_active"
+    }
+  },
+  "core_active": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
+  },
+  "drain": {
+    "type": "origins:action_over_time",
+    "interval": 10,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": -2,
+      "resource": "*:*_core_bar"
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": "==",
+          "resource": "*:*_core_active"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "titans:ronin/aegis/sword_mastery_sword_bar"
+        }
+      ]
+    }
+  },
+  "drain_sword_mastery": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": -2,
+      "resource": "*:*_core_bar"
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": "==",
+          "resource": "*:*_core_active"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": "==",
+          "resource": "titans:ronin/aegis/sword_mastery_sword_bar"
+        }
+      ]
+    }
+  },
+  "particles": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "particle minecraft:electric_spark ~ ~ ~ 1 2 1 0 25 normal"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_core_active"
+    }
+  },
+  "core_build_up": {
+    "type": "origins:action_on_hit",
+    "bientity_action": {
+      "type": "origins:actor_action",
+      "action": {
+        "type": "origins:change_resource",
+        "change": 1,
+        "resource": "*:ronin/core_core_bar"
+      }
+    }
+  },
+  "reset": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 0,
+      "operation": "set",
+      "resource": "*:*_core_active"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_core_bar",
+      "compare_to": 0,
+      "comparison": "=="
+    }
+  }
+}

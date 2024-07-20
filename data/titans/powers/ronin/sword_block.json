@@ -1,0 +1,82 @@
+{
+  "name": "Sword Block",
+  "description": "Reduces damage taken by 70%, 85% during sword core. Can be held indefinitely.",
+  "type": "origins:multiple",
+  "block": {
+    "type": "origins:active_self",
+    "key": { "key": "key.use", "continuous": true },
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 1,
+      "operation": "set",
+      "resource": "*:*_block_resource"
+    },
+    "condition": {
+      "type": "origins:equipped_item",
+      "equipment_slot": "mainhand",
+      "item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": { "tag": "titans:sword" }
+      }
+    }
+  },
+  "block_resource": { "type": "origins:resource", "max": 1, "min": 0 },
+  "actual_block": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "operation": "multiply_base",
+      "value": -0.70
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": "==",
+          "resource": "*:*_block_resource"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:ronin/core_core_active"
+        }
+      ]
+    }
+  },
+  "reset": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 0,
+      "operation": "set",
+      "resource": "*:*_block_resource"
+    }
+  },
+  "actual_block_core": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "operation": "multiply_base",
+      "value": -0.85
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": "==",
+          "resource": "*:*_block_resource"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": "==",
+          "resource": "*:ronin/core_core_active"
+        }
+      ]
+    }
+  }
+}

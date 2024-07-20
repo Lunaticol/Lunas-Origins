@@ -1,0 +1,12 @@
+{
+  "type": "origins:multiple",
+  "health": {
+    "type": "origins:attribute",
+    "update_health": true,
+    "modifier": {
+      "attribute": "minecraft:generic.max_health",
+      "operation": "addition",
+      "value": 20
+    }
+  }
+}

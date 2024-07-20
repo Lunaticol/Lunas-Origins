@@ -1,0 +1,13 @@
+{
+  "name": "Thunderstorm",
+  "unchoosable": false,
+  "description": "Arc Wave has two charges.",
+  "icon": {
+    "item": "minecraft:iron_sword",
+    "tag": "{Enchantments:[{}]}"
+  },
+  "loading_priority": 1,
+  "impact": 0,
+  "order": 2,
+  "powers": ["titans:ronin/kits/thunderstorm"]
+}

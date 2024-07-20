@@ -1,0 +1,15 @@
+{
+  "type": "origins:multiple",
+  "hostile": {
+    "type": "moborigins:hostile_axolotls"
+  },
+  "remove": {
+    "type": "origins:action_over_time",
+    "interval": 200,
+    "entity_action": {
+      "type": "origins:revoke_power",
+      "power": "axolotl:axolotl/hostile_axolotls",
+      "source": "apoli:command"
+    }
+  }
+}

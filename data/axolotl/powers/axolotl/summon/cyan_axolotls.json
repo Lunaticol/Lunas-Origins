@@ -1,0 +1,25 @@
+{
+  "type": "origins:multiple",
+  "fire": {
+    "type": "origins:action_on_hit",
+    "bientity_action": {
+      "type": "origins:target_action",
+      "action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "moborigins:set_freeze_ticks",
+            "ticks": 100
+          },
+          {
+            "type": "origins:apply_effect",
+            "effect": {
+              "effect": "minecraft:weakness",
+              "duration": 100
+            }
+          }
+        ]
+      }
+    }
+  }
+}

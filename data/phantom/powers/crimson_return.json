@@ -7,7 +7,6 @@
     "hud_render": {
       "should_render": true
     },
-    "interval": 10,
     "entity_action": {
       "type": "origins:and",
       "actions": [

@@ -93,7 +93,7 @@
   "invis": {
     "type": "origins:invisibility",
     "render_armor": false,
-    "render_outline": true,
+    "render_outline": false,
     "condition": {
       "type": "origins:and",
       "conditions": [

@@ -1,0 +1,539 @@
+{
+  "type": "origins:multiple",
+  "name": "Ronin",
+  "description": "A Stryder Class Titan, Equiped with an electrified sword.\nYour sword is the shield, therfore you cannot use shields.\nYou eat redstone to recover health.\nYour thick metal protects your core from projectiles",
+  "height": {
+    "type": "origins:action_on_callback",
+    "execute_chosen_when_orb": true,
+    "entity_action_chosen": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:height 1.5 @s"
+    },
+    "entity_action_respawned": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:height 1.5 @s"
+    },
+    "entity_action_added": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:height 1.5 @s"
+    },
+    "entity_action_lost": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:height 1 @s"
+    },
+    "entity_action_removed": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:height 1 @s"
+    }
+  },
+  "width": {
+    "type": "origins:action_on_callback",
+    "entity_action_chosen": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "scale set pehkui:width 1.5 @s",
+          "permission_level": 4
+        },
+        {
+          "type": "origins:grant_advancement",
+          "advancement": "luna:ronin/ronin"
+        }
+      ]
+    },
+    "entity_action_respawned": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:width 1.5 @s"
+    },
+    "entity_action_added": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:width 1.5 @s"
+    },
+    "entity_action_lost": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:width 1 @s"
+    },
+    "entity_action_removed": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:width 1 @s"
+    }
+  },
+  "step_height": {
+    "type": "origins:action_on_callback",
+    "entity_action_chosen": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:step_height 2 @s"
+    },
+    "entity_action_respawned": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:step_height 2 @s"
+    },
+    "entity_action_added": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:step_height 2 @s"
+    },
+    "entity_action_lost": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:step_height 1 @s"
+    },
+    "entity_action_removed": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:step_height 1 @s"
+    }
+  },
+  "health": {
+    "type": "origins:attribute",
+    "update_health": true,
+    "modifier": {
+      "attribute": "minecraft:generic.max_health",
+      "value": 15,
+      "operation": "addition"
+    }
+  },
+  "faster": {
+    "type": "origins:attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.movement_speed",
+      "value": 0.05,
+      "operation": "addition"
+    }
+  },
+  "water": {
+    "type": "origins:ignore_water"
+  },
+  "reactor_exposed_shader": {
+    "type": "origins:shader",
+    "shader": "minecraft:shaders/post/deconverge.json",
+    "toggleable": false,
+    "condition": {
+      "type": "origins:health",
+      "compare_to": 20,
+      "comparison": "<="
+    }
+  },
+  "exposed_reactor": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "value": 1,
+      "operation": "multiply_total"
+    },
+    "condition": {
+      "type": "origins:health",
+      "compare_to": 20,
+      "comparison": "<="
+    }
+  },
+  "dash_resource": {
+    "type": "origins:resource",
+    "max": 2,
+    "min": 0,
+    "hud_render": {
+      "should_render": true,
+      "bar_index": 23,
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+      "condition": {
+        "type": "origins:resource",
+        "compare_to": 0,
+        "comparison": "==",
+        "resource": "*:*_turbo_engine"
+      }
+    }
+  },
+  "dash_resource_turbo": {
+    "type": "origins:resource",
+    "max": 3,
+    "min": 0,
+    "hud_render": {
+      "should_render": true,
+      "bar_index": 23,
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+      "condition": {
+        "type": "origins:resource",
+        "compare_to": 1,
+        "comparison": "==",
+        "resource": "*:*_turbo_engine"
+      }
+    }
+  },
+  "dash": {
+    "type": "origins:active_self",
+    "key": {
+      "key": "key.jump"
+    },
+    "entity_action": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:add_velocity",
+                "z": 2,
+                "space": "local"
+              },
+              {
+                "type": "origins:delay",
+                "ticks": 2,
+                "action": {
+                  "type": "origins:add_velocity",
+                  "y": -3,
+                  "space": "local"
+                }
+              },
+              {
+                "type": "origins:change_resource",
+                "change": -1,
+                "operation": "add",
+                "resource": "*:*_dash_resource"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 1,
+            "comparison": ">=",
+            "resource": "*:*_dash_resource"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:add_velocity",
+                "z": 2,
+                "space": "local"
+              },
+              {
+                "type": "origins:change_resource",
+                "change": -1,
+                "operation": "add",
+                "resource": "*:*_dash_resource_turbo"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 1,
+            "comparison": ">=",
+            "resource": "*:*_dash_resource_turbo"
+          }
+        }
+      ]
+    }
+  },
+  "dash_charge": {
+    "type": "origins:action_over_time",
+    "interval": 80,
+    "entity_action": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "action": {
+            "type": "origins:change_resource",
+            "change": 1,
+            "operation": "add",
+            "resource": "*:*_dash_resource"
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 0,
+            "comparison": "==",
+            "resource": "*:*_turbo_engine"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:change_resource",
+            "change": 1,
+            "operation": "add",
+            "resource": "*:*_dash_resource_turbo"
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 1,
+            "comparison": "==",
+            "resource": "*:*_turbo_engine"
+          }
+        }
+      ]
+    }
+  },
+  "dash_charge_core": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "action": {
+            "type": "origins:change_resource",
+            "change": 1,
+            "operation": "add",
+            "resource": "*:*_dash_resource"
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 0,
+            "comparison": "==",
+            "resource": "*:*_turbo_engine"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:change_resource",
+            "change": 1,
+            "operation": "add",
+            "resource": "*:*_dash_resource_turbo"
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 1,
+            "comparison": "==",
+            "resource": "*:*_turbo_engine"
+          }
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "titans:ronin/core_core_active"
+    }
+  },
+  "jump": {
+    "type": "origins:modify_jump",
+    "modifier": {
+      "operation": "multiply_total",
+      "value": -2,
+      "name": "no_jump"
+    }
+  },
+  "no_healing": {
+    "type": "origins:disable_regen"
+  },
+  "no_elytra": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:add_velocity",
+      "y": -0.5,
+      "z": -0.5,
+      "space": "local"
+    },
+    "condition": {
+      "type": "origins:fall_flying"
+    }
+  },
+  "turbo_engine": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
+  },
+  "titan_kit": {
+    "type": "origins:action_on_callback",
+    "entity_action_respawned": {
+      "type": "origins:execute_command",
+      "command": "origin gui @s titans:titan_kits"
+    }
+  },
+  "kit": {
+    "type": "origins:action_on_callback",
+    "entity_action_respawned": {
+      "type": "origins:execute_command",
+      "command": "origin gui @s titans:ronin_kits"
+    }
+  },
+  "food": {
+    "type": "origins:modify_exhaustion",
+    "modifier": {
+      "name": "food",
+      "operation": "multiply_total",
+      "value": -2
+    }
+  },
+  "titan_battery_eat": {
+    "type": "apugli:edible_item",
+    "food_component": {
+      "always_edible": true,
+      "snack": false,
+      "meat": false,
+      "saturation": 2,
+      "hunger": 20
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:heal",
+          "amount": 8
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 25,
+          "operation": "add",
+          "resource": "titans:ronin/core_core_bar"
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 1,
+          "operation": "set",
+          "resource": "*:*_battery_cooldown"
+        }
+      ]
+    },
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:redstone_block"
+      }
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:health",
+          "compare_to": 60,
+          "comparison": "<="
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:*_battery_cooldown"
+        }
+      ]
+    }
+  },
+  "death_warning": {
+    "type": "origins:action_over_time",
+    "interval": 2,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "particle minecraft:smoke ~ ~ ~ 0.5 0.5 0.5 .01 20 force"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "particle minecraft:lava ~ ~ ~ 0.5 0.5 0.5 1 1 force"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:health",
+          "comparison": "<=",
+          "compare_to": 20
+        }
+      ]
+    }
+  },
+  "battery_cooldown": {
+    "type": "origins:cooldown",
+    "cooldown": 100,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/luna_resource_points.png",
+      "bar_index": 1
+    }
+  },
+  "health_low": {
+    "type": "origins:action_over_time",
+    "interval": 10,
+    "entity_action": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "action": {
+            "type": "origins:execute_command",
+            "command": "particle minecraft:campfire_signal_smoke ~ ~1 ~ 0.5 1 0.5 0 1 force"
+          },
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:health",
+                "compare_to": 30,
+                "comparison": "<="
+              },
+              {
+                "type": "origins:health",
+                "compare_to": 26,
+                "comparison": ">="
+              }
+            ]
+          }
+        },
+        {
+          "action": {
+            "type": "origins:execute_command",
+            "command": "particle minecraft:campfire_signal_smoke ~ ~1 ~ 1 1 1 0.01 5 force"
+          },
+          "condition": {
+            "type": "origins:health",
+            "compare_to": 25,
+            "comparison": "<="
+          }
+        }
+      ]
+    }
+  },
+  "change_origin": {
+    "type": "origins:action_on_callback",
+    "entity_action_lost": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "origin set @s titans:ronin/kits origins:empty"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "origin set @s titans:titan_kits origins:empty"
+        }
+      ]
+    }
+  },
+  "evade_projectiles": {
+    "type": "proviorigins:evade_projectiles"
+  },
+  "extra_range": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "attribute": "reach-entity-attributes:attack_range",
+      "value": 1,
+      "name": "ronin_reach",
+      "operation": "addition"
+    },
+    "condition": {
+      "type": "origins:equipped_item",
+      "equipment_slot": "mainhand",
+      "item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": {
+          "tag": "titans:sword"
+        }
+      }
+    }
+  },
+  "fall": {
+    "type": "origins:invulnerability",
+    "damage_condition": { "type": "origins:name", "name": "fall" }
+  },
+  "fuck_your_shield": {
+    "type": "origins:prevent_item_use",
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:shield"
+      }
+    }
+  }
+}

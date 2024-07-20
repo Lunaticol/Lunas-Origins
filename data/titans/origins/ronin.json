@@ -1,0 +1,21 @@
+{
+  "powers": [
+    "titans:ronin/ronin",
+    "titans:ronin/core",
+    "titans:ronin/leadwall_shotgun",
+    "titans:ronin/arc_wave",
+    "titans:ronin/sword_block",
+    "titans:ronin/phase_dash",
+    "titans:ronin/aegis/sword_mastery",
+    "titans:ronin/aegis/chassis_upgrade",
+    "titans:ronin/aegis/ghost_machine",
+    "titans:ronin/aegis/kinetic_transfer",
+    "titans:ronin/aegis/wraith",
+    "titans:ronin/aegis/blademaster"
+  ],
+  "icon": "minecraft:netherite_sword",
+  "order": 9,
+  "impact": 3,
+  "name": "Ronin",
+  "description": "Ronin is a hit and run specialist. He can do a lot of damage in short bursts, but his fragility makes it suboptimal to stay in range for long. His speed, combined with Arc Wave's ability to slow, gives him the tools to get into and out of any fight."
+}

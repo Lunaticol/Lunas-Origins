@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cyan_wool",
+  "textures": {
+    "layer0": "item/cyan_soul"
+  },
+  "overrides": [
+    {
+      "predicate": { "custom_model_data": 42700 },
+      "model": "block/souls/cyan_soul"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "replace": true,
+  "values": [
+    "minecraft:end_stone",
+    "minecraft:end_stone_brick_slab",
+    "minecraft:end_stone_bricks",
+    "minecraft:end_stone_brick_stairs",
+    "minecraft:end_stone_brick_wall",
+    "minecraft:purpur_block",
+    "minecraft:purpur_pillar",
+    "minecraft:purpur_slab",
+    "minecraft:purpur_stairs",
+    "minecraft:obsidian",
+    "minecraft:bedrock",
+    "minecraft:dragon_egg",
+    "minecraft:dragon_head",
+    "minecraft:chorus_flower",
+    "minecraft:chorus_plant",
+    "minecraft:barrier",
+    "universal_graves:grave",
+    "universal_graves:container_grave",
+    "universal_graves:temp_block",
+    "universal_graves:visual_grave",
+    "minecraft:command_block",
+    "minecraft:repeating_command_block",
+    "minecraft:chain_command_block"
+  ]
+}

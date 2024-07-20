@@ -1,0 +1,73 @@
+{
+  "type": "origins:multiple",
+  "counter": {
+    "type": "origins:action_over_time",
+    "interval": 10,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:area_of_effect",
+          "shape": "cube",
+          "radius": 8,
+          "bientity_action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:target_action",
+                "action": {
+                  "type": "origins:damage",
+                  "damage_type": "minecraft:magic",
+                  "amount": 2,
+                  "source": {
+                    "bypasses_armor": true,
+                    "fire": false,
+                    "magic": false,
+                    "unblockable": true,
+                    "name": "magic"
+                  }
+                }
+              }
+            ]
+          },
+          "bientity_condition": {
+            "type": "origins:target_condition",
+            "condition": {
+              "type": "origins:or",
+              "conditions": [
+                {
+                  "type": "origins:origin",
+                  "origin": "titans:scorch",
+                  "layer": "origins:origin",
+                  "inverted": true
+                },
+                {
+                  "type": "origins:origin",
+                  "origin": "titans:ronin",
+                  "layer": "origins:origin",
+                  "inverted": true
+                }
+              ]
+            }
+          }
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "particle minecraft:campfire_cosy_smoke ~ ~ ~ 2.5 2 2.5 0 50"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "particle minecraft:electric_spark ~ ~ ~ 2.5 2 2.5 0 50"
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 160,
+          "action": {
+            "type": "origins:execute_command",
+            "command": "kill @s"
+          }
+        }
+      ]
+    }
+  }
+}

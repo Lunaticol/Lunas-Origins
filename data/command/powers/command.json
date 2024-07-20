@@ -110,70 +110,6 @@
       "name": "enderism:retribution"
     }
   },
-  "loot": {
-    "type": "origins:action_when_hit",
-    "cooldown": 100,
-    "bientity_action": {
-      "type": "origins:actor_action",
-      "action": {
-        "type": "origins:and",
-        "actions": [
-          {
-            "type": "origins:chance",
-            "chance": 0.5,
-            "action": {
-              "type": "origins:execute_command",
-              "command": "give @s stick"
-            }
-          },
-          {
-            "type": "origins:chance",
-            "chance": 0.7,
-            "action": {
-              "type": "origins:execute_command",
-              "command": "give @s oak_command"
-            }
-          },
-          {
-            "type": "origins:chance",
-            "chance": 0.2,
-            "action": {
-              "type": "origins:execute_command",
-              "command": "give @s diamond"
-            }
-          },
-          {
-            "type": "origins:chance",
-            "chance": 0.05,
-            "action": {
-              "type": "origins:execute_command",
-              "command": "give @s netherite_ingot"
-            }
-          },
-          {
-            "type": "origins:chance",
-            "chance": 0.4,
-            "action": {
-              "type": "origins:execute_command",
-              "command": "give @s iron_ingot"
-            }
-          }
-        ]
-      }
-    },
-    "damage_condition": {
-      "type": "origins:or",
-      "conditions": [
-        {
-          "type": "origins:in_tag",
-          "tag": "command:weapons"
-        },
-        {
-          "type": "origins:projectile"
-        }
-      ]
-    }
-  },
   "death": {
     "type": "origins:action_over_time",
     "interval": 1,
@@ -224,7 +160,7 @@
               },
               {
                 "type": "origins:execute_command",
-                "command": "function command:death_message"
+                "command": "function command:death_message_two"
               }
             ]
           }
@@ -261,7 +197,7 @@
               },
               {
                 "type": "origins:execute_command",
-                "command": "function command:death_message"
+                "command": "function command:death_message_war"
               }
             ]
           }
@@ -387,10 +323,19 @@
     "type": "origins:action_over_time",
     "interval": 1000,
     "entity_action": {
-      "type": "origins:change_resource",
-      "change": 1,
-      "operation": "set",
-      "resource": "*:*_tnt_resource"
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "change": 1,
+          "operation": "set",
+          "resource": "*:*_tnt_resource"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "function command:attack/tnt"
+        }
+      ]
     },
     "condition": {
       "type": "origins:health",
@@ -489,6 +434,31 @@
     "entity_action_lost": {
       "type": "origins:execute_command",
       "command": "origin gui A_Crab_Bar"
+    }
+  },
+  "attack": {
+    "type": "origins:action_over_time",
+    "interval": 1000,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:chance",
+          "chance": 0.5,
+          "action": {
+            "type": "origins:execute_command",
+            "command": "function command:attack/slow"
+          }
+        },
+        {
+          "type": "origins:chance",
+          "chance": 0.5,
+          "action": {
+            "type": "origins:execute_command",
+            "command": "function command:attack/weaken"
+          }
+        }
+      ]
     }
   }
 }

@@ -1,0 +1,16 @@
+{
+  "death.attack.dark_healing": "%1$s lost to much blood",
+  "death.attack.dark_healing.player": "%1$s lost to much blood from %2$s",
+  "death.attack.shield.player": "%1$s was scorched by %2$s",
+  "death.attack.shield": "%1$s was scorched",
+  "death.attack.dark_pulse": "%1$s was in the way",
+  "death.attack.dark_pulse.player": "%1$s was rammed into by %2$s",
+  "death.attack.double_edge.player": "%1$s was sliced in half by %2$s",
+  "death.attack.double_edge": "%1$s was sliced in half",
+  "death.attack.out_of_blood": "%1$s was consumed by dark magic",
+  "death.attack.out_of_blood.player": "%1$s was consumed by dark magic while fighting %2$s",
+  "death.attack.arc_wave": "%1$s was caught in a arc wave",
+  "death.attack.arc_wave.player": "%1$s was caught in a arc wave by %2$s",
+  "death.attack.arc_wave_core": "%1$s was caught in a charged up arc wave",
+  "death.attack.arc_wave_core.player": "%1$s was caught in a charged up arc wave by %2$s"
+}
