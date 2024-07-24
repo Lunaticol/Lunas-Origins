@@ -134,7 +134,7 @@
       "actions": [
         {
           "type": "origins:delay",
-          "ticks": 40,
+          "ticks": 100,
           "action": {
             "type": "origins:change_resource",
             "change": 1,
@@ -149,7 +149,7 @@
       "conditions": [
         {
           "type": "origins:resource",
-          "compare_to": 32,
+          "compare_to": 42,
           "comparison": "<=",
           "resource": "*:*_phase_bar"
         },
@@ -173,7 +173,7 @@
     },
     "condition": {
       "type": "origins:resource",
-      "compare_to": 33,
+      "compare_to": 43,
       "comparison": ">=",
       "resource": "*:*_phase_bar"
     }

@@ -5,8 +5,8 @@
   "dashes": {
     "type": "origins:resource",
     "min": 0,
-    "max": 35,
-    "start_value": 35,
+    "max": 7,
+    "start_value": 7,
     "hud_render": {
       "should_render": true,
       "bar_index": 23,
@@ -20,26 +20,6 @@
       "type": "origins:if_else_list",
       "actions": [
         {
-          "condition": {
-            "type": "origins:and",
-            "conditions": [
-              {
-                "type": "origins:fall_flying",
-                "inverted": true
-              },
-              {
-                "type": "origins:resource",
-                "resource": "*:*_dashes",
-                "comparison": ">=",
-                "compare_to": 5
-              },
-              {
-                "type": "origins:origin",
-                "layer": "kitsune:kitsune_subclass",
-                "origin": "kitsune:kitsune_classes/overworld_kitsune"
-              }
-            ]
-          },
           "action": {
             "type": "origins:and",
             "actions": [
@@ -67,7 +47,7 @@
               {
                 "type": "origins:change_resource",
                 "resource": "*:*_dashes",
-                "change": -5
+                "change": -1
               },
               {
                 "type": "origins:change_resource",
@@ -76,26 +56,38 @@
               },
               {
                 "type": "origins:exhaust",
-                "amount": 1.5
+                "amount": 2.5
               }
             ]
-          }
-        },
-        {
+          },
           "condition": {
             "type": "origins:and",
             "conditions": [
               {
-                "type": "origins:fall_flying"
+                "type": "origins:fall_flying",
+                "inverted": true
               },
               {
                 "type": "origins:resource",
                 "resource": "*:*_dashes",
                 "comparison": ">=",
-                "compare_to": 15
+                "compare_to": 5
+              },
+              {
+                "type": "origins:origin",
+                "layer": "kitsune:kitsune_subclass",
+                "origin": "kitsune:kitsune_classes/overworld_kitsune"
+              },
+              {
+                "type": "origins:resource",
+                "compare_to": 0,
+                "comparison": "==",
+                "resource": "*:*_lock"
               }
             ]
-          },
+          }
+        },
+        {
           "action": {
             "type": "origins:and",
             "actions": [
@@ -123,11 +115,11 @@
               {
                 "type": "origins:change_resource",
                 "resource": "*:*_dashes",
-                "change": -15
+                "change": -3
               },
               {
                 "type": "origins:exhaust",
-                "amount": 1
+                "amount": 1.5
               },
               {
                 "type": "origins:change_resource",
@@ -135,29 +127,23 @@
                 "change": 1
               }
             ]
-          }
-        },
-        {
+          },
           "condition": {
             "type": "origins:and",
             "conditions": [
               {
-                "type": "origins:fall_flying",
-                "inverted": true
+                "type": "origins:fall_flying"
               },
               {
                 "type": "origins:resource",
                 "resource": "*:*_dashes",
                 "comparison": ">=",
-                "compare_to": 10
-              },
-              {
-                "type": "origins:origin",
-                "layer": "kitsune:kitsune_subclass",
-                "origin": "kitsune:kitsune_classes/ender_kitsune"
+                "compare_to": 15
               }
             ]
-          },
+          }
+        },
+        {
           "action": {
             "type": "origins:and",
             "actions": [
@@ -176,30 +162,47 @@
               },
               {
                 "type": "origins:execute_command",
-                "command": "particle minecraft:explosion ~ ~ ~ 0.2 0.2 0.2 0.7 6 force"
-              },
-              {
-                "type": "origins:execute_command",
                 "command": "playsound minecraft:entity.shulker_bullet.hurt master @s ~ ~ ~ 100 1"
               },
               {
                 "type": "origins:change_resource",
                 "resource": "*:*_dashes",
-                "change": -10
+                "change": -3
               },
               {
                 "type": "origins:exhaust",
-                "amount": 1
+                "amount": 2.5
               },
               {
                 "type": "origins:change_resource",
                 "resource": "*:*_was_falling",
                 "change": 1
+              },
+              {
+                "type": "origins:area_of_effect",
+                "radius": 4,
+                "shape": "sphere",
+                "bientity_action": {
+                  "type": "origins:target_action",
+                  "action": {
+                    "type": "origins:damage",
+                    "amount": 20,
+                    "damage_type": "mob_attack_no_aggro",
+                    "source": {
+                      "bypasses_armor": false,
+                      "magic": true,
+                      "unblockable": true,
+                      "name": "dark_pulse"
+                    }
+                  }
+                }
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "particle minecraft:dust_color_transition 0.898 0.082 0.243 2 0.157 0.094 0.122 ~ ~ ~ 1 1 1 .1 100"
               }
             ]
-          }
-        },
-        {
+          },
           "condition": {
             "type": "origins:and",
             "conditions": [
@@ -217,9 +220,17 @@
                 "type": "origins:origin",
                 "layer": "kitsune:kitsune_subclass",
                 "origin": "kitsune:kitsune_classes/nether_kitsune"
+              },
+              {
+                "type": "origins:resource",
+                "compare_to": 0,
+                "comparison": "==",
+                "resource": "*:*_lock"
               }
             ]
-          },
+          }
+        },
+        {
           "action": {
             "type": "origins:and",
             "actions": [
@@ -247,16 +258,42 @@
               {
                 "type": "origins:change_resource",
                 "resource": "*:*_dashes",
-                "change": -15
+                "change": -2
               },
               {
                 "type": "origins:exhaust",
-                "amount": 0.5
+                "amount": 2.5
               },
               {
                 "type": "origins:change_resource",
                 "resource": "*:*_was_falling",
                 "change": 1
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:fall_flying",
+                "inverted": true
+              },
+              {
+                "type": "origins:resource",
+                "resource": "*:*_dashes",
+                "comparison": ">=",
+                "compare_to": 10
+              },
+              {
+                "type": "origins:origin",
+                "layer": "kitsune:kitsune_subclass",
+                "origin": "kitsune:kitsune_classes/ender_kitsune"
+              },
+              {
+                "type": "origins:resource",
+                "compare_to": 0,
+                "comparison": "==",
+                "resource": "*:*_lock"
               }
             ]
           }
@@ -329,6 +366,41 @@
       "change": 0,
       "resource": "*:*_was_falling",
       "operation": "set"
+    }
+  },
+  "lock": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
+  },
+  "unlock": {
+    "type": "origins:action_over_time",
+    "interval": 10,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 0,
+      "resource": "*:*_lock"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_dashes",
+      "compare_to": 7,
+      "comparison": "=="
+    }
+  },
+  "lock_dash": {
+    "type": "origins:action_over_time",
+    "interval": 10,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 1,
+      "resource": "*:*_lock"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_dashes",
+      "compare_to": 0,
+      "comparison": "=="
     }
   }
 }

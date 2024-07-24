@@ -6,15 +6,15 @@
     "execute_chosen_when_orb": true,
     "entity_action_chosen": {
       "type": "origins:execute_command",
-      "command": "scale set pehkui:height 1 @s"
+      "command": "scale set pehkui:height 0.80 @s"
     },
     "entity_action_respawned": {
       "type": "origins:execute_command",
-      "command": "scale set pehkui:height 1 @s"
+      "command": "scale set pehkui:height 0.80 @s"
     },
     "entity_action_added": {
       "type": "origins:execute_command",
-      "command": "scale set pehkui:height 1 @s"
+      "command": "scale set pehkui:height 0.80 @s"
     },
     "entity_action_lost": {
       "type": "origins:execute_command",
@@ -25,19 +25,19 @@
       "command": "scale set pehkui:height 1 @s"
     }
   },
-  "overworld_width": {
+  "ender_width": {
     "type": "origins:action_on_callback",
     "entity_action_chosen": {
       "type": "origins:execute_command",
-      "command": "scale set pehkui:width 1 @s"
+      "command": "scale set pehkui:width 0.80 @s"
     },
     "entity_action_respawned": {
       "type": "origins:execute_command",
-      "command": "scale set pehkui:width 1 @s"
+      "command": "scale set pehkui:width 0.80 @s"
     },
     "entity_action_added": {
       "type": "origins:execute_command",
-      "command": "scale set pehkui:width 1 @s"
+      "command": "scale set pehkui:width 0.80 @s"
     },
     "entity_action_lost": {
       "type": "origins:execute_command",
@@ -76,23 +76,10 @@
           "type": "origins:fluid_height",
           "fluid": "minecraft:water",
           "comparison": ">",
-          "compare_to": 0.5
+          "compare_to": 0.01
         },
         {
-          "type": "origins:and",
-          "conditions": [
-            {
-              "type": "origins:in_rain"
-            },
-            {
-              "type": "origins:in_block",
-              "block_condition": {
-                "type": "origins:height",
-                "compare_to": 220,
-                "comparison": "<="
-              }
-            }
-          ]
+          "type": "origins:in_rain"
         }
       ]
     }
@@ -103,7 +90,7 @@
     "modifier": {
       "name": "weak",
       "attribute": "minecraft:generic.attack_damage",
-      "operation": "multiply_base",
+      "operation": "multiply_total",
       "value": -0.5
     },
     "condition": {
@@ -122,6 +109,27 @@
           "resource": "kitsune:kitsune/power_active_trick"
         }
       ]
+    }
+  },
+  "fire": {
+    "type": "origins:modify_damage_taken",
+    "damage_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:name",
+          "name": "minecraft:on_fire"
+        },
+        {
+          "type": "origins:name",
+          "name": "minecraft:lava"
+        }
+      ]
+    },
+    "modifier": {
+      "operation": "addition",
+      "name": "fire",
+      "value": 4
     }
   }
 }
