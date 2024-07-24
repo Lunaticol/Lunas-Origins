@@ -2,13 +2,6 @@
   "name": "Axolotl Totem",
   "description": "When low on health, your Axolotl Totem will save you.",
   "type": "origins:multiple",
-  "toggle": {
-    "type": "origins:toggle",
-    "active_by_default": true,
-    "key": {
-      "key": "primary"
-    }
-  },
   "fake_death": {
     "type": "origins:prevent_death",
     "entity_action": {
@@ -52,24 +45,15 @@
       ]
     },
     "condition": {
-      "type": "origins:and",
-      "conditions": [
-        {
-          "type": "origins:power_active",
-          "power": "*:*_toggle"
-        },
-        {
-          "type": "origins:resource",
-          "compare_to": 0,
-          "comparison": "==",
-          "resource": "*:*_cooldown"
-        }
-      ]
+      "type": "origins:resource",
+      "compare_to": 0,
+      "comparison": "==",
+      "resource": "*:*_cooldown"
     }
   },
   "cooldown": {
     "type": "origins:cooldown",
-    "cooldown": 6000,
+    "cooldown": 3000,
     "hud_render": {
       "should_render": true,
       "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",

@@ -1,0 +1,12 @@
+power grant @s titans:scorch/scorch titans:scorch/scorch
+power grant @s titans:scorch/core titans:scorch/scorch
+power grant @s titans:scorch/counter titans:scorch/scorch
+power grant @s titans:scorch/thermite_launcher titans:scorch/scorch
+power grant @s titans:scorch/firewall titans:scorch/scorch
+power grant @s titans:scorch/thermal_shield titans:scorch/scorch
+power grant @s titans:scorch/trap titans:scorch/scorch
+power grant @s titans:scorch/aegis/roaring_flames titans:scorch/scorch
+power grant @s titans:scorch/aegis/hot_streak titans:scorch/scorch
+power grant @s titans:scorch/aegis/chassis_upgrade titans:scorch/scorch
+power grant @s titans:scorch/aegis/explosive_barrels titans:scorch/scorch
+power grant @s titans:scorch/aegis/more_trouble titans:scorch/scorch

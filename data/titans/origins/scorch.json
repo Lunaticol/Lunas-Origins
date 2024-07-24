@@ -1,0 +1,22 @@
+{
+  "powers": [
+    "titans:scorch/scorch",
+    "titans:scorch/core",
+    "titans:scorch/counter",
+    "titans:scorch/thermite_launcher",
+    "titans:scorch/firewall",
+    "titans:scorch/thermal_shield",
+    "titans:scorch/trap",
+    "titans:scorch/aegis/roaring_flames",
+    "titans:scorch/aegis/hot_streak",
+    "titans:scorch/aegis/chassis_upgrade",
+    "titans:scorch/aegis/explosive_barrels",
+    "titans:scorch/aegis/more_trouble"
+  ],
+  "icon": "minecraft:fire_charge",
+  "unchoosable": false,
+  "order": 9,
+  "impact": 3,
+  "name": "Scorch",
+  "description": "Scorch's primary offensive and defensive weapon is fire. Blunt and direct, Scorch can chain his abilities to force enemies out of cover, or trap them to deal maximum damage."
+}

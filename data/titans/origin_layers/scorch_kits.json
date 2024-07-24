@@ -1,0 +1,22 @@
+{
+  "name": "Kit",
+  "replace": false,
+  "order": 8,
+  "enabled": true,
+  "origins": [
+    {
+      "condition": {
+        "type": "origins:origin",
+        "layer": "origins:origin",
+        "origin": "titans:scorch"
+      },
+      "origins": [
+        "titans:kits/scorch/fuel_for_fire",
+        "titans:kits/scorch/inferno_shield",
+        "titans:kits/scorch/scorched_earth",
+        "titans:kits/scorch/tempered_plating",
+        "titans:kits/scorch/wildfire_launcher"
+      ]
+    }
+  ]
+}

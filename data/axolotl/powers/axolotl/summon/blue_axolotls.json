@@ -1,0 +1,108 @@
+{
+  "type": "origins:multiple",
+  "effects": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:apply_effect",
+      "effects": [
+        {
+          "effect": "minecraft:resistance",
+          "amplifier": 4,
+          "duration": 100,
+          "show_particles": false
+        },
+        {
+          "effect": "minecraft:strength",
+          "amplifier": 4,
+          "duration": 100,
+          "show_particles": false
+        },
+        {
+          "effect": "minecraft:speed",
+          "amplifier": 4,
+          "duration": 100,
+          "show_particles": false
+        }
+      ]
+    }
+  },
+  "health": {
+    "type": "origins:attribute",
+    "update_health": true,
+    "modifier": {
+      "attribute": "minecraft:generic.max_health",
+      "operation": "addition",
+      "value": 40
+    }
+  },
+  "regen": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:area_of_effect",
+      "bientity_action": {
+        "type": "origins:target_action",
+        "action": {
+          "type": "origins:apply_effect",
+          "effect": {
+            "effect": "minecraft:regeneration",
+            "amplifier": 1,
+            "duration": 100
+          }
+        }
+      },
+      "bientity_condition": {
+        "type": "origins:target_condition",
+        "condition": {
+          "type": "origins:entity_type",
+          "entity_type": "minecraft:axolotl"
+        }
+      }
+    }
+  },
+  "freeze": {
+    "type": "origins:action_on_hit",
+    "bientity_action": {
+      "type": "origins:target_action",
+      "action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "moborigins:set_freeze_ticks",
+            "ticks": 100
+          },
+          {
+            "type": "origins:apply_effect",
+            "effect": {
+              "effect": "minecraft:weakness",
+              "duration": 100
+            }
+          }
+        ]
+      }
+    }
+  },
+  "fire": {
+    "type": "origins:action_on_hit",
+    "bientity_action": {
+      "type": "origins:target_action",
+      "action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:set_on_fire",
+            "duration": 7
+          },
+          {
+            "type": "origins:apply_effect",
+            "effect": {
+              "effect": "minecraft:slowness",
+              "duration": 100
+            }
+          }
+        ]
+      }
+    }
+  }
+}

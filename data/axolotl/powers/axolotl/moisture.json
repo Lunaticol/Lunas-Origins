@@ -71,6 +71,14 @@
                 "compare_to": 1,
                 "comparison": ">="
               }
+            },
+            {
+              "type": "origins:status_effect",
+              "effect": "minecraft:water_breathing"
+            },
+            {
+              "type": "origins:status_effect",
+              "effect": "minecraft:conduit_power"
             }
           ]
         },
@@ -189,6 +197,14 @@
                 "compare_to": 1,
                 "comparison": ">="
               }
+            },
+            {
+              "type": "origins:status_effect",
+              "effect": "minecraft:water_breathing"
+            },
+            {
+              "type": "origins:status_effect",
+              "effect": "minecraft:conduit_power"
             }
           ]
         },

@@ -1,0 +1,42 @@
+{
+  "type": "origins:multiple",
+  "name": "Trident Mastery",
+  "description": "You know how to use the trident better then anybody else, you can enhance it further then others can.",
+  "enchant_tridents": {
+    "type": "apugli:allow_anvil_enchant",
+    "enchantments": [
+      "minecraft:looting",
+      "minecraft:knockback",
+      "minecraft:sweeping",
+      "minecraft:sharpness",
+      "betterarcheology:penetrating_strike",
+      "minecraft:bane_of_arthropods",
+      "minecraft:smite"
+    ],
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "tag": "axolotl:axolotl/tridents"
+      }
+    }
+  },
+  "crafting": {
+    "type": "origins:recipe",
+    "recipe": {
+      "id": "axolotl:trident",
+      "type": "minecraft:crafting_shaped",
+      "pattern": ["XXX", " C ", " C "],
+      "key": {
+        "X": {
+          "item": "minecraft:prismarine_shard"
+        },
+        "C": {
+          "item": "adorn:prismarine_post"
+        }
+      },
+      "result": {
+        "item": "minecraft:trident"
+      }
+    }
+  }
+}

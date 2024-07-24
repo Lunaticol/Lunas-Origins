@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/green_wool",
+  "textures": {
+    "layer0": "item/green_soul"
+  },
+  "overrides": [
+    {
+      "predicate": { "custom_model_data": 42700 },
+      "model": "block/souls/green_soul"
+    }
+  ]
+}
