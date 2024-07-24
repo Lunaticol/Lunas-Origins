@@ -42,11 +42,15 @@
       "actions": [
         {
           "type": "origins:execute_command",
-          "command": "scale set pehkui:hieght 0.5 @s"
+          "command": "scale set pehkui:height 0.5 @s"
         },
         {
           "type": "origins:grant_advancement",
           "advancement": "luna:axolotl/axolotl"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "tag @s add axolotl_summoner"
         }
       ]
     },
@@ -59,12 +63,30 @@
       "command": "scale set pehkui:height 0.5 @s"
     },
     "entity_action_lost": {
-      "type": "origins:execute_command",
-      "command": "scale set pehkui:height 1 @s"
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "scale set pehkui:height 1 @s"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "tag @s remove axolotl_summoner"
+        }
+      ]
     },
     "entity_action_removed": {
-      "type": "origins:execute_command",
-      "command": "scale set pehkui:height 1 @s"
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "scale set pehkui:height 1 @s"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "tag @s remove axolotl_summoner"
+        }
+      ]
     }
   },
   "width": {
@@ -172,7 +194,7 @@
           "type": "origins:fluid_height",
           "fluid": "minecraft:water",
           "comparison": ">",
-          "compare_to": 0.09,
+          "compare_to": 0.01,
           "inverted": true
         },
         {
@@ -243,5 +265,592 @@
       "type": "origins:execute_command",
       "command": "origin set @s axolotl:axolotl_subclass axolotl:axolotl_classes/empty"
     }
+  },
+  "damage_base": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.attack_damage",
+      "operation": "addition",
+      "value": 2.1
+    },
+    "tick_rate": 10,
+    "condition": {
+      "type": "origins:equipped_item",
+      "equipment_slot": "mainhand",
+      "item_condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:or",
+            "conditions": [
+              {
+                "type": "origins:ingredient",
+                "ingredient": {
+                  "item": "minecraft:trident"
+                }
+              },
+              {
+                "type": "origins:ingredient",
+                "ingredient": {
+                  "item": "dragonloot:dragon_trident"
+                }
+              }
+            ]
+          },
+          {
+            "type": "origins:enchantment",
+            "enchantment": "minecraft:impaling",
+            "comparison": "==",
+            "compare_to": 0
+          }
+        ]
+      }
+    }
+  },
+  "damage_tooltip": {
+    "type": "origins:tooltip",
+    "item_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "item": "minecraft:trident"
+          }
+        },
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "item": "dragonloot:dragon_trident"
+          }
+        }
+      ]
+    },
+    "texts": [
+      {
+        "text": "Axolotl Bonuses:",
+        "color": "gray"
+      },
+      {
+        "text": "+2.1 Attack Damage",
+        "color": "blue"
+      },
+      {
+        "text": "+8.1 Thrown Damage",
+        "color": "blue"
+      }
+    ]
+  },
+  "damage_thrown_base": {
+    "type": "origins:modify_projectile_damage",
+    "damage_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:projectile",
+          "projectile": "minecraft:trident"
+        },
+        {
+          "type": "origins:projectile",
+          "projectile": "dragonloot:dragon_trident"
+        }
+      ]
+    },
+    "modifier": {
+      "operation": "addition",
+      "value": 8.1
+    }
+  },
+  "damage_1": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.attack_damage",
+      "operation": "addition",
+      "value": 6.1
+    },
+    "tick_rate": 10,
+    "condition": {
+      "type": "origins:equipped_item",
+      "equipment_slot": "mainhand",
+      "item_condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:or",
+            "conditions": [
+              {
+                "type": "origins:ingredient",
+                "ingredient": {
+                  "item": "minecraft:trident"
+                }
+              },
+              {
+                "type": "origins:ingredient",
+                "ingredient": {
+                  "item": "dragonloot:dragon_trident"
+                }
+              }
+            ]
+          },
+          {
+            "type": "origins:enchantment",
+            "enchantment": "minecraft:impaling",
+            "comparison": "==",
+            "compare_to": 1
+          }
+        ]
+      }
+    }
+  },
+  "damage_1_tooltip": {
+    "type": "origins:tooltip",
+    "item_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:or",
+          "conditions": [
+            {
+              "type": "origins:ingredient",
+              "ingredient": {
+                "item": "minecraft:trident"
+              }
+            },
+            {
+              "type": "origins:ingredient",
+              "ingredient": {
+                "item": "dragonloot:dragon_trident"
+              }
+            }
+          ]
+        },
+        {
+          "type": "origins:enchantment",
+          "enchantment": "minecraft:impaling",
+          "comparison": "==",
+          "compare_to": 1
+        }
+      ]
+    },
+    "texts": [
+      {
+        "text": "Axolotl Impaling Bonuses:",
+        "color": "gray"
+      },
+      {
+        "text": "+4.1 Attack Damage",
+        "color": "blue"
+      }
+    ]
+  },
+  "damage_2": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.attack_damage",
+      "operation": "addition",
+      "value": 7.1
+    },
+    "tick_rate": 10,
+    "condition": {
+      "type": "origins:equipped_item",
+      "equipment_slot": "mainhand",
+      "item_condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:or",
+            "conditions": [
+              {
+                "type": "origins:ingredient",
+                "ingredient": {
+                  "item": "minecraft:trident"
+                }
+              },
+              {
+                "type": "origins:ingredient",
+                "ingredient": {
+                  "item": "dragonloot:dragon_trident"
+                }
+              }
+            ]
+          },
+          {
+            "type": "origins:enchantment",
+            "enchantment": "minecraft:impaling",
+            "comparison": "==",
+            "compare_to": 2
+          }
+        ]
+      }
+    }
+  },
+  "damage_2_tooltip": {
+    "type": "origins:tooltip",
+    "item_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:or",
+          "conditions": [
+            {
+              "type": "origins:ingredient",
+              "ingredient": {
+                "item": "minecraft:trident"
+              }
+            },
+            {
+              "type": "origins:ingredient",
+              "ingredient": {
+                "item": "dragonloot:dragon_trident"
+              }
+            }
+          ]
+        },
+        {
+          "type": "origins:enchantment",
+          "enchantment": "minecraft:impaling",
+          "comparison": "==",
+          "compare_to": 2
+        }
+      ]
+    },
+    "texts": [
+      {
+        "text": "Axolotl Impaling Bonuses:",
+        "color": "gray"
+      },
+      {
+        "text": "+5.1 Attack Damage",
+        "color": "blue"
+      }
+    ]
+  },
+  "damage_3": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.attack_damage",
+      "operation": "addition",
+      "value": 8.1
+    },
+    "tick_rate": 10,
+    "condition": {
+      "type": "origins:equipped_item",
+      "equipment_slot": "mainhand",
+      "item_condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:or",
+            "conditions": [
+              {
+                "type": "origins:ingredient",
+                "ingredient": {
+                  "item": "minecraft:trident"
+                }
+              },
+              {
+                "type": "origins:ingredient",
+                "ingredient": {
+                  "item": "dragonloot:dragon_trident"
+                }
+              }
+            ]
+          },
+          {
+            "type": "origins:enchantment",
+            "enchantment": "minecraft:impaling",
+            "comparison": "==",
+            "compare_to": 3
+          }
+        ]
+      }
+    }
+  },
+  "damage_3_tooltip": {
+    "type": "origins:tooltip",
+    "item_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:or",
+          "conditions": [
+            {
+              "type": "origins:ingredient",
+              "ingredient": {
+                "item": "minecraft:trident"
+              }
+            },
+            {
+              "type": "origins:ingredient",
+              "ingredient": {
+                "item": "dragonloot:dragon_trident"
+              }
+            }
+          ]
+        },
+        {
+          "type": "origins:enchantment",
+          "enchantment": "minecraft:impaling",
+          "comparison": "==",
+          "compare_to": 3
+        }
+      ]
+    },
+    "texts": [
+      {
+        "text": "Axolotl Impaling Bonuses:",
+        "color": "gray"
+      },
+      {
+        "text": "+6.1 Attack Damage",
+        "color": "blue"
+      }
+    ]
+  },
+  "damage_4": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.attack_damage",
+      "operation": "addition",
+      "value": 9.1
+    },
+    "tick_rate": 10,
+    "condition": {
+      "type": "origins:equipped_item",
+      "equipment_slot": "mainhand",
+      "item_condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:or",
+            "conditions": [
+              {
+                "type": "origins:ingredient",
+                "ingredient": {
+                  "item": "minecraft:trident"
+                }
+              },
+              {
+                "type": "origins:ingredient",
+                "ingredient": {
+                  "item": "dragonloot:dragon_trident"
+                }
+              }
+            ]
+          },
+          {
+            "type": "origins:enchantment",
+            "enchantment": "minecraft:impaling",
+            "comparison": "==",
+            "compare_to": 4
+          }
+        ]
+      }
+    }
+  },
+  "damage_4_tooltip": {
+    "type": "origins:tooltip",
+    "item_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:or",
+          "conditions": [
+            {
+              "type": "origins:ingredient",
+              "ingredient": {
+                "item": "minecraft:trident"
+              }
+            },
+            {
+              "type": "origins:ingredient",
+              "ingredient": {
+                "item": "dragonloot:dragon_trident"
+              }
+            }
+          ]
+        },
+        {
+          "type": "origins:enchantment",
+          "enchantment": "minecraft:impaling",
+          "comparison": "==",
+          "compare_to": 4
+        }
+      ]
+    },
+    "texts": [
+      {
+        "text": "Axolotl Impaling Bonuses:",
+        "color": "gray"
+      },
+      {
+        "text": "+7.1 Attack Damage",
+        "color": "blue"
+      }
+    ]
+  },
+  "damage_5": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.attack_damage",
+      "operation": "addition",
+      "value": 10.1
+    },
+    "tick_rate": 10,
+    "condition": {
+      "type": "origins:equipped_item",
+      "equipment_slot": "mainhand",
+      "item_condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:or",
+            "conditions": [
+              {
+                "type": "origins:ingredient",
+                "ingredient": {
+                  "item": "minecraft:trident"
+                }
+              },
+              {
+                "type": "origins:ingredient",
+                "ingredient": {
+                  "item": "dragonloot:dragon_trident"
+                }
+              }
+            ]
+          },
+          {
+            "type": "origins:enchantment",
+            "enchantment": "minecraft:impaling",
+            "comparison": "==",
+            "compare_to": 5
+          }
+        ]
+      }
+    }
+  },
+  "damage_5_tooltip": {
+    "type": "origins:tooltip",
+    "item_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:or",
+          "conditions": [
+            {
+              "type": "origins:ingredient",
+              "ingredient": {
+                "item": "minecraft:trident"
+              }
+            },
+            {
+              "type": "origins:ingredient",
+              "ingredient": {
+                "item": "dragonloot:dragon_trident"
+              }
+            }
+          ]
+        },
+        {
+          "type": "origins:enchantment",
+          "enchantment": "minecraft:impaling",
+          "comparison": "==",
+          "compare_to": 5
+        }
+      ]
+    },
+    "texts": [
+      {
+        "text": "Axolotl Impaling Bonuses:",
+        "color": "gray"
+      },
+      {
+        "text": "+8.1 Attack Damage",
+        "color": "blue"
+      }
+    ]
+  },
+  "damage_6": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.attack_damage",
+      "operation": "addition",
+      "value": 11.1
+    },
+    "tick_rate": 10,
+    "condition": {
+      "type": "origins:equipped_item",
+      "equipment_slot": "mainhand",
+      "item_condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:or",
+            "conditions": [
+              {
+                "type": "origins:ingredient",
+                "ingredient": {
+                  "item": "minecraft:trident"
+                }
+              },
+              {
+                "type": "origins:ingredient",
+                "ingredient": {
+                  "item": "dragonloot:dragon_trident"
+                }
+              }
+            ]
+          },
+          {
+            "type": "origins:enchantment",
+            "enchantment": "minecraft:impaling",
+            "comparison": "==",
+            "compare_to": 6
+          }
+        ]
+      }
+    }
+  },
+  "damage_6_tooltip": {
+    "type": "origins:tooltip",
+    "item_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:or",
+          "conditions": [
+            {
+              "type": "origins:ingredient",
+              "ingredient": {
+                "item": "minecraft:trident"
+              }
+            },
+            {
+              "type": "origins:ingredient",
+              "ingredient": {
+                "item": "dragonloot:dragon_trident"
+              }
+            }
+          ]
+        },
+        {
+          "type": "origins:enchantment",
+          "enchantment": "minecraft:impaling",
+          "comparison": "==",
+          "compare_to": 6
+        }
+      ]
+    },
+    "texts": [
+      {
+        "text": "Axolotl Impaling Bonuses:",
+        "color": "gray"
+      },
+      {
+        "text": "+11.1 Attack Damage",
+        "color": "blue"
+      }
+    ]
   }
 }

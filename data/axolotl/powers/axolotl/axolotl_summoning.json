@@ -1,0 +1,224 @@
+{
+  "name": "Axolotl Summoning",
+  "description": "Axoltols Come to your aid! You can summon axolotls to help you fight.\nAxolotls will not last long by themselves. Make sure to pick them back up!\n!!!Opponent must get wet first for the axolotls to attack!!!",
+  "type": "origins:multiple",
+  "badges": [
+    {
+      "type": "origins:keybind",
+      "sprite": "origins:textures/gui/badge/active.png",
+      "text": "To summon collected Axolotls, use [Primary]"
+    },
+    {
+      "type": "origins:keybind",
+      "sprite": "origins:textures/gui/badge/active.png",
+      "text": "To Recall Axolotls, use [Secondary]"
+    }
+  ],
+  "axolotl_resource": {
+    "type": "origins:resource",
+    "max": 20,
+    "min": 0,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/luna_resource_points.png",
+      "bar_index": 0
+    }
+  },
+  "summoning": {
+    "type": "origins:active_self",
+    "cooldown": 20,
+    "hud_render": {
+      "should_render": false
+    },
+    "key": "key.origins.primary_active",
+    "entity_action": {
+      "type": "origins:chance",
+      "chance": 0.01,
+      "action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:execute_command",
+            "command": "function axolotl:summoning/blue_axolotl"
+          },
+          {
+            "type": "origins:change_resource",
+            "change": -1,
+            "resource": "*:*_axolotl_resource"
+          }
+        ]
+      },
+      "fail_action": {
+        "type": "origins:chance",
+        "chance": 0.3,
+        "action": {
+          "type": "origins:and",
+          "actions": [
+            {
+              "type": "origins:execute_command",
+              "command": "function axolotl:summoning/wild_axolotl"
+            },
+            {
+              "type": "origins:change_resource",
+              "change": -1,
+              "resource": "*:*_axolotl_resource"
+            }
+          ]
+        },
+        "fail_action": {
+          "type": "origins:chance",
+          "chance": 0.3,
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "function axolotl:summoning/pink_axolotl"
+              },
+              {
+                "type": "origins:change_resource",
+                "change": -1,
+                "resource": "*:*_axolotl_resource"
+              }
+            ]
+          },
+          "fail_action": {
+            "type": "origins:chance",
+            "chance": 0.2,
+            "action": {
+              "type": "origins:and",
+              "actions": [
+                {
+                  "type": "origins:execute_command",
+                  "command": "function axolotl:summoning/gold_axolotl"
+                },
+                {
+                  "type": "origins:change_resource",
+                  "change": -1,
+                  "resource": "*:*_axolotl_resource"
+                }
+              ]
+            },
+            "fail_action": {
+              "type": "origins:chance",
+              "chance": 0.2,
+              "action": {
+                "type": "origins:and",
+                "actions": [
+                  {
+                    "type": "origins:execute_command",
+                    "command": "function axolotl:summoning/cyan_axolotl"
+                  },
+                  {
+                    "type": "origins:change_resource",
+                    "change": -1,
+                    "resource": "*:*_axolotl_resource"
+                  }
+                ]
+              },
+              "fail_action": {
+                "type": "origins:and",
+                "actions": [
+                  {
+                    "type": "origins:execute_command",
+                    "command": "function axolotl:summoning/axolotl"
+                  },
+                  {
+                    "type": "origins:change_resource",
+                    "change": -1,
+                    "resource": "*:*_axolotl_resource"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": ">=",
+      "resource": "*:*_axolotl_resource"
+    }
+  },
+  "hit": {
+    "type": "origins:action_on_hit",
+    "bientity_action": {
+      "type": "origins:target_action",
+      "action": {
+        "type": "origins:grant_power",
+        "power": "axolotl:axolotl/hostile_axolotls",
+        "source": "axolotl:axolotl/axolotl_summoning"
+      }
+    }
+  },
+  "got_hit": {
+    "type": "origins:action_when_hit",
+    "bientity_action": {
+      "type": "origins:actor_action",
+      "action": {
+        "type": "origins:grant_power",
+        "power": "axolotl:axolotl/hostile_axolotls",
+        "source": "axolotl:axolotl/axolotl_summoning"
+      }
+    }
+  },
+  "pick_up": {
+    "type": "origins:active_self",
+    "key": "key.origins.secondary_active",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "function axolotl:summoning/return"
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 1,
+          "operation": "add",
+          "resource": "*:*_axolotl_resource"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "moborigins:nearby_entities",
+          "compare_to": 1,
+          "comparison": ">=",
+          "multiplier": 2,
+          "bientity_condition": {
+            "type": "origins:target_condition",
+            "condition": {
+              "type": "origins:entity_type",
+              "entity_type": "minecraft:axolotl"
+            }
+          }
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 20,
+          "comparison": "!=",
+          "resource": "*:*_axolotl_resource"
+        }
+      ]
+    }
+  },
+  "no_axolotl_damage": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "value": -1,
+      "operation": "multiply_total"
+    },
+    "bientity_condition": {
+      "type": "origins:actor_condition",
+      "condition": {
+        "type": "origins:entity_type",
+        "entity_type": "minecraft:axolotl"
+      }
+    }
+  }
+}

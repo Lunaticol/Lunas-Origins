@@ -1,1 +1,1 @@
-{"luna":{"command":{"$adv":{"command":["origins"]}}}}
+{"luna":{"command":{"$adv":{"command":["origins"]}},"ronin":{"$adv":{"ronin":["origins"]}},"axolotl":{"$adv":{"axolotl":["origins"]}}}}

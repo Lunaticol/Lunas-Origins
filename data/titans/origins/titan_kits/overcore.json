@@ -1,0 +1,9 @@
+{
+  "name": "Overcore",
+  "description": "Your Core meter starts at 20%",
+  "icon": "minecraft:fire_charge",
+  "loading_priority": 1,
+  "impact": 0,
+  "order": 1,
+  "powers": ["titans:titan_kit/overcore"]
+}

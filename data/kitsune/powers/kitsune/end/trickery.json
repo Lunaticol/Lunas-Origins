@@ -23,6 +23,35 @@
         "type": "origins:grant_power",
         "power": "kitsune:kitsune/end/tricks/phantom_trick",
         "source": "kitsune:kitsune/end/trickery"
+      },
+      {
+        "type": "origins:revoke_power",
+        "power": "kitsune:kitsune/end/tricks/kitsune_trick",
+        "source": "kitsune:kitsune/end/trickery"
+      }
+    ]
+  },
+  "left_action": {
+    "type": "origins:and",
+    "actions": [
+      {
+        "type": "origins:execute_command",
+        "command": "function kitsune:kitsune/kitsune_trick"
+      },
+      {
+        "type": "origins:revoke_power",
+        "power": "kitsune:kitsune/end/tricks/warden_trick",
+        "source": "kitsune:kitsune/end/trickery"
+      },
+      {
+        "type": "origins:revoke_power",
+        "power": "kitsune:kitsune/end/tricks/phantom_trick",
+        "source": "kitsune:kitsune/end/trickery"
+      },
+      {
+        "type": "origins:grant_power",
+        "power": "kitsune:kitsune/end/tricks/kitsune_trick",
+        "source": "kitsune:kitsune/end/trickery"
       }
     ]
   },
@@ -43,6 +72,11 @@
         "type": "origins:revoke_power",
         "power": "kitsune:kitsune/end/tricks/phantom_trick",
         "source": "kitsune:kitsune/end/trickery"
+      },
+      {
+        "type": "origins:revoke_power",
+        "power": "kitsune:kitsune/end/tricks/kitsune_trick",
+        "source": "kitsune:kitsune/end/trickery"
       }
     ]
   },
@@ -54,9 +88,15 @@
         "power": "kitsune:kitsune/end/tricks/warden_trick",
         "source": "kitsune:kitsune/end/trickery"
       },
+
       {
         "type": "origins:revoke_power",
         "power": "kitsune:kitsune/end/tricks/phantom_trick",
+        "source": "kitsune:kitsune/end/trickery"
+      },
+      {
+        "type": "origins:revoke_power",
+        "power": "kitsune:kitsune/end/tricks/kitsune_trick",
         "source": "kitsune:kitsune/end/trickery"
       }
     ]

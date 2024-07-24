@@ -1,9 +1,0 @@
-{
-  "name": "Turbo Engine",
-  "description": "50% dash cooldown reduction",
-  "icon": "minecraft:feather",
-  "loading_priority": 1,
-  "impact": 0,
-  "order": 1,
-  "powers": ["scorch:titan_kit/turbo_engine"]
-}

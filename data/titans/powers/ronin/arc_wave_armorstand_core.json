@@ -1,0 +1,62 @@
+{
+  "type": "origins:multiple",
+  "arc_wave_particles": {
+    "type": "origins:action_over_time",
+    "interval": 10,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "function titans:ronin/arc_wave_core"
+    }
+  },
+  "arc_wave": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:area_of_effect",
+      "radius": 2,
+      "bientity_action": {
+        "type": "origins:target_action",
+        "action": {
+          "type": "origins:and",
+          "actions": [
+            {
+              "type": "origins:damage",
+              "amount": 20,
+              "source": {
+                "name": "arc_wave_core",
+                "magic": true,
+                "bypasses_armor": true,
+                "unblockable": false
+              }
+            },
+            {
+              "type": "origins:apply_effect",
+              "effect": {
+                "effect": "minecraft:slowness",
+                "duration": 100,
+                "amplifier": 1
+              }
+            }
+          ]
+        }
+      },
+      "bientity_condition": {
+        "type": "origins:target_condition",
+        "condition": {
+          "type": "origins:origin",
+          "layer": "origins:origin",
+          "origin": "titans:ronin",
+          "inverted": true
+        }
+      }
+    }
+  },
+  "kill": {
+    "type": "origins:action_over_time",
+    "interval": 40,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "kill @s"
+    }
+  }
+}

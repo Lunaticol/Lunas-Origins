@@ -1,0 +1,14 @@
+{
+  "type": "origins:multiple",
+  "hostile": {
+    "type": "moborigins:hostile_axolotls"
+  },
+  "remove": {
+    "type": "origins:action_over_time",
+    "interval": 200,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "power remove @s axolotl:axolotl/hostile_axolotls"
+    }
+  }
+}

@@ -10,15 +10,19 @@
   },
   "swim": {
     "type": "origins:action_over_time",
-    "interval": 1,
+    "interval": 5,
     "condition": {
-      "type": "origins:or",
+      "type": "origins:and",
       "conditions": [
         {
           "type": "origins:fluid_height",
           "fluid": "minecraft:water",
           "comparison": ">",
           "compare_to": 0.1
+        },
+        {
+          "type": "origins:power_active",
+          "power": "*:*_toggle"
         }
       ]
     },
@@ -27,8 +31,8 @@
       "effects": [
         {
           "effect": "dolphins_grace",
-          "amplifier": 3,
-          "duration": 2,
+          "amplifier": 2,
+          "duration": 20,
           "show_particles": false,
           "is_ambient": false
         }
@@ -50,5 +54,9 @@
         "tag": "axolotl:axolotl/cyan_eat"
       }
     }
+  },
+  "toggle": {
+    "type": "origins:toggle",
+    "key": "key.loadToolbarActivator"
   }
 }

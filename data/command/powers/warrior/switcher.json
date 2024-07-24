@@ -74,5 +74,58 @@
         }
       ]
     }
+  },
+  "reset": {
+    "type": "origins:action_on_callback",
+    "entity_action_lost": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:revoke_power",
+          "power": "artificer:artificer/artificer_stun",
+          "source": "artificer:artificer"
+        },
+        {
+          "type": "origins:revoke_power",
+          "power": "scorch:thermal_shield",
+          "source": "scorch:scorch"
+        },
+        {
+          "type": "origins:revoke_power",
+          "power": "extraorigins:bite_sized",
+          "source": "extraorigins:bite_sized"
+        },
+        {
+          "type": "origins:revoke_power",
+          "power": "ashley:moves/double_edge",
+          "source": "ashley:ashley"
+        }
+      ]
+    },
+    "entity_action_removed": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:revoke_power",
+          "power": "artificer:artificer/artificer_stun",
+          "source": "apoli:command"
+        },
+        {
+          "type": "origins:revoke_power",
+          "power": "scorch:thermal_shield",
+          "source": "scorch:scorch"
+        },
+        {
+          "type": "origins:revoke_power",
+          "power": "extraorigins:bite_sized",
+          "source": "extraorigins:bite_sized"
+        },
+        {
+          "type": "origins:revoke_power",
+          "power": "ashley:moves/double_edge",
+          "source": "apoli:command"
+        }
+      ]
+    }
   }
 }

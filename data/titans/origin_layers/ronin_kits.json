@@ -1,0 +1,21 @@
+{
+  "name": "Kit",
+  "replace": false,
+  "order": 8,
+  "enabled": true,
+  "origins": [
+    {
+      "condition": {
+        "type": "origins:origin",
+        "layer": "origins:origin",
+        "origin": "titans:ronin"
+      },
+      "origins": [
+        "titans:kits/ronin/highlander",
+        "titans:kits/ronin/phase_reflex",
+        "titans:kits/ronin/temporal_anomaly",
+        "titans:kits/ronin/thunderstorm"
+      ]
+    }
+  ]
+}

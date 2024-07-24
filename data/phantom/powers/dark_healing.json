@@ -90,11 +90,6 @@
                 "inverted": true
               },
               {
-                "type": "origins:health",
-                "compare_to": 5,
-                "comparison": ">="
-              },
-              {
                 "type": "origins:entity_type",
                 "entity_type": "minecraft:skeleton",
                 "inverted": true

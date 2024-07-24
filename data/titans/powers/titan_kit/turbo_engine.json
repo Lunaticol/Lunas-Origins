@@ -1,0 +1,72 @@
+{
+  "hidden": true,
+  "name": "Turbo Engine",
+  "description": "The Turbo Engine allows 1 extra dash on your Titan (except for Scorch, which gets halved dash cooldown instead.)",
+  "type": "origins:multiple",
+  "turbo_engine_scorch": {
+    "type": "origins:action_on_callback",
+    "entity_action_added": {
+      "type": "origins:change_resource",
+      "operation": "set",
+      "change": 1,
+      "resource": "*:scorch/scorch_turbo_engine"
+    },
+    "entity_action_gained": {
+      "type": "origins:change_resource",
+      "operation": "set",
+      "change": 1,
+      "resource": "*:scorch/scorch_turbo_engine"
+    },
+    "entity_action_respawned": {
+      "type": "origins:change_resource",
+      "operation": "set",
+      "change": 1,
+      "resource": "*:scorch/scorch_turbo_engine"
+    },
+    "entity_action_lost": {
+      "type": "origins:change_resource",
+      "operation": "set",
+      "change": 0,
+      "resource": "*:scorch/scorch_turbo_engine"
+    },
+    "entity_action_removed": {
+      "type": "origins:change_resource",
+      "operation": "set",
+      "change": 0,
+      "resource": "*:scorch/scorch_turbo_engine"
+    }
+  },
+  "turbo_engine_ronin": {
+    "type": "origins:action_on_callback",
+    "entity_action_added": {
+      "type": "origins:change_resource",
+      "operation": "set",
+      "change": 1,
+      "resource": "*:ronin/ronin_turbo_engine"
+    },
+    "entity_action_gained": {
+      "type": "origins:change_resource",
+      "operation": "set",
+      "change": 1,
+      "resource": "*:ronin/ronin_turbo_engine"
+    },
+    "entity_action_respawned": {
+      "type": "origins:change_resource",
+      "operation": "set",
+      "change": 1,
+      "resource": "*:ronin/ronin_turbo_engine"
+    },
+    "entity_action_lost": {
+      "type": "origins:change_resource",
+      "operation": "set",
+      "change": 0,
+      "resource": "*:ronin/ronin_turbo_engine"
+    },
+    "entity_action_removed": {
+      "type": "origins:change_resource",
+      "operation": "set",
+      "change": 0,
+      "resource": "*:ronin/ronin_turbo_engine"
+    }
+  }
+}
