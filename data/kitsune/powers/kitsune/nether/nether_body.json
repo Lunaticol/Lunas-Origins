@@ -7,15 +7,15 @@
     "execute_chosen_when_orb": true,
     "entity_action_chosen": {
       "type": "origins:execute_command",
-      "command": "scale set pehkui:height 0.90 @s"
+      "command": "scale set pehkui:height 1.1 @s"
     },
     "entity_action_respawned": {
       "type": "origins:execute_command",
-      "command": "scale set pehkui:height 0.90 @s"
+      "command": "scale set pehkui:height 1.1 @s"
     },
     "entity_action_added": {
       "type": "origins:execute_command",
-      "command": "scale set pehkui:height 0.90 @s"
+      "command": "scale set pehkui:height 1.1 @s"
     },
     "entity_action_lost": {
       "type": "origins:execute_command",
@@ -30,15 +30,15 @@
     "type": "origins:action_on_callback",
     "entity_action_chosen": {
       "type": "origins:execute_command",
-      "command": "scale set pehkui:width 0.90 @s"
+      "command": "scale set pehkui:width 1.1 @s"
     },
     "entity_action_respawned": {
       "type": "origins:execute_command",
-      "command": "scale set pehkui:width 0.90 @s"
+      "command": "scale set pehkui:width 1.1 @s"
     },
     "entity_action_added": {
       "type": "origins:execute_command",
-      "command": "scale set pehkui:width 0.90 @s"
+      "command": "scale set pehkui:width 1.1 @s"
     },
     "entity_action_lost": {
       "type": "origins:execute_command",

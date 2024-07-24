@@ -34,6 +34,26 @@
         {
           "type": "origins:entity_type",
           "entity_type": "minecraft:zombified_piglin"
+        },
+        {
+          "type": "origins:entity_type",
+          "entity_type": "minecraft:creeper"
+        },
+        {
+          "type": "origins:entity_type",
+          "entity_type": "minecraft:spider"
+        },
+        {
+          "type": "origins:entity_type",
+          "entity_type": "minecraft:cave_spider"
+        },
+        {
+          "type": "origins:entity_type",
+          "entity_type": "minecraft:piglin"
+        },
+        {
+          "type": "origins:entity_type",
+          "entity_type": "minecraft:piglin_brute"
         }
       ]
     }

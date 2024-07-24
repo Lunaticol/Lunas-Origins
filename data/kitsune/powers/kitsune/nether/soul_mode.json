@@ -53,7 +53,7 @@
       "type": "origins:and",
       "conditions": [
         {
-          "type": "origins:in_block",
+          "type": "origins:on_block",
           "block_condition": {
             "type": "origins:in_tag",
             "tag": "kitsune:kitsune/nether/blocks",
@@ -186,23 +186,63 @@
     "type": "origins:action_over_time",
     "interval": 10,
     "entity_action": {
-      "type": "origins:apply_effect",
-      "effects": [
+      "type": "origins:and",
+      "actions": [
         {
-          "effect": "minecraft:speed",
-          "duration": 1000,
-          "amplifier": 1,
-          "show_particles": false,
-          "show_icon": true
+          "type": "origins:apply_effect",
+          "effects": [
+            {
+              "effect": "minecraft:speed",
+              "duration": 40,
+              "amplifier": 1,
+              "show_particles": false,
+              "show_icon": true
+            },
+            {
+              "effect": "minecraft:strength",
+              "duration": 40,
+              "amplifier": 1,
+              "show_particles": false,
+              "show_icon": true
+            }
+          ]
         },
         {
-          "effect": "minecraft:strength",
-          "duration": 1000,
-          "amplifier": 1,
-          "show_particles": false,
-          "show_icon": true
+          "type": "origins:change_resource",
+          "resource": "kitsune:kitsune/dash_dashes",
+          "operation": "set",
+          "change": 7
         }
       ]
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_flame_bar"
+    }
+  },
+  "speed": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "value": 0.1,
+      "attribute": "minecraft:generic.attack_speed",
+      "operation": "addition"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_flame_bar"
+    }
+  },
+  "no_elytra": {
+    "type": "origins:restrict_armor",
+    "chest": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:elytra"
+      }
     },
     "condition": {
       "type": "origins:resource",
