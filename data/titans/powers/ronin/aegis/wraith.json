@@ -1,7 +1,7 @@
 {
   "type": "origins:multiple",
   "name": "Wraith",
-  "description": "Phase dash travels farther.\nUse [Netherite Scrap (x2 to fully upgrade)] To obtain this upgrade!",
+  "description": "Phase dash travels farther.\nUse [Sculk Shrieker] To obtain this upgrade!",
   "wraith_bar": {
     "type": "origins:resource",
     "max": 1,

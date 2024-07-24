@@ -44,18 +44,5 @@
         "tag": "axolotl:axolotl/these_are_buckets"
       }
     }
-  },
-  "expire": {
-    "type": "origins:action_over_time",
-    "interval": 6000,
-    "entity_action": {
-      "type": "origins:and",
-      "actions": [
-        {
-          "type": "origins:execute_command",
-          "command": "kill @s"
-        }
-      ]
-    }
   }
 }

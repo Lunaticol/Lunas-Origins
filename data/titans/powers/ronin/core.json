@@ -5,7 +5,7 @@
   "core_bar": {
     "type": "origins:resource",
     "max": 100,
-    "min": 1,
+    "min": 0,
     "hud_render": {
       "should_render": true,
       "sprite_location": "origins:textures/gui/luna_resource_bar.png",
@@ -16,7 +16,6 @@
   "core_activate": {
     "type": "origins:active_self",
     "key": "key.loadToolbarActivator",
-    "cooldown": 0,
     "entity_action": {
       "type": "origins:and",
       "actions": [
@@ -26,6 +25,12 @@
           "resource": "*:*_core_active"
         }
       ]
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 100,
+      "comparison": "==",
+      "resource": "*:*_core_bar"
     }
   },
   "extra_damage_dealt": {
@@ -134,6 +139,12 @@
         "change": 1,
         "resource": "*:ronin/core_core_bar"
       }
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 0,
+      "comparison": "==",
+      "resource": "*:*_core_active"
     }
   },
   "reset": {

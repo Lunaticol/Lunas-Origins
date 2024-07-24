@@ -2,6 +2,18 @@
   "name": "Axolotl Summoning",
   "description": "Axoltols Come to your aid! You can summon axolotls to help you fight.\nAxolotls will not last long by themselves. Make sure to pick them back up!\n!!!Opponent must get wet first for the axolotls to attack!!!",
   "type": "origins:multiple",
+  "badges": [
+    {
+      "type": "origins:keybind",
+      "sprite": "origins:textures/gui/badge/active.png",
+      "text": "To summon collected Axolotls, use [Primary]"
+    },
+    {
+      "type": "origins:keybind",
+      "sprite": "origins:textures/gui/badge/active.png",
+      "text": "To Recall Axolotls, use [Secondary]"
+    }
+  ],
   "axolotl_resource": {
     "type": "origins:resource",
     "max": 20,
@@ -193,6 +205,20 @@
           "resource": "*:*_axolotl_resource"
         }
       ]
+    }
+  },
+  "no_axolotl_damage": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "value": -1,
+      "operation": "multiply_total"
+    },
+    "bientity_condition": {
+      "type": "origins:actor_condition",
+      "condition": {
+        "type": "origins:entity_type",
+        "entity_type": "minecraft:axolotl"
+      }
     }
   }
 }

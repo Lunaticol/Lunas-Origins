@@ -1,7 +1,7 @@
 {
   "type": "origins:multiple",
   "name": "Kinetic Transfer",
-  "description": "Getting damaged charges your core.\nUse [Netherite Scrap (x2 to fully upgrade)] To obtain this upgrade!",
+  "description": "Getting damaged charges your core.\nUse [End Crystal] To obtain this upgrade!",
   "kinetic_bar": {
     "type": "origins:resource",
     "max": 1,
@@ -57,6 +57,12 @@
       "type": "origins:change_resource",
       "change": 1,
       "resource": "*:ronin/core_core_bar"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_kinetic_bar"
     }
   }
 }

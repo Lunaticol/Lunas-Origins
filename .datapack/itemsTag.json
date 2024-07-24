@@ -1,1 +1,1 @@
-{"true_ending":{"$tags":["end_blocks"]},"titans":{"$tags":["sword","crossbow"]},"command":{"$tags":["weapons"]},"axolotl":{"axolotl":{"$tags":["tridents","these_are_buckets","no_eat","fish","cyan_eat"]}},"button":{"$tags":["weapons"]},"artificer":{"$tags":["arrow"]}}
+{"titans":{"$tags":["sword","crossbow","bow"]},"true_ending":{"$tags":["end_blocks"]},"command":{"$tags":["weapons"]},"button":{"$tags":["weapons"]},"artificer":{"$tags":["arrow"]},"axolotl":{"axolotl":{"$tags":["tridents","these_are_buckets","no_eat","fish","cyan_eat"]}}}

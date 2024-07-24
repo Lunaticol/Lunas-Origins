@@ -11,7 +11,7 @@
     "divergence": 20,
     "count": 8,
     "speed": 1,
-    "tag": "{pickup:2b}",
+    "tag": "{pickup:2b,damage:25d,crit:1b}",
     "shooter_action": {
       "type": "origins:execute_command",
       "command": "clear @s arrow 1"

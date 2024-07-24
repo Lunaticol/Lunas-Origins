@@ -7,9 +7,8 @@
     "type": "origins:action_over_time",
     "interval": 200,
     "entity_action": {
-      "type": "origins:revoke_power",
-      "power": "axolotl:axolotl/hostile_axolotls",
-      "source": "apoli:command"
+      "type": "origins:execute_command",
+      "command": "power remove @s axolotl:axolotl/hostile_axolotls"
     }
   }
 }

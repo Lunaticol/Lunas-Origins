@@ -51,11 +51,14 @@
             "duration": 100
           }
         }
+      },
+      "bientity_condition": {
+        "type": "origins:target_condition",
+        "condition": {
+          "type": "origins:entity_type",
+          "entity_type": "minecraft:axolotl"
+        }
       }
-    },
-    "condition": {
-      "type": "origins:entity_type",
-      "entity_type": "minecraft:axolotl"
     }
   },
   "freeze": {

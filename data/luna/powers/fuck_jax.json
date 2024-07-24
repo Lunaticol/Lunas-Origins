@@ -1,0 +1,46 @@
+{
+  "type": "origins:action_when_hit",
+  "bientity_action": {
+    "type": "origins:target_action",
+    "action": {
+      "type": "origins:play_sound",
+      "sound": "minecraft:entity.skeleton.hurt",
+      "volume": 1,
+      "pitch": 1,
+      "category": "players"
+    }
+  },
+  "death": {
+    "type": "origins:action_when_damage_taken",
+    "cooldown": 0,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:chance",
+          "chance": 0.5,
+          "action": {
+            "type": "origins:execute_command",
+            "command": "summon item ~ ~ ~ {Item:{id:\"minecraft:bone\",Count:3b}}"
+          },
+          "fail_action": {
+            "type": "origins:execute_command",
+            "command": "summon item ~ ~ ~ {Item:{id:\"minecraft:diamond\",Count:2b}}"
+          }
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:entity.skeleton.death",
+          "volume": 1,
+          "pitch": 1,
+          "category": "players"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:health",
+      "compare_to": 0,
+      "comparison": "=="
+    }
+  }
+}

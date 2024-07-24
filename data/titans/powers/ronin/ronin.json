@@ -1,7 +1,7 @@
 {
   "type": "origins:multiple",
   "name": "Ronin",
-  "description": "A Stryder Class Titan, Equiped with an electrified sword.\nYour sword is the shield, therfore you cannot use shields.\nYou eat redstone to recover health.\nYour thick metal protects your core from projectiles",
+  "description": "A Stryder Class Titan, Equiped with an electrified sword.\nYour sword is the shield, therfore you cannot use shields.\nYou eat redstone to recover health.\nYour thick metal protects your core from projectiles.\nYou have a shotgun, why would you use less advanced ranged weapons?",
   "height": {
     "type": "origins:action_on_callback",
     "execute_chosen_when_orb": true,
@@ -533,6 +533,23 @@
       "type": "origins:ingredient",
       "ingredient": {
         "item": "minecraft:shield"
+      }
+    }
+  },
+  "heavy_sword": {
+    "type": "origins:attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.attack_speed",
+      "value": -0.05,
+      "operation": "addition"
+    }
+  },
+  "prevent_bows": {
+    "type": "origins:prevent_item_use",
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "tag": "titans:bow"
       }
     }
   }
