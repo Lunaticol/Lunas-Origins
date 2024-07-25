@@ -71,7 +71,7 @@
                 "type": "origins:resource",
                 "resource": "*:*_dashes",
                 "comparison": ">=",
-                "compare_to": 5
+                "compare_to": 1
               },
               {
                 "type": "origins:origin",
@@ -89,42 +89,125 @@
         },
         {
           "action": {
-            "type": "origins:and",
+            "type": "origins:if_else_list",
             "actions": [
               {
-                "type": "origins:add_velocity",
-                "z": 1.5,
-                "space": "local"
-              },
-              {
-                "type": "origins:apply_effect",
-                "effect": {
-                  "effect": "slow_falling",
-                  "duration": 10,
-                  "show_icon": true
+                "action": {
+                  "type": "origins:and",
+                  "actions": [
+                    {
+                      "type": "origins:play_sound",
+                      "sound": "minecraft:item.chorus_fruit.teleport",
+                      "volume": 1,
+                      "pitch": 1
+                    },
+                    {
+                      "type": "origins:execute_command",
+                      "command": "spreadplayers ~ ~ 8 16 under 127 false @s"
+                    },
+                    {
+                      "type": "origins:execute_command",
+                      "command": "particle minecraft:portal ~ ~0.4 ~ 0.3 0.6 0.3 0 100 normal"
+                    },
+                    {
+                      "type": "origins:change_resource",
+                      "resource": "*:*_dashes",
+                      "change": -2
+                    }
+                  ]
+                },
+                "condition": {
+                  "type": "origins:dimension",
+                  "dimension": "minecraft:the_nether"
                 }
               },
               {
-                "type": "origins:execute_command",
-                "command": "playsound minecraft:entity.shulker_bullet.hurt master @s ~ ~ ~ 100 1"
+                "action": {
+                  "type": "origins:and",
+                  "actions": [
+                    {
+                      "type": "origins:play_sound",
+                      "sound": "minecraft:item.chorus_fruit.teleport",
+                      "volume": 1,
+                      "pitch": 1
+                    },
+                    {
+                      "type": "origins:execute_command",
+                      "command": "spreadplayers ~ ~ 8 16 under 319 false @s"
+                    },
+                    {
+                      "type": "origins:execute_command",
+                      "command": "particle minecraft:portal ~ ~0.4 ~ 0.3 0.6 0.3 0 100 normal"
+                    },
+                    {
+                      "type": "origins:change_resource",
+                      "resource": "*:*_dashes",
+                      "change": -2
+                    }
+                  ]
+                },
+                "condition": {
+                  "type": "origins:and",
+                  "conditions": [
+                    {
+                      "type": "origins:on_block",
+                      "block_condition": {
+                        "type": "origins:height",
+                        "compare_to": 63,
+                        "comparison": ">="
+                      }
+                    },
+                    {
+                      "type": "origins:dimension",
+                      "dimension": "minecraft:the_nether",
+                      "inverted": true
+                    }
+                  ]
+                }
               },
               {
-                "type": "origins:execute_command",
-                "command": "particle minecraft:explosion ~ ~ ~ 0.2 0.2 0.2 0.7 6 force"
-              },
-              {
-                "type": "origins:change_resource",
-                "resource": "*:*_dashes",
-                "change": -3
-              },
-              {
-                "type": "origins:exhaust",
-                "amount": 1.5
-              },
-              {
-                "type": "origins:change_resource",
-                "resource": "*:*_was_falling",
-                "change": 1
+                "action": {
+                  "type": "origins:and",
+                  "actions": [
+                    {
+                      "type": "origins:play_sound",
+                      "sound": "minecraft:item.chorus_fruit.teleport",
+                      "volume": 1,
+                      "pitch": 1
+                    },
+                    {
+                      "type": "origins:execute_command",
+                      "command": "spreadplayers ~ ~ 8 16 under 62 false @s"
+                    },
+                    {
+                      "type": "origins:execute_command",
+                      "command": "particle minecraft:portal ~ ~0.4 ~ 0.3 0.6 0.3 0 100 normal"
+                    },
+                    {
+                      "type": "origins:change_resource",
+                      "resource": "*:*_dashes",
+                      "change": -2
+                    }
+                  ]
+                },
+                "condition": {
+                  "type": "origins:and",
+                  "conditions": [
+                    {
+                      "type": "origins:on_block",
+                      "block_condition": {
+                        "type": "origins:height",
+                        "compare_to": 62,
+                        "comparison": "<="
+                      }
+                    },
+                    {
+                      "type": "origins:dimension",
+                      "dimension": "minecraft:the_nether",
+                      "inverted": true
+                    }
+                  ]
+                }
               }
             ]
           },
@@ -132,13 +215,25 @@
             "type": "origins:and",
             "conditions": [
               {
-                "type": "origins:fall_flying"
+                "type": "origins:fall_flying",
+                "inverted": true
               },
               {
                 "type": "origins:resource",
                 "resource": "*:*_dashes",
                 "comparison": ">=",
-                "compare_to": 15
+                "compare_to": 2
+              },
+              {
+                "type": "origins:origin",
+                "layer": "kitsune:kitsune_subclass",
+                "origin": "kitsune:kitsune_classes/ender_kitsune"
+              },
+              {
+                "type": "origins:resource",
+                "compare_to": 0,
+                "comparison": "==",
+                "resource": "*:*_lock"
               }
             ]
           }
@@ -214,7 +309,7 @@
                 "type": "origins:resource",
                 "resource": "*:*_dashes",
                 "comparison": ">=",
-                "compare_to": 15
+                "compare_to": 3
               },
               {
                 "type": "origins:origin",
@@ -236,7 +331,7 @@
             "actions": [
               {
                 "type": "origins:add_velocity",
-                "z": 1,
+                "z": 1.5,
                 "space": "local"
               },
               {
@@ -249,20 +344,20 @@
               },
               {
                 "type": "origins:execute_command",
-                "command": "particle minecraft:explosion ~ ~ ~ 0.2 0.2 0.2 0.7 6 force"
+                "command": "playsound minecraft:entity.shulker_bullet.hurt master @s ~ ~ ~ 100 1"
               },
               {
                 "type": "origins:execute_command",
-                "command": "playsound minecraft:entity.shulker_bullet.hurt master @s ~ ~ ~ 100 1"
+                "command": "particle minecraft:explosion ~ ~ ~ 0.2 0.2 0.2 0.7 6 force"
               },
               {
                 "type": "origins:change_resource",
                 "resource": "*:*_dashes",
-                "change": -2
+                "change": -3
               },
               {
                 "type": "origins:exhaust",
-                "amount": 2.5
+                "amount": 1.5
               },
               {
                 "type": "origins:change_resource",
@@ -275,25 +370,13 @@
             "type": "origins:and",
             "conditions": [
               {
-                "type": "origins:fall_flying",
-                "inverted": true
+                "type": "origins:fall_flying"
               },
               {
                 "type": "origins:resource",
                 "resource": "*:*_dashes",
                 "comparison": ">=",
-                "compare_to": 10
-              },
-              {
-                "type": "origins:origin",
-                "layer": "kitsune:kitsune_subclass",
-                "origin": "kitsune:kitsune_classes/ender_kitsune"
-              },
-              {
-                "type": "origins:resource",
-                "compare_to": 0,
-                "comparison": "==",
-                "resource": "*:*_lock"
+                "compare_to": 3
               }
             ]
           }
@@ -306,10 +389,10 @@
   },
   "recharge": {
     "type": "origins:action_over_time",
-    "interval": 40,
+    "interval": 50,
     "entity_action": {
       "type": "origins:change_resource",
-      "change": 5,
+      "change": 1,
       "resource": "*:*_dashes"
     },
     "condition": {
@@ -319,10 +402,10 @@
   },
   "recharge_elytra": {
     "type": "origins:action_over_time",
-    "interval": 50,
+    "interval": 60,
     "entity_action": {
       "type": "origins:change_resource",
-      "change": 5,
+      "change": 1,
       "resource": "*:*_dashes"
     },
     "condition": {
@@ -379,6 +462,7 @@
     "entity_action": {
       "type": "origins:change_resource",
       "change": 0,
+      "operation": "set",
       "resource": "*:*_lock"
     },
     "condition": {
@@ -400,6 +484,7 @@
       "type": "origins:resource",
       "resource": "*:*_dashes",
       "compare_to": 0,
+      "operation": "set",
       "comparison": "=="
     }
   }
