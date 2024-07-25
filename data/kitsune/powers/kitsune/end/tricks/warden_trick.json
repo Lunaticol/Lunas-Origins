@@ -27,8 +27,15 @@
           "type": "origins:apply_effect",
           "effect": {
             "duration": 600,
-            "effect": "minecraft:strength"
+            "effect": "minecraft:strength",
+            "amplifier": 1
           }
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:entity.warden.roar",
+          "volume": 1,
+          "pitch": 2
         },
         {
           "type": "origins:change_resource",

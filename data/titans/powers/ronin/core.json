@@ -162,5 +162,37 @@
       "compare_to": 0,
       "comparison": "=="
     }
+  },
+  "grant_counter": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "resource": "*:ronin/counter_counter",
+          "change": 1,
+          "operation": "add"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 30,
+          "comparison": "==",
+          "resource": "*:*_core_bar"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:ronin/counter_counter"
+        }
+      ]
+    }
   }
 }

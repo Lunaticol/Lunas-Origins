@@ -2,60 +2,6 @@
   "name": "Healer",
   "description": "You can heal yourself or those around you.",
   "type": "origins:multiple",
-  "badges": [
-    {
-      "type": "origins:tooltip",
-      "sprite": "origins:textures/gui/badge/info.png",
-      "text": "Using one disables the other!"
-    }
-  ],
-  "healing_self": {
-    "type": "origins:active_self",
-    "hud_render": {
-      "should_render": true,
-      "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
-      "bar_index": 4
-    },
-    "cooldown": 600,
-    "key": {
-      "key": "key.saveToolbarActivator"
-    },
-    "entity_action": {
-      "type": "origins:and",
-      "actions": [
-        {
-          "type": "origins:apply_effect",
-          "effects": [
-            {
-              "effect": "minecraft:regeneration",
-              "duration": 400,
-              "show_icon": true,
-              "show_particles": false
-            },
-            {
-              "effect": "minecraft:absorption",
-              "duration": 400,
-              "amplifier": 1,
-              "show_icon": true,
-              "show_particles": false
-            }
-          ]
-        },
-        {
-          "type": "origins:change_resource",
-          "change": 1,
-          "operation": "set",
-          "resource": "kitsune:kitsune/power_active_healing"
-        }
-      ]
-    },
-    "condition": {
-      "type": "origins:resource",
-      "compare_to": 0,
-      "comparison": "==",
-      "resource": "kitsune:kitsune/power_active_healing"
-    }
-  },
   "healing_others": {
     "type": "origins:active_self",
     "hud_render": {
