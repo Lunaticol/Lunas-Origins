@@ -10,7 +10,7 @@
   },
   "arc_wave": {
     "type": "origins:action_over_time",
-    "interval": 20,
+    "interval": 25,
     "entity_action": {
       "type": "origins:area_of_effect",
       "radius": 2,
@@ -21,7 +21,7 @@
           "actions": [
             {
               "type": "origins:damage",
-              "amount": 20,
+              "amount": 15,
               "source": {
                 "name": "arc_wave",
                 "magic": true,

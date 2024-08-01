@@ -1,0 +1,60 @@
+{
+  "name": "Feral",
+  "description": "You can climb walls, jump higher, dash, and break things faster with your fists",
+  "type": "origins:multiple",
+  "walls": {
+    "type": "origins:climbing",
+    "allow_holding": true,
+    "hold_condition": {
+      "type": "origins:sneaking"
+    },
+    "condition": {
+      "type": "origins:block_collision",
+      "offset_x": 0.1,
+      "offset_z": 0.1
+    }
+  },
+  "jump": {
+    "type": "origins:modify_jump",
+    "modifier": {
+      "value": 0.1,
+      "operation": "addition"
+    }
+  },
+  "dash": {
+    "type": "origins:active_self",
+    "key": {
+      "key": "key.origins.primary_active"
+    },
+    "cooldown": 200,
+    "hud_render": {
+      "should_render": true,
+      "bar_index": 23,
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png"
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:add_velocity",
+          "space": "local",
+          "z": 1.5
+        }
+      ]
+    }
+  },
+  "hell": {
+    "type": "origins:modify_player_spawn",
+    "biome": "minecraft:basalt_deltas",
+    "dimension": "minecraft:the_nether"
+  },
+  "health": {
+    "type": "origins:attribute",
+    "update_health": true,
+    "modifier": {
+      "value": -4,
+      "attribute": "minecraft:generic.max_health",
+      "operation": "addition"
+    }
+  }
+}

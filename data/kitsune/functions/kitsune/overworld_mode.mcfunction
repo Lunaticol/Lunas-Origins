@@ -1,4 +1,4 @@
-origin set @s kitsune:kitsune_subclass kitsune:kitsune_classes/overworld_kitsune
+origin set @s luna:luna_layers kitsune:kitsune_classes/overworld_kitsune
 title @s actionbar [{"text": "[Overworld Mode]","color": "green","bold": true}]
 execute at @s run playsound minecraft:block.anvil.land player @a[distance=..10] ~ ~ ~ 0.2 1
 execute at @s run playsound minecraft:block.grass.break player @a[distance=..10] ~ ~ ~ 10 1

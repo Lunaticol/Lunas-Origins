@@ -1,4 +1,4 @@
-origin set @s kitsune:kitsune_subclass kitsune:kitsune_classes/ender_kitsune
+origin set @s luna:luna_layers kitsune:kitsune_classes/ender_kitsune
 title @s actionbar [{"text": "[Ender Mode]","color": "dark_aqua","bold": true}]
 execute at @s run playsound minecraft:block.anvil.land player @a[distance=..10] ~ ~ ~ 0.2 1
 execute at @s run playsound minecraft:entity.enderman.teleport player @a[distance=..10] ~ ~ ~ 1 0

@@ -21,7 +21,7 @@
           "actions": [
             {
               "type": "origins:damage",
-              "amount": 20,
+              "amount": 30,
               "source": {
                 "name": "arc_wave_core",
                 "magic": true,
@@ -53,7 +53,7 @@
   },
   "kill": {
     "type": "origins:action_over_time",
-    "interval": 40,
+    "interval": 30,
     "entity_action": {
       "type": "origins:execute_command",
       "command": "kill @s"

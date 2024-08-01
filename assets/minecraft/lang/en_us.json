@@ -9,8 +9,8 @@
   "death.attack.double_edge": "%1$s was sliced in half",
   "death.attack.out_of_blood": "%1$s was consumed by dark magic",
   "death.attack.out_of_blood.player": "%1$s was consumed by dark magic while fighting %2$s",
-  "death.attack.arc_wave": "%1$s was caught in a arc wave",
-  "death.attack.arc_wave.player": "%1$s was caught in a arc wave by %2$s",
+  "death.attack.arc_wave": "%1$s was caught in an arc wave",
+  "death.attack.arc_wave.player": "%1$s was caught in an arc wave by %2$s",
   "death.attack.arc_wave_core": "%1$s was caught in a charged up arc wave",
   "death.attack.arc_wave_core.player": "%1$s was caught in a charged up arc wave by %2$s"
 }

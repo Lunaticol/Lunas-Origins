@@ -17,12 +17,11 @@
                 "type": "origins:target_action",
                 "action": {
                   "type": "origins:damage",
-                  "damage_type": "minecraft:magic",
                   "amount": 2,
                   "source": {
                     "bypasses_armor": true,
                     "fire": false,
-                    "magic": false,
+                    "magic": true,
                     "unblockable": true,
                     "name": "magic"
                   }
@@ -43,8 +42,8 @@
                 },
                 {
                   "type": "origins:origin",
-                  "origin": "titans:ronin",
                   "layer": "origins:origin",
+                  "origin": "titans:ronin",
                   "inverted": true
                 }
               ]

@@ -30,7 +30,7 @@
               {
                 "type": "origins:change_resource",
                 "resource": "*:*_blood",
-                "change": 10,
+                "change": 15,
                 "operation": "add"
               },
               {
@@ -40,7 +40,7 @@
               {
                 "type": "origins:feed",
                 "food": 6,
-                "saturation": 0.6
+                "saturation": 0.8
               }
             ]
           }
@@ -56,7 +56,7 @@
               },
               {
                 "type": "origins:damage",
-                "amount": 6,
+                "amount": 8,
                 "damage_type": "minecraft:player_attack",
                 "source": {
                   "bypasses_armor": false,
@@ -76,36 +76,199 @@
       "type": "origins:and",
       "conditions": [
         {
-          "type": "origins:target_condition",
+          "type": "origins:and",
+          "conditions": [
+            {
+              "type": "origins:target_condition",
+              "condition": {
+                "type": "origins:and",
+                "conditions": [
+                  {
+                    "type": "origins:living"
+                  },
+                  {
+                    "type": "origins:origin",
+                    "layer": "origins:origin",
+                    "origin": "apocalypse:hexblade",
+                    "inverted": true
+                  },
+                  {
+                    "type": "origins:entity_type",
+                    "entity_type": "minecraft:skeleton",
+                    "inverted": true
+                  },
+                  {
+                    "type": "origins:entity_type",
+                    "entity_type": "minecraft:wither_skeleton",
+                    "inverted": true
+                  },
+                  {
+                    "type": "origins:entity_type",
+                    "entity_type": "minecraft:stray",
+                    "inverted": true
+                  }
+                ]
+              }
+            },
+            {
+              "type": "origins:actor_condition",
+              "condition": {
+                "type": "origins:or",
+                "conditions": [
+                  {
+                    "type": "origins:status_effect",
+                    "effect": "minecraft:fire_resistance"
+                  },
+                  {
+                    "type": "origins:on_fire",
+                    "inverted": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "type": "origins:actor_condition",
           "condition": {
             "type": "origins:and",
             "conditions": [
               {
-                "type": "origins:living"
+                "type": "origins:resource",
+                "compare_to": 0,
+                "comparison": "==",
+                "resource": "*:*_cooldown"
               },
               {
-                "type": "origins:origin",
-                "layer": "origins:origin",
-                "origin": "apocalypse:hexblade",
+                "type": "origins:sneaking",
                 "inverted": true
               },
               {
-                "type": "origins:entity_type",
-                "entity_type": "minecraft:skeleton",
-                "inverted": true
-              },
-              {
-                "type": "origins:entity_type",
-                "entity_type": "minecraft:wither_skeleton",
-                "inverted": true
-              },
-              {
-                "type": "origins:entity_type",
-                "entity_type": "minecraft:stray",
-                "inverted": true
+                "type": "origins:resource",
+                "compare_to": 0,
+                "comparison": "==",
+                "resource": "phantom:crimson_return_died"
               }
             ]
           }
+        }
+      ]
+    }
+  },
+  "gain_fire": {
+    "type": "origins:action_on_entity_use",
+    "bientity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:actor_action",
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:heal",
+                "amount": 3
+              },
+              {
+                "type": "origins:change_resource",
+                "resource": "*:*_blood",
+                "change": 5,
+                "operation": "add"
+              },
+              {
+                "type": "origins:trigger_cooldown",
+                "power": "*:*_cooldown"
+              },
+              {
+                "type": "origins:feed",
+                "food": 3,
+                "saturation": 0.3
+              }
+            ]
+          }
+        },
+        {
+          "type": "origins:target_action",
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "particle minecraft:dust 1.0 0.0 0.0 1.0 ~ ~1 ~ 0.1 0.1 0.1 1 100 force"
+              },
+              {
+                "type": "origins:damage",
+                "amount": 4,
+                "damage_type": "minecraft:player_attack",
+                "source": {
+                  "bypasses_armor": false,
+                  "fire": false,
+                  "magic": true,
+                  "unblockable": false,
+                  "out_of_world": false,
+                  "name": "dark_healing"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "bientity_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:and",
+          "conditions": [
+            {
+              "type": "origins:target_condition",
+              "condition": {
+                "type": "origins:and",
+                "conditions": [
+                  {
+                    "type": "origins:living"
+                  },
+                  {
+                    "type": "origins:origin",
+                    "layer": "origins:origin",
+                    "origin": "apocalypse:hexblade",
+                    "inverted": true
+                  },
+                  {
+                    "type": "origins:entity_type",
+                    "entity_type": "minecraft:skeleton",
+                    "inverted": true
+                  },
+                  {
+                    "type": "origins:entity_type",
+                    "entity_type": "minecraft:wither_skeleton",
+                    "inverted": true
+                  },
+                  {
+                    "type": "origins:entity_type",
+                    "entity_type": "minecraft:stray",
+                    "inverted": true
+                  }
+                ]
+              }
+            },
+            {
+              "type": "origins:actor_condition",
+              "condition": {
+                "type": "origins:and",
+                "conditions": [
+                  {
+                    "type": "origins:on_fire"
+                  },
+                  {
+                    "type": "origins:status_effect",
+                    "effect": "minecraft:fire_resistance",
+                    "inverted": true
+                  }
+                ]
+              }
+            }
+          ]
         },
         {
           "type": "origins:actor_condition",

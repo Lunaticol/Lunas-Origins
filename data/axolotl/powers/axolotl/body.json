@@ -263,7 +263,7 @@
     "type": "origins:action_on_callback",
     "entity_action_lost": {
       "type": "origins:execute_command",
-      "command": "origin set @s axolotl:axolotl_subclass axolotl:axolotl_classes/empty"
+      "command": "origin set @s luna:luna_layers luna:luna_layers/empty"
     }
   },
   "damage_base": {

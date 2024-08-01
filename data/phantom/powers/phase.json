@@ -436,5 +436,9 @@
         }
       ]
     }
+  },
+  "sounds": {
+    "type": "origins:prevent_game_event",
+    "events": ["minecraft:hit_ground", "minecraft:step", "minecraft:swim"]
   }
 }

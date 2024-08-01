@@ -12,8 +12,8 @@
   "less_physical_damage": {
     "type": "origins:modify_damage_taken",
     "modifier": {
-      "operation": "multiply_base",
-      "value": -0.5
+      "operation": "multiply_total",
+      "value": -0.25
     },
     "damage_condition": {
       "type": "origins:or",
@@ -46,8 +46,8 @@
   "more_magic_damage": {
     "type": "origins:modify_damage_taken",
     "modifier": {
-      "operation": "addition",
-      "value": 2
+      "operation": "multiply_total",
+      "value": 0.5
     },
     "damage_condition": {
       "type": "origins:or",

@@ -4,158 +4,490 @@
   "type": "origins:multiple",
   "levels": {
     "type": "origins:resource",
-    "min": 0,
     "max": 20,
-    "hud_render": { "should_render": true },
-    "start_value": 1
-  },
-  "hits": {
-    "type": "origins:resource",
     "min": 0,
-    "max": 4,
-    "hud_render": { "should_render": false },
-    "start_value": 0
+    "hud_render": {
+      "should_render": true
+    }
   },
-  "hits_reset": {
+  "gain_levels": {
+    "type": "origins:action_on_hit",
+    "bientity_action": {
+      "type": "origins:actor_action",
+      "action": {
+        "type": "origins:if_else_list",
+        "actions": [
+          {
+            "action": {
+              "type": "origins:chance",
+              "chance": 0.75,
+              "action": {
+                "type": "origins:and",
+                "actions": [
+                  {
+                    "type": "origins:change_resource",
+                    "change": 1,
+                    "operation": "add",
+                    "resource": "*:*_levels"
+                  },
+                  {
+                    "type": "origins:change_resource",
+                    "change": 1,
+                    "operation": "add",
+                    "resource": "*:*_hit"
+                  }
+                ]
+              }
+            },
+            "condition": {
+              "type": "origins:and",
+              "conditions": [
+                {
+                  "type": "origins:resource",
+                  "compare_to": 0,
+                  "comparison": ">=",
+                  "resource": "*:*_levels"
+                },
+                {
+                  "type": "origins:resource",
+                  "compare_to": 5,
+                  "comparison": "<",
+                  "resource": "*:*_levels"
+                }
+              ]
+            }
+          },
+          {
+            "action": {
+              "type": "origins:chance",
+              "chance": 0.5,
+              "action": {
+                "type": "origins:and",
+                "actions": [
+                  {
+                    "type": "origins:change_resource",
+                    "operation": "add",
+                    "change": 1,
+                    "resource": "*:*_levels"
+                  },
+                  {
+                    "type": "origins:change_resource",
+                    "operation": "add",
+                    "change": 1,
+                    "resource": "*:*_hit"
+                  }
+                ]
+              }
+            },
+            "condition": {
+              "type": "origins:and",
+              "conditions": [
+                {
+                  "type": "origins:resource",
+                  "compare_to": 5,
+                  "comparison": ">=",
+                  "resource": "*:*_levels"
+                },
+                {
+                  "type": "origins:resource",
+                  "compare_to": 10,
+                  "comparison": "<",
+                  "resource": "*:*_levels"
+                }
+              ]
+            }
+          },
+          {
+            "action": {
+              "type": "origins:chance",
+              "chance": 0.25,
+              "action": {
+                "type": "origins:and",
+                "actions": [
+                  {
+                    "type": "origins:change_resource",
+                    "operation": "add",
+                    "change": 1,
+                    "resource": "*:*_levels"
+                  },
+                  {
+                    "type": "origins:change_resource",
+                    "operation": "add",
+                    "change": 1,
+                    "resource": "*:*_hit"
+                  }
+                ]
+              }
+            },
+            "condition": {
+              "type": "origins:and",
+              "conditions": [
+                {
+                  "type": "origins:resource",
+                  "compare_to": 10,
+                  "comparison": ">=",
+                  "resource": "*:*_levels"
+                },
+                {
+                  "type": "origins:resource",
+                  "compare_to": 15,
+                  "comparison": "<",
+                  "resource": "*:*_levels"
+                }
+              ]
+            }
+          },
+          {
+            "action": {
+              "type": "origins:chance",
+              "chance": 0.1,
+              "action": {
+                "type": "origins:and",
+                "actions": [
+                  {
+                    "type": "origins:change_resource",
+                    "operation": "add",
+                    "change": 1,
+                    "resource": "*:*_levels"
+                  },
+                  {
+                    "type": "origins:change_resource",
+                    "operation": "add",
+                    "change": 1,
+                    "resource": "*:*_hit"
+                  }
+                ]
+              }
+            },
+            "condition": {
+              "type": "origins:and",
+              "conditions": [
+                {
+                  "type": "origins:resource",
+                  "compare_to": 15,
+                  "comparison": ">=",
+                  "resource": "*:*_levels"
+                },
+                {
+                  "type": "origins:resource",
+                  "compare_to": 20,
+                  "comparison": "<=",
+                  "resource": "*:*_levels"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  },
+  "hit": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
+  },
+  "reset": {
+    "type": "origins:action_over_time",
+    "interval": 200,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "operation": "add",
+      "change": -1,
+      "resource": "*:*_levels"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 0,
+      "comparison": "==",
+      "resource": "*:*_hit"
+    }
+  },
+  "is_hit": {
     "type": "origins:action_when_hit",
-    "cooldown": 0,
     "bientity_action": {
       "type": "origins:target_action",
       "action": {
         "type": "origins:change_resource",
-        "change": 0,
-        "operation": "set",
-        "resource": "*:*_hits"
+        "operation": "add",
+        "change": 1,
+        "resource": "*:*_hit"
       }
     }
   },
-  "combos": {
-    "type": "origins:resource",
-    "min": 0,
-    "max": 4,
-    "hud_render": { "should_render": true },
-    "start_value": 0
-  },
-  "gaining_hits": {
-    "type": "origins:self_action_on_hit",
-    "cooldown": 0,
-    "entity_action": {
-      "type": "origins:and",
-      "actions": [
-        {
-          "type": "origins:change_resource",
-          "change": 1,
-          "operation": "add",
-          "resource": "*:*_hits"
-        },
-        {
-          "type": "origins:change_resource",
-          "change": 20,
-          "operation": "set",
-          "resource": "*:*_timer"
-        }
-      ]
-    }
-  },
-  "gaining_combos": {
-    "type": "origins:self_action_on_hit",
-    "cooldown": 0,
+  "reset_hit": {
+    "type": "origins:action_over_time",
+    "interval": 200,
     "entity_action": {
       "type": "origins:change_resource",
-      "change": 1,
       "operation": "add",
-      "resource": "*:*_combos"
+      "change": -1,
+      "resource": "*:*_hit"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_hit"
+    }
+  },
+  "strength_1": {
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+      "operation": "addition",
+      "value": 0.25
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_level"
+    }
+  },
+  "strength_2": {
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+      "operation": "addition",
+      "value": 0.5
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 2,
+      "comparison": "==",
+      "resource": "*:*_level"
+    }
+  },
+  "strength_3": {
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+      "operation": "addition",
+      "value": 0.75
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 3,
+      "comparison": "==",
+      "resource": "*:*_level"
+    }
+  },
+  "strength_4": {
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+      "operation": "addition",
+      "value": 0.1
     },
     "condition": {
       "type": "origins:resource",
       "compare_to": 4,
       "comparison": "==",
-      "resource": "*:*_hits"
+      "resource": "*:*_level"
     }
   },
-  "gaining_levels": {
-    "type": "origins:self_action_on_hit",
-    "cooldown": 0,
-    "entity_action": {
-      "type": "origins:and",
-      "actions": [
-        {
-          "type": "origins:change_resource",
-          "change": 1,
-          "operation": "add",
-          "resource": "*:*_levels"
-        },
-        {
-          "type": "origins:change_resource",
-          "change": 0,
-          "operation": "set",
-          "resource": "*:*_combos"
-        }
-      ]
+  "strength_5": {
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+      "operation": "addition",
+      "value": 1.25
     },
     "condition": {
       "type": "origins:resource",
-      "compare_to": 4,
+      "compare_to": 5,
       "comparison": "==",
-      "resource": "*:*_combos"
+      "resource": "*:*_level"
     }
   },
-  "timer_levels": {
-    "type": "origins:resource",
-    "max": 60,
-    "min": 0,
-    "start_value": 60,
-    "hud_render": { "should_render": true }
+  "strength_6": {
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+      "operation": "addition",
+      "value": 1.5
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 6,
+      "comparison": "==",
+      "resource": "*:*_level"
+    }
   },
-  "timer_drain": {
-    "type": "origins:action_over_time",
-    "interval": 20,
-    "entity_action": {
-      "type": "origins:if_else_list",
-      "actions": [
-        {
-          "action": {
-            "type": "origins:change_resource",
-            "change": -1,
-            "operation": "add",
-            "resource": "*:*_timer"
-          },
-          "condition": {
-            "type": "origins:resource",
-            "compare_to": 6,
-            "comparison": "<=",
-            "resource": "*:*_levels"
-          }
-        },
-        {
-          "action": {
-            "type": "origins:change_resource",
-            "change": -2,
-            "operation": "add",
-            "resource": "*:*_timer"
-          },
-          "condition": {
-            "type": "origins:resource",
-            "compare_to": 12,
-            "comparison": "<=",
-            "resource": "*:*_levels"
-          }
-        },
-        {
-          "action": {
-            "type": "origins:change_resource",
-            "change": -3,
-            "operation": "add",
-            "resource": "*:*_timer"
-          },
-          "condition": {
-            "type": "origins:resource",
-            "compare_to": 13,
-            "comparison": ">=",
-            "resource": "*:*_levels"
-          }
-        }
-      ]
+  "strength_7": {
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+      "operation": "addition",
+      "value": 1.75
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 7,
+      "comparison": "==",
+      "resource": "*:*_level"
+    }
+  },
+  "strength_8": {
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+      "operation": "addition",
+      "value": 2
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 8,
+      "comparison": "==",
+      "resource": "*:*_level"
+    }
+  },
+  "strength_9": {
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+      "operation": "addition",
+      "value": 2.25
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 9,
+      "comparison": "==",
+      "resource": "*:*_level"
+    }
+  },
+  "strength_10": {
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+      "operation": "addition",
+      "value": 2.5
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 10,
+      "comparison": "==",
+      "resource": "*:*_level"
+    }
+  },
+  "strength_11": {
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+      "operation": "addition",
+      "value": 2.75
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 11,
+      "comparison": "==",
+      "resource": "*:*_level"
+    }
+  },
+  "strength_12": {
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+      "operation": "addition",
+      "value": 3
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 12,
+      "comparison": "==",
+      "resource": "*:*_level"
+    }
+  },
+  "strength_13": {
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+      "operation": "addition",
+      "value": 3.25
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 13,
+      "comparison": "==",
+      "resource": "*:*_level"
+    }
+  },
+  "strength_14": {
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+      "operation": "addition",
+      "value": 3.5
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 14,
+      "comparison": "==",
+      "resource": "*:*_level"
+    }
+  },
+  "strength_15": {
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+      "operation": "addition",
+      "value": 3.75
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 15,
+      "comparison": "==",
+      "resource": "*:*_level"
+    }
+  },
+  "strength_16": {
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+      "operation": "addition",
+      "value": 4
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 16,
+      "comparison": "==",
+      "resource": "*:*_level"
+    }
+  },
+  "strength_17": {
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+      "operation": "addition",
+      "value": 4.25
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 17,
+      "comparison": "==",
+      "resource": "*:*_level"
+    }
+  },
+  "strength_18": {
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+      "operation": "addition",
+      "value": 4.5
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 18,
+      "comparison": "==",
+      "resource": "*:*_level"
+    }
+  },
+  "strength_19": {
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+      "operation": "addition",
+      "value": 4.75
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 19,
+      "comparison": "==",
+      "resource": "*:*_level"
+    }
+  },
+  "strength_20": {
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+      "operation": "addition",
+      "value": 5
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 20,
+      "comparison": "==",
+      "resource": "*:*_level"
     }
   }
 }

@@ -552,5 +552,11 @@
         "tag": "titans:bow"
       }
     }
+  },
+  "no_food": {
+    "type": "origins:prevent_item_use",
+    "item_condition": {
+      "type": "origins:food"
+    }
   }
 }

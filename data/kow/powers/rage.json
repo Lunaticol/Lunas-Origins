@@ -1,5 +1,100 @@
 {
   "name": "Blinded By Rage",
   "description": "As you tear through your enemies, you fill with rage and eventually explode in a wrathful fit, gaining speed and higher haste",
-  "type": "origins:multiple"
+  "type": "origins:multiple",
+  "rage_resource": {
+    "type": "origins:resource",
+    "max": 100,
+    "min": 0,
+    "hud_render": {
+      "should_render": true
+    }
+  },
+  "rage_active": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
+  },
+  "rageful": {
+    "type": "origins:action_over_time",
+    "interval": 10,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 1,
+      "resource": "*:*_rage_active"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 100,
+      "comparison": "==",
+      "resource": "*:*_rage_resource"
+    }
+  },
+  "active": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "change": -1,
+          "resource": "*:*_rage_resource"
+        },
+        {
+          "type": "origins:apply_effect",
+          "effect": {
+            "effect": "minecraft:speed",
+            "duration": 40
+          }
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_rage_active"
+    }
+  },
+  "rage_build_up": {
+    "type": "origins:action_on_hit",
+    "bientity_action": {
+      "type": "origins:actor_action",
+      "action": {
+        "type": "origins:change_resource",
+        "change": 2,
+        "resource": "*:*_rage_resource"
+      }
+    }
+  },
+  "feral": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.attack_speed",
+      "operation": "addition",
+      "value": 1
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_rage_active"
+    }
+  },
+  "calm": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": -1,
+      "resource": "*:*_rage_active"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 0,
+      "comparison": "==",
+      "resource": "*:*_rage_resource"
+    }
+  }
 }

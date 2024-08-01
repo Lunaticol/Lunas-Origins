@@ -69,7 +69,7 @@
     "interval": 10,
     "entity_action": {
       "type": "origins:change_resource",
-      "change": -2,
+      "change": -3,
       "resource": "*:*_core_bar"
     },
     "condition": {
@@ -92,7 +92,7 @@
   },
   "drain_sword_mastery": {
     "type": "origins:action_over_time",
-    "interval": 20,
+    "interval": 10,
     "entity_action": {
       "type": "origins:change_resource",
       "change": -2,

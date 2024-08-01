@@ -1,8 +1,61 @@
 {
-  "name": "Blinded by rage",
-  "description": "As you tear through your enemies, you fill with rage and eventually explode in a wrathful fit, gaining speed & strength",
+  "name": "Fury of the Fight",
+  "description": "The longer the combos you hit, the more damage you deal. Hitting consistent combos deals heavy damage",
   "type": "origins:multiple",
-  "rage": {
-    "type": "origins:"
+  "combo": {
+    "type": "origins:resource",
+    "max": 3,
+    "min": 0,
+    "hud_render": {
+      "should_render": true
+    }
+  },
+  "combo_gain": {
+    "type": "origins:action_on_hit",
+    "bientity_action": {
+      "type": "origins:actor_action",
+      "action": {
+        "type": "origins:change_resource",
+        "change": 1,
+        "operation": "add",
+        "resource": "*:*_combo"
+      }
+    }
+  },
+  "when_full": {
+    "type": "origins:action_on_hit",
+    "bientity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:actor_action",
+          "action": {
+            "type": "origins:change_resource",
+            "change": 0,
+            "operation": "set",
+            "resource": "*:*_combo"
+          }
+        },
+        {
+          "type": "origins:target_action",
+          "action": {
+            "type": "origins:damage",
+            "amount": 5,
+            "source": {
+              "unblockable": false,
+              "bypasses_armor": false,
+              "magic": true,
+              "name": "player"
+            }
+          }
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 3,
+      "comparison": "==",
+      "resource": "*:*_combo"
+    }
   }
 }

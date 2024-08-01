@@ -1,22 +1,22 @@
 {
-  "name": "Axolotl",
+  "name": "Sub-Origin",
   "replace": false,
+  "order": 4,
+  "enabled": true,
   "allow_random": true,
-  "allow_random_unchoosable": true,
   "exclude_random": [
+    "kitsune:kitsune_classes/nether_kitsune",
+    "kitsune:kitsune_classes/ender_kitsune",
+    "kitsune:kitsune_classes/overworld_kitsune",
     "axolotl:axolotl_classes/blue_axolotl",
     "axolotl:axolotl_classes/green_axolotl"
   ],
-  "order": 4,
-  "enabled": true,
   "origins": [
     {
-      "condition": {
-        "type": "origins:origin",
-        "origin": "axolotl:axolotl",
-        "layer": "origins:origin"
-      },
       "origins": [
+        "kitsune:kitsune_classes/nether_kitsune",
+        "kitsune:kitsune_classes/ender_kitsune",
+        "kitsune:kitsune_classes/overworld_kitsune",
         "axolotl:axolotl_classes/lucy_axolotl",
         "axolotl:axolotl_classes/wild_axolotl",
         "axolotl:axolotl_classes/gold_axolotl",

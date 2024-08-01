@@ -237,7 +237,7 @@
     }
   },
   "no_elytra": {
-    "type": "origins:restrict_armor",
+    "type": "origins:conditioned_restrict_armor",
     "chest": {
       "type": "origins:ingredient",
       "ingredient": {

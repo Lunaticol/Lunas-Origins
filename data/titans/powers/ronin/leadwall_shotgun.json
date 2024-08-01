@@ -5,13 +5,13 @@
   "gun": {
     "type": "origins:fire_projectile",
     "key": "key.use",
-    "cooldown": 10,
+    "cooldown": 20,
     "hud_render": { "should_render": false },
     "entity_type": "minecraft:arrow",
     "divergence": 20,
     "count": 8,
     "speed": 1,
-    "tag": "{pickup:2b,damage:25d,crit:1b}",
+    "tag": "{pickup:1b,damage:25d,crit:1b}",
     "shooter_action": {
       "type": "origins:execute_command",
       "command": "clear @s arrow 1"
