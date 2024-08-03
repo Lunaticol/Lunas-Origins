@@ -1,1 +1,1 @@
-origin set @s axolotl:axolotl_subclasses axolotl:axolotl_classes/lucy_axolotl
+origin set @s luna:luna_layers axolotl:axolotl_classes/lucy_axolotl

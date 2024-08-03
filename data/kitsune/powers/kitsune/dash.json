@@ -75,7 +75,7 @@
               },
               {
                 "type": "origins:origin",
-                "layer": "kitsune:kitsune_subclass",
+                "layer": "luna:luna_layers",
                 "origin": "kitsune:kitsune_classes/overworld_kitsune"
               },
               {
@@ -226,7 +226,7 @@
               },
               {
                 "type": "origins:origin",
-                "layer": "kitsune:kitsune_subclass",
+                "layer": "luna:luna_layers",
                 "origin": "kitsune:kitsune_classes/ender_kitsune"
               },
               {
@@ -312,7 +312,7 @@
               },
               {
                 "type": "origins:origin",
-                "layer": "kitsune:kitsune_subclass",
+                "layer": "luna:luna_layers",
                 "origin": "kitsune:kitsune_classes/nether_kitsune"
               },
               {
