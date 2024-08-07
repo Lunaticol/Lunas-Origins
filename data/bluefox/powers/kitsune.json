@@ -1,0 +1,408 @@
+{
+  "name": "",
+  "description": "",
+  "type": "origins:multiple",
+  "dash": {
+    "type": "origins:active_self",
+    "key": "key.origins.primary_active",
+    "entity_action": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:add_velocity",
+                "z": 1,
+                "space": "local"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "particle dust_color_transition 0.110 0.012 1.000 1 0.071 0.475 1.000 ~ ~ ~ 1 1 1 1 50 normal"
+              },
+              {
+                "type": "origins:change_resource",
+                "change": -1,
+                "resource": "*:*_dashes",
+                "operation": "add"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:predicate",
+                "predicate": "bluefox:is_new_moon"
+              },
+              {
+                "type": "origins:resource",
+                "compare_to": 1,
+                "comparison": ">=",
+                "resource": "*:*_dashes"
+              },
+              {
+                "type": "origins:resource",
+                "compare_to": 0,
+                "comparison": "==",
+                "resource": "*:*_lock"
+              }
+            ]
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:add_velocity",
+                "z": 1.25,
+                "space": "local"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "particle dust_color_transition 0.110 0.012 1.000 1 0.071 0.475 1.000 ~ ~ ~ 1 1 1 1 50 normal"
+              },
+              {
+                "type": "origins:change_resource",
+                "change": -1,
+                "resource": "*:*_dashes",
+                "operation": "add"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:predicate",
+                "predicate": "bluefox:is_waxing_crescent"
+              },
+              {
+                "type": "origins:resource",
+                "compare_to": 1,
+                "comparison": ">=",
+                "resource": "*:*_dashes"
+              },
+              {
+                "type": "origins:resource",
+                "compare_to": 0,
+                "comparison": "==",
+                "resource": "*:*_lock"
+              }
+            ]
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:add_velocity",
+                "z": 1.5,
+                "space": "local"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "particle dust_color_transition 0.110 0.012 1.000 1 0.071 0.475 1.000 ~ ~ ~ 1 1 1 1 50 normal"
+              },
+              {
+                "type": "origins:change_resource",
+                "change": -1,
+                "resource": "*:*_dashes",
+                "operation": "add"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:predicate",
+                "predicate": "bluefox:is_first_quarter"
+              },
+              {
+                "type": "origins:resource",
+                "compare_to": 1,
+                "comparison": ">=",
+                "resource": "*:*_dashes"
+              },
+              {
+                "type": "origins:resource",
+                "compare_to": 0,
+                "comparison": "==",
+                "resource": "*:*_lock"
+              }
+            ]
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:add_velocity",
+                "z": 1.75,
+                "space": "local"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "particle dust_color_transition 0.110 0.012 1.000 1 0.071 0.475 1.000 ~ ~ ~ 1 1 1 1 50 normal"
+              },
+              {
+                "type": "origins:change_resource",
+                "change": -1,
+                "resource": "*:*_dashes",
+                "operation": "add"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:predicate",
+                "predicate": "bluefox:is_waxing_gibbous"
+              },
+              {
+                "type": "origins:resource",
+                "compare_to": 1,
+                "comparison": ">=",
+                "resource": "*:*_dashes"
+              },
+              {
+                "type": "origins:resource",
+                "compare_to": 0,
+                "comparison": "==",
+                "resource": "*:*_lock"
+              }
+            ]
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:add_velocity",
+                "z": 2,
+                "space": "local"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "particle dust_color_transition 0.110 0.012 1.000 1 0.071 0.475 1.000 ~ ~ ~ 1 1 1 1 50 normal"
+              },
+              {
+                "type": "origins:change_resource",
+                "change": -1,
+                "resource": "*:*_dashes",
+                "operation": "add"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:predicate",
+                "predicate": "bluefox:is_full_moon"
+              },
+              {
+                "type": "origins:resource",
+                "compare_to": 1,
+                "comparison": ">=",
+                "resource": "*:*_dashes"
+              },
+              {
+                "type": "origins:resource",
+                "compare_to": 0,
+                "comparison": "==",
+                "resource": "*:*_lock"
+              }
+            ]
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:add_velocity",
+                "z": 1.75,
+                "space": "local"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "particle dust_color_transition 0.110 0.012 1.000 1 0.071 0.475 1.000 ~ ~ ~ 1 1 1 1 50 normal"
+              },
+              {
+                "type": "origins:change_resource",
+                "change": -1,
+                "resource": "*:*_dashes",
+                "operation": "add"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:predicate",
+                "predicate": "bluefox:is_waning_gibbous"
+              },
+              {
+                "type": "origins:resource",
+                "compare_to": 1,
+                "comparison": ">=",
+                "resource": "*:*_dashes"
+              },
+              {
+                "type": "origins:resource",
+                "compare_to": 0,
+                "comparison": "==",
+                "resource": "*:*_lock"
+              }
+            ]
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:add_velocity",
+                "z": 1.5,
+                "space": "local"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "particle dust_color_transition 0.110 0.012 1.000 1 0.071 0.475 1.000 ~ ~ ~ 1 1 1 1 50 normal"
+              },
+              {
+                "type": "origins:change_resource",
+                "change": -1,
+                "resource": "*:*_dashes",
+                "operation": "add"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:predicate",
+                "predicate": "bluefox:is_third_quarter"
+              },
+              {
+                "type": "origins:resource",
+                "compare_to": 1,
+                "comparison": ">=",
+                "resource": "*:*_dashes"
+              },
+              {
+                "type": "origins:resource",
+                "compare_to": 0,
+                "comparison": "==",
+                "resource": "*:*_lock"
+              }
+            ]
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:add_velocity",
+                "z": 1.25,
+                "space": "local"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "particle dust_color_transition 0.110 0.012 1.000 1 0.071 0.475 1.000 ~ ~ ~ 1 1 1 1 50 normal"
+              },
+              {
+                "type": "origins:change_resource",
+                "change": -1,
+                "resource": "*:*_dashes",
+                "operation": "add"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:predicate",
+                "predicate": "bluefox:is_waning_crescent"
+              },
+              {
+                "type": "origins:resource",
+                "compare_to": 1,
+                "comparison": ">=",
+                "resource": "*:*_dashes"
+              },
+              {
+                "type": "origins:resource",
+                "compare_to": 0,
+                "comparison": "==",
+                "resource": "*:*_lock"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "dashes": {
+    "type": "origins:resource",
+    "max": 8,
+    "min": 0,
+    "hud_render": {
+      "should_render": true,
+      "bar_index": 23,
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png"
+    }
+  },
+  "lock": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
+  },
+  "unlock": {
+    "type": "origins:action_over_time",
+    "interval": 10,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 0,
+      "operation": "set",
+      "resource": "*:*_lock"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_dashes",
+      "compare_to": 8,
+      "comparison": "=="
+    }
+  },
+  "lock_dash": {
+    "type": "origins:action_over_time",
+    "interval": 10,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 1,
+      "resource": "*:*_lock"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_dashes",
+      "compare_to": 0,
+      "comparison": "=="
+    }
+  },
+  "no_vampire": {
+    "type": "origins:effect_immunity",
+    "effect": "vampirism:sanguinare"
+  }
+}

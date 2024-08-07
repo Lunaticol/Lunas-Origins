@@ -1,0 +1,60 @@
+{
+  "name": "Soul Barrier",
+  "description": "You can use your souls to void damage. This uses souls and getting hit may cause souls to disipate.\nRequires above 100 souls.",
+  "type": "origins:multiple",
+  "shield": {
+    "type": "apugli:energy_swirl",
+    "texture_location": "minecraft:textures/entity/creeper/creeper_armor.png",
+    "speed": 0.01,
+    "size": 1.05,
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:power_active",
+          "power": "*:*_toggle"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 100,
+          "comparison": ">=",
+          "resource": "bluefox:soul"
+        }
+      ]
+    }
+  },
+  "toggle": {
+    "type": "origins:toggle",
+    "retain_state": false,
+    "active_by_default": false,
+    "key": "key.loadToolbarActivator",
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 100,
+      "comparison": ">=",
+      "resource": "bluefox:soul"
+    }
+  },
+  "damage": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "value": -0.9999,
+      "operation": "multiply_total"
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:power_active",
+          "power": "*:*_toggle"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 100,
+          "comparison": ">=",
+          "resource": "bluefox:soul"
+        }
+      ]
+    }
+  }
+}

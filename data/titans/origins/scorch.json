@@ -14,7 +14,7 @@
     "titans:scorch/aegis/more_trouble"
   ],
   "icon": "minecraft:fire_charge",
-  "unchoosable": false,
+  "unchoosable": true,
   "order": 9,
   "impact": 3,
   "name": "Scorch",

@@ -1,0 +1,13 @@
+{
+  "name": "Aono Kitsune",
+  "description": "Aono Kitsune is an ethereal being of ancient power, embodying the mystique of the soul and the wisdom of the fox spirits.",
+  "impact": 3,
+  "unchoosable": true,
+  "powers": [
+    "bluefox:kitsune",
+    "bluefox:soul",
+    "bluefox:thevoices",
+    "bluefox:ethereal",
+    "bluefox:guard"
+  ]
+}

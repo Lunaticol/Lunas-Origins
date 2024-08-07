@@ -181,5 +181,9 @@
       "type": "origins:grant_advancement",
       "advancement": "luna:crimson/crimson"
     }
+  },
+  "no_vampire": {
+    "type": "origins:effect_immunity",
+    "effect": "vampirism:sanguinare"
   }
 }

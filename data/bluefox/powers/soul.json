@@ -1,0 +1,317 @@
+{
+  "name": "Spiritual Communication",
+  "description": "You are able to absorb souls into yourself. This provides many benefits for you.",
+  "type": "origins:multiple",
+  "soul_bar": {
+    "type": "origins:resource",
+    "max": 1000,
+    "min": 0
+  },
+  "particles": {
+    "type": "origins:self_action_when_hit",
+    "entity_action": {
+      "type": "origins:chance",
+      "chance": 0.2,
+      "action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:execute_command",
+            "command": "execute at @s run particle minecraft:sculk_soul ~ ~0.5 ~ 0.5 0.5 0.5 0.03 5 force"
+          },
+          {
+            "type": "origins:change_resource",
+            "change": -50,
+            "resource": "*:*_soul_bar"
+          }
+        ]
+      }
+    }
+  },
+  "magic_damage": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "operation": "multiply_total",
+      "value": 3
+    },
+    "damage_condition": {
+      "type": "apugli:magic"
+    }
+  },
+  "fire_damage": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "operation": "multiply_total",
+      "value": 3
+    },
+    "damage_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:type",
+          "damage_type": "onFire"
+        },
+        {
+          "type": "origins:type",
+          "damage_type": "onFire.player"
+        },
+        {
+          "type": "origins:type",
+          "damage_type": "inFire"
+        },
+        {
+          "type": "origins:type",
+          "damage_type": "inFire.player"
+        }
+      ]
+    }
+  },
+  "health_1": {
+    "type": "origins:conditioned_attribute",
+    "tick_rate": 20,
+    "modifier": {
+      "operation": "addition",
+      "value": 2,
+      "attribute": "minecraft:generic.max_health"
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 100,
+          "comparison": ">=",
+          "resource": "*:*_soul_bar"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 199,
+          "comparison": "<=",
+          "resource": "*:*_soul_bar"
+        }
+      ]
+    }
+  },
+  "health_2": {
+    "type": "origins:conditioned_attribute",
+    "tick_rate": 20,
+    "modifier": {
+      "operation": "addition",
+      "value": 4,
+      "attribute": "minecraft:generic.max_health"
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 200,
+          "comparison": ">=",
+          "resource": "*:*_soul_bar"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 299,
+          "comparison": "<=",
+          "resource": "*:*_soul_bar"
+        }
+      ]
+    }
+  },
+  "health_3": {
+    "type": "origins:conditioned_attribute",
+    "tick_rate": 20,
+    "modifier": {
+      "operation": "addition",
+      "value": 6,
+      "attribute": "minecraft:generic.max_health"
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 300,
+          "comparison": ">=",
+          "resource": "*:*_soul_bar"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 399,
+          "comparison": "<=",
+          "resource": "*:*_soul_bar"
+        }
+      ]
+    }
+  },
+  "health_4": {
+    "type": "origins:conditioned_attribute",
+    "tick_rate": 20,
+    "modifier": {
+      "operation": "addition",
+      "value": 8,
+      "attribute": "minecraft:generic.max_health"
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 400,
+          "comparison": ">=",
+          "resource": "*:*_soul_bar"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 499,
+          "comparison": "<=",
+          "resource": "*:*_soul_bar"
+        }
+      ]
+    }
+  },
+  "health_5": {
+    "type": "origins:conditioned_attribute",
+    "tick_rate": 20,
+    "modifier": {
+      "operation": "addition",
+      "value": 2,
+      "attribute": "minecraft:generic.max_health"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 500,
+      "comparison": ">=",
+      "resource": "*:*_soul_bar"
+    }
+  },
+  "kill_particle": {
+    "type": "origins:action_on_hit",
+    "bientity_action": {
+      "type": "origins:target_action",
+      "action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:execute_command",
+            "command": "particle minecraft:sculk_soul ~ ~0.5 ~ 0.5 0.5 0.5 0.03 5 force"
+          }
+        ]
+      }
+    },
+    "bientity_condition": {
+      "type": "origins:target_condition",
+      "condition": {
+        "type": "origins:health",
+        "compare_to": 0,
+        "comparison": "=="
+      }
+    }
+  },
+  "gain_literally_anything_else": {
+    "type": "origins:self_action_on_kill",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 50,
+      "operation": "add",
+      "resource": "*:*_soul_bar"
+    },
+    "target_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:entity_type",
+          "entity_type": "minecraft:player",
+          "inverted": true
+        },
+        {
+          "type": "origins:entity_type",
+          "entity_type": "minecraft:wither",
+          "inverted": true
+        },
+        {
+          "type": "origins:entity_type",
+          "entity_type": "minecraft:warden",
+          "inverted": true
+        },
+        {
+          "type": "origins:entity_type",
+          "entity_type": "minecraft:ender_dragon",
+          "inverted": true
+        }
+      ]
+    }
+  },
+  "gain_wither": {
+    "type": "origins:self_action_on_kill",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 250,
+      "operation": "add",
+      "resource": "*:*_soul_bar"
+    },
+    "target_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:entity_type",
+          "entity_type": "minecraft:wither"
+        }
+      ]
+    }
+  },
+  "gain_ender_dragon": {
+    "type": "origins:self_action_on_kill",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 1000,
+      "operation": "add",
+      "resource": "*:*_soul_bar"
+    },
+    "target_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:entity_type",
+          "entity_type": "minecraft:ender_dragon"
+        }
+      ]
+    }
+  },
+  "gain_warden": {
+    "type": "origins:self_action_on_kill",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 300,
+      "operation": "add",
+      "resource": "*:*_soul_bar"
+    },
+    "target_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:entity_type",
+          "entity_type": "minecraft:warden"
+        }
+      ]
+    }
+  },
+  "gain_player": {
+    "type": "origins:self_action_on_kill",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 100,
+      "operation": "add",
+      "resource": "*:*_soul_bar"
+    },
+    "target_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:entity_type",
+          "entity_type": "minecraft:player"
+        }
+      ]
+    }
+  }
+}
