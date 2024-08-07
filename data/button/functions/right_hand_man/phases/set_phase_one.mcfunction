@@ -1,1 +1,0 @@
-data merge entity @e[tag=BRH,limit=1] {Health: 500f}

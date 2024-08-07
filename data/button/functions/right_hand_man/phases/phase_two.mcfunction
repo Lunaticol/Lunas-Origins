@@ -1,9 +1,0 @@
-power revoke @s button:right_hand_man/phase_one/button_three button:button
-power revoke @s button:right_hand_man/phase_one/button_five button:button
-power revoke @s button:right_hand_man/phase_one/button_six button:button
-power revoke @s button:right_hand_man/phase_one/button_seven button:button
-power grant @s button:right_hand_man/phase_two/button_two button:button
-power grant @s button:right_hand_man/phase_two/button_three button:button
-power grant @s button:right_hand_man/phase_two/button_five button:button
-power grant @s button:right_hand_man/phase_two/button_six button:button
-power grant @s button:right_hand_man/phase_two/button_seven button:button
