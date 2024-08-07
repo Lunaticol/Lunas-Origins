@@ -16,7 +16,6 @@
   ],
   "icon": "minecraft:netherite_sword",
   "order": 9,
-  "unchoosable": true,
   "impact": 3,
   "name": "Ronin",
   "description": "Ronin is a hit and run specialist. He can do a lot of damage in short bursts, but his fragility makes it suboptimal to stay in range for long. His speed, combined with Arc Wave's ability to slow, gives him the tools to get into and out of any fight."
