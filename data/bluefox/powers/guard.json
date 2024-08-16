@@ -16,7 +16,7 @@
         },
         {
           "type": "origins:resource",
-          "compare_to": 100,
+          "compare_to": 200,
           "comparison": ">=",
           "resource": "bluefox:soul"
         }
@@ -30,9 +30,9 @@
     "key": "key.loadToolbarActivator",
     "condition": {
       "type": "origins:resource",
-      "compare_to": 100,
+      "compare_to": 200,
       "comparison": ">=",
-      "resource": "bluefox:soul"
+      "resource": "bluefox:soul_soul_bar"
     }
   },
   "damage": {
@@ -50,9 +50,73 @@
         },
         {
           "type": "origins:resource",
-          "compare_to": 100,
+          "compare_to": 200,
           "comparison": ">=",
-          "resource": "bluefox:soul"
+          "resource": "bluefox:soul_soul_bar"
+        }
+      ]
+    }
+  },
+  "when_hit": {
+    "type": "origins:action_when_hit",
+    "bientity_action": {
+      "type": "origins:target_action",
+      "action": {
+        "type": "origins:change_resource",
+        "resource": "*:soul_soul_bar",
+        "operation": "add",
+        "change": -20
+      }
+    },
+    "condition": {
+      "type": "origins:power_active",
+      "power": "*:*_toggle"
+    }
+  },
+  "drain": {
+    "type": "origins:action_over_time",
+    "interval": 100,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "*:soul_soul_bar",
+      "operation": "add",
+      "change": -5
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:power_active",
+          "power": "*:*_toggle"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 200,
+          "comparison": ">=",
+          "resource": "bluefox:soul_soul_bar"
+        }
+      ]
+    }
+  },
+  "active": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "particle dust_color_transition 0.020 0.051 1.000 1 0.188 0.945 1.000 ~ ~ ~ 0.5 0.5 0.5 1 10 force"
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:power_active",
+          "power": "*:*_toggle"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 200,
+          "comparison": ">=",
+          "resource": "bluefox:soul_soul_bar"
         }
       ]
     }

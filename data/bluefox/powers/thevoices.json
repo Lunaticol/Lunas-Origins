@@ -3,6 +3,29 @@
   "description": "Using stored souls you can send out souls to fight for you.",
   "type": "origins:multiple",
   "spirits": {
-    "type": "origins:active_self"
+    "type": "origins:active_self",
+    "key": "key.origins.secondary_active",
+    "cooldown": 0,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "function bluefox:summon"
+        },
+        {
+          "type": "origins:change_resource",
+          "change": -300,
+          "operation": "add",
+          "resource": "*:soul_soul_bar"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 300,
+      "comparison": ">=",
+      "resource": "*:soul_soul_bar"
+    }
   }
 }

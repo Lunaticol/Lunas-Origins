@@ -1,1 +1,1 @@
-{"bluefox":{"$func":["summon"]}}
+{"bluefox":{"$func":["summon","summon_domain"]}}

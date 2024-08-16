@@ -1,7 +1,7 @@
 {
   "type": "origins:multiple",
-  "name": "Ronin",
-  "description": "A Stryder Class Titan, Equiped with an electrified sword.\nYour sword is the shield, therfore you cannot use shields.\nYou eat redstone to recover health.\nYour thick metal protects your core from projectiles.\nYou have a shotgun, why would you use less advanced ranged weapons?",
+  "name": "Northstar",
+  "description": "A Stryder Class Titan, Equiped with a Railgun.\nA sheild would get in the way with the precision of your Railgun.\nYou eat redstone to recover health.\nYour thick metal protects your core from projectiles.\nYou have a Railgun, why would you use less advanced ranged weapons?",
   "height": {
     "type": "origins:action_on_callback",
     "execute_chosen_when_orb": true,
@@ -261,49 +261,6 @@
       ]
     }
   },
-  "dash_charge_core": {
-    "type": "origins:action_over_time",
-    "interval": 20,
-    "entity_action": {
-      "type": "origins:if_else_list",
-      "actions": [
-        {
-          "action": {
-            "type": "origins:change_resource",
-            "change": 1,
-            "operation": "add",
-            "resource": "*:*_dash_resource"
-          },
-          "condition": {
-            "type": "origins:resource",
-            "compare_to": 0,
-            "comparison": "==",
-            "resource": "*:*_turbo_engine"
-          }
-        },
-        {
-          "action": {
-            "type": "origins:change_resource",
-            "change": 1,
-            "operation": "add",
-            "resource": "*:*_dash_resource_turbo"
-          },
-          "condition": {
-            "type": "origins:resource",
-            "compare_to": 1,
-            "comparison": "==",
-            "resource": "*:*_turbo_engine"
-          }
-        }
-      ]
-    },
-    "condition": {
-      "type": "origins:resource",
-      "compare_to": 1,
-      "comparison": "==",
-      "resource": "titans:ronin/core_core_active"
-    }
-  },
   "jump": {
     "type": "origins:modify_jump",
     "modifier": {
@@ -370,6 +327,15 @@
         {
           "type": "origins:heal",
           "amount": 8
+        },
+        {
+          "type": "origins:apply_effect",
+          "effect": {
+            "effect": "minecraft:absorption",
+            "amplifier": 1,
+            "show_icon": true,
+            "show_particles": false
+          }
         },
         {
           "type": "origins:change_resource",
@@ -567,25 +533,31 @@
     }
   },
   "evade_projectiles": {
-    "type": "proviorigins:evade_projectiles"
-  },
-  "extra_range": {
-    "type": "origins:conditioned_attribute",
-    "modifier": {
-      "attribute": "reach-entity-attributes:attack_range",
-      "value": 1,
-      "name": "ronin_reach",
-      "operation": "addition"
-    },
-    "condition": {
-      "type": "origins:equipped_item",
-      "equipment_slot": "mainhand",
-      "item_condition": {
-        "type": "origins:ingredient",
-        "ingredient": {
-          "tag": "titans:sword"
+    "type": "origins:modify_damage_taken",
+    "damage_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:name",
+          "name": "arrow"
+        },
+        {
+          "type": "origins:name",
+          "name": "arrow.item"
+        },
+        {
+          "type": "origins:name",
+          "name": "trident"
+        },
+        {
+          "type": "origins:name",
+          "name": "trident.item"
+        },
+        {
+          "type": "origins:name",
+          "name": "thrown.item"
         }
-      }
+      ]
     }
   },
   "fall": {
@@ -599,14 +571,6 @@
       "ingredient": {
         "item": "minecraft:shield"
       }
-    }
-  },
-  "heavy_sword": {
-    "type": "origins:attribute",
-    "modifier": {
-      "attribute": "minecraft:generic.attack_speed",
-      "value": -0.05,
-      "operation": "addition"
     }
   },
   "prevent_bows": {
