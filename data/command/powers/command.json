@@ -1,0 +1,464 @@
+{
+  "type": "origins:multiple",
+  "immune": {
+    "type": "origins:effect_immunity",
+    "effects": [
+      "minecraft:blindness",
+      "minecraft:weakness",
+      "minecraft:poison",
+      "minecraft:slowness",
+      "minecraft:wither",
+      "minecraft:instant_damage"
+    ]
+  },
+  "boss_bar": {
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "function command:command/boss_bar_work"
+        }
+      ]
+    }
+  },
+  "bar_on_callback": {
+    "type": "origins:action_on_callback",
+    "entity_action_added": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "function command:command/boss_bar"
+        }
+      ]
+    },
+    "entity_action_removed": {
+      "type": "origins:execute_command",
+      "command": "bossbar remove minecraft:command"
+    },
+    "entity_action_respawned": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "function command:command/boss_bar"
+        }
+      ]
+    },
+    "entity_action_lost": {
+      "type": "origins:execute_command",
+      "command": "bossbar remove minecraft:command"
+    }
+  },
+  "food": {
+    "type": "origins:modify_exhaustion",
+    "modifier": {
+      "name": "food",
+      "operation": "set_total",
+      "value": 0
+    }
+  },
+  "unexplodeable": {
+    "type": "origins:invulnerability",
+    "damage_condition": {
+      "type": "origins:name",
+      "name": "explosion"
+    }
+  },
+  "unexplodeable_byplayer": {
+    "type": "origins:invulnerability",
+    "damage_condition": {
+      "type": "origins:name",
+      "name": "explosion.player"
+    }
+  },
+  "unexplodeable_by_badrespawn": {
+    "type": "origins:invulnerability",
+    "damage_condition": {
+      "type": "origins:name",
+      "name": "badRespawnPoint"
+    }
+  },
+  "unexplodeable_by_firework": {
+    "type": "origins:invulnerability",
+    "damage_condition": {
+      "type": "origins:name",
+      "name": "fireworks"
+    }
+  },
+  "unexplodeable_by_fireworkplayer": {
+    "type": "origins:invulnerability",
+    "damage_condition": {
+      "type": "origins:name",
+      "name": "fireworks.player"
+    }
+  },
+  "unexplodeable_by_fireworkitem": {
+    "type": "origins:invulnerability",
+    "damage_condition": {
+      "type": "origins:name",
+      "name": "fireworks.item"
+    }
+  },
+  "no_retribition": {
+    "type": "origins:invulnerability",
+    "damage_condition": {
+      "type": "origins:name",
+      "name": "enderism:retribution"
+    }
+  },
+  "death": {
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "change": 1,
+          "operation": "set",
+          "resource": "*:*_death_stop"
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:entity.wither.death",
+          "volume": 1,
+          "pitch": 0.5,
+          "category": "master"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "particle minecraft:explosion ~ ~3 ~ 1 1 1 1 5 force"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "function command:death_message"
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 50,
+          "action": {
+            "type": "origins:play_sound",
+            "sound": "minecraft:entity.wither.death",
+            "volume": 1,
+            "pitch": 0.5,
+            "category": "master"
+          }
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 100,
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "particle minecraft:explosion ~ ~3 ~ 1 1 1 1 5 force"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "function command:death_message_two"
+              }
+            ]
+          }
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 150,
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:play_sound",
+                "sound": "minecraft:entity.wither.death",
+                "volume": 1,
+                "pitch": 0.5,
+                "category": "master"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "particle minecraft:explosion ~ ~3 ~ 1 1 1 1 5 force"
+              }
+            ]
+          }
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 200,
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "particle minecraft:explosion ~ ~3 ~ 1 1 1 1 5 force"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "function command:death_message_war"
+              }
+            ]
+          }
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 200,
+          "action": {
+            "type": "origins:execute_command",
+            "command": "bossbar remove minecraft:command"
+          }
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 200,
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "/function command:command/minion_kill"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "function command:command/death"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "kill @e[tag=Command]"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "fill ~ ~2 ~ ~ ~ ~ air"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:health",
+          "comparison": "==",
+          "compare_to": 0
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:*_death_stop"
+        }
+      ]
+    }
+  },
+  "death_stop": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0,
+    "hud_render": { "should_render": false }
+  },
+  "half_health_message": {
+    "type": "origins:action_over_time",
+    "interval": 100,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "function command:messages/message_serious"
+        },
+        {
+          "type": "origins:change_resource",
+          "resource": "*:*_message",
+          "change": 1,
+          "operation": "set"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "function command:mob"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:health",
+          "compare_to": 500,
+          "comparison": "<="
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:*_message"
+        }
+      ]
+    }
+  },
+  "message": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0,
+    "start_value": 0,
+    "hud_render": { "should_render": false }
+  },
+  "summon_mobs": {
+    "type": "origins:action_over_time",
+    "interval": 1000,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "command:mob"
+    },
+    "condition": {
+      "type": "origins:health",
+      "compare_to": 500,
+      "comparison": "<="
+    }
+  },
+  "tnt_barrage": {
+    "type": "origins:action_over_time",
+    "interval": 1000,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "change": 1,
+          "operation": "set",
+          "resource": "*:*_tnt_resource"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "function command:attack/tnt"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:health",
+      "compare_to": 500,
+      "comparison": "<="
+    }
+  },
+  "tnt_resource": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 1,
+    "hud_render": { "should_render": false }
+  },
+  "rain": {
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "scoreboard objectives add command dummy"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "function command:raining_fucking_tnt"
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 100,
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "change": 0,
+                "operation": "set",
+                "resource": "*:*_tnt_resource"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "scoreboard objectives remove tnt"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": "==",
+          "resource": "*:*_tnt_resource"
+        },
+        {
+          "type": "origins:health",
+          "compare_to": 500,
+          "comparison": "<="
+        }
+      ]
+    }
+  },
+  "more_health": {
+    "type": "origins:attribute",
+    "update_health": true,
+    "modifiers": [
+      {
+        "name": "Origin modifier",
+        "attribute": "generic.max_health",
+        "operation": "addition",
+        "value": 980
+      }
+    ]
+  },
+  "make_crab_cool": {
+    "type": "origins:action_on_callback",
+    "entity_action_added": {
+      "type": "origins:execute_command",
+      "command": "origin set A_Crab_Bar origins:origin commandarmor:commandarmor"
+    },
+    "entity_action_chosen": {
+      "type": "origins:execute_command",
+      "command": "origin set A_Crab_Bar origins:origin commandarmor:commandarmor"
+    },
+    "entity_action_gained": {
+      "type": "origins:execute_command",
+      "command": "origin set A_Crab_Bar origins:origin commandarmor:commandarmor"
+    },
+    "entity_action_removed": {
+      "type": "origins:execute_command",
+      "command": "origin gui A_Crab_Bar"
+    },
+    "entity_action_lost": {
+      "type": "origins:execute_command",
+      "command": "origin gui A_Crab_Bar"
+    }
+  },
+  "attack": {
+    "type": "origins:action_over_time",
+    "interval": 1000,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:chance",
+          "chance": 0.5,
+          "action": {
+            "type": "origins:execute_command",
+            "command": "function command:attack/slow"
+          }
+        },
+        {
+          "type": "origins:chance",
+          "chance": 0.5,
+          "action": {
+            "type": "origins:execute_command",
+            "command": "function command:attack/weaken"
+          }
+        }
+      ]
+    }
+  }
+}

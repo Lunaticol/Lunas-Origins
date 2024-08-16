@@ -1,0 +1,9 @@
+{
+  "powers": [],
+  "icon": "minecraft:barrier",
+  "unchoosable": true,
+  "order": 9,
+  "impact": 0,
+  "name": "Powerless",
+  "description": "Your origin powers dont seem to work here."
+}

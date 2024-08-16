@@ -1,0 +1,9 @@
+{
+  "powers": ["command:warrior/command", "command:warrior/switcher"],
+  "icon": "minecraft:command_block",
+  "unchoosable": true,
+  "order": 9,
+  "impact": 0,
+  "name": "Warrior of Command",
+  "description": "You have been called to action. Protect the Block."
+}

@@ -1,0 +1,18 @@
+{
+  "name": "Sculk",
+  "description": "Created by the sculk to protect the ancient cities, You are an entity possessing Sculk characteristics harmoniously blended with human attributes.",
+  "icon": "minecraft:sculk_catalyst",
+  "loading_priority": 1,
+  "impact": 3,
+  "order": 1,
+  "powers": [
+    "sculk:body",
+    "sculk:bodypt2",
+    "sculk:sculk_sight",
+    "sculk:see_vibrations",
+    "sculk:sculk_phase",
+    "sculk:sonic_boom",
+    "sculk:warden_form",
+    "sculk:infect"
+  ]
+}

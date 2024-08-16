@@ -1,0 +1,1 @@
+tellraw @a[distance=..200] [{"text":"<","color":"white"},{"text":"Command Block","color":"gold","bold":true},{"text":">"},{"text":" Warning! System Failure Imminent! Warning! Warning! System Failure Imminent!","color":"dark_red"}]

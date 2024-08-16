@@ -1,0 +1,15 @@
+{
+    "name": "Egotistical",
+    "description": "Because you are so proud of your armor and your command block, you cannot stop bragging about it. This annoys the villagers, making them not want to trade.",
+    "type": "origins:prevent_entity_use",
+    "bientity_action": {
+        "type": "origins:nothing"
+    },
+    "bientity_condition": {
+        "type": "origins:target_condition",
+        "condition": {
+            "type": "origins:entity_type",
+            "entity_type": "minecraft:villager"
+        }
+    }
+}

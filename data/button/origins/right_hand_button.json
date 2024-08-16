@@ -1,0 +1,21 @@
+{
+  "powers": [
+    "button:right_hand_man/button",
+    "button:right_hand_man/phase_one/button_one",
+    "button:right_hand_man/phase_one/button_two",
+    "button:right_hand_man/phase_one/button_three",
+    "button:right_hand_man/phase_one/button_four",
+    "button:right_hand_man/phase_one/button_five",
+    "button:right_hand_man/phase_one/button_six",
+    "button:right_hand_man/phase_one/button_seven"
+  ],
+  "icon": {
+    "item": "minecraft:stone_button",
+    "tag": "{Enchantments:[{}]}"
+  },
+  "unchoosable": true,
+  "order": 9,
+  "impact": 3,
+  "name": "BL Right Hand Man",
+  "description": "Long ago, 7 buttons were created by the button lord. He has sent out his Right Hand Man to vanquish those who bare his buttons"
+}

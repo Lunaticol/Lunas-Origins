@@ -41,6 +41,16 @@
       "inverted": true
     }
   },
+  "emmissive": {
+    "type": "proviorigins:emissive",
+    "light": 10,
+    "dynamic_light": 10,
+    "condition": {
+      "type": "origins:power_active",
+      "power": "*:phase_phase_toggle",
+      "inverted": true
+    }
+  },
   "night_vision": {
     "type": "origins:night_vision",
     "strength": 1,

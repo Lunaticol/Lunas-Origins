@@ -1,0 +1,736 @@
+{
+  "type": "origins:multiple",
+  "name": "Lightning Breath",
+  "description": "You can fire electricity at people.",
+  "badges": [
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/info.png",
+      "text": "Theres 3 modes to this. Pressing X allows you to switch between them"
+    },
+    {
+      "type": "origins:keybind",
+      "sprite": "origins:textures/gui/badge/active.png",
+      "text": "Active ability, use with [Secondary]"
+    },
+    {
+      "type": "origins:keybind",
+      "sprite": "origins:textures/gui/badge/active.png",
+      "text": "Active ability, use with [Load Hotbar]"
+    }
+  ],
+  "electric_breath_bar": {
+    "type": "origins:resource",
+    "max": 100,
+    "min": 0,
+    "hud_render": {
+      "should_render": true,
+      "bar_index": 2,
+      "sprite_location": "origins:textures/gui/resource_bar.png"
+    }
+  },
+  "breath_charge": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 5,
+      "operation": "add",
+      "resource": "*:*_electric_breath_bar"
+    },
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:predicate",
+          "predicate": "sf:is_thundering",
+          "inverted": true
+        },
+        {
+          "type": "origins:predicate",
+          "predicate": "sf:is_raining"
+        },
+        {
+          "type": "origins:command",
+          "compare_to": 0,
+          "comparison": "==",
+          "command": "execute if predicate sf:is_thundering"
+        },
+        {
+          "type": "origins:command",
+          "compare_to": 1,
+          "comparison": "==",
+          "command": "execute if predicate sf:is_raining"
+        }
+      ]
+    }
+  },
+  "breath_charge_storm": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 10,
+      "operation": "add",
+      "resource": "*:*_electric_breath_bar"
+    },
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:predicate",
+          "predicate": "sf:is_thundering"
+        },
+        {
+          "type": "origins:command",
+          "compare_to": 1,
+          "comparison": "==",
+          "command": "execute if predicate sf:is_thundering"
+        }
+      ]
+    }
+  },
+  "electric_breath_linear": {
+    "type": "origins:active_self",
+    "key": {
+      "key": "key.origins.secondary_active",
+      "continuous": true
+    },
+    "entity_action": {
+      "type": "origins:raycast",
+      "command_along_ray": "particle minecraft:electric_spark ~ ~ ~ 0 0 0 0.2 10 force",
+      "distance": 8,
+      "fluid_handling": "none",
+      "bientity_action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:target_action",
+            "action": {
+              "type": "origins:if_else_list",
+              "actions": [
+                {
+                  "action": {
+                    "type": "origins:and",
+                    "actions": [
+                      {
+                        "type": "origins:apply_effect",
+                        "effect": {
+                          "effect": "slowness",
+                          "duration": 100,
+                          "show_icon": true,
+                          "show_particles": false
+                        }
+                      },
+                      {
+                        "type": "origins:damage",
+                        "amount": 2,
+                        "source": {
+                          "bypasses_armor": false,
+                          "magic": true,
+                          "fire": true,
+                          "name": "lightningBolt.player",
+                          "out_of_world": false,
+                          "unblockable": false
+                        }
+                      }
+                    ]
+                  },
+                  "condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                      {
+                        "type": "origins:predicate",
+                        "predicate": "sf:is_thundering",
+                        "inverted": true
+                      },
+                      {
+                        "type": "origins:fluid_height",
+                        "compare_to": 0,
+                        "comparison": "==",
+                        "fluid": "minecraft:water"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "action": {
+                    "type": "origins:and",
+                    "actions": [
+                      {
+                        "type": "origins:apply_effect",
+                        "effect": {
+                          "effect": "slowness",
+                          "duration": 50,
+                          "show_icon": true,
+                          "show_particles": false
+                        }
+                      },
+                      {
+                        "type": "origins:damage",
+                        "amount": 4,
+                        "source": {
+                          "bypasses_armor": false,
+                          "magic": true,
+                          "fire": true,
+                          "name": "lightningBolt.player",
+                          "out_of_world": false,
+                          "unblockable": false
+                        }
+                      }
+                    ]
+                  },
+                  "condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                      {
+                        "type": "origins:predicate",
+                        "predicate": "sf:is_thundering"
+                      },
+                      {
+                        "type": "origins:fluid_height",
+                        "compare_to": 0,
+                        "comparison": "==",
+                        "fluid": "minecraft:water"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "action": {
+                    "type": "origins:and",
+                    "actions": [
+                      {
+                        "type": "origins:apply_effect",
+                        "effect": {
+                          "effect": "slowness",
+                          "duration": 200,
+                          "show_icon": true,
+                          "show_particles": false
+                        }
+                      },
+                      {
+                        "type": "origins:damage",
+                        "amount": 6,
+                        "source": {
+                          "bypasses_armor": false,
+                          "magic": true,
+                          "fire": true,
+                          "name": "lightningBolt.player",
+                          "out_of_world": false,
+                          "unblockable": false
+                        }
+                      }
+                    ]
+                  },
+                  "condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                      {
+                        "type": "origins:predicate",
+                        "predicate": "sf:is_thundering",
+                        "inverted": true
+                      },
+                      {
+                        "type": "origins:fluid_height",
+                        "compare_to": 0.1,
+                        "comparison": ">=",
+                        "fluid": "minecraft:water"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "type": "origins:actor_action",
+            "action": {
+              "type": "origins:if_else_list",
+              "actions": [
+                {
+                  "action": {
+                    "type": "origins:and",
+                    "actions": [
+                      {
+                        "type": "origins:change_resource",
+                        "change": -2,
+                        "resource": "*:*_electric_breath_bar"
+                      },
+                      {
+                        "type": "origins:change_resource",
+                        "change": -4,
+                        "resource": "sf:stormscale/static_charge_static_bar"
+                      }
+                    ]
+                  },
+                  "condition": {
+                    "type": "origins:predicate",
+                    "predicate": "sf:is_thundering",
+                    "inverted": true
+                  }
+                },
+                {
+                  "action": {
+                    "type": "origins:and",
+                    "actions": [
+                      {
+                        "type": "origins:change_resource",
+                        "change": -1,
+                        "resource": "*:*_electric_breath_bar"
+                      },
+                      {
+                        "type": "origins:change_resource",
+                        "change": -2,
+                        "resource": "sf:stormscale/static_charge_static_bar"
+                      }
+                    ]
+                  },
+                  "condition": {
+                    "type": "origins:predicate",
+                    "predicate": "sf:is_thundering"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": ">=",
+          "resource": "*:*_electric_breath_bar"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": ">=",
+          "resource": "sf:stormscale/static_charge_static_bar"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:*_lightning_level"
+        }
+      ]
+    }
+  },
+  "electric_breath_multiple": {
+    "type": "origins:active_self",
+    "key": {
+      "key": "key.origins.secondary_active",
+      "continuous": true
+    },
+    "cooldown": 100,
+    "entity_action": {
+      "type": "origins:raycast",
+      "distance": 8,
+      "command_along_ray": "particle minecraft:electric_spark ~ ~ ~ 0 0 0 0.2 100 force",
+      "hit_action": {
+        "type": "origins:area_of_effect",
+        "radius": 16,
+        "bientity_action": {
+          "type": "origins:and",
+          "actions": [
+            {
+              "type": "origins:target_action",
+              "action": {
+                "type": "origins:if_else_list",
+                "actions": [
+                  {
+                    "action": {
+                      "type": "origins:and",
+                      "actions": [
+                        {
+                          "type": "origins:execute_command",
+                          "command": "particle minecraft:electric_spark ^ ^1 ^ 1 0 1 1 10 force"
+                        },
+                        {
+                          "type": "origins:damage",
+                          "amount": 5,
+                          "source": {
+                            "bypasses_armor": false,
+                            "magic": true,
+                            "fire": true,
+                            "name": "lightningBolt.player",
+                            "out_of_world": false,
+                            "unblockable": false
+                          }
+                        }
+                      ]
+                    },
+                    "condition": {
+                      "type": "origins:and",
+                      "conditions": [
+                        {
+                          "type": "origins:predicate",
+                          "predicate": "sf:is_thundering",
+                          "inverted": true
+                        },
+                        {
+                          "type": "origins:fluid_height",
+                          "compare_to": 0,
+                          "comparison": "==",
+                          "fluid": "minecraft:water"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "action": {
+                      "type": "origins:and",
+                      "actions": [
+                        {
+                          "type": "origins:execute_command",
+                          "command": "particle minecraft:electric_spark ^ ^1 ^ 1 0 1 1 10 force"
+                        },
+                        {
+                          "type": "origins:damage",
+                          "amount": 10,
+                          "source": {
+                            "bypasses_armor": false,
+                            "magic": true,
+                            "fire": true,
+                            "name": "lightningBolt.player",
+                            "out_of_world": false,
+                            "unblockable": false
+                          }
+                        }
+                      ]
+                    },
+                    "condition": {
+                      "type": "origins:and",
+                      "conditions": [
+                        {
+                          "type": "origins:predicate",
+                          "predicate": "sf:is_thundering"
+                        },
+                        {
+                          "type": "origins:fluid_height",
+                          "compare_to": 0,
+                          "comparison": "==",
+                          "fluid": "minecraft:water"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "action": {
+                      "type": "origins:and",
+                      "actions": [
+                        {
+                          "type": "origins:execute_command",
+                          "command": "particle minecraft:electric_spark ^ ^1 ^ 1 0 1 1 10 force"
+                        },
+                        {
+                          "type": "origins:damage",
+                          "amount": 15,
+                          "source": {
+                            "bypasses_armor": false,
+                            "magic": true,
+                            "fire": true,
+                            "name": "lightningBolt.player",
+                            "out_of_world": false,
+                            "unblockable": false
+                          }
+                        }
+                      ]
+                    },
+                    "condition": {
+                      "type": "origins:and",
+                      "conditions": [
+                        {
+                          "type": "origins:predicate",
+                          "predicate": "sf:is_thundering",
+                          "inverted": true
+                        },
+                        {
+                          "type": "origins:fluid_height",
+                          "compare_to": 0.1,
+                          "comparison": "==",
+                          "fluid": "minecraft:water"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "origins:actor_action",
+              "action": {
+                "type": "origins:if_else_list",
+                "actions": [
+                  {
+                    "action": {
+                      "type": "origins:and",
+                      "actions": [
+                        {
+                          "type": "origins:change_resource",
+                          "change": -50,
+                          "resource": "*:*_electric_breath_bar"
+                        },
+                        {
+                          "type": "origins:change_resource",
+                          "change": -250,
+                          "resource": "sf:stormscale/static_charge_static_bar"
+                        },
+                        {
+                          "type": "origins:change_resource",
+                          "change": -2,
+                          "resource": "sf:stormscale/static_charge_over_charge"
+                        }
+                      ]
+                    },
+                    "condition": {
+                      "type": "origins:and",
+                      "conditions": [
+                        {
+                          "type": "origins:predicate",
+                          "predicate": "sf:is_thundering",
+                          "inverted": true
+                        },
+                        {
+                          "type": "origins:resource",
+                          "compare_to": 250,
+                          "comparison": ">=",
+                          "resource": "sf:stormscale/static_charge_static_bar"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "action": {
+                      "type": "origins:and",
+                      "actions": [
+                        {
+                          "type": "origins:change_resource",
+                          "change": -25,
+                          "resource": "*:*_electric_breath_bar"
+                        },
+                        {
+                          "type": "origins:change_resource",
+                          "change": -125,
+                          "resource": "sf:stormscale/static_charge_static_bar"
+                        },
+                        {
+                          "type": "origins:change_resource",
+                          "change": -1,
+                          "resource": "sf:stormscale/static_charge_over_charge"
+                        }
+                      ]
+                    },
+                    "condition": {
+                      "type": "origins:and",
+                      "conditions": [
+                        {
+                          "type": "origins:predicate",
+                          "predicate": "sf:is_thundering"
+                        },
+                        {
+                          "type": "origins:resource",
+                          "compare_to": 125,
+                          "comparison": ">=",
+                          "resource": "sf:stormscale/static_charge_static_bar"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 50,
+          "comparison": ">=",
+          "resource": "*:*_electric_breath_bar"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": ">=",
+          "resource": "sf:stormscale/static_charge_static_bar"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": "==",
+          "resource": "*:*_lightning_level"
+        }
+      ]
+    }
+  },
+  "eletric_breath_concentrated": {
+    "type": "origins:fire_projectile",
+    "hud_render": {
+      "should_render": false
+    },
+    "key": {
+      "key": "key.origins.secondary_active"
+    },
+    "cooldown": 100,
+    "entity_type": "fireball",
+    "speed": 0.5,
+    "tag": "{Fire:0,HasVisualFire:0b,ExplosionPower:2b,Item:{id:\"minecraft:calcite\",Count:1b,tag:{Enchantments:[{}]}}}",
+    "shooter_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "change": -75,
+          "resource": "*:*_electric_breath_bar"
+        },
+        {
+          "type": "origins:change_resource",
+          "change": -500,
+          "resource": "sf:stormscale/static_charge_static_bar"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 50,
+          "comparison": ">=",
+          "resource": "*:*_electric_breath_bar"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 500,
+          "comparison": ">=",
+          "resource": "sf:stormscale/static_charge_static_bar"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 2,
+          "comparison": "==",
+          "resource": "*:*_lightning_level"
+        }
+      ]
+    }
+  },
+  "lightning_level": {
+    "type": "origins:resource",
+    "max": 2,
+    "min": 0,
+    "hud_render": { "should_render": false }
+  },
+  "lightning_toggle": {
+    "type": "origins:active_self",
+    "cooldown": 80,
+    "key": {
+      "key": "key.loadToolbarActivator"
+    },
+    "entity_action": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "change": 1,
+                "operation": "set",
+                "resource": "*:*_lightning_level"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "title @s actionbar {\"text\":\"Multiple Mode\",\"color\":\"gold\",\"bold\":true}"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 0,
+            "comparison": "==",
+            "resource": "*:*_lightning_level"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "change": 2,
+                "operation": "set",
+                "resource": "*:*_lightning_level"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "title @s actionbar {\"text\":\"Concentrated Mode\",\"color\":\"gold\",\"bold\":true}"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 1,
+            "comparison": "==",
+            "resource": "*:*_lightning_level"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "change": 0,
+                "operation": "set",
+                "resource": "*:*_lightning_level"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "title @s actionbar {\"text\":\"Linear Mode\",\"color\":\"gold\",\"bold\":true}"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 2,
+            "comparison": "==",
+            "resource": "*:*_lightning_level"
+          }
+        }
+      ]
+    }
+  },
+  "linear_default": {
+    "type": "origins:action_on_callback",
+    "entity_action_added": {
+      "type": "origins:change_resource",
+      "change": 0,
+      "operation": "set",
+      "resource": "*:*_lightning_toggle"
+    },
+    "entity_action_chosen": {
+      "type": "origins:change_resource",
+      "change": 0,
+      "operation": "set",
+      "resource": "*:*_lightning_toggle"
+    },
+    "entity_action_respawned": {
+      "type": "origins:change_resource",
+      "change": 0,
+      "operation": "set",
+      "resource": "*:*_lightning_toggle"
+    },
+    "execute_chosen_when_orb": true
+  }
+}

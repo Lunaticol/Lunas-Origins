@@ -1,0 +1,1 @@
+xp add @s -1 points

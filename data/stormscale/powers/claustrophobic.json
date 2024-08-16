@@ -1,0 +1,151 @@
+{
+  "type": "origins:multiple",
+  "name": "Claustrophobic",
+  "description": "You've lived in the sky all your life, going deep into the earth frightens you!",
+  "badges": [
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/info.png",
+      "text": "Drinking night vision might help calm you. You also lose static charge."
+    }
+  ],
+  "claustrophobic": {
+    "type": "origins:action_over_time",
+    "interval": 10,
+    "entity_action": {
+      "type": "origins:apply_effect",
+      "effects": [
+        {
+          "effect": "minecraft:darkness",
+          "duration": 100,
+          "amplifier": 3
+        },
+        {
+          "effect": "minecraft:weakness",
+          "duration": 100,
+          "amplifier": 1
+        },
+        {
+          "effect": "minecraft:speed",
+          "duration": 40,
+          "amplifier": 2
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": "==",
+          "resource": "*:*_clastro_bar"
+        },
+        {
+          "type": "origins:status_effect",
+          "effect": "minecraft:night_vision",
+          "inverted": true
+        }
+      ]
+    }
+  },
+  "sleeping_up_high": {
+    "type": "origins:prevent_sleep",
+    "message": "The air is to dense down here.",
+    "condition": {
+      "type": "origins:on_block",
+      "block_condition": {
+        "type": "origins:height",
+        "compare_to": 180,
+        "comparison": "<="
+      }
+    }
+  },
+  "claustrophobic_shader": {
+    "type": "origins:shader",
+    "shader": "minecraft:shaders/post/desaturate.json",
+    "toggleable": false,
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_clastro_bar"
+    }
+  },
+  "clastro_bar": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0,
+    "hud_render": { "should_render": false }
+  },
+  "clastro_bar_fill": {
+    "interval": 10,
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "*:*_clastro_bar",
+      "operation": "set",
+      "change": 1
+    },
+    "condition": {
+      "type": "origins:on_block",
+      "block_condition": {
+        "type": "origins:height",
+        "compare_to": 20,
+        "comparison": "<="
+      }
+    }
+  },
+  "clastro_bar_fill_two": {
+    "interval": 10,
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "*:*_clastro_bar",
+      "operation": "set",
+      "change": 0
+    },
+    "condition": {
+      "type": "origins:on_block",
+      "block_condition": {
+        "type": "origins:height",
+        "compare_to": 21,
+        "comparison": ">="
+      }
+    }
+  },
+  "lose_static": {
+    "type": "origins:action_over_time",
+    "interval": 100,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": -5,
+      "resource": "sf:stormscale/static_charge_static_bar"
+    },
+    "condition": {
+      "type": "origins:on_block",
+      "block_condition": {
+        "type": "origins:height",
+        "compare_to": 20,
+        "comparison": "<="
+      }
+    }
+  },
+  "lose_static_over_charge": {
+    "type": "origins:action_over_time",
+    "interval": 100,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": -5,
+      "resource": "sf:stormscale/static_charge_over_charge"
+    },
+    "condition": {
+      "type": "origins:on_block",
+      "block_condition": {
+        "type": "origins:height",
+        "compare_to": 20,
+        "comparison": "<="
+      }
+    }
+  }
+}
