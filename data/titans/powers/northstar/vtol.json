@@ -1,0 +1,5 @@
+{
+  "type": "origins:multiple",
+  "name": "VTOL Hover",
+  "description": "Vertical take-off hover.\nCan be upgraded. Current method is unknown."
+}

@@ -5,7 +5,12 @@
   "soul_bar": {
     "type": "origins:resource",
     "max": 1000,
-    "min": 0
+    "min": 0,
+    "hud_render": {
+      "should_render": true,
+      "bar_index": 15,
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png"
+    }
   },
   "particles": {
     "type": "origins:self_action_when_hit",
@@ -18,11 +23,6 @@
           {
             "type": "origins:execute_command",
             "command": "execute at @s run particle minecraft:sculk_soul ~ ~0.5 ~ 0.5 0.5 0.5 0.03 5 force"
-          },
-          {
-            "type": "origins:change_resource",
-            "change": -50,
-            "resource": "*:*_soul_bar"
           }
         ]
       }
@@ -175,7 +175,7 @@
     "tick_rate": 20,
     "modifier": {
       "operation": "addition",
-      "value": 2,
+      "value": 10,
       "attribute": "minecraft:generic.max_health"
     },
     "condition": {
@@ -310,6 +310,97 @@
         {
           "type": "origins:entity_type",
           "entity_type": "minecraft:player"
+        }
+      ]
+    }
+  },
+  "no_vampire_fail_safe": {
+    "type": "origins:action_on_callback",
+    "execute_chosen_when_orb": true,
+    "entity_action_added": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "vampirism level none @s"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "/title @s actionbar {\"text\":\"The Spirits disspell the dark magic in you.\",\"color\":\"dark_blue\",\"bold\":true}"
+        }
+      ]
+    },
+    "entity_action_gained": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "vampirism level none @s"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "/title @s actionbar {\"text\":\"The Spirits disspell the dark magic in you.\",\"color\":\"dark_blue\",\"bold\":true}"
+        }
+      ]
+    },
+    "entity_action_chosen": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "vampirism level none @s"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "/title @s actionbar {\"text\":\"The Spirits disspell the dark magic in you.\",\"color\":\"dark_blue\",\"bold\":true}"
+        }
+      ]
+    },
+    "entity_action_respawned": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "vampirism level none @s"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "/title @s actionbar {\"text\":\"The Spirits disspell the dark magic in you.\",\"color\":\"dark_blue\",\"bold\":true}"
+        }
+      ]
+    }
+  },
+  "soul_siphon": {
+    "type": "origins:self_action_on_hit",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 20,
+      "operation": "add",
+      "resource": "*:*_soul_bar"
+    }
+  },
+  "on_soulsand": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 20,
+      "operation": "add",
+      "resource": "*:*_soul_bar"
+    },
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:block_in_radius",
+          "compare_to": 1,
+          "comparison": ">=",
+          "radius": 1,
+          "shape": "cube",
+          "block_condition": {
+            "type": "origins:in_tag",
+            "tag": "bluefox:blocks"
+          }
         }
       ]
     }

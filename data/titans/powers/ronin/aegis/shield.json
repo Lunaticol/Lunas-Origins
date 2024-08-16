@@ -1,0 +1,53 @@
+{
+  "type": "origins:multiple",
+  "name": "Chassis Upgrade",
+  "description": "Your shield is increased by one level\nUse [Enchanted Golden Apple] To obtain this upgrade!",
+  "aegis_shield": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
+  },
+  "upgrade_shield": {
+    "type": "origins:active_self",
+    "key": "key.use",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "resource": "*:*_aegis_shield",
+          "change": 1
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "clear @s minecraft:enchanted_golden_apple 1"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "title @p actionbar {\"bold\":true,\"color\":\"gold\",\"text\":\"Shield Upgrade Unlocked!\"}"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "item": "minecraft:enchanted_golden_apple"
+            }
+          }
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:*_aegis_shield"
+        }
+      ]
+    }
+  }
+}

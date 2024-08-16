@@ -1,5 +1,172 @@
 {
   "name": "Ethereal",
-  "description": "",
-  "type": "origins:multiple"
+  "description": "Using souls you gathered, you can altar the playing field in your favor.",
+  "type": "origins:multiple",
+  "ethereal": {
+    "type": "origins:active_self",
+    "key": "key.saveToolbarActivator",
+    "cooldown": 3000,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/luna_resource_bar.png",
+      "bar_index": 2
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:area_of_effect",
+          "radius": 64,
+          "bientity_action": {
+            "type": "origins:target_action",
+            "action": {
+              "type": "origins:and",
+              "actions": [
+                {
+                  "type": "origins:apply_effect",
+                  "effects": [
+                    {
+                      "effect": "minecraft:blindness",
+                      "duration": 500,
+                      "show_particles": false
+                    },
+                    {
+                      "effect": "minecraft:weakness",
+                      "duration": 1000,
+                      "amplifier": 1,
+                      "show_particles": false
+                    },
+                    {
+                      "effect": "minecraft:slowness",
+                      "duration": 1000,
+                      "amplifier": 1,
+                      "show_particles": false
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 1,
+          "operation": "add",
+          "resource": "*:*_domain_active"
+        },
+        {
+          "type": "origins:apply_effect",
+          "effects": [
+            {
+              "effect": "minecraft:strength",
+              "amplifier": 1,
+              "duration": 1000,
+              "show_particles": false
+            },
+            {
+              "effect": "minecraft:speed",
+              "amplifier": 1,
+              "duration": 1000,
+              "show_particles": false
+            },
+            {
+              "effect": "minecraft:saturation",
+              "duration": 1000,
+              "show_particles": false
+            }
+          ]
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "function bluefox:summon_domain"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1000,
+      "comparison": "==",
+      "resource": "bluefox:soul_soul_bar"
+    }
+  },
+  "particles": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "particle sculk_soul ~ ~ ~ 64 64 64 0 1500 force"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_domain_active"
+    }
+  },
+  "domain_active": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
+  },
+  "dashes": {
+    "type": "origins:action_over_time",
+    "interval": 10,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 7,
+      "resource": "*:kitsune_dashes"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_domain_active"
+    }
+  },
+  "drain": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": -5,
+      "operation": "add",
+      "resource": "*:soul_soul_bar"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_domain_active"
+    }
+  },
+  "particles_self": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "particle minecraft:sculk_soul ~ ~ ~ 0.3 0.5 0.3 0 25 force"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_domain_active"
+    }
+  },
+  "reset": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 0,
+      "operation": "set",
+      "resource": "*:*_domain_active"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 0,
+      "comparison": "==",
+      "resource": "*:soul_soul_bar"
+    }
+  }
 }

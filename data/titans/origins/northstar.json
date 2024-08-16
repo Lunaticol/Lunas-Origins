@@ -1,0 +1,9 @@
+{
+  "powers": [],
+  "icon": "minecraft:crossbow",
+  "order": 9,
+  "unchoosable": true,
+  "impact": 3,
+  "name": "Northstar",
+  "description": "Northstar is a Titan class that is based on the Stryder chassis design. Northstar is built on high mobility and precision attacks with her railgun and cluster missiles, and can perform vertical takeoffs and landings to access unorthodox lines of sight."
+}

@@ -12,5 +12,7 @@
   "death.attack.arc_wave": "%1$s was caught in an arc wave",
   "death.attack.arc_wave.player": "%1$s was caught in an arc wave by %2$s",
   "death.attack.arc_wave_core": "%1$s was caught in a charged up arc wave",
-  "death.attack.arc_wave_core.player": "%1$s was caught in a charged up arc wave by %2$s"
+  "death.attack.arc_wave_core.player": "%1$s was caught in a charged up arc wave by %2$s",
+  "death.attack.obliteration": "%1$s got hit by a plasma railgun round",
+  "death.attack.obliteration.player": "%1$s got hit by a point-blank plasma railgun round"
 }

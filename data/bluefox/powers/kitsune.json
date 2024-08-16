@@ -1,6 +1,6 @@
 {
-  "name": "",
-  "description": "",
+  "name": "Moonlit Soul",
+  "description": "Your dashes are attuned with the moon. Different phases dictate how good your dashes are.",
   "type": "origins:multiple",
   "dash": {
     "type": "origins:active_self",
@@ -26,6 +26,26 @@
                 "change": -1,
                 "resource": "*:*_dashes",
                 "operation": "add"
+              },
+              {
+                "type": "origins:apply_effect",
+                "effect": {
+                  "effect": "slow_falling",
+                  "duration": 10,
+                  "show_icon": true
+                }
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "playsound minecraft:entity.shulker_bullet.hurt master @s ~ ~ ~ 100 1"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "particle minecraft:explosion ~ ~ ~ 0.2 0.2 0.2 0.7 6 force"
+              },
+              {
+                "type": "origins:exhaust",
+                "amount": 1.5
               }
             ]
           },
@@ -69,6 +89,26 @@
                 "change": -1,
                 "resource": "*:*_dashes",
                 "operation": "add"
+              },
+              {
+                "type": "origins:apply_effect",
+                "effect": {
+                  "effect": "slow_falling",
+                  "duration": 10,
+                  "show_icon": true
+                }
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "playsound minecraft:entity.shulker_bullet.hurt master @s ~ ~ ~ 100 1"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "particle minecraft:explosion ~ ~ ~ 0.2 0.2 0.2 0.7 6 force"
+              },
+              {
+                "type": "origins:exhaust",
+                "amount": 1.5
               }
             ]
           },
@@ -112,6 +152,26 @@
                 "change": -1,
                 "resource": "*:*_dashes",
                 "operation": "add"
+              },
+              {
+                "type": "origins:apply_effect",
+                "effect": {
+                  "effect": "slow_falling",
+                  "duration": 10,
+                  "show_icon": true
+                }
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "playsound minecraft:entity.shulker_bullet.hurt master @s ~ ~ ~ 100 1"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "particle minecraft:explosion ~ ~ ~ 0.2 0.2 0.2 0.7 6 force"
+              },
+              {
+                "type": "origins:exhaust",
+                "amount": 1.5
               }
             ]
           },
@@ -155,6 +215,26 @@
                 "change": -1,
                 "resource": "*:*_dashes",
                 "operation": "add"
+              },
+              {
+                "type": "origins:apply_effect",
+                "effect": {
+                  "effect": "slow_falling",
+                  "duration": 10,
+                  "show_icon": true
+                }
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "playsound minecraft:entity.shulker_bullet.hurt master @s ~ ~ ~ 100 1"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "particle minecraft:explosion ~ ~ ~ 0.2 0.2 0.2 0.7 6 force"
+              },
+              {
+                "type": "origins:exhaust",
+                "amount": 1.5
               }
             ]
           },
@@ -198,6 +278,26 @@
                 "change": -1,
                 "resource": "*:*_dashes",
                 "operation": "add"
+              },
+              {
+                "type": "origins:apply_effect",
+                "effect": {
+                  "effect": "slow_falling",
+                  "duration": 10,
+                  "show_icon": true
+                }
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "playsound minecraft:entity.shulker_bullet.hurt master @s ~ ~ ~ 100 1"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "particle minecraft:explosion ~ ~ ~ 0.2 0.2 0.2 0.7 6 force"
+              },
+              {
+                "type": "origins:exhaust",
+                "amount": 1.5
               }
             ]
           },
@@ -241,6 +341,26 @@
                 "change": -1,
                 "resource": "*:*_dashes",
                 "operation": "add"
+              },
+              {
+                "type": "origins:apply_effect",
+                "effect": {
+                  "effect": "slow_falling",
+                  "duration": 10,
+                  "show_icon": true
+                }
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "playsound minecraft:entity.shulker_bullet.hurt master @s ~ ~ ~ 100 1"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "particle minecraft:explosion ~ ~ ~ 0.2 0.2 0.2 0.7 6 force"
+              },
+              {
+                "type": "origins:exhaust",
+                "amount": 1.5
               }
             ]
           },
@@ -284,6 +404,26 @@
                 "change": -1,
                 "resource": "*:*_dashes",
                 "operation": "add"
+              },
+              {
+                "type": "origins:apply_effect",
+                "effect": {
+                  "effect": "slow_falling",
+                  "duration": 10,
+                  "show_icon": true
+                }
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "playsound minecraft:entity.shulker_bullet.hurt master @s ~ ~ ~ 100 1"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "particle minecraft:explosion ~ ~ ~ 0.2 0.2 0.2 0.7 6 force"
+              },
+              {
+                "type": "origins:exhaust",
+                "amount": 1.5
               }
             ]
           },
@@ -327,6 +467,26 @@
                 "change": -1,
                 "resource": "*:*_dashes",
                 "operation": "add"
+              },
+              {
+                "type": "origins:apply_effect",
+                "effect": {
+                  "effect": "slow_falling",
+                  "duration": 10,
+                  "show_icon": true
+                }
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "playsound minecraft:entity.shulker_bullet.hurt master @s ~ ~ ~ 100 1"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "particle minecraft:explosion ~ ~ ~ 0.2 0.2 0.2 0.7 6 force"
+              },
+              {
+                "type": "origins:exhaust",
+                "amount": 1.5
               }
             ]
           },
@@ -348,6 +508,57 @@
                 "compare_to": 0,
                 "comparison": "==",
                 "resource": "*:*_lock"
+              }
+            ]
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:add_velocity",
+                "z": 1.5,
+                "space": "local"
+              },
+              {
+                "type": "origins:apply_effect",
+                "effect": {
+                  "effect": "slow_falling",
+                  "duration": 10,
+                  "show_icon": true
+                }
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "playsound minecraft:entity.shulker_bullet.hurt master @s ~ ~ ~ 100 1"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "particle minecraft:explosion ~ ~ ~ 0.2 0.2 0.2 0.7 6 force"
+              },
+              {
+                "type": "origins:exhaust",
+                "amount": 1.5
+              },
+              {
+                "type": "origins:change_resource",
+                "resource": "*:*_was_falling",
+                "change": 1
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:fall_flying"
+              },
+              {
+                "type": "origins:resource",
+                "resource": "*:*_dashes",
+                "comparison": ">=",
+                "compare_to": 3
               }
             ]
           }
@@ -404,5 +615,84 @@
   "no_vampire": {
     "type": "origins:effect_immunity",
     "effect": "vampirism:sanguinare"
+  },
+  "recharge": {
+    "type": "origins:action_over_time",
+    "interval": 50,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 1,
+      "resource": "*:*_dashes"
+    },
+    "condition": {
+      "type": "origins:fall_flying",
+      "inverted": true
+    }
+  },
+  "recharge_elytra": {
+    "type": "origins:action_over_time",
+    "interval": 60,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 1,
+      "resource": "*:*_dashes"
+    },
+    "condition": {
+      "type": "origins:fall_flying"
+    }
+  },
+  "xp": {
+    "type": "origins:modify_xp_gain",
+    "modifier": {
+      "operation": "multiply_total",
+      "value": 2
+    }
+  },
+  "overworld_size": {
+    "type": "origins:action_on_callback",
+    "execute_chosen_when_orb": true,
+    "entity_action_chosen": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:height 0.65 @s"
+    },
+    "entity_action_respawned": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:height 0.65 @s"
+    },
+    "entity_action_added": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:height 0.65 @s"
+    },
+    "entity_action_lost": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:height 1 @s"
+    },
+    "entity_action_removed": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:height 1 @s"
+    }
+  },
+  "overworld_width": {
+    "type": "origins:action_on_callback",
+    "entity_action_chosen": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:width 0.65 @s"
+    },
+    "entity_action_respawned": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:width 0.65 @s"
+    },
+    "entity_action_added": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:width 0.65 @s"
+    },
+    "entity_action_lost": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:width 1 @s"
+    },
+    "entity_action_removed": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:width 1 @s"
+    }
   }
 }
