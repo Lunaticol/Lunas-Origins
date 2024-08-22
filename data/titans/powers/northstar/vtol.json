@@ -1,5 +1,76 @@
 {
   "type": "origins:multiple",
   "name": "VTOL Hover",
-  "description": "Vertical take-off hover.\nCan be upgraded. Current method is unknown."
+  "description": "Vertical take-off hover.\nCan be upgraded. Method is unknown.",
+  "vtol_resource": {
+    "type": "origins:resource",
+    "max": 100,
+    "min": 0
+  },
+  "vtol_active": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
+  },
+  "vtol": {
+    "type": "origins:creative_flight",
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": ">=",
+          "resource": "*:*_vtol_resource"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": ">=",
+          "resource": "*:*_vtol_active"
+        }
+      ]
+    }
+  },
+  "cooldown": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": -40,
+      "operation": "add",
+      "resource": "*:*_vtol_active"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": ">=",
+      "resource": "*:*_vtol_active"
+    }
+  },
+  "activate": {
+    "type": "origins:active_self",
+    "key": "key.origins.secondary_active",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "change": 1,
+          "operation": "set",
+          "resource": "*:*_vtol_active"
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 50,
+          "action": {
+            "type": "origins:change_resource",
+            "change": 0,
+            "operation": "set",
+            "resource": "*:*_vtol_active"
+          }
+        }
+      ]
+    }
+  }
 }

@@ -512,7 +512,32 @@
     }
   },
   "evade_projectiles": {
-    "type": "proviorigins:evade_projectiles"
+    "type": "origins:modify_damage_taken",
+    "damage_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:name",
+          "name": "arrow"
+        },
+        {
+          "type": "origins:name",
+          "name": "arrow.item"
+        },
+        {
+          "type": "origins:name",
+          "name": "trident"
+        },
+        {
+          "type": "origins:name",
+          "name": "trident.item"
+        },
+        {
+          "type": "origins:name",
+          "name": "thrown.item"
+        }
+      ]
+    }
   },
   "fall": {
     "type": "origins:invulnerability",

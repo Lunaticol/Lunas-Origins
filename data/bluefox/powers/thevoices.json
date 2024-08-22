@@ -15,7 +15,7 @@
         },
         {
           "type": "origins:change_resource",
-          "change": -300,
+          "change": -200,
           "operation": "add",
           "resource": "*:soul_soul_bar"
         }
@@ -23,7 +23,7 @@
     },
     "condition": {
       "type": "origins:resource",
-      "compare_to": 300,
+      "compare_to": 200,
       "comparison": ">=",
       "resource": "*:soul_soul_bar"
     }

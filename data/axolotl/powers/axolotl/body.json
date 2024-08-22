@@ -255,6 +255,11 @@
           "calculation": "sum",
           "compare_to": 1,
           "comparison": "=="
+        },
+        {
+          "type": "origins:origin",
+          "layer": "luna:luna_layers",
+          "origin": "axolotl:axolotl_classes/green_axolotl"
         }
       ]
     }

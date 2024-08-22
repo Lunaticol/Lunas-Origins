@@ -1,15 +1,25 @@
 {
   "order": 2,
   "origins": [
+    "artificer:artificer",
     "ashley:ashley",
     "axolotl:axolotl",
+    "button:right_hand_button",
+    "button:button_lord",
+    "button:powerless",
+    "command:command",
+    "command:warrior/warrior",
     "hideandseek:hider",
     "hideandseek:seeker",
     "kitsune:kitsune",
     "kow:kow",
     "luna:luna",
+    "titans:scorch",
+    "titans:ronin",
+    "titans:northstar",
     "skyweaver:skyweaver",
     "phantom:crimson",
+    "commandarmor:commandarmor",
     "bluefox:kitsune"
   ]
 }

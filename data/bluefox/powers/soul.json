@@ -66,125 +66,6 @@
       ]
     }
   },
-  "health_1": {
-    "type": "origins:conditioned_attribute",
-    "tick_rate": 20,
-    "modifier": {
-      "operation": "addition",
-      "value": 2,
-      "attribute": "minecraft:generic.max_health"
-    },
-    "condition": {
-      "type": "origins:and",
-      "conditions": [
-        {
-          "type": "origins:resource",
-          "compare_to": 100,
-          "comparison": ">=",
-          "resource": "*:*_soul_bar"
-        },
-        {
-          "type": "origins:resource",
-          "compare_to": 199,
-          "comparison": "<=",
-          "resource": "*:*_soul_bar"
-        }
-      ]
-    }
-  },
-  "health_2": {
-    "type": "origins:conditioned_attribute",
-    "tick_rate": 20,
-    "modifier": {
-      "operation": "addition",
-      "value": 4,
-      "attribute": "minecraft:generic.max_health"
-    },
-    "condition": {
-      "type": "origins:and",
-      "conditions": [
-        {
-          "type": "origins:resource",
-          "compare_to": 200,
-          "comparison": ">=",
-          "resource": "*:*_soul_bar"
-        },
-        {
-          "type": "origins:resource",
-          "compare_to": 299,
-          "comparison": "<=",
-          "resource": "*:*_soul_bar"
-        }
-      ]
-    }
-  },
-  "health_3": {
-    "type": "origins:conditioned_attribute",
-    "tick_rate": 20,
-    "modifier": {
-      "operation": "addition",
-      "value": 6,
-      "attribute": "minecraft:generic.max_health"
-    },
-    "condition": {
-      "type": "origins:and",
-      "conditions": [
-        {
-          "type": "origins:resource",
-          "compare_to": 300,
-          "comparison": ">=",
-          "resource": "*:*_soul_bar"
-        },
-        {
-          "type": "origins:resource",
-          "compare_to": 399,
-          "comparison": "<=",
-          "resource": "*:*_soul_bar"
-        }
-      ]
-    }
-  },
-  "health_4": {
-    "type": "origins:conditioned_attribute",
-    "tick_rate": 20,
-    "modifier": {
-      "operation": "addition",
-      "value": 8,
-      "attribute": "minecraft:generic.max_health"
-    },
-    "condition": {
-      "type": "origins:and",
-      "conditions": [
-        {
-          "type": "origins:resource",
-          "compare_to": 400,
-          "comparison": ">=",
-          "resource": "*:*_soul_bar"
-        },
-        {
-          "type": "origins:resource",
-          "compare_to": 499,
-          "comparison": "<=",
-          "resource": "*:*_soul_bar"
-        }
-      ]
-    }
-  },
-  "health_5": {
-    "type": "origins:conditioned_attribute",
-    "tick_rate": 20,
-    "modifier": {
-      "operation": "addition",
-      "value": 10,
-      "attribute": "minecraft:generic.max_health"
-    },
-    "condition": {
-      "type": "origins:resource",
-      "compare_to": 500,
-      "comparison": ">=",
-      "resource": "*:*_soul_bar"
-    }
-  },
   "kill_particle": {
     "type": "origins:action_on_hit",
     "bientity_action": {
@@ -203,8 +84,8 @@
       "type": "origins:target_condition",
       "condition": {
         "type": "origins:health",
-        "compare_to": 0,
-        "comparison": "=="
+        "compare_to": 1,
+        "comparison": "<"
       }
     }
   },
@@ -212,7 +93,7 @@
     "type": "origins:self_action_on_kill",
     "entity_action": {
       "type": "origins:change_resource",
-      "change": 50,
+      "change": 100,
       "operation": "add",
       "resource": "*:*_soul_bar"
     },
@@ -374,17 +255,17 @@
     "type": "origins:self_action_on_hit",
     "entity_action": {
       "type": "origins:change_resource",
-      "change": 20,
+      "change": 15,
       "operation": "add",
       "resource": "*:*_soul_bar"
     }
   },
   "on_soulsand": {
     "type": "origins:action_over_time",
-    "interval": 20,
+    "interval": 15,
     "entity_action": {
       "type": "origins:change_resource",
-      "change": 20,
+      "change": 25,
       "operation": "add",
       "resource": "*:*_soul_bar"
     },
@@ -395,7 +276,7 @@
           "type": "origins:block_in_radius",
           "compare_to": 1,
           "comparison": ">=",
-          "radius": 1,
+          "radius": 2,
           "shape": "cube",
           "block_condition": {
             "type": "origins:in_tag",
@@ -404,5 +285,43 @@
         }
       ]
     }
+  },
+  "soul_weapons": {
+    "type": "origins:conditioned_attribute",
+    "tick_rate": 5,
+    "modifier": {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 0.3,
+      "operation": "multiply_base"
+    },
+    "condition": {
+      "type": "origins:equipped_item",
+      "equipment_slot": "mainhand",
+      "item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": {
+          "tag": "bluefox:soul_weapons"
+        }
+      }
+    }
+  },
+  "soul_tooltip": {
+    "type": "origins:tooltip",
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "tag": "bluefox:soul_weapons"
+      }
+    },
+    "texts": [
+      {
+        "text": "Aono Bonus:",
+        "color": "gray"
+      },
+      {
+        "text": "+30% Attack Damage",
+        "color": "blue"
+      }
+    ]
   }
 }

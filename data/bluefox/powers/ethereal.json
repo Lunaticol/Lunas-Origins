@@ -73,6 +73,18 @@
               "effect": "minecraft:saturation",
               "duration": 1000,
               "show_particles": false
+            },
+            {
+              "effect": "minecraft:regeneration",
+              "duration": 1000,
+              "amplifier": 1,
+              "show_particles": false
+            },
+            {
+              "effect": "minecraft:absorption",
+              "duration": 1000,
+              "amplifier": 4,
+              "show_particles": false
             }
           ]
         },
