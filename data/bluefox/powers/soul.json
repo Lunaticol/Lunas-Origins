@@ -48,20 +48,20 @@
       "type": "origins:or",
       "conditions": [
         {
-          "type": "origins:type",
-          "damage_type": "onFire"
+          "type": "origins:name",
+          "name": "onFire"
         },
         {
-          "type": "origins:type",
-          "damage_type": "onFire.player"
+          "type": "origins:name",
+          "name": "onFire.player"
         },
         {
-          "type": "origins:type",
-          "damage_type": "inFire"
+          "type": "origins:name",
+          "name": "inFire"
         },
         {
-          "type": "origins:type",
-          "damage_type": "inFire.player"
+          "type": "origins:name",
+          "name": "inFire.player"
         }
       ]
     }
@@ -195,62 +195,6 @@
       ]
     }
   },
-  "no_vampire_fail_safe": {
-    "type": "origins:action_on_callback",
-    "execute_chosen_when_orb": true,
-    "entity_action_added": {
-      "type": "origins:and",
-      "actions": [
-        {
-          "type": "origins:execute_command",
-          "command": "vampirism level none @s"
-        },
-        {
-          "type": "origins:execute_command",
-          "command": "/title @s actionbar {\"text\":\"The Spirits disspell the dark magic in you.\",\"color\":\"dark_blue\",\"bold\":true}"
-        }
-      ]
-    },
-    "entity_action_gained": {
-      "type": "origins:and",
-      "actions": [
-        {
-          "type": "origins:execute_command",
-          "command": "vampirism level none @s"
-        },
-        {
-          "type": "origins:execute_command",
-          "command": "/title @s actionbar {\"text\":\"The Spirits disspell the dark magic in you.\",\"color\":\"dark_blue\",\"bold\":true}"
-        }
-      ]
-    },
-    "entity_action_chosen": {
-      "type": "origins:and",
-      "actions": [
-        {
-          "type": "origins:execute_command",
-          "command": "vampirism level none @s"
-        },
-        {
-          "type": "origins:execute_command",
-          "command": "/title @s actionbar {\"text\":\"The Spirits disspell the dark magic in you.\",\"color\":\"dark_blue\",\"bold\":true}"
-        }
-      ]
-    },
-    "entity_action_respawned": {
-      "type": "origins:and",
-      "actions": [
-        {
-          "type": "origins:execute_command",
-          "command": "vampirism level none @s"
-        },
-        {
-          "type": "origins:execute_command",
-          "command": "/title @s actionbar {\"text\":\"The Spirits disspell the dark magic in you.\",\"color\":\"dark_blue\",\"bold\":true}"
-        }
-      ]
-    }
-  },
   "soul_siphon": {
     "type": "origins:self_action_on_hit",
     "entity_action": {
@@ -323,5 +267,97 @@
         "color": "blue"
       }
     ]
+  },
+  "i_just_love_dimensional_kitsunes_sonic": {
+    "type": "origins:action_over_time",
+    "interval": 40,
+    "entity_action": {
+      "type": "origins:area_of_effect",
+      "radius": 8,
+      "shape": "sphere",
+      "bientity_action": {
+        "type": "origins:target_action",
+        "action": {
+          "type": "origins:change_resource",
+          "change": 100,
+          "operation": "add",
+          "resource": "kitsune:kitsune/nether/soul_mode_soul_bar"
+        }
+      },
+      "bientity_condition": {
+        "type": "origins:target_condition",
+        "condition": {
+          "type": "origins:origin",
+          "layer": "luna:luna_layers",
+          "origin": "kitsune:kitsune_classes/nether_kitsune"
+        }
+      }
+    }
+  },
+  "restrict_armor": {
+    "type": "origins:restrict_armor",
+    "head": {
+      "type": "origins:armor_value",
+      "comparison": ">",
+      "compare_to": 3
+    },
+    "chest": {
+      "type": "origins:armor_value",
+      "comparison": ">",
+      "compare_to": 8
+    },
+    "legs": {
+      "type": "origins:armor_value",
+      "comparison": ">",
+      "compare_to": 6
+    },
+    "feet": {
+      "type": "origins:armor_value",
+      "comparison": ">",
+      "compare_to": 3
+    }
+  },
+  "mobs_ignore": {
+    "type": "apugli:mobs_ignore",
+    "mob_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:entity_type",
+          "entity_type": "minecraft:vex"
+        },
+        {
+          "type": "origins:entity_type",
+          "entity_type": "iceandfire:ghost"
+        }
+      ]
+    }
+  },
+  "priest_armor_is_annoying": {
+    "type": "origins:restrict_armor",
+    "head": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "tag": "bluefox:priestarmor"
+      }
+    },
+    "chest": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "tag": "bluefox:priestarmor"
+      }
+    },
+    "legs": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "tag": "bluefox:priestarmor"
+      }
+    },
+    "feet": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "tag": "bluefox:priestarmor"
+      }
+    }
   }
 }

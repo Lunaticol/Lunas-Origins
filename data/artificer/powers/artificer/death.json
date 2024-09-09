@@ -32,26 +32,6 @@
         {
           "type": "origins:execute_command",
           "command": "playsound minecraft:entity.generic.explode master @s ~ ~ ~ 100 1"
-        },
-        {
-          "type": "moborigins:damage_equipment",
-          "equipment_slot": "head",
-          "amount": 50
-        },
-        {
-          "type": "moborigins:damage_equipment",
-          "equipment_slot": "chest",
-          "amount": 50
-        },
-        {
-          "type": "moborigins:damage_equipment",
-          "equipment_slot": "legs",
-          "amount": 50
-        },
-        {
-          "type": "moborigins:damage_equipment",
-          "equipment_slot": "feet",
-          "amount": 50
         }
       ]
     },

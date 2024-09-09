@@ -612,10 +612,6 @@
       "comparison": "=="
     }
   },
-  "no_vampire": {
-    "type": "origins:effect_immunity",
-    "effect": "vampirism:sanguinare"
-  },
   "recharge": {
     "type": "origins:action_over_time",
     "interval": 50,
@@ -648,7 +644,7 @@
       "value": 2
     }
   },
-  "overworld_size": {
+  "size": {
     "type": "origins:action_on_callback",
     "execute_chosen_when_orb": true,
     "entity_action_chosen": {
@@ -672,7 +668,7 @@
       "command": "scale set pehkui:height 1 @s"
     }
   },
-  "overworld_width": {
+  "width": {
     "type": "origins:action_on_callback",
     "entity_action_chosen": {
       "type": "origins:execute_command",
@@ -693,6 +689,51 @@
     "entity_action_removed": {
       "type": "origins:execute_command",
       "command": "scale set pehkui:width 1 @s"
+    }
+  },
+  "advancement": {
+    "type": "origins:action_on_callback",
+    "entity_action_chosen": {
+      "type": "origins:grant_advancement",
+      "advancement": "luna:aono/aono"
+    }
+  },
+  "sounds": {
+    "type": "origins:action_over_time",
+    "interval": 100,
+    "entity_action": {
+      "type": "origins:chance",
+      "chance": 0.5,
+      "action": {
+        "type": "origins:play_sound",
+        "sound": "minecraft:entity.fox.ambient",
+        "category": "ambient",
+        "pitch": 1,
+        "volume": 1
+      }
+    },
+    "condition": {
+      "type": "origins:sneaking",
+      "inverted": true
+    }
+  },
+  "fox_hurt": {
+    "type": "origins:action_when_damage_taken",
+    "cooldown": 0,
+    "entity_action": {
+      "type": "origins:play_sound",
+      "sound": "minecraft:entity.fox.hurt",
+      "category": "ambient",
+      "pitch": 1,
+      "volume": 1
+    }
+  },
+  "soul_luck": {
+    "type": "origins:attribute",
+    "modifier": {
+      "value": 5,
+      "operation": "addition",
+      "attribute": "minecraft:generic.luck"
     }
   }
 }

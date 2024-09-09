@@ -1,6 +1,6 @@
 {
-  "name": "",
-  "description": "",
+  "name": "Warden Trick",
+  "description": "Appear to grow large, and gain strength.",
   "type": "origins:multiple",
   "warden_trick": {
     "type": "origins:active_self",
@@ -52,38 +52,18 @@
       "bar_index": 19
     },
     "key": {
-      "key": "key.origins.ternary_active"
+      "key": "key.origins.tertiary_active"
     }
   },
   "if_change": {
     "type": "origins:action_on_callback",
     "entity_action_lost": {
-      "type": "origins:and",
-      "actions": [
-        {
-          "type": "origins:revoke_power",
-          "power": "kitsune:kitsune/end/tricks/warden_trick",
-          "source": "kitsune:kitsune/end/tricks/warden_trick"
-        },
-        {
-          "type": "origins:execute_command",
-          "command": "scale reset @s"
-        }
-      ]
+      "type": "origins:execute_command",
+      "command": "scale reset @s"
     },
     "entity_action_removed": {
-      "type": "origins:and",
-      "actions": [
-        {
-          "type": "origins:revoke_power",
-          "power": "kitsune:kitsune/end/tricks/warden_trick",
-          "source": "kitsune:kitsune/end/tricks/warden_trick"
-        },
-        {
-          "type": "origins:execute_command",
-          "command": "scale reset @s"
-        }
-      ]
+      "type": "origins:execute_command",
+      "command": "scale reset @s"
     }
   },
   "pa_reset": {

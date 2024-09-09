@@ -7,7 +7,8 @@
   "impact": 2,
   "order": 1,
   "powers": [
-    "kitsune:kitsune/end/trickery",
+    "kitsune:kitsune/end/tricks/phantom_trick",
+    "kitsune:kitsune/end/tricks/warden_trick",
     "kitsune:kitsune/end/ender_body",
     "kitsune:kitsune/end/teleport"
   ]

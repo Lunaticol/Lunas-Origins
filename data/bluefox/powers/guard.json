@@ -6,6 +6,16 @@
     "type": "apugli:energy_swirl",
     "texture_location": "minecraft:textures/entity/creeper/creeper_armor.png",
     "speed": 0.01,
+    "size": 1.04,
+    "condition": {
+      "type": "origins:power_active",
+      "power": "*:*_toggle"
+    }
+  },
+  "shield_2": {
+    "type": "apugli:energy_swirl",
+    "texture_location": "minecraft:textures/entity/creeper/creeper_armor.png",
+    "speed": -0.01,
     "size": 1.05,
     "condition": {
       "type": "origins:power_active",
@@ -210,7 +220,7 @@
     "interval": 5,
     "entity_action": {
       "type": "origins:execute_command",
-      "command": "particle dust_color_transition 0.020 0.051 1.000 1 0.188 0.945 1.000 ~ ~ ~ 0.5 0.5 0.5 1 10 force"
+      "command": "particle dust_color_transition 0.020 0.051 1.000 1 0.349 1.000 0.957 ~ ~ ~ 0.5 0.5 0.5 1 10 force"
     },
     "condition": {
       "type": "origins:power_active",

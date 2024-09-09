@@ -12,7 +12,8 @@
     "titans:ronin/aegis/ghost_machine",
     "titans:ronin/aegis/kinetic_transfer",
     "titans:ronin/aegis/wraith",
-    "titans:ronin/aegis/blademaster"
+    "titans:ronin/aegis/blademaster",
+    "titans:create"
   ],
   "icon": "minecraft:netherite_sword",
   "order": 9,

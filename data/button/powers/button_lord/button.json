@@ -318,21 +318,6 @@
   },
   "invincible": {
     "type": "origins:invulnerability",
-    "damage_condition": {
-      "type": "origins:and",
-      "conditions": [
-        {
-          "type": "origins:attacker",
-          "entity_condition": {
-            "type": "origins:entity_type",
-            "entity_type": "minecraft:player"
-          }
-        },
-        {
-          "type": "moborigins:is_magic"
-        }
-      ]
-    },
     "condition": {
       "type": "origins:resource",
       "compare_to": 1,
@@ -341,7 +326,14 @@
     }
   },
   "evade": {
-    "type": "proviorigins:evade_projectiles",
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "value": -1,
+      "operation": "multiply_total"
+    },
+    "damage_condition": {
+      "type": "origins:projectile"
+    },
     "condition": {
       "type": "origins:resource",
       "compare_to": 1,

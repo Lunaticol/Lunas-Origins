@@ -69,26 +69,6 @@
           "command": "particle dust_color_transition 0.000 0.000 0.000 2 0.439 0.408 0.408 ~ ~ ~ 2 2 2 1 100 normal"
         },
         {
-          "type": "moborigins:damage_equipment",
-          "equipment_slot": "head",
-          "amount": 5
-        },
-        {
-          "type": "moborigins:damage_equipment",
-          "equipment_slot": "chest",
-          "amount": 5
-        },
-        {
-          "type": "moborigins:damage_equipment",
-          "equipment_slot": "legs",
-          "amount": 5
-        },
-        {
-          "type": "moborigins:damage_equipment",
-          "equipment_slot": "feet",
-          "amount": 5
-        },
-        {
           "type": "origins:explode",
           "create_fire": false,
           "damage_self": true,

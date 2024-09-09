@@ -1,6 +1,6 @@
 {
-  "name": "",
-  "description": "",
+  "name": "Phantom Trick",
+  "description": "Go completely invisible by sneaking. Just dont get hit!",
   "type": "origins:multiple",
   "sneak": {
     "type": "origins:invisibility",
@@ -17,6 +17,12 @@
           "compare_to": 0,
           "comparison": "==",
           "resource": "*:*_invis_sneak"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "kitsune:kitsune/power_active_trick"
         }
       ]
     }
@@ -64,6 +70,20 @@
               }
             ]
           }
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:sneaking"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:*_invis_sneak"
         }
       ]
     }

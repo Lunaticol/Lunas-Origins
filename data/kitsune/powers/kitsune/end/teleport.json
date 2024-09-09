@@ -22,7 +22,10 @@
     }
   },
   "evade_projectiles": {
-    "type": "proviorigins:evade_projectiles",
+    "type": "origins:self_action_when_hit",
+    "damage_condition": {
+      "type": "origins:projectile"
+    },
     "entity_action": {
       "type": "origins:if_else_list",
       "actions": [
@@ -157,6 +160,16 @@
     "condition": {
       "type": "origins:power_active",
       "power": "*:*_toggle"
+    }
+  },
+  "projectiles_no_hurt": {
+    "type": "origins:modify_damage_taken",
+    "damage_condition": {
+      "type": "origins:projectile"
+    },
+    "modifier": {
+      "operation": "multiply_total",
+      "value": -0.9999
     }
   }
 }

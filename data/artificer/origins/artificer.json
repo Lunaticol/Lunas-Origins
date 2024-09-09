@@ -10,7 +10,6 @@
     "artificer:artificer/death"
   ],
   "icon": "minecraft:tnt",
-  "unchoosable": true,
   "order": 9,
   "impact": 2,
   "name": "The Artificer",

@@ -5,7 +5,6 @@
   "loading_priority": 1,
   "impact": 3,
   "order": 1,
-  "unchoosable": true,
   "powers": [
     "kitsune:kitsune/mode_switch",
     "kitsune:kitsune/body",

@@ -180,5 +180,18 @@
       "comparison": "==",
       "resource": "*:soul_soul_bar"
     }
+  },
+  "glow": {
+    "type": "origins:self_glow",
+    "blue": 0.90588235294,
+    "green": 0.86666666666,
+    "red": 0,
+    "use_teams": false,
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_domain_active"
+    }
   }
 }

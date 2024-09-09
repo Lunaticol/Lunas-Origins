@@ -1,3 +1,25 @@
 {
-  "type": "origins:multiple"
+  "type": "origins:multiple",
+  "name": "Laser of Death",
+  "description": "Death",
+  "laser": {
+    "type": "origins:active_self",
+    "cooldown": 500,
+    "entity_action": {
+      "type": "origins:raycast",
+      "command_along_ray": "function button:button_lord/ray",
+      "command_at_hit": "function button:button_lord/ray_hit",
+      "hit_action": {
+        "type": "origins:damage",
+        "amount": 100,
+        "source": {
+          "bypasses_armor": true,
+          "fire": true,
+          "magic": true,
+          "out_of_world": true,
+          "unblockable": true
+        }
+      }
+    }
+  }
 }
