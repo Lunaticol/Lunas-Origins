@@ -7,15 +7,15 @@
     "execute_chosen_when_orb": true,
     "entity_action_chosen": {
       "type": "origins:execute_command",
-      "command": "scale set pehkui:height 1.5 @s"
+      "command": "scale set pehkui:height 2.5 @s"
     },
     "entity_action_respawned": {
       "type": "origins:execute_command",
-      "command": "scale set pehkui:height 1.5 @s"
+      "command": "scale set pehkui:height 2.5 @s"
     },
     "entity_action_added": {
       "type": "origins:execute_command",
-      "command": "scale set pehkui:height 1.5 @s"
+      "command": "scale set pehkui:height 2.5 @s"
     },
     "entity_action_lost": {
       "type": "origins:execute_command",
@@ -33,7 +33,7 @@
       "actions": [
         {
           "type": "origins:execute_command",
-          "command": "scale set pehkui:width 1.5 @s",
+          "command": "scale set pehkui:width 2.5 @s",
           "permission_level": 4
         },
         {
@@ -44,11 +44,11 @@
     },
     "entity_action_respawned": {
       "type": "origins:execute_command",
-      "command": "scale set pehkui:width 1.5 @s"
+      "command": "scale set pehkui:width 2.5 @s"
     },
     "entity_action_added": {
       "type": "origins:execute_command",
-      "command": "scale set pehkui:width 1.5 @s"
+      "command": "scale set pehkui:width 2.5 @s"
     },
     "entity_action_lost": {
       "type": "origins:execute_command",
@@ -87,7 +87,7 @@
     "update_health": true,
     "modifier": {
       "attribute": "minecraft:generic.max_health",
-      "value": 5,
+      "value": 15,
       "operation": "addition"
     }
   },
@@ -495,7 +495,7 @@
         {
           "type": "origins:health",
           "comparison": "<=",
-          "compare_to": 10
+          "compare_to": 20
         }
       ]
     }
@@ -525,12 +525,12 @@
             "conditions": [
               {
                 "type": "origins:health",
-                "compare_to": 20,
+                "compare_to": 30,
                 "comparison": "<="
               },
               {
                 "type": "origins:health",
-                "compare_to": 16,
+                "compare_to": 26,
                 "comparison": ">="
               }
             ]
@@ -543,7 +543,7 @@
           },
           "condition": {
             "type": "origins:health",
-            "compare_to": 15,
+            "compare_to": 25,
             "comparison": "<="
           }
         }
@@ -634,7 +634,7 @@
     "type": "origins:attribute",
     "modifier": {
       "attribute": "minecraft:generic.attack_speed",
-      "value": -0.05,
+      "value": -0.1,
       "operation": "addition"
     }
   },
@@ -646,5 +646,9 @@
         "tag": "titans:bow"
       }
     }
+  },
+  "effect_immunity": {
+    "type": "origins:effect_immunity",
+    "effect": "biomancy:bleed"
   }
 }

@@ -13,7 +13,8 @@
     "titans:ronin/aegis/kinetic_transfer",
     "titans:ronin/aegis/wraith",
     "titans:ronin/aegis/blademaster",
-    "titans:create"
+    "titans:create",
+    "titans:sound"
   ],
   "icon": "minecraft:netherite_sword",
   "order": 9,

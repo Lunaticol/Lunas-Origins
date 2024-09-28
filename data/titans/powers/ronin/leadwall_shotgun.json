@@ -10,7 +10,7 @@
     "entity_type": "minecraft:arrow",
     "divergence": 20,
     "count": 8,
-    "speed": 1,
+    "speed": 2,
     "tag": "{pickup:1b,damage:25d,crit:1b}",
     "shooter_action": {
       "type": "origins:execute_command",

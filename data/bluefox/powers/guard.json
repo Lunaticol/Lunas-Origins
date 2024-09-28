@@ -1,6 +1,6 @@
 {
   "name": "Soul Barrier",
-  "description": "You can use your souls to void damage. This uses souls and getting hit may cause souls to disipate.\nRequires above 100 souls.",
+  "description": "You can use your souls to void damage. This uses souls and getting hit may cause souls to disipate.\nRequires above 200 souls.",
   "type": "origins:multiple",
   "shield": {
     "type": "apugli:energy_swirl",
@@ -53,7 +53,7 @@
         "type": "origins:change_resource",
         "resource": "*:soul_soul_bar",
         "operation": "add",
-        "change": -5
+        "change": -15
       }
     },
     "condition": {
@@ -88,7 +88,7 @@
         "type": "origins:change_resource",
         "resource": "*:soul_soul_bar",
         "operation": "add",
-        "change": -10
+        "change": -20
       }
     },
     "condition": {
@@ -123,7 +123,7 @@
         "type": "origins:change_resource",
         "resource": "*:soul_soul_bar",
         "operation": "add",
-        "change": -15
+        "change": -25
       }
     },
     "condition": {
@@ -158,7 +158,7 @@
         "type": "origins:change_resource",
         "resource": "*:soul_soul_bar",
         "operation": "add",
-        "change": -15
+        "change": -30
       }
     },
     "condition": {
@@ -193,7 +193,7 @@
         "type": "origins:change_resource",
         "resource": "*:soul_soul_bar",
         "operation": "add",
-        "change": -20
+        "change": -35
       }
     },
     "condition": {
@@ -219,12 +219,82 @@
     "type": "origins:action_over_time",
     "interval": 5,
     "entity_action": {
-      "type": "origins:execute_command",
-      "command": "particle dust_color_transition 0.020 0.051 1.000 1 0.349 1.000 0.957 ~ ~ ~ 0.5 0.5 0.5 1 10 force"
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "particle dust_color_transition 0.020 0.051 1.000 1 0.349 1.000 0.957 ~ ~ ~ 0.5 0.5 0.5 1 10 force"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "particle dust_color_transition 0.349 1.000 0.957 1 0.020 0.051 1.000 ~ ~ ~ 0.5 0.5 0.5 1 10 force"
+        }
+      ]
     },
     "condition": {
       "type": "origins:power_active",
       "power": "*:*_toggle"
+    }
+  },
+  "when_hit_magic": {
+    "type": "origins:action_when_hit",
+    "bientity_action": {
+      "type": "origins:target_action",
+      "action": {
+        "type": "origins:change_resource",
+        "resource": "*:soul_soul_bar",
+        "operation": "add",
+        "change": -50
+      }
+    },
+    "condition": {
+      "type": "origins:power_active",
+      "power": "*:*_toggle"
+    },
+    "damage_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "apugli:magic"
+        }
+      ]
+    }
+  },
+  "when_hit_fire": {
+    "type": "origins:action_when_hit",
+    "bientity_action": {
+      "type": "origins:target_action",
+      "action": {
+        "type": "origins:change_resource",
+        "resource": "*:soul_soul_bar",
+        "operation": "add",
+        "change": -50
+      }
+    },
+    "condition": {
+      "type": "origins:power_active",
+      "power": "*:*_toggle"
+    },
+    "damage_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:name",
+          "name": "onFire"
+        },
+        {
+          "type": "origins:name",
+          "name": "onFire.player"
+        },
+        {
+          "type": "origins:name",
+          "name": "inFire"
+        },
+        {
+          "type": "origins:name",
+          "name": "inFire.player"
+        }
+      ]
     }
   }
 }

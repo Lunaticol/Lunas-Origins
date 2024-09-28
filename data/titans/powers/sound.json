@@ -1,0 +1,213 @@
+{
+  "type": "origins:multiple",
+  "hit_ronin": {
+    "type": "origins:action_when_damage_taken",
+    "cooldown": 200,
+    "entity_action": {
+      "type": "origins:chance",
+      "chance": 0.25,
+      "action": {
+        "type": "origins:execute_command",
+        "command": "cozyboard \"https://memebase.net/files/file-1726797873168.mp3\" @s"
+      },
+      "fail_action": {
+        "type": "origins:chance",
+        "chance": 0.25,
+        "action": {
+          "type": "origins:execute_command",
+          "command": "cozyboard \"https://memebase.net/files/file-1726797882857.mp3\" @s"
+        },
+        "fail_action": {
+          "type": "origins:chance",
+          "chance": 0.25,
+          "action": {
+            "type": "origins:execute_command",
+            "command": "cozyboard \"https://memebase.net/files/file-1726797887334.mp3\" @s"
+          },
+          "fail_action": {
+            "type": "origins:chance",
+            "chance": 0.25,
+            "action": {
+              "type": "origins:execute_command",
+              "command": "cozyboard \"https://memebase.net/files/file-1726797891527.mp3\" @s"
+            },
+            "fail_action": {
+              "type": "origins:chance",
+              "chance": 0.25,
+              "action": {
+                "type": "origins:execute_command",
+                "command": "cozyboard \"https://memebase.net/files/file-1726797895926.mp3\" @s"
+              },
+              "fail_action": {
+                "type": "origins:chance",
+                "chance": 0.25,
+                "action": {
+                  "type": "origins:execute_command",
+                  "command": "cozyboard \"https://memebase.net/files/file-1726797900566.mp3\" @s"
+                },
+                "fail_action": {
+                  "type": "origins:chance",
+                  "chance": 0.25,
+                  "action": {
+                    "type": "origins:execute_command",
+                    "command": "cozyboard \"https://memebase.net/files/file-1726797904691.mp3\" @s"
+                  },
+                  "fail_action": {
+                    "type": "origins:chance",
+                    "chance": 0.25,
+                    "action": {
+                      "type": "origins:execute_command",
+                      "command": "cozyboard \"https://memebase.net/files/file-1726797909668.mp3\" @s"
+                    },
+                    "fail_action": {
+                      "type": "origins:chance",
+                      "chance": 0.25,
+                      "action": {
+                        "type": "origins:execute_command",
+                        "command": "cozyboard \"https://memebase.net/files/file-1726797913809.mp3\" @s"
+                      },
+                      "fail_action": {
+                        "type": "origins:chance",
+                        "chance": 0.25,
+                        "action": {
+                          "type": "origins:execute_command",
+                          "command": "cozyboard \"https://memebase.net/files/file-1726797919757.mp3\" @s"
+                        },
+                        "fail_action": {
+                          "type": "origins:chance",
+                          "chance": 0.25,
+                          "action": {
+                            "type": "origins:execute_command",
+                            "command": "cozyboard \"https://memebase.net/files/file-1726797924232.mp3\" @s"
+                          },
+                          "fail_action": {
+                            "type": "origins:chance",
+                            "chance": 0.25,
+                            "action": {
+                              "type": "origins:execute_command",
+                              "command": "cozyboard \"https://memebase.net/files/file-1726797928170.mp3\" @s"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "condition": {
+      "type": "origins:origin",
+      "origin": "titans:scorch",
+      "layer": "origins:origin"
+    }
+  },
+  "hit_scorch": {
+    "type": "origins:action_when_damage_taken",
+    "cooldown": 200,
+    "entity_action": {
+      "type": "origins:chance",
+      "chance": 0.25,
+      "action": {
+        "type": "origins:execute_command",
+        "command": "cozyboard \"https://memebase.net/files/file-1726680281967.mp3\" @s"
+      },
+      "fail_action": {
+        "type": "origins:chance",
+        "chance": 0.25,
+        "action": {
+          "type": "origins:execute_command",
+          "command": "cozyboard \"https://memebase.net/files/file-1726680234483.mp3\" @s"
+        },
+        "fail_action": {
+          "type": "origins:chance",
+          "chance": 0.25,
+          "action": {
+            "type": "origins:execute_command",
+            "command": "cozyboard \"https://memebase.net/files/file-1726680275403.mp3\" @s"
+          },
+          "fail_action": {
+            "type": "origins:chance",
+            "chance": 0.25,
+            "action": {
+              "type": "origins:execute_command",
+              "command": "cozyboard \"https://memebase.net/files/file-1726680268517.mp3\" @s"
+            },
+            "fail_action": {
+              "type": "origins:chance",
+              "chance": 0.25,
+              "action": {
+                "type": "origins:execute_command",
+                "command": "cozyboard \"https://memebase.net/files/file-1726680261926.mp3\" @s"
+              },
+              "fail_action": {
+                "type": "origins:chance",
+                "chance": 0.25,
+                "action": {
+                  "type": "origins:execute_command",
+                  "command": "cozyboard \"https://memebase.net/files/file-1726680254196.mp3\" @s"
+                },
+                "fail_action": {
+                  "type": "origins:chance",
+                  "chance": 0.25,
+                  "action": {
+                    "type": "origins:execute_command",
+                    "command": "cozyboard \"https://memebase.net/files/file-1726680227322.mp3\" @s"
+                  },
+                  "fail_action": {
+                    "type": "origins:chance",
+                    "chance": 0.25,
+                    "action": {
+                      "type": "origins:execute_command",
+                      "command": "cozyboard \"https://memebase.net/files/file-1726680216752.mp3\" @s"
+                    },
+                    "fail_action": {
+                      "type": "origins:chance",
+                      "chance": 0.25,
+                      "action": {
+                        "type": "origins:execute_command",
+                        "command": "cozyboard \"https://memebase.net/files/file-1726680204465.mp3\" @s"
+                      },
+                      "fail_action": {
+                        "type": "origins:chance",
+                        "chance": 0.25,
+                        "action": {
+                          "type": "origins:execute_command",
+                          "command": "cozyboard \"https://memebase.net/files/file-1726680195909.mp3\" @s"
+                        },
+                        "fail_action": {
+                          "type": "origins:chance",
+                          "chance": 0.25,
+                          "action": {
+                            "type": "origins:execute_command",
+                            "command": "cozyboard \"https://memebase.net/files/file-1726680186050.mp3\" @s"
+                          },
+                          "fail_action": {
+                            "type": "origins:chance",
+                            "chance": 0.25,
+                            "action": {
+                              "type": "origins:execute_command",
+                              "command": "cozyboard \"https://memebase.net/files/file-1726680174727.mp3\" @s"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "condition": {
+      "type": "origins:origin",
+      "origin": "titans:ronin",
+      "layer": "origins:origin"
+    }
+  }
+}

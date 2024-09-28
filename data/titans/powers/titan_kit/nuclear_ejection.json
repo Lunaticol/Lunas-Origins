@@ -2,7 +2,7 @@
   "hidden": true,
   "type": "origins:multiple",
   "name": "Nuclear Ejection",
-  "description": "At your reactor level, you can unleash a violent explosion.",
+  "description": "At your reactor level, you can unleash a violent explosion while ejecting.",
   "death": {
     "type": "origins:action_over_time",
     "interval": 5,

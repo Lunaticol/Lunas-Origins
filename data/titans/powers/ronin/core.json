@@ -37,20 +37,7 @@
     "type": "origins:modify_damage_dealt",
     "modifier": {
       "operation": "addition",
-      "value": 4
-    },
-    "damage_condition": {
-      "type": "origins:or",
-      "conditions": [
-        {
-          "type": "origins:name",
-          "name": "player"
-        },
-        {
-          "type": "origins:name",
-          "name": "player.item"
-        }
-      ]
+      "value": 6
     },
     "condition": {
       "type": "origins:resource",

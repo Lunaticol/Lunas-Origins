@@ -16,7 +16,7 @@
         },
         {
           "type": "origins:execute_command",
-          "command": "particle minecraft:crit ~ ~ ~ 0.5 1.5 0.5 0 100 force"
+          "command": "particle minecraft:crit ~ ~ ~ 1 2.5 1 0 100 force"
         }
       ]
     },
@@ -109,6 +109,46 @@
       "compare_to": 1,
       "comparison": "==",
       "resource": "*:*_block_resource"
+    }
+  },
+  "block_effects": {
+    "type": "origins:effect_immunity",
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": "==",
+          "resource": "*:*_block_resource"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:ronin/core_core_active"
+        }
+      ]
+    }
+  },
+  "block_effects_core": {
+    "type": "origins:effect_immunity",
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": "==",
+          "resource": "*:*_block_resource"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": "==",
+          "resource": "*:ronin/core_core_active"
+        }
+      ]
     }
   }
 }

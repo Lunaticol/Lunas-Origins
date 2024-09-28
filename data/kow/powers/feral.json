@@ -21,17 +21,26 @@
       ]
     },
     "condition": {
-      "type": "origins:or",
+      "type": "origins:and",
       "conditions": [
         {
-          "type": "origins:block_collision",
-          "offset_x": 0.1,
-          "offset_z": 0.1
+          "type": "origins:or",
+          "conditions": [
+            {
+              "type": "origins:block_collision",
+              "offset_x": 0.1,
+              "offset_z": 0.1
+            },
+            {
+              "type": "origins:block_collision",
+              "offset_x": -0.1,
+              "offset_z": -0.1
+            }
+          ]
         },
         {
-          "type": "origins:block_collision",
-          "offset_x": -0.1,
-          "offset_z": -0.1
+          "type": "origins:power_active",
+          "power": "*:*_toggle"
         }
       ]
     }
@@ -78,5 +87,10 @@
       "attribute": "minecraft:generic.max_health",
       "operation": "addition"
     }
+  },
+  "toggle": {
+    "type": "origins:toggle",
+    "key": { "key": "key.origins.primary_active" },
+    "active_by_default": false
   }
 }

@@ -118,7 +118,7 @@
       "bar_index": 23
     },
     "key": {
-      "key": "key.origins.ternary_active"
+      "key": "key.origins.tertiary_active"
     },
     "entity_action": {
       "type": "origins:and",

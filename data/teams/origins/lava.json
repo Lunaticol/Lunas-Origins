@@ -1,0 +1,8 @@
+{
+  "powers": ["teams:lava"],
+  "icon": "minecraft:lava_bucket",
+  "order": 9,
+  "impact": 0,
+  "name": "Team Lava",
+  "description": "You are on Team Lava! Your goal is to kill members of team Acid!"
+}

@@ -1,0 +1,8 @@
+{
+  "powers": ["teams:acid"],
+  "icon": "alexscaves:acid_bucket",
+  "order": 9,
+  "impact": 0,
+  "name": "Team Acid",
+  "description": "You are on Team Acid! Your goal is to kill members of team Lava!"
+}

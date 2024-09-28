@@ -12,7 +12,8 @@
     "titans:scorch/aegis/chassis_upgrade",
     "titans:scorch/aegis/explosive_barrels",
     "titans:scorch/aegis/more_trouble",
-    "titans:create"
+    "titans:create",
+    "titans:sound"
   ],
   "icon": "minecraft:fire_charge",
   "order": 9,

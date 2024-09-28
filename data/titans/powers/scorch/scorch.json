@@ -546,5 +546,8 @@
   "fall": {
     "type": "origins:invulnerability",
     "damage_condition": { "type": "origins:name", "name": "fall" }
+  },
+  "explode": {
+    "type": "origins:"
   }
 }

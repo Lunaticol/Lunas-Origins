@@ -1,0 +1,124 @@
+{
+  "name": "Fallen Star",
+  "description": "Fire a crystal that launches entities upwards where it lands. Reactivate within 3 seconds to slam affected entities downwards. This can be used on yourself.",
+  "badges": [
+    {
+      "type": "origins:tooltip",
+      "text": "[Primary]",
+      "sprite": "origins:textures/gui/badge/info.png"
+    }
+  ],
+  "type": "origins:multiple",
+  "active": {
+    "type": "origins:active_self",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:raycast",
+          "distance": 30,
+          "block": true,
+          "entity": true,
+          "shape_type": "collider",
+          "fluid_handling": "none",
+          "before_action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:play_sound",
+                "sound": "minecraft:entity.arrow.shoot",
+                "volume": 1,
+                "pitch": 2
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "/particle dust 1 0 0.44 1 ~ ~1 ~ 0.25 0.5 0.25 0 10"
+              }
+            ]
+          },
+          "hit_action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:area_of_effect",
+                "radius": 3,
+                "include_target": true,
+                "bientity_action": {
+                  "type": "origins:actor_action",
+                  "action": {
+                    "type": "origins:and",
+                    "actions": [
+                      {
+                        "type": "origins:add_velocity",
+                        "x": 0,
+                        "y": 1,
+                        "space": "world",
+                        "client": true,
+                        "server": true,
+                        "set": true
+                      },
+                      {
+                        "type": "origins:apply_effect",
+                        "effect": {
+                          "effect": "minecraft:levitation",
+                          "duration": 60,
+                          "amplifier": 0,
+                          "is_ambient": true,
+                          "show_particles": false,
+                          "show_icon": false
+                        }
+                      },
+                      {
+                        "type": "origins:execute_command",
+                        "command": "/tag @s add star"
+                      },
+                      {
+                        "type": "origins:delay",
+                        "action": {
+                          "type": "origins:execute_command",
+                          "command": "/tag @s remove star"
+                        },
+                        "ticks": 60
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "type": "origins:play_sound",
+                "sound": "minecraft:block.amethyst_block.resonate",
+                "volume": 1,
+                "pitch": 1
+              }
+            ]
+          },
+          "command_at_hit": "/particle dust 1 0 0.44 1 ~ ~ ~ 1 0 1 0.01 30",
+          "command_along_ray": "/particle dust 1 0 0.44 1 ~ ~ ~ 0 0 0 0 1"
+        }
+      ]
+    },
+    "cooldown": 160,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+      "bar_index": 16
+    },
+    "key": {
+      "key": "key.origins.primary_active"
+    }
+  },
+  "slam": {
+    "type": "origins:active_self",
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "/power grant @e[tag=star,distance=..50] sub:fall"
+    },
+    "cooldown": 20,
+    "hud_render": {
+      "should_render": false
+    },
+    "key": {
+      "key": "key.origins.primary_active"
+    }
+  }
+}

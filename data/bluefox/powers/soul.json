@@ -4,7 +4,7 @@
   "type": "origins:multiple",
   "soul_bar": {
     "type": "origins:resource",
-    "max": 1000,
+    "max": 2000,
     "min": 0,
     "hud_render": {
       "should_render": true,
@@ -32,7 +32,7 @@
     "type": "origins:modify_damage_taken",
     "modifier": {
       "operation": "multiply_total",
-      "value": 3
+      "value": 1.5
     },
     "damage_condition": {
       "type": "apugli:magic"
@@ -199,17 +199,17 @@
     "type": "origins:self_action_on_hit",
     "entity_action": {
       "type": "origins:change_resource",
-      "change": 15,
+      "change": 20,
       "operation": "add",
       "resource": "*:*_soul_bar"
     }
   },
   "on_soulsand": {
     "type": "origins:action_over_time",
-    "interval": 15,
+    "interval": 5,
     "entity_action": {
       "type": "origins:change_resource",
-      "change": 25,
+      "change": 50,
       "operation": "add",
       "resource": "*:*_soul_bar"
     },
@@ -236,7 +236,7 @@
     "modifier": {
       "attribute": "minecraft:generic.attack_damage",
       "value": 0.3,
-      "operation": "multiply_base"
+      "operation": "multiply_total"
     },
     "condition": {
       "type": "origins:equipped_item",
@@ -320,7 +320,7 @@
   "mobs_ignore": {
     "type": "apugli:mobs_ignore",
     "mob_condition": {
-      "type": "origins:and",
+      "type": "origins:or",
       "conditions": [
         {
           "type": "origins:entity_type",
