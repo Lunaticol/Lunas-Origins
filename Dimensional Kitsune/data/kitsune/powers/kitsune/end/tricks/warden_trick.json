@@ -1,0 +1,85 @@
+{
+  "name": "Warden Trick",
+  "description": "Appear to grow large, and gain strength.",
+  "type": "origins:multiple",
+  "warden_trick": {
+    "type": "origins:active_self",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "scale set pehkui:model_height 2 @s"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "scale set pehkui:model_width 2 @s"
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 600,
+          "action": {
+            "type": "origins:execute_command",
+            "command": "scale reset @s"
+          }
+        },
+        {
+          "type": "origins:apply_effect",
+          "effect": {
+            "duration": 600,
+            "effect": "minecraft:strength",
+            "amplifier": 1
+          }
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:entity.warden.roar",
+          "volume": 1,
+          "pitch": 2
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 1,
+          "operation": "set",
+          "resource": "kitsune:kitsune/power_active_trick"
+        }
+      ]
+    },
+    "cooldown": 1200,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+      "bar_index": 19
+    },
+    "key": {
+      "key": "key.origins.tertiary_active"
+    }
+  },
+  "if_change": {
+    "type": "origins:action_on_callback",
+    "entity_action_lost": {
+      "type": "origins:execute_command",
+      "command": "scale reset @s"
+    },
+    "entity_action_removed": {
+      "type": "origins:execute_command",
+      "command": "scale reset @s"
+    }
+  },
+  "pa_reset": {
+    "type": "origins:action_over_time",
+    "interval": 1200,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 0,
+      "operation": "set",
+      "resource": "kitsune:kitsune/power_active_trick"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "kitsune:kitsune/power_active_trick"
+    }
+  }
+}

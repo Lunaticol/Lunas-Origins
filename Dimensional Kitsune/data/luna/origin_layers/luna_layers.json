@@ -1,0 +1,45 @@
+{
+  "name": "Sub-Origin",
+  "replace": false,
+  "order": 4,
+  "enabled": true,
+  "allow_random": true,
+  "allow_random_unchoosable": true,
+  "exclude_random": [
+    "kitsune:kitsune_classes/nether_kitsune",
+    "kitsune:kitsune_classes/ender_kitsune",
+    "kitsune:kitsune_classes/overworld_kitsune",
+    "axolotl:axolotl_classes/blue_axolotl",
+    "axolotl:axolotl_classes/green_axolotl"
+  ],
+  "origins": [
+    {
+      "origins": [
+        "kitsune:kitsune_classes/nether_kitsune",
+        "kitsune:kitsune_classes/ender_kitsune",
+        "kitsune:kitsune_classes/overworld_kitsune",
+        "axolotl:axolotl_classes/lucy_axolotl",
+        "axolotl:axolotl_classes/wild_axolotl",
+        "axolotl:axolotl_classes/gold_axolotl",
+        "axolotl:axolotl_classes/cyan_axolotl",
+        "axolotl:axolotl_classes/blue_axolotl",
+        "axolotl:axolotl_classes/green_axolotl"
+      ],
+      "condition": {
+        "type": "origins:or",
+        "conditions": [
+          {
+            "type": "origins:origin",
+            "layer": "origins:origin",
+            "origin": "kitsune:kitsune"
+          },
+          {
+            "type": "origins:origin",
+            "layer": "origins:origin",
+            "origin": "axolotl:axolotl"
+          }
+        ]
+      }
+    }
+  ]
+}

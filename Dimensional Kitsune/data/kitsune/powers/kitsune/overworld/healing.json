@@ -1,0 +1,98 @@
+{
+  "name": "Healer",
+  "description": "You can heal yourself or those around you.",
+  "type": "origins:multiple",
+  "healing_others": {
+    "type": "origins:active_self",
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
+      "bar_index": 4
+    },
+    "cooldown": 600,
+    "key": {
+      "key": "key.loadToolbarActivator"
+    },
+    "entity_action": {
+      "type": "origins:area_of_effect",
+      "radius": 8,
+      "shape": "sphere",
+      "bientity_action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:target_action",
+            "action": {
+              "type": "origins:apply_effect",
+              "effect": {
+                "effect": "minecraft:regeneration",
+                "duration": 300,
+                "show_icon": true,
+                "show_particles": false
+              }
+            }
+          },
+          {
+            "type": "origins:actor_action",
+            "action": {
+              "type": "origins:and",
+              "actions": [
+                {
+                  "type": "origins:apply_effect",
+                  "effects": [
+                    {
+                      "effect": "minecraft:weakness",
+                      "amplifier": 1,
+                      "duration": 200,
+                      "show_icon": true,
+                      "show_particles": false
+                    },
+                    {
+                      "effect": "minecraft:slowness",
+                      "duration": 100,
+                      "amplifier": 1,
+                      "show_icon": true,
+                      "show_particles": false
+                    }
+                  ]
+                },
+                {
+                  "type": "origins:execute_command",
+                  "command": "particle heart ~ ~ ~ 8 8 8 1 10 force"
+                },
+                {
+                  "type": "origins:change_resource",
+                  "change": 1,
+                  "operation": "set",
+                  "resource": "kitsune:kitsune/power_active_healing"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 0,
+      "comparison": "==",
+      "resource": "kitsune:kitsune/power_active_healing"
+    }
+  },
+  "pa_reset": {
+    "type": "origins:action_over_time",
+    "interval": 400,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 0,
+      "operation": "set",
+      "resource": "kitsune:kitsune/power_active_healing"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "kitsune:kitsune/power_active_healing"
+    }
+  }
+}

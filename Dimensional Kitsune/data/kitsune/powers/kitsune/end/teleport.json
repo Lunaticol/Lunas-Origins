@@ -1,0 +1,175 @@
+{
+  "name": "Evade Projectiles",
+  "description": "You teleport out of the way when shot at.",
+  "type": "origins:multiple",
+  "badges": [
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/info.png",
+      "text": "This power only works when it is toggled!"
+    },
+    {
+      "type": "origins:keybind",
+      "sprite": "origins:textures/gui/badge/toggle.png",
+      "text": "Toggle with [Save Hotbar]"
+    }
+  ],
+  "toggle": {
+    "type": "origins:toggle",
+    "active_by_default": true,
+    "key": {
+      "key": "key.saveToolbarActivator"
+    }
+  },
+  "evade_projectiles": {
+    "type": "origins:self_action_when_hit",
+    "damage_condition": {
+      "type": "origins:projectile"
+    },
+    "entity_action": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:play_sound",
+                "sound": "minecraft:item.chorus_fruit.teleport",
+                "volume": 1,
+                "pitch": 1
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "spreadplayers ~ ~ 8 16 under 127 false @s"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "particle minecraft:portal ~ ~0.4 ~ 0.3 0.6 0.3 0 100 normal"
+              },
+              {
+                "type": "origins:change_resource",
+                "resource": "*:*_rtp_hit_bar",
+                "change": 0,
+                "operation": "set"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:or",
+            "conditions": [
+              {
+                "type": "origins:dimension",
+                "dimension": "minecraft:the_nether"
+              }
+            ]
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:play_sound",
+                "sound": "minecraft:item.chorus_fruit.teleport",
+                "volume": 1,
+                "pitch": 1
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "spreadplayers ~ ~ 8 16 under 319 false @s"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "particle minecraft:portal ~ ~0.4 ~ 0.3 0.6 0.3 0 100 normal"
+              },
+              {
+                "type": "origins:change_resource",
+                "resource": "*:*_rtp_hit_bar",
+                "change": 0,
+                "operation": "set"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:on_block",
+                "block_condition": {
+                  "type": "origins:height",
+                  "compare_to": 63,
+                  "comparison": ">="
+                }
+              },
+              {
+                "type": "origins:dimension",
+                "dimension": "minecraft:the_nether",
+                "inverted": true
+              }
+            ]
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:play_sound",
+                "sound": "minecraft:item.chorus_fruit.teleport",
+                "volume": 1,
+                "pitch": 1
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "spreadplayers ~ ~ 8 16 under 62 false @s"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "particle minecraft:portal ~ ~0.4 ~ 0.3 0.6 0.3 0 100 normal"
+              },
+              {
+                "type": "origins:change_resource",
+                "resource": "*:*_rtp_hit_bar",
+                "change": 0,
+                "operation": "set"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:on_block",
+                "block_condition": {
+                  "type": "origins:height",
+                  "compare_to": 62,
+                  "comparison": "<="
+                }
+              },
+              {
+                "type": "origins:dimension",
+                "dimension": "minecraft:the_nether",
+                "inverted": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:power_active",
+      "power": "*:*_toggle"
+    }
+  },
+  "projectiles_no_hurt": {
+    "type": "origins:modify_damage_taken",
+    "damage_condition": {
+      "type": "origins:projectile"
+    },
+    "modifier": {
+      "operation": "multiply_total",
+      "value": -0.9999
+    }
+  }
+}

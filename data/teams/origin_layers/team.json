@@ -5,7 +5,7 @@
   "exclude_random": ["teams:notplaying"],
   "replace": false,
   "order": 8,
-  "enabled": true,
+  "enabled": false,
   "origins": [
     {
       "origins": ["teams:acid", "teams:lava", "teams:notplaying"]

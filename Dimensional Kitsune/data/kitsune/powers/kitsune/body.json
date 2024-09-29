@@ -1,0 +1,116 @@
+{
+  "type": "origins:multiple",
+  "hidden": true,
+  "overworld_default": {
+    "type": "origins:action_on_callback",
+    "execute_chosen_when_orb": true,
+    "entity_action_respawned": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "function kitsune:kitsune/respawn"
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 1,
+          "operation": "set",
+          "resource": "kitsune:kitsune/mode_switch_mode_resource"
+        }
+      ]
+    },
+    "entity_action_added": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "function kitsune:kitsune/respawn"
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 1,
+          "operation": "set",
+          "resource": "kitsune:kitsune/mode_switch_mode_resource"
+        }
+      ]
+    },
+    "entity_action_chosen": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "function kitsune:kitsune/overworld_mode"
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 1,
+          "operation": "set",
+          "resource": "kitsune:kitsune/mode_switch_mode_resource"
+        },
+        {
+          "type": "origins:grant_advancement",
+          "advancement": "luna:kitsune/kitsune"
+        }
+      ]
+    },
+    "entity_action_lost": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "origin set @s kitsune:kitsune_subclass origins:empty"
+        }
+      ]
+    }
+  },
+  "xp": {
+    "type": "origins:modify_xp_gain",
+    "modifier": {
+      "operation": "multiply_base",
+      "value": 1.5
+    }
+  },
+  "sounds": {
+    "type": "origins:action_over_time",
+    "interval": 100,
+    "entity_action": {
+      "type": "origins:chance",
+      "chance": 0.5,
+      "action": {
+        "type": "origins:play_sound",
+        "sound": "minecraft:entity.fox.ambient",
+        "category": "ambient",
+        "pitch": 1,
+        "volume": 1
+      }
+    },
+    "condition": {
+      "type": "origins:sneaking",
+      "inverted": true
+    }
+  },
+  "fox_hurt": {
+    "type": "origins:action_when_damage_taken",
+    "cooldown": 0,
+    "entity_action": {
+      "type": "origins:play_sound",
+      "sound": "minecraft:entity.fox.hurt",
+      "category": "ambient",
+      "pitch": 1,
+      "volume": 1
+    }
+  },
+  "no_taming_wolfs": {
+    "type": "origins:prevent_entity_use",
+    "bientity_action": {
+      "type": "origins:nothing"
+    },
+    "bientity_condition": {
+      "type": "origins:target_condition",
+      "condition": {
+        "type": "origins:entity_type",
+        "entity_type": "minecraft:wolf"
+      }
+    }
+  }
+}

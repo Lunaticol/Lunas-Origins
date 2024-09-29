@@ -1,0 +1,105 @@
+{
+  "type": "origins:multiple",
+  "name": "Weak",
+  "description": "Because you are a healer, you cannot hurt others as easily.",
+  "movement": {
+    "type": "origins:conditioned_attribute",
+    "tick_rate": 10,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:kitsune/mode_switch_mode_resource",
+      "comparison": "==",
+      "compare_to": 1
+    },
+    "modifier": {
+      "name": "weak",
+      "attribute": "minecraft:generic.attack_damage",
+      "operation": "multiply_total",
+      "value": -0.9999
+    }
+  },
+  "overworld_size": {
+    "type": "origins:action_on_callback",
+    "execute_chosen_when_orb": true,
+    "entity_action_chosen": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:height 0.65 @s"
+    },
+    "entity_action_respawned": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:height 0.65 @s"
+    },
+    "entity_action_added": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:height 0.65 @s"
+    },
+    "entity_action_lost": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:height 1 @s"
+    },
+    "entity_action_removed": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:height 1 @s"
+    }
+  },
+  "overworld_width": {
+    "type": "origins:action_on_callback",
+    "entity_action_chosen": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:width 0.65 @s"
+    },
+    "entity_action_respawned": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:width 0.65 @s"
+    },
+    "entity_action_added": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:width 0.65 @s"
+    },
+    "entity_action_lost": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:width 1 @s"
+    },
+    "entity_action_removed": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:width 1 @s"
+    }
+  },
+  "fire": {
+    "type": "origins:modify_damage_taken",
+    "damage_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:name",
+          "name": "minecraft:on_fire"
+        },
+        {
+          "type": "origins:name",
+          "name": "minecraft:lava"
+        }
+      ]
+    },
+    "modifier": {
+      "operation": "addition",
+      "name": "fire",
+      "value": 4
+    }
+  },
+  "knockback": {
+    "type": "origins:conditioned_attribute",
+    "tick_rate": 1,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:kitsune/mode_switch_mode_resource",
+      "comparison": "==",
+      "compare_to": 1
+    },
+    "modifier": {
+      "name": "weak",
+      "attribute": "minecraft:generic.knockback_resistance",
+      "operation": "multiply_total",
+      "value": -1
+    }
+  }
+}
