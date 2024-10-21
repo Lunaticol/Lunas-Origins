@@ -1,1 +1,1 @@
-{"luna":{"$func":["survival"]}}
+{"luna":{"$func":["survival"]},"teams":{"$func":["new_acid_target","target","new_lava_target"]}}

@@ -1,0 +1,119 @@
+{
+  "name": "Toxic",
+  "description": "Most flowers are sweet and do not inflict harm when eaten... however you are extremely toxic.\nWhen entitys hit you, there is a chance they will get a random bad effect.",
+  "type": "origins:multiple",
+  "weakness": {
+    "type": "origins:action_when_hit",
+    "bientity_action": {
+      "type": "origins:actor_action",
+      "action": {
+        "type": "origins:chance",
+        "chance": 0.1,
+        "action": {
+          "type": "origins:apply_effect",
+          "effect": {
+            "effect": "minecraft:weakness",
+            "amplifier": 1,
+            "duration": 100
+          }
+        }
+      }
+    }
+  },
+  "slowness": {
+    "type": "origins:action_when_hit",
+    "bientity_action": {
+      "type": "origins:actor_action",
+      "action": {
+        "type": "origins:chance",
+        "chance": 0.1,
+        "action": {
+          "type": "origins:apply_effect",
+          "effect": {
+            "effect": "minecraft:slowness",
+            "amplifier": 1,
+            "duration": 100
+          }
+        }
+      }
+    }
+  },
+  "blindness": {
+    "type": "origins:action_when_hit",
+    "bientity_action": {
+      "type": "origins:actor_action",
+      "action": {
+        "type": "origins:chance",
+        "chance": 0.1,
+        "action": {
+          "type": "origins:apply_effect",
+          "effect": {
+            "effect": "minecraft:blindness",
+            "amplifier": 1,
+            "duration": 100
+          }
+        }
+      }
+    }
+  },
+  "poison": {
+    "type": "origins:action_when_hit",
+    "bientity_action": {
+      "type": "origins:actor_action",
+      "action": {
+        "type": "origins:chance",
+        "chance": 0.1,
+        "action": {
+          "type": "origins:apply_effect",
+          "effect": {
+            "effect": "minecraft:poison",
+            "amplifier": 1,
+            "duration": 100
+          }
+        }
+      }
+    },
+    "bientity_condition": {
+      "type": "origins:actor_condition",
+      "condition": {
+        "type": "origins:entity_type",
+        "entity_type": "minecraft:player"
+      }
+    }
+  },
+  "if_undead": {
+    "type": "origins:action_when_hit",
+    "bientity_action": {
+      "type": "origins:actor_action",
+      "action": {
+        "type": "origins:chance",
+        "chance": 0.1,
+        "action": {
+          "type": "origins:apply_effect",
+          "effect": {
+            "effect": "minecraft:regeneration",
+            "amplifier": 1,
+            "duration": 100
+          }
+        }
+      }
+    },
+    "bientity_condition": {
+      "type": "origins:actor_condition",
+      "condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:entity_group",
+            "group": "undead"
+          },
+          {
+            "type": "origins:entity_type",
+            "entity_type": "minecraft:player",
+            "inverted": true
+          }
+        ]
+      }
+    }
+  }
+}

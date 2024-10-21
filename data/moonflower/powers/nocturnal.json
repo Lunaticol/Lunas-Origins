@@ -1,0 +1,156 @@
+{
+  "name": "Moon Light",
+  "description": "You use the moonlight to gain energy.\nUnlike other plants, to much sunlight can be harmful to you.",
+  "type": "origins:multiple",
+  "we_are_going_to_steal_the_moon": {
+    "type": "origins:action_over_time",
+    "interval": 100,
+    "entity_action": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:nothing"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:predicate",
+                "predicate": "moonflower:is_new_moon"
+              }
+            ]
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:feed",
+                "food": 2,
+                "saturation": 0.2
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:predicate",
+                "predicate": "moonflower:is_waxing_crescent"
+              }
+            ]
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              { "type": "origins:feed", "food": 4, "saturation": 0.4 }
+            ]
+          },
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:predicate",
+                "predicate": "moonflower:is_first_quarter"
+              }
+            ]
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              { "type": "origins:feed", "food": 6, "saturation": 0.6 }
+            ]
+          },
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:predicate",
+                "predicate": "moonflower:is_waxing_gibbous"
+              }
+            ]
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              { "type": "origins:feed", "food": 8, "saturation": 0.8 }
+            ]
+          },
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:predicate",
+                "predicate": "moonflower:is_full_moon"
+              }
+            ]
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              { "type": "origins:feed", "food": 6, "saturation": 0.6 }
+            ]
+          },
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:predicate",
+                "predicate": "moonflower:is_waning_gibbous"
+              }
+            ]
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              { "type": "origins:feed", "food": 4, "saturation": 0.4 }
+            ]
+          },
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:predicate",
+                "predicate": "moonflower:is_third_quarter"
+              }
+            ]
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              { "type": "origins:feed", "food": 2, "saturation": 0.2 }
+            ]
+          },
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:predicate",
+                "predicate": "moonflower:is_waning_crescent"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

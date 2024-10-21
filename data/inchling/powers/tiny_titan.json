@@ -1,0 +1,137 @@
+{
+  "name": "Tiny Titan",
+  "description": "You are significantly smaller than any other mob, with only 6 hearts.\nProjectiles have a harder time hitting you when you sprint.",
+  "type": "origins:multiple",
+  "size": {
+    "type": "origins:action_on_callback",
+    "execute_chosen_when_orb": true,
+    "entity_action_chosen": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:height 0.1 @s"
+    },
+    "entity_action_respawned": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:height 0.1 @s"
+    },
+    "entity_action_added": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:height 0.1 @s"
+    },
+    "entity_action_lost": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:height 1 @s"
+    },
+    "entity_action_removed": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:height 1 @s"
+    }
+  },
+  "width": {
+    "type": "origins:action_on_callback",
+    "entity_action_chosen": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:width 0.1 @s"
+    },
+    "entity_action_respawned": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:width 0.1 @s"
+    },
+    "entity_action_added": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:width 0.1 @s"
+    },
+    "entity_action_lost": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:width 1 @s"
+    },
+    "entity_action_removed": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:width 1 @s"
+    }
+  },
+  "less_projectile_damage": {
+    "type": "origins:modify_damage_taken",
+    "damage_condition": {
+      "type": "origins:projectile"
+    },
+    "modifier": {
+      "operation": "multiply_total",
+      "value": -0.25
+    },
+    "condition": {
+      "type": "origins:sprinting"
+    }
+  },
+  "walls": {
+    "type": "origins:climbing",
+    "allow_holding": true,
+    "hold_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:block_collision",
+          "offset_x": 0.1,
+          "offset_z": 0.1
+        },
+        {
+          "type": "origins:block_collision",
+          "offset_x": -0.1,
+          "offset_z": -0.1
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:or",
+          "conditions": [
+            {
+              "type": "origins:block_collision",
+              "offset_x": 0.1,
+              "offset_z": 0.1
+            },
+            {
+              "type": "origins:block_collision",
+              "offset_x": -0.1,
+              "offset_z": -0.1
+            }
+          ]
+        },
+        {
+          "type": "origins:power_active",
+          "power": "*:*_toggle"
+        }
+      ]
+    }
+  },
+  "health": {
+    "type": "origins:attribute",
+    "update_health": true,
+    "modifier": {
+      "value": -8,
+      "attribute": "minecraft:generic.max_health",
+      "operation": "addition"
+    }
+  },
+  "toggle": {
+    "type": "origins:toggle",
+    "key": { "key": "key.origins.secondary_active" },
+    "active_by_default": false
+  },
+  "damage_dealt": {
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+      "value": -0.25,
+      "operation": "multiply_total"
+    }
+  },
+  "reach": {
+    "type": "origins:attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.attack_speed",
+      "value": 0.1,
+      "operation": "addition"
+    }
+  }
+}

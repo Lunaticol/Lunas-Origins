@@ -1,0 +1,48 @@
+{
+  "name": "Nimble",
+  "description": "Due to being tiny, your physical attributes are dramatically drawn back.\nYou deal 25% less damage and cannot reach as far.",
+  "type": "origins:multiple",
+  "reach": {
+    "type": "origins:attribute",
+    "modifier": {
+      "attribute": "forge:block_reach",
+      "value": -2,
+      "operation": "addition"
+    }
+  },
+  "attack_reach": {
+    "type": "origins:attribute",
+    "modifier": {
+      "attribute": "forge:entity_reach",
+      "value": -1,
+      "operation": "addition"
+    }
+  },
+  "so_hungry": {
+    "type": "origins:modify_exhaustion",
+    "modifier": {
+      "operation": "multiply_base",
+      "value": 1
+    }
+  },
+  "aoe": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "value": 0.25,
+      "operation": "multiply_total"
+    },
+    "damage_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:name",
+          "name": "minecraft:explosion"
+        },
+        {
+          "type": "origins:name",
+          "name": "minecraft:indirect_magic"
+        }
+      ]
+    }
+  }
+}

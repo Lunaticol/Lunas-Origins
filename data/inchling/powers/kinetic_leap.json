@@ -1,0 +1,76 @@
+{
+  "name": "Kinetic Leap",
+  "description": "Using your tiny body you can launch yourself forward in any direction.",
+  "type": "origins:multiple",
+  "leap": {
+    "type": "origins:active_self",
+    "cooldown": 300,
+    "key": "key.origins.primary_active",
+    "hud_render": {
+      "should_render": true,
+      "bar_index": 23,
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png"
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:add_velocity",
+          "z": 1,
+          "space": "local"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "particle dust 1.000 1.000 1.000 2 ~ ~ ~ 1 0 1 1 50 normal"
+        },
+        {
+          "type": "origins:change_resource",
+          "resource": "*:*_in_air",
+          "change": 1,
+          "operation": "set"
+        }
+      ]
+    }
+  },
+  "in_air": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
+  },
+  "land": {
+    "type": "origins:action_on_land",
+    "entity_action": {
+      "type": "origins:area_of_effect",
+      "radius": 4,
+      "shape": "cube",
+      "bientity_action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:actor_action",
+            "action": {
+              "type": "origins:change_resource",
+              "resource": "*:*_in_air",
+              "change": 0,
+              "operation": "set"
+            }
+          },
+          {
+            "type": "origins:target_action",
+            "action": {
+              "type": "origins:add_velocity",
+              "z": -1,
+              "space": "local_horizontal"
+            }
+          }
+        ]
+      }
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_in_air"
+    }
+  }
+}
