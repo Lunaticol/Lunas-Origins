@@ -1,1 +1,0 @@
-title @p actionbar {"text":"Currently playing \"Kitsune\" Trick, press your Ternary Key to activate","color":"#FF4400","bold":true}

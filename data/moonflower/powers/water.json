@@ -1,0 +1,99 @@
+{
+  "name": "Water dependant",
+  "description": "Like all plants, you need water to survive. However, unlike other plants, to much water can negatively impact you.",
+  "type": "origins:multiple",
+  "water": {
+    "type": "origins:resource",
+    "max": 5000,
+    "min": 0,
+    "hud_render": {
+      "bar_index": 1
+    }
+  },
+  "ooooooooooooooough_im_so_thirsty": {
+    "type": "origins:action_over_time",
+    "interval": 400,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "change": -100,
+          "resource": "*:*_water"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:fluid_height",
+          "compare_to": 0.01,
+          "comparison": ">=",
+          "fluid": "minecraft:water",
+          "inverted": true
+        },
+        {
+          "type": "origins:submerged_in",
+          "fluid": "minecraft:water",
+          "inverted": true
+        },
+        {
+          "type": "origins:in_block",
+          "block_condition": {
+            "type": "origins:block_state",
+            "property": "level",
+            "compare_to": 1,
+            "comparison": ">="
+          },
+          "inverted": true
+        }
+      ]
+    }
+  },
+  "water_gain": {
+    "type": "origins:action_over_time",
+    "interval": 200,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "change": 100,
+          "resource": "*:*_water",
+          "operation": "add"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:or",
+          "conditions": [
+            {
+              "type": "origins:fluid_height",
+              "compare_to": 0.01,
+              "comparison": ">=",
+              "fluid": "minecraft:water"
+            },
+            {
+              "type": "origins:in_block",
+              "block_condition": {
+                "type": "origins:block_state",
+                "property": "level",
+                "compare_to": 1,
+                "comparison": ">="
+              }
+            }
+          ]
+        },
+        {
+          "type": "origins:submerged_in",
+          "fluid": "minecraft:water",
+          "inverted": true
+        }
+      ]
+    }
+  }
+}

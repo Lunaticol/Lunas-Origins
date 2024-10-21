@@ -52,7 +52,7 @@
       "bar_index": 19
     },
     "key": {
-      "key": "key.origins.tertiary_active"
+      "key": "key.origins.ternary_active"
     }
   },
   "if_change": {

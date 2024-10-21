@@ -1,0 +1,313 @@
+{
+  "hidden": true,
+  "type": "origins:multiple",
+  "sugar_1": {
+    "type": "apugli:edible_item",
+    "food_component": {
+      "hunger": 2,
+      "saturation": 0.2,
+      "always_edible": true,
+      "meat": false,
+      "snack": true
+    },
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "tag": "inchling:sugar"
+      }
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 0,
+      "comparison": "==",
+      "resource": "*:*_stack"
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "operation": "add",
+          "resource": "*:*_stack",
+          "change": 1
+        },
+        {
+          "type": "origins:apply_effect",
+          "effect": {
+            "effect": "minecraft:speed",
+            "show_icon": true,
+            "show_particles": false,
+            "duration": 1200
+          }
+        },
+        {
+          "type": "origins:chance",
+          "chance": 0.05,
+          "action": {
+            "type": "origins:damage",
+            "amount": 40,
+            "source": {
+              "out_of_world": true,
+              "name": "heartattack"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "sugar_2": {
+    "type": "apugli:edible_item",
+    "food_component": {
+      "hunger": 2,
+      "saturation": 0.2,
+      "always_edible": true,
+      "meat": false,
+      "snack": true
+    },
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "tag": "inchling:sugar"
+      }
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_stack"
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "operation": "add",
+          "resource": "*:*_stack",
+          "change": 1
+        },
+        {
+          "type": "origins:apply_effect",
+          "effect": {
+            "effect": "minecraft:speed",
+            "show_icon": true,
+            "show_particles": false,
+            "duration": 1200,
+            "amplifier": 1
+          }
+        },
+        {
+          "type": "origins:chance",
+          "chance": 0.05,
+          "action": {
+            "type": "origins:damage",
+            "amount": 40,
+            "source": {
+              "out_of_world": true,
+              "name": "heartattack"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "sugar_3": {
+    "type": "apugli:edible_item",
+    "food_component": {
+      "hunger": 2,
+      "saturation": 0.2,
+      "always_edible": true,
+      "meat": false,
+      "snack": true
+    },
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "tag": "inchling:sugar"
+      }
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 2,
+      "comparison": "==",
+      "resource": "*:*_stack"
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "operation": "add",
+          "resource": "*:*_stack",
+          "change": 1
+        },
+        {
+          "type": "origins:apply_effect",
+          "effect": {
+            "effect": "minecraft:speed",
+            "show_icon": true,
+            "show_particles": false,
+            "duration": 1200,
+            "amplifier": 2
+          }
+        },
+        {
+          "type": "origins:chance",
+          "chance": 0.05,
+          "action": {
+            "type": "origins:damage",
+            "amount": 40,
+            "source": {
+              "out_of_world": true,
+              "name": "heartattack"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "sugar_4": {
+    "type": "apugli:edible_item",
+    "food_component": {
+      "hunger": 2,
+      "saturation": 0.2,
+      "always_edible": true,
+      "meat": false,
+      "snack": true
+    },
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "tag": "inchling:sugar"
+      }
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 3,
+      "comparison": "==",
+      "resource": "*:*_stack"
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "operation": "add",
+          "resource": "*:*_stack",
+          "change": 1
+        },
+        {
+          "type": "origins:apply_effect",
+          "effect": {
+            "effect": "minecraft:speed",
+            "show_icon": true,
+            "show_particles": false,
+            "duration": 1200,
+            "amplifier": 3
+          }
+        },
+        {
+          "type": "origins:chance",
+          "chance": 0.05,
+          "action": {
+            "type": "origins:damage",
+            "amount": 40,
+            "source": {
+              "out_of_world": true,
+              "name": "heartattack"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "sugar_5": {
+    "type": "apugli:edible_item",
+    "food_component": {
+      "hunger": 2,
+      "saturation": 0.2,
+      "always_edible": true,
+      "meat": false,
+      "snack": true
+    },
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "tag": "inchling:sugar"
+      }
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 4,
+      "comparison": "==",
+      "resource": "*:*_stack"
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "operation": "add",
+          "resource": "*:*_stack",
+          "change": 1
+        },
+        {
+          "type": "origins:apply_effect",
+          "effect": {
+            "effect": "minecraft:speed",
+            "show_icon": true,
+            "show_particles": false,
+            "duration": 1200,
+            "amplifier": 4
+          }
+        },
+        {
+          "type": "origins:chance",
+          "chance": 0.05,
+          "action": {
+            "type": "origins:damage",
+            "amount": 40,
+            "source": {
+              "out_of_world": true,
+              "name": "heartattack"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "stack": {
+    "type": "origins:resource",
+    "max": 4,
+    "min": 0
+  },
+  "timer_action": {
+    "type": "origins:action_over_time",
+    "interval": 1200,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "operation": "add",
+      "resource": "*:*_stack",
+      "change": -1
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_stack",
+      "compare_to": 1,
+      "comparison": ">="
+    }
+  },
+  "leaf_fly": {
+    "type": "origins:elytra_flight",
+    "render_elytra": false,
+    "condition": {
+      "type": "origins:equipped_item",
+      "equipment_slot": "mainhand",
+      "item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": {
+          "tag": "minecraft:leaves"
+        }
+      }
+    }
+  }
+}

@@ -4,7 +4,7 @@
   "death.attack.shield.player": "%1$s was scorched by %2$s",
   "death.attack.shield": "%1$s was scorched",
   "death.attack.dark_pulse": "%1$s was in the way",
-  "death.attack.dark_pulse.player": "%1$s was rammed into by %2$s",
+  "death.attack.dark_pulse.player": "%1$s got into the way of %2$s",
   "death.attack.double_edge.player": "%1$s was sliced in half by %2$s",
   "death.attack.double_edge": "%1$s was sliced in half",
   "death.attack.out_of_blood": "%1$s was consumed by dark magic",
@@ -14,5 +14,7 @@
   "death.attack.arc_wave_core": "%1$s was caught in a charged up arc wave",
   "death.attack.arc_wave_core.player": "%1$s was caught in a charged up arc wave by %2$s",
   "death.attack.obliteration": "%1$s got hit by a plasma railgun round",
-  "death.attack.obliteration.player": "%1$s got hit by a point-blank plasma railgun round"
+  "death.attack.obliteration.player": "%1$s got hit by a point-blank plasma railgun round",
+  "death.attack.heartattack": "%1$s had a heart attack",
+  "death.attack.heartattack.player": "%1$s was fighting %2$s before having a heart attack"
 }

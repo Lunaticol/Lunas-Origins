@@ -18,10 +18,8 @@
       "type": "origins:or",
       "conditions": [
         {
-          "type": "origins:fluid_height",
-          "fluid": "minecraft:water",
-          "comparison": ">",
-          "compare_to": 0.9
+          "type": "origins:submerged_in",
+          "fluid": "minecraft:water"
         }
       ]
     }

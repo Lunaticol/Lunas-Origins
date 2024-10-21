@@ -1,0 +1,98 @@
+{
+  "name": "Environmental Awareness",
+  "description": "Being so small, you have learned to use the environment around you to your advantage.",
+  "type": "origins:multiple",
+  "reduced_damage": {
+    "type": "origins:modify_damage_taken",
+    "damage_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:name",
+          "name": "minecraft:fall"
+        },
+        {
+          "type": "origins:name",
+          "name": "minecraft:thorns"
+        },
+        {
+          "type": "origins:name",
+          "name": "minecraft:freeze"
+        }
+      ]
+    },
+    "modifier": {
+      "operation": "multiply_total",
+      "value": -0.75
+    }
+  },
+  "camo": {
+    "type": "origins:model_color",
+    "alpha": 0.1,
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 5,
+      "comparison": "==",
+      "resource": "*:*_camo_resource"
+    }
+  },
+  "camo_resource": {
+    "type": "origins:resource",
+    "max": 5,
+    "min": 0
+  },
+  "fill_camo": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 1,
+      "resource": "*:*_camo_resource",
+      "operation": "add"
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:moving",
+          "inverted": true
+        },
+        {
+          "type": "origins:sneaking"
+        }
+      ]
+    }
+  },
+  "drain": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": -1,
+      "resource": "*:*_camo_resource",
+      "operation": "add"
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:moving"
+        },
+        {
+          "type": "origins:sneaking",
+          "inverted": true
+        }
+      ]
+    }
+  },
+  "reveal": {
+    "type": "origins:action_when_damage_taken",
+    "cooldown": 0,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 0,
+      "resource": "*:*_camo_resource",
+      "operation": "set"
+    }
+  }
+}

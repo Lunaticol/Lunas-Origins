@@ -1,6 +1,6 @@
 {
-  "powers": ["luna:charge", "luna:bite"],
-  "icon": "minecraft:tnt",
+  "powers": ["luna:luna"],
+  "icon": "minecraft:blue_orchid",
   "unchoosable": true,
   "order": 9,
   "impact": 0,

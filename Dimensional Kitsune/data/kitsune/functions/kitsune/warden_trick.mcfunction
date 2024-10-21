@@ -1,1 +1,0 @@
-title @p actionbar {"text":"Currently playing \"Warden\" Trick, Press your Ternary Key to activate","color":"#110657","bold":true}

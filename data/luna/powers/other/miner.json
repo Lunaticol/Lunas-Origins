@@ -1,0 +1,23 @@
+{
+  "name": "test",
+  "type": "origins:multiple",
+  "test": {
+    "type": "origins:action_on_block_break",
+    "block_action": {
+      "type": "origins:chance",
+      "chance": 0.5,
+      "action": {
+        "type": "origins:execute_command",
+        "command": "summon item ~ ~ ~ {Item:{id:\"minecraft:coal\",count:3}}"
+      },
+      "fail_action": {
+        "type": "origins:execute_command",
+        "command": "summon item ~ ~ ~ {Item:{id:\"minecraft:coal\",count:2}}"
+      }
+    },
+    "block_condition": {
+      "type": "origins:block",
+      "block": "minecraft:coal_ore"
+    }
+  }
+}

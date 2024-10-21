@@ -9,7 +9,6 @@
       "minecraft:knockback",
       "minecraft:sweeping",
       "minecraft:sharpness",
-      "betterarcheology:penetrating_strike",
       "minecraft:bane_of_arthropods",
       "minecraft:smite"
     ],
@@ -31,7 +30,7 @@
           "item": "minecraft:prismarine_shard"
         },
         "C": {
-          "item": "adorn:prismarine_post"
+          "item": "minecraft:prismarine_block"
         }
       },
       "result": {
