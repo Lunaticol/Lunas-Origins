@@ -1,0 +1,11 @@
+{
+  "values": [
+    "minecraft:ghast",
+    "minecraft:phantom",
+    "minecraft:warden",
+    "minecraft:wither",
+    "minecraft:ender_dragon",
+    "minecraft:item",
+    "minecraft:armor_stand"
+  ]
+}

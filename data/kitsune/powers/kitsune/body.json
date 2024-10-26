@@ -112,5 +112,22 @@
         "entity_type": "minecraft:wolf"
       }
     }
+  },
+  "sweet_berries": {
+    "type": "origins:modify_food",
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:sweet_berries"
+      }
+    },
+    "food_modifier": {
+      "operation": "addition",
+      "value": 15
+    },
+    "saturation_modifier": {
+      "operation": "addition",
+      "value": 1.5
+    }
   }
 }

@@ -42,12 +42,15 @@
         },
         {
           "type": "origins:chance",
-          "chance": 0.05,
+          "chance": 0.1,
           "action": {
             "type": "origins:damage",
-            "amount": 40,
+            "amount": 100,
             "source": {
               "out_of_world": true,
+              "bypasses_armor": true,
+              "magic": true,
+              "unblockable": true,
               "name": "heartattack"
             }
           }
@@ -97,12 +100,15 @@
         },
         {
           "type": "origins:chance",
-          "chance": 0.05,
+          "chance": 0.2,
           "action": {
             "type": "origins:damage",
-            "amount": 40,
+            "amount": 100,
             "source": {
               "out_of_world": true,
+              "bypasses_armor": true,
+              "magic": true,
+              "unblockable": true,
               "name": "heartattack"
             }
           }
@@ -152,12 +158,15 @@
         },
         {
           "type": "origins:chance",
-          "chance": 0.05,
+          "chance": 0.3,
           "action": {
             "type": "origins:damage",
-            "amount": 40,
+            "amount": 100,
             "source": {
               "out_of_world": true,
+              "bypasses_armor": true,
+              "magic": true,
+              "unblockable": true,
               "name": "heartattack"
             }
           }
@@ -207,12 +216,15 @@
         },
         {
           "type": "origins:chance",
-          "chance": 0.05,
+          "chance": 0.4,
           "action": {
             "type": "origins:damage",
-            "amount": 40,
+            "amount": 100,
             "source": {
               "out_of_world": true,
+              "bypasses_armor": true,
+              "magic": true,
+              "unblockable": true,
               "name": "heartattack"
             }
           }
@@ -238,7 +250,7 @@
     "condition": {
       "type": "origins:resource",
       "compare_to": 4,
-      "comparison": "==",
+      "comparison": ">=",
       "resource": "*:*_stack"
     },
     "entity_action": {
@@ -262,12 +274,15 @@
         },
         {
           "type": "origins:chance",
-          "chance": 0.05,
+          "chance": 0.5,
           "action": {
             "type": "origins:damage",
-            "amount": 40,
+            "amount": 100,
             "source": {
               "out_of_world": true,
+              "bypasses_armor": true,
+              "magic": true,
+              "unblockable": true,
               "name": "heartattack"
             }
           }
@@ -277,7 +292,7 @@
   },
   "stack": {
     "type": "origins:resource",
-    "max": 4,
+    "max": 5,
     "min": 0
   },
   "timer_action": {
@@ -309,5 +324,45 @@
         }
       }
     }
+  },
+  "reset_on_spawn": {
+    "type": "origins:action_on_callback",
+    "entity_action_added": {
+      "type": "origins:change_resource",
+      "operation": "set",
+      "resource": "*:*_stack",
+      "change": 0
+    },
+    "entity_action_gained": {
+      "type": "origins:change_resource",
+      "operation": "set",
+      "resource": "*:*_stack",
+      "change": 0
+    },
+    "entity_action_lost": {
+      "type": "origins:change_resource",
+      "operation": "set",
+      "resource": "*:*_stack",
+      "change": 0
+    },
+    "entity_action_removed": {
+      "type": "origins:change_resource",
+      "operation": "set",
+      "resource": "*:*_stack",
+      "change": 0
+    },
+    "entity_action_respawned": {
+      "type": "origins:change_resource",
+      "operation": "set",
+      "resource": "*:*_stack",
+      "change": 0
+    },
+    "entity_action_chosen": {
+      "type": "origins:change_resource",
+      "operation": "set",
+      "resource": "*:*_stack",
+      "change": 0
+    },
+    "execute_chosen_when_orb": true
   }
 }

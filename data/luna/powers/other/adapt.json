@@ -1,0 +1,251 @@
+{
+  "type": "origins:multiple",
+  "projectiles": {
+    "type": "origins:resource",
+    "max": 5,
+    "min": 0
+  },
+  "adapt_p": {
+    "type": "origins:action_when_damage_taken",
+    "cooldown": 0,
+    "entity_action": {
+      "type": "origins:chance",
+      "chance": 0.25,
+      "action": {
+        "type": "origins:change_resource",
+        "change": 1,
+        "operation": "add",
+        "resource": "*:*_projectiles"
+      }
+    }
+  },
+  "adapt_pd_lower_1": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "operation": "multiply_total",
+      "value": -0.2
+    },
+    "damage_condition": {
+      "type": "origins:projectile"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_projectiles"
+    }
+  },
+  "adapt_pd_lower_2": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "operation": "multiply_total",
+      "value": -0.4
+    },
+    "damage_condition": {
+      "type": "origins:projectile"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 2,
+      "comparison": "==",
+      "resource": "*:*_projectiles"
+    }
+  },
+  "adapt_pd_lower_3": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "operation": "multiply_total",
+      "value": -0.6
+    },
+    "damage_condition": {
+      "type": "origins:projectile"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 3,
+      "comparison": "==",
+      "resource": "*:*_explosion"
+    }
+  },
+  "adapt_pd_lower_4": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "operation": "multiply_total",
+      "value": -0.8
+    },
+    "damage_condition": {
+      "type": "origins:projectile"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 4,
+      "comparison": "==",
+      "resource": "*:*_explosion"
+    }
+  },
+  "adapt_pd_lower_5": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "operation": "multiply_total",
+      "value": -1
+    },
+    "damage_condition": {
+      "type": "origins:projectile"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 5,
+      "comparison": "==",
+      "resource": "*:*_explosion"
+    }
+  },
+  "explosion": {
+    "type": "origins:resource",
+    "max": 5,
+    "min": 0
+  },
+  "adapt_e": {
+    "type": "origins:action_when_damage_taken",
+    "cooldown": 0,
+    "entity_action": {
+      "type": "origins:chance",
+      "chance": 0.25,
+      "action": {
+        "type": "origins:change_resource",
+        "change": 1,
+        "operation": "add",
+        "resource": "*:*_explosion"
+      }
+    }
+  },
+  "adapt_ed_lower_1": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "operation": "multiply_total",
+      "value": -0.2
+    },
+    "damage_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:name",
+          "name": "minecraft:explosion"
+        },
+        {
+          "type": "origins:name",
+          "name": "minecraft:player_explosion"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_explosion"
+    }
+  },
+  "adapt_ed_lower_2": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "operation": "multiply_total",
+      "value": -0.4
+    },
+    "damage_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:name",
+          "name": "minecraft:explosion"
+        },
+        {
+          "type": "origins:name",
+          "name": "minecraft:player_explosion"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 2,
+      "comparison": "==",
+      "resource": "*:*_explosion"
+    }
+  },
+  "adapt_ed_lower_3": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "operation": "multiply_total",
+      "value": -0.6
+    },
+    "damage_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:name",
+          "name": "minecraft:explosion"
+        },
+        {
+          "type": "origins:name",
+          "name": "minecraft:player_explosion"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 3,
+      "comparison": "==",
+      "resource": "*:*_explosion"
+    }
+  },
+  "adapt_ed_lower_4": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "operation": "multiply_total",
+      "value": -0.8
+    },
+    "damage_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:name",
+          "name": "minecraft:explosion"
+        },
+        {
+          "type": "origins:name",
+          "name": "minecraft:player_explosion"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 4,
+      "comparison": "==",
+      "resource": "*:*_explosion"
+    }
+  },
+  "adapt_ed_lower_5": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "operation": "multiply_total",
+      "value": -1
+    },
+    "damage_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:name",
+          "name": "minecraft:explosion"
+        },
+        {
+          "type": "origins:name",
+          "name": "minecraft:player_explosion"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 5,
+      "comparison": "==",
+      "resource": "*:*_explosion"
+    }
+  }
+}
