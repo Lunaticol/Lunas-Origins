@@ -2,7 +2,9 @@
   "powers": [
     "sculk:sculk_like",
     "sculk:phasing",
-    "sculk:sculk_blast",
+    "sculk:sculk_smash",
+    "sculk:sculk_veil",
+    "sculk:unbridled_rage",
     "sculk:brother"
   ],
   "icon": "minecraft:sculk_catalyst",

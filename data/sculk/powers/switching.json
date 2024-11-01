@@ -1,0 +1,74 @@
+{
+  "name": "Adapable",
+  "description": "Being made of sculk, and being a catalyst for the sculk, you can adapt to many enviroments.",
+  "badges": [
+    {
+      "type": "origins:tooltip",
+      "text": "Requires 10 XP levels everytime you switch.",
+      "sprite": "origins:textures/gui/badge/info.png"
+    },
+    {
+      "type": "origins:keybind",
+      "sprite": "origins:textures/gui/badge/toggle.png",
+      "text": "Toggle with [Primary]"
+    }
+  ],
+  "type": "origins:multiple",
+  "switch": {
+    "type": "origins:active_self",
+    "key": "key.origins.primary_active",
+    "cooldown": 100,
+    "entity_action": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "action": {
+            "type": "origins:change_resource",
+            "change": 1,
+            "operation": "add",
+            "resource": "*:*_switch_resource"
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 0,
+            "comparison": "==",
+            "resource": "*:*_switch_resource"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:change_resource",
+            "change": 1,
+            "operation": "add",
+            "resource": "*:*_switch_resource"
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 1,
+            "comparison": "==",
+            "resource": "*:*_switch_resource"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:change_resource",
+            "change": 0,
+            "operation": "set",
+            "resource": "*:*_switch_resource"
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 2,
+            "comparison": "==",
+            "resource": "*:*_switch_resource"
+          }
+        }
+      ]
+    }
+  },
+  "switch_resource": {
+    "type": "origins:resource",
+    "max": 2,
+    "min": 0
+  }
+}

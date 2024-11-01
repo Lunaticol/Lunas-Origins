@@ -16,5 +16,7 @@
   "death.attack.obliteration": "%1$s got hit by a plasma railgun round",
   "death.attack.obliteration.player": "%1$s got hit by a point-blank plasma railgun round",
   "death.attack.heartattack": "%1$s had a heart attack",
-  "death.attack.heartattack.player": "%1$s was fighting %2$s before having a heart attack"
+  "death.attack.heartattack.player": "%1$s was fighting %2$s before having a heart attack",
+  "death.attack.squashed": "%1$s got squashed",
+  "death.attack.squashed.player": "%1$s looked up and saw %2$s"
 }

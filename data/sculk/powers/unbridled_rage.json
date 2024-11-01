@@ -1,0 +1,482 @@
+{
+  "name": "Unbridled Rage",
+  "description": "The lower to death you get, the stronger and faster you become.",
+  "type": "origins:multiple",
+  "rage_1": {
+    "type": "origins:conditioned_attribute",
+    "tick_rate": 10,
+    "modifiers": [
+      {
+        "attribute": "minecraft:generic.attack_damage",
+        "value": 2,
+        "operation": "addition"
+      }
+    ],
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:health",
+          "compare_to": 19,
+          "comparison": "=="
+        }
+      ]
+    }
+  },
+  "rage_2": {
+    "type": "origins:conditioned_attribute",
+    "tick_rate": 10,
+    "modifiers": [
+      {
+        "attribute": "minecraft:generic.attack_damage",
+        "value": 3,
+        "operation": "addition"
+      }
+    ],
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:health",
+          "compare_to": 18,
+          "comparison": "=="
+        }
+      ]
+    }
+  },
+  "rage_3": {
+    "type": "origins:conditioned_attribute",
+    "tick_rate": 10,
+    "modifiers": [
+      {
+        "attribute": "minecraft:generic.attack_damage",
+        "value": 4,
+        "operation": "addition"
+      }
+    ],
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:health",
+          "compare_to": 17,
+          "comparison": "=="
+        }
+      ]
+    }
+  },
+  "rage_4": {
+    "type": "origins:conditioned_attribute",
+    "tick_rate": 10,
+    "modifiers": [
+      {
+        "attribute": "minecraft:generic.attack_damage",
+        "value": 5,
+        "operation": "addition"
+      }
+    ],
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:health",
+          "compare_to": 16,
+          "comparison": "=="
+        }
+      ]
+    }
+  },
+  "rage_5": {
+    "type": "origins:conditioned_attribute",
+    "tick_rate": 10,
+    "modifiers": [
+      {
+        "attribute": "minecraft:generic.attack_damage",
+        "value": 6,
+        "operation": "addition"
+      }
+    ],
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:health",
+          "compare_to": 15,
+          "comparison": "=="
+        }
+      ]
+    }
+  },
+  "rage_6": {
+    "type": "origins:conditioned_attribute",
+    "tick_rate": 10,
+    "modifiers": [
+      {
+        "attribute": "minecraft:generic.attack_damage",
+        "value": 7,
+        "operation": "addition"
+      }
+    ],
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:health",
+          "compare_to": 14,
+          "comparison": "=="
+        }
+      ]
+    }
+  },
+  "rage_7": {
+    "type": "origins:conditioned_attribute",
+    "tick_rate": 10,
+    "modifiers": [
+      {
+        "attribute": "minecraft:generic.attack_damage",
+        "value": 8,
+        "operation": "addition"
+      }
+    ],
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:health",
+          "compare_to": 13,
+          "comparison": "=="
+        }
+      ]
+    }
+  },
+  "rage_8": {
+    "type": "origins:conditioned_attribute",
+    "tick_rate": 10,
+    "modifiers": [
+      {
+        "attribute": "minecraft:generic.attack_damage",
+        "value": 9,
+        "operation": "addition"
+      }
+    ],
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:health",
+          "compare_to": 12,
+          "comparison": "=="
+        }
+      ]
+    }
+  },
+  "rage_9": {
+    "type": "origins:conditioned_attribute",
+    "tick_rate": 10,
+    "modifiers": [
+      {
+        "attribute": "minecraft:generic.attack_damage",
+        "value": 10,
+        "operation": "addition"
+      }
+    ],
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:health",
+          "compare_to": 11,
+          "comparison": "=="
+        }
+      ]
+    }
+  },
+  "rage_10": {
+    "type": "origins:conditioned_attribute",
+    "tick_rate": 10,
+    "modifiers": [
+      {
+        "attribute": "minecraft:generic.attack_damage",
+        "value": 11,
+        "operation": "addition"
+      }
+    ],
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:health",
+          "compare_to": 10,
+          "comparison": "=="
+        }
+      ]
+    }
+  },
+  "rage_11": {
+    "type": "origins:conditioned_attribute",
+    "tick_rate": 10,
+    "modifiers": [
+      {
+        "attribute": "minecraft:generic.attack_damage",
+        "value": 12,
+        "operation": "addition"
+      }
+    ],
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:health",
+          "compare_to": 9,
+          "comparison": "=="
+        }
+      ]
+    }
+  },
+  "rage_12": {
+    "type": "origins:conditioned_attribute",
+    "tick_rate": 10,
+    "modifiers": [
+      {
+        "attribute": "minecraft:generic.attack_damage",
+        "value": 13,
+        "operation": "addition"
+      }
+    ],
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:health",
+          "compare_to": 8,
+          "comparison": "=="
+        }
+      ]
+    }
+  },
+  "rage_13": {
+    "type": "origins:conditioned_attribute",
+    "tick_rate": 10,
+    "modifiers": [
+      {
+        "attribute": "minecraft:generic.attack_damage",
+        "value": 14,
+        "operation": "addition"
+      }
+    ],
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:health",
+          "compare_to": 7,
+          "comparison": "=="
+        }
+      ]
+    }
+  },
+  "rage_14": {
+    "type": "origins:conditioned_attribute",
+    "tick_rate": 10,
+    "modifiers": [
+      {
+        "attribute": "minecraft:generic.attack_damage",
+        "value": 15,
+        "operation": "addition"
+      }
+    ],
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:health",
+          "compare_to": 6,
+          "comparison": "=="
+        }
+      ]
+    }
+  },
+  "rage_15": {
+    "type": "origins:conditioned_attribute",
+    "tick_rate": 10,
+    "modifiers": [
+      {
+        "attribute": "minecraft:generic.attack_damage",
+        "value": 16,
+        "operation": "addition"
+      }
+    ],
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:health",
+          "compare_to": 5,
+          "comparison": "=="
+        }
+      ]
+    }
+  },
+  "rage_16": {
+    "type": "origins:conditioned_attribute",
+    "tick_rate": 10,
+    "modifiers": [
+      {
+        "attribute": "minecraft:generic.attack_damage",
+        "value": 17,
+        "operation": "addition"
+      }
+    ],
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:health",
+          "compare_to": 4,
+          "comparison": "=="
+        }
+      ]
+    }
+  },
+  "rage_17": {
+    "type": "origins:conditioned_attribute",
+    "tick_rate": 10,
+    "modifiers": [
+      {
+        "attribute": "minecraft:generic.attack_damage",
+        "value": 18,
+        "operation": "addition"
+      }
+    ],
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:health",
+          "compare_to": 3,
+          "comparison": "=="
+        }
+      ]
+    }
+  },
+  "rage_18": {
+    "type": "origins:conditioned_attribute",
+    "tick_rate": 10,
+    "modifiers": [
+      {
+        "attribute": "minecraft:generic.attack_damage",
+        "value": 19,
+        "operation": "addition"
+      }
+    ],
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:health",
+          "compare_to": 2,
+          "comparison": "=="
+        }
+      ]
+    }
+  },
+  "rage_19": {
+    "type": "origins:conditioned_attribute",
+    "tick_rate": 10,
+    "modifiers": [
+      {
+        "attribute": "minecraft:generic.attack_damage",
+        "value": 20,
+        "operation": "addition"
+      }
+    ],
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:health",
+          "compare_to": 1,
+          "comparison": "=="
+        }
+      ]
+    }
+  },
+  "speed": {
+    "type": "origins:action_over_time",
+    "interval": 10,
+    "entity_action": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "action": {
+            "type": "origins:apply_effect",
+            "effect": {
+              "effect": "minecraft:speed",
+              "duration": 40,
+              "amplifier": 1
+            }
+          },
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:health",
+                "compare_to": 15,
+                "comparison": "<="
+              },
+              { "type": "origins:health", "compare_to": 11, "comparison": ">=" }
+            ]
+          }
+        },
+        {
+          "action": {
+            "type": "origins:apply_effect",
+            "effect": {
+              "effect": "minecraft:speed",
+              "duration": 40,
+              "amplifier": 2
+            }
+          },
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:health",
+                "compare_to": 10,
+                "comparison": "<="
+              },
+              { "type": "origins:health", "compare_to": 6, "comparison": ">=" }
+            ]
+          }
+        },
+        {
+          "action": {
+            "type": "origins:apply_effect",
+            "effect": {
+              "effect": "minecraft:speed",
+              "duration": 40,
+              "amplifier": 3
+            }
+          },
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:health",
+                "compare_to": 5,
+                "comparison": "<="
+              },
+              { "type": "origins:health", "compare_to": 1, "comparison": ">=" }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "condition": {
+    "type": "origins:resource",
+    "compare_to": 1,
+    "comparison": "==",
+    "resource": "*:switching_switch_resource"
+  }
+}

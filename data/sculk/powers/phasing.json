@@ -10,7 +10,7 @@
     {
       "type": "origins:keybind",
       "sprite": "origins:textures/gui/badge/toggle.png",
-      "text": "Toggle with [Primary]"
+      "text": "Toggle with [Save Hotbar]"
     }
   ],
   "type": "origins:multiple",
@@ -41,7 +41,7 @@
         },
         {
           "type": "origins:power_active",
-          "power": "sculk:phasing_toggle"
+          "power": "*:*_toggle"
         }
       ]
     }
@@ -50,7 +50,7 @@
     "type": "origins:toggle",
     "active_by_default": false,
     "key": {
-      "key": "key.origins.primary_active"
+      "key": "key.saveToolbarActivator"
     }
   },
   "drain": {

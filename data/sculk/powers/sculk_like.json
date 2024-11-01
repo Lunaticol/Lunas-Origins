@@ -98,7 +98,8 @@
   },
   "shader": {
     "type": "origins:shader",
-    "shader": "minecraft:shaders/post/sobel.json"
+    "shader": "minecraft:shaders/post/sobel.json",
+    "toggleable": false
   },
   "condition": {
     "type": "origins:block_in_radius",
@@ -248,6 +249,23 @@
         "type": "origins:in_tag",
         "tag": "sculk:sculk_blocks"
       }
+    }
+  },
+  "silent": {
+    "type": "origins:prevent_game_event",
+    "tag": "minecraft:vibrations"
+  },
+  "to_much_xp": {
+    "type": "origins:action_over_time",
+    "interval": 40,
+    "entity_action": {
+      "type": "origins:add_xp",
+      "levels": -1
+    },
+    "condition": {
+      "type": "origins:xp_levels",
+      "compare_to": 200,
+      "comparison": ">"
     }
   }
 }
