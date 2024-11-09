@@ -1,0 +1,42 @@
+{
+  "name": "Eclipsing Power",
+  "description": "I'm good at alot of things, wanna see?",
+  "type": "origins:multiple",
+  "axe": {
+    "type": "origins:conditioned_attribute",
+    "modifiers": [
+      {
+        "attribute": "minecraft:generic.attack_speed",
+        "value": 1,
+        "operation": "addition"
+      },
+      {
+        "attribute": "minecraft:generic.attack_damage",
+        "value": 0.5,
+        "operation": "multiply_total"
+      }
+    ]
+  },
+  "see_attackers": {
+    "type": "origins:entity_glow",
+    "blue": 1,
+    "red": 0.69019607843,
+    "green": 0.35686274509,
+    "use_teams": false,
+    "bientity_condition": {
+      "type": "origins:target_condition",
+      "condition": {
+        "type": "origins:power",
+        "power": "luna:attacked"
+      }
+    }
+  },
+  "if_attacked": {
+    "type": "origins:attacker_action_when_hit",
+    "entity_action": {
+      "type": "origins:grant_power",
+      "power": "luna:attacked",
+      "source": "luna:isabella"
+    }
+  }
+}

@@ -2,11 +2,11 @@
   "type": "origins:multiple",
   "remove": {
     "type": "origins:action_over_time",
-    "interval": 100,
+    "interval": 200,
     "entity_action": {
       "type": "origins:revoke_power",
-      "power": "*:*",
-      "source": "sculk:sculk_like"
+      "power": "luna:attacked",
+      "source": "luna:isabella"
     }
   }
 }
