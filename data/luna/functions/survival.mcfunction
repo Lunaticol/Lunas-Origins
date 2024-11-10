@@ -1,2 +1,0 @@
-gamemode survival
-give @s 

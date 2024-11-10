@@ -1,6 +1,7 @@
 {
   "powers": [
     "sculk:sculk_like",
+    "sculk:switching",
     "sculk:phasing",
     "sculk:sculk_smash",
     "sculk:sculk_veil",

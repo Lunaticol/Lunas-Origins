@@ -1,9 +1,15 @@
 {
-  "powers": ["luna:luna"],
+  "powers": [
+    "luna:isabella",
+    "luna:rtp",
+    "luna:telekinesis",
+    "luna:multidimensional",
+    "luna:death"
+  ],
   "icon": "minecraft:blue_orchid",
   "unchoosable": true,
   "order": 9,
-  "impact": 0,
-  "name": "Luna",
-  "description": "Luna.exe is not responding"
+  "impact": 3,
+  "name": "Isabella",
+  "description": "Isabella Kitsune or Isabella Prime, is the source of all other Isabellas, a constant in the multiverse. She has extremely powerful magical and physical abilities that exceed far beyond any other variant of Isabella."
 }
