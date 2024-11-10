@@ -24,23 +24,12 @@
               {
                 "type": "origins:execute_command",
                 "command": "particle minecraft:portal ~ ~0.4 ~ 0.3 0.6 0.3 0 100 normal"
-              },
-              {
-                "type": "origins:change_resource",
-                "resource": "*:*_rtp_hit_bar",
-                "change": 0,
-                "operation": "set"
               }
             ]
           },
           "condition": {
-            "type": "origins:or",
-            "conditions": [
-              {
-                "type": "origins:dimension",
-                "dimension": "minecraft:the_nether"
-              }
-            ]
+            "type": "origins:dimension",
+            "dimension": "minecraft:the_nether"
           }
         },
         {
@@ -60,17 +49,11 @@
               {
                 "type": "origins:execute_command",
                 "command": "particle minecraft:portal ~ ~0.4 ~ 0.3 0.6 0.3 0 100 normal"
-              },
-              {
-                "type": "origins:change_resource",
-                "resource": "*:*_rtp_hit_bar",
-                "change": 0,
-                "operation": "set"
               }
             ]
           },
           "condition": {
-            "type": "origins:or",
+            "type": "origins:and",
             "conditions": [
               {
                 "type": "origins:on_block",
@@ -105,12 +88,6 @@
               {
                 "type": "origins:execute_command",
                 "command": "particle minecraft:portal ~ ~0.4 ~ 0.3 0.6 0.3 0 100 normal"
-              },
-              {
-                "type": "origins:change_resource",
-                "resource": "*:*_rtp_hit_bar",
-                "change": 0,
-                "operation": "set"
               }
             ]
           },
@@ -145,173 +122,237 @@
     }
   },
   "when_shot": {
-    "type": "origins:attacker_action_when_hit",
-    "entity_action": {
-      "type": "origins:execute_command",
-      "command": "/tellraw @p {\"bold\":true,\"color\":\"dark_purple\",\"text\":\"You know those don't work on me, right?\"}"
+    "type": "origins:action_when_hit",
+    "bientity_action": {
+      "type": "origins:actor_action",
+      "action": {
+        "type": "origins:execute_command",
+        "command": "/tellraw @p {\"bold\":true,\"color\":\"dark_purple\",\"text\":\"You know those don't work on me, right?\"}"
+      }
     },
     "damage_condition": { "type": "origins:projectile" }
   },
   "rtp_bar": {
     "type": "origins:resource",
     "max": 10,
-    "min": 0
+    "min": 0,
+    "hud_render": {
+      "should_render": true
+    }
   },
   "rtp_when_hit": {
-    "type": "origins:self_action_when_hit",
-    "entity_action": {
-      "type": "origins:if_else_list",
-      "actions": [
-        {
-          "action": {
-            "type": "origins:and",
-            "actions": [
-              {
-                "type": "origins:play_sound",
-                "sound": "minecraft:item.chorus_fruit.teleport",
-                "volume": 1,
-                "pitch": 1
-              },
-              {
-                "type": "origins:execute_command",
-                "command": "spreadplayers ~ ~ 8 16 under 127 false @s"
-              },
-              {
-                "type": "origins:execute_command",
-                "command": "particle minecraft:portal ~ ~0.4 ~ 0.3 0.6 0.3 0 100 normal"
-              },
-              {
-                "type": "origins:change_resource",
-                "resource": "*:*_rtp_hit_bar",
-                "change": -1,
-                "operation": "add"
-              }
-            ]
-          },
-          "condition": {
-            "type": "origins:or",
-            "conditions": [
-              {
-                "type": "origins:dimension",
-                "dimension": "minecraft:the_nether"
-              },
-              {
-                "type": "origins:resource",
-                "compare_to": 1,
-                "comparison": ">=",
-                "resource": "*:*_rtp_bar"
-              }
-            ]
-          }
-        },
-        {
-          "action": {
-            "type": "origins:and",
-            "actions": [
-              {
-                "type": "origins:play_sound",
-                "sound": "minecraft:item.chorus_fruit.teleport",
-                "volume": 1,
-                "pitch": 1
-              },
-              {
-                "type": "origins:execute_command",
-                "command": "spreadplayers ~ ~ 8 16 under 319 false @s"
-              },
-              {
-                "type": "origins:execute_command",
-                "command": "particle minecraft:portal ~ ~0.4 ~ 0.3 0.6 0.3 0 100 normal"
-              },
-              {
-                "type": "origins:change_resource",
-                "resource": "*:*_rtp_hit_bar",
-                "change": 0,
-                "operation": "set"
-              }
-            ]
-          },
-          "condition": {
-            "type": "origins:or",
-            "conditions": [
-              {
-                "type": "origins:on_block",
-                "block_condition": {
-                  "type": "origins:height",
-                  "compare_to": 63,
-                  "comparison": ">="
+    "type": "origins:modify_damage_taken",
+    "bientity_action": {
+      "type": "origins:target_action",
+      "action": {
+        "type": "origins:if_else_list",
+        "actions": [
+          {
+            "action": {
+              "type": "origins:and",
+              "actions": [
+                {
+                  "type": "origins:play_sound",
+                  "sound": "minecraft:item.chorus_fruit.teleport",
+                  "volume": 1,
+                  "pitch": 1
+                },
+                {
+                  "type": "origins:execute_command",
+                  "command": "spreadplayers ~ ~ 8 16 under 127 false @s"
+                },
+                {
+                  "type": "origins:execute_command",
+                  "command": "particle minecraft:portal ~ ~0.4 ~ 0.3 0.6 0.3 0 100 normal"
+                },
+                {
+                  "type": "origins:change_resource",
+                  "resource": "*:*_rtp_bar",
+                  "change": -1,
+                  "operation": "add"
+                },
+                {
+                  "type": "origins:trigger_cooldown",
+                  "power": "*:*_cooldown"
                 }
-              },
-              {
-                "type": "origins:dimension",
-                "dimension": "minecraft:the_nether",
-                "inverted": true
-              },
-              {
-                "type": "origins:resource",
-                "compare_to": 1,
-                "comparison": ">=",
-                "resource": "*:*_rtp_bar"
-              }
-            ]
-          }
-        },
-        {
-          "action": {
-            "type": "origins:and",
-            "actions": [
-              {
-                "type": "origins:play_sound",
-                "sound": "minecraft:item.chorus_fruit.teleport",
-                "volume": 1,
-                "pitch": 1
-              },
-              {
-                "type": "origins:execute_command",
-                "command": "spreadplayers ~ ~ 8 16 under 62 false @s"
-              },
-              {
-                "type": "origins:execute_command",
-                "command": "particle minecraft:portal ~ ~0.4 ~ 0.3 0.6 0.3 0 100 normal"
-              },
-              {
-                "type": "origins:change_resource",
-                "resource": "*:*_rtp_hit_bar",
-                "change": -1,
-                "operation": "add"
-              }
-            ]
-          },
-          "condition": {
-            "type": "origins:and",
-            "conditions": [
-              {
-                "type": "origins:on_block",
-                "block_condition": {
-                  "type": "origins:height",
-                  "compare_to": 62,
-                  "comparison": "<="
+              ]
+            },
+            "condition": {
+              "type": "origins:and",
+              "conditions": [
+                {
+                  "type": "origins:dimension",
+                  "dimension": "minecraft:the_nether"
+                },
+                {
+                  "type": "origins:resource",
+                  "compare_to": 1,
+                  "comparison": ">=",
+                  "resource": "*:*_rtp_bar"
+                },
+                {
+                  "type": "origins:resource",
+                  "compare_to": 0,
+                  "comparison": "==",
+                  "resource": "*:*_cooldown"
                 }
-              },
-              {
-                "type": "origins:resource",
-                "compare_to": 1,
-                "comparison": ">=",
-                "resource": "*:*_rtp_bar"
-              }
-            ]
+              ]
+            }
+          },
+          {
+            "action": {
+              "type": "origins:and",
+              "actions": [
+                {
+                  "type": "origins:play_sound",
+                  "sound": "minecraft:item.chorus_fruit.teleport",
+                  "volume": 1,
+                  "pitch": 1
+                },
+                {
+                  "type": "origins:execute_command",
+                  "command": "spreadplayers ~ ~ 8 16 under 319 false @s"
+                },
+                {
+                  "type": "origins:execute_command",
+                  "command": "particle minecraft:portal ~ ~0.4 ~ 0.3 0.6 0.3 0 100 normal"
+                },
+                {
+                  "type": "origins:change_resource",
+                  "resource": "*:*_rtp_bar",
+                  "change": -1,
+                  "operation": "add"
+                },
+                {
+                  "type": "origins:trigger_cooldown",
+                  "power": "*:*_cooldown"
+                }
+              ]
+            },
+            "condition": {
+              "type": "origins:and",
+              "conditions": [
+                {
+                  "type": "origins:on_block",
+                  "block_condition": {
+                    "type": "origins:height",
+                    "compare_to": 63,
+                    "comparison": ">="
+                  }
+                },
+                {
+                  "type": "origins:dimension",
+                  "dimension": "minecraft:the_nether",
+                  "inverted": true
+                },
+                {
+                  "type": "origins:resource",
+                  "compare_to": 1,
+                  "comparison": ">=",
+                  "resource": "*:*_rtp_bar"
+                },
+                {
+                  "type": "origins:resource",
+                  "compare_to": 0,
+                  "comparison": "==",
+                  "resource": "*:*_cooldown"
+                }
+              ]
+            }
+          },
+          {
+            "action": {
+              "type": "origins:and",
+              "actions": [
+                {
+                  "type": "origins:play_sound",
+                  "sound": "minecraft:item.chorus_fruit.teleport",
+                  "volume": 1,
+                  "pitch": 1
+                },
+                {
+                  "type": "origins:execute_command",
+                  "command": "spreadplayers ~ ~ 8 16 under 62 false @s"
+                },
+                {
+                  "type": "origins:execute_command",
+                  "command": "particle minecraft:portal ~ ~0.4 ~ 0.3 0.6 0.3 0 100 normal"
+                },
+                {
+                  "type": "origins:change_resource",
+                  "resource": "*:*_rtp_bar",
+                  "change": -1,
+                  "operation": "add"
+                },
+                {
+                  "type": "origins:trigger_cooldown",
+                  "power": "*:*_cooldown"
+                }
+              ]
+            },
+            "condition": {
+              "type": "origins:and",
+              "conditions": [
+                {
+                  "type": "origins:on_block",
+                  "block_condition": {
+                    "type": "origins:height",
+                    "compare_to": 62,
+                    "comparison": "<="
+                  }
+                },
+                {
+                  "type": "origins:resource",
+                  "compare_to": 1,
+                  "comparison": ">=",
+                  "resource": "*:*_rtp_bar"
+                },
+                {
+                  "type": "origins:resource",
+                  "compare_to": 0,
+                  "comparison": "==",
+                  "resource": "*:*_cooldown"
+                }
+              ]
+            }
           }
-        }
-      ]
+        ]
+      }
+    },
+    "modifier": {
+      "value": -0.9999,
+      "operation": "multiply_total"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": ">=",
+      "resource": "*:*_rtp_bar"
     }
   },
   "recharge": {
     "type": "origins:action_over_time",
-    "interval": 200,
+    "interval": 300,
     "entity_action": {
       "type": "origins:change_resource",
       "resource": "*:*_rtp_bar",
       "change": 1,
       "operation": "add"
     }
+  },
+  "fall_damage": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "operation": "multiply_total",
+      "value": -1
+    },
+    "damage_condition": {
+      "type": "origins:name",
+      "name": "minecraft:fall"
+    }
+  },
+  "cooldown": {
+    "type": "origins:cooldown",
+    "cooldown": 10
   }
 }

@@ -53,166 +53,12 @@
         "type": "origins:change_resource",
         "resource": "*:soul_soul_bar",
         "operation": "add",
-        "change": -15
+        "change": 30
       }
     },
     "condition": {
       "type": "origins:power_active",
       "power": "*:*_toggle"
-    },
-    "damage_condition": {
-      "type": "origins:and",
-      "conditions": [
-        {
-          "type": "origins:attacker",
-          "entity_condition": { "type": "origins:exists" }
-        },
-        {
-          "type": "origins:amount",
-          "compare_to": 4,
-          "comparison": "<="
-        },
-        {
-          "type": "origins:amount",
-          "compare_to": 2,
-          "comparison": ">="
-        }
-      ]
-    }
-  },
-  "when_hit_2": {
-    "type": "origins:action_when_hit",
-    "bientity_action": {
-      "type": "origins:target_action",
-      "action": {
-        "type": "origins:change_resource",
-        "resource": "*:soul_soul_bar",
-        "operation": "add",
-        "change": -20
-      }
-    },
-    "condition": {
-      "type": "origins:power_active",
-      "power": "*:*_toggle"
-    },
-    "damage_condition": {
-      "type": "origins:and",
-      "conditions": [
-        {
-          "type": "origins:attacker",
-          "entity_condition": { "type": "origins:exists" }
-        },
-        {
-          "type": "origins:amount",
-          "compare_to": 4,
-          "comparison": ">"
-        },
-        {
-          "type": "origins:amount",
-          "compare_to": 8,
-          "comparison": "<="
-        }
-      ]
-    }
-  },
-  "when_hit_3": {
-    "type": "origins:action_when_hit",
-    "bientity_action": {
-      "type": "origins:target_action",
-      "action": {
-        "type": "origins:change_resource",
-        "resource": "*:soul_soul_bar",
-        "operation": "add",
-        "change": -25
-      }
-    },
-    "condition": {
-      "type": "origins:power_active",
-      "power": "*:*_toggle"
-    },
-    "damage_condition": {
-      "type": "origins:and",
-      "conditions": [
-        {
-          "type": "origins:attacker",
-          "entity_condition": { "type": "origins:exists" }
-        },
-        {
-          "type": "origins:amount",
-          "compare_to": 12,
-          "comparison": "<="
-        },
-        {
-          "type": "origins:amount",
-          "compare_to": 8,
-          "comparison": ">"
-        }
-      ]
-    }
-  },
-  "when_hit_4": {
-    "type": "origins:action_when_hit",
-    "bientity_action": {
-      "type": "origins:target_action",
-      "action": {
-        "type": "origins:change_resource",
-        "resource": "*:soul_soul_bar",
-        "operation": "add",
-        "change": -30
-      }
-    },
-    "condition": {
-      "type": "origins:power_active",
-      "power": "*:*_toggle"
-    },
-    "damage_condition": {
-      "type": "origins:and",
-      "conditions": [
-        {
-          "type": "origins:attacker",
-          "entity_condition": { "type": "origins:exists" }
-        },
-        {
-          "type": "origins:amount",
-          "compare_to": 12,
-          "comparison": ">"
-        },
-        {
-          "type": "origins:amount",
-          "compare_to": 16,
-          "comparison": "<="
-        }
-      ]
-    }
-  },
-  "when_hit_5": {
-    "type": "origins:action_when_hit",
-    "bientity_action": {
-      "type": "origins:target_action",
-      "action": {
-        "type": "origins:change_resource",
-        "resource": "*:soul_soul_bar",
-        "operation": "add",
-        "change": -35
-      }
-    },
-    "condition": {
-      "type": "origins:power_active",
-      "power": "*:*_toggle"
-    },
-    "damage_condition": {
-      "type": "origins:and",
-      "conditions": [
-        {
-          "type": "origins:attacker",
-          "entity_condition": { "type": "origins:exists" }
-        },
-        {
-          "type": "origins:amount",
-          "compare_to": 16,
-          "comparison": ">"
-        }
-      ]
     }
   },
   "active": {
@@ -260,20 +106,14 @@
       ]
     }
   },
-  "when_hit_fire": {
-    "type": "origins:action_when_hit",
-    "bientity_action": {
-      "type": "origins:target_action",
-      "action": {
-        "type": "origins:change_resource",
-        "resource": "*:soul_soul_bar",
-        "operation": "add",
-        "change": -50
-      }
-    },
-    "condition": {
-      "type": "origins:power_active",
-      "power": "*:*_toggle"
+  "when_on_fire": {
+    "type": "origins:action_when_damage_taken",
+    "cooldown": 10,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "*:soul_soul_bar",
+      "operation": "add",
+      "change": -50
     },
     "damage_condition": {
       "type": "origins:or",

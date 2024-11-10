@@ -1,0 +1,17 @@
+{
+  "powers": [
+    "sculk_luna:sculk_like",
+    "sculk_luna:switching",
+    "sculk_luna:phasing",
+    "sculk_luna:sculk_smash",
+    "sculk_luna:sculk_veil",
+    "sculk_luna:unbridled_rage",
+    "sculk_luna:brother"
+  ],
+  "icon": "minecraft:sculk_catalyst",
+  "unchoosable": true,
+  "order": 9,
+  "impact": 2,
+  "name": "Lyst",
+  "description": "Created by the sculk to help protect their citys from further intruders, you must defend your home."
+}

@@ -1,1 +1,0 @@
-bossbar set minecraft:button color red

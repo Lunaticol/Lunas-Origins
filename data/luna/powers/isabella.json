@@ -4,6 +4,7 @@
   "type": "origins:multiple",
   "axe": {
     "type": "origins:conditioned_attribute",
+    "tick_rate": 5,
     "modifiers": [
       {
         "attribute": "minecraft:generic.attack_speed",
@@ -15,7 +16,17 @@
         "value": 0.5,
         "operation": "multiply_total"
       }
-    ]
+    ],
+    "condition": {
+      "type": "origins:equipped_item",
+      "equipment_slot": "mainhand",
+      "item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": {
+          "tag": "minecraft:axes"
+        }
+      }
+    }
   },
   "see_attackers": {
     "type": "origins:entity_glow",
