@@ -1,6 +1,6 @@
 {
   "name": "Crimson Phase",
-  "description": "The Crimson Phase is a more enchanced version of Phantom Phase. You are able to completely hide yourself & youre faster. However this takes more energy.",
+  "description": "The Crimson Phase is a more enchanced version of Phantom Phase. You are able to completely hide yourself & you're faster. However this takes more energy.",
   "type": "origins:multiple",
   "phase": {
     "type": "origins:phasing",

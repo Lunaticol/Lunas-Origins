@@ -1,6 +1,6 @@
 {
   "name": "Ethereal",
-  "description": "After accumulating enough souls, shannel them in your body to unleash your true potential.",
+  "description": "After accumulating enough souls, channel them in your body to unleash your true potential.",
   "type": "origins:multiple",
   "ethereal": {
     "type": "origins:active_self",

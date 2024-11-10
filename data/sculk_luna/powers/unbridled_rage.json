@@ -1,6 +1,6 @@
 {
   "name": "Unbridled Rage",
-  "description": "The lower to death you get, the stronger and faster you become.",
+  "description": "The closer to death you get, the stronger and faster you become.",
   "type": "origins:multiple",
   "rage_1": {
     "type": "origins:conditioned_attribute",

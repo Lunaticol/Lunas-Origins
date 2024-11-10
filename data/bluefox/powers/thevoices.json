@@ -1,6 +1,6 @@
 {
   "name": "Spiritual Summoning",
-  "description": "Using stored souls you can send out souls to fight for you.",
+  "description": "Using stored souls, you can send some out to fight for you.",
   "type": "origins:multiple",
   "spirits": {
     "type": "origins:active_self",

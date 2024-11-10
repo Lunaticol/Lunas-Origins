@@ -1,6 +1,6 @@
 {
   "name": "Sculk Shocked",
-  "description": "You charge XP into your sculk limbs and unleash a shockwave around you.",
+  "description": "You charge XP into your sculk limbs, unleashing a shockwave around you.",
   "badges": [
     {
       "type": "origins:tooltip",

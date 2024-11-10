@@ -1,6 +1,6 @@
 {
   "name": "Fish Diet",
-  "description": "You are limited to fished based foods",
+  "description": "You are limited to fish based foods",
   "type": "origins:multiple",
   "bucket": {
     "type": "origins:prevent_item_use",

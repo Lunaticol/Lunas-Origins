@@ -1,6 +1,6 @@
 {
   "name": "Axolotl Body",
-  "description": "Youre an Axolotl! You are smaller and have water buffs!",
+  "description": "You're an Axolotl! You are smaller and have water buffs!",
   "type": "origins:multiple",
   "night_vision": {
     "type": "origins:night_vision",

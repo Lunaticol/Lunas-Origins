@@ -1,6 +1,6 @@
 {
   "name": "Deep and Dark",
-  "description": "Born from Sculk, and kin to the Warden. Go froward, and show these invaders why they shouldnt mess with the Sculk.",
+  "description": "Born from Sculk, and kin to the Warden. Go forward, and show these invaders why they shouldnt mess with the Sculk.",
   "type": "origins:multiple",
   "city": {
     "type": "origins:modify_player_spawn",

@@ -1,6 +1,6 @@
 {
   "name": "Environmental Awareness",
-  "description": "Being so small, you have learned to use the environment around you to your advantage.",
+  "description": "Being so small, you learned to use the environment around you to your advantage.",
   "type": "origins:multiple",
   "reduced_damage": {
     "type": "origins:modify_damage_taken",

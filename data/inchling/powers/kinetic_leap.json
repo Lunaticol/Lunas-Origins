@@ -1,6 +1,6 @@
 {
   "name": "Kinetic Leap",
-  "description": "Using your tiny body you can launch yourself forward in any direction.",
+  "description": "Using your tiny body, you can launch yourself forward in any direction.",
   "type": "origins:multiple",
   "leap": {
     "type": "origins:active_self",

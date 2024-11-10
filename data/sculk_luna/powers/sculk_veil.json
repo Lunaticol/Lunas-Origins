@@ -1,6 +1,6 @@
 {
   "name": "Sculk Veil",
-  "description": "Your outer catalyst shell hardens and absorbs more damage the angrier you are.",
+  "description": "Your outer catalyst's shell hardens, absorbing more damage the angrier you are.",
   "type": "origins:multiple",
   "anger": {
     "type": "origins:resource",

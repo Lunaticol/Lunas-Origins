@@ -1,6 +1,6 @@
 {
   "name": "Dark Magic",
-  "description": "Crimson Phantom's are born from a dark magic, This unpredictable magic comes with its perks and debuffs.\nThe dark magic has changed the color of your body.\nIt seems you can touch sunlight agian, however, you still take debuffs.\nYou take less physical damage, But magic hurts more.",
+  "description": "Crimson Phantoms are born from a dark magic, This unpredictable magic comes with its perks and debuffs.\nThe dark magic has changed the color of your body.\nIt seems you can touch sunlight agian, however, you still take debuffs.\nYou take less physical damage, But magic hurts more.",
   "type": "origins:multiple",
   "color": {
     "type": "origins:model_color",

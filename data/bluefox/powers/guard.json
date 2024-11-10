@@ -1,6 +1,6 @@
 {
   "name": "Soul Barrier",
-  "description": "You can use your souls to void damage. This uses souls and getting hit may cause souls to disipate.\nRequires above 200 souls.",
+  "description": "You can use your souls to void damage, consuming some in the process. \nRequires above 200 souls.",
   "type": "origins:multiple",
   "shield": {
     "type": "apugli:energy_swirl",

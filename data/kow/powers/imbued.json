@@ -1,6 +1,6 @@
 {
   "name": "Imbued by Wrath",
-  "description": "Over time while you fight, your claws become stronger and you improve. You can reach level 20, your level resets when you leave.",
+  "description": "Over time while you fight, your claws become stronger and you improve. You can reach up to level 20, your level resets when you leave.",
   "type": "origins:multiple",
   "levels": {
     "type": "origins:resource",
