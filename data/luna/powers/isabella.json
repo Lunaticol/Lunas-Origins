@@ -21,8 +21,10 @@
       "type": "origins:equipped_item",
       "equipment_slot": "mainhand",
       "item_condition": {
-        "type": "origins:in_tag",
-        "tag": "minecraft:axes"
+        "type": "origins:ingredient",
+        "ingredient": {
+          "tag": "minecraft:axes"
+        }
       }
     }
   },

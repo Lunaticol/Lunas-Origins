@@ -15,12 +15,8 @@
     "bluefox:kitsune",
     "moonflower:noctilith",
     "inchling:titanmite",
-<<<<<<< Updated upstream
-    "sculk:sculk",
+    "sculk_luna:sculk",
     "sw:sw",
     "ignea:ignea"
-=======
-    "sculk_luna:sculk"
->>>>>>> Stashed changes
   ]
 }
