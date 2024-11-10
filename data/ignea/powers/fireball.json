@@ -1,0 +1,35 @@
+{
+  "name": "Blazing Fury",
+  "description": "Fire an incredibly accurate small fireball, doing medium damage.",
+  "type": "origins:multiple",
+  "fireballer": {
+    "type": "origins:fire_projectile",
+    "entity_type": "minecraft:small_fireball",
+    "cooldown": 80,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/resource_bar.png",
+      "bar_index": 7
+    },
+    "count": 1,
+    "interval": 0,
+    "start_delay": 0,
+    "speed": 1.5,
+    "divergence": 0,
+    "sound": "minecraft:entity.blaze.shoot",
+    "key": {
+      "key": "key.origins.primary_active"
+    }
+  },
+  "fireballdamage": {
+    "type": "origins:modify_projectile_damage",
+    "damage_condition": {
+      "type": "origins:projectile",
+      "projectile": "minecraft:small_fireball"
+    },
+    "modifier": {
+      "operation": "set_total",
+      "value": 12
+    }
+  }
+}

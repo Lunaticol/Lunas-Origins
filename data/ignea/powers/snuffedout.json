@@ -1,0 +1,13 @@
+{
+    "name": "Snuffed Out",
+    "description": "Your flame can be snuffed out easily by suffocation.",
+    "type": "origins:modify_damage_taken",
+    "damage_condition": {
+        "type": "origins:name",
+        "name": "inWall"
+    },
+    "modifier": {
+        "operation": "addition",
+        "value": 4
+    }
+}

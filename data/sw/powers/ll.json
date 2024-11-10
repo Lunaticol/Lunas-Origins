@@ -1,0 +1,53 @@
+{
+  "name": "Lightning Leap",
+  "description": "Leap into the air, before crashing forward, releasing an explosion of lightning where you land.",
+  "type": "origins:active_self",
+  "condition": {
+    "type": "origins:resource",
+    "resource": "*:static_resource",
+    "comparison": ">=",
+    "compare_to": 15
+  },
+  "entity_action": {
+    "type": "origins:and",
+    "actions": [
+      {
+        "type": "origins:change_resource",
+        "resource": "*:static_resource",
+        "operation": "add",
+        "change": -15
+      },
+      {
+        "type": "origins:add_velocity",
+        "y": 2.5,
+        "server": true,
+        "client": true,
+        "set": true,
+        "space": "world",
+        "x": 0,
+        "z": 0
+      },
+      {
+        "type": "origins:delay",
+        "ticks": 20,
+        "action": {
+          "type": "origins:add_velocity",
+          "z": 2,
+          "client": true,
+          "space": "local"
+        }
+      },
+      {
+        "type": "origins:delay",
+        "ticks": 20,
+        "action": {
+          "type": "origins:grant_power",
+          "power": "*:lli",
+          "source": "sw"
+        }
+      }
+    ]
+  },
+  "key": "key.origins.secondary_active",
+  "cooldown": 160
+}

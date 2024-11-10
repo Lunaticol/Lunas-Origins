@@ -1,0 +1,29 @@
+{
+  "name": "Axolotl",
+  "replace": false,
+  "allow_random": true,
+  "allow_random_unchoosable": true,
+  "exclude_random": [
+    "axolotl:axolotl_classes/blue_axolotl",
+    "axolotl:axolotl_classes/green_axolotl"
+  ],
+  "order": 4,
+  "enabled": true,
+  "origins": [
+    {
+      "condition": {
+        "type": "origins:origin",
+        "origin": "axolotl:axolotl",
+        "layer": "origins:origin"
+      },
+      "origins": [
+        "axolotl:axolotl_classes/lucy_axolotl",
+        "axolotl:axolotl_classes/wild_axolotl",
+        "axolotl:axolotl_classes/gold_axolotl",
+        "axolotl:axolotl_classes/cyan_axolotl",
+        "axolotl:axolotl_classes/blue_axolotl",
+        "axolotl:axolotl_classes/green_axolotl"
+      ]
+    }
+  ]
+}

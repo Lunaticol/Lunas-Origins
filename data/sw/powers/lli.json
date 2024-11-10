@@ -1,0 +1,30 @@
+{
+  "type": "origins:action_on_land",
+  "entity_action": {
+    "type": "origins:and",
+    "actions": [
+      { "type": "origins:revoke_power", "power": "*:lli", "source": "sw" },
+      {
+        "type": "origins:area_of_effect",
+        "radius": 5,
+        "bientity_action": {
+          "type": "origins:target_action",
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "summon lightning_bolt"
+              },
+              {
+                "type": "origins:damage",
+                "amount": 20,
+                "damage_type": "lightningcrash"
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

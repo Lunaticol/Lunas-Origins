@@ -1,0 +1,47 @@
+{
+  "name": "Static Loss",
+  "description": "You can lose Static multiple different ways. These include being in water, taking damage, and using your abilities.",
+  "type": "origins:multiple",
+  "water": {
+    "condition": {
+      "type": "origins:fluid_height",
+      "comparison": ">",
+      "fluid": "minecraft:water",
+      "compare_to": 0.0
+    },
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": -2,
+      "operation": "add",
+      "resource": "*:static_resource"
+    }
+  },
+  "whenhit": {
+    "type": "origins:attacker_action_when_hit",
+    "cooldown": 10,
+    "entity_action": {
+      "type": "apoli:damage",
+      "amount": 3,
+      "damage_type": "discharge"
+    }
+  },
+  "whenhits": {
+    "type": "origins:action_when_hit",
+    "bientity_action": {
+      "type": "apoli:target_action",
+      "action": {
+        "type": "origins:change_resource",
+        "operation": "add",
+        "change": -3,
+        "resource": "*:static_resource"
+      }
+    },
+    "bientity_condition": {
+      "type": "origins:target_condition",
+      "condition": { "type": "apoli:living" }
+    },
+    "cooldown": 10
+  }
+}

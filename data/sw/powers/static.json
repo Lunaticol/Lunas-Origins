@@ -1,0 +1,97 @@
+{
+  "name": "Static Buildup",
+  "description": "While grounded and moving, you will gain static electricity. This is boosted in a thunderstorm. Low static electricity will slow you down, while high static increases speed.",
+  "type": "origins:multiple",
+  "resource": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 50,
+    "hud_render": {
+      "bar_index": 2,
+      "sprite_location": "origins:textures/gui/resource_bar.png"
+    },
+    "start_value": 0
+  },
+  "gain": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "operation": "add",
+      "resource": "*:static_resource",
+      "change": 1
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        { "type": "apugli:thundering", "inverted": true },
+        { "type": "origins:on_block" }
+      ]
+    }
+  },
+  "gaininstorm": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "*:static_resource",
+      "operation": "add",
+      "change": 1
+    },
+    "interval": 20,
+    "condition": { "type": "apugli:thundering" }
+  },
+  "weakness": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:apply_effect",
+      "effects": [
+        {
+          "effect": "minecraft:slowness",
+          "duration": 100,
+          "show_particles": false,
+          "amplifier": 0
+        },
+        {
+          "effect": "minecraft:mining_fatigue",
+          "amplifier": 0,
+          "duration": 100,
+          "show_particles": false
+        }
+      ]
+    },
+    "interval": 100,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:static_resource",
+      "compare_to": 10,
+      "comparison": "<"
+    }
+  },
+  "strength": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:apply_effect",
+      "effects": [
+        {
+          "effect": "minecraft:haste",
+          "duration": 100,
+          "show_particles": false,
+          "amplifier": 1
+        },
+        {
+          "effect": "minecraft:speed",
+          "amplifier": 1,
+          "duration": 100,
+          "show_particles": false
+        }
+      ]
+    },
+    "interval": 100,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:static_resource",
+      "compare_to": 40,
+      "comparison": ">"
+    }
+  }
+}

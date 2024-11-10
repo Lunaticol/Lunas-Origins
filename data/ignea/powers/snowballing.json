@@ -1,0 +1,14 @@
+{
+  "name": "Enhanced Weakness",
+  "description": "While you may be a better Blazeborn, your weaknesses have also been amplified. Snowballs hurt a lot more now.",
+  "type": "origins:modify_damage_taken",
+  "damage_condition": {
+    "type": "origins:projectile",
+    "projectile": "minecraft:snowball"
+  },
+  "modifier": {
+    "operation": "addition",
+    "value": 15,
+    "name": "Snowball damage taken like Blazes"
+  }
+}

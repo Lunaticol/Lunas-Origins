@@ -1,0 +1,21 @@
+{
+  "name": "Physical Heat",
+  "description": "You can consume Blaze Rods for food, or use Blaze Powder to ignite yourself for long periods of time.",
+  "type": "origins:multiple",
+  "yummy": {
+    "type": "apugli:edible_item",
+    "food_component": {
+      "hunger": 8,
+      "saturation": 1,
+      "meat": false
+    },
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "give @s blaze_powder 1"
+    },
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": { "item": "minecraft:blaze_rod" }
+    }
+  }
+}

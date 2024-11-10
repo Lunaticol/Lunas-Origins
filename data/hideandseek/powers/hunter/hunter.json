@@ -1,0 +1,31 @@
+{
+  "type": "origins:multiple",
+  "hider": {
+    "type": "origins:self_glow",
+    "blue": 0,
+    "green": 0,
+    "red": 1,
+    "use_teams": false
+  },
+  "attack": {
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+      "operation": "addition",
+      "value": 999,
+      "name": "attack"
+    }
+  },
+  "gear": {
+    "type": "origins:starting_equipment",
+    "recurrent": false,
+    "stacks": [{ "item": "minecraft:cooked_beef", "amount": 64 }]
+  },
+  "speed": {
+    "type": "origins:attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.movement_speed",
+      "operation": "addition",
+      "value": 0.02
+    }
+  }
+}

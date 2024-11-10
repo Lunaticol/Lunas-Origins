@@ -1,0 +1,102 @@
+{
+    "name": "To Arms!",
+    "description": "Nearby Blazeborn and Nether Kitsune will receive Resistance, Strength, and Speed.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "sprite": "origins:textures/gui/badge/info.png",
+            "text": "If a Kitsune receives this buff, their Soul Bar will also increase!"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "Successfully buffing a Blazeborn or Nether Kitsune will also give you Resistance I",
+            "sprite": "origins:textures/gui/badge/info.png"
+        }
+    ],
+    "type": "origins:action_over_time",
+    "interval": 200,
+    "entity_action": {
+        "type": "origins:area_of_effect",
+        "radius": 30,
+        "bientity_condition": {
+            "type": "origins:target_condition",
+            "condition": {
+                "type": "origins:or",
+                "conditions": [
+                    {
+                        "type": "origins:origin",
+                        "origin": "origins:blazeborn"
+                    },
+                    {
+                        "type": "origins:origin",
+                        "origin": "kitsune:kitsune_classes/nether_kitsune",
+                        "layer": "luna:luna_layers"
+                    }
+                ]
+            }
+        },
+        "bientity_action": {
+            "type": "origins:target_action",
+            "action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:area_of_effect",
+                        "radius": 30,
+                        "bientity_condition": {
+                            "type": "origins:target_condition",
+                            "condition": {
+                                "type": "origins:origin",
+                                "origin": "ignea:ignea"
+                            }
+                        },
+                        "bientity_action": {
+                            "type": "origins:target_action",
+                            "action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:execute_command",
+                                        "command": "effect give @s minecraft:resistance 10 0 false"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "type": "origins:apply_effect",
+                        "effects": [
+                            {
+                                "effect": "minecraft:resistance",
+                                "duration": 200,
+                                "amplifier": 0,
+                                "show_particles": true,
+                                "show_icon": true
+                            },
+                            {
+                                "effect": "minecraft:strength",
+                                "duration": 200,
+                                "amplifier": 0,
+                                "show_particles": true,
+                                "show_icon": true
+                            },
+                            {
+                                "effect": "minecraft:speed",
+                                "duration": 200,
+                                "amplifier": 0,
+                                "show_particles": true,
+                                "show_icon": true
+                            }
+                        ]
+                    },
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "kitsune:kitsune/nether/soul_mode_soul_bar",
+                        "change": 200,
+                        "operation": "add"
+                    }
+                ]
+            }
+        }
+    }
+}

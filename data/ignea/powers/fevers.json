@@ -1,0 +1,42 @@
+{
+  "name": "Immune System",
+  "description": "You are immune to some negative effects, but also burn through the positive ones.",
+  "badges": [
+    {
+      "type": "origins:tooltip",
+      "sprite": "minecraft:textures/item/potion.png",
+      "text": "You are immune to Poison, Wither, Weakness, Slowness, Blindness, Darkness, and Glowing"
+    },
+    {
+      "type": "origins:tooltip",
+      "text": "Strength, Speed, and Jump Boost have reduced duration.",
+      "sprite": "minecraft:textures/item/potion.png"
+    }
+  ],
+  "type": "origins:multiple",
+  "immune": {
+    "type": "origins:effect_immunity",
+    "effects": [
+      "minecraft:poison",
+      "minecraft:wither",
+      "minecraft:weakness",
+      "minecraft:slowness",
+      "minecraft:blindness",
+      "minecraft:darkness",
+      "minecraft:glowing"
+    ]
+  },
+  "modify": {
+    "type": "origins:modify_status_effect_duration",
+    "status_effects": [
+      "minecraft:strength",
+      "minecraft:speed",
+      "minecraft:jump_boost",
+      "minecraft:luck"
+    ],
+    "modifier": {
+      "operation": "multiply_total",
+      "value": -0.3
+    }
+  }
+}

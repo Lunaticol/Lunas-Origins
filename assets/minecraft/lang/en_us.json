@@ -18,5 +18,11 @@
   "death.attack.heartattack": "%1$s had a heart attack",
   "death.attack.heartattack.player": "%1$s was fighting %2$s before having a heart attack",
   "death.attack.squashed": "%1$s got squashed",
-  "death.attack.squashed.player": "%1$s looked up and saw %2$s"
+  "death.attack.squashed.player": "%1$s looked up and saw %2$s",
+  "death.attack.lightningdash": "%1$s was turned to ash",
+  "death.attack.lightningdash.player": "%1$s was turned to ash by %2$s",
+  "death.attack.lightningcrash": "%1$s was flattened",
+  "death.attack.lightningcrash.player": "%1$s was flattened by %2$s",
+  "death.attack.discharge": "%1$s was overwhelmed with static energy",
+  "death.attack.discharge.player": "%1$s was overwhelmed with static energy by %2$s"
 }

@@ -1,0 +1,34 @@
+{
+  "name": "Flame Empowerment",
+  "description": "When set aflame, you will take 10% less damage, and begin to heal a small amount of health.",
+  "type": "origins:multiple",
+  "damagetaken": {
+      "condition": {
+          "type": "origins:on_fire"
+      },
+      "type": "origins:modify_damage_taken",
+      "modifier": {
+          "operation": "multiply_total",
+          "value": -0.2
+      }
+  },
+  "heal": {
+      "condition": {
+          "type": "origins:on_fire"
+      },
+      "type": "origins:action_over_time",
+      "interval": 80,
+      "entity_action": {
+          "type": "origins:heal",
+          "amount": 1
+      }
+  },
+  "soulflame": {
+      "type": "origins:particle",
+      "particle": "minecraft:soul_fire_flame",
+      "frequency": 4,
+      "count": 1,
+      "speed": 0,
+      "offset_y": 1
+  }
+}

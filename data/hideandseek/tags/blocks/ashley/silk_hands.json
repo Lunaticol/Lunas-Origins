@@ -1,0 +1,24 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:chorus_plant",
+    "minecraft:chorus_flower",
+    "minecraft:cactus",
+    "minecraft:clay",
+    "minecraft:coarse_dirt",
+    "minecraft:dirt",
+    "minecraft:brown_mushroom",
+    "minecraft:red_mushroom",
+    "minecraft:crimson_fungus",
+    "minecraft:warped_fungus",
+    "minecraft:crimson_roots",
+    "minecraft:warped_roots",
+    "minecraft:grass_block",
+    "minecraft:gravel",
+    "minecraft:melon",
+    "minecraft:mycelium",
+    "minecraft:crimson_nylium",
+    "minecraft:warped_nylium",
+    "minecraft:podzol"
+  ]
+}

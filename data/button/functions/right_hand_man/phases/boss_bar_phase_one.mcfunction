@@ -1,0 +1,1 @@
+bossbar set minecraft:brh color purple

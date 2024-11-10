@@ -1,0 +1,72 @@
+{
+  "name": "Lightning Flash",
+  "description": "Flash forward, going 40 blocks instantly. Contact with a player will damage them.",
+  "type": "origins:multiple",
+  "lc": {
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:static_resource",
+      "compare_to": 10,
+      "comparison": ">="
+    },
+    "type": "origins:active_self",
+    "entity_action": {
+      "type": "origins:raycast",
+      "before_action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:execute_command",
+            "command": "summon lightning_bolt"
+          },
+          {
+            "type": "origins:change_resource",
+            "change": -10,
+            "operation": "add",
+            "resource": "*:static_resource"
+          }
+        ]
+      },
+      "command_at_hit": "tp @s ~ ~1 ~",
+      "entity": true,
+      "bientity_action": {
+        "type": "origins:target_action",
+        "action": {
+          "type": "origins:damage",
+          "amount": 10,
+          "damage_type": "lightningdash"
+        }
+      },
+      "command_step": 4,
+      "command_along_ray": "summon lightning_bolt",
+      "distance": 40,
+      "miss_action": {
+        "type": "origins:execute_command",
+        "command": "tp @s ^ ^ ^40"
+      },
+      "hit_action": {
+        "type": "origins:area_of_effect",
+        "radius": 5,
+        "bientity_action": {
+          "type": "origins:target_action",
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:damage",
+                "amount": 10,
+                "damage_type": "lightningdash"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "summon lightning_bolt"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "cooldown": 80,
+    "key": "key.origins.primary_active"
+  }
+}
