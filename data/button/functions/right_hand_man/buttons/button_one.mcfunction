@@ -1,1 +1,0 @@
-give @s oak_button{display:{Name:'{"text":"A Button","color":"gold","bold":true,"italic":true}',Lore:['{"text":"\'It may not be special, but its yours.\'","color":"gray"}']},Enchantments:[{}]} 1
