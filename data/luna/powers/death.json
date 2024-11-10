@@ -33,6 +33,9 @@
   },
   "cooldown": {
     "type": "origins:cooldown",
-    "cooldown": 10000
+    "cooldown": 10000,
+    "hud_render": {
+      "should_render": true
+    }
   }
 }

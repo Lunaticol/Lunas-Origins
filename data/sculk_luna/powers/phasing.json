@@ -18,7 +18,7 @@
     "type": "origins:phasing",
     "block_condition": {
       "type": "origins:in_tag",
-      "tag": "sculk:sculk_blocks"
+      "tag": "sculk_luna:sculk_blocks"
     },
     "phase_down_condition": {
       "type": "origins:and",

@@ -1,12 +1,12 @@
 {
   "powers": [
-    "sculk:sculk_like",
-    "sculk:switching",
-    "sculk:phasing",
-    "sculk:sculk_smash",
-    "sculk:sculk_veil",
-    "sculk:unbridled_rage",
-    "sculk:brother"
+    "sculk_luna:sculk_like",
+    "sculk_luna:switching",
+    "sculk_luna:phasing",
+    "sculk_luna:sculk_smash",
+    "sculk_luna:sculk_veil",
+    "sculk_luna:unbridled_rage",
+    "sculk_luna:brother"
   ],
   "icon": "minecraft:sculk_catalyst",
   "unchoosable": true,

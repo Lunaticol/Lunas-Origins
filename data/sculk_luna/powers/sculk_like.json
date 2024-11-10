@@ -29,14 +29,14 @@
           "type": "origins:on_block",
           "block_condition": {
             "type": "origins:in_tag",
-            "tag": "sculk:sculk_blocks"
+            "tag": "sculk_luna:sculk_blocks"
           }
         },
         {
           "type": "origins:in_block",
           "block_condition": {
             "type": "origins:in_tag",
-            "tag": "sculk:sculk_blocks"
+            "tag": "sculk_luna:sculk_blocks"
           }
         }
       ]
@@ -106,7 +106,7 @@
     "radius": 8,
     "block_condition": {
       "type": "origins:in_tag",
-      "tag": "sculk:sculk_blocks"
+      "tag": "sculk_luna:sculk_blocks"
     }
   },
   "vibrations": {
@@ -124,7 +124,7 @@
           {
             "type": "origins:grant_power",
             "power": "*:detected",
-            "source": "sculk:sculk"
+            "source": "sculk_luna:sculk_like"
           }
         ]
       }
@@ -146,12 +146,12 @@
         },
         {
           "type": "origins:power",
-          "power": "sculk:detected",
+          "power": "sculk_luna:detected",
           "inverted": true
         },
         {
           "type": "origins:in_tag",
-          "tag": "sculk:can_always_see",
+          "tag": "sculk_luna:can_always_see",
           "inverted": true
         }
       ]
@@ -176,7 +176,7 @@
         },
         {
           "type": "origins:power",
-          "power": "sculk:detected"
+          "power": "sculk_luna:detected"
         }
       ]
     }
@@ -223,7 +223,7 @@
       "action": {
         "type": "origins:grant_power",
         "power": "*:detected",
-        "source": "sculk:sculk"
+        "source": "sculk_luna:sculk"
       }
     }
   },
@@ -239,7 +239,7 @@
         "action": {
           "type": "origins:grant_power",
           "power": "*:detected",
-          "source": "sculk:sculk"
+          "source": "sculk_luna:sculk_like"
         }
       }
     },
@@ -247,7 +247,7 @@
       "type": "origins:on_block",
       "block_condition": {
         "type": "origins:in_tag",
-        "tag": "sculk:sculk_blocks"
+        "tag": "sculk_luna:sculk_blocks"
       }
     }
   },

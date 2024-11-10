@@ -18,6 +18,9 @@
     "type": "origins:active_self",
     "key": "key.origins.secondary_active",
     "cooldown": 600,
+    "hud_render": {
+      "should_render": true
+    },
     "entity_action": {
       "type": "origins:and",
       "actions": [
@@ -91,7 +94,7 @@
                 },
                 {
                   "type": "origins:execute_command",
-                  "command": "function sculk:smash"
+                  "command": "function sculk_luna:smash"
                 }
               ]
             }
@@ -113,5 +116,22 @@
     "compare_to": 2,
     "comparison": "==",
     "resource": "*:switching_switch_resource"
+  },
+  "falling": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "operation": "multiply_total",
+      "value": -1
+    },
+    "damage_condition": {
+      "type": "origins:name",
+      "name": "minecraft:fall"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_smash"
+    }
   }
 }

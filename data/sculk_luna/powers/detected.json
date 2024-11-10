@@ -6,7 +6,7 @@
     "entity_action": {
       "type": "origins:revoke_power",
       "power": "*:*",
-      "source": "sculk:sculk_like"
+      "source": "sculk_luna:sculk_like"
     }
   }
 }
