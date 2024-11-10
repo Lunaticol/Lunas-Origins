@@ -24,7 +24,7 @@
     "entity_action": {
       "type": "apoli:damage",
       "amount": 3,
-      "damage_type": "discharge",
+      "damage_type": "minecraft:player_attack",
       "source": { "name": "discharge" }
     }
   },

@@ -19,7 +19,7 @@
               {
                 "type": "origins:damage",
                 "amount": 20,
-                "damage_type": "lightningcrash",
+                "damage_type": "minecraft:player_attack",
                 "source": { "name": "lightningcrash" }
               }
             ]

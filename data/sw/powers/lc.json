@@ -34,7 +34,7 @@
         "action": {
           "type": "origins:damage",
           "amount": 10,
-          "damage_type": "lightningdash",
+          "damage_type": "minecraft:player_attack",
           "source": { "name": "lightningdash" }
         }
       },
@@ -56,7 +56,7 @@
               {
                 "type": "origins:damage",
                 "amount": 10,
-                "damage_type": "lightningdash",
+                "damage_type": "minecraft:player_attack",
                 "source": { "name": "lightningdash" }
               },
               {
