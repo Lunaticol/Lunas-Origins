@@ -320,7 +320,7 @@
       }
     },
     "modifier": {
-      "value": -0.9999,
+      "value": -1,
       "operation": "multiply_total"
     },
     "condition": {
@@ -328,6 +328,31 @@
       "compare_to": 1,
       "comparison": ">=",
       "resource": "*:*_rtp_bar"
+    },
+    "damage_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:name",
+          "name": "onFire",
+          "inverted": true
+        },
+        {
+          "type": "origins:name",
+          "name": "onFire.player",
+          "inverted": true
+        },
+        {
+          "type": "origins:name",
+          "name": "inFire",
+          "inverted": true
+        },
+        {
+          "type": "origins:name",
+          "name": "inFire.player",
+          "inverted": true
+        }
+      ]
     }
   },
   "recharge": {
@@ -341,11 +366,7 @@
     }
   },
   "fall_damage": {
-    "type": "origins:modify_damage_taken",
-    "modifier": {
-      "operation": "multiply_total",
-      "value": -1
-    },
+    "type": "origins:invulnerability",
     "damage_condition": {
       "type": "origins:name",
       "name": "minecraft:fall"

@@ -43,11 +43,14 @@
     }
   },
   "if_attacked": {
-    "type": "origins:attacker_action_when_hit",
-    "entity_action": {
-      "type": "origins:grant_power",
-      "power": "luna:attacked",
-      "source": "luna:isabella"
+    "type": "origins:action_when_hit",
+    "bientity_action": {
+      "type": "origins:actor_action",
+      "action": {
+        "type": "origins:grant_power",
+        "power": "luna:attacked",
+        "source": "luna:isabella"
+      }
     }
   }
 }
