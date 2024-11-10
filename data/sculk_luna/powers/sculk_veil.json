@@ -136,7 +136,7 @@
   },
   "condition": {
     "type": "origins:resource",
-    "compare_to": 1,
+    "compare_to": 0,
     "comparison": "==",
     "resource": "*:switching_switch_resource"
   }

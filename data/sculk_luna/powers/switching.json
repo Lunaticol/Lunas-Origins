@@ -4,7 +4,7 @@
   "badges": [
     {
       "type": "origins:tooltip",
-      "text": "Requires 10 XP levels everytime you switch.",
+      "text": "Requires 5 XP levels everytime you switch.",
       "sprite": "origins:textures/gui/badge/info.png"
     },
     {
@@ -23,44 +23,125 @@
       "actions": [
         {
           "action": {
-            "type": "origins:change_resource",
-            "change": 1,
-            "operation": "add",
-            "resource": "*:*_switch_resource"
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "change": 1,
+                "operation": "add",
+                "resource": "*:*_switch_resource"
+              },
+              {
+                "type": "origins:add_xp",
+                "levels": -5
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "/title @p actionbar {\"text\":\"Unbridled Rage Form\",\"color\":\"dark_blue\",\"bold\":true}"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "particle minecraft:sculk_soul 0 ~ ~ ~ 0.2 0.8 0.2 0 100 force"
+              }
+            ]
           },
           "condition": {
-            "type": "origins:resource",
-            "compare_to": 0,
-            "comparison": "==",
-            "resource": "*:*_switch_resource"
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:resource",
+                "compare_to": 0,
+                "comparison": "==",
+                "resource": "*:*_switch_resource"
+              },
+              {
+                "type": "origins:xp_levels",
+                "compare_to": 5,
+                "comparison": ">="
+              }
+            ]
           }
         },
         {
           "action": {
-            "type": "origins:change_resource",
-            "change": 1,
-            "operation": "add",
-            "resource": "*:*_switch_resource"
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "change": 1,
+                "operation": "add",
+                "resource": "*:*_switch_resource"
+              },
+              {
+                "type": "origins:add_xp",
+                "levels": -5
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "/title @p actionbar {\"text\":\"Sculk Smash Form\",\"color\":\"dark_blue\",\"bold\":true}"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "particle minecraft:sculk_charge_pop 0 ~ ~ ~ 0.2 0.8 0.2 0 100 force"
+              }
+            ]
           },
           "condition": {
-            "type": "origins:resource",
-            "compare_to": 1,
-            "comparison": "==",
-            "resource": "*:*_switch_resource"
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:resource",
+                "compare_to": 1,
+                "comparison": "==",
+                "resource": "*:*_switch_resource"
+              },
+              {
+                "type": "origins:xp_levels",
+                "compare_to": 5,
+                "comparison": ">="
+              }
+            ]
           }
         },
         {
           "action": {
-            "type": "origins:change_resource",
-            "change": 0,
-            "operation": "set",
-            "resource": "*:*_switch_resource"
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "change": 1,
+                "operation": "add",
+                "resource": "*:*_switch_resource"
+              },
+              {
+                "type": "origins:add_xp",
+                "levels": -5
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "/title @p actionbar {\"text\":\"Sculk Veil Form\",\"color\":\"dark_blue\",\"bold\":true}"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "particle minecraft:sculk_charge 0 ~ ~ ~ 0.2 0.8 0.2 0 100 force"
+              }
+            ]
           },
           "condition": {
-            "type": "origins:resource",
-            "compare_to": 2,
-            "comparison": "==",
-            "resource": "*:*_switch_resource"
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:resource",
+                "compare_to": 2,
+                "comparison": "==",
+                "resource": "*:*_switch_resource"
+              },
+              {
+                "type": "origins:xp_levels",
+                "compare_to": 5,
+                "comparison": ">="
+              }
+            ]
           }
         }
       ]
@@ -70,5 +151,27 @@
     "type": "origins:resource",
     "max": 2,
     "min": 0
+  },
+  "reset": {
+    "type": "origins:action_on_callback",
+    "entity_action_respawned": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "change": 1,
+          "operation": "add",
+          "resource": "*:*_switch_resource"
+        },
+        {
+          "type": "origins:add_xp",
+          "levels": -5
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "/title @p actionbar {\"text\":\"Sculk Veil Form\",\"color\":\"dark_blue\",\"bold\":true}"
+        }
+      ]
+    }
   }
 }

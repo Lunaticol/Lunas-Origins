@@ -439,6 +439,29 @@
       "compare_to": 2
     }
   },
+  "rage_20": {
+    "type": "origins:conditioned_attribute",
+    "modifiers": [
+      {
+        "attribute": "minecraft:generic.attack_damage",
+        "operation": "addition",
+        "value": 1,
+        "name": "Increased attack"
+      },
+      {
+        "attribute": "minecraft:generic.movement_speed",
+        "operation": "multiply_base",
+        "value": 0.1,
+        "name": "Increased speed"
+      }
+    ],
+    "tick_rate": 5,
+    "condition": {
+      "type": "origins:health",
+      "comparison": "<",
+      "compare_to": 1
+    }
+  },
   "condition": {
     "type": "origins:resource",
     "compare_to": 1,

@@ -9,7 +9,6 @@
     "sculk_luna:brother"
   ],
   "icon": "minecraft:sculk_catalyst",
-  "unchoosable": true,
   "order": 9,
   "impact": 2,
   "name": "Lyst",

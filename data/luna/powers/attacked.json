@@ -6,7 +6,7 @@
     "entity_action": {
       "type": "origins:revoke_power",
       "power": "luna:attacked",
-      "source": "luna:isabella"
+      "source": "luna:rtp"
     }
   }
 }
