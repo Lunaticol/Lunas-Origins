@@ -34,7 +34,8 @@
         "action": {
           "type": "origins:damage",
           "amount": 10,
-          "damage_type": "lightningdash"
+          "damage_type": "lightningdash",
+          "source": { "name": "lightningdash" }
         }
       },
       "command_step": 4,
@@ -55,7 +56,8 @@
               {
                 "type": "origins:damage",
                 "amount": 10,
-                "damage_type": "lightningdash"
+                "damage_type": "lightningdash",
+                "source": { "name": "lightningdash" }
               },
               {
                 "type": "origins:execute_command",

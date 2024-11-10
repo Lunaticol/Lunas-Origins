@@ -19,7 +19,8 @@
               {
                 "type": "origins:damage",
                 "amount": 20,
-                "damage_type": "lightningcrash"
+                "damage_type": "lightningcrash",
+                "source": { "name": "lightningcrash" }
               }
             ]
           }
