@@ -6,6 +6,13 @@
     "minecraft:wither",
     "minecraft:ender_dragon",
     "minecraft:item",
-    "minecraft:armor_stand"
+    "minecraft:armor_stand",
+    "minecraft:experience_orb",
+    "minecraft:boat",
+    "minecraft:minecart",
+    "minecraft:item_frame",
+    "minecraft:glow_item_frame",
+    "minecraft:arrow",
+    "minecraft:end_crystal"
   ]
 }

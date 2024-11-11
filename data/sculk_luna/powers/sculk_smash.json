@@ -53,7 +53,7 @@
     "condition": {
       "type": "origins:xp_levels",
       "compare_to": 10,
-      "comparison": "=="
+      "comparison": ">="
     }
   },
   "smash": {

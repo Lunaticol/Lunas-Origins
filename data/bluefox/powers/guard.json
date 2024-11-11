@@ -53,7 +53,7 @@
         "type": "origins:change_resource",
         "resource": "*:soul_soul_bar",
         "operation": "add",
-        "change": 30
+        "change": -30
       }
     },
     "condition": {

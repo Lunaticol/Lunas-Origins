@@ -128,13 +128,13 @@
   },
   "fall_damage": {
     "type": "origins:modify_damage_taken",
+    "damage_condition": {
+      "type": "origins:name",
+      "name": "fall"
+    },
     "modifier": {
       "value": -1,
       "operation": "multiply_total"
-    },
-    "damage_condition": {
-      "type": "origins:name",
-      "name": "minecraft:fall"
     }
   }
 }

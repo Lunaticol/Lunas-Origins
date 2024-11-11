@@ -109,8 +109,8 @@
             "actions": [
               {
                 "type": "origins:change_resource",
-                "change": 1,
-                "operation": "add",
+                "change": 0,
+                "operation": "set",
                 "resource": "*:*_switch_resource"
               },
               {
@@ -159,8 +159,8 @@
       "actions": [
         {
           "type": "origins:change_resource",
-          "change": 1,
-          "operation": "add",
+          "change": 0,
+          "operation": "set",
           "resource": "*:*_switch_resource"
         },
         {

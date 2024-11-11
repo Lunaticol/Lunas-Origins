@@ -364,22 +364,17 @@
       "conditions": [
         {
           "type": "origins:name",
-          "name": "onFire",
+          "name": "on_fire",
           "inverted": true
         },
         {
           "type": "origins:name",
-          "name": "onFire.player",
+          "name": "in_fire",
           "inverted": true
         },
         {
           "type": "origins:name",
-          "name": "inFire",
-          "inverted": true
-        },
-        {
-          "type": "origins:name",
-          "name": "inFire.player",
+          "name": "fall",
           "inverted": true
         }
       ]
@@ -396,10 +391,14 @@
     }
   },
   "fall_damage": {
-    "type": "origins:invulnerability",
+    "type": "origins:modify_damage_taken",
     "damage_condition": {
       "type": "origins:name",
-      "name": "minecraft:fall"
+      "name": "fall"
+    },
+    "modifier": {
+      "value": -1,
+      "operation": "multiply_total"
     }
   },
   "cooldown": {
