@@ -53,7 +53,6 @@
     "type": "origins:attribute",
     "modifiers": [
       {
-        "name": "Origin modifier",
         "attribute": "generic.max_health",
         "operation": "addition",
         "value": -2

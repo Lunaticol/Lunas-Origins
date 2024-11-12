@@ -8,114 +8,117 @@
       "type": "origins:and",
       "actions": [
         {
-          "type": "origins:if_else_list",
-          "actions": [
-            {
-              "action": {
-                "type": "origins:and",
-                "actions": [
-                  {
-                    "type": "origins:play_sound",
-                    "sound": "minecraft:item.chorus_fruit.teleport",
-                    "volume": 1,
-                    "pitch": 1
-                  },
-                  {
-                    "type": "origins:execute_command",
-                    "command": "spreadplayers ~ ~ 8 16 under 127 false @s"
-                  },
-                  {
-                    "type": "origins:execute_command",
-                    "command": "particle minecraft:portal ~ ~0.4 ~ 0.3 0.6 0.3 0 100 normal"
-                  }
-                ]
-              },
-              "condition": {
-                "type": "origins:dimension",
-                "dimension": "minecraft:the_nether"
-              }
-            },
-            {
-              "action": {
-                "type": "origins:and",
-                "actions": [
-                  {
-                    "type": "origins:play_sound",
-                    "sound": "minecraft:item.chorus_fruit.teleport",
-                    "volume": 1,
-                    "pitch": 1
-                  },
-                  {
-                    "type": "origins:execute_command",
-                    "command": "spreadplayers ~ ~ 8 16 under 319 false @s"
-                  },
-                  {
-                    "type": "origins:execute_command",
-                    "command": "particle minecraft:portal ~ ~0.4 ~ 0.3 0.6 0.3 0 100 normal"
-                  }
-                ]
-              },
-              "condition": {
-                "type": "origins:and",
-                "conditions": [
-                  {
-                    "type": "origins:on_block",
-                    "block_condition": {
-                      "type": "origins:height",
-                      "compare_to": 63,
-                      "comparison": ">="
+          "type": "origins:target_action",
+          "action": {
+            "type": "origins:if_else_list",
+            "actions": [
+              {
+                "action": {
+                  "type": "origins:and",
+                  "actions": [
+                    {
+                      "type": "origins:play_sound",
+                      "sound": "minecraft:item.chorus_fruit.teleport",
+                      "volume": 1,
+                      "pitch": 1
+                    },
+                    {
+                      "type": "origins:execute_command",
+                      "command": "spreadplayers ~ ~ 8 16 under 127 false @s"
+                    },
+                    {
+                      "type": "origins:execute_command",
+                      "command": "particle minecraft:portal ~ ~0.4 ~ 0.3 0.6 0.3 0 100 normal"
                     }
-                  },
-                  {
-                    "type": "origins:dimension",
-                    "dimension": "minecraft:the_nether",
-                    "inverted": true
-                  }
-                ]
-              }
-            },
-            {
-              "action": {
-                "type": "origins:and",
-                "actions": [
-                  {
-                    "type": "origins:play_sound",
-                    "sound": "minecraft:item.chorus_fruit.teleport",
-                    "volume": 1,
-                    "pitch": 1
-                  },
-                  {
-                    "type": "origins:execute_command",
-                    "command": "spreadplayers ~ ~ 8 16 under 62 false @s"
-                  },
-                  {
-                    "type": "origins:execute_command",
-                    "command": "particle minecraft:portal ~ ~0.4 ~ 0.3 0.6 0.3 0 100 normal"
-                  }
-                ]
+                  ]
+                },
+                "condition": {
+                  "type": "origins:dimension",
+                  "dimension": "minecraft:the_nether"
+                }
               },
-              "condition": {
-                "type": "origins:and",
-                "conditions": [
-                  {
-                    "type": "origins:on_block",
-                    "block_condition": {
-                      "type": "origins:height",
-                      "compare_to": 62,
-                      "comparison": "<="
+              {
+                "action": {
+                  "type": "origins:and",
+                  "actions": [
+                    {
+                      "type": "origins:play_sound",
+                      "sound": "minecraft:item.chorus_fruit.teleport",
+                      "volume": 1,
+                      "pitch": 1
+                    },
+                    {
+                      "type": "origins:execute_command",
+                      "command": "spreadplayers ~ ~ 8 16 under 319 false @s"
+                    },
+                    {
+                      "type": "origins:execute_command",
+                      "command": "particle minecraft:portal ~ ~0.4 ~ 0.3 0.6 0.3 0 100 normal"
                     }
-                  }
-                ]
+                  ]
+                },
+                "condition": {
+                  "type": "origins:and",
+                  "conditions": [
+                    {
+                      "type": "origins:on_block",
+                      "block_condition": {
+                        "type": "origins:height",
+                        "compare_to": 62,
+                        "comparison": ">="
+                      }
+                    },
+                    {
+                      "type": "origins:dimension",
+                      "dimension": "minecraft:the_nether",
+                      "inverted": true
+                    }
+                  ]
+                }
+              },
+              {
+                "action": {
+                  "type": "origins:and",
+                  "actions": [
+                    {
+                      "type": "origins:play_sound",
+                      "sound": "minecraft:item.chorus_fruit.teleport",
+                      "volume": 1,
+                      "pitch": 1
+                    },
+                    {
+                      "type": "origins:execute_command",
+                      "command": "spreadplayers ~ ~ 8 16 under 62 false @s"
+                    },
+                    {
+                      "type": "origins:execute_command",
+                      "command": "particle minecraft:portal ~ ~0.4 ~ 0.3 0.6 0.3 0 100 normal"
+                    }
+                  ]
+                },
+                "condition": {
+                  "type": "origins:and",
+                  "conditions": [
+                    {
+                      "type": "origins:on_block",
+                      "block_condition": {
+                        "type": "origins:height",
+                        "compare_to": 61,
+                        "comparison": "<="
+                      }
+                    }
+                  ]
+                }
               }
-            }
-          ]
+            ]
+          }
         },
         {
           "type": "origins:actor_action",
           "action": {
             "type": "origins:grant_power",
             "power": "luna:attacked",
-            "source": "luna:isabella"
+            "source": "luna:rtp"
           }
         }
       ]
@@ -136,18 +139,14 @@
     },
     "damage_condition": {
       "type": "origins:projectile"
-    }
-  },
-  "when_shot": {
-    "type": "origins:action_when_hit",
+    },
     "bientity_action": {
       "type": "origins:actor_action",
       "action": {
         "type": "origins:execute_command",
-        "command": "/tellraw @p {\"bold\":true,\"color\":\"dark_purple\",\"text\":\"You know those don't work on me, right?\"}"
+        "command": "/tellraw @s {\"bold\":true,\"color\":\"dark_purple\",\"text\":\"You know those don't work on me, right?\"}"
       }
-    },
-    "damage_condition": { "type": "origins:projectile" }
+    }
   },
   "rtp_bar": {
     "type": "origins:resource",
@@ -190,10 +189,6 @@
                       "resource": "*:*_rtp_bar",
                       "change": -1,
                       "operation": "add"
-                    },
-                    {
-                      "type": "origins:trigger_cooldown",
-                      "power": "*:*_cooldown"
                     }
                   ]
                 },
@@ -209,12 +204,6 @@
                       "compare_to": 1,
                       "comparison": ">=",
                       "resource": "*:*_rtp_bar"
-                    },
-                    {
-                      "type": "origins:resource",
-                      "compare_to": 0,
-                      "comparison": "==",
-                      "resource": "*:*_cooldown"
                     }
                   ]
                 }
@@ -242,10 +231,6 @@
                       "resource": "*:*_rtp_bar",
                       "change": -1,
                       "operation": "add"
-                    },
-                    {
-                      "type": "origins:trigger_cooldown",
-                      "power": "*:*_cooldown"
                     }
                   ]
                 },
@@ -256,7 +241,7 @@
                       "type": "origins:on_block",
                       "block_condition": {
                         "type": "origins:height",
-                        "compare_to": 63,
+                        "compare_to": 62,
                         "comparison": ">="
                       }
                     },
@@ -270,12 +255,6 @@
                       "compare_to": 1,
                       "comparison": ">=",
                       "resource": "*:*_rtp_bar"
-                    },
-                    {
-                      "type": "origins:resource",
-                      "compare_to": 0,
-                      "comparison": "==",
-                      "resource": "*:*_cooldown"
                     }
                   ]
                 }
@@ -303,10 +282,6 @@
                       "resource": "*:*_rtp_bar",
                       "change": -1,
                       "operation": "add"
-                    },
-                    {
-                      "type": "origins:trigger_cooldown",
-                      "power": "*:*_cooldown"
                     }
                   ]
                 },
@@ -317,7 +292,7 @@
                       "type": "origins:on_block",
                       "block_condition": {
                         "type": "origins:height",
-                        "compare_to": 62,
+                        "compare_to": 61,
                         "comparison": "<="
                       }
                     },
@@ -326,12 +301,6 @@
                       "compare_to": 1,
                       "comparison": ">=",
                       "resource": "*:*_rtp_bar"
-                    },
-                    {
-                      "type": "origins:resource",
-                      "compare_to": 0,
-                      "comparison": "==",
-                      "resource": "*:*_cooldown"
                     }
                   ]
                 }
@@ -360,21 +329,35 @@
       "resource": "*:*_rtp_bar"
     },
     "damage_condition": {
-      "type": "origins:or",
+      "type": "origins:and",
       "conditions": [
         {
           "type": "origins:name",
-          "name": "on_fire",
+          "name": "onFire",
           "inverted": true
         },
         {
           "type": "origins:name",
-          "name": "in_fire",
+          "name": "inFire",
           "inverted": true
         },
         {
           "type": "origins:name",
           "name": "fall",
+          "inverted": true
+        },
+        {
+          "type": "origins:projectile",
+          "inverted": true
+        },
+        {
+          "type": "origins:name",
+          "name": "thorns",
+          "inverted": true
+        },
+        {
+          "type": "origins:name",
+          "name": "hotFloor",
           "inverted": true
         }
       ]
@@ -400,9 +383,5 @@
       "value": -1,
       "operation": "multiply_total"
     }
-  },
-  "cooldown": {
-    "type": "origins:cooldown",
-    "cooldown": 10
   }
 }

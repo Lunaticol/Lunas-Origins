@@ -5,7 +5,7 @@
   "badges": [
     {
       "type": "origins:tooltip",
-      "text": "You must enter the Nether first before using this ability.",
+      "text": "You must enter the Nether first to use this ability.",
       "sprite": "origins:textures/gui/badge/info.png"
     },
     {
@@ -16,18 +16,13 @@
     {
       "type": "origins:tooltip",
       "sprite": "origins:textures/gui/badge/info.png",
-      "text": "You might suffocate or fall if you use this ability"
-    },
-    {
-      "type": "origins:tooltip",
-      "sprite": "origins:textures/gui/badge/info.png",
-      "text": "Use Quaternary to go to the Nether. Use Quinary to go to the Overworld."
+      "text": "Use Ternary to go back and forth."
     }
   ],
   "quick_nether": {
-    "cooldown": 3000,
+    "cooldown": 1500,
     "key": {
-      "key": "key.origins.quaternary_active"
+      "key": "key.origins.ternary_active"
     },
     "type": "origins:active_self",
     "hud_render": {
@@ -74,14 +69,14 @@
   },
   "quick_overworld": {
     "type": "origins:active_self",
-    "cooldown": 3000,
+    "cooldown": 1500,
     "hud_render": {
       "should_render": true,
       "bar_index": 7,
       "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png"
     },
     "key": {
-      "key": "key.origins.quinary_active"
+      "key": "key.origins.ternary_active"
     },
     "entity_action": {
       "type": "origins:and",
@@ -114,7 +109,7 @@
   },
   "pa_reset": {
     "type": "origins:action_over_time",
-    "interval": 3000,
+    "interval": 1500,
     "entity_action": {
       "type": "origins:change_resource",
       "change": 0,

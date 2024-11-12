@@ -1,0 +1,16 @@
+{
+  "name": "They love me!",
+  "description": "Villagers give you discounts and throw you free items!",
+  "type": "origins:action_over_time",
+  "interval": 20,
+  "entity_action": {
+    "type": "origins:apply_effect",
+    "effect": {
+      "effect": "minecraft:hero_of_the_village",
+      "amplifier": 4,
+      "duration": 100,
+      "show_icon": false,
+      "show_particles": false
+    }
+  }
+}
