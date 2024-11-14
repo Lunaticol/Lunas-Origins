@@ -1,0 +1,58 @@
+{
+  "name": "Consumption",
+  "description": "You can consume Echo Shards to gain an experience level.",
+  "type": "origins:multiple",
+  "selfuse": {
+    "type": "origins:active_self",
+    "key": "key.use",
+    "cooldown": 5,
+    "condition": {
+      "type": "origins:equipped_item",
+      "equipment_slot": "mainhand",
+      "item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": { "item": "minecraft:echo_shard" }
+      }
+    },
+    "entity_action": {
+      "type": "apoli:and",
+      "actions": [
+        { "type": "apoli:add_xp", "levels": 1 },
+        {
+          "type": "origins:equipped_item_action",
+          "equipment_slot": "mainhand",
+          "action": { "type": "origins:consume", "amount": 1 }
+        }
+      ]
+    }
+  },
+  "otheruse": {
+    "type": "origins:action_on_hit",
+    "condition": {
+      "type": "origins:equipped_item",
+      "equipment_slot": "mainhand",
+      "item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": { "item": "minecraft:echo_shard" }
+      }
+    },
+    "cooldown": 5,
+    "bientity_action": {
+      "type": "apoli:and",
+      "actions": [
+        {
+          "type": "origins:actor_action",
+          "action": {
+            "type": "origins:equipped_item_action",
+            "equipment_slot": "mainhand",
+            "action": { "type": "origins:consume" }
+          }
+        },
+        {
+          "type": "origins:target_action",
+          "action": { "type": "apoli:add_xp", "levels": 1 }
+        }
+      ]
+    }
+  }
+}

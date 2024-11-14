@@ -6,7 +6,8 @@
     "sculk_luna:sculk_smash",
     "sculk_luna:sculk_veil",
     "sculk_luna:unbridled_rage",
-    "sculk_luna:brother"
+    "sculk_luna:brother",
+    "sculk_luna:consumption"
   ],
   "icon": "minecraft:sculk_catalyst",
   "order": 9,
