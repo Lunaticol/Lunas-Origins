@@ -154,8 +154,8 @@
     "min": 0,
     "hud_render": {
       "should_render": true,
-      "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
-      "bar_index": 5
+      "bar_index": 5,
+      "sprite_location": "origins:textures/gui/luna_resource_bar.png"
     }
   },
   "rtp_when_hit": {

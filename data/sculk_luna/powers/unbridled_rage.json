@@ -14,7 +14,7 @@
       {
         "attribute": "minecraft:generic.movement_speed",
         "operation": "multiply_base",
-        "value": 0.1,
+        "value": 0.05,
         "name": "Increased speed"
       }
     ],
@@ -37,7 +37,7 @@
       {
         "attribute": "minecraft:generic.movement_speed",
         "operation": "multiply_base",
-        "value": 0.1,
+        "value": 0.05,
         "name": "Increased speed"
       }
     ],
@@ -60,7 +60,7 @@
       {
         "attribute": "minecraft:generic.movement_speed",
         "operation": "multiply_base",
-        "value": 0.1,
+        "value": 0.05,
         "name": "Increased speed"
       }
     ],
@@ -83,7 +83,7 @@
       {
         "attribute": "minecraft:generic.movement_speed",
         "operation": "multiply_base",
-        "value": 0.1,
+        "value": 0.05,
         "name": "Increased speed"
       }
     ],
@@ -106,7 +106,7 @@
       {
         "attribute": "minecraft:generic.movement_speed",
         "operation": "multiply_base",
-        "value": 0.1,
+        "value": 0.05,
         "name": "Increased speed"
       }
     ],
@@ -129,7 +129,7 @@
       {
         "attribute": "minecraft:generic.movement_speed",
         "operation": "multiply_base",
-        "value": 0.1,
+        "value": 0.05,
         "name": "Increased speed"
       }
     ],
@@ -152,7 +152,7 @@
       {
         "attribute": "minecraft:generic.movement_speed",
         "operation": "multiply_base",
-        "value": 0.1,
+        "value": 0.05,
         "name": "Increased speed"
       }
     ],
@@ -175,7 +175,7 @@
       {
         "attribute": "minecraft:generic.movement_speed",
         "operation": "multiply_base",
-        "value": 0.1,
+        "value": 0.05,
         "name": "Increased speed"
       }
     ],
@@ -198,7 +198,7 @@
       {
         "attribute": "minecraft:generic.movement_speed",
         "operation": "multiply_base",
-        "value": 0.1,
+        "value": 0.05,
         "name": "Increased speed"
       }
     ],
@@ -221,7 +221,7 @@
       {
         "attribute": "minecraft:generic.movement_speed",
         "operation": "multiply_base",
-        "value": 0.1,
+        "value": 0.05,
         "name": "Increased speed"
       }
     ],
@@ -244,7 +244,7 @@
       {
         "attribute": "minecraft:generic.movement_speed",
         "operation": "multiply_base",
-        "value": 0.1,
+        "value": 0.05,
         "name": "Increased speed"
       }
     ],
@@ -267,7 +267,7 @@
       {
         "attribute": "minecraft:generic.movement_speed",
         "operation": "multiply_base",
-        "value": 0.1,
+        "value": 0.05,
         "name": "Increased speed"
       }
     ],
@@ -290,7 +290,7 @@
       {
         "attribute": "minecraft:generic.movement_speed",
         "operation": "multiply_base",
-        "value": 0.1,
+        "value": 0.05,
         "name": "Increased speed"
       }
     ],
@@ -313,7 +313,7 @@
       {
         "attribute": "minecraft:generic.movement_speed",
         "operation": "multiply_base",
-        "value": 0.1,
+        "value": 0.05,
         "name": "Increased speed"
       }
     ],
@@ -336,7 +336,7 @@
       {
         "attribute": "minecraft:generic.movement_speed",
         "operation": "multiply_base",
-        "value": 0.1,
+        "value": 0.05,
         "name": "Increased speed"
       }
     ],
@@ -359,7 +359,7 @@
       {
         "attribute": "minecraft:generic.movement_speed",
         "operation": "multiply_base",
-        "value": 0.1,
+        "value": 0.05,
         "name": "Increased speed"
       }
     ],
@@ -382,7 +382,7 @@
       {
         "attribute": "minecraft:generic.movement_speed",
         "operation": "multiply_base",
-        "value": 0.1,
+        "value": 0.05,
         "name": "Increased speed"
       }
     ],
@@ -405,7 +405,7 @@
       {
         "attribute": "minecraft:generic.movement_speed",
         "operation": "multiply_base",
-        "value": 0.1,
+        "value": 0.05,
         "name": "Increased speed"
       }
     ],
@@ -428,7 +428,7 @@
       {
         "attribute": "minecraft:generic.movement_speed",
         "operation": "multiply_base",
-        "value": 0.1,
+        "value": 0.05,
         "name": "Increased speed"
       }
     ],
@@ -451,7 +451,7 @@
       {
         "attribute": "minecraft:generic.movement_speed",
         "operation": "multiply_base",
-        "value": 0.1,
+        "value": 0.05,
         "name": "Increased speed"
       }
     ],

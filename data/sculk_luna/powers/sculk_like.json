@@ -98,8 +98,7 @@
   },
   "shader": {
     "type": "origins:shader",
-    "shader": "minecraft:shaders/post/sobel.json",
-    "toggleable": false
+    "shader": "minecraft:shaders/post/sobel.json"
   },
   "condition": {
     "type": "origins:block_in_radius",

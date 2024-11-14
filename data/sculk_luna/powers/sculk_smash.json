@@ -37,7 +37,7 @@
         },
         {
           "type": "origins:delay",
-          "ticks": 60,
+          "ticks": 30,
           "action": {
             "type": "origins:add_velocity",
             "y": -3,
@@ -46,13 +46,13 @@
         },
         {
           "type": "origins:add_xp",
-          "levels": -10
+          "levels": -15
         }
       ]
     },
     "condition": {
       "type": "origins:xp_levels",
-      "compare_to": 10,
+      "compare_to": 15,
       "comparison": ">="
     }
   },
@@ -78,7 +78,7 @@
                 },
                 {
                   "type": "origins:damage",
-                  "amount": 20,
+                  "amount": 40,
                   "source": {
                     "name": "squashed"
                   }
@@ -120,7 +120,7 @@
     "type": "origins:invulnerability",
     "damage_condition": {
       "type": "origins:name",
-      "name": "minecraft:fall"
+      "name": "fall"
     },
     "condition": {
       "type": "origins:resource",
@@ -128,11 +128,5 @@
       "comparison": "==",
       "resource": "*:*_smash"
     }
-  },
-  "condition": {
-    "type": "origins:resource",
-    "compare_to": 2,
-    "comparison": "==",
-    "resource": "*:switching_switch_resource"
   }
 }
