@@ -132,7 +132,11 @@
     "bientity_condition": {
       "type": "origins:actor_condition",
       "condition": {
-        "type": "origins:exists"
+        "type": "origins:and",
+        "conditions": [
+          { "type": "origins:exists" },
+          { "type": "origins:living" }
+        ]
       }
     }
   },
