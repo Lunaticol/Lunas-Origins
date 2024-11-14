@@ -1,7 +1,7 @@
 {
   "type": "origins:multiple",
   "name": "Leadwall Shotgun",
-  "description": "Requires a crossbow & 8 arrows in off hand",
+  "description": "Modern times require modern solutions.\nRequires a crossbow & 8 arrows in off hand",
   "gun": {
     "type": "origins:fire_projectile",
     "key": "key.use",

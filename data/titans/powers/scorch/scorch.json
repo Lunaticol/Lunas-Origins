@@ -1,7 +1,7 @@
 {
   "type": "origins:multiple",
   "name": "Scorched",
-  "description": "An Ogre Class Titan with an array of Fire Abilitys.\n You cannot use shields.\n You eat redstone to recover health.\nYour thick metal protects your core from projectiles.\n50% slower.",
+  "description": "Scorch's primary offensive and defensive weapon is fire.\nYour thermite would burn any shields you touch.\n You eat redstone to recover health.\nYour thick metal protects your core from projectiles.\nDue to your bulky armor you are slowed by 50%",
   "height": {
     "type": "origins:action_on_callback",
     "execute_chosen_when_orb": true,

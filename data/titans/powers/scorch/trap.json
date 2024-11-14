@@ -1,6 +1,6 @@
 {
   "name": "Incinerary Traps",
-  "description": "Deploys flammable gas canisters which can be triggered by the slightest spark.",
+  "description": "Scorches ultimate trapping weapon. Gas can be ignited to cause a huge puddle of thermite.",
   "type": "origins:multiple",
   "trap": {
     "type": "origins:active_self",

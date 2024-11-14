@@ -1,7 +1,7 @@
 {
   "type": "origins:multiple",
   "name": "Flame Core",
-  "description": "Creates a large, slow traveling ground bound wave of fire that deals 5 hearts of damage",
+  "description": "Used to create a massive line of fire infront of you. Incinerates most unprotected enemys.",
   "core_bar": {
     "type": "origins:resource",
     "max": 100,

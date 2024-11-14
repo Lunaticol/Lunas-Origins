@@ -1,6 +1,6 @@
 {
   "name": "Fire Wall",
-  "description": "Shoot out a wall of fire, blocking enemys.",
+  "description": "Shoot out a streak of thermite, acting as a sort of wall.",
   "type": "origins:multiple",
   "fire_wall": {
     "type": "origins:active_self",

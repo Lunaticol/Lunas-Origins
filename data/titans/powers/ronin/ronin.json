@@ -1,7 +1,7 @@
 {
   "type": "origins:multiple",
   "name": "Ronin",
-  "description": "A Stryder Class Titan, Equiped with an electrified sword.\nYour sword is the shield, therfore you cannot use shields.\nYou eat redstone to recover health.\nYour thick metal protects your core from projectiles.\nYou have a shotgun, why would you use less advanced ranged weapons?",
+  "description": "An ancient sentinel reawakened. Ronin's were mass produced with the combat of a samurai.\nYour sword is the shield, therfore you cannot use shields.\nYou eat redstone to recover health.\nYour thick metal protects your core from projectiles.\nYou have a shotgun, why would you use less advanced ranged weapons?",
   "height": {
     "type": "origins:action_on_callback",
     "execute_chosen_when_orb": true,

@@ -31,7 +31,7 @@
                       "fire": true,
                       "magic": true,
                       "out_of_world": false,
-                      "unblockable": false,
+                      "unblockable": true,
                       "name": "lava.player"
                     }
                   },
@@ -68,7 +68,7 @@
                       "fire": true,
                       "magic": true,
                       "out_of_world": false,
-                      "unblockable": false,
+                      "unblockable": true,
                       "name": "lava.player"
                     }
                   },
@@ -105,7 +105,7 @@
                       "fire": true,
                       "magic": true,
                       "out_of_world": false,
-                      "unblockable": false,
+                      "unblockable": true,
                       "name": "lava.player"
                     }
                   },
@@ -142,7 +142,7 @@
                       "fire": true,
                       "magic": true,
                       "out_of_world": false,
-                      "unblockable": false,
+                      "unblockable": true,
                       "name": "lava.player"
                     }
                   },
@@ -179,7 +179,7 @@
                       "fire": true,
                       "magic": true,
                       "out_of_world": false,
-                      "unblockable": false,
+                      "unblockable": true,
                       "name": "lava.player"
                     }
                   },

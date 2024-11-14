@@ -52,11 +52,11 @@
         },
         {
           "type": "origins:execute_command",
-          "command": "particle minecraft:campfire_cosy_smoke ~ ~ ~ 2.5 2 2.5 0 50"
+          "command": "particle dust 0.506 0.486 0.463 3 ~ ~ ~ 2.5 2 2.5 0 50 force"
         },
         {
           "type": "origins:execute_command",
-          "command": "particle minecraft:electric_spark ~ ~ ~ 2.5 2 2.5 0 50"
+          "command": "particle dust 0.506 0.486 0.463 3 ~ ~ ~ 2.5 2 2.5 0 50 force"
         },
         {
           "type": "origins:delay",

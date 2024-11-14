@@ -1,7 +1,7 @@
 {
   "type": "origins:multiple",
   "name": "Sword Core",
-  "description": "Empowers his melee and sword abilities, and gives access to new sword attacks.",
+  "description": "The sword core amplifys all your abilitys, allowing you to fight hordes of mobs or escape in desperate moments.",
   "core_bar": {
     "type": "origins:resource",
     "max": 100,

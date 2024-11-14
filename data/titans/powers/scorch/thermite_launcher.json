@@ -1,7 +1,7 @@
 {
   "type": "origins:multiple",
-  "name": "T-203 Thermite Launcher",
-  "description": "Shoot Thermite at unsuspecting enemys, requires crossbow",
+  "name": "Thermite Launcher",
+  "description": "Scorches main weapon. Launch thermite at victims and watch as they burn.",
   "charges": {
     "type": "origins:resource",
     "max": 3,

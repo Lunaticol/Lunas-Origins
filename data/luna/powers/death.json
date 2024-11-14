@@ -9,7 +9,7 @@
       "actions": [
         {
           "type": "origins:execute_command",
-          "command": "spreadplayers ~ ~ 1000 1000 under 100 false @s"
+          "command": "spreadplayers ~ ~ 1000 1000 under 319 false @s"
         },
         {
           "type": "origins:trigger_cooldown",

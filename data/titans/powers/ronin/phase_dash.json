@@ -1,7 +1,7 @@
 {
   "type": "origins:multiple",
   "name": "Phase Dash",
-  "description": "Ronin dashes in a given direction, temporarily phasing out of the world, avoid incoming fire and creating the element of surprise.",
+  "description": "Ronin's use phase dash as a sort of escape mechanism, or to give them the upper hand and surprise their enemy.",
   "phase_dash": {
     "type": "origins:phasing",
     "block_condition": {

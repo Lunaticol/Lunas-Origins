@@ -1,6 +1,6 @@
 {
   "name": "Sword Block",
-  "description": "Reduces damage taken by 70%, 85% during sword core. Can be held indefinitely.",
+  "description": "A techinuqe used by skilled samurai to deflect attacks.\nReduces damage taken by 70%, 85% during sword core. Can be held indefinitely.",
   "type": "origins:multiple",
   "block": {
     "type": "origins:active_self",
