@@ -348,10 +348,6 @@
             "unblockable": true,
             "name": "explosion"
           }
-        },
-        {
-          "type": "origins:grant_advancement",
-          "advancement": "luna:artificer/hiroshima"
         }
       ]
     },

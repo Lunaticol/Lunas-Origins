@@ -5,7 +5,7 @@
   "damage_underwater": {
     "type": "origins:damage_over_time",
     "interval": 20,
-    "onset_delay": 1,
+    "onset_delay": 60,
     "damage": 4,
     "damage_source": {
       "name": "hurt_by_water",

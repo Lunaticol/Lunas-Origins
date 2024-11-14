@@ -22,7 +22,7 @@
     "type": "origins:attacker_action_when_hit",
     "cooldown": 10,
     "entity_action": {
-      "type": "apoli:damage",
+      "type": "origins:damage",
       "amount": 3,
       "damage_type": "minecraft:player_attack",
       "source": { "name": "discharge" }
@@ -31,7 +31,7 @@
   "whenhits": {
     "type": "origins:action_when_hit",
     "bientity_action": {
-      "type": "apoli:target_action",
+      "type": "origins:target_action",
       "action": {
         "type": "origins:change_resource",
         "operation": "add",
@@ -41,7 +41,7 @@
     },
     "bientity_condition": {
       "type": "origins:target_condition",
-      "condition": { "type": "apoli:living" }
+      "condition": { "type": "origins:living" }
     },
     "cooldown": 10
   }

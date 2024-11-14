@@ -32,6 +32,10 @@
         {
           "type": "origins:execute_command",
           "command": "playsound minecraft:entity.generic.explode master @s ~ ~ ~ 100 1"
+        },
+        {
+          "type": "origins:grant_advancement",
+          "advancement": "luna:artificer/hiroshima"
         }
       ]
     },

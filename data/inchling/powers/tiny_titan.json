@@ -29,8 +29,17 @@
   "width": {
     "type": "origins:action_on_callback",
     "entity_action_chosen": {
-      "type": "origins:execute_command",
-      "command": "scale set pehkui:width 0.1 @s"
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "scale set pehkui:width 0.1 @s"
+        },
+        {
+          "type": "origins:grant_advancement",
+          "advancement": "luna:titanmite/titanmite"
+        }
+      ]
     },
     "entity_action_respawned": {
       "type": "origins:execute_command",

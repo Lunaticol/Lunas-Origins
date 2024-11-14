@@ -267,5 +267,12 @@
       "compare_to": 200,
       "comparison": ">"
     }
+  },
+  "advancement": {
+    "type": "origins:action_on_callback",
+    "entity_action_chosen": {
+      "type": "origins:grant_advancement",
+      "advancement": "luna:luna_sculk/sculk"
+    }
   }
 }

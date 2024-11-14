@@ -189,6 +189,10 @@
                       "resource": "*:*_rtp_bar",
                       "change": -1,
                       "operation": "add"
+                    },
+                    {
+                      "type": "origins:trigger_cooldown",
+                      "power": "*:*_cooldown"
                     }
                   ]
                 },
@@ -204,6 +208,12 @@
                       "compare_to": 1,
                       "comparison": ">=",
                       "resource": "*:*_rtp_bar"
+                    },
+                    {
+                      "type": "origins:resource",
+                      "compare_to": 0,
+                      "comparison": "==",
+                      "resource": "*:*_cooldown"
                     }
                   ]
                 }
@@ -231,6 +241,10 @@
                       "resource": "*:*_rtp_bar",
                       "change": -1,
                       "operation": "add"
+                    },
+                    {
+                      "type": "origins:trigger_cooldown",
+                      "power": "*:*_cooldown"
                     }
                   ]
                 },
@@ -255,6 +269,12 @@
                       "compare_to": 1,
                       "comparison": ">=",
                       "resource": "*:*_rtp_bar"
+                    },
+                    {
+                      "type": "origins:resource",
+                      "compare_to": 0,
+                      "comparison": "==",
+                      "resource": "*:*_cooldown"
                     }
                   ]
                 }
@@ -282,6 +302,10 @@
                       "resource": "*:*_rtp_bar",
                       "change": -1,
                       "operation": "add"
+                    },
+                    {
+                      "type": "origins:trigger_cooldown",
+                      "power": "*:*_cooldown"
                     }
                   ]
                 },
@@ -301,6 +325,12 @@
                       "compare_to": 1,
                       "comparison": ">=",
                       "resource": "*:*_rtp_bar"
+                    },
+                    {
+                      "type": "origins:resource",
+                      "compare_to": 0,
+                      "comparison": "==",
+                      "resource": "*:*_cooldown"
                     }
                   ]
                 }
@@ -383,5 +413,9 @@
       "value": -1,
       "operation": "multiply_total"
     }
+  },
+  "cooldown": {
+    "type": "origins:cooldown",
+    "cooldown": 10
   }
 }

@@ -42,6 +42,14 @@
           "resource": "kitsune:kitsune/power_active_nether_portal",
           "change": 1,
           "operation": "set"
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 2,
+          "action": {
+            "type": "origins:execute_command",
+            "command": "spreadplayers ~ ~ 8 128 under 127 false @s"
+          }
         }
       ]
     },
@@ -90,6 +98,14 @@
           "resource": "kitsune:kitsune/power_active_nether_portal",
           "change": 1,
           "operation": "set"
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 2,
+          "action": {
+            "type": "origins:execute_command",
+            "command": "spreadplayers ~ ~ 8 128 under 127 false @s"
+          }
         }
       ]
     },

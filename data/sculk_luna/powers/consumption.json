@@ -15,9 +15,9 @@
       }
     },
     "entity_action": {
-      "type": "apoli:and",
+      "type": "origins:and",
       "actions": [
-        { "type": "apoli:add_xp", "levels": 1 },
+        { "type": "origins:add_xp", "levels": 1 },
         {
           "type": "origins:equipped_item_action",
           "equipment_slot": "mainhand",
@@ -38,7 +38,7 @@
     },
     "cooldown": 5,
     "bientity_action": {
-      "type": "apoli:and",
+      "type": "origins:and",
       "actions": [
         {
           "type": "origins:actor_action",
@@ -50,7 +50,7 @@
         },
         {
           "type": "origins:target_action",
-          "action": { "type": "apoli:add_xp", "levels": 1 }
+          "action": { "type": "origins:add_xp", "levels": 1 }
         }
       ]
     }
