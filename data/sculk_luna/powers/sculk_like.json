@@ -45,7 +45,7 @@
   "xp_on_cat": {
     "type": "origins:modify_xp_gain",
     "modifier": {
-      "value": 5,
+      "value": 4,
       "operation": "multiply_total"
     },
     "condition": {
@@ -59,7 +59,7 @@
   "xp_off_cat": {
     "type": "origins:modify_xp_gain",
     "modifier": {
-      "value": 2.5,
+      "value": 1.5,
       "operation": "multiply_total"
     },
     "condition": {
