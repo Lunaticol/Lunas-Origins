@@ -1,0 +1,15 @@
+{
+    "name": "Too Much Alchemy",
+    "description": "Due to your already hefty amount of potions, you can not brew any more, use any more, or use charms.\nRely on Power Up! or Power Out! to utilize effects. You can brew potions but still not throw them if you are Cleric.\n",
+    "condition": {
+        "inverted": true,
+        "type": "origins:origin",
+        "origin": "origins-classes:cleric",
+        "layer": "origins-classes:class"
+    },
+    "type": "origins:prevent_block_use",
+    "block_condition": {
+        "type": "origins:block",
+        "block": "minecraft:brewing_stand"
+    }
+}

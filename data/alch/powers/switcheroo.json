@@ -1,0 +1,62 @@
+{
+    "name": "Switcheroo",
+    "description": "Switch Categories of Potion Effects with [Secondary].\nEmpty Bar - Combat\nFirst Part: Defence\nSecond Part: Utility\nThird Part: Chaos",
+    "type": "origins:multiple",
+    "resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 5,
+        "start_value": 0,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+            "bar_index": 2
+        },
+        "max_action": {
+            "type": "origins:change_resource",
+            "resource": "alch:switcheroo_resource",
+            "change": -100,
+            "operation": "add"
+        }
+    },
+    "change": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "alch:switcheroo_potioncooldown",
+            "comparison": "==",
+            "compare_to": 0
+        },
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "alch:switcheroo_resource",
+            "change": 1,
+            "operation": "add"
+        },
+        "cooldown": 1,
+        "key": {
+            "key": "key.origins.secondary_active"
+        }
+    },
+    "potioncooldown": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 100,
+        "start_value": 0,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+            "bar_index": 2
+        }
+    },
+    "deplete": {
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "alch:switcheroo_potioncooldown",
+            "change": -20,
+            "operation": "add"
+        }
+    }
+}

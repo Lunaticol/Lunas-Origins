@@ -1,0 +1,53 @@
+{
+  "hidden": true,
+  "condition": {
+    "type": "origins:resource",
+    "resource": "alch:switcheroo_resource",
+    "comparison": "==",
+    "compare_to": 0
+  },
+  "type": "origins:active_self",
+  "entity_action": {
+    "type": "origins:and",
+    "actions": [
+      {
+        "type": "origins:choice",
+        "actions": [
+          {
+            "weight": 1,
+            "element": {
+              "type": "origins:fire_projectile",
+              "entity_type": "minecraft:potion",
+              "count": 1,
+              "speed": 1,
+              "divergence": 1,
+              "tag": "{Item:{id:\"minecraft:splash_potion\",Count:1,tag:{CustomPotionEffects:[{Id:5,Duration:900,Amplifier:1,ShowParticles:0b}],CustomPotionColor:15879758}}}"
+            }
+          },
+          {
+            "weight": 1,
+            "element": {
+              "type": "origins:fire_projectile",
+              "entity_type": "minecraft:potion",
+              "count": 1,
+              "speed": 1,
+              "divergence": 1,
+              "tag": "{Item:{id:\"minecraft:splash_potion\",Count:1,tag:{CustomPotionEffects:[{Id:11,Duration:900,Amplifier:0,ShowParticles:0b}],CustomPotionColor:15879758}}}"
+            }
+          }
+        ]
+      },
+      {
+        "type": "origins:change_resource",
+        "resource": "alch:switcheroo_potioncooldown",
+        "change": 40,
+        "operation": "add"
+      }
+    ]
+  },
+  "cooldown": 40,
+  "key": {
+    "key": "key.origins.primary_active",
+    "continuous": true
+  }
+}

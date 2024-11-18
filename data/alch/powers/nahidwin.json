@@ -1,0 +1,6 @@
+{
+    "name": "Amicus omnibus",
+    "description": "You are immune to the dark aura the Tenebris emit",
+    "type": "origins:effect_immunity",
+    "effect": "minecraft:darkness"
+}

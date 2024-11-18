@@ -1,0 +1,20 @@
+{
+    "name": "Master Alchemist",
+    "description": "Any potion effect gained will have its duration increased by 2x. [Not Charged]",
+    "type": "origins:multiple",
+    "boostdur": {
+        "type": "origins:modify_status_effect_duration",
+        "modifier": {
+            "operation": "multiply_total",
+            "value": 1
+        }
+    },
+    "nodoublecharged": {
+        "type": "origins:modify_status_effect_duration",
+        "status_effect": "enderism:charged",
+        "modifier": {
+            "operation": "multiply_total",
+            "value": -0.5
+        }
+    }
+}
