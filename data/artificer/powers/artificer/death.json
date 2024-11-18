@@ -40,18 +40,29 @@
       ]
     },
     "condition": {
-      "type": "origins:and",
+      "type": "origins:or",
       "conditions": [
         {
-          "type": "origins:health",
-          "comparison": "==",
-          "compare_to": 0
+          "type": "origins:and",
+          "conditions": [
+            {
+              "type": "origins:health",
+              "comparison": "==",
+              "compare_to": 0
+            },
+            {
+              "type": "origins:resource",
+              "compare_to": 0,
+              "comparison": "==",
+              "resource": "*:*_explode_stop"
+            }
+          ]
         },
         {
           "type": "origins:resource",
-          "compare_to": 0,
+          "compare_to": 100,
           "comparison": "==",
-          "resource": "*:*_explode_stop"
+          "resource": "*:artificer/artificer_explode_resource"
         }
       ]
     }

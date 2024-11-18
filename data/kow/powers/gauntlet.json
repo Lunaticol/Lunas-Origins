@@ -1,6 +1,6 @@
 {
   "name": "Gauntlet Of claws",
-  "description": "You deal more damage than any weapon with your fists.\nYou're able to attack with both hands, decreasing your attack cooldown by half",
+  "description": "You deal more damage than any weapon with your fists.\nYou're able to attack with both hands, decreasing your attack cooldown by half\nYou are unable to use any melee weapons.",
   "type": "origins:multiple",
   "more_damage_fists": {
     "type": "origins:attribute",
@@ -21,28 +21,17 @@
   "swords_no_damage": {
     "type": "origins:modify_damage_dealt",
     "modifier": {
-      "operation": "multiply_total",
-      "value": -2
+      "operation": "addition",
+      "value": -999
     },
     "condition": {
       "type": "origins:equipped_item",
       "equipment_slot": "mainhand",
       "item_condition": {
-        "type": "origins:or",
-        "conditions": [
-          {
-            "type": "origins:ingredient",
-            "ingredient": {
-              "tag": "kow:sword"
-            }
-          },
-          {
-            "type": "origins:ingredient",
-            "ingredient": {
-              "tag": "simplyswords:swords"
-            }
-          }
-        ]
+        "type": "origins:ingredient",
+        "ingredient": {
+          "tag": "kow:sword"
+        }
       }
     }
   }

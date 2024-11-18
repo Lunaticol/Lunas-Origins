@@ -18,16 +18,28 @@
       "fluid_handling": "any",
       "command_along_ray": "particle minecraft:dust 1.0 0.0 0.0 1.0 ~ ~ ~ 0 0 0 1 1 normal @a",
       "bientity_action": {
-        "type": "origins:target_action",
-        "action": {
-          "type": "origins:and",
-          "actions": [
-            {
-              "type": "origins:execute_command",
-              "command": "tag @s add Grabbed"
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:target_action",
+            "action": {
+              "type": "origins:and",
+              "actions": [
+                {
+                  "type": "origins:execute_command",
+                  "command": "tag @s add Grabbed"
+                }
+              ]
             }
-          ]
-        }
+          },
+          {
+            "type": "origins:actor_action",
+            "action": {
+              "type": "origins:exhaust",
+              "amount": 0.05
+            }
+          }
+        ]
       }
     }
   },

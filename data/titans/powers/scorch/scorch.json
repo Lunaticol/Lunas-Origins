@@ -7,15 +7,15 @@
     "execute_chosen_when_orb": true,
     "entity_action_chosen": {
       "type": "origins:execute_command",
-      "command": "scale set pehkui:height 1.5 @s"
+      "command": "scale set pehkui:height 2.5 @s"
     },
     "entity_action_respawned": {
       "type": "origins:execute_command",
-      "command": "scale set pehkui:height 1.5 @s"
+      "command": "scale set pehkui:height 2.5 @s"
     },
     "entity_action_added": {
       "type": "origins:execute_command",
-      "command": "scale set pehkui:height 1.5 @s"
+      "command": "scale set pehkui:height 2.5 @s"
     },
     "entity_action_lost": {
       "type": "origins:execute_command",
@@ -33,7 +33,7 @@
       "actions": [
         {
           "type": "origins:execute_command",
-          "command": "scale set pehkui:width 1.5 @s",
+          "command": "scale set pehkui:width 2.5 @s",
           "permission_level": 4
         },
         {
@@ -44,11 +44,11 @@
     },
     "entity_action_respawned": {
       "type": "origins:execute_command",
-      "command": "scale set pehkui:width 1.5 @s"
+      "command": "scale set pehkui:width 2.5 @s"
     },
     "entity_action_added": {
       "type": "origins:execute_command",
-      "command": "scale set pehkui:width 1.5 @s"
+      "command": "scale set pehkui:width 2.5 @s"
     },
     "entity_action_lost": {
       "type": "origins:execute_command",
@@ -549,5 +549,61 @@
   },
   "explode": {
     "type": "origins:"
+  },
+  "immune_to_counter": {
+    "type": "origins:invulnerability",
+    "damage_condition": {
+      "type": "origins:name",
+      "name": "counter"
+    }
+  },
+  "ridable": {
+    "type": "origins:action_on_being_used",
+    "bientity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:mount"
+        },
+        {
+          "type": "origins:actor_action",
+          "action": {
+            "type": "origins:grant_power",
+            "power": "titans:rodeo",
+            "source": "titans:scorch/scorch"
+          }
+        }
+      ]
+    }
+  },
+  "if_rodeo": {
+    "type": "origins:action_over_time",
+    "interval": 10,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "title @p actionbar {\"text\":\"Warning! Enemy rodeo!\",\"color\":\"dark_red\",\"bold\":true}"
+    },
+    "condition": {
+      "type": "origins:passenger",
+      "compare_to": 1,
+      "comparison": "=="
+    }
+  },
+  "if_rodeo_screen": {
+    "type": "origins:overlay",
+    "texture": "minecraft:textures/misc/nausea.png",
+    "red": 1,
+    "green": 0.2,
+    "blue": 0.2,
+    "strength": 0.7,
+    "draw_mode": "nausea",
+    "draw_phase": "above_hud",
+    "visible_in_third_person": true,
+    "hide_with_hud": true,
+    "condition": {
+      "type": "origins:passenger",
+      "compare_to": 1,
+      "comparison": "=="
+    }
   }
 }

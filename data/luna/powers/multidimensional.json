@@ -169,6 +169,10 @@
         {
           "type": "origins:dimension",
           "dimension": "minecraft:the_nether"
+        },
+        {
+          "type": "origins:sneaking",
+          "inverted": true
         }
       ]
     }

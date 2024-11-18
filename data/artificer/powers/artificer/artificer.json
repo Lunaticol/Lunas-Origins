@@ -328,7 +328,7 @@
   },
   "goner_kid": {
     "type": "origins:action_over_time",
-    "interval": 1,
+    "interval": 5,
     "entity_action": {
       "type": "origins:and",
       "actions": [
@@ -337,17 +337,8 @@
           "command": "particle minecraft:smoke ~ ~ ~ 1 1.5 1 0 200 force"
         },
         {
-          "type": "origins:damage",
-          "damage_type": "minecraft:explosion",
-          "amount": 100,
-          "source": {
-            "bypasses_armor": true,
-            "fire": true,
-            "magic": true,
-            "out_of_world": true,
-            "unblockable": true,
-            "name": "explosion"
-          }
+          "type": "origins:execute_command",
+          "command": "kill @s"
         }
       ]
     },

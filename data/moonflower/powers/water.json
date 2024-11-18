@@ -4,7 +4,7 @@
   "type": "origins:multiple",
   "water": {
     "type": "origins:resource",
-    "max": 5000,
+    "max": 1000,
     "min": 0,
     "hud_render": {
       "bar_index": 1
@@ -94,6 +94,22 @@
           "inverted": true
         }
       ]
+    }
+  },
+  "out_of_water": {
+    "type": "origins:damage_over_time",
+    "damage": 2,
+    "damage_source": {
+      "bypasses_armor": true,
+      "out_of_world": true,
+      "unblockable": true,
+      "name": "no_water_for_gills"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 0,
+      "comparison": "==",
+      "resource": "*:*_water"
     }
   }
 }

@@ -92,5 +92,12 @@
     "type": "origins:toggle",
     "key": { "key": "key.origins.primary_active" },
     "active_by_default": false
+  },
+  "advancement": {
+    "type": "origins:action_on_callback",
+    "entity_action_chosen": {
+      "type": "origins:grant_advancement",
+      "advancement": "luna:kow/kow"
+    }
   }
 }

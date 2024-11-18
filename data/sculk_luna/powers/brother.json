@@ -110,7 +110,15 @@
           "ticks": 180,
           "action": {
             "type": "origins:execute_command",
-            "command": "function sculk:warden"
+            "command": "function sculk_luna:warden"
+          }
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 180,
+          "action": {
+            "type": "origins:grant_advancement",
+            "advancement": "luna:luna_sculk/mahoraga"
           }
         }
       ]

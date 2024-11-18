@@ -61,7 +61,7 @@
                   "type": "origins:and",
                   "conditions": [
                     {
-                      "type": "origins:on_block",
+                      "type": "origins:in_block",
                       "block_condition": {
                         "type": "origins:height",
                         "compare_to": 62,
@@ -100,7 +100,7 @@
                   "type": "origins:and",
                   "conditions": [
                     {
-                      "type": "origins:on_block",
+                      "type": "origins:in_block",
                       "block_condition": {
                         "type": "origins:height",
                         "compare_to": 61,
@@ -254,7 +254,7 @@
                   "type": "origins:and",
                   "conditions": [
                     {
-                      "type": "origins:on_block",
+                      "type": "origins:in_block",
                       "block_condition": {
                         "type": "origins:height",
                         "compare_to": 62,
@@ -315,7 +315,7 @@
                   "type": "origins:and",
                   "conditions": [
                     {
-                      "type": "origins:on_block",
+                      "type": "origins:in_block",
                       "block_condition": {
                         "type": "origins:height",
                         "compare_to": 61,
@@ -391,18 +391,34 @@
           "type": "origins:name",
           "name": "hotFloor",
           "inverted": true
+        },
+        {
+          "type": "origins:amount",
+          "compare_to": 1,
+          "comparison": ">"
+        },
+        {
+          "type": "origins:name",
+          "name": "magic",
+          "inverted": true
         }
       ]
     }
   },
   "recharge": {
     "type": "origins:action_over_time",
-    "interval": 200,
+    "interval": 400,
     "entity_action": {
       "type": "origins:change_resource",
       "resource": "*:*_rtp_bar",
       "change": 1,
       "operation": "add"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 9,
+      "comparison": "<=",
+      "resource": "*:*_rtp_bar"
     }
   },
   "fall_damage": {

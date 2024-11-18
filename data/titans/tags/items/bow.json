@@ -1,9 +1,4 @@
 {
   "replace": false,
-  "values": [
-    "minecraft:crossbow",
-    "dragonloot:dragon_crossbow",
-    "dragonloot:bow",
-    "minecraft:bow"
-  ]
+  "values": ["minecraft:crossbow", "minecraft:bow"]
 }

@@ -1,242 +1,50 @@
 {
-  "name": "Timed Explosives",
-  "description": "Using Hunger you can fire projectiles that explode after 2.5 seconds",
+  "name": "Explosive Projectiles",
+  "description": "Use hunger to make your projectiles explode.",
   "type": "origins:multiple",
-  "badges": [
-    {
-      "type": "origins:tooltip",
-      "sprite": "origins:textures/gui/badge/info.png",
-      "text": "To use arrows, hold a bow/crossbow and then arrows in your off hand"
-    },
-    {
-      "type": "origins:tooltip",
-      "sprite": "origins:textures/gui/badge/info.png",
-      "text": "To use a trident, hold a trident in your main hand and tnt in your offhand"
-    }
-  ],
-  "explosive_arrows": {
-    "type": "origins:fire_projectile",
-    "hud_render": {
-      "should_render": true
-    },
-    "key": "key.loadToolbarActivator",
+  "explosive_projectiles": {
+    "type": "apugli:action_on_projectile_hit",
     "cooldown": 50,
-    "entity_type": "minecraft:arrow",
-    "tag": "{Tags:[\"bomb_projectile\"],pickup:2b,life:200,crit:1b,Passengers:[{id:\"minecraft:armor_stand\",Tags:[\"bomb\"],Invisible:1b}]}",
-    "projectile_action": {
-      "type": "origins:execute_command",
-      "command": "power grant @e[tag=bomb,distance=..2] artificer:artificer/explode_on_land"
-    },
-    "shooter_action": {
-      "type": "origins:and",
-      "actions": [
-        {
-          "type": "origins:exhaust",
-          "amount": 15
-        },
-        {
-          "type": "origins:execute_command",
-          "command": "clear @s arrow 1"
-        }
-      ]
-    },
-    "condition": {
-      "type": "origins:and",
-      "conditions": [
-        {
-          "type": "origins:equipped_item",
-          "equipment_slot": "mainhand",
-          "item_condition": {
-            "type": "origins:or",
-            "conditions": [
-              {
-                "type": "origins:ingredient",
-                "ingredient": {
-                  "item": "minecraft:bow"
-                }
-              },
-              {
-                "type": "origins:ingredient",
-                "ingredient": {
-                  "item": "minecraft:crossbow"
-                }
-              }
-            ]
-          }
-        },
-        {
-          "type": "origins:equipped_item",
-          "equipment_slot": "offhand",
-          "item_condition": {
-            "type": "origins:ingredient",
-            "ingredient": {
-              "tag": "artificer:arrow"
-            }
-          }
-        }
-      ]
-    }
-  },
-  "explosive_tridents": {
-    "type": "origins:fire_projectile",
     "hud_render": {
       "should_render": true
     },
-    "key": "key.loadToolbarActivator",
-    "cooldown": 100,
-    "entity_type": "minecraft:trident",
-    "tag": "{pickup:2b,crit:1b,Tags:[\"bomb_projectile\"],Passengers:[{id:\"minecraft:armor_stand\",Invisible:1b,Tags:[\"bomb\"]}]}",
-    "projectile_action": {
-      "type": "origins:execute_command",
-      "command": "power grant @e[tag=bomb,distance=..2] artificer:artificer/explode_on_land"
-    },
-    "shooter_action": {
-      "type": "origins:and",
-      "actions": [
-        {
-          "type": "origins:exhaust",
-          "amount": 25
-        },
-        {
-          "type": "origins:execute_command",
-          "command": "clear @s tnt 2"
-        }
-      ]
-    },
-    "speed": 2.5,
-    "condition": {
-      "type": "origins:and",
-      "conditions": [
-        {
-          "type": "origins:equipped_item",
-          "equipment_slot": "mainhand",
-          "item_condition": {
-            "type": "origins:ingredient",
-            "ingredient": {
-              "item": "minecraft:trident"
-            }
+    "bientity_action": {
+      "type": "origins:target_action",
+      "action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:explode",
+            "power": 3
+          },
+          {
+            "type": "origins:execute_command",
+            "command": "particle minecraft:explosion ~ ~1 ~ 1 1 1 1 10"
+          },
+          {
+            "type": "origins:play_sound",
+            "sound": "minecraft:entity.generic.explode",
+            "category": "master",
+            "pitch": 1,
+            "volume": 1
           }
-        },
-        {
-          "type": "origins:equipped_item",
-          "equipment_slot": "offhand",
-          "item_condition": {
-            "type": "origins:ingredient",
-            "ingredient": {
-              "item": "minecraft:tnt"
-            }
-          }
-        }
-      ]
-    }
-  },
-  "condition": {
-    "type": "origins:saturation_level",
-    "compare_to": 3,
-    "comparison": ">"
-  },
-  "explosion": {
-    "type": "origins:target_action_on_hit",
-    "entity_action": {
-      "type": "origins:and",
-      "actions": [
-        {
-          "type": "origins:explode",
-          "power": 3,
-          "destruction_type": "none",
-          "damage_self": false,
-          "create_fire": false
-        },
-        {
-          "type": "origins:execute_command",
-          "command": "particle minecraft:explosion ~ ~ ~ 1 1 1 1 10"
-        },
-        {
-          "type": "origins:play_sound",
-          "sound": "minecraft:entity.generic.explode",
-          "category": "master",
-          "pitch": 1,
-          "volume": 1
-        },
-        {
-          "type": "origins:execute_command",
-          "command": "power revoke @e[tag=bomb,distance=..2] artificer:artificer/explode_on_land artificer:artificer"
-        },
-        {
-          "type": "origins:execute_command",
-          "command": "kill @e[tag=bomb,distance=..2]"
-        },
-        {
-          "type": "origins:execute_command",
-          "command": "kill @e[tag=bomb_projectile,distance=..2]"
-        }
-      ]
-    },
-    "damage_condition": {
-      "type": "origins:projectile",
-      "projectile": "minecraft:arrow"
-    },
-    "cooldown": 1
-  },
-  "explosion_trident": {
-    "type": "origins:target_action_on_hit",
-    "entity_action": {
-      "type": "origins:and",
-      "actions": [
-        {
-          "type": "origins:explode",
-          "power": 3.5,
-          "destruction_type": "none",
-          "damage_self": false,
-          "create_fire": false
-        },
-        {
-          "type": "origins:execute_command",
-          "command": "particle minecraft:explosion ~ ~ ~ 1 1 1 1 10"
-        },
-        {
-          "type": "origins:play_sound",
-          "sound": "minecraft:entity.generic.explode",
-          "category": "master",
-          "pitch": 1,
-          "volume": 1
-        },
-        {
-          "type": "origins:exhaust",
-          "amount": 25
-        },
-        {
-          "type": "origins:execute_command",
-          "command": "power revoke @e[tag=bomb,distance=..2] artificer:artificer/explode_on_land artificer:artificer"
-        },
-        {
-          "type": "origins:execute_command",
-          "command": "kill @e[tag=bomb,distance=..2]"
-        },
-        {
-          "type": "origins:execute_command",
-          "command": "kill @e[tag=bomb_projectile,distance=..2]"
-        },
-        {
-          "type": "origins:execute_command",
-          "command": "clear @s tnt 2"
-        }
-      ]
-    },
-    "damage_condition": {
-      "type": "origins:projectile",
-      "projectile": "minecraft:trident"
-    },
-    "cooldown": 1,
-    "condition": {
-      "type": "origins:equipped_item",
-      "equipment_slot": "offhand",
-      "item_condition": {
-        "type": "origins:ingredient",
-        "ingredient": {
-          "item": "minecraft:tnt"
-        }
+        ]
       }
+    },
+    "owner_bientity_action": {
+      "type": "origins:actor_action",
+      "action": {
+        "type": "origins:exhaust",
+        "amount": 25
+      }
+    },
+    "condition": {
+      "type": "origins:power_active",
+      "power": "*:*_toggle"
     }
+  },
+  "toggle": {
+    "type": "origins:toggle",
+    "key": "key.loadToolbarActivator"
   }
 }

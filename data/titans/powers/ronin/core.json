@@ -9,8 +9,7 @@
     "hud_render": {
       "should_render": true,
       "sprite_location": "origins:textures/gui/luna_resource_bar.png",
-      "bar_index": 6,
-      "icon_index": 1
+      "bar_index": 6
     }
   },
   "core_activate": {

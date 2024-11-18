@@ -372,6 +372,16 @@
           "amount": 8
         },
         {
+          "type": "origins:apply_effect",
+          "effect": {
+            "effect": "minecraft:absorption",
+            "amplifier": 1,
+            "duration": -1,
+            "show_icon": true,
+            "show_particles": false
+          }
+        },
+        {
           "type": "origins:change_resource",
           "change": 25,
           "operation": "add",
@@ -393,15 +403,16 @@
       "type": "origins:and",
       "conditions": [
         {
-          "type": "origins:health",
-          "compare_to": 60,
-          "comparison": "<="
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:*_battery_cooldown"
         },
         {
           "type": "origins:resource",
           "compare_to": 0,
           "comparison": "==",
-          "resource": "*:*_battery_cooldown"
+          "resource": "*:ronin/aegis/shield_aegis_shield"
         }
       ]
     }
@@ -427,7 +438,7 @@
           "effect": {
             "effect": "minecraft:absorption",
             "amplifier": 3,
-            "duration": 1,
+            "duration": -1,
             "show_icon": true,
             "show_particles": false
           }
@@ -454,11 +465,6 @@
       "type": "origins:and",
       "conditions": [
         {
-          "type": "origins:health",
-          "compare_to": 60,
-          "comparison": "<="
-        },
-        {
           "type": "origins:resource",
           "compare_to": 0,
           "comparison": "==",
@@ -466,9 +472,9 @@
         },
         {
           "type": "origins:resource",
-          "compare_to": 0,
+          "compare_to": 1,
           "comparison": "==",
-          "resource": "*:scorch/aegis/shield_aegis_shield"
+          "resource": "*:ronin/aegis/shield_aegis_shield"
         }
       ]
     }
@@ -557,7 +563,7 @@
       "actions": [
         {
           "type": "origins:execute_command",
-          "command": "origin set @s titans:ronin/kits origins:empty"
+          "command": "origin set @s titans:ronin_kits origins:empty"
         },
         {
           "type": "origins:execute_command",
@@ -650,5 +656,61 @@
   "effect_immunity": {
     "type": "origins:effect_immunity",
     "effect": "biomancy:bleed"
+  },
+  "immune_to_counter": {
+    "type": "origins:invulnerability",
+    "damage_condition": {
+      "type": "origins:name",
+      "name": "counter"
+    }
+  },
+  "ridable": {
+    "type": "origins:action_on_being_used",
+    "bientity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:mount"
+        },
+        {
+          "type": "origins:actor_action",
+          "action": {
+            "type": "origins:grant_power",
+            "power": "titans:rodeo",
+            "source": "titans:ronin/ronin"
+          }
+        }
+      ]
+    }
+  },
+  "if_rodeo": {
+    "type": "origins:action_over_time",
+    "interval": 10,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "title @p actionbar {\"text\":\"Warning! Enemy rodeo!\",\"color\":\"dark_red\",\"bold\":true}"
+    },
+    "condition": {
+      "type": "origins:passenger",
+      "compare_to": 1,
+      "comparison": ">="
+    }
+  },
+  "if_rodeo_screen": {
+    "type": "origins:overlay",
+    "texture": "minecraft:textures/misc/nausea.png",
+    "red": 1,
+    "green": 0.2,
+    "blue": 0.2,
+    "strength": 0.7,
+    "draw_mode": "nausea",
+    "draw_phase": "above_hud",
+    "visible_in_third_person": true,
+    "hide_with_hud": true,
+    "condition": {
+      "type": "origins:passenger",
+      "compare_to": 1,
+      "comparison": "=="
+    }
   }
 }

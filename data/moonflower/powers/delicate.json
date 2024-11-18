@@ -33,7 +33,7 @@
   },
   "ooooooough_its_so_hot": {
     "type": "origins:action_over_time",
-    "interval": 200,
+    "interval": 400,
     "entity_action": {
       "type": "origins:feed",
       "food": -1,

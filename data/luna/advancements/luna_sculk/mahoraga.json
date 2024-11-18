@@ -1,23 +1,23 @@
 {
   "display": {
     "title": {
-      "text": "Lyst"
+      "text": "Mahoraga! Help! Help me!"
     },
     "description": {
-      "text": "Play Lyst"
+      "text": "Summon a warden as lyst."
     },
     "icon": {
-      "item": "minecraft:sculk_block"
+      "item": "minecraft:sculk_catalyst"
     },
-    "frame": "task",
+    "frame": "challenge",
     "show_toast": true,
     "announce_to_chat": true,
-    "hidden": false
+    "hidden": true
   },
   "criteria": {
     "origins": {
       "trigger": "minecraft:impossible"
     }
   },
-  "parent": "luna:root"
+  "parent": "luna:luna_sculk/sculk"
 }

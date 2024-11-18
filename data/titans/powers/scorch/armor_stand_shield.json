@@ -21,7 +21,6 @@
                   {
                     "type": "origins:damage",
                     "amount": 10,
-                    "damage_type": "minecraft:lava",
                     "source": {
                       "fire": true,
                       "bypasses_armor": false,

@@ -226,7 +226,7 @@
       "action": {
         "type": "origins:grant_power",
         "power": "*:detected",
-        "source": "sculk_luna:sculk"
+        "source": "sculk_luna:sculk_like"
       }
     }
   },
@@ -266,8 +266,54 @@
       "levels": -1
     },
     "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:xp_levels",
+          "compare_to": 200,
+          "comparison": ">="
+        },
+        {
+          "type": "origins:xp_levels",
+          "compare_to": 399,
+          "comparison": "<="
+        }
+      ]
+    }
+  },
+  "alot_of_xp": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:add_xp",
+      "levels": -1
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:xp_levels",
+          "compare_to": 400,
+          "comparison": ">="
+        },
+        {
+          "type": "origins:xp_levels",
+          "compare_to": 600,
+          "comparison": "<="
+        }
+      ]
+    }
+  },
+  "ok_kitsune_player": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:add_xp",
+      "levels": -1
+    },
+    "condition": {
       "type": "origins:xp_levels",
-      "compare_to": 200,
+      "compare_to": 600,
       "comparison": ">"
     }
   },

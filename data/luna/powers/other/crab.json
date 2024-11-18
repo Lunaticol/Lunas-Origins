@@ -1,0 +1,234 @@
+{
+  "name": "§6Unstable Body§r",
+  "description": "Your body is incredibly unstable. As a result, your Health, Damage and Speed values are constantly changing.",
+  "type": "origins:multiple",
+  "Health": {
+    "type": "origins:action_over_time",
+    "interval": 6000,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:choice",
+          "actions": [
+            {
+              "weight": 1,
+              "element": {
+                "type": "origins:execute_command",
+                "command": "function digitalaberration:health5"
+              }
+            },
+            {
+              "weight": 1,
+              "element": {
+                "type": "origins:execute_command",
+                "command": "function digitalaberration:health4"
+              }
+            },
+            {
+              "weight": 1,
+              "element": {
+                "type": "origins:execute_command",
+                "command": "function digitalaberration:health3"
+              }
+            },
+            {
+              "weight": 1,
+              "element": {
+                "type": "origins:execute_command",
+                "command": "function digitalaberration:health2"
+              }
+            },
+            {
+              "weight": 1,
+              "element": {
+                "type": "origins:execute_command",
+                "command": "function digitalaberration:health1"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "Damage": {
+    "type": "origins:action_over_time",
+    "interval": 10,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:choice",
+          "actions": [
+            {
+              "weight": 1,
+              "element": {
+                "type": "origins:execute_command",
+                "command": "function digitalaberration:damage5"
+              }
+            },
+            {
+              "weight": 1,
+              "element": {
+                "type": "origins:execute_command",
+                "command": "function digitalaberration:damage4"
+              }
+            },
+            {
+              "weight": 1,
+              "element": {
+                "type": "origins:execute_command",
+                "command": "function digitalaberration:damage3"
+              }
+            },
+            {
+              "weight": 1,
+              "element": {
+                "type": "origins:execute_command",
+                "command": "function digitalaberration:damage2"
+              }
+            },
+            {
+              "weight": 1,
+              "element": {
+                "type": "origins:execute_command",
+                "command": "function digitalaberration:damage1"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "Speed": {
+    "type": "origins:action_over_time",
+    "interval": 3000,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:choice",
+          "actions": [
+            {
+              "weight": 1,
+              "element": {
+                "type": "origins:execute_command",
+                "command": "function digitalaberration:movement5"
+              }
+            },
+            {
+              "weight": 1,
+              "element": {
+                "type": "origins:execute_command",
+                "command": "function digitalaberration:movement4"
+              }
+            },
+            {
+              "weight": 1,
+              "element": {
+                "type": "origins:execute_command",
+                "command": "function digitalaberration:movement3"
+              }
+            },
+            {
+              "weight": 1,
+              "element": {
+                "type": "origins:execute_command",
+                "command": "function digitalaberration:movement2"
+              }
+            },
+            {
+              "weight": 1,
+              "element": {
+                "type": "origins:execute_command",
+                "command": "function digitalaberration:movement1"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "ResetStatsOnOriginChange": {
+    "type": "origins:action_on_callback",
+    "entity_action_chosen": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "tag @s add digitalaberration"
+        }
+      ]
+    },
+    "entity_action_gained": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "tag @s add digitalaberration"
+        }
+      ]
+    },
+    "entity_action_added": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "tag @s add digitalaberration"
+        }
+      ]
+    },
+    "entity_action_respawned": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "tag @s add digitalaberration"
+        }
+      ]
+    },
+    "entity_action_lost": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "function digitalaberration:movement3"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "function digitalaberration:health3"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "function digitalaberration:damage3"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "tag @e[tag=digitalaberration] remove digitalaberration"
+        }
+      ]
+    },
+    "entity_action_removed": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "function digitalaberration:movement3"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "function digitalaberration:health3"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "function digitalaberration:damage3"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "tag @e[tag=digitalaberration] remove digitalaberration"
+        }
+      ]
+    },
+    "execute_chosen_when_orb": true
+  }
+}
