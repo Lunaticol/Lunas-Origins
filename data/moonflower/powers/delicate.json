@@ -32,7 +32,7 @@
           "type": "origins:biome",
           "condition": {
             "type": "origins:temperature",
-            "compare_to": 0,
+            "compare_to": 0.15,
             "comparison": "<="
           }
         }

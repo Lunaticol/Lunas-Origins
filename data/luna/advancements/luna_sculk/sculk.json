@@ -7,7 +7,7 @@
       "text": "Play Lyst"
     },
     "icon": {
-      "item": "minecraft:sculk_block"
+      "item": "minecraft:sculk"
     },
     "frame": "task",
     "show_toast": true,
