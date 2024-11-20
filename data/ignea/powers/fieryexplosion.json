@@ -40,10 +40,13 @@
               },
               {
                 "type": "origins:damage",
-                "amount": 30,
+                "amount": 3,
                 "source": {
                   "name": "explosion",
-                  "fire": false
+                  "fire": false,
+                  "magic": true,
+                  "bypasses_armor": true,
+                  "unblockable": true
                 },
                 "damage_type": "minecraft:explosion"
               }
