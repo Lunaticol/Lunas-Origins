@@ -3,8 +3,7 @@
     "luna:isabella",
     "luna:rtp",
     "luna:telekinesis",
-    "luna:multidimensional",
-    "luna:death"
+    "luna:multidimensional"
   ],
   "icon": "minecraft:blue_orchid",
   "unchoosable": true,
