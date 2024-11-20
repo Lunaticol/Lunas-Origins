@@ -1,20 +1,21 @@
 {
-    "name": "Quick Demise",
-    "description": "Your flame's temperatures have reached levels high enough to dissipate rain, but not enough to get rid of water. You will melt much quicker than a regular Blazeborn.",
-    "condition": {
-        "type": "origins:fluid_height",
-        "fluid": "minecraft:water",
-        "comparison": ">",
-        "compare_to": 0
-    },
-    "type": "origins:damage_over_time",
-    "interval": 20,
-    "damage": 5,
-    "damage_source": {
-        "name": "origins:hurt_by_water",
-        "bypasses_armor": true,
-        "unblockable": true
-    },
-    "damage_type": "origins:hurt_by_water",
-    "protection_effectiveness": 1
+  "name": "Quick Demise",
+  "description": "Your flame's temperatures have reached levels high enough to dissipate rain, but not enough to get rid of water. You will melt much quicker than a regular Blazeborn.",
+  "condition": {
+    "type": "origins:fluid_height",
+    "fluid": "minecraft:water",
+    "comparison": ">",
+    "compare_to": 0
+  },
+  "type": "origins:damage_over_time",
+  "interval": 20,
+  "damage": 4,
+  "damage_source": {
+    "name": "origins:hurt_by_water",
+    "bypasses_armor": true,
+    "unblockable": true,
+    "magic": true
+  },
+  "damage_type": "origins:hurt_by_water",
+  "protection_effectiveness": 1
 }
