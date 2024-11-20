@@ -605,5 +605,21 @@
       "compare_to": 1,
       "comparison": "=="
     }
+  },
+  "extra_block_range": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "attribute": "reach-entity-attributes:reach",
+      "value": 3,
+      "operation": "addition"
+    }
+  },
+  "extra_range": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "attribute": "reach-entity-attributes:attack_range",
+      "value": 3,
+      "operation": "addition"
+    }
   }
 }

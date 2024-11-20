@@ -27,6 +27,14 @@
             "type": "origins:in_tag",
             "tag": "moonflower:cold"
           }
+        },
+        {
+          "type": "origins:biome",
+          "condition": {
+            "type": "origins:temperature",
+            "compare_to": 0,
+            "comparison": "<="
+          }
         }
       ]
     }
@@ -53,6 +61,14 @@
         {
           "type": "origins:dimension",
           "dimension": "minecraft:the_nether"
+        },
+        {
+          "type": "origins:biome",
+          "condition": {
+            "type": "origins:temperature",
+            "compare_to": 2,
+            "comparison": ">="
+          }
         }
       ]
     }

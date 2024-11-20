@@ -152,5 +152,123 @@
         }
       ]
     }
+  },
+  "night_vis": {
+    "type": "origins:toggle_night_vision",
+    "strength": 1,
+    "key": "key.loadToolbarActivator"
+  },
+  "sun": {
+    "type": "origins:resource",
+    "max": 200,
+    "min": 0
+  },
+  "charge": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "*:*_sun",
+      "operation": "add",
+      "change": 1
+    },
+    "condition": {
+      "type": "origins:exposed_to_sun"
+    }
+  },
+  "if_full_sun": {
+    "type": "origins:action_over_time",
+    "interval": 10,
+    "entity_action": {
+      "type": "origins:apply_effect",
+      "effects": [
+        {
+          "effect": "minecraft:weakness",
+          "amplifier": 1,
+          "duration": 100
+        },
+        {
+          "effect": "minecraft:slowness",
+          "amplifier": 1,
+          "duration": 100
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:exposed_to_sun"
+        },
+        {
+          "type": "origins:resource",
+          "resource": "*:*_sun",
+          "compare_to": 100,
+          "comparison": ">="
+        }
+      ]
+    }
+  },
+  "drain": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "*:*_sun",
+      "operation": "add",
+      "change": -1
+    },
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:exposed_to_sun",
+          "inverted": true
+        },
+        {
+          "type": "origins:in_rain"
+        }
+      ]
+    }
+  },
+  "shader": {
+    "type": "origins:shader",
+    "shader": "minecraft:shaders/post/blobs2.json",
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:exposed_to_sun"
+        },
+        {
+          "type": "origins:resource",
+          "resource": "*:*_sun",
+          "compare_to": 150,
+          "comparison": ">="
+        }
+      ]
+    }
+  },
+  "burn": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:set_on_fire",
+      "duration": 2
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:exposed_to_sun"
+        },
+        {
+          "type": "origins:resource",
+          "resource": "*:*_sun",
+          "compare_to": 200,
+          "comparison": "=="
+        }
+      ]
+    }
   }
 }

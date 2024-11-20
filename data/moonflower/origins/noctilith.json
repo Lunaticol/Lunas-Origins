@@ -3,10 +3,10 @@
     "moonflower:nocturnal",
     "moonflower:delicate",
     "moonflower:toxic",
-    "moonflower:water"
+    "moonflower:water",
+    "moonflower:grapple"
   ],
   "icon": "minecraft:pink_tulip",
-  "unchoosable": true,
   "order": 9,
   "impact": 3,
   "name": "Noctilith",

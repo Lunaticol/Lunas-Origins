@@ -605,11 +605,18 @@
     }
   },
   "extra_range": {
+    "type": "origins:attribute",
+    "modifier": {
+      "attribute": "reach-entity-attributes:attack_range",
+      "value": 3,
+      "operation": "addition"
+    }
+  },
+  "extra_range_ronin": {
     "type": "origins:conditioned_attribute",
     "modifier": {
       "attribute": "reach-entity-attributes:attack_range",
       "value": 1,
-      "name": "ronin_reach",
       "operation": "addition"
     },
     "condition": {
@@ -621,6 +628,14 @@
           "tag": "titans:sword"
         }
       }
+    }
+  },
+  "extra_block_range": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "attribute": "reach-entity-attributes:reach",
+      "value": 3,
+      "operation": "addition"
     }
   },
   "fall": {

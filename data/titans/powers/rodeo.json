@@ -2,7 +2,8 @@
   "type": "origins:multiple",
   "steal_battery": {
     "type": "origins:active_self",
-    "key": "key.right",
+    "key": "key.use",
+    "cooldown": 100,
     "entity_action": {
       "type": "origins:and",
       "actions": [
@@ -98,45 +99,10 @@
       ]
     },
     "condition": {
-      "type": "origins:riding",
-      "bientity_condition": {
-        "type": "origins:and",
-        "conditions": [
-          {
-            "type": "origins:target_condition",
-            "condition": {
-              "type": "origins:and",
-              "conditions": [
-                {
-                  "type": "origins:or",
-                  "conditions": [
-                    {
-                      "type": "origins:origin",
-                      "layer": "origins:origin",
-                      "origin": "titans:ronin"
-                    },
-                    {
-                      "type": "origins:origin",
-                      "layer": "origins:origin",
-                      "origin": "titans:scorch"
-                    }
-                  ]
-                },
-                {
-                  "type": "origins:entity_type",
-                  "entity_type": "minecraft:player"
-                }
-              ]
-            }
-          },
-          {
-            "type": "origins:resource",
-            "compare_to": 1,
-            "comparison": "==",
-            "resource": "*:*_took_battery"
-          }
-        ]
-      }
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_took_battery"
     }
   },
   "charge_up_time": {

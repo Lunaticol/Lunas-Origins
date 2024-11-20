@@ -1,7 +1,14 @@
 {
   "type": "origins:multiple",
-  "name": "",
-  "description": "",
+  "name": "Grapple",
+  "description": "Use your Flower vines to grapple onto surfaces!",
+  "badges": [
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/info.png",
+      "text": "Heavily inspired from Mossling by Crowdaddy/AsheLeaf"
+    }
+  ],
   "vine_grab": {
     "type": "origins:active_self",
     "entity_action": {
@@ -66,7 +73,7 @@
           }
         ]
       },
-      "command_at_hit": "particle minecraft:spore_blossom_air ~ ~ ~ 0.1 0.1 0.0 1 6 normal @a",
+      "command_at_hit": "particle minecraft:dust 1.000 0.388 0.839 1 ~ ~ ~ 0.1 0.1 0.0 1 6 normal @a",
       "command_along_ray": "particle cherry_leaves ~ ~ ~ 0.1 0.1 0.0 1 6 normal",
       "command_step": 1,
       "command_along_ray_only_on_hit": true
