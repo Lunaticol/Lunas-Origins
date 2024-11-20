@@ -36,7 +36,7 @@
             "type": "origins:actor_action",
             "action": {
               "type": "origins:exhaust",
-              "amount": 0.05
+              "amount": 0.5
             }
           }
         ]
@@ -45,7 +45,7 @@
   },
   "hold": {
     "type": "origins:active_self",
-    "cooldown": 0,
+    "cooldown": 5,
     "key": {
       "key": "key.origins.primary_active",
       "continuous": true
