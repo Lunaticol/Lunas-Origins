@@ -1,0 +1,23 @@
+{
+  "display": {
+    "title": {
+      "text": "Precatio Ignea"
+    },
+    "description": {
+      "text": "Play Precatio Ignea"
+    },
+    "icon": {
+      "item": "minecraft:soul_torch"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "origins": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "luna:root"
+}

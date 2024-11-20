@@ -1,0 +1,23 @@
+{
+  "display": {
+    "title": {
+      "text": "Arise"
+    },
+    "description": {
+      "text": "An army will be reborn from the ashes of a long lost war"
+    },
+    "icon": {
+      "item": "minecraft:soul_torch"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "origins": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "luna:ignea/ignea"
+}
