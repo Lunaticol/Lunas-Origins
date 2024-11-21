@@ -67,7 +67,7 @@
             "type": "origins:apply_effect",
             "effect": {
               "effect": "minecraft:slow_falling",
-              "duration": 10,
+              "duration": 13,
               "amplifier": 0
             }
           }

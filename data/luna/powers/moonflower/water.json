@@ -1,6 +1,6 @@
 {
   "name": "Water dependant",
-  "description": "Like all plants, you need water to survive. However, unlike other plants, to much water can negatively impact you.",
+  "description": "Like all plants, you need water to survive. However, unlike other plants, too much water can negatively impact you.",
   "type": "origins:multiple",
   "water": {
     "type": "origins:resource",
@@ -108,10 +108,22 @@
       "name": "no_water_for_gills"
     },
     "condition": {
-      "type": "origins:resource",
-      "compare_to": 0,
-      "comparison": "==",
-      "resource": "*:*_water"
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:*_water"
+        },
+        {
+          "type": "origins:fluid_height",
+          "compare_to": 0,
+          "fluid": "minecraft:water",
+          "comparison": ">",
+          "inverted": true
+        }
+      ]
     }
   }
 }

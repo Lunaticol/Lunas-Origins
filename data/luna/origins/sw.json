@@ -1,5 +1,11 @@
 {
-  "powers": ["luna:sw/static", "luna:sw/lc", "luna:sw/ll", "luna:sw/passives", "luna:sw/staticloss"],
+  "powers": [
+    "luna:sw/static",
+    "luna:sw/lc",
+    "luna:sw/ll",
+    "luna:sw/passives",
+    "luna:sw/staticloss"
+  ],
   "icon": "minecraft:lightning_rod",
   "order": 10,
   "impact": 2,

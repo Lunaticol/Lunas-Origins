@@ -2,6 +2,7 @@
   "name": "Alchemist",
   "description": "Master of potions, friend to all, until attacked.",
   "unchoosable": false,
+  "icon": "minecraft:potion",
   "powers": [
     "luna:alch/masteralch",
     "luna:alch/chaos",
