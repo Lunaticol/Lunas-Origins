@@ -1,0 +1,21 @@
+{
+  "name": "Alchemist",
+  "description": "Master of potions, friend to all, until attacked.",
+  "unchoosable": false,
+  "powers": [
+    "luna:alch/masteralch",
+    "luna:alch/chaos",
+    "luna:alch/switcheroo",
+    "luna:alch/combat",
+    "luna:alch/defence",
+    "luna:alch/utility",
+    "luna:alch/hindrance",
+    "luna:alch/selfpurge",
+    "luna:alch/nahidwin",
+    "luna:alch/nopot",
+    "luna:alch/nopots",
+    "luna:alch/frail"
+  ],
+  "order": 10,
+  "impact": 1
+}

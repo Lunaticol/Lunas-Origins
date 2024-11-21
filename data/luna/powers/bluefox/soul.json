@@ -1,0 +1,294 @@
+{
+  "name": "Spiritual Communication",
+  "description": "You are able to absorb souls into yourself. This provides many benefits for you.",
+  "type": "origins:multiple",
+  "soul_bar": {
+    "type": "origins:resource",
+    "max": 2000,
+    "min": 0,
+    "hud_render": {
+      "should_render": true,
+      "bar_index": 15,
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png"
+    }
+  },
+  "particles": {
+    "type": "origins:self_action_when_hit",
+    "entity_action": {
+      "type": "origins:chance",
+      "chance": 0.2,
+      "action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:execute_command",
+            "command": "execute at @s run particle minecraft:sculk_soul ~ ~0.5 ~ 0.5 0.5 0.5 0.03 5 force"
+          }
+        ]
+      }
+    }
+  },
+  "magic_damage": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "operation": "multiply_total",
+      "value": 1.5
+    },
+    "damage_condition": {
+      "type": "apugli:magic"
+    }
+  },
+  "fire_damage": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "operation": "multiply_total",
+      "value": 3
+    },
+    "damage_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:name",
+          "name": "onFire"
+        },
+        {
+          "type": "origins:name",
+          "name": "onFire.player"
+        },
+        {
+          "type": "origins:name",
+          "name": "inFire"
+        },
+        {
+          "type": "origins:name",
+          "name": "inFire.player"
+        }
+      ]
+    }
+  },
+  "kill_particle": {
+    "type": "origins:action_on_hit",
+    "bientity_action": {
+      "type": "origins:target_action",
+      "action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:execute_command",
+            "command": "particle minecraft:sculk_soul ~ ~0.5 ~ 0.5 0.5 0.5 0.03 5 force"
+          }
+        ]
+      }
+    },
+    "bientity_condition": {
+      "type": "origins:target_condition",
+      "condition": {
+        "type": "origins:health",
+        "compare_to": 1,
+        "comparison": "<"
+      }
+    }
+  },
+  "gain_literally_anything_else": {
+    "type": "origins:self_action_on_kill",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 100,
+      "operation": "add",
+      "resource": "*:*_soul_bar"
+    },
+    "target_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:entity_type",
+          "entity_type": "minecraft:player",
+          "inverted": true
+        },
+        {
+          "type": "origins:entity_type",
+          "entity_type": "minecraft:wither",
+          "inverted": true
+        },
+        {
+          "type": "origins:entity_type",
+          "entity_type": "minecraft:warden",
+          "inverted": true
+        },
+        {
+          "type": "origins:entity_type",
+          "entity_type": "minecraft:ender_dragon",
+          "inverted": true
+        }
+      ]
+    }
+  },
+  "gain_wither": {
+    "type": "origins:self_action_on_kill",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 250,
+      "operation": "add",
+      "resource": "*:*_soul_bar"
+    },
+    "target_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:entity_type",
+          "entity_type": "minecraft:wither"
+        }
+      ]
+    }
+  },
+  "gain_ender_dragon": {
+    "type": "origins:self_action_on_kill",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 1000,
+      "operation": "add",
+      "resource": "*:*_soul_bar"
+    },
+    "target_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:entity_type",
+          "entity_type": "minecraft:ender_dragon"
+        }
+      ]
+    }
+  },
+  "gain_warden": {
+    "type": "origins:self_action_on_kill",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 300,
+      "operation": "add",
+      "resource": "*:*_soul_bar"
+    },
+    "target_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:entity_type",
+          "entity_type": "minecraft:warden"
+        }
+      ]
+    }
+  },
+  "gain_player": {
+    "type": "origins:self_action_on_kill",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 100,
+      "operation": "add",
+      "resource": "*:*_soul_bar"
+    },
+    "target_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:entity_type",
+          "entity_type": "minecraft:player"
+        }
+      ]
+    }
+  },
+  "soul_siphon": {
+    "type": "origins:self_action_on_hit",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 20,
+      "operation": "add",
+      "resource": "*:*_soul_bar"
+    }
+  },
+  "on_soulsand": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 25,
+      "operation": "add",
+      "resource": "*:*_soul_bar"
+    },
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:block_in_radius",
+          "compare_to": 1,
+          "comparison": ">=",
+          "radius": 2,
+          "shape": "cube",
+          "block_condition": {
+            "type": "origins:in_tag",
+            "tag": "luna:soul_blocks"
+          }
+        }
+      ]
+    }
+  },
+  "i_just_love_dimensional_kitsunes_sonic": {
+    "type": "origins:action_over_time",
+    "interval": 40,
+    "entity_action": {
+      "type": "origins:area_of_effect",
+      "radius": 8,
+      "shape": "sphere",
+      "bientity_action": {
+        "type": "origins:target_action",
+        "action": {
+          "type": "origins:change_resource",
+          "change": 100,
+          "operation": "add",
+          "resource": "kitsune:kitsune/nether/soul_mode_soul_bar"
+        }
+      },
+      "bientity_condition": {
+        "type": "origins:target_condition",
+        "condition": {
+          "type": "origins:origin",
+          "layer": "luna:luna_layers",
+          "origin": "kitsune:kitsune_classes/nether_kitsune"
+        }
+      }
+    }
+  },
+  "restrict_armor": {
+    "type": "origins:restrict_armor",
+    "head": {
+      "type": "origins:armor_value",
+      "comparison": ">",
+      "compare_to": 3
+    },
+    "chest": {
+      "type": "origins:armor_value",
+      "comparison": ">",
+      "compare_to": 8
+    },
+    "legs": {
+      "type": "origins:armor_value",
+      "comparison": ">",
+      "compare_to": 6
+    },
+    "feet": {
+      "type": "origins:armor_value",
+      "comparison": ">",
+      "compare_to": 3
+    }
+  },
+  "mobs_ignore": {
+    "type": "apugli:mobs_ignore",
+    "mob_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:entity_type",
+          "entity_type": "minecraft:vex"
+        }
+      ]
+    }
+  }
+}

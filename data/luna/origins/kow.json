@@ -1,0 +1,16 @@
+{
+  "name": "King of Wrath",
+  "description": "you're a violent demon dragged back to the mortal plane by your unbridled rage",
+  "icon": "minecraft:nether_brick",
+  "unchoosable": false,
+  "loading_priority": 1,
+  "impact": 2,
+  "order": 1,
+  "powers": [
+    "luna:kow/gauntlet",
+    "luna:kow/rage",
+    "luna:kow/feral",
+    "luna:kow/fury",
+    "luna:kow/imbued"
+  ]
+}

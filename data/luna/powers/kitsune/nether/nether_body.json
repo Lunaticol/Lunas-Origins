@@ -1,0 +1,136 @@
+{
+  "name": "Vulerable",
+  "description": "Despite having more combat knowledge, the nethers limiting size has reduced your health.",
+  "type": "origins:multiple",
+  "nether_size": {
+    "type": "origins:action_on_callback",
+    "execute_chosen_when_orb": true,
+    "entity_action_chosen": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:height 1.1 @s"
+    },
+    "entity_action_respawned": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:height 1.1 @s"
+    },
+    "entity_action_added": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:height 1.1 @s"
+    },
+    "entity_action_lost": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:height 1 @s"
+    },
+    "entity_action_removed": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:height 1 @s"
+    }
+  },
+  "width": {
+    "type": "origins:action_on_callback",
+    "entity_action_chosen": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:width 1.1 @s"
+    },
+    "entity_action_respawned": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:width 1.1 @s"
+    },
+    "entity_action_added": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:width 1.1 @s"
+    },
+    "entity_action_lost": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:width 1 @s"
+    },
+    "entity_action_removed": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:width 1 @s"
+    }
+  },
+  "less_health": {
+    "type": "origins:attribute",
+    "modifiers": [
+      {
+        "attribute": "generic.max_health",
+        "operation": "addition",
+        "value": -2
+      }
+    ]
+  },
+  "flame_trail": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "action": {
+            "type": "origins:execute_command",
+            "command": "particle minecraft:flame ~ ~0.5 ~ 0.5 0 0.5 0.05 1 force"
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 0,
+            "comparison": "==",
+            "resource": "luna:kitsune/nether/soul_mode_flame_bar"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:execute_command",
+            "command": "particle minecraft:soul_fire_flame ~ ~0.5 ~ 0.5 0 0.5 0.1 1 force"
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 1,
+            "comparison": "==",
+            "resource": "luna:kitsune/nether/soul_mode_flame_bar"
+          }
+        }
+      ]
+    }
+  },
+  "water_damage": {
+    "type": "origins:damage_over_time",
+    "interval": 40,
+    "onset_delay": 0,
+    "damage": 10,
+    "damage_easy": 1,
+    "damage_source": {
+      "name": "hurt_by_water",
+      "unblockable": true,
+      "bypasses_armor": true
+    },
+    "protection_enchantment": "origins:water_protection",
+    "protection_effectiveness": 1,
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:fluid_height",
+          "fluid": "minecraft:water",
+          "comparison": ">",
+          "compare_to": 0.5
+        },
+        {
+          "type": "origins:and",
+          "conditions": [
+            {
+              "type": "origins:in_rain"
+            },
+            {
+              "type": "origins:in_block",
+              "block_condition": {
+                "type": "origins:height",
+                "compare_to": 220,
+                "comparison": "<="
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

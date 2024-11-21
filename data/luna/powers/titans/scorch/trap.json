@@ -1,0 +1,128 @@
+{
+  "name": "Incinerary Traps",
+  "description": "Scorches ultimate trapping weapon. Gas can be ignited to cause a huge puddle of thermite.",
+  "type": "origins:multiple",
+  "trap": {
+    "type": "origins:active_self",
+    "key": {
+      "key": "key.saveToolbarActivator"
+    },
+    "hud_render": { "should_render": false },
+    "cooldown": 50,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:fire_projectile",
+          "count": 1,
+          "speed": 1,
+          "entity_type": "minecraft:armor_stand",
+          "tag": "{Tags:[\"Trap\"],Invisible:1b}",
+          "projectile_action": {
+            "type": "origins:grant_power",
+            "power": "luna:titans/scorch/armor_stand_trap",
+            "source": "luna:titans/scorch/trap"
+          }
+        },
+        {
+          "type": "origins:change_resource",
+          "change": -1,
+          "operation": "add",
+          "resource": "*:*_traps"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": ">=",
+          "resource": "*:*_traps"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:titans/scorch/aegis/explosive_barrels_exploding_barrels"
+        },
+        {
+          "inverted": true,
+          "type": "origins:command",
+          "command": "flan claimInfo",
+          "comparison": "==",
+          "compare_to": 1
+        }
+      ]
+    }
+  },
+  "traps": {
+    "type": "origins:resource",
+    "max": 3,
+    "min": 0,
+    "start_value": 3,
+    "hud_render": {
+      "should_render": true,
+      "bar_index": 20,
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png"
+    }
+  },
+  "recharge": {
+    "type": "origins:action_over_time",
+    "interval": 300,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 1,
+      "operation": "add",
+      "resource": "*:*_traps"
+    }
+  },
+  "trap_explode": {
+    "type": "origins:active_self",
+    "key": {
+      "key": "key.saveToolbarActivator"
+    },
+    "hud_render": { "should_render": false },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:fire_projectile",
+          "count": 1,
+          "speed": 1,
+          "entity_type": "minecraft:armor_stand",
+          "tag": "{Tags:[\"Explode\"],Invisible:1b}",
+          "projectile_action": {
+            "type": "origins:grant_power",
+            "power": "luna:titans/scorch/armor_stand_trap_explode",
+            "source": "luna:titans/scorch/trap"
+          }
+        },
+        {
+          "type": "origins:change_resource",
+          "change": -1,
+          "operation": "add",
+          "resource": "*:*_traps"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": ">=",
+          "resource": "*:*_traps"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": "==",
+          "resource": "*:*_exploding_barrels"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,248 @@
+{
+  "name": "Ethereal",
+  "description": "After accumulating enough souls, channel them in your body to unleash your true potential.",
+  "type": "origins:multiple",
+  "ethereal": {
+    "type": "origins:active_self",
+    "key": "key.saveToolbarActivator",
+    "cooldown": 3000,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/luna_resource_bar.png",
+      "bar_index": 2
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:area_of_effect",
+          "radius": 64,
+          "bientity_action": {
+            "type": "origins:target_action",
+            "action": {
+              "type": "origins:and",
+              "actions": [
+                {
+                  "type": "origins:apply_effect",
+                  "effects": [
+                    {
+                      "effect": "minecraft:blindness",
+                      "duration": 500,
+                      "show_particles": false
+                    },
+                    {
+                      "effect": "minecraft:weakness",
+                      "duration": 2400,
+                      "amplifier": 3,
+                      "show_particles": false
+                    },
+                    {
+                      "effect": "minecraft:slowness",
+                      "duration": 2400,
+                      "amplifier": 3,
+                      "show_particles": false
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 1,
+          "operation": "add",
+          "resource": "*:*_domain_active"
+        },
+        {
+          "type": "origins:apply_effect",
+          "effects": [
+            {
+              "effect": "minecraft:strength",
+              "amplifier": 1,
+              "duration": 2400,
+              "show_particles": false
+            },
+            {
+              "effect": "minecraft:speed",
+              "amplifier": 1,
+              "duration": 2400,
+              "show_particles": false
+            },
+            {
+              "effect": "minecraft:saturation",
+              "duration": 2400,
+              "show_particles": false
+            },
+            {
+              "effect": "minecraft:regeneration",
+              "duration": 2400,
+              "amplifier": 1,
+              "show_particles": false
+            },
+            {
+              "effect": "minecraft:absorption",
+              "duration": 2400,
+              "amplifier": 4,
+              "show_particles": false
+            }
+          ]
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "function luna:bluefox/summon_domain"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 2000,
+      "comparison": "==",
+      "resource": "luna:bluefox/soul_soul_bar"
+    }
+  },
+  "particles": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "particle sculk_soul ~ ~ ~ 64 64 64 0 1500 force"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_domain_active"
+    }
+  },
+  "domain_active": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
+  },
+  "dashes": {
+    "type": "origins:action_over_time",
+    "interval": 10,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 7,
+      "resource": "*:kitsune_dashes"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_domain_active"
+    }
+  },
+  "drain": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": -5,
+      "operation": "add",
+      "resource": "*:soul_soul_bar"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_domain_active"
+    }
+  },
+  "particles_self": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "particle minecraft:sculk_soul ~ ~ ~ 0.3 0.5 0.3 0 25 force"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_domain_active"
+    }
+  },
+  "reset": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 0,
+      "operation": "set",
+      "resource": "*:*_domain_active"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 0,
+      "comparison": "==",
+      "resource": "*:soul_soul_bar"
+    }
+  },
+  "glow": {
+    "type": "origins:self_glow",
+    "blue": 0.90588235294,
+    "green": 0.86666666666,
+    "red": 0,
+    "use_teams": false,
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_domain_active"
+    }
+  },
+  "sukuna": {
+    "type": "origins:action_over_time",
+    "interval": 10,
+    "entity_action": {
+      "type": "origins:area_of_effect",
+      "radius": 24,
+      "shape": "cube",
+      "bientity_action": {
+        "type": "origins:target_action",
+        "action": {
+          "type": "origins:and",
+          "actions": [
+            {
+              "type": "origins:damage",
+              "amount": 2,
+              "source": {
+                "bypasses_armor": true,
+                "magic": true,
+                "unblockable": true,
+                "name": "magic"
+              }
+            },
+            {
+              "type": "origins:execute_command",
+              "command": "particle minecraft:soul_fire_flame ~ ~0.75 ~ 0 0 0 0.1 10 force"
+            }
+          ]
+        }
+      },
+      "bientity_condition": {
+        "type": "origins:target_condition",
+        "condition": {
+          "inverted": true,
+          "type": "origins:using_item",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "item": "minecraft:shield"
+            }
+          }
+        }
+      }
+    },
+    "hud_render": { "should_render": false },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_domain_active"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "Axolotl",
+  "description": "Cute Aquatic creatures capable of cheating death and crafting or enhancing tridents.",
+  "icon": "minecraft:axolotl_bucket",
+  "loading_priority": 1,
+  "unchoosable": true,
+  "impact": 3,
+  "order": 1,
+  "powers": [
+    "luna:axolotl/body",
+    "luna:axolotl/axolotl_summoning",
+    "luna:axolotl/trident_mastery",
+    "luna:axolotl/this_is_a_bucket",
+    "luna:axolotl/false_death",
+    "luna:axolotl/foods",
+    "luna:axolotl/moisture",
+    "luna:axolotl/axolotl_classes/chance_blue",
+    "luna:axolotl/axolotl_classes/chance_green",
+    "origins:like_water"
+  ]
+}

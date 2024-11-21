@@ -1,0 +1,49 @@
+{
+  "name": "Eclipsing Power",
+  "description": "I'm good at alot of things, wanna see?",
+  "type": "origins:multiple",
+  "axe": {
+    "type": "origins:conditioned_attribute",
+    "tick_rate": 5,
+    "modifiers": [
+      {
+        "attribute": "minecraft:generic.attack_speed",
+        "value": 1,
+        "operation": "addition"
+      },
+      {
+        "attribute": "minecraft:generic.attack_damage",
+        "value": 0.5,
+        "operation": "multiply_total"
+      }
+    ],
+    "condition": {
+      "type": "origins:equipped_item",
+      "equipment_slot": "mainhand",
+      "item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": {
+          "tag": "minecraft:axes"
+        }
+      }
+    }
+  },
+  "see_attackers": {
+    "type": "origins:entity_glow",
+    "blue": 1,
+    "red": 0.69019607843,
+    "green": 0.35686274509,
+    "use_teams": false,
+    "bientity_condition": {
+      "type": "origins:target_condition",
+      "condition": {
+        "type": "origins:power",
+        "power": "luna:luna/attacked"
+      }
+    }
+  },
+  "sounds": {
+    "type": "origins:prevent_game_event",
+    "events": ["minecraft:hit_ground", "minecraft:step", "minecraft:swim"]
+  }
+}

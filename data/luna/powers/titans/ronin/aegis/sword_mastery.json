@@ -1,0 +1,53 @@
+{
+  "type": "origins:multiple",
+  "name": "Sword Mastery",
+  "description": "Sword Core's duration is doubled.\nUse [Netherstar] To obtain this upgrade!",
+  "sword_bar": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
+  },
+  "sword_upgrade": {
+    "type": "origins:active_self",
+    "key": "key.use",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "resource": "*:titans/ronin/sword_mastery_sword_bar",
+          "change": 1
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "clear @s minecraft:nether_star 1"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "title @p actionbar {\"bold\":true,\"color\":\"gold\",\"text\":\"Sword Mastery Unlocked!\"}"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "item": "minecraft:nether_star"
+            }
+          }
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:titans/ronin/sword_mastery_sword_bar"
+        }
+      ]
+    }
+  }
+}

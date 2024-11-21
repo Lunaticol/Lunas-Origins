@@ -1,0 +1,9 @@
+{
+  "powers": ["luna:ashley/ashley", "luna:ashley/dash", "luna:ashley/teleport"],
+  "icon": "minecraft:ender_eye",
+  "unchoosable": true,
+  "order": 9,
+  "impact": 0,
+  "name": "Ashley",
+  "description": "Ashley.exe is not responding"
+}

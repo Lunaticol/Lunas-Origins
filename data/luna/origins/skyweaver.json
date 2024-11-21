@@ -1,0 +1,13 @@
+{
+  "powers": [
+    "luna:skyweaver/skyweaver",
+    "luna:skyweaver/launch",
+    "luna:skyweaver/shield",
+    "luna:skyweaver/air_currents"
+  ],
+  "icon": "minecraft:white_wool",
+  "order": 9,
+  "impact": 2,
+  "name": "Skyweaver",
+  "description": "Skyweavers are beings born with an innate affinity for the air element. They possess the ability to control and manipulate air currents, allowing them to float above the ground effortlessly and move through the sky with grace."
+}

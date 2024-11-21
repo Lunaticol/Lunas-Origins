@@ -1,0 +1,14 @@
+{
+  "powers": [
+    "luna:inchling/tiny_titan",
+    "luna:inchling/kinetic_leap",
+    "luna:inchling/environment",
+    "luna:inchling/nimble",
+    "luna:inchling/sugar_rush"
+  ],
+  "icon": "minecraft:chipped_anvil",
+  "order": 9,
+  "impact": 3,
+  "name": "Titanmite",
+  "description": "Small but mighty, you harness your tiny stature and refined abilities in ways that demand respect."
+}

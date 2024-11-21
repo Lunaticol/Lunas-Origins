@@ -1,0 +1,82 @@
+{
+  "name": "Counter",
+  "description": "After charging your core enough you are given a counter, repelling enemys",
+  "type": "origins:multiple",
+  "counter_active": {
+    "type": "origins:active_self",
+    "key": {
+      "key": "key.loadToolbarActivator"
+    },
+    "entity_action": {
+      "type": "origins:spawn_entity",
+      "entity_type": "minecraft:armor_stand",
+      "tag": "{Tags:[\"Counter\"],Invisible:1b}",
+      "entity_action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:grant_power",
+            "power": "luna:titans/armor_stand_counter",
+            "source": "luna:titans/ronin/counter"
+          }
+        ]
+      }
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 99,
+          "comparison": "<=",
+          "resource": "*:ronin/core_core_bar"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": "==",
+          "resource": "*:*_counter"
+        }
+      ]
+    }
+  },
+  "counter": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0,
+    "hud_render": {
+      "should_render": true,
+      "bar_index": 2,
+      "sprite_location": "origins:textures/gui/resource_bar.png"
+    }
+  },
+  "counter_action": {
+    "type": "origins:active_self",
+    "key": {
+      "key": "key.loadToolbarActivator"
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "change": 5,
+          "operation": "add",
+          "resource": "*:core_core_bar"
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 0,
+          "operation": "set",
+          "resource": "*:*_counter"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_counter"
+    }
+  }
+}

@@ -1,9 +1,9 @@
 {
   "powers": [
-    "luna:isabella",
-    "luna:rtp",
-    "luna:telekinesis",
-    "luna:multidimensional"
+    "luna:luna/isabella",
+    "luna:luna/rtp",
+    "luna:luna/telekinesis",
+    "luna:luna/multidimensional"
   ],
   "icon": "minecraft:blue_orchid",
   "unchoosable": true,

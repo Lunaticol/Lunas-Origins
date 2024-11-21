@@ -1,0 +1,27 @@
+{
+  "powers": [
+    "luna:ignea/fireball",
+    "luna:ignea/fieryexplosion",
+    "luna:ignea/netherite",
+    "luna:ignea/toarms",
+    "luna:ignea/flamepower",
+    "luna:ignea/burningrestoration",
+    "luna:ignea/eatrods",
+    "luna:ignea/light",
+    "luna:ignea/unending",
+    "luna:ignea/fevers",
+    "origins:nether_spawn",
+    "origins:fire_immunity",
+    "origins:damage_from_potions",
+    "luna:ignea/snowballing",
+    "luna:ignea/soulless",
+    "luna:ignea/aquaphobia",
+    "luna:ignea/snuffedout",
+    "luna:ignea/ignea"
+  ],
+  "icon": "minecraft:soul_torch",
+  "order": 10,
+  "impact": 3,
+  "name": "Precatio Ignea",
+  "description": "After the long lost war against the Aquatics, the Blazeborns were weakened. You've risen as their protector, exchanging everything you once loved for their safety."
+}

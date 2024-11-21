@@ -1,9 +1,0 @@
-{
-  "powers": ["sw:static", "sw:lc", "sw:ll", "sw:passives", "sw:staticloss"],
-  "icon": "minecraft:lightning_rod",
-  "order": 10,
-  "impact": 2,
-  "name": "Stormwave",
-  "unchoosable": true,
-  "description": "Bender of Lightning, you live for the kill. Take them down quickly and leave ash behind."
-}

@@ -1,0 +1,453 @@
+{
+  "type": "origins:multiple",
+  "name": "Bomb Jump",
+  "description": "The Artificer can propel themselves through the air by creating controlled explosions.",
+  "badges": [
+    {
+      "type": "origins:tooltip",
+      "text": "You cannot wear elytra because you might blow them up.",
+      "sprite": "origins:textures/gui/badge/info.png"
+    },
+    {
+      "type": "origins:keybind",
+      "sprite": "origins:textures/gui/badge/active.png",
+      "text": "Active ability, use with [Primary]"
+    }
+  ],
+  "explode_resource": {
+    "type": "origins:resource",
+    "hud_render": {
+      "should_render": true,
+      "bar_index": 2,
+      "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png"
+    },
+    "min": 0,
+    "max": 100,
+    "start_value": 0
+  },
+  "explode_recharge": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": -20,
+      "operation": "add",
+      "resource": "*:*_explode_resource"
+    },
+    "condition": {
+      "type": "origins:on_block",
+      "block_condition": {
+        "type": "origins:block",
+        "block": "minecraft:air",
+        "inverted": true
+      }
+    }
+  },
+  "explode_active": {
+    "type": "origins:active_self",
+    "key": {
+      "key": "primary"
+    },
+    "entity_action": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "change": 10,
+                "operation": "add",
+                "resource": "*:*_explode_resource"
+              },
+              {
+                "type": "origins:explode",
+                "create_fire": false,
+                "damage_self": false,
+                "destruction_type": "none",
+                "power": 2
+              },
+              {
+                "type": "origins:add_velocity",
+                "z": 1,
+                "space": "local"
+              },
+              {
+                "type": "origins:apply_effect",
+                "effect": {
+                  "effect": "slow_falling",
+                  "duration": 10,
+                  "show_icon": true
+                }
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "particle minecraft:explosion ~ ~1 ~ 1 1 1 1 10"
+              },
+              {
+                "type": "origins:play_sound",
+                "sound": "minecraft:entity.generic.explode",
+                "category": "master",
+                "pitch": 1,
+                "volume": 1
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:resource",
+                "compare_to": 50,
+                "comparison": "<",
+                "resource": "*:*_explode_resource"
+              }
+            ]
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "change": 10,
+                "operation": "add",
+                "resource": "*:*_explode_resource"
+              },
+              {
+                "type": "origins:explode",
+                "create_fire": false,
+                "damage_self": false,
+                "destruction_type": "none",
+                "power": 2
+              },
+              {
+                "type": "origins:add_velocity",
+                "z": 1.5,
+                "space": "local"
+              },
+              {
+                "type": "origins:apply_effect",
+                "effect": {
+                  "effect": "slow_falling",
+                  "duration": 10,
+                  "show_icon": true
+                }
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "particle minecraft:explosion ~ ~1 ~ 1 1 1 1 10"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "playsound minecraft:entity.generic.explode master @s ~ ~ ~ 100 1"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:resource",
+                "compare_to": 60,
+                "comparison": "<",
+                "resource": "*:*_explode_resource"
+              }
+            ]
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "change": 10,
+                "operation": "add",
+                "resource": "*:*_explode_resource"
+              },
+              {
+                "type": "origins:explode",
+                "create_fire": false,
+                "damage_self": false,
+                "destruction_type": "none",
+                "power": 2
+              },
+              {
+                "type": "origins:add_velocity",
+                "z": 1,
+                "space": "local"
+              },
+              {
+                "type": "origins:apply_effect",
+                "effect": {
+                  "effect": "slow_falling",
+                  "duration": 10,
+                  "show_icon": true
+                }
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "particle minecraft:explosion ~ ~1 ~ 1 1 1 1 10"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "playsound minecraft:entity.generic.explode master @s ~ ~ ~ 100 1"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:or",
+            "conditions": [
+              {
+                "type": "origins:resource",
+                "compare_to": 80,
+                "comparison": "<",
+                "resource": "*:*_explode_resource"
+              },
+              {
+                "type": "origins:resource",
+                "compare_to": 90,
+                "comparison": "<",
+                "resource": "*:*_explode_resource"
+              },
+              {
+                "type": "origins:resource",
+                "compare_to": 100,
+                "comparison": "<",
+                "resource": "*:*_explode_resource"
+              }
+            ]
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:explode",
+                "create_fire": false,
+                "damage_self": false,
+                "destruction_type": "none",
+                "power": 5
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 100,
+            "comparison": "==",
+            "resource": "*:*_explode_resource"
+          }
+        }
+      ]
+    }
+  },
+  "explode_warning": {
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "particle minecraft:smoke ~ ~ ~ 1 1.5 1 0 50 force"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 50,
+      "comparison": ">",
+      "resource": "*:*_explode_resource"
+    }
+  },
+  "explode_second_warning": {
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "particle minecraft:smoke ~ ~ ~ 1 1.5 1 0 50 force"
+        },
+        {
+          "type": "origins:apply_effect",
+          "effect": {
+            "effect": "slowness",
+            "amplifier": 1,
+            "duration": 20,
+            "show_icon": true,
+            "show_particles": false
+          }
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 60,
+      "comparison": ">",
+      "resource": "*:*_explode_resource"
+    }
+  },
+  "explode_third_warning": {
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "particle minecraft:smoke ~ ~ ~ 1 1.5 1 0 100 force"
+        },
+        {
+          "type": "origins:apply_effect",
+          "effects": [
+            {
+              "effect": "slowness",
+              "duration": 30,
+              "amplifier": 2,
+              "show_icon": true,
+              "show_particles": false
+            },
+            {
+              "effect": "blindness",
+              "duration": 30,
+              "amplifier": 2,
+              "show_icon": true,
+              "show_particles": false
+            }
+          ]
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 80,
+      "comparison": ">",
+      "resource": "*:*_explode_resource"
+    }
+  },
+  "goner_kid": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "particle minecraft:smoke ~ ~ ~ 1 1.5 1 0 200 force"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "kill @s"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 100,
+      "comparison": "==",
+      "resource": "*:*_explode_resource"
+    }
+  },
+  "height": {
+    "type": "origins:action_on_callback",
+    "execute_chosen_when_orb": true,
+    "entity_action_chosen": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:height 0.80 @s",
+      "permission_level": 4
+    },
+    "entity_action_respawned": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:height 0.80 @s",
+      "permission_level": 4
+    },
+    "entity_action_added": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:height 0.80 @s",
+      "permission_level": 4
+    },
+    "entity_action_lost": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:height 1 @s",
+      "permission_level": 4
+    },
+    "entity_action_removed": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:height 1 @s",
+      "permission_level": 4
+    }
+  },
+  "width": {
+    "type": "origins:action_on_callback",
+    "entity_action_chosen": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "scale set pehkui:width 0.80 @s",
+          "permission_level": 4
+        },
+        {
+          "type": "origins:grant_advancement",
+          "advancement": "luna:artificer/artificer"
+        }
+      ]
+    },
+    "entity_action_respawned": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:width 0.80 @s",
+      "permission_level": 4
+    },
+    "entity_action_added": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:width 0.80 @s",
+      "permission_level": 4
+    },
+    "entity_action_lost": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:width 1 @s",
+      "permission_level": 4
+    },
+    "entity_action_removed": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:width 1 @s",
+      "permission_level": 4
+    }
+  },
+  "no_elytra": {
+    "type": "origins:restrict_armor",
+    "chest": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:elytra"
+      }
+    }
+  },
+  "immune_respawn": {
+    "type": "origins:action_on_callback",
+    "entity_action_respawned": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "change": 0,
+          "operation": "set",
+          "resource": "*:*_explode_resource"
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 0,
+          "operation": "set",
+          "resource": "*:*_explode_resource"
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 0,
+          "operation": "set",
+          "resource": "*:artificer/death_explode_stop"
+        }
+      ]
+    }
+  }
+}

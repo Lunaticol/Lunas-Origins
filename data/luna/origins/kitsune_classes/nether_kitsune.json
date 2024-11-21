@@ -1,0 +1,16 @@
+{
+  "name": "Nether Kitsune",
+  "unchoosable": true,
+  "description": "[SCROLL]",
+  "icon": "minecraft:sweet_berries",
+  "loading_priority": 1,
+  "impact": 3,
+  "order": 1,
+  "powers": [
+    "luna:kitsune/nether/nether_body",
+    "luna:kitsune/nether/fire_immunity",
+    "luna:kitsune/nether/nether_portal",
+    "luna:kitsune/nether/fire_circle",
+    "luna:kitsune/nether/soul_mode"
+  ]
+}

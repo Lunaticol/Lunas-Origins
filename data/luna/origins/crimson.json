@@ -1,0 +1,20 @@
+{
+  "powers": [
+    "luna:phantom/crimson",
+    "luna:phantom/phase",
+    "luna:phantom/dark_healing",
+    "luna:phantom/blood_locate",
+    "luna:phantom/night_dweller",
+    "luna:phantom/crimson_return",
+    "luna:phantom/crimson_finisher",
+    "luna:phantom/blood_requiem"
+  ],
+  "icon": {
+    "item": "minecraft:phantom_membrane",
+    "tag": "{CustomModelData:42700}"
+  },
+  "order": 9,
+  "impact": 3,
+  "name": "Crimson Phantom",
+  "description": "The Crimson Phantom evolved from a normal Phantom through a dark ritual that imbued it with a thirst for blood and greater powers."
+}

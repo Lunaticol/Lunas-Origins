@@ -1,0 +1,103 @@
+{
+  "type": "origins:multiple",
+  "name": "Ender Rage",
+  "description": "Go into a rage like state.",
+  "rage": {
+    "type": "origins:active_self",
+    "key": {
+      "key": "key.origins.primary_active"
+    },
+    "cooldown": 6000,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+      "bar_index": 1
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "change": 1,
+          "resource": "*:*_rage_state"
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:entity.enderman.scream",
+          "pitch": 0.8,
+          "volume": 1,
+          "category": "players"
+        },
+        {
+          "type": "origins:apply_effect",
+          "effects": [
+            {
+              "effect": "minecraft:strength",
+              "duration": 2400,
+              "amplifier": 1
+            },
+            {
+              "effect": "minecraft:speed",
+              "duration": 2400,
+              "amplifier": 2
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "rage_state": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
+  },
+  "no_regen": {
+    "type": "origins:disable_regen",
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_rage_state"
+    }
+  },
+  "attack_speed": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "value": 1,
+      "operation": "multiply_total",
+      "attribute": "minecraft:generic.attack_speed"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_rage_state"
+    }
+  },
+  "shader": {
+    "type": "origins:shader",
+    "shader": "minecraft:shaders/post/deconverge.json",
+    "toggleable": false,
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_rage_state"
+    }
+  },
+  "reset": {
+    "type": "origins:self_action_on_kill",
+    "cooldown": 0,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 1,
+      "resource": "*:*_rage_state"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_rage_state"
+    }
+  }
+}

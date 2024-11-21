@@ -1,0 +1,14 @@
+{
+  "name": "Overworld Kitsune",
+  "unchoosable": true,
+  "description": "[SCROLL]",
+  "icon": "minecraft:sweet_berries",
+  "loading_priority": 1,
+  "impact": 1,
+  "order": 1,
+  "powers": [
+    "luna:kitsune/overworld/overworld",
+    "luna:kitsune/overworld/healing",
+    "luna:kitsune/overworld/passive_mobs"
+  ]
+}

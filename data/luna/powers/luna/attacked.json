@@ -1,0 +1,12 @@
+{
+  "type": "origins:multiple",
+  "remove": {
+    "type": "origins:action_over_time",
+    "interval": 200,
+    "entity_action": {
+      "type": "origins:revoke_power",
+      "power": "luna:luna/attacked",
+      "source": "luna:luna/rtp"
+    }
+  }
+}

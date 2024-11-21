@@ -1,0 +1,180 @@
+{
+  "name": "Multi-Dimensional",
+  "description": "The bounds of one universe simply cannot contain me, I don't listen to rules anyways.",
+  "type": "origins:multiple",
+  "to_nether": {
+    "type": "origins:active_self",
+    "cooldown": 1000,
+    "hud_render": {
+      "should_render": true,
+      "bar_index": 7,
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png"
+    },
+    "key": "key.loadToolbarActivator",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "function luna:luna/nether"
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:item.chorus_fruit.teleport"
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 2,
+          "action": {
+            "type": "origins:execute_command",
+            "command": "spreadplayers ~ ~ 8 128 under 127 false @s"
+          }
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:and",
+          "conditions": [
+            {
+              "type": "origins:dimension",
+              "dimension": "minecraft:overworld"
+            },
+            {
+              "type": "origins:advancement",
+              "advancement": "minecraft:nether/root"
+            }
+          ]
+        },
+        {
+          "type": "origins:and",
+          "conditions": [
+            {
+              "type": "origins:dimension",
+              "dimension": "minecraft:the_end"
+            },
+            {
+              "type": "origins:advancement",
+              "advancement": "minecraft:nether/root"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "to_end": {
+    "type": "origins:active_self",
+    "cooldown": 1000,
+    "hud_render": {
+      "should_render": true,
+      "bar_index": 7,
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png"
+    },
+    "key": "key.saveToolbarActivator",
+    "entity_action": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "function luna:luna/end"
+              },
+              {
+                "type": "origins:play_sound",
+                "sound": "minecraft:item.chorus_fruit.teleport"
+              },
+              {
+                "type": "origins:delay",
+                "ticks": 2,
+                "action": {
+                  "type": "origins:execute_command",
+                  "command": "spreadplayers ~ ~ 8 128 under 127 false @s"
+                }
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:advancement",
+            "advancement": "minecraft:end/root"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "function luna:luna/overworld"
+              },
+              {
+                "type": "origins:play_sound",
+                "sound": "minecraft:item.chorus_fruit.teleport"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:advancement",
+            "advancement": "minecraft:end/root",
+            "inverted": true
+          }
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:sneaking"
+    }
+  },
+  "to_overworld": {
+    "type": "origins:active_self",
+    "cooldown": 1000,
+    "hud_render": {
+      "should_render": true,
+      "bar_index": 7,
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png"
+    },
+    "key": "key.saveToolbarActivator",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "function luna:luna/overworld"
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:item.chorus_fruit.teleport"
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 2,
+          "action": {
+            "type": "origins:execute_command",
+            "command": "spreadplayers ~ ~ 8 128 under 319 false @s"
+          }
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:dimension",
+          "dimension": "minecraft:the_end"
+        },
+        {
+          "type": "origins:dimension",
+          "dimension": "minecraft:the_nether"
+        },
+        {
+          "type": "origins:sneaking",
+          "inverted": true
+        }
+      ]
+    }
+  }
+}

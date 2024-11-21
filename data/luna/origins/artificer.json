@@ -1,0 +1,17 @@
+{
+  "powers": [
+    "luna:artificer/artificer",
+    "luna:artificer/artificer_stun",
+    "luna:artificer/tnt_maker",
+    "luna:artificer/explosive_projectiles",
+    "luna:artificer/waterdanger",
+    "luna:artificer/unexplodable",
+    "luna:artificer/ombrophobia",
+    "luna:artificer/death"
+  ],
+  "icon": "minecraft:tnt",
+  "order": 9,
+  "impact": 2,
+  "name": "The Artificer",
+  "description": "A fierce combatant, master of pyrotechnics and explosives. Keen to move up in the foodchain, your journey will surely be one lined with constant bloodshed and warfare."
+}

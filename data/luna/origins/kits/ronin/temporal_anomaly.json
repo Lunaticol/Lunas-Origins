@@ -1,0 +1,10 @@
+{
+  "name": "Temporal Anomaly",
+  "unchoosable": false,
+  "description": "Phase dash is available 33% faster.",
+  "icon": "minecraft:structure_block",
+  "loading_priority": 1,
+  "impact": 0,
+  "order": 2,
+  "powers": ["luna:ronin/kits/temporal_anomaly"]
+}

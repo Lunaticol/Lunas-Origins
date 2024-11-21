@@ -1,0 +1,23 @@
+{
+  "hidden": true,
+  "type": "origins:multiple",
+  "fulfilling_chorus": {
+    "type": "origins:modify_food",
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:chorus_fruit"
+      }
+    },
+    "food_modifier": {
+      "name": "Increased Food",
+      "operation": "addition",
+      "value": 6
+    },
+    "saturation_modifier": {
+      "name": "Increased Saturation",
+      "operation": "addition",
+      "value": 0.8
+    }
+  }
+}

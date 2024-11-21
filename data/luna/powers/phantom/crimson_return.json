@@ -1,0 +1,118 @@
+{
+  "name": "Blood Rebirth",
+  "description": "The dark magic inside you brings you back from death but only for a short time. Do not fail this next life or it will be your last.",
+  "type": "origins:multiple",
+  "respawn": {
+    "type": "origins:prevent_death",
+    "hud_render": {
+      "should_render": true
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "particle falling_dust crimson_planks ~ ~ ~ 1 1 1 1 100 normal"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "particle falling_dust magma_block ~ ~ ~ 1 1 1 1 100 normal"
+        },
+        {
+          "type": "origins:apply_effect",
+          "effects": [
+            {
+              "effect": "minecraft:strength",
+              "amplifier": 1,
+              "duration": 900
+            },
+            {
+              "effect": "minecraft:fire_resistance",
+              "duration": 800
+            },
+            {
+              "effect": "minecraft:resistance",
+              "duration": 500,
+              "amplifier": 1
+            },
+            {
+              "effect": "minecraft:absorption",
+              "amplifier": 1,
+              "duration": 900
+            }
+          ]
+        },
+        {
+          "type": "origins:heal",
+          "amount": 20
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 1,
+          "operation": "set",
+          "resource": "*:*_died"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "playsound minecraft:item.totem.use ambient @s ~ ~ ~ 1 1"
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 100,
+          "operation": "add",
+          "resource": "luna:phantom/dark_healing_blood"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "title @s actionbar {\"text\":\"GET UP! THIS IS NO PLACE TO DIE.\",\"color\":\"dark_red\",\"bold\":true}"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 0,
+      "comparison": "==",
+      "resource": "*:*_died"
+    }
+  },
+  "died": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
+  },
+  "blood_drain": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": -1,
+      "operation": "add",
+      "resource": "luna:phantom/dark_healing_blood"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_died"
+    }
+  },
+  "reset": {
+    "type": "origins:self_action_on_kill",
+    "cooldown": 0,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 0,
+      "operation": "set",
+      "resource": "*:*_died"
+    }
+  },
+  "on_respawn": {
+    "type": "origins:action_on_callback",
+    "entity_action_respawned": {
+      "type": "origins:change_resource",
+      "change": 0,
+      "operation": "set",
+      "resource": "*:*_died"
+    }
+  }
+}

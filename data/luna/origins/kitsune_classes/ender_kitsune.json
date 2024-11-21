@@ -1,0 +1,15 @@
+{
+  "name": "Ender Kitsune",
+  "unchoosable": true,
+  "description": "[SCROLL]",
+  "icon": "minecraft:sweet_berries",
+  "loading_priority": 1,
+  "impact": 2,
+  "order": 1,
+  "powers": [
+    "luna:kitsune/end/tricks/phantom_trick",
+    "luna:kitsune/end/tricks/warden_trick",
+    "luna:kitsune/end/ender_body",
+    "luna:kitsune/end/teleport"
+  ]
+}

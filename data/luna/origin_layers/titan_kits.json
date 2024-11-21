@@ -1,0 +1,31 @@
+{
+  "name": "Titan Kit",
+  "replace": false,
+  "order": 9,
+  "enabled": true,
+  "origins": [
+    {
+      "condition": {
+        "type": "origins:or",
+        "conditions": [
+          {
+            "type": "origins:origin",
+            "layer": "origins:origin",
+            "origin": "luna:scorch"
+          },
+          {
+            "type": "origins:origin",
+            "layer": "origins:origin",
+            "origin": "luna:ronin"
+          }
+        ]
+      },
+      "origins": [
+        "luna:titans/titan_kits/counter_ready",
+        "luna:titans/titan_kits/nuclear_ejection",
+        "luna:titans/titan_kits/overcore",
+        "luna:titans/titan_kits/turbo_engine"
+      ]
+    }
+  ]
+}

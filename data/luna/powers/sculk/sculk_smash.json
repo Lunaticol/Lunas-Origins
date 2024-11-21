@@ -1,0 +1,132 @@
+{
+  "name": "Sculk Shocked",
+  "description": "You charge XP into your sculk limbs, unleashing a shockwave around you.",
+  "badges": [
+    {
+      "type": "origins:tooltip",
+      "text": "Requires 10 XP levels.",
+      "sprite": "origins:textures/gui/badge/info.png"
+    },
+    {
+      "type": "origins:keybind",
+      "sprite": "origins:textures/gui/badge/toggle.png",
+      "text": "Activate with [Secondary]"
+    }
+  ],
+  "type": "origins:multiple",
+  "shockwave": {
+    "type": "origins:active_self",
+    "key": "key.origins.secondary_active",
+    "cooldown": 600,
+    "hud_render": {
+      "should_render": true
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:add_velocity",
+          "y": 3,
+          "space": "world"
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 1,
+          "operation": "set",
+          "resource": "*:*_smash"
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 30,
+          "action": {
+            "type": "origins:add_velocity",
+            "y": -3,
+            "space": "world"
+          }
+        },
+        {
+          "type": "origins:add_xp",
+          "levels": -15
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:xp_levels",
+      "compare_to": 15,
+      "comparison": ">="
+    }
+  },
+  "smash": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
+  },
+  "when_land": {
+    "type": "origins:action_on_land",
+    "entity_action": {
+      "type": "origins:area_of_effect",
+      "bientity_action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:target_action",
+            "action": {
+              "type": "origins:and",
+              "actions": [
+                {
+                  "type": "origins:apply_effect"
+                },
+                {
+                  "type": "origins:damage",
+                  "amount": 40,
+                  "source": {
+                    "name": "squashed"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "type": "origins:actor_action",
+            "action": {
+              "type": "origins:and",
+              "actions": [
+                {
+                  "type": "origins:change_resource",
+                  "change": 0,
+                  "operation": "set",
+                  "resource": "*:*_smash"
+                },
+                {
+                  "type": "origins:execute_command",
+                  "command": "function luna:sculk/smash"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "radius": 6,
+      "shape": "sphere"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_smash"
+    }
+  },
+  "falling": {
+    "type": "origins:invulnerability",
+    "damage_condition": {
+      "type": "origins:name",
+      "name": "fall"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_smash"
+    }
+  }
+}

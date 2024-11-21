@@ -1,0 +1,279 @@
+{
+  "name": "Moon Light",
+  "description": "You use the moonlight to gain energy.\nUnlike other plants, to much sunlight can be harmful to you.",
+  "type": "origins:multiple",
+  "we_are_going_to_steal_the_moon": {
+    "type": "origins:action_over_time",
+    "interval": 200,
+    "entity_action": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:nothing"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:predicate",
+                "predicate": "luna:is_new_moon"
+              }
+            ]
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:feed",
+                "food": 2,
+                "saturation": 0.2
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:predicate",
+                "predicate": "luna:is_waxing_crescent"
+              }
+            ]
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              { "type": "origins:feed", "food": 4, "saturation": 0.4 }
+            ]
+          },
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:predicate",
+                "predicate": "luna:is_first_quarter"
+              }
+            ]
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              { "type": "origins:feed", "food": 6, "saturation": 0.6 }
+            ]
+          },
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:predicate",
+                "predicate": "luna:is_waxing_gibbous"
+              }
+            ]
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              { "type": "origins:feed", "food": 8, "saturation": 0.8 }
+            ]
+          },
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:predicate",
+                "predicate": "luna:is_full_moon"
+              }
+            ]
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              { "type": "origins:feed", "food": 6, "saturation": 0.6 }
+            ]
+          },
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:predicate",
+                "predicate": "luna:is_waning_gibbous"
+              }
+            ]
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              { "type": "origins:feed", "food": 4, "saturation": 0.4 }
+            ]
+          },
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:predicate",
+                "predicate": "luna:is_third_quarter"
+              }
+            ]
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              { "type": "origins:feed", "food": 2, "saturation": 0.2 }
+            ]
+          },
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:predicate",
+                "predicate": "luna:is_waning_crescent"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "night_vis": {
+    "type": "origins:toggle_night_vision",
+    "strength": 1,
+    "key": "key.loadToolbarActivator"
+  },
+  "sun": {
+    "type": "origins:resource",
+    "max": 200,
+    "min": 0,
+    "hud_render": {
+      "should_render": true,
+      "bar_index": 0,
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png"
+    }
+  },
+  "charge": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "*:*_sun",
+      "operation": "add",
+      "change": 1
+    },
+    "condition": {
+      "type": "origins:exposed_to_sun"
+    }
+  },
+  "if_full_sun": {
+    "type": "origins:action_over_time",
+    "interval": 10,
+    "entity_action": {
+      "type": "origins:apply_effect",
+      "effects": [
+        {
+          "effect": "minecraft:weakness",
+          "amplifier": 1,
+          "duration": 100
+        },
+        {
+          "effect": "minecraft:slowness",
+          "amplifier": 1,
+          "duration": 100
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:exposed_to_sun"
+        },
+        {
+          "type": "origins:resource",
+          "resource": "*:*_sun",
+          "compare_to": 100,
+          "comparison": ">="
+        }
+      ]
+    }
+  },
+  "drain": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "*:*_sun",
+      "operation": "add",
+      "change": -1
+    },
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:exposed_to_sun",
+          "inverted": true
+        },
+        {
+          "type": "origins:in_rain"
+        }
+      ]
+    }
+  },
+  "shader": {
+    "type": "origins:shader",
+    "shader": "minecraft:shaders/post/blobs2.json",
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:exposed_to_sun"
+        },
+        {
+          "type": "origins:resource",
+          "resource": "*:*_sun",
+          "compare_to": 150,
+          "comparison": ">="
+        }
+      ]
+    }
+  },
+  "burn": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:set_on_fire",
+      "duration": 2
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:exposed_to_sun"
+        },
+        {
+          "type": "origins:resource",
+          "resource": "*:*_sun",
+          "compare_to": 200,
+          "comparison": "=="
+        }
+      ]
+    }
+  }
+}
