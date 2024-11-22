@@ -330,6 +330,118 @@ Impact: 🔴🔴🔴
 >
 > - The dark magic inside you brings you back from death but only for a short time. Do not fail this next life or it will be your last.
 
+# Lyst
+Impact: 🔴🔴🔴
+`Created by the sculk to help protect their citys from further intruders, you must defend your home.`
+> 🟢 Deep and Dark
+> - Born from Sculk, and kin to the Warden. Go forward, and show these invaders why they shouldn't mess with the Sculk.
+> - You are unable to see mobs unless they are moving.
+> 
+> 🟢 Adaptable
+> - Being made of sculk, and a catalyst for it, you can adapt to many environments.
+> - Uses 10 levels every switch
+>  - Sculk Shocked: You charge XP into your sculk limbs, unleashing a shockwave around you. Uses 10 levels
+>  - Sculk Veil: Your outer catalyst's shell hardens, absorbing more damage the angrier you are.
+>  - Unbridled Rage: The closer to death you get, the stronger and faster you become.
+> 
+> 🟢 Sculk Surfing
+> - Being made of sculk, you're able to phase through sculk blocks.
+> - Uses 1 level every 10 seconds
+> 
+> 🟢 Sculk Expanse: Brotherly bond
+> - You are able to summon your brother, the Warden.
+> - Uses 100 levels
+
+# Noctilith
+Impact: 🔴🔴🔴 
+`A beautiful flower that only blooms at night.`
+> 🟡 Moonlight
+> - You use the moonlight to gain energy.
+> - Unlike other plants, to much sunlight can be harmful to you.
+> 
+> 🔴 Delicate
+> - Lunar flowers are notorious for being extremely delicate. You easily break when not in the correct conditions.
+> 
+> 🟢 Toxic
+> - Most flowers are sweet and do not inflict harm when eaten... however you are extremely toxic.
+> - When entitys hit you, there is a chance they will get a random bad effect.
+> 
+> 🟢 Water Dependant
+> - Like all plants, you need water to survive. However, unlike other plants, to much water can negatively impact you.
+> 
+> 🟢 Grapple
+> - Use your Flower vines to grapple onto surfaces!
+
+# Aono Kitsune
+Impact: 🔴🔴🔴 
+`Aono Kitsune is an ethereal being of ancient power, embodying the mystique of the soul and the wisdom of the fox spirits.`
+
+> 🟢 Moonlit Soul
+> - Your dashes are attuned with the moon. Different phases dictate how good your dashes are.
+> 
+> 🟡Spiritual Communication
+> - You are able to absorb souls into yourself. This provides many benefits for you.
+>  - Take 3x Fire damage
+>  - Take 3x Magic damage
+>  - Enough souls give you 10+ HP
+> 
+> - 🟢 Spiritual Summoning
+> - Using stored souls you can send out souls to fight for you.
+>  - Summon 3 Vex's
+> 
+> - 🟡 Soul Barrier
+> - You can use your souls to void damage. This uses souls and getting hit may cause souls to disipate. 
+>  - Requires above 200 souls.
+>  - Uses 5 souls every second
+> 
+> - 🟢 Ethereal
+> - Using souls you gathered, you can altar the playing field in your favor.
+
+# Precatio Ignea
+> Impact: 🔴🔴🔴
+`After the long lost war against the Aquatics, the Blazeborns were weakened. You've risen as their protector, exchanging everything you once loved for their safety.`
+> 
+> - 🟢Blazing Fury
+> - Fire an incredibly accurate small fireball, doing medium damage.
+> 
+> - 🟢Soul Explosion
+> - Explode in a massive explosion of Soul Power, doing heavy damage to anyone near you, lighting yourself aflame.
+> 
+> - 🟢Flame Empowerment
+> - When set aflame, you will take 20% less damage, and begin to heal a small amount of health.
+> 
+> - 🟢 Physical Heat
+> - You can consume Blaze Rods for food, or use Blaze Powder to ignite yourself for long periods of time.
+> 
+> - 🟢To Arms!
+> - Nearby Blazeborn, Nether Kitsune, and Scorch will receive boosts. If one does, you receive resistance.
+> 
+> - 🟢Un-ending War
+> - You must slay the Aquatics who wronged your kin long ago. You have to.
+> 
+> - 🟢 Fire Immunity
+> 
+> - 🟡Immune System
+> - You are immune to some negative effects, but also burn through the positive ones.
+> 
+> - 🔴Nether Spawn
+> - You spawn in the Nether.
+> 
+> - 🔴Enhanced Weakness
+> - While you may be a better Blazeborn, your weaknesses have also been amplified. Snowballs hurt a lot more now.
+> 
+> - 🔴Something Missing
+> - You seem to be missing... something. Without it, you can not learn, or utilize that wisdom into the arcane magicks.
+> 
+> - 🔴Quick Demise
+> - Your flame's temperatures have reached levels high enough to dissipate rain, but not enough to get rid of water. You will melt much quicker than a regular Blazeborn.
+> 
+> - 🔴Snuffed Out
+> - Your flame can be snuffed out easily by suffocation.
+
+
+
+
 # Button Lord: Right Hand Man (BOSS)
 
 To summon the boss, use this command: `function button:right_hand_man/mob_boss`
