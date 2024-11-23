@@ -20,19 +20,8 @@
       ]
     },
     "entity_action_added": {
-      "type": "origins:and",
-      "actions": [
-        {
-          "type": "origins:execute_command",
-          "command": "function luna:kitsune/respawn"
-        },
-        {
-          "type": "origins:change_resource",
-          "change": 1,
-          "operation": "set",
-          "resource": "luna:kitsune/mode_switch_mode_resource"
-        }
-      ]
+      "type": "origins:execute_command",
+      "command": "function luna:kitsune/respawn"
     },
     "entity_action_chosen": {
       "type": "origins:and",

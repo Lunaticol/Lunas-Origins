@@ -10,10 +10,8 @@
       "resource": "*:titans/ronin/phase_dash_temporal_anomaly"
     },
     "entity_action_added": {
-      "type": "origins:change_resource",
-      "operation": "set",
-      "change": 1,
-      "resource": "*:titans/ronin/phase_dash_temporal_anomaly"
+      "type": "origins:execute_command",
+      "command": "resource set @s luna:titans/ronin/phase_dash_temporal_anomaly 1"
     },
     "entity_action_respawned": {
       "type": "origins:change_resource",

@@ -5,54 +5,44 @@
   "type": "origins:multiple",
   "counter_ready_scorch": {
     "type": "origins:action_on_callback",
+    "execute_chosen_when_orb": true,
     "entity_action_chosen": {
-      "type": "origins:change_resource",
-      "resource": "luna:titans/scorch/counter_counter",
-      "change": 1,
-      "operation": "add"
+      "type": "origins:execute_command",
+      "command": "resource add @s luna:titans/ronin/counter_counter 1"
     },
     "entity_action_added": {
-      "type": "origins:change_resource",
-      "resource": "luna:titans/scorch/counter_counter",
-      "change": 1,
-      "operation": "add"
+      "type": "origins:execute_command",
+      "command": "resource add @s luna:titans/scorch/counter_counter 1"
     },
     "entity_action_respawned": {
-      "type": "origins:change_resource",
-      "resource": "luna:titans/scorch/counter_counter",
-      "change": 1,
-      "operation": "add"
+      "type": "origins:execute_command",
+      "command": "resource add @s luna:titans/ronin/counter_counter 1"
     },
     "condition": {
       "type": "origins:origin",
       "layer": "origins:origin",
-      "origin": "luna:titans/scorch"
+      "origin": "luna:scorch"
     }
   },
   "counter_ready_ronin": {
     "type": "origins:action_on_callback",
+    "execute_chosen_when_orb": true,
     "entity_action_chosen": {
-      "type": "origins:change_resource",
-      "resource": "luna:titans/ronin/counter_counter",
-      "change": 1,
-      "operation": "add"
+      "type": "origins:execute_command",
+      "command": "resource add @s luna:titans/ronin/counter_counter 1"
     },
     "entity_action_added": {
-      "type": "origins:change_resource",
-      "resource": "luna:titans/ronin/counter_counter",
-      "change": 1,
-      "operation": "add"
+      "type": "origins:execute_command",
+      "command": "resource add @s luna:titans/ronin/counter_counter 1"
     },
     "entity_action_respawned": {
-      "type": "origins:change_resource",
-      "resource": "luna:titans/ronin/counter_counter",
-      "change": 1,
-      "operation": "add"
+      "type": "origins:execute_command",
+      "command": "resource add @s luna:titans/ronin/counter_counter 1"
     },
     "condition": {
       "type": "origins:origin",
       "layer": "origins:origin",
-      "origin": "luna:titans/ronin"
+      "origin": "luna:ronin"
     }
   }
 }

@@ -2,7 +2,7 @@
   "name": "Titan Kit",
   "replace": false,
   "order": 9,
-  "enabled": true,
+  "enabled": false,
   "origins": [
     {
       "condition": {
@@ -21,10 +21,10 @@
         ]
       },
       "origins": [
-        "luna:titans/titan_kits/counter_ready",
-        "luna:titans/titan_kits/nuclear_ejection",
-        "luna:titans/titan_kits/overcore",
-        "luna:titans/titan_kits/turbo_engine"
+        "luna:titan_kits/counter_ready",
+        "luna:titan_kits/nuclear_ejection",
+        "luna:titan_kits/overcore",
+        "luna:titan_kits/turbo_engine"
       ]
     }
   ]

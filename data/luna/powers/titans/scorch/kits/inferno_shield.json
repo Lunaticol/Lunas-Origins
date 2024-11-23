@@ -6,10 +6,8 @@
   "turbo_engine": {
     "type": "origins:action_on_callback",
     "entity_action_added": {
-      "type": "origins:change_resource",
-      "operation": "set",
-      "change": 1,
-      "resource": "*:titans/scorch/thermal_shield_inferno_shield"
+      "type": "origins:execute_command",
+      "command": "resource set @s luna:titans/scorch/thermal_shield_inferno_shield 1"
     },
     "entity_action_gained": {
       "type": "origins:change_resource",

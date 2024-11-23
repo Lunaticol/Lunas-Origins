@@ -29,18 +29,9 @@
   "width": {
     "type": "origins:action_on_callback",
     "entity_action_chosen": {
-      "type": "origins:and",
-      "actions": [
-        {
-          "type": "origins:execute_command",
-          "command": "scale set pehkui:width 2.5 @s",
-          "permission_level": 4
-        },
-        {
-          "type": "origins:grant_advancement",
-          "advancement": "luna:scorch/scorch"
-        }
-      ]
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:width 2.5 @s",
+      "permission_level": 4
     },
     "entity_action_respawned": {
       "type": "origins:execute_command",
@@ -498,17 +489,15 @@
   "change_origin": {
     "type": "origins:action_on_callback",
     "entity_action_lost": {
-      "type": "origins:and",
-      "actions": [
-        {
-          "type": "origins:execute_command",
-          "command": "origin set @s luna:kits origins:empty"
-        },
-        {
-          "type": "origins:execute_command",
-          "command": "origin set @s luna:titan_kits origins:empty"
-        }
-      ]
+      "type": "origins:execute_command",
+      "command": "origin set @s luna:kits origins:empty"
+    }
+  },
+  "change_origin_kit": {
+    "type": "origins:action_on_callback",
+    "entity_action_lost": {
+      "type": "origins:execute_command",
+      "command": "origin set @s luna:titan_kits origins:empty"
     }
   },
   "evade_projectiles": {
@@ -546,9 +535,6 @@
   "fall": {
     "type": "origins:invulnerability",
     "damage_condition": { "type": "origins:name", "name": "fall" }
-  },
-  "explode": {
-    "type": "origins:"
   },
   "immune_to_counter": {
     "type": "origins:invulnerability",
@@ -620,6 +606,13 @@
       "attribute": "reach-entity-attributes:attack_range",
       "value": 3,
       "operation": "addition"
+    }
+  },
+  "advancement": {
+    "type": "origins:action_on_callback",
+    "entity_action_chosen": {
+      "type": "origins:grant_advancement",
+      "advancement": "luna:scorch/scorch"
     }
   }
 }

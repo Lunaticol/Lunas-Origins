@@ -6,5 +6,5 @@
   "loading_priority": 1,
   "impact": 0,
   "order": 2,
-  "powers": ["luna:ronin/kits/temporal_anomaly"]
+  "powers": ["luna:titans/ronin/kits/temporal_anomaly"]
 }

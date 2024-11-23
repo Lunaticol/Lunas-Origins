@@ -1,1 +1,1 @@
-{"luna":{"kitsune":{"$func":["overworld_mode","ender_mode","nether_mode"]},"ronin":{"$func":["armor_stands","armor_stands_core"]},"scorch":{"$func":["armor_stands","power","shield"]}}}
+{"luna":{"kitsune":{"$func":["overworld_mode","ender_mode","nether_mode","respawn"]},"ronin":{"$func":["armor_stands","armor_stands_core"]},"scorch":{"$func":["armor_stands","power","shield"]}}}

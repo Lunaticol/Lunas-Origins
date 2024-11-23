@@ -37,13 +37,13 @@
                 {
                   "type": "origins:origin",
                   "layer": "origins:origin",
-                  "origin": "titans:scorch",
+                  "origin": "luna:scorch",
                   "inverted": true
                 },
                 {
                   "type": "origins:origin",
                   "layer": "origins:origin",
-                  "origin": "titans:ronin",
+                  "origin": "luna:ronin",
                   "inverted": true
                 }
               ]

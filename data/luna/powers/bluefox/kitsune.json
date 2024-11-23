@@ -14,7 +14,7 @@
             "actions": [
               {
                 "type": "origins:add_velocity",
-                "z": 1,
+                "z": 0.5,
                 "space": "local"
               },
               {
@@ -45,7 +45,7 @@
               },
               {
                 "type": "origins:exhaust",
-                "amount": 1.5
+                "amount": 5
               }
             ]
           },
@@ -81,7 +81,7 @@
             "actions": [
               {
                 "type": "origins:add_velocity",
-                "z": 1.5,
+                "z": 1,
                 "space": "local"
               },
               {
@@ -112,7 +112,7 @@
               },
               {
                 "type": "origins:exhaust",
-                "amount": 1.5
+                "amount": 5
               }
             ]
           },
@@ -148,7 +148,7 @@
             "actions": [
               {
                 "type": "origins:add_velocity",
-                "z": 2,
+                "z": 1.5,
                 "space": "local"
               },
               {
@@ -179,7 +179,7 @@
               },
               {
                 "type": "origins:exhaust",
-                "amount": 1.5
+                "amount": 5
               }
             ]
           },
@@ -215,7 +215,7 @@
             "actions": [
               {
                 "type": "origins:add_velocity",
-                "z": 2.5,
+                "z": 2,
                 "space": "local"
               },
               {
@@ -246,7 +246,7 @@
               },
               {
                 "type": "origins:exhaust",
-                "amount": 1.5
+                "amount": 5
               }
             ]
           },
@@ -282,73 +282,6 @@
             "actions": [
               {
                 "type": "origins:add_velocity",
-                "z": 3,
-                "space": "local"
-              },
-              {
-                "type": "origins:execute_command",
-                "command": "particle dust_color_transition 0.110 0.012 1.000 1 0.071 0.475 1.000 ~ ~ ~ 1 1 1 1 50 normal"
-              },
-              {
-                "type": "origins:change_resource",
-                "change": -1,
-                "resource": "*:*_dashes",
-                "operation": "add"
-              },
-              {
-                "type": "origins:apply_effect",
-                "effect": {
-                  "effect": "slow_falling",
-                  "duration": 10,
-                  "show_icon": true
-                }
-              },
-              {
-                "type": "origins:execute_command",
-                "command": "playsound minecraft:entity.shulker_bullet.hurt master @s ~ ~ ~ 100 1"
-              },
-              {
-                "type": "origins:execute_command",
-                "command": "particle minecraft:explosion ~ ~ ~ 0.2 0.2 0.2 0.7 6 force"
-              },
-              {
-                "type": "origins:exhaust",
-                "amount": 1.5
-              }
-            ]
-          },
-          "condition": {
-            "type": "origins:and",
-            "conditions": [
-              {
-                "type": "origins:predicate",
-                "predicate": "luna:is_full_moon"
-              },
-              {
-                "type": "origins:resource",
-                "compare_to": 1,
-                "comparison": ">=",
-                "resource": "*:*_dashes"
-              },
-              {
-                "type": "origins:resource",
-                "compare_to": 0,
-                "comparison": "==",
-                "resource": "*:*_lock"
-              },
-              {
-                "type": "origins:fall_flying",
-                "inverted": true
-              }
-            ]
-          }
-        },
-        {
-          "action": {
-            "type": "origins:and",
-            "actions": [
-              {
-                "type": "origins:add_velocity",
                 "z": 2.5,
                 "space": "local"
               },
@@ -380,7 +313,7 @@
               },
               {
                 "type": "origins:exhaust",
-                "amount": 1.5
+                "amount": 5
               }
             ]
           },
@@ -389,7 +322,7 @@
             "conditions": [
               {
                 "type": "origins:predicate",
-                "predicate": "luna:is_waning_gibbous"
+                "predicate": "luna:is_full_moon"
               },
               {
                 "type": "origins:resource",
@@ -447,7 +380,7 @@
               },
               {
                 "type": "origins:exhaust",
-                "amount": 1.5
+                "amount": 5
               }
             ]
           },
@@ -456,7 +389,7 @@
             "conditions": [
               {
                 "type": "origins:predicate",
-                "predicate": "luna:is_third_quarter"
+                "predicate": "luna:is_waning_gibbous"
               },
               {
                 "type": "origins:resource",
@@ -514,7 +447,74 @@
               },
               {
                 "type": "origins:exhaust",
-                "amount": 1.5
+                "amount": 5
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:predicate",
+                "predicate": "luna:is_third_quarter"
+              },
+              {
+                "type": "origins:resource",
+                "compare_to": 1,
+                "comparison": ">=",
+                "resource": "*:*_dashes"
+              },
+              {
+                "type": "origins:resource",
+                "compare_to": 0,
+                "comparison": "==",
+                "resource": "*:*_lock"
+              },
+              {
+                "type": "origins:fall_flying",
+                "inverted": true
+              }
+            ]
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:add_velocity",
+                "z": 1,
+                "space": "local"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "particle dust_color_transition 0.110 0.012 1.000 1 0.071 0.475 1.000 ~ ~ ~ 1 1 1 1 50 normal"
+              },
+              {
+                "type": "origins:change_resource",
+                "change": -1,
+                "resource": "*:*_dashes",
+                "operation": "add"
+              },
+              {
+                "type": "origins:apply_effect",
+                "effect": {
+                  "effect": "slow_falling",
+                  "duration": 10,
+                  "show_icon": true
+                }
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "playsound minecraft:entity.shulker_bullet.hurt master @s ~ ~ ~ 100 1"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "particle minecraft:explosion ~ ~ ~ 0.2 0.2 0.2 0.7 6 force"
+              },
+              {
+                "type": "origins:exhaust",
+                "amount": 5
               }
             ]
           },
@@ -550,7 +550,7 @@
             "actions": [
               {
                 "type": "origins:add_velocity",
-                "z": 1,
+                "z": 0.5,
                 "space": "local"
               },
               {
@@ -570,10 +570,6 @@
                 "command": "particle minecraft:explosion ~ ~ ~ 0.2 0.2 0.2 0.7 6 force"
               },
               {
-                "type": "origins:exhaust",
-                "amount": 2.5
-              },
-              {
                 "type": "origins:change_resource",
                 "resource": "*:*_was_falling",
                 "change": 1
@@ -583,6 +579,10 @@
                 "change": -4,
                 "resource": "*:*_dashes",
                 "operation": "add"
+              },
+              {
+                "type": "origins:exhaust",
+                "amount": 5
               }
             ]
           },

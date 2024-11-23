@@ -11,19 +11,6 @@
     "minecraft:axolotl_bucket",
     "minecraft:tadpole_bucket",
     "minecraft:pufferfish_bucket",
-    "minecraft:tropical_fish_bucket",
-    "wilderwild:jellyfish_bucket",
-    "wilderwild:crab_bucket",
-    "netherdepthsupgrade:lava_pufferfish_bucket",
-    "netherdepthsupgrade:obsidianfish_bucket",
-    "netherdepthsupgrade:searing_cod_bucket",
-    "netherdepthsupgrade:bonefish_bucket",
-    "netherdepthsupgrade:wither_bonefish_bucket",
-    "netherdepthsupgrade:blazefish_bucket",
-    "netherdepthsupgrade:magmacubefish_bucket",
-    "netherdepthsupgrade:glowdine_bucket",
-    "netherdepthsupgrade:soulsucker_bucket",
-    "netherdepthsupgrade:fortress_grouper_bucket",
-    "netherdepthsupgrade:eyeball_fish_bucket"
+    "minecraft:tropical_fish_bucket"
   ]
 }

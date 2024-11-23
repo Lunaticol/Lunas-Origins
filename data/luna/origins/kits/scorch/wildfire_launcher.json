@@ -6,5 +6,5 @@
   "loading_priority": 1,
   "impact": 0,
   "order": 2,
-  "powers": ["luna:scorch/kits/wildfire_launcher"]
+  "powers": ["luna:titans/scorch/kits/wildfire_launcher"]
 }

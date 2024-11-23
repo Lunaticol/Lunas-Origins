@@ -9,5 +9,5 @@
   "loading_priority": 1,
   "impact": 0,
   "order": 2,
-  "powers": ["luna:ronin/kits/highlander"]
+  "powers": ["luna:titans/ronin/kits/highlander"]
 }

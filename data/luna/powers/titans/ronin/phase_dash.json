@@ -6,7 +6,7 @@
     "type": "origins:phasing",
     "block_condition": {
       "type": "origins:in_tag",
-      "tag": "luna:blocks"
+      "tag": "luna:ronin_phase"
     },
     "blacklist": false,
     "view_distance": 10,

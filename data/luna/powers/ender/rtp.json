@@ -80,12 +80,6 @@
               {
                 "type": "origins:execute_command",
                 "command": "particle minecraft:portal ~ ~0.4 ~ 0.3 0.6 0.3 0 100 normal"
-              },
-              {
-                "type": "origins:change_resource",
-                "resource": "*:*_rtp_hit_bar",
-                "change": 0,
-                "operation": "set"
               }
             ]
           },
@@ -125,12 +119,6 @@
               {
                 "type": "origins:execute_command",
                 "command": "particle minecraft:portal ~ ~0.4 ~ 0.3 0.6 0.3 0 100 normal"
-              },
-              {
-                "type": "origins:change_resource",
-                "resource": "*:*_rtp_hit_bar",
-                "change": 0,
-                "operation": "set"
               }
             ]
           },
@@ -155,19 +143,8 @@
       "value": -1
     },
     "condition": {
-      "type": "origins:and",
-      "conditions": [
-        {
-          "type": "origins:power_active",
-          "power": "*:*_toggle"
-        },
-        {
-          "type": "origins:resource",
-          "compare_to": 1,
-          "comparison": "==",
-          "resource": "*:*_rtp_hit_bar"
-        }
-      ]
+      "type": "origins:power_active",
+      "power": "*:*_toggle"
     },
     "damage_condition": {
       "type": "origins:name",
@@ -305,33 +282,6 @@
     },
     "damage_condition": {
       "type": "origins:projectile"
-    }
-  },
-  "rtp_hit_bar": {
-    "type": "origins:resource",
-    "max": 1,
-    "min": 0,
-    "hud_render": {
-      "should_render": true,
-      "bar_index": 6
-    }
-  },
-  "rtp_hit": {
-    "type": "origins:action_when_damage_taken",
-    "cooldown": 0,
-    "entity_action": {
-      "type": "origins:chance",
-      "chance": 0.15,
-      "action": {
-        "type": "origins:change_resource",
-        "resource": "*:*_rtp_hit_bar",
-        "change": 1,
-        "operation": "set"
-      }
-    },
-    "condition": {
-      "type": "origins:power_active",
-      "power": "*:*_toggle"
     }
   },
   "projectile_immune": {

@@ -5,5 +5,5 @@
   "loading_priority": 1,
   "impact": 0,
   "order": 1,
-  "powers": ["luna:titan_kit/turbo_engine"]
+  "powers": ["luna:titans/titan_kit/turbo_engine"]
 }

@@ -2,7 +2,7 @@
   "name": "Kit",
   "replace": false,
   "order": 8,
-  "enabled": true,
+  "enabled": false,
   "origins": [
     {
       "condition": {
@@ -11,11 +11,11 @@
         "origin": "luna:scorch"
       },
       "origins": [
-        "luna:titans/kits/scorch/fuel_for_fire",
-        "luna:titans/kits/scorch/inferno_shield",
-        "luna:titans/kits/scorch/scorched_earth",
-        "luna:titans/kits/scorch/tempered_plating",
-        "luna:titans/kits/scorch/wildfire_launcher"
+        "luna:kits/scorch/fuel_for_fire",
+        "luna:kits/scorch/inferno_shield",
+        "luna:kits/scorch/scorched_earth",
+        "luna:kits/scorch/tempered_plating",
+        "luna:kits/scorch/wildfire_launcher"
       ]
     }
   ]

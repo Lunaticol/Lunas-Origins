@@ -11,10 +11,10 @@
         "origin": "luna:ronin"
       },
       "origins": [
-        "luna:titans/kits/ronin/highlander",
-        "luna:titans/kits/ronin/phase_reflex",
-        "luna:titans/kits/ronin/temporal_anomaly",
-        "luna:titans/kits/ronin/thunderstorm"
+        "luna:kits/ronin/highlander",
+        "luna:kits/ronin/phase_reflex",
+        "luna:kits/ronin/temporal_anomaly",
+        "luna:kits/ronin/thunderstorm"
       ]
     }
   ]

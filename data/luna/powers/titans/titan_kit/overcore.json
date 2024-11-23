@@ -5,6 +5,7 @@
   "type": "origins:multiple",
   "overcore_scorch": {
     "type": "origins:action_on_callback",
+    "execute_chosen_when_orb": true,
     "entity_action_chosen": {
       "type": "origins:change_resource",
       "operation": "add",
@@ -12,10 +13,8 @@
       "resource": "*:titans/scorch/core_core_bar"
     },
     "entity_action_added": {
-      "type": "origins:change_resource",
-      "operation": "add",
-      "change": 25,
-      "resource": "*:titans/scorch/core_core_bar"
+      "type": "origins:execute_command",
+      "command": "resource add @s luna:titans/scorch/core_core_bar 25"
     },
     "entity_action_respawned": {
       "type": "origins:change_resource",
@@ -26,6 +25,7 @@
   },
   "overcore_ronin": {
     "type": "origins:action_on_callback",
+    "execute_chosen_when_orb": true,
     "entity_action_chosen": {
       "type": "origins:change_resource",
       "operation": "add",
@@ -33,10 +33,8 @@
       "resource": "*:titans/ronin/core_core_bar"
     },
     "entity_action_added": {
-      "type": "origins:change_resource",
-      "operation": "add",
-      "change": 25,
-      "resource": "*:titans/ronin/core_core_bar"
+      "type": "origins:execute_command",
+      "command": "resource add @s luna:titans/ronin/core_core_bar 25"
     },
     "entity_action_respawned": {
       "type": "origins:change_resource",

@@ -4,7 +4,6 @@
   "description": "Get fucked",
   "tag": {
     "type": "origins:active_self",
-    "cooldown": 5,
     "key": {
       "key": "primary",
       "continuous": true

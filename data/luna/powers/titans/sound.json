@@ -101,7 +101,7 @@
     },
     "condition": {
       "type": "origins:origin",
-      "origin": "titans:scorch",
+      "origin": "luna:scorch",
       "layer": "origins:origin"
     }
   },
@@ -206,7 +206,7 @@
     },
     "condition": {
       "type": "origins:origin",
-      "origin": "titans:ronin",
+      "origin": "luna:ronin",
       "layer": "origins:origin"
     }
   }

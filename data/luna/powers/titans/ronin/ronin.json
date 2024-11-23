@@ -412,7 +412,7 @@
           "type": "origins:resource",
           "compare_to": 0,
           "comparison": "==",
-          "resource": "*:ronin/aegis/shield_aegis_shield"
+          "resource": "*:titans/ronin/aegis/shield_aegis_shield"
         }
       ]
     }
@@ -474,7 +474,7 @@
           "type": "origins:resource",
           "compare_to": 1,
           "comparison": "==",
-          "resource": "*:ronin/aegis/shield_aegis_shield"
+          "resource": "*:titans/ronin/aegis/shield_aegis_shield"
         }
       ]
     }
@@ -667,10 +667,6 @@
         "tag": "luna:bow"
       }
     }
-  },
-  "effect_immunity": {
-    "type": "origins:effect_immunity",
-    "effect": "biomancy:bleed"
   },
   "immune_to_counter": {
     "type": "origins:invulnerability",

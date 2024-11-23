@@ -28,7 +28,7 @@
           "type": "origins:on_block",
           "block_condition": {
             "type": "origins:in_tag",
-            "tag": "luna:kitsune/nether/blocks"
+            "tag": "luna:soul_blocks"
           }
         },
         {
@@ -56,7 +56,7 @@
           "type": "origins:on_block",
           "block_condition": {
             "type": "origins:in_tag",
-            "tag": "luna:kitsune/nether/blocks",
+            "tag": "luna:soul_blocks",
             "inverted": true
           }
         },

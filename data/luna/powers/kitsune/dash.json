@@ -150,7 +150,7 @@
                   "type": "origins:and",
                   "conditions": [
                     {
-                      "type": "origins:on_block",
+                      "type": "origins:in_block",
                       "block_condition": {
                         "type": "origins:height",
                         "compare_to": 63,
@@ -194,7 +194,7 @@
                   "type": "origins:and",
                   "conditions": [
                     {
-                      "type": "origins:on_block",
+                      "type": "origins:in_block",
                       "block_condition": {
                         "type": "origins:height",
                         "compare_to": 62,
