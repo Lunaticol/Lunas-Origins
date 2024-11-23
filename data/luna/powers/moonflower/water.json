@@ -48,7 +48,8 @@
             "comparison": ">="
           },
           "inverted": true
-        }
+        },
+        { "type": "origins:in_rain" }
       ]
     }
   },
