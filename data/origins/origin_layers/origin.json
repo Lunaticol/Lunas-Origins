@@ -1,23 +1,26 @@
 {
   "order": 2,
   "origins": [
+    "luna:alch",
     "luna:artificer",
     "luna:ashley",
     "luna:axolotl",
+    "luna:bluefox",
+    "luna:crimson",
+    "luna:ender",
+    "luna:ignea",
     "luna:kitsune",
     "luna:kow",
     "luna:luna",
-    "luna:scorch",
-    "luna:ronin",
-    "luna:northstar",
-    "luna:skyweaver",
-    "luna:crimson",
-    "luna:kitsune",
     "luna:noctilith",
-    "luna:titanmite",
+    "luna:northstar",
+    "luna:ronin",
+    "luna:scorch",
     "luna:sculk",
+    "luna:skyweaver",
+    "luna:stormscale",
     "luna:sw",
-    "luna:ignea",
-    "luna:alch"
+    "luna:titanmite",
+    "luna:wisp"
   ]
 }

@@ -51,7 +51,7 @@
       "type": "origins:target_action",
       "action": {
         "type": "origins:change_resource",
-        "resource": "*:soul_soul_bar",
+        "resource": "*:bluefox/soul_soul_bar",
         "operation": "add",
         "change": -30
       }
@@ -88,7 +88,7 @@
       "type": "origins:target_action",
       "action": {
         "type": "origins:change_resource",
-        "resource": "*:soul_soul_bar",
+        "resource": "*:bluefox/soul_soul_bar",
         "operation": "add",
         "change": -50
       }
@@ -111,7 +111,7 @@
     "cooldown": 10,
     "entity_action": {
       "type": "origins:change_resource",
-      "resource": "*:soul_soul_bar",
+      "resource": "*:bluefox/soul_soul_bar",
       "operation": "add",
       "change": -50
     },

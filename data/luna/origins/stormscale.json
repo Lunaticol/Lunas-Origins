@@ -1,17 +1,17 @@
 {
-  "description": "You are a formidable force, capable of harnessing the raw energy of lightning to your advantage.",
+  "description": "A formidable force, capable of harnessing the raw energy of lightning to your advantage.",
   "icon": "minecraft:elytra",
-  "name": "Stormscale Dragon",
+  "name": "Stormscale",
   "unchoosable": true,
   "order": 0,
   "impact": 2,
   "powers": [
-    "luna:stormscale/stormscale/body",
-    "luna:stormscale/stormscale/static_charge",
-    "luna:stormscale/stormscale/lightning_breath",
-    "luna:stormscale/stormscale/scales",
-    "luna:stormscale/stormscale/storm_summon",
-    "luna:stormscale/stormscale/claustrophobic",
-    "luna:stormscale/stormscale/boost"
+    "luna:stormscale/body",
+    "luna:stormscale/static_charge",
+    "luna:stormscale/lightning_breath",
+    "luna:stormscale/scales",
+    "luna:stormscale/storm_summon",
+    "luna:stormscale/claustrophobic",
+    "luna:stormscale/boost"
   ]
 }

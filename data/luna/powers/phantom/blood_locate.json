@@ -48,7 +48,7 @@
         },
         {
           "type": "origins:change_resource",
-          "resource": "*:dark_healing_blood",
+          "resource": "*:phantom/dark_healing_blood",
           "change": -30,
           "operation": "add"
         },
@@ -72,7 +72,7 @@
       "type": "origins:resource",
       "compare_to": 49,
       "comparison": ">",
-      "resource": "*:dark_healing_blood"
+      "resource": "*:phantom/dark_healing_blood"
     }
   },
   "active_resource": {

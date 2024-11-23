@@ -40,22 +40,13 @@
   "land": {
     "type": "origins:action_on_land",
     "entity_action": {
-      "type": "origins:area_of_effect",
-      "radius": 4,
-      "shape": "cube",
-      "bientity_action": {
-        "type": "origins:and",
-        "actions": [
-          {
-            "type": "origins:actor_action",
-            "action": {
-              "type": "origins:change_resource",
-              "resource": "*:*_in_air",
-              "change": 0,
-              "operation": "set"
-            }
-          },
-          {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:area_of_effect",
+          "radius": 4,
+          "shape": "cube",
+          "bientity_action": {
             "type": "origins:target_action",
             "action": {
               "type": "origins:add_velocity",
@@ -63,8 +54,14 @@
               "space": "local_horizontal"
             }
           }
-        ]
-      }
+        },
+        {
+          "type": "origins:change_resource",
+          "resource": "*:*_in_air",
+          "change": 0,
+          "operation": "set"
+        }
+      ]
     },
     "condition": {
       "type": "origins:resource",

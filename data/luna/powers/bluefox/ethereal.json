@@ -142,7 +142,7 @@
       "type": "origins:change_resource",
       "change": -5,
       "operation": "add",
-      "resource": "*:soul_soul_bar"
+      "resource": "*:bluefox/soul_soul_bar"
     },
     "condition": {
       "type": "origins:resource",
@@ -178,7 +178,7 @@
       "type": "origins:resource",
       "compare_to": 0,
       "comparison": "==",
-      "resource": "*:soul_soul_bar"
+      "resource": "*:bluefox/soul_soul_bar"
     }
   },
   "glow": {
@@ -226,14 +226,24 @@
       "bientity_condition": {
         "type": "origins:target_condition",
         "condition": {
-          "inverted": true,
-          "type": "origins:using_item",
-          "item_condition": {
-            "type": "origins:ingredient",
-            "ingredient": {
-              "item": "minecraft:shield"
+          "type": "origins:or",
+          "conditions": [
+            {
+              "inverted": true,
+              "type": "origins:using_item",
+              "item_condition": {
+                "type": "origins:ingredient",
+                "ingredient": {
+                  "item": "minecraft:shield"
+                }
+              }
+            },
+            {
+              "type": "origins:nbt",
+              "nbt": "{Tags:[\"Aonospirit\"]}",
+              "inverted": true
             }
-          }
+          ]
         }
       }
     },

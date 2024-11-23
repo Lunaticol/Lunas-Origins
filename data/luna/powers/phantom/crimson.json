@@ -79,7 +79,7 @@
           "type": "origins:daytime"
         },
         {
-          "type": "origins:exposed_to_sky"
+          "type": "origins:exposed_to_sun"
         },
         {
           "type": "origins:power_active",
@@ -121,32 +121,27 @@
       ]
     },
     "condition": {
-      "type": "origins:or",
+      "type": "origins:and",
       "conditions": [
         {
-          "type": "origins:and",
-          "conditions": [
-            {
-              "type": "origins:daytime"
-            },
-            {
-              "type": "origins:exposed_to_sky"
-            },
-            {
-              "type": "origins:power_active",
-              "power": "*:phase_phase_toggle",
-              "inverted": true
-            },
-            {
-              "type": "origins:status_effect",
-              "effect": "minecraft:fire_resistance",
-              "inverted": true
-            },
-            {
-              "type": "origins:in_rain",
-              "inverted": true
-            }
-          ]
+          "type": "origins:daytime"
+        },
+        {
+          "type": "origins:exposed_to_sun"
+        },
+        {
+          "type": "origins:power_active",
+          "power": "*:phantom/phase_phase_toggle",
+          "inverted": true
+        },
+        {
+          "type": "origins:status_effect",
+          "effect": "minecraft:fire_resistance",
+          "inverted": true
+        },
+        {
+          "type": "origins:in_rain",
+          "inverted": true
         }
       ]
     }

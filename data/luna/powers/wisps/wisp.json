@@ -1,0 +1,10 @@
+{
+  "name": "Will'o'Wisp",
+  "description": "Use the wisps to your advantage.\nAll your power comes from a centeralized 'Wisp' bar.",
+  "type": "origins:multiple",
+  "wisp_bar": {
+    "type": "origins:resource",
+    "max": 10000,
+    "min": 0
+  }
+}

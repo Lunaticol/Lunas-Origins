@@ -1,7 +1,7 @@
 {
   "name": "Overworld Kitsune",
   "unchoosable": true,
-  "description": "[SCROLL]",
+  "description": "A sweet one they are.",
   "icon": "minecraft:sweet_berries",
   "loading_priority": 1,
   "impact": 1,

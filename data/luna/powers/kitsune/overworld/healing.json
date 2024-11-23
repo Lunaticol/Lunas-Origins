@@ -1,6 +1,6 @@
 {
   "name": "Healer",
-  "description": "You can heal yourself or those around you.",
+  "description": "You can heal yourself\nYou can heal others by hitting them",
   "type": "origins:multiple",
   "healing_others": {
     "type": "origins:active_self",
@@ -14,69 +14,47 @@
       "key": "key.loadToolbarActivator"
     },
     "entity_action": {
-      "type": "origins:area_of_effect",
-      "radius": 8,
-      "shape": "sphere",
-      "bientity_action": {
-        "type": "origins:and",
-        "actions": [
-          {
-            "type": "origins:target_action",
-            "action": {
-              "type": "origins:apply_effect",
-              "effect": {
-                "effect": "minecraft:regeneration",
-                "duration": 300,
-                "show_icon": true,
-                "show_particles": false
-              }
-            }
-          },
-          {
-            "type": "origins:actor_action",
-            "action": {
-              "type": "origins:and",
-              "actions": [
-                {
-                  "type": "origins:apply_effect",
-                  "effects": [
-                    {
-                      "effect": "minecraft:weakness",
-                      "amplifier": 1,
-                      "duration": 200,
-                      "show_icon": true,
-                      "show_particles": false
-                    },
-                    {
-                      "effect": "minecraft:slowness",
-                      "duration": 100,
-                      "amplifier": 1,
-                      "show_icon": true,
-                      "show_particles": false
-                    }
-                  ]
-                },
-                {
-                  "type": "origins:execute_command",
-                  "command": "particle heart ~ ~ ~ 8 8 8 1 10 force"
-                },
-                {
-                  "type": "origins:change_resource",
-                  "change": 1,
-                  "operation": "set",
-                  "resource": "luna:kitsune/power_active_healing"
-                }
-              ]
-            }
-          }
-        ]
-      }
+      "type": "origins:and",
+      "actions": [
+        { "type": "origins:heal", "amount": 10 },
+        {
+          "type": "origins:execute_command",
+          "command": "particle heart ~ ~ ~ 0 0 0 1 1 force"
+        }
+      ]
     },
     "condition": {
       "type": "origins:resource",
       "compare_to": 0,
       "comparison": "==",
       "resource": "luna:kitsune/power_active_healing"
+    }
+  },
+  "heal_others": {
+    "type": "origins:action_on_hit",
+    "cooldown": 10,
+    "hud_render": {
+      "should_render": false
+    },
+    "bientity_action": {
+      "type": "origins:target_action",
+      "action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:heal",
+            "amount": 4
+          },
+          {
+            "type": "origins:execute_command",
+            "command": "particle heart ~ ~ ~ 0 0 0 1 1 force"
+          }
+        ]
+      }
+    },
+    "condition": {
+      "type": "origins:on_fire",
+      "inverted": true
     }
   },
   "pa_reset": {

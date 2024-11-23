@@ -1,7 +1,7 @@
 {
   "name": "Nether Kitsune",
   "unchoosable": true,
-  "description": "[SCROLL]",
+  "description": "You never should've left where you came from.",
   "icon": "minecraft:sweet_berries",
   "loading_priority": 1,
   "impact": 3,

@@ -6,6 +6,7 @@
     "type": "origins:resource",
     "max": 1000,
     "min": 0,
+    "start_value": 1000,
     "hud_render": {
       "bar_index": 1
     }

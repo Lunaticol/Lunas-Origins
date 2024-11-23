@@ -11,13 +11,13 @@
       "actions": [
         {
           "type": "origins:execute_command",
-          "command": "function bluefox:summon"
+          "command": "function luna:bluefox/summon"
         },
         {
           "type": "origins:change_resource",
           "change": -300,
           "operation": "add",
-          "resource": "*:soul_soul_bar"
+          "resource": "*:bluefox/soul_soul_bar"
         }
       ]
     },
@@ -25,7 +25,7 @@
       "type": "origins:resource",
       "compare_to": 300,
       "comparison": ">=",
-      "resource": "*:soul_soul_bar"
+      "resource": "*:bluefox/soul_soul_bar"
     }
   }
 }

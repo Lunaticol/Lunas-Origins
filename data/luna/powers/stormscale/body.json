@@ -1,7 +1,7 @@
 {
   "type": "origins:multiple",
   "name": "Dragon Body",
-  "description": "You are a dragon, You have the abilitys of a normal dragon. \nYou take more damage from arrows. \nYou attract more lightning!",
+  "description": "You are a dragon, You have the abilitys of a normal dragon.\nYou take more damage from arrows.\nYou attract more lightning!",
   "elytra": {
     "type": "origins:elytra_flight",
     "render_elytra": true,
@@ -9,32 +9,19 @@
       "type": "origins:fluid_height",
       "compare_to": 0.5,
       "fluid": "minecraft:water",
-      "comparison": ">",
+      "comparison": ">=",
       "inverted": true
-    }
-  },
-  "immune_to_elytra_damage": {
-    "type": "origins:modify_falling",
-    "take_fall_damage": false,
-    "velocity": 0.1,
-    "condition": {
-      "type": "origins:and",
-      "conditions": [
-        {
-          "type": "origins:fall_flying"
-        }
-      ]
     }
   },
   "immune_to_velocity_damage": {
     "type": "origins:modify_damage_taken",
     "modifier": {
-      "value": 0,
+      "value": -1,
       "operation": "set_total"
     },
     "damage_condition": {
-      "type": "origins:name",
-      "name": "flyIntoWall"
+      "type": "origins:type",
+      "damage_type": "flyIntoWall"
     }
   },
   "storm_power": {
@@ -147,33 +134,6 @@
       "type": "origins:execute_command",
       "command": "scale set pehkui:width 1 @s",
       "permission_level": 4
-    }
-  },
-  "no_sapphire_armor": {
-    "type": "origins:restrict_armor",
-    "chest": {
-      "type": "apoli:ingredient",
-      "ingredient": {
-        "item": "mythicupgrades:sapphire_chestplate"
-      }
-    },
-    "feet": {
-      "type": "origins:ingredient",
-      "ingredient": {
-        "item": "mythicupgrades:sapphire_boots"
-      }
-    },
-    "head": {
-      "type": "origins:ingredient",
-      "ingredient": {
-        "item": "mythicupgrades:sapphire_helmet"
-      }
-    },
-    "legs": {
-      "type": "origins:ingredient",
-      "ingredient": {
-        "item": "mythicupgrades:sapphire_leggings"
-      }
     }
   },
   "hurt_sound": {

@@ -9,10 +9,6 @@
       "conditions": [
         {
           "type": "origins:name",
-          "name": "minecraft:fall"
-        },
-        {
-          "type": "origins:name",
           "name": "minecraft:thorns"
         },
         {

@@ -466,6 +466,6 @@
     "type": "origins:resource",
     "compare_to": 1,
     "comparison": "==",
-    "resource": "*:switching_switch_resource"
+    "resource": "*:sculk/switching_switch_resource"
   }
 }

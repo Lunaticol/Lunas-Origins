@@ -69,10 +69,21 @@
       ]
     },
     "condition": {
-      "type": "origins:resource",
-      "compare_to": 0,
-      "comparison": "==",
-      "resource": "*:*_died"
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:*_died"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "!=",
+          "resource": "luna:phantom/dark_healing_blood"
+        }
+      ]
     }
   },
   "died": {

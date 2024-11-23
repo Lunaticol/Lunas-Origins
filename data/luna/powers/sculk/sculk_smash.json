@@ -64,50 +64,55 @@
   "when_land": {
     "type": "origins:action_on_land",
     "entity_action": {
-      "type": "origins:area_of_effect",
-      "bientity_action": {
-        "type": "origins:and",
-        "actions": [
-          {
-            "type": "origins:target_action",
-            "action": {
-              "type": "origins:and",
-              "actions": [
-                {
-                  "type": "origins:apply_effect"
-                },
-                {
-                  "type": "origins:damage",
-                  "amount": 40,
-                  "source": {
-                    "name": "squashed"
-                  }
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:area_of_effect",
+          "bientity_action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:target_action",
+                "action": {
+                  "type": "origins:and",
+                  "actions": [
+                    {
+                      "type": "origins:apply_effect"
+                    },
+                    {
+                      "type": "origins:damage",
+                      "amount": 40,
+                      "source": {
+                        "name": "squashed"
+                      }
+                    }
+                  ]
                 }
-              ]
-            }
+              },
+              {
+                "type": "origins:actor_action",
+                "action": {
+                  "type": "origins:and",
+                  "actions": [
+                    {
+                      "type": "origins:execute_command",
+                      "command": "function luna:sculk/smash"
+                    }
+                  ]
+                }
+              }
+            ]
           },
-          {
-            "type": "origins:actor_action",
-            "action": {
-              "type": "origins:and",
-              "actions": [
-                {
-                  "type": "origins:change_resource",
-                  "change": 0,
-                  "operation": "set",
-                  "resource": "*:*_smash"
-                },
-                {
-                  "type": "origins:execute_command",
-                  "command": "function luna:sculk/smash"
-                }
-              ]
-            }
-          }
-        ]
-      },
-      "radius": 6,
-      "shape": "sphere"
+          "radius": 6,
+          "shape": "sphere"
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 0,
+          "operation": "set",
+          "resource": "*:*_smash"
+        }
+      ]
     },
     "condition": {
       "type": "origins:resource",
