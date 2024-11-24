@@ -315,5 +315,13 @@
       "type": "origins:grant_advancement",
       "advancement": "luna:luna_sculk/sculk"
     }
+  },
+  "attribute": {
+    "type": "origins:attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.knockback_resistance",
+      "value": 10,
+      "operation": "multiply_total"
+    }
   }
 }
