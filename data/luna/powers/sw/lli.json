@@ -3,7 +3,7 @@
   "entity_action": {
     "type": "origins:and",
     "actions": [
-      { "type": "origins:revoke_power", "power": "*:lli", "source": "sw" },
+      { "type": "origins:revoke_power", "power": "*:sw/lli", "source": "sw" },
       {
         "type": "origins:area_of_effect",
         "radius": 5,

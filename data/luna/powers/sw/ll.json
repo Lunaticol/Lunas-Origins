@@ -42,7 +42,7 @@
         "ticks": 20,
         "action": {
           "type": "origins:grant_power",
-          "power": "*:lli",
+          "power": "*:sw/lli",
           "source": "sw"
         }
       }

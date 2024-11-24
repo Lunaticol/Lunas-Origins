@@ -38,7 +38,7 @@
           "source": { "name": "lightningdash" }
         }
       },
-      "command_step": 4,
+      "command_step": 8,
       "command_along_ray": "summon lightning_bolt",
       "distance": 40,
       "miss_action": {
