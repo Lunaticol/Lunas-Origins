@@ -15,7 +15,7 @@
       "type": "origins:change_resource",
       "change": -2,
       "operation": "add",
-      "resource": "*:static_resource"
+      "resource": "*:sw/static_resource"
     }
   },
   "whenhit": {
@@ -36,7 +36,7 @@
         "type": "origins:change_resource",
         "operation": "add",
         "change": -3,
-        "resource": "*:static_resource"
+        "resource": "*:sw/static_resource"
       }
     },
     "bientity_condition": {

@@ -4,7 +4,7 @@
   "type": "origins:active_self",
   "condition": {
     "type": "origins:resource",
-    "resource": "*:static_resource",
+    "resource": "*:sw/static_resource",
     "comparison": ">=",
     "compare_to": 15
   },
@@ -13,7 +13,7 @@
     "actions": [
       {
         "type": "origins:change_resource",
-        "resource": "*:static_resource",
+        "resource": "*:sw/static_resource",
         "operation": "add",
         "change": -15
       },

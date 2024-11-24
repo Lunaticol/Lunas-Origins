@@ -5,7 +5,7 @@
   "lc": {
     "condition": {
       "type": "origins:resource",
-      "resource": "*:static_resource",
+      "resource": "*:sw/static_resource",
       "compare_to": 10,
       "comparison": ">="
     },
@@ -23,7 +23,7 @@
             "type": "origins:change_resource",
             "change": -10,
             "operation": "add",
-            "resource": "*:static_resource"
+            "resource": "*:sw/static_resource"
           }
         ]
       },

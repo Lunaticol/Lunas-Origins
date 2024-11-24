@@ -18,7 +18,7 @@
     "entity_action": {
       "type": "origins:change_resource",
       "operation": "add",
-      "resource": "*:static_resource",
+      "resource": "*:sw/static_resource",
       "change": 1
     },
     "condition": {
@@ -33,7 +33,7 @@
     "type": "origins:action_over_time",
     "entity_action": {
       "type": "origins:change_resource",
-      "resource": "*:static_resource",
+      "resource": "*:sw/static_resource",
       "operation": "add",
       "change": 1
     },
@@ -62,7 +62,7 @@
     "interval": 100,
     "condition": {
       "type": "origins:resource",
-      "resource": "*:static_resource",
+      "resource": "*:sw/static_resource",
       "compare_to": 10,
       "comparison": "<"
     }
@@ -89,7 +89,7 @@
     "interval": 100,
     "condition": {
       "type": "origins:resource",
-      "resource": "*:static_resource",
+      "resource": "*:sw/static_resource",
       "compare_to": 40,
       "comparison": ">"
     }
