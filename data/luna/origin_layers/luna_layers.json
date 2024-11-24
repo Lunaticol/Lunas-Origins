@@ -1,7 +1,7 @@
 {
   "name": "Sub-Origin",
   "replace": false,
-  "order": 4,
+  "order": 2,
   "enabled": true,
   "allow_random": true,
   "allow_random_unchoosable": true,

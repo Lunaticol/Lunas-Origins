@@ -243,7 +243,7 @@
           "type": "origins:change_resource",
           "change": 100,
           "operation": "add",
-          "resource": "kitsune:kitsune/nether/soul_mode_soul_bar"
+          "resource": "luna:kitsune/nether/soul_mode_soul_bar"
         }
       },
       "bientity_condition": {
@@ -251,7 +251,7 @@
         "condition": {
           "type": "origins:origin",
           "layer": "luna:luna_layers",
-          "origin": "kitsune:kitsune_classes/nether_kitsune"
+          "origin": "luna:kitsune_classes/nether_kitsune"
         }
       }
     }

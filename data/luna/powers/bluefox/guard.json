@@ -46,7 +46,7 @@
     }
   },
   "when_hit_1": {
-    "type": "origins:action_when_hit",
+    "type": "origins:action_when_damage_taken",
     "bientity_action": {
       "type": "origins:target_action",
       "action": {
@@ -82,31 +82,7 @@
       "power": "*:*_toggle"
     }
   },
-  "when_hit_magic": {
-    "type": "origins:action_when_hit",
-    "bientity_action": {
-      "type": "origins:target_action",
-      "action": {
-        "type": "origins:change_resource",
-        "resource": "*:bluefox/soul_soul_bar",
-        "operation": "add",
-        "change": -50
-      }
-    },
-    "condition": {
-      "type": "origins:power_active",
-      "power": "*:*_toggle"
-    },
-    "damage_condition": {
-      "type": "origins:and",
-      "conditions": [
-        {
-          "type": "apugli:magic"
-        }
-      ]
-    }
-  },
-  "when_on_fire": {
+  "if_fire_magic": {
     "type": "origins:action_when_damage_taken",
     "cooldown": 10,
     "entity_action": {
@@ -133,6 +109,10 @@
         {
           "type": "origins:name",
           "name": "inFire.player"
+        },
+        {
+          "type": "origins:name",
+          "name": "magic"
         }
       ]
     }
