@@ -11,11 +11,11 @@
   "interval": 20,
   "damage": 4,
   "damage_source": {
-    "name": "origins:hurt_by_water",
+    "name": "hurt_by_water",
     "bypasses_armor": true,
     "unblockable": true,
+    "out_of_world": true,
     "magic": true
   },
-  "damage_type": "origins:hurt_by_water",
   "protection_effectiveness": 1
 }

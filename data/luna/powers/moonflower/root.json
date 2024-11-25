@@ -1,0 +1,211 @@
+{
+  "name": "Root",
+  "description": "Root into the ground, increasing defensive capabilities, and replacing [Grapple] with [Entangle].",
+  "type": "origins:multiple",
+  "resource": {
+    "type": "origins:resource",
+    "start_value": 0,
+    "max": 2,
+    "max_action": {
+      "type": "origins:change_resource",
+      "operation": "set",
+      "change": 0,
+      "resource": "*:*_resource"
+    },
+    "min": 0
+  },
+  "aot": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "apoli:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "resource": "*:moonflower/water_water",
+          "operation": "add",
+          "change": -50
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "particle minecraft:cherry_leaves ~ ~ ~ 8 8 8 0 100 force @a"
+        },
+        {
+          "type": "origins:area_of_effect",
+          "radius": 8,
+          "shape": "sphere",
+          "bientity_condition": {
+            "type": "origins:target_condition",
+            "condition": { "type": "origins:living" }
+          },
+          "bientity_action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:target_action",
+                "action": {
+                  "type": "origins:apply_effect",
+                  "effects": [
+                    {
+                      "amplifier": 0,
+                      "duration": 100,
+                      "show_icon": false,
+                      "show_particles": false,
+                      "is_ambient": false,
+                      "effect": "minecraft:darkness"
+                    },
+                    {
+                      "amplifier": 0,
+                      "duration": 100,
+                      "show_icon": false,
+                      "show_particles": false,
+                      "is_ambient": false,
+                      "effect": "minecraft:slowness"
+                    },
+                    {
+                      "amplifier": 0,
+                      "duration": 100,
+                      "show_icon": false,
+                      "show_particles": false,
+                      "is_ambient": false,
+                      "effect": "minecraft:weakness"
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "origins:add_velocity",
+                "client": true,
+                "server": true,
+                "z": -1,
+                "set": true
+              }
+            ]
+          }
+        },
+        {
+          "type": "origins:if_else",
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 0,
+            "comparison": "==",
+            "resource": "*:water_water"
+          },
+          "if_action": {
+            "type": "origins:change_resource",
+            "operation": "set",
+            "change": 0,
+            "resource": "*:*_resource"
+          },
+          "else_action": { "type": "origins:nothing" }
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": "==",
+          "resource": "*:*_resource"
+        }
+      ]
+    },
+    "interval": 60
+  },
+  "toggle": {
+    "type": "origins:active_self",
+    "cooldown": 20,
+    "key": "key.origins.secondary_active",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "operation": "add",
+      "change": 1,
+      "resource": "*:*_resource"
+    }
+  },
+  "entangle": {
+    "type": "origins:active_self",
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": "==",
+          "resource": "*:*_resource"
+        }
+      ]
+    },
+    "cooldown": 240,
+    "key": "key.origins.primary_active",
+    "hud_render": {
+      "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+      "bar_index": 8
+    },
+    "entity_action": {
+      "type": "origins:area_of_effect",
+      "shape": "sphere",
+      "radius": 8,
+      "bientity_action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "apoli:target_action",
+            "action": {
+              "type": "origins:apply_effect",
+              "effects": [
+                {
+                  "duration": 100,
+                  "amplifier": 2,
+                  "effect": "minecraft:slowness"
+                },
+                {
+                  "duration": 100,
+                  "amplifier": 0,
+                  "effect": "minecraft:blindness"
+                },
+                {
+                  "duration": 100,
+                  "amplifier": 1,
+                  "effect": "minecraft:weakness"
+                },
+                {
+                  "duration": 100,
+                  "amplifier": 128,
+                  "effect": "minecraft:jump_boost"
+                }
+              ]
+            }
+          },
+          {
+            "type": "origins:actor_action",
+            "action": {
+              "type": "origins:execute_command",
+              "command": "playsound minecraft:block.cherry_leaves.fall master @a ~ ~ ~ 1 0.1 1"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "stats": {
+    "type": "origins:prevent_sprinting",
+    "condition": {
+      "type": "origins:resource",
+      "comparison": "==",
+      "compare_to": 1,
+      "resource": "*:*_resource"
+    }
+  },
+  "stats2": {
+    "type": "origins:modify_jump",
+    "condition": {
+      "type": "origins:resource",
+      "comparison": "==",
+      "compare_to": 1,
+      "resource": "*:*_resource"
+    },
+    "modifier": { "operation": "multiply_total", "value": -1 }
+  }
+}

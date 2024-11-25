@@ -38,8 +38,6 @@
           "source": { "name": "lightningdash" }
         }
       },
-      "command_step": 8,
-      "command_along_ray": "summon lightning_bolt",
       "distance": 40,
       "miss_action": {
         "type": "origins:execute_command",
@@ -47,7 +45,7 @@
       },
       "hit_action": {
         "type": "origins:area_of_effect",
-        "radius": 5,
+        "radius": 3,
         "bientity_action": {
           "type": "origins:target_action",
           "action": {
@@ -55,7 +53,7 @@
             "actions": [
               {
                 "type": "origins:damage",
-                "amount": 10,
+                "amount": 15,
                 "damage_type": "minecraft:player_attack",
                 "source": { "name": "lightningdash" }
               },

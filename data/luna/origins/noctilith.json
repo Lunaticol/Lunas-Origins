@@ -4,7 +4,8 @@
     "luna:moonflower/delicate",
     "luna:moonflower/toxic",
     "luna:moonflower/water",
-    "luna:moonflower/grapple"
+    "luna:moonflower/grapple",
+    "luna:moonflower/root"
   ],
   "icon": "minecraft:pink_tulip",
   "order": 9,

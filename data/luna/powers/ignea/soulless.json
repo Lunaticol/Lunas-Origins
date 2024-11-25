@@ -1,20 +1,24 @@
 {
-    "name": "Something Missing",
-    "description": "You seem to be missing... something. Without it, you can not learn, or utilize that wisdom into the arcane magicks.",
-    "type": "origins:multiple",
-    "xp": {
-        "type": "origins:action_over_time",
-        "interval": 200,
-        "entity_action": {
-            "type": "origins:execute_command",
-            "command": "xp set @s 0 points"
-        }
-    },
-    "noenchant": {
-        "type": "origins:prevent_block_use",
-        "block_condition": {
-            "type": "origins:block",
-            "block": "minecraft:enchanting_table"
-        }
+  "name": "Something Missing",
+  "description": "You seem to be missing... something. Without it, you can not learn, or utilize that wisdom into the arcane magicks.",
+  "type": "origins:multiple",
+  "xp": {
+    "type": "origins:action_over_time",
+    "interval": 200,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "xp set @s 0 points"
     }
+  },
+  "noenchant": {
+    "type": "origins:prevent_block_use",
+    "block_condition": {
+      "type": "origins:block",
+      "block": "minecraft:enchanting_table"
+    }
+  },
+  "noxp": {
+    "type": "origins:modify_xp_gain",
+    "modifier": [{ "operation": "addition", "value": -1 }]
+  }
 }

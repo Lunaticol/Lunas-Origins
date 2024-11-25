@@ -1,6 +1,6 @@
 {
   "name": "Passive Abilities",
-  "description": "Your stormy nature provides you with an immunity to fall damage, and of course, lightning.",
+  "description": "Your stormy nature provides you with an immunity to fall damage, and of course, lightning. You also have 3 less hearts.",
   "type": "origins:multiple",
   "immunities": {
     "type": "origins:modify_damage_taken",
@@ -18,5 +18,15 @@
       "value": -1,
       "operation": "multiply_total_multiplicative"
     }
+  },
+  "lesshp": {
+    "type": "origins:attribute",
+    "modifier": [
+      {
+        "attribute": "minecraft:generic.max_health",
+        "operation": "addition",
+        "value": -3
+      }
+    ]
   }
 }

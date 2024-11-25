@@ -1,7 +1,7 @@
 {
   "type": "origins:multiple",
   "name": "Grapple",
-  "description": "Use your Flower vines to grapple onto surfaces!",
+  "description": "Use your Flower vines to grapple onto surfaces! \n[During Root: Entangle]\nEntangle your opponents, preventing jumping, and applying Blindness + Weakness.",
   "badges": [
     {
       "type": "origins:tooltip",
@@ -32,7 +32,7 @@
             },
             {
               "effect": "minecraft:blindness",
-              "duration": 100,
+              "duration": 20,
               "is_ambient": false,
               "show_particles": false,
               "show_icon": true
@@ -86,8 +86,16 @@
       "key": "key.origins.primary_active"
     },
     "condition": {
-      "type": "origins:on_fire",
-      "inverted": true
+      "type": "origins:and",
+      "conditions": [
+        { "type": "origins:on_fire", "inverted": true },
+        {
+          "type": "origins:resource",
+          "comparison": "==",
+          "compare_to": 0,
+          "resource": "*:moonflower/root_resource"
+        }
+      ]
     }
   }
 }

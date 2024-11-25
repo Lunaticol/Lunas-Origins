@@ -43,12 +43,13 @@
                 "amount": 3,
                 "source": {
                   "name": "explosion",
-                  "fire": false,
+                  "fire": true,
                   "magic": true,
                   "bypasses_armor": true,
-                  "unblockable": true
+                  "unblockable": true,
+                  "out_of_world": true
                 },
-                "damage_type": "minecraft:explosion"
+                "damage_type": "explosion"
               }
             ]
           }
