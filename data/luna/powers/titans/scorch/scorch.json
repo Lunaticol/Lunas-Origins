@@ -138,7 +138,7 @@
       "actions": [
         {
           "type": "origins:add_velocity",
-          "space": "local",
+          "space": "local_horizontal_normalized",
           "z": 1
         },
         {
@@ -147,7 +147,7 @@
           "action": {
             "type": "origins:add_velocity",
             "y": -1,
-            "space": "local"
+            "space": "local_horizontal_normalized"
           }
         }
       ]
@@ -183,7 +183,7 @@
     "cooldown": 80,
     "entity_action": {
       "type": "origins:add_velocity",
-      "space": "local",
+      "space": "local_horizontal_normalized",
       "z": 1
     },
     "condition": {
@@ -264,7 +264,7 @@
     "type": "origins:action_on_callback",
     "entity_action_respawned": {
       "type": "origins:execute_command",
-      "command": "origin gui @s luna:scorch_kits"
+      "command": "origin gui @s luna:kits"
     }
   },
   "food": {

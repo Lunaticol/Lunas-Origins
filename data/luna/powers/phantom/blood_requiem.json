@@ -64,7 +64,7 @@
               {
                 "type": "origins:change_resource",
                 "change": 10,
-                "resource": "*:dark_healing_blood",
+                "resource": "*:phantom/dark_healing_blood",
                 "operation": "set"
               },
               {
@@ -95,7 +95,7 @@
               {
                 "type": "origins:change_resource",
                 "change": 0,
-                "resource": "*:phase_phase_bar",
+                "resource": "*:phantom/phase_phase_bar",
                 "operation": "set"
               }
             ]
@@ -107,7 +107,7 @@
       "type": "origins:resource",
       "compare_to": 100,
       "comparison": "==",
-      "resource": "*:dark_healing_blood"
+      "resource": "*:phantom/dark_healing_blood"
     }
   },
   "active": {
@@ -124,7 +124,7 @@
         {
           "type": "origins:change_resource",
           "change": 300,
-          "resource": "*:phase_phase_bar",
+          "resource": "*:phantom/phase_phase_bar",
           "operation": "set"
         }
       ]

@@ -16,6 +16,20 @@
         "luna:kits/ronin/temporal_anomaly",
         "luna:kits/ronin/thunderstorm"
       ]
+    },
+    {
+      "condition": {
+        "type": "origins:origin",
+        "layer": "origins:origin",
+        "origin": "luna:scorch"
+      },
+      "origins": [
+        "luna:kits/scorch/fuel_for_fire",
+        "luna:kits/scorch/inferno_shield",
+        "luna:kits/scorch/scorched_earth",
+        "luna:kits/scorch/tempered_plating",
+        "luna:kits/scorch/wildfire_launcher"
+      ]
     }
   ]
 }

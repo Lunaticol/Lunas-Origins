@@ -171,7 +171,7 @@
               {
                 "type": "origins:add_velocity",
                 "z": 2,
-                "space": "local"
+                "space": "local_horizontal_normalized"
               },
               {
                 "type": "origins:delay",
@@ -179,7 +179,7 @@
                 "action": {
                   "type": "origins:add_velocity",
                   "y": -3,
-                  "space": "local"
+                  "space": "local_horizontal_normalized"
                 }
               },
               {
@@ -204,7 +204,7 @@
               {
                 "type": "origins:add_velocity",
                 "z": 2,
-                "space": "local"
+                "space": "local_horizontal_normalized"
               },
               {
                 "type": "origins:change_resource",
@@ -322,7 +322,7 @@
       "type": "origins:add_velocity",
       "y": -0.5,
       "z": -0.5,
-      "space": "local"
+      "space": "local_horizontal_normalized"
     },
     "condition": {
       "type": "origins:fall_flying"
@@ -344,7 +344,7 @@
     "type": "origins:action_on_callback",
     "entity_action_respawned": {
       "type": "origins:execute_command",
-      "command": "origin gui @s luna:ronin_kits"
+      "command": "origin gui @s luna:kits"
     }
   },
   "food": {
@@ -563,7 +563,7 @@
       "actions": [
         {
           "type": "origins:execute_command",
-          "command": "origin set @s luna:ronin_kits origins:empty"
+          "command": "origin set @s luna:kits origins:empty"
         },
         {
           "type": "origins:execute_command",

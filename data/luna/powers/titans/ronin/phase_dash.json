@@ -41,7 +41,7 @@
               {
                 "type": "origins:add_velocity",
                 "z": 3,
-                "space": "local"
+                "space": "local_horizontal_normalized"
               },
               {
                 "type": "origins:delay",
@@ -55,7 +55,7 @@
               },
               {
                 "type": "origins:trigger_cooldown",
-                "power": "*:ronin/phase_dash_cooldown"
+                "power": "*:titans/ronin/phase_dash_cooldown"
               }
             ]
           },
@@ -90,7 +90,7 @@
                 "type": "origins:resource",
                 "compare_to": 0,
                 "comparison": "==",
-                "resource": "*:ronin/phase_dash_temporal_anomaly"
+                "resource": "*:titans/ronin/phase_dash_temporal_anomaly"
               }
             ]
           }
@@ -107,8 +107,8 @@
               },
               {
                 "type": "origins:add_velocity",
-                "z": 4,
-                "space": "local"
+                "z": 6,
+                "space": "local_horizontal_normalized"
               },
               {
                 "type": "origins:delay",
@@ -122,7 +122,7 @@
               },
               {
                 "type": "origins:trigger_cooldown",
-                "power": "*:ronin/phase_dash_cooldown"
+                "power": "*:titans/ronin/phase_dash_cooldown"
               }
             ]
           },
@@ -157,7 +157,7 @@
                 "type": "origins:resource",
                 "compare_to": 0,
                 "comparison": "==",
-                "resource": "*:ronin/phase_dash_temporal_anomaly"
+                "resource": "*:titans/ronin/phase_dash_temporal_anomaly"
               }
             ]
           }
@@ -174,8 +174,8 @@
               },
               {
                 "type": "origins:add_velocity",
-                "z": 4,
-                "space": "local"
+                "z": 6,
+                "space": "local_horizontal_normalized"
               },
               {
                 "type": "origins:delay",
@@ -238,7 +238,7 @@
               {
                 "type": "origins:add_velocity",
                 "z": 6,
-                "space": "local"
+                "space": "local_horizontal_normalized"
               },
               {
                 "type": "origins:delay",
@@ -301,7 +301,7 @@
               {
                 "type": "origins:add_velocity",
                 "z": 3,
-                "space": "local"
+                "space": "local_horizontal_normalized"
               },
               {
                 "type": "origins:delay",
@@ -315,7 +315,7 @@
               },
               {
                 "type": "origins:trigger_cooldown",
-                "power": "*:ronin/phase_dash_cooldown_temporal"
+                "power": "*:titans/ronin/phase_dash_cooldown_temporal"
               }
             ]
           },
@@ -350,7 +350,7 @@
                 "type": "origins:resource",
                 "compare_to": 1,
                 "comparison": "==",
-                "resource": "*:ronin/phase_dash_temporal_anomaly"
+                "resource": "*:titans/ronin/phase_dash_temporal_anomaly"
               }
             ]
           }
@@ -367,8 +367,8 @@
               },
               {
                 "type": "origins:add_velocity",
-                "z": 4,
-                "space": "local"
+                "z": 6,
+                "space": "local_horizontal_normalized"
               },
               {
                 "type": "origins:delay",
@@ -382,7 +382,7 @@
               },
               {
                 "type": "origins:trigger_cooldown",
-                "power": "*:ronin/phase_dash_cooldown_temporal"
+                "power": "*:titans/ronin/phase_dash_cooldown_temporal"
               }
             ]
           },
@@ -417,7 +417,7 @@
                 "type": "origins:resource",
                 "compare_to": 1,
                 "comparison": "==",
-                "resource": "*:ronin/phase_dash_temporal_anomaly"
+                "resource": "*:titans/ronin/phase_dash_temporal_anomaly"
               }
             ]
           }
@@ -506,7 +506,7 @@
       "type": "origins:resource",
       "compare_to": 0,
       "comparison": "==",
-      "resource": "*:ronin/phase_dash_temporal_anomaly"
+      "resource": "*:titans/ronin/phase_dash_temporal_anomaly"
     }
   },
   "charge_temporal": {
@@ -522,7 +522,7 @@
       "type": "origins:resource",
       "compare_to": 1,
       "comparison": "==",
-      "resource": "*:ronin/phase_dash_temporal_anomaly"
+      "resource": "*:titans/ronin/phase_dash_temporal_anomaly"
     }
   },
   "cooldown": {
@@ -537,7 +537,7 @@
       "type": "origins:resource",
       "compare_to": 0,
       "comparison": "==",
-      "resource": "*:ronin/phase_dash_temporal_anomaly"
+      "resource": "*:titans/ronin/phase_dash_temporal_anomaly"
     }
   },
   "cooldown_temporal": {
@@ -552,7 +552,7 @@
       "type": "origins:resource",
       "compare_to": 1,
       "comparison": "==",
-      "resource": "*:ronin/phase_dash_temporal_anomaly"
+      "resource": "*:titans/ronin/phase_dash_temporal_anomaly"
     }
   },
   "temporal_anomaly": {
