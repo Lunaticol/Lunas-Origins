@@ -658,20 +658,50 @@
   },
   "recharge": {
     "type": "origins:action_over_time",
-    "interval": 50,
+    "interval": 40,
     "entity_action": {
       "type": "origins:change_resource",
       "change": 1,
       "resource": "*:*_dashes"
     },
     "condition": {
-      "type": "origins:fall_flying",
-      "inverted": true
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:fall_flying",
+          "inverted": true
+        },
+        {
+          "type": "origins:on_fire",
+          "inverted": true
+        }
+      ]
+    }
+  },
+  "recharge_fire": {
+    "type": "origins:action_over_time",
+    "interval": 80,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 2,
+      "resource": "*:*_dashes"
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:fall_flying",
+          "inverted": true
+        },
+        {
+          "type": "origins:on_fire"
+        }
+      ]
     }
   },
   "recharge_elytra": {
     "type": "origins:action_over_time",
-    "interval": 60,
+    "interval": 100,
     "entity_action": {
       "type": "origins:change_resource",
       "change": 1,
