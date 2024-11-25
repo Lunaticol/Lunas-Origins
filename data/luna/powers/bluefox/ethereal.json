@@ -33,11 +33,13 @@
                     {
                       "effect": "minecraft:weakness",
                       "duration": 2400,
+                      "amplifier": 3,
                       "show_particles": false
                     },
                     {
                       "effect": "minecraft:slowness",
                       "duration": 2400,
+                      "amplifier": 3,
                       "show_particles": false
                     }
                   ]
@@ -64,6 +66,11 @@
             {
               "effect": "minecraft:speed",
               "amplifier": 1,
+              "duration": 2400,
+              "show_particles": false
+            },
+            {
+              "effect": "minecraft:saturation",
               "duration": 2400,
               "show_particles": false
             },
@@ -192,7 +199,7 @@
     "interval": 10,
     "entity_action": {
       "type": "origins:area_of_effect",
-      "radius": 12,
+      "radius": 24,
       "shape": "cube",
       "bientity_action": {
         "type": "origins:target_action",
@@ -218,11 +225,11 @@
       },
       "bientity_condition": {
         "type": "origins:target_condition",
-        "inverted": true,
         "condition": {
           "type": "origins:or",
           "conditions": [
             {
+              "inverted": true,
               "type": "origins:using_item",
               "item_condition": {
                 "type": "origins:ingredient",
@@ -232,8 +239,9 @@
               }
             },
             {
-              "type": "origins:entity_type",
-              "entity_type": "minecraft:vex"
+              "type": "origins:nbt",
+              "nbt": "{Tags:[\"Aonospirit\"]}",
+              "inverted": true
             }
           ]
         }
