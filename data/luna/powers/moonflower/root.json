@@ -207,5 +207,15 @@
       "resource": "*:*_resource"
     },
     "modifier": { "operation": "multiply_total", "value": -1 }
+  },
+  "defence": {
+    "type": "origins:modify_damage_taken",
+    "condition": {
+      "type": "origins:resource",
+      "comparison": "==",
+      "compare_to": 1,
+      "resource": "*:*_resource"
+    },
+    "modifier": { "operation": "multiply_total_multiplicative", "value": -0.3 }
   }
 }

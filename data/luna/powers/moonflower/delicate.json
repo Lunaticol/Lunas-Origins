@@ -125,8 +125,8 @@
   "fire": {
     "type": "origins:modify_damage_taken",
     "modifier": {
-      "value": 3,
-      "operation": "multiply_total"
+      "value": 1,
+      "operation": "addition"
     },
     "damage_condition": {
       "type": "origins:or",
@@ -172,5 +172,19 @@
       "type": "origins:submerged_in",
       "fluid": "minecraft:water"
     }
+  },
+  "regenerative": {
+    "type": "origins:modify_healing",
+    "modifier": { "operation": "multiply_total_multiplicative", "value": 0.25 }
+  },
+  "immunity": {
+    "type": "origins:effect_immunity",
+    "effects": [
+      "minecraft:blindness",
+      "minecraft:darkness",
+      "minecraft:slowness",
+      "minecraft:weakness",
+      "minecraft:jump_boost"
+    ]
   }
 }
