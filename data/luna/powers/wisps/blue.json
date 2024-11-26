@@ -1,5 +1,306 @@
 {
   "name": "Blue Wisp",
-  "description": "",
-  "type": "origins:multiple"
+  "description": "These guys love smashing their way through things. You can find them in cold places. These guys love the taste of various stones!",
+  "type": "origins:multiple",
+  "pound": {
+    "type": "origins:active_self",
+    "cooldown": 100,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/luna_resource_bar.png",
+      "bar_index": 14,
+      "order": 7
+    },
+    "key": "key.origins.secondary_active",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:add_velocity",
+          "y": 2,
+          "space": "local_horizontal_normalized"
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 1,
+          "resource": "*:*_in_air"
+        },
+        {
+          "type": "origins:change_resource",
+          "change": -100,
+          "resource": "*:wisps/bars_blue_wisp_bar"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 6,
+          "comparison": "==",
+          "resource": "*:wisps/wisp_switch_resource"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 100,
+          "comparison": ">=",
+          "resource": "*:wisps/bars_blue_wisp_bar"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:wisps/wisp_ult_active"
+        }
+      ]
+    }
+  },
+  "in_air": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
+  },
+  "landing": {
+    "type": "origins:action_on_land",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:area_of_effect",
+          "radius": 12,
+          "bientity_action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:target_action",
+                "action": {
+                  "type": "origins:damage",
+                  "amount": 20,
+                  "source": {
+                    "name": "squashed"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "particle lunasorigins:blue_flame ~ ~ ~ 6 0 10 0 500"
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 0,
+          "resource": "*:*_in_air",
+          "operation": "set"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_in_air"
+    }
+  },
+  "gain_biome": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 25,
+      "resource": "*:wisps/bars_blue_wisp_bar"
+    },
+    "condition": {
+      "type": "origins:biome",
+      "condition": {
+        "type": "origins:temperature",
+        "compare_to": 0.15,
+        "comparison": "<="
+      }
+    }
+  },
+  "gain_stones": {
+    "type": "origins:active_self",
+    "key": { "key": "key.use", "continuous": true },
+    "cooldown": 5,
+    "entity_action": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "change": 30,
+                "resource": "*:wisps/bars_blue_wisp_bar"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "clear @s minecraft:stone 1"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:equipped_item",
+            "equipment_slot": "mainhand",
+            "item_condition": {
+              "type": "origins:ingredient",
+              "ingredient": {
+                "item": "minecraft:stone"
+              }
+            }
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "change": 15,
+                "resource": "*:wisps/bars_blue_wisp_bar"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "clear @s minecraft:cobblestone 1"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:equipped_item",
+            "equipment_slot": "mainhand",
+            "item_condition": {
+              "type": "origins:ingredient",
+              "ingredient": {
+                "item": "minecraft:cobblestone"
+              }
+            }
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "change": 40,
+                "resource": "*:wisps/bars_blue_wisp_bar"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "clear @s minecraft:deepslate 1"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:equipped_item",
+            "equipment_slot": "mainhand",
+            "item_condition": {
+              "type": "origins:ingredient",
+              "ingredient": {
+                "item": "minecraft:deepslate"
+              }
+            }
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "change": 20,
+                "resource": "*:wisps/bars_blue_wisp_bar"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "clear @s minecraft:cobbled_deepslate 1"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:equipped_item",
+            "equipment_slot": "mainhand",
+            "item_condition": {
+              "type": "origins:ingredient",
+              "ingredient": {
+                "item": "minecraft:cobbled_deepslate"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1000,
+      "comparison": "!=",
+      "resource": "*:wisps/bars_blue_wisp_bar"
+    }
+  },
+  "falling": {
+    "type": "origins:invulnerability",
+    "damage_condition": {
+      "type": "origins:name",
+      "name": "fall"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_in_air"
+    }
+  },
+  "pound_ult": {
+    "type": "origins:active_self",
+    "cooldown": 50,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/luna_resource_bar.png",
+      "bar_index": 14,
+      "order": 7
+    },
+    "key": "key.origins.secondary_active",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:add_velocity",
+          "y": 2,
+          "space": "local_horizontal_normalized"
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 1,
+          "resource": "*:*_in_air"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 6,
+          "comparison": "==",
+          "resource": "*:wisps/wisp_switch_resource"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": ">=",
+          "resource": "*:wisps/bars_blue_wisp_bar"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": "==",
+          "resource": "*:wisps/wisp_ult_active"
+        }
+      ]
+    }
+  }
 }

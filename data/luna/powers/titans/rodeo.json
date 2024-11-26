@@ -36,35 +36,23 @@
           }
         },
         {
-          "type": "origins:change_resource",
-          "resource": "*:*_took_battery",
-          "change": 1
+          "type": "origins:dismount"
         },
         {
-          "type": "origins:passenger_action",
-          "action": {
-            "type": "origins:and",
-            "actions": [
-              {
-                "type": "origins:dismount"
-              },
-              {
-                "type": "origins:revoke_power",
-                "power": "luna:titans/rodeo",
-                "source": "luna:titans/ronin/ronin"
-              },
-              {
-                "type": "origins:revoke_power",
-                "power": "luna:titans/rodeo",
-                "source": "titans:titans/scorch/scorch"
-              },
-              {
-                "type": "origins:add_velocity",
-                "y": 0.5,
-                "space": "world"
-              }
-            ]
-          }
+          "type": "origins:revoke_power",
+          "power": "luna:titans/rodeo",
+          "source": "luna:titans/ronin/ronin"
+        },
+        {
+          "type": "origins:revoke_power",
+          "power": "luna:titans/rodeo",
+          "source": "titans:titans/scorch/scorch"
+        },
+        {
+          "type": "origins:add_velocity",
+          "y": 1,
+          "z": -1,
+          "space": "local_horizontal_normalized"
         }
       ]
     },

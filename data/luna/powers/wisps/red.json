@@ -1,5 +1,338 @@
 {
   "name": "Red Wisp",
-  "description": "",
-  "type": "origins:multiple"
+  "description": "Red Wisps are firey and explosive. They love to hang out in the nether & love sweet treats!",
+  "type": "origins:multiple",
+  "gain": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 20,
+      "resource": "*:wisps/bars_red_wisp_bar"
+    },
+    "condition": {
+      "type": "origins:dimension",
+      "dimension": "minecraft:the_nether"
+    }
+  },
+  "burst": {
+    "type": "origins:active_self",
+    "cooldown": 200,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/luna_resource_bar.png",
+      "bar_index": 14,
+      "order": 7
+    },
+    "key": "key.origins.secondary_active",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:area_of_effect",
+          "radius": 6,
+          "shape": "sphere",
+          "bientity_action": {
+            "type": "origins:target_action",
+            "action": {
+              "type": "origins:and",
+              "actions": [
+                {
+                  "type": "origins:damage",
+                  "amount": 10,
+                  "source": {
+                    "fire": true,
+                    "unblockable": true,
+                    "name": "explosion"
+                  }
+                },
+                {
+                  "type": "origins:set_on_fire",
+                  "duration": 7
+                },
+                {
+                  "type": "origins:grant_power",
+                  "power": "luna:wisps/flashbang",
+                  "source": "*:wisps/red"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "type": "origins:play_sound",
+          "category": "players",
+          "pitch": 0.5,
+          "sound": "minecraft:entity.generic.explode",
+          "volume": 1
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "particle lunasorigins:red_flame ~ ~1 ~ 0.5 0.5 0.8 0.5 250"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "particle minecraft:flash ~ ~1 ~ 0 0 0 1 10"
+        },
+        {
+          "type": "origins:change_resource",
+          "change": -50,
+          "resource": "*:wisps/bars_red_wisp_bar"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": "==",
+          "resource": "*:wisps/wisp_switch_resource"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 50,
+          "comparison": ">=",
+          "resource": "*:wisps/bars_red_wisp_bar"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:*_ult_active"
+        }
+      ]
+    }
+  },
+  "gain_sugars": {
+    "type": "origins:active_self",
+    "key": { "key": "key.use", "continuous": true },
+    "cooldown": 5,
+    "entity_action": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "change": 30,
+                "resource": "*:wisps/bars_red_wisp_bar"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "clear @s minecraft:honeycomb 1"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:equipped_item",
+            "equipment_slot": "mainhand",
+            "item_condition": {
+              "type": "origins:ingredient",
+              "ingredient": {
+                "item": "minecraft:honeycomb"
+              }
+            }
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "change": 60,
+                "resource": "*:wisps/bars_red_wisp_bar"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "clear @s minecraft:honey_block 1"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:equipped_item",
+            "equipment_slot": "mainhand",
+            "item_condition": {
+              "type": "origins:ingredient",
+              "ingredient": {
+                "item": "minecraft:honey_block"
+              }
+            }
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "change": 15,
+                "resource": "*:wisps/bars_red_wisp_bar"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "clear @s minecraft:honey_bottle 1"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "give @s minecraft:glass_bottle 1"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:equipped_item",
+            "equipment_slot": "mainhand",
+            "item_condition": {
+              "type": "origins:ingredient",
+              "ingredient": {
+                "item": "minecraft:honey_bottle"
+              }
+            }
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "change": 10,
+                "resource": "*:wisps/bars_red_wisp_bar"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "clear @s minecraft:sugar 1"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:equipped_item",
+            "equipment_slot": "mainhand",
+            "item_condition": {
+              "type": "origins:ingredient",
+              "ingredient": {
+                "item": "minecraft:sugar"
+              }
+            }
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "change": 150,
+                "resource": "*:wisps/bars_red_wisp_bar"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "clear @s minecraft:cake 1"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:equipped_item",
+            "equipment_slot": "mainhand",
+            "item_condition": {
+              "type": "origins:ingredient",
+              "ingredient": {
+                "item": "minecraft:cake"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1000,
+      "comparison": "!=",
+      "resource": "*:wisps/bars_red_wisp_bar"
+    }
+  },
+  "burst_ult": {
+    "type": "origins:active_self",
+    "cooldown": 100,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/luna_resource_bar.png",
+      "bar_index": 14,
+      "order": 7
+    },
+    "key": "key.origins.secondary_active",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:area_of_effect",
+          "radius": 12,
+          "shape": "sphere",
+          "bientity_action": {
+            "type": "origins:target_action",
+            "action": {
+              "type": "origins:and",
+              "actions": [
+                {
+                  "type": "origins:damage",
+                  "amount": 20,
+                  "source": {
+                    "fire": true,
+                    "unblockable": true,
+                    "name": "explosion"
+                  }
+                },
+                {
+                  "type": "origins:set_on_fire",
+                  "duration": 14
+                }
+              ]
+            }
+          }
+        },
+        {
+          "type": "origins:play_sound",
+          "category": "players",
+          "pitch": 0.5,
+          "sound": "minecraft:entity.generic.explode",
+          "volume": 1
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "particle lunasorigins:red_flame ~ ~1 ~ 0.5 0.5 0.8 0.5 250"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "particle minecraft:flash ~ ~1 ~ 0 0 0 1 10"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": "==",
+          "resource": "*:wisps/wisp_switch_resource"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": "==",
+          "resource": "*:wisps/wisp_ult_active"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": ">=",
+          "resource": "*:wisps/bars_red_wisp_bar"
+        }
+      ]
+    }
+  }
 }

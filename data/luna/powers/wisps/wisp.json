@@ -2,9 +2,1214 @@
   "name": "Will'o'Wisp",
   "description": "Use the wisps to your advantage.",
   "type": "origins:multiple",
-  "wisp_bar": {
+  "switch": {
+    "type": "origins:active_self",
+    "key": "key.origins.primary_active",
+    "cooldown": 150,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/luna_resource_bar.png",
+      "bar_index": 14,
+      "order": 7
+    },
+    "entity_action": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "function luna:wisps/red"
+              },
+              {
+                "type": "origins:play_sound",
+                "sound": "minecraft:block.bell.resonate",
+                "category": "players",
+                "pitch": 2
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 7,
+            "comparison": "==",
+            "resource": "*:*_switch_resource"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "function luna:wisps/orange"
+              },
+              {
+                "type": "origins:play_sound",
+                "sound": "minecraft:block.bell.resonate",
+                "category": "players",
+                "pitch": 2
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 1,
+            "comparison": "==",
+            "resource": "*:*_switch_resource"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "function luna:wisps/yellow"
+              },
+              {
+                "type": "origins:play_sound",
+                "sound": "minecraft:block.bell.resonate",
+                "category": "players",
+                "pitch": 2
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 2,
+            "comparison": "==",
+            "resource": "*:*_switch_resource"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "function luna:wisps/green"
+              },
+              {
+                "type": "origins:play_sound",
+                "sound": "minecraft:block.bell.resonate",
+                "category": "players",
+                "pitch": 2
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 3,
+            "comparison": "==",
+            "resource": "*:*_switch_resource"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "function luna:wisps/cyan"
+              },
+              {
+                "type": "origins:play_sound",
+                "sound": "minecraft:block.bell.resonate",
+                "category": "players",
+                "pitch": 2
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 4,
+            "comparison": "==",
+            "resource": "*:*_switch_resource"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "function luna:wisps/blue"
+              },
+              {
+                "type": "origins:play_sound",
+                "sound": "minecraft:block.bell.resonate",
+                "category": "players",
+                "pitch": 2
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 5,
+            "comparison": "==",
+            "resource": "*:*_switch_resource"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "function luna:wisps/purple"
+              },
+              {
+                "type": "origins:play_sound",
+                "sound": "minecraft:block.bell.resonate",
+                "category": "players",
+                "pitch": 2
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 6,
+            "comparison": "==",
+            "resource": "*:*_switch_resource"
+          }
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 0,
+      "comparison": "==",
+      "resource": "*:*_ult_active"
+    }
+  },
+  "switch_resource": {
     "type": "origins:resource",
-    "max": 10000,
+    "max": 7,
+    "min": 1
+  },
+  "particles": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "action": {
+            "type": "origins:execute_command",
+            "command": "particle lunasorigins:red_flame ~ ~1 ~ 0.5 0.8 0.5 0 5"
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 1,
+            "comparison": "==",
+            "resource": "*:*_switch_resource"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:execute_command",
+            "command": "particle minecraft:flame ~ ~1 ~ 0.5 0.8 0.5 0 5"
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 2,
+            "comparison": "==",
+            "resource": "*:*_switch_resource"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:execute_command",
+            "command": "particle lunasorigins:yellow_flame ~ ~1 ~ 0.5 0.8 0.5 0 5"
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 3,
+            "comparison": "==",
+            "resource": "*:*_switch_resource"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:execute_command",
+            "command": "particle lunasorigins:green_flame ~ ~1 ~ 0.5 0.8 0.5 0 5"
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 4,
+            "comparison": "==",
+            "resource": "*:*_switch_resource"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:execute_command",
+            "command": "particle minecraft:soul_fire_flame ~ ~1 ~ 0.5 0.8 0.5 0 5"
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 5,
+            "comparison": "==",
+            "resource": "*:*_switch_resource"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:execute_command",
+            "command": "particle lunasorigins:blue_flame ~ ~1 ~ 0.5 0.8 0.5 0 5"
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 6,
+            "comparison": "==",
+            "resource": "*:*_switch_resource"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:execute_command",
+            "command": "particle lunasorigins:purple_flame ~ ~1 ~ 0.5 0.8 0.5 0 5"
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 7,
+            "comparison": "==",
+            "resource": "*:*_switch_resource"
+          }
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:sneaking",
+          "inverted": true
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:*_ult_active"
+        }
+      ]
+    }
+  },
+  "ult": {
+    "type": "origins:active_self",
+    "key": "key.loadToolbarActivator",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "change": 1,
+          "resource": "*:*_ult_active"
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 1,
+          "resource": "*:*_invuln_bar"
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 20,
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "change": 1,
+                "resource": "*:*_red"
+              },
+              {
+                "type": "origins:play_sound",
+                "sound": "minecraft:entity.player.levelup",
+                "pitch": 2,
+                "category": "players"
+              }
+            ]
+          }
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 40,
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "change": 1,
+                "resource": "*:*_orange"
+              },
+              {
+                "type": "origins:play_sound",
+                "sound": "minecraft:entity.player.levelup",
+                "pitch": 2,
+                "category": "players"
+              }
+            ]
+          }
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 60,
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "change": 1,
+                "resource": "*:*_yellow"
+              },
+              {
+                "type": "origins:play_sound",
+                "sound": "minecraft:entity.player.levelup",
+                "pitch": 2,
+                "category": "players"
+              }
+            ]
+          }
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 80,
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "change": 1,
+                "resource": "*:*_green"
+              },
+              {
+                "type": "origins:play_sound",
+                "sound": "minecraft:entity.player.levelup",
+                "pitch": 2,
+                "category": "players"
+              }
+            ]
+          }
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 100,
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "change": 1,
+                "resource": "*:*_cyan"
+              },
+              {
+                "type": "origins:play_sound",
+                "sound": "minecraft:entity.player.levelup",
+                "pitch": 2,
+                "category": "players"
+              }
+            ]
+          }
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 120,
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "change": 1,
+                "resource": "*:*_blue"
+              },
+              {
+                "type": "origins:play_sound",
+                "sound": "minecraft:entity.player.levelup",
+                "pitch": 2,
+                "category": "players"
+              }
+            ]
+          }
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 140,
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "change": 1,
+                "resource": "*:*_purple"
+              },
+              {
+                "type": "origins:play_sound",
+                "sound": "minecraft:entity.player.levelup",
+                "pitch": 2,
+                "category": "players"
+              },
+              {
+                "type": "origins:change_resource",
+                "change": 0,
+                "resource": "*:*_invuln_bar",
+                "operation": "set"
+              },
+              {
+                "type": "origins:change_resource",
+                "change": 1,
+                "resource": "*:*_can_drain"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 1000,
+          "comparison": "==",
+          "resource": "*:wisps/bars_red_wisp_bar"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 1000,
+          "comparison": "==",
+          "resource": "*:wisps/bars_orange_wisp_bar"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 1000,
+          "comparison": "==",
+          "resource": "*:wisps/bars_yellow_wisp_bar"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 1000,
+          "comparison": "==",
+          "resource": "*:wisps/bars_green_wisp_bar"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 1000,
+          "comparison": "==",
+          "resource": "*:wisps/bars_cyan_wisp_bar"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 1000,
+          "comparison": "==",
+          "resource": "*:wisps/bars_blue_wisp_bar"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 1000,
+          "comparison": "==",
+          "resource": "*:wisps/bars_purple_wisp_bar"
+        }
+      ]
+    }
+  },
+  "ult_active": {
+    "type": "origins:resource",
+    "max": 1,
     "min": 0
+  },
+  "red": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
+  },
+  "orange": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
+  },
+  "yellow": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
+  },
+  "green": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
+  },
+  "cyan": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
+  },
+  "blue": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
+  },
+  "purple": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
+  },
+  "ult_particles_red": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "particle lunasorigins:red_flame ~ ~1 ~ 0.5 0.5 0.8 0.3 2"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_red"
+    }
+  },
+  "ult_particles_orange": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "particle minecraft:flame ~ ~1 ~ 0.5 0.5 0.8 0.3 2"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_orange"
+    }
+  },
+  "ult_particles_yellow": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "particle lunasorigins:yellow_flame ~ ~1 ~ 0.5 0.5 0.8 0.3 2"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_yellow"
+    }
+  },
+  "ult_particles_green": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "particle lunasorigins:green_flame ~ ~1 ~ 0.5 0.5 0.8 0.3 2"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_green"
+    }
+  },
+  "ult_particles_cyan": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "particle minecraft:soul_fire_flame ~ ~1 ~ 0.5 0.5 0.8 0.3 2"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_cyan"
+    }
+  },
+  "ult_particles_blue": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "particle lunasorigins:blue_flame ~ ~1 ~ 0.5 0.5 0.8 0.3 2"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_blue"
+    }
+  },
+  "ult_particles_purple": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "particle lunasorigins:purple_flame ~ ~1 ~ 0.5 0.5 0.8 0.3 2"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_purple"
+    }
+  },
+  "invuln": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "value": -1,
+      "operation": "multiply_total"
+    }
+  },
+  "invuln_bar": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
+  },
+  "no_move": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.movement_speed",
+      "value": -5,
+      "operation": "multiply_total"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_invuln_bar"
+    }
+  },
+  "no_jump": {
+    "type": "origins:modify_jump",
+    "modifier": {
+      "value": -5,
+      "operation": "multiply_total"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_invuln_bar"
+    }
+  },
+  "drain": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "action": {
+            "type": "origins:change_resource",
+            "change": -10,
+            "operation": "add",
+            "resource": "*:wisps/bars_red_wisp_bar"
+          },
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:resource",
+                "compare_to": 0,
+                "comparison": "==",
+                "resource": "*:wisps/bars_orange_wisp_bar"
+              },
+              {
+                "type": "origins:resource",
+                "compare_to": 0,
+                "comparison": "==",
+                "resource": "*:wisps/bars_yellow_wisp_bar"
+              },
+              {
+                "type": "origins:resource",
+                "compare_to": 0,
+                "comparison": "==",
+                "resource": "*:wisps/bars_green_wisp_bar"
+              },
+              {
+                "type": "origins:resource",
+                "compare_to": 0,
+                "comparison": "==",
+                "resource": "*:wisps/bars_cyan_wisp_bar"
+              },
+              {
+                "type": "origins:resource",
+                "compare_to": 0,
+                "comparison": "==",
+                "resource": "*:wisps/bars_blue_wisp_bar"
+              },
+              {
+                "type": "origins:resource",
+                "compare_to": 0,
+                "comparison": "==",
+                "resource": "*:wisps/bars_purple_wisp_bar"
+              }
+            ]
+          }
+        },
+        {
+          "action": {
+            "type": "origins:change_resource",
+            "change": -10,
+            "operation": "add",
+            "resource": "*:wisps/bars_orange_wisp_bar"
+          },
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:resource",
+                "compare_to": 0,
+                "comparison": "==",
+                "resource": "*:wisps/bars_yellow_wisp_bar"
+              },
+              {
+                "type": "origins:resource",
+                "compare_to": 0,
+                "comparison": "==",
+                "resource": "*:wisps/bars_green_wisp_bar"
+              },
+              {
+                "type": "origins:resource",
+                "compare_to": 0,
+                "comparison": "==",
+                "resource": "*:wisps/bars_cyan_wisp_bar"
+              },
+              {
+                "type": "origins:resource",
+                "compare_to": 0,
+                "comparison": "==",
+                "resource": "*:wisps/bars_blue_wisp_bar"
+              },
+              {
+                "type": "origins:resource",
+                "compare_to": 0,
+                "comparison": "==",
+                "resource": "*:wisps/bars_purple_wisp_bar"
+              }
+            ]
+          }
+        },
+        {
+          "action": {
+            "type": "origins:change_resource",
+            "change": -10,
+            "operation": "add",
+            "resource": "*:wisps/bars_yellow_wisp_bar"
+          },
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:resource",
+                "compare_to": 0,
+                "comparison": "==",
+                "resource": "*:wisps/bars_green_wisp_bar"
+              },
+              {
+                "type": "origins:resource",
+                "compare_to": 0,
+                "comparison": "==",
+                "resource": "*:wisps/bars_cyan_wisp_bar"
+              },
+              {
+                "type": "origins:resource",
+                "compare_to": 0,
+                "comparison": "==",
+                "resource": "*:wisps/bars_blue_wisp_bar"
+              },
+              {
+                "type": "origins:resource",
+                "compare_to": 0,
+                "comparison": "==",
+                "resource": "*:wisps/bars_purple_wisp_bar"
+              }
+            ]
+          }
+        },
+        {
+          "action": {
+            "type": "origins:change_resource",
+            "change": -10,
+            "operation": "add",
+            "resource": "*:wisps/bars_green_wisp_bar"
+          },
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:resource",
+                "compare_to": 0,
+                "comparison": "==",
+                "resource": "*:wisps/bars_cyan_wisp_bar"
+              },
+              {
+                "type": "origins:resource",
+                "compare_to": 0,
+                "comparison": "==",
+                "resource": "*:wisps/bars_blue_wisp_bar"
+              },
+              {
+                "type": "origins:resource",
+                "compare_to": 0,
+                "comparison": "==",
+                "resource": "*:wisps/bars_purple_wisp_bar"
+              }
+            ]
+          }
+        },
+        {
+          "action": {
+            "type": "origins:change_resource",
+            "change": -10,
+            "operation": "add",
+            "resource": "*:wisps/bars_cyan_wisp_bar"
+          },
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:resource",
+                "compare_to": 0,
+                "comparison": "==",
+                "resource": "*:wisps/bars_blue_wisp_bar"
+              },
+              {
+                "type": "origins:resource",
+                "compare_to": 0,
+                "comparison": "==",
+                "resource": "*:wisps/bars_purple_wisp_bar"
+              }
+            ]
+          }
+        },
+        {
+          "action": {
+            "type": "origins:change_resource",
+            "change": -10,
+            "operation": "add",
+            "resource": "*:wisps/bars_blue_wisp_bar"
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 0,
+            "comparison": "==",
+            "resource": "*:wisps/bars_purple_wisp_bar"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:change_resource",
+            "change": -10,
+            "operation": "add",
+            "resource": "*:wisps/bars_purple_wisp_bar"
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 1,
+            "comparison": "==",
+            "resource": "*:*_can_drain"
+          }
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_ult_active"
+    }
+  },
+  "can_drain": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
+  },
+  "switch_ult": {
+    "type": "origins:active_self",
+    "key": "key.origins.primary_active",
+    "entity_action": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "function luna:wisps/red"
+              },
+              {
+                "type": "origins:play_sound",
+                "sound": "minecraft:block.bell.resonate",
+                "category": "players",
+                "pitch": 2
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 7,
+            "comparison": "==",
+            "resource": "*:*_switch_resource"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "function luna:wisps/orange"
+              },
+              {
+                "type": "origins:play_sound",
+                "sound": "minecraft:block.bell.resonate",
+                "category": "players",
+                "pitch": 2
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 1,
+            "comparison": "==",
+            "resource": "*:*_switch_resource"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "function luna:wisps/yellow"
+              },
+              {
+                "type": "origins:play_sound",
+                "sound": "minecraft:block.bell.resonate",
+                "category": "players",
+                "pitch": 2
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 2,
+            "comparison": "==",
+            "resource": "*:*_switch_resource"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "function luna:wisps/green"
+              },
+              {
+                "type": "origins:play_sound",
+                "sound": "minecraft:block.bell.resonate",
+                "category": "players",
+                "pitch": 2
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 3,
+            "comparison": "==",
+            "resource": "*:*_switch_resource"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "function luna:wisps/cyan"
+              },
+              {
+                "type": "origins:play_sound",
+                "sound": "minecraft:block.bell.resonate",
+                "category": "players",
+                "pitch": 2
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 4,
+            "comparison": "==",
+            "resource": "*:*_switch_resource"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "function luna:wisps/blue"
+              },
+              {
+                "type": "origins:play_sound",
+                "sound": "minecraft:block.bell.resonate",
+                "category": "players",
+                "pitch": 2
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 5,
+            "comparison": "==",
+            "resource": "*:*_switch_resource"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "function luna:wisps/purple"
+              },
+              {
+                "type": "origins:play_sound",
+                "sound": "minecraft:block.bell.resonate",
+                "category": "players",
+                "pitch": 2
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 6,
+            "comparison": "==",
+            "resource": "*:*_switch_resource"
+          }
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_ult_active"
+    }
+  },
+  "end": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "change": 0,
+          "operation": "set",
+          "resource": "*:*_red"
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 0,
+          "operation": "set",
+          "resource": "*:*_orange"
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 0,
+          "operation": "set",
+          "resource": "*:*_yellow"
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 0,
+          "operation": "set",
+          "resource": "*:*_green"
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 0,
+          "operation": "set",
+          "resource": "*:*_cyan"
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 0,
+          "operation": "set",
+          "resource": "*:*_blue"
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 0,
+          "operation": "set",
+          "resource": "*:*_purple"
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 0,
+          "operation": "set",
+          "resource": "*:*_ult_active"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": "==",
+          "resource": "*:*_ult_active"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:wisps/bars_red_wisp_bar"
+        }
+      ]
+    }
+  },
+  "night_time_debuffs": {
+    "type": "origins:action_over_time",
+    "interval": 10,
+    "entity_action": {
+      "type": "origins:apply_effect",
+      "effects": [
+        {
+          "duration": 40,
+          "amplifier": 2,
+          "effect": "minecraft:weakness",
+          "show_icon": true,
+          "show_particles": false
+        },
+        {
+          "duration": 40,
+          "amplifier": 1,
+          "effect": "minecraft:mining_fatigue",
+          "show_icon": true,
+          "show_particles": false
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:daytime",
+          "inverted": true
+        },
+        {
+          "type": "origins:dimension",
+          "dimension": "minecraft:the_nether",
+          "inverted": true
+        }
+      ]
+    }
   }
 }

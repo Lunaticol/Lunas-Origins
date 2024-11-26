@@ -1,5 +1,282 @@
 {
   "name": "Yellow Wisp",
-  "description": "",
-  "type": "origins:multiple"
+  "description": "You can commonly find the Yellow Wisp underground mining away. They love glowstone dust!",
+  "type": "origins:multiple",
+  "phase": {
+    "type": "origins:phasing",
+    "render_type": "remove_blocks",
+    "view_distance": 1,
+    "blacklist": true,
+    "block_condition": {
+      "type": "origins:in_tag",
+      "tag": "origins:unphasable"
+    },
+    "phase_down_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:sneaking"
+        },
+        {
+          "type": "origins:on_block"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": ">=",
+          "resource": "*:wisps/bars_yellow_wisp_bar"
+        },
+        {
+          "type": "origins:power_active",
+          "power": "*:*_phase_toggle"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:wisps/wisp_ult_active"
+        }
+      ]
+    }
+  },
+  "phase_toggle": {
+    "type": "origins:toggle",
+    "active_by_default": false,
+    "retain_state": false,
+    "key": {
+      "key": "key.origins.secondary_active"
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": ">=",
+          "resource": "*:wisps/bars_yellow_wisp_bar"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 3,
+          "comparison": "==",
+          "resource": "*:wisps/wisp_switch_resource"
+        }
+      ]
+    }
+  },
+  "drain": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "change": -10,
+          "resource": "*:wisps/bars_yellow_wisp_bar"
+        },
+        {
+          "type": "origins:apply_effect",
+          "effect": { "effect": "minecraft:blindness", "duration": 40 }
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "particle lunasorigins:yellow_flame ~ ~1 ~ 0.5 0.5 0.8 0.3 2"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": ">=",
+          "resource": "*:wisps/bars_yellow_wisp_bar"
+        },
+        {
+          "type": "origins:power_active",
+          "power": "*:*_phase_toggle"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:wisps/wisp_ult_active"
+        }
+      ]
+    }
+  },
+  "gain": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 15,
+      "resource": "*:wisps/bars_yellow_wisp_bar"
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:power_active",
+          "power": "*:*_phase_toggle",
+          "inverted": true
+        },
+        {
+          "type": "origins:in_block",
+          "block_condition": {
+            "type": "origins:height",
+            "compare_to": 62,
+            "comparison": "<="
+          }
+        },
+        {
+          "type": "origins:dimension",
+          "dimension": "minecraft:the_nether",
+          "inverted": true
+        }
+      ]
+    }
+  },
+  "gain_item": {
+    "type": "origins:active_self",
+    "cooldown": 5,
+    "key": { "key": "key.use", "continuous": true },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "change": 30,
+          "resource": "*:wisps/bars_yellow_wisp_bar"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "clear @s minecraft:glowstone_dust 2"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:or",
+          "conditions": [
+            {
+              "type": "origins:equipped_item",
+              "equipment_slot": "mainhand",
+              "item_condition": {
+                "type": "origins:ingredient",
+                "ingredient": {
+                  "item": "minecraft:glowstone_dust"
+                }
+              }
+            },
+            {
+              "type": "origins:equipped_item",
+              "equipment_slot": "offhand",
+              "item_condition": {
+                "type": "origins:ingredient",
+                "ingredient": {
+                  "item": "minecraft:glowstone_dust"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 1000,
+          "comparison": "!=",
+          "resource": "*:wisps/bars_yellow_wisp_bar"
+        }
+      ]
+    }
+  },
+  "phase_ult": {
+    "type": "origins:phasing",
+    "render_type": "remove_blocks",
+    "view_distance": 1,
+    "blacklist": true,
+    "block_condition": {
+      "type": "origins:in_tag",
+      "tag": "origins:unphasable"
+    },
+    "phase_down_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:sneaking"
+        },
+        {
+          "type": "origins:on_block"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": ">=",
+          "resource": "*:wisps/bars_yellow_wisp_bar"
+        },
+        {
+          "type": "origins:power_active",
+          "power": "*:*_phase_toggle"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": "==",
+          "resource": "*:wisps/wisp_ult_active"
+        }
+      ]
+    }
+  },
+  "blind_ult": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:apply_effect",
+          "effect": { "effect": "minecraft:blindness", "duration": 40 }
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "particle lunasorigins:yellow_flame ~ ~1 ~ 0.5 0.5 0.8 0.3 2"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": ">=",
+          "resource": "*:wisps/bars_yellow_wisp_bar"
+        },
+        {
+          "type": "origins:power_active",
+          "power": "*:*_phase_toggle"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": "==",
+          "resource": "*:wisps/wisp_ult_active"
+        }
+      ]
+    }
+  }
 }

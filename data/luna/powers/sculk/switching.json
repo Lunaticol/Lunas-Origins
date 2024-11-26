@@ -123,12 +123,8 @@
           "resource": "*:*_switch_resource"
         },
         {
-          "type": "origins:add_xp",
-          "levels": -5
-        },
-        {
           "type": "origins:execute_command",
-          "command": "/title @p actionbar {\"text\":\"Sculk Veil Form\",\"color\":\"dark_blue\",\"bold\":true}"
+          "command": "title @p actionbar {\"text\":\"Sculk Veil Form\",\"color\":\"dark_blue\",\"bold\":true}"
         }
       ]
     }

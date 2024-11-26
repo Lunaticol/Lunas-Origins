@@ -44,7 +44,7 @@
         },
         {
           "type": "origins:power_active",
-          "power": "*:*_phase_toggle"
+          "power": "*:*_phase,_toggle"
         }
       ]
     }
@@ -189,10 +189,10 @@
   },
   "drain": {
     "type": "origins:action_over_time",
-    "interval": 2,
+    "interval": 5,
     "entity_action": {
       "type": "origins:change_resource",
-      "change": -2,
+      "change": -5,
       "resource": "*:*_phase_bar"
     },
     "condition": {

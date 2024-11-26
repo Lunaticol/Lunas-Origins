@@ -27,7 +27,7 @@
         {
           "type": "origins:add_velocity",
           "y": 3,
-          "space": "world"
+          "space": "local_horizontal_normalized"
         },
         {
           "type": "origins:change_resource",
@@ -41,7 +41,7 @@
           "action": {
             "type": "origins:add_velocity",
             "y": -3,
-            "space": "world"
+            "space": "local_horizontal_normalized"
           }
         },
         {
@@ -88,18 +88,6 @@
                     }
                   ]
                 }
-              },
-              {
-                "type": "origins:actor_action",
-                "action": {
-                  "type": "origins:and",
-                  "actions": [
-                    {
-                      "type": "origins:execute_command",
-                      "command": "function luna:sculk/smash"
-                    }
-                  ]
-                }
               }
             ]
           },
@@ -111,6 +99,10 @@
           "change": 0,
           "operation": "set",
           "resource": "*:*_smash"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "function luna:sculk/smash"
         }
       ]
     },

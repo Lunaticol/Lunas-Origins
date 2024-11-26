@@ -18,6 +18,12 @@
         "operation": "add",
         "resource": "*:*_anger"
       }
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 0,
+      "comparison": "==",
+      "resource": "*:sculk/switching_switch_resource"
     }
   },
   "veil_1": {
@@ -27,10 +33,21 @@
       "operation": "multiply_total"
     },
     "condition": {
-      "type": "origins:resource",
-      "compare_to": 1,
-      "comparison": "==",
-      "resource": "*:*_anger"
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": "==",
+          "resource": "*:*_anger"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:sculk/switching_switch_resource"
+        }
+      ]
     }
   },
   "veil_2": {
@@ -40,10 +57,21 @@
       "operation": "multiply_total"
     },
     "condition": {
-      "type": "origins:resource",
-      "compare_to": 2,
-      "comparison": "==",
-      "resource": "*:*_anger"
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 2,
+          "comparison": "==",
+          "resource": "*:*_anger"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:sculk/switching_switch_resource"
+        }
+      ]
     }
   },
   "veil_3": {
@@ -53,10 +81,21 @@
       "operation": "multiply_total"
     },
     "condition": {
-      "type": "origins:resource",
-      "compare_to": 3,
-      "comparison": "==",
-      "resource": "*:*_anger"
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 3,
+          "comparison": "==",
+          "resource": "*:*_anger"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:sculk/switching_switch_resource"
+        }
+      ]
     }
   },
   "veil_4": {
@@ -66,10 +105,21 @@
       "operation": "multiply_total"
     },
     "condition": {
-      "type": "origins:resource",
-      "compare_to": 4,
-      "comparison": "==",
-      "resource": "*:*_anger"
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 4,
+          "comparison": "==",
+          "resource": "*:*_anger"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:sculk/switching_switch_resource"
+        }
+      ]
     }
   },
   "veil_5": {
@@ -79,10 +129,21 @@
       "operation": "multiply_total"
     },
     "condition": {
-      "type": "origins:resource",
-      "compare_to": 5,
-      "comparison": "==",
-      "resource": "*:*_anger"
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 5,
+          "comparison": "==",
+          "resource": "*:*_anger"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:sculk/switching_switch_resource"
+        }
+      ]
     }
   },
   "veil_6": {
@@ -92,10 +153,21 @@
       "operation": "multiply_total"
     },
     "condition": {
-      "type": "origins:resource",
-      "compare_to": 6,
-      "comparison": "==",
-      "resource": "*:*_anger"
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 6,
+          "comparison": "==",
+          "resource": "*:*_anger"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:sculk/switching_switch_resource"
+        }
+      ]
     }
   },
   "veil_7": {
@@ -105,10 +177,21 @@
       "operation": "multiply_total"
     },
     "condition": {
-      "type": "origins:resource",
-      "compare_to": 7,
-      "comparison": "==",
-      "resource": "*:*_anger"
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 7,
+          "comparison": "==",
+          "resource": "*:*_anger"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:sculk/switching_switch_resource"
+        }
+      ]
     }
   },
   "veil_8": {
@@ -118,26 +201,37 @@
       "operation": "multiply_total"
     },
     "condition": {
-      "type": "origins:resource",
-      "compare_to": 8,
-      "comparison": "==",
-      "resource": "*:*_anger"
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 8,
+          "comparison": "==",
+          "resource": "*:*_anger"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:sculk/switching_switch_resource"
+        }
+      ]
     }
   },
   "anger_reset": {
     "type": "origins:action_over_time",
-    "interval": 400,
+    "interval": 200,
     "entity_action": {
       "type": "origins:change_resource",
       "change": -1,
       "operation": "add",
       "resource": "*:*_anger"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 0,
+      "comparison": "==",
+      "resource": "*:sculk/switching_switch_resource"
     }
-  },
-  "condition": {
-    "type": "origins:resource",
-    "compare_to": 0,
-    "comparison": "==",
-    "resource": "*:sculk/switching_switch_resource"
   }
 }

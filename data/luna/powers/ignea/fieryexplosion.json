@@ -48,8 +48,7 @@
                   "bypasses_armor": true,
                   "unblockable": true,
                   "out_of_world": true
-                },
-                "damage_type": "explosion"
+                }
               }
             ]
           }

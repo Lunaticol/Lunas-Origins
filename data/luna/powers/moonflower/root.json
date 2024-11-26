@@ -74,8 +74,6 @@
               },
               {
                 "type": "origins:add_velocity",
-                "client": true,
-                "server": true,
                 "z": -1,
                 "set": true
               }

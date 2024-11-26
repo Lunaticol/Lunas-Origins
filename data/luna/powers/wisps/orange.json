@@ -1,5 +1,479 @@
 {
   "name": "Orange Wisp",
-  "description": "",
-  "type": "origins:multiple"
+  "description": "These guys love blasting off! They love Blaze Rods, Fire Charges, Magma Cream/Blocks. You can find them hanging around in hot biomes.",
+  "type": "origins:multiple",
+  "gain": {
+    "type": "origins:active_self",
+    "key": { "key": "key.use", "continuous": true },
+    "cooldown": 5,
+    "entity_action": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "change": 50,
+                "resource": "*:wisps/bars_orange_wisp_bar"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "clear @s minecraft:blaze_rod 1"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:equipped_item",
+            "equipment_slot": "mainhand",
+            "item_condition": {
+              "type": "origins:ingredient",
+              "ingredient": {
+                "item": "minecraft:blaze_rod"
+              }
+            }
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "change": 20,
+                "resource": "*:wisps/bars_orange_wisp_bar"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "clear @s minecraft:magma_block 1"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:equipped_item",
+            "equipment_slot": "mainhand",
+            "item_condition": {
+              "type": "origins:ingredient",
+              "ingredient": {
+                "item": "minecraft:magma_block"
+              }
+            }
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "change": 5,
+                "resource": "*:wisps/bars_orange_wisp_bar"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "clear @s minecraft:magma_cream 1"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:equipped_item",
+            "equipment_slot": "mainhand",
+            "item_condition": {
+              "type": "origins:ingredient",
+              "ingredient": {
+                "item": "minecraft:magma_cream"
+              }
+            }
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "change": 35,
+                "resource": "*:wisps/bars_orange_wisp_bar"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "clear @s minecraft:fire_charge 1"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:equipped_item",
+            "equipment_slot": "mainhand",
+            "item_condition": {
+              "type": "origins:ingredient",
+              "ingredient": {
+                "item": "minecraft:fire_charge"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1000,
+      "comparison": "!=",
+      "resource": "*:wisps/bars_orange_wisp_bar"
+    }
+  },
+  "active_rocket": {
+    "type": "origins:active_self",
+    "cooldown": 250,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/luna_resource_bar.png",
+      "bar_index": 14,
+      "order": 7
+    },
+    "key": "key.origins.secondary_active",
+    "entity_action": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "change": -250,
+                "resource": "*:wisps/bars_orange_wisp_bar"
+              },
+              {
+                "type": "origins:change_resource",
+                "change": 1,
+                "operation": "set",
+                "resource": "*:*_active"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:equipped_item",
+                "inverted": true,
+                "equipment_slot": "chest",
+                "item_condition": {
+                  "type": "origins:ingredient",
+                  "ingredient": {
+                    "item": "minecraft:elytra"
+                  }
+                }
+              },
+              {
+                "type": "origins:resource",
+                "compare_to": 250,
+                "comparison": ">=",
+                "resource": "*:wisps/bars_orange_wisp_bar"
+              }
+            ]
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "change": -500,
+                "resource": "*:wisps/bars_orange_wisp_bar"
+              },
+              {
+                "type": "origins:change_resource",
+                "change": 1,
+                "operation": "set",
+                "resource": "*:*_active"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:equipped_item",
+                "equipment_slot": "chest",
+                "item_condition": {
+                  "type": "origins:ingredient",
+                  "ingredient": {
+                    "item": "minecraft:elytra"
+                  }
+                }
+              },
+              {
+                "type": "origins:resource",
+                "compare_to": 500,
+                "comparison": ">=",
+                "resource": "*:wisps/bars_orange_wisp_bar"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 2,
+          "comparison": "==",
+          "resource": "*:wisps/wisp_switch_resource"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:wisps/wisp_ult_active"
+        }
+      ]
+    }
+  },
+  "rocket": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "particle minecraft:campfire_cosy_smoke ~ ~ ~ 0 0 0 0.5 10"
+        },
+        {
+          "type": "origins:area_of_effect",
+          "radius": 2,
+          "bientity_action": {
+            "type": "origins:target_action",
+            "action": {
+              "type": "origins:damage",
+              "amount": 5,
+              "source": {
+                "fire": true,
+                "unblockable": true,
+                "bypasses_armor": true,
+                "name": "explosion"
+              }
+            }
+          }
+        },
+        {
+          "type": "origins:play_sound",
+          "category": "players",
+          "pitch": 0.5,
+          "sound": "minecraft:entity.generic.explode",
+          "volume": 1
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "particle minecraft:flame ~ ~ ~ 0 0 0 0.5 10"
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 100,
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "change": 0,
+                "operation": "set",
+                "resource": "*:*_active"
+              },
+              {
+                "type": "origins:apply_effect",
+                "effect": {
+                  "effect": "minecraft:slow_falling",
+                  "duration": 100
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "origins:add_velocity",
+          "y": 0.5,
+          "space": "local_horizontal_normalized"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": "==",
+          "resource": "*:*_active"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:wisps/wisp_ult_active"
+        }
+      ]
+    }
+  },
+  "active": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
+  },
+  "active_rocket_ult": {
+    "type": "origins:active_self",
+    "cooldown": 125,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/luna_resource_bar.png",
+      "bar_index": 14,
+      "order": 7
+    },
+    "key": "key.origins.secondary_active",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 1,
+      "operation": "set",
+      "resource": "*:*_active"
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": "==",
+          "resource": "*:wisps/wisp_ult_active"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": ">=",
+          "resource": "*:wisps/bars_orange_wisp_bar"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 2,
+          "comparison": "==",
+          "resource": "*:wisps/wisp_switch_resource"
+        }
+      ]
+    }
+  },
+  "rocket-ult": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "particle minecraft:campfire_cosy_smoke ~ ~ ~ 0 0 0 0.5 10"
+        },
+        {
+          "type": "origins:area_of_effect",
+          "radius": 4,
+          "bientity_action": {
+            "type": "origins:target_action",
+            "action": {
+              "type": "origins:damage",
+              "amount": 10,
+              "source": {
+                "fire": true,
+                "unblockable": true,
+                "bypasses_armor": true,
+                "name": "explosion"
+              }
+            }
+          }
+        },
+        {
+          "type": "origins:play_sound",
+          "category": "players",
+          "pitch": 0.5,
+          "sound": "minecraft:entity.generic.explode",
+          "volume": 1
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "particle minecraft:flame ~ ~ ~ 0 0 0 0.5 10"
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 100,
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "change": 0,
+                "operation": "set",
+                "resource": "*:*_active"
+              },
+              {
+                "type": "origins:apply_effect",
+                "effect": {
+                  "effect": "minecraft:slow_falling",
+                  "duration": 100
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "origins:add_velocity",
+          "y": 0.5,
+          "space": "local_horizontal_normalized"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": "==",
+          "resource": "*:*_active"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": "==",
+          "resource": "*:wisps/wisp_ult_active"
+        }
+      ]
+    }
+  },
+  "gain_biome": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 20,
+      "resource": "*:wisps/bars_orange_wisp_bar"
+    },
+    "condition": {
+      "type": "origins:biome",
+      "condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:temperature",
+            "compare_to": 2,
+            "comparison": ">="
+          },
+          {
+            "type": "origins:dimension",
+            "dimension": "minecraft:the_nether",
+            "inverted": true
+          }
+        ]
+      }
+    }
+  }
 }

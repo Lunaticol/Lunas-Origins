@@ -1,0 +1,36 @@
+{
+  "type": "origins:multiple",
+  "flashbang": {
+    "type": "origins:overlay",
+    "texture": "minecraft:textures/block/white_concrete.png",
+    "strength": 1.0,
+    "red": 1.0,
+    "green": 1.0,
+    "blue": 1.0,
+    "draw_mode": "nausea",
+    "draw_phase": "above_hud",
+    "hide_with_hud": false,
+    "visible_in_third_person": true
+  },
+  "flashbang_2": {
+    "type": "origins:overlay",
+    "texture": "minecraft:textures/block/white_concrete.png",
+    "strength": 1.0,
+    "red": 1.0,
+    "green": 1.0,
+    "blue": 1.0,
+    "draw_mode": "nausea",
+    "draw_phase": "above_hud",
+    "hide_with_hud": false,
+    "visible_in_third_person": true
+  },
+  "remove": {
+    "type": "origins:action_over_time",
+    "interval": 100,
+    "entity_action": {
+      "type": "origins:revoke_power",
+      "power": "luna:wisps/flashbang",
+      "source": "*:wisps/red"
+    }
+  }
+}

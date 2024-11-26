@@ -1,0 +1,81 @@
+{
+  "hidden": true,
+  "type": "origins:multiple",
+  "red_wisp_bar": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 1000,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/luna_resource_bar.png",
+      "bar_index": 7,
+      "order": 0
+    }
+  },
+  "orange_wisp_bar": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 1000,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/luna_resource_bar.png",
+      "bar_index": 8,
+      "order": 1
+    }
+  },
+  "yellow_wisp_bar": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 1000,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/luna_resource_bar.png",
+      "bar_index": 9,
+      "order": 2
+    }
+  },
+  "green_wisp_bar": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 1000,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/luna_resource_bar.png",
+      "bar_index": 10,
+      "order": 3
+    }
+  },
+  "cyan_wisp_bar": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 1000,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/luna_resource_bar.png",
+      "bar_index": 11,
+      "order": 4
+    }
+  },
+  "blue_wisp_bar": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 1000,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/luna_resource_bar.png",
+      "bar_index": 12,
+      "order": 5
+    }
+  },
+  "purple_wisp_bar": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 1000,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/luna_resource_bar.png",
+      "bar_index": 13,
+      "order": 6
+    }
+  }
+}

@@ -217,7 +217,7 @@
       "type": "origins:target_action",
       "action": {
         "type": "origins:grant_power",
-        "power": "*:detected",
+        "power": "*:sculk/detected",
         "source": "luna:sculk/sculk_like"
       }
     }
