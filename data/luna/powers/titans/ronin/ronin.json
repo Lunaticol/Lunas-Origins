@@ -692,6 +692,11 @@
           }
         }
       ]
+    },
+    "condition": {
+      "type": "origins:passenger",
+      "compare_to": 1,
+      "comparison": "<"
     }
   },
   "if_rodeo": {

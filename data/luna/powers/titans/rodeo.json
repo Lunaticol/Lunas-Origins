@@ -39,6 +39,32 @@
           "type": "origins:change_resource",
           "resource": "*:*_took_battery",
           "change": 1
+        },
+        {
+          "type": "origins:passenger_action",
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:dismount"
+              },
+              {
+                "type": "origins:revoke_power",
+                "power": "luna:titans/rodeo",
+                "source": "luna:titans/ronin/ronin"
+              },
+              {
+                "type": "origins:revoke_power",
+                "power": "luna:titans/rodeo",
+                "source": "titans:titans/scorch/scorch"
+              },
+              {
+                "type": "origins:add_velocity",
+                "y": 0.5,
+                "space": "world"
+              }
+            ]
+          }
         }
       ]
     },
@@ -63,48 +89,6 @@
       "resource": "*:*_ready"
     }
   },
-  "remove": {
-    "type": "origins:action_over_time",
-    "interval": 20,
-    "entity_action": {
-      "type": "origins:and",
-      "actions": [
-        {
-          "type": "origins:revoke_power",
-          "power": "luna:titans/rodeo",
-          "source": "luna:titans/ronin/ronin"
-        },
-        {
-          "type": "origins:revoke_power",
-          "power": "luna:rodeo",
-          "source": "titans:titans/scorch/scorch"
-        },
-        {
-          "type": "origins:change_resource",
-          "resource": "*:*_ready",
-          "change": 0
-        },
-        {
-          "type": "origins:dismount"
-        },
-        {
-          "type": "origins:delay",
-          "ticks": 1,
-          "action": {
-            "type": "origins:add_velocity",
-            "y": 0.5,
-            "space": "world"
-          }
-        }
-      ]
-    },
-    "condition": {
-      "type": "origins:resource",
-      "compare_to": 1,
-      "comparison": "==",
-      "resource": "*:*_took_battery"
-    }
-  },
   "charge_up_time": {
     "type": "origins:action_over_time",
     "interval": 100,
@@ -115,11 +99,6 @@
     }
   },
   "ready": {
-    "type": "origins:resource",
-    "max": 1,
-    "min": 0
-  },
-  "took_battery": {
     "type": "origins:resource",
     "max": 1,
     "min": 0
