@@ -1,6 +1,6 @@
 {
   "name": "Ambush",
-  "description": "Your first attack does +100% damage, but only if you strike before your opponent. If the battle goes too long, you will start losing damage.",
+  "description": "Your first attack does +100% damage, but only if you strike before your opponent. If the battle goes too long, you will start losing damage dealt.",
   "type": "origins:multiple",
   "fs": {
     "type": "origins:modify_damage_dealt",

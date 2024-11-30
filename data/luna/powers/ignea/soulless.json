@@ -20,5 +20,10 @@
   "noxp": {
     "type": "origins:modify_xp_gain",
     "modifier": { "operation": "multiply_total_multiplicative", "value": -1 }
+  },
+  "magic": {
+    "type": "origins:modify_damage_taken",
+    "modifier": { "operation": "multiply_total_multiplicative", "value": 1 },
+    "damage_condition": { "type": "apugli:magic" }
   }
 }

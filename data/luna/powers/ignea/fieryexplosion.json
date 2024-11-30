@@ -21,12 +21,7 @@
           "type": "origins:target_condition",
           "condition": {
             "type": "origins:and",
-            "conditions": [
-              {
-                "type": "origins:entity_type",
-                "entity_type": "minecraft:player"
-              }
-            ]
+            "conditions": []
           }
         },
         "bientity_action": {
@@ -40,12 +35,9 @@
               },
               {
                 "type": "origins:damage",
-                "amount": 4,
+                "amount": 30,
                 "source": {
-                  "name": "explosion",
-                  "bypasses_armor": true,
-                  "unblockable": true,
-                  "magic": true
+                  "name": "explosion"
                 }
               }
             ]

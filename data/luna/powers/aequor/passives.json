@@ -1,6 +1,6 @@
 {
   "name": "Passive Abilities",
-  "description": "You are marked as Aquatic, granting you their traits. You also have a natural opposition to those of the Nether, doing extra damage to them.",
+  "description": "You are marked as Aquatic, granting you their traits. You also have a natural opposition to those of the Nether, doing extra damage to them, and because of this, being very mixed with the Arcane Arts.",
   "type": "origins:multiple",
   "aq": { "type": "origins:entity_group", "group": "aquatic" },
   "hatenether": {
@@ -35,5 +35,29 @@
     "type": "origins:action_over_time",
     "interval": 19,
     "entity_action": { "type": "origins:gain_air", "value": 100 }
+  },
+  "xp": {
+    "type": "origins:modify_xp_gain",
+    "modifier": { "operation": "multiply_total_multiplicative", "value": 1 }
+  },
+  "magic": {
+    "type": "origins:modify_damage_taken",
+    "modifier": { "operation": "multiply_total_multiplicative", "value": -0.5 },
+    "damage_condition": { "type": "apugli:magic" }
+  },
+  "lightning": {
+    "type": "origins:modify_damage_taken",
+    "modifier": { "operation": "multiply_total_multiplicative", "value": 1 },
+    "damage_condition": { "type": "origins:name", "name": "lightning_bolt" }
+  },
+  "nodmg": {
+    "type": "origins:modify_damage_dealt",
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 0,
+      "comparison": "==",
+      "resource": "*:aequor/water_water"
+    },
+    "modifier": { "value": 0, "operation": "set_total" }
   }
 }

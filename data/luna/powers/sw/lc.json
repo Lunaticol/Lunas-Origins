@@ -33,10 +33,13 @@
         "type": "origins:target_action",
         "action": {
           "type": "origins:damage",
-          "amount": 8,
+          "amount": 12,
           "source": {
             "name": "lightningdash",
-            "bypasses_armor": true
+            "out_of_world": true,
+            "bypasses_armor": true,
+            "magic": true,
+            "unblockable": true
           }
         }
       },
@@ -55,10 +58,13 @@
             "actions": [
               {
                 "type": "origins:damage",
-                "amount": 8,
+                "amount": 12,
                 "source": {
                   "name": "lightningdash",
-                  "bypasses_armor": true
+                  "out_of_world": true,
+                  "bypasses_armor": true,
+                  "magic": true,
+                  "unblockable": true
                 }
               },
               {

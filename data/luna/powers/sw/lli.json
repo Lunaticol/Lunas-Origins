@@ -18,10 +18,13 @@
               },
               {
                 "type": "origins:damage",
-                "amount": 16,
+                "amount": 20,
                 "source": {
                   "name": "lightningcrash",
-                  "bypasses_armor": true
+                  "out_of_world": true,
+                  "bypasses_armor": true,
+                  "magic": true,
+                  "unblockable": true
                 }
               }
             ]

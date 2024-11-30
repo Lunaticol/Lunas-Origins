@@ -10,13 +10,7 @@
       "type": "origins:target_condition",
       "condition": {
         "type": "origins:or",
-        "conditions": [
-          {
-            "type": "origins:origin",
-            "origin": "origins:merling"
-          },
-          { "type": "origins:power", "power": "origins:water_breathing" }
-        ]
+        "conditions": [{ "type": "origins:entity_group", "group": "aquatic" }]
       }
     },
     "bientity_action": {
@@ -31,7 +25,7 @@
               "type": "origins:target_condition",
               "condition": {
                 "type": "origins:origin",
-                "origin": "luna:aequora"
+                "origin": "luna:aequor"
               }
             },
             "bientity_action": {

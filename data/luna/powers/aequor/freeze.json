@@ -1,0 +1,34 @@
+{
+  "type": "origins:multiple",
+  "freeze": { "type": "apugli:freeze", "should_damage": false },
+  "resource": {
+    "type": "origins:resource",
+    "max": 7,
+    "start_value": 7,
+    "min": 0,
+    "min_action": {
+      "type": "origins:revoke_power",
+      "power": "luna:aequor/freeze",
+      "source": "aq"
+    }
+  },
+  "deplete": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": -1,
+      "operation": "add",
+      "resource": "luna:aequor/freeze_resource"
+    },
+    "interval": 20
+  },
+  "shader": {
+    "type": "origins:overlay",
+    "texture": "minecraft:textures/block/frosted_ice_3.png",
+    "draw_phase": "above_hud",
+    "draw_mode": "texture",
+    "strength": 1.2,
+    "hide_with_hud": false,
+    "visible_in_third_person": true
+  }
+}
