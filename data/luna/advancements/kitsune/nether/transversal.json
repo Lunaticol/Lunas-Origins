@@ -1,17 +1,17 @@
 {
   "display": {
     "title": {
-      "text": "Freeeee Fallin"
+      "text": "Dimension Hopper"
     },
     "description": {
-      "text": "Die from falling after using a dash"
+      "text": "Travel to the Nether using Portable Portal"
     },
     "icon": {
-      "item": "minecraft:sweet_berries"
+      "item": "minecraft:obsidian"
     },
     "frame": "task",
     "show_toast": true,
-    "announce_to_chat": true,
+    "announce_to_chat": false,
     "hidden": false
   },
   "criteria": {
@@ -19,5 +19,5 @@
       "trigger": "minecraft:impossible"
     }
   },
-  "parent": "luna:kitsune/kitsune"
+  "parent": "luna:kitsune/nether/nether"
 }

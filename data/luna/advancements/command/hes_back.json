@@ -1,23 +1,23 @@
 {
   "display": {
     "title": {
-      "text": "Nether"
+      "text": "Guess whos back, Back agian."
     },
     "description": {
-      "text": "Transform into the Nether Kitsune"
+      "text": "Re-discover the Command Block"
     },
     "icon": {
-      "item": "minecraft:netherrack"
+      "item": "minecraft:repeating_command_block"
     },
-    "frame": "task",
+    "frame": "challenge",
     "show_toast": true,
     "announce_to_chat": false,
-    "hidden": false
+    "hidden": true
   },
   "criteria": {
     "origins": {
       "trigger": "minecraft:impossible"
     }
   },
-  "parent": "luna:kitsune/kitsune"
+  "parent": "luna:command/command"
 }

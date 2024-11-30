@@ -70,7 +70,7 @@
           "type": "origins:resource",
           "compare_to": 0,
           "comparison": "==",
-          "resource": "*:*_ult_active"
+          "resource": "*:wisps/wisp_ult_active"
         }
       ]
     }
@@ -131,8 +131,8 @@
     }
   },
   "gain_dimension": {
-    "type": "origins:active_self",
-    "key": "key.use",
+    "type": "origins:action_over_time",
+    "interval": 20,
     "entity_action": {
       "type": "origins:change_resource",
       "change": 20,

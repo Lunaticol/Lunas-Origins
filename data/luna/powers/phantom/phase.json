@@ -44,7 +44,7 @@
         },
         {
           "type": "origins:power_active",
-          "power": "*:*_phase,_toggle"
+          "power": "*:*_phase_toggle"
         }
       ]
     }

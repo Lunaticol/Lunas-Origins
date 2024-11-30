@@ -56,7 +56,7 @@
           "type": "origins:resource",
           "compare_to": 0,
           "comparison": "==",
-          "resource": "*:*_ult_active"
+          "resource": "*:wisps/wisp_ult_active"
         }
       ]
     }
@@ -167,6 +167,19 @@
           "resource": "*:wisps/bars_purple_wisp_bar"
         }
       ]
+    }
+  },
+  "gain": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 20,
+      "resource": "*:wisps/bars_purple_wisp_bar"
+    },
+    "condition": {
+      "type": "origins:dimension",
+      "dimension": "minecraft:the_end"
     }
   }
 }

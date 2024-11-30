@@ -1,7 +1,7 @@
 {
   "display": {
     "title": {
-      "text": "End"
+      "text": "Ender"
     },
     "description": {
       "text": "Transform into the Ender Kitsune"
@@ -19,5 +19,5 @@
       "trigger": "minecraft:impossible"
     }
   },
-  "parent": "luna:kitsune/fall"
+  "parent": "luna:kitsune/kitsune"
 }

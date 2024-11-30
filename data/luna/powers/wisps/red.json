@@ -76,7 +76,7 @@
         },
         {
           "type": "origins:change_resource",
-          "change": -50,
+          "change": -100,
           "resource": "*:wisps/bars_red_wisp_bar"
         }
       ]
@@ -100,7 +100,7 @@
           "type": "origins:resource",
           "compare_to": 0,
           "comparison": "==",
-          "resource": "*:*_ult_active"
+          "resource": "*:wisps/wisp_ult_active"
         }
       ]
     }

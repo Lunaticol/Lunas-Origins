@@ -658,6 +658,12 @@
     "modifier": {
       "value": -1,
       "operation": "multiply_total"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_invuln_bar"
     }
   },
   "invuln_bar": {
@@ -1210,6 +1216,27 @@
           "inverted": true
         }
       ]
+    }
+  },
+  "advancement": {
+    "type": "origins:action_on_callback",
+    "entity_action_chosen": {
+      "type": "origins:grant_advancement",
+      "advancement": "luna:wisp/lumina"
+    }
+  },
+  "heal": {
+    "type": "origins:action_over_time",
+    "interval": 40,
+    "entity_action": {
+      "type": "origins:heal",
+      "amount": 2
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_ult_active"
     }
   }
 }

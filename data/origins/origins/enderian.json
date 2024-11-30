@@ -1,0 +1,18 @@
+{
+  "name": "Enderian",
+  "description": "Over the years your civilization has began to lose themselves to the end. Plauged with insomnia, will you lose yourself to the end?",
+  "icon": "minecraft:ender_eye",
+  "impact": 2,
+  "loading_priority": 11,
+  "powers": [
+    "luna:ender/body",
+    "luna:ender/teleports",
+    "luna:ender/rage",
+    "luna:ender/food",
+    "luna:ender/endermen_nice",
+    "luna:ender/rtp",
+    "origins:pumpkin_hate",
+    "origins:ender_particles",
+    "origins:damage_from_potions"
+  ]
+}

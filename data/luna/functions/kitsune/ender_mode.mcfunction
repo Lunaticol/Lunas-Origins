@@ -7,3 +7,4 @@ resource set @s luna:kitsune/mode_switch_mode_resource 2
 power revoke @s luna:kitsune/overworld/passive_mobs luna:kitsune_classes/overworld_kitsune
 power revoke @s luna:kitsune/overworld/overworld luna:kitsune_classes/overworld_kitsune
 power revoke @s luna:kitsune/overworld/healing luna:kitsune_classes/overworld_kitsune
+advancement grant @s only luna:kitsune/ender/ender

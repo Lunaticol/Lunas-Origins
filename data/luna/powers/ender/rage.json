@@ -1,11 +1,11 @@
 {
   "type": "origins:multiple",
   "name": "Ender Rage",
-  "description": "Go into a rage like state.",
+  "description": "Go into a rage like state, only exitable by killing.",
   "rage": {
     "type": "origins:active_self",
     "key": {
-      "key": "key.origins.primary_active"
+      "key": "key.loadToolbarActivator"
     },
     "cooldown": 6000,
     "hud_render": {
@@ -34,7 +34,7 @@
             {
               "effect": "minecraft:strength",
               "duration": 2400,
-              "amplifier": 1
+              "amplifier": 2
             },
             {
               "effect": "minecraft:speed",
@@ -90,8 +90,9 @@
     "cooldown": 0,
     "entity_action": {
       "type": "origins:change_resource",
-      "change": 1,
-      "resource": "*:*_rage_state"
+      "change": 0,
+      "resource": "*:*_rage_state",
+      "operation": "set"
     },
     "condition": {
       "type": "origins:resource",

@@ -90,10 +90,14 @@
           "command": "particle lunasorigins:blue_flame ~ ~ ~ 6 0 10 0 500"
         },
         {
-          "type": "origins:change_resource",
-          "change": 0,
-          "resource": "*:*_in_air",
-          "operation": "set"
+          "type": "origins:delay",
+          "ticks": 5,
+          "action": {
+            "type": "origins:change_resource",
+            "change": 0,
+            "resource": "*:*_in_air",
+            "operation": "set"
+          }
         }
       ]
     },

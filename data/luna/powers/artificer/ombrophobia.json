@@ -123,5 +123,18 @@
       "operation": "set",
       "resource": "*:*_ombrophobia_timer"
     }
+  },
+  "when_death": {
+    "type": "origins:action_when_damage_taken",
+    "cooldown": 0,
+    "entity_action": {
+      "type": "origins:grant_advancement",
+      "advancement": "luna:artificer/rain"
+    },
+    "condition": {
+      "type": "origins:health",
+      "compare_to": 0,
+      "comparison": "=="
+    }
   }
 }

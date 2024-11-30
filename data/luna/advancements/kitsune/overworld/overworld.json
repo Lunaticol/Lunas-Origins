@@ -19,5 +19,5 @@
       "trigger": "minecraft:impossible"
     }
   },
-  "parent": "luna:kitsune/fall"
+  "parent": "luna:kitsune/kitsune"
 }

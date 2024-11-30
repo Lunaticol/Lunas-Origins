@@ -1,9 +1,18 @@
 {
-  "powers": [],
+  "powers": [
+    "luna:wisps/wisp",
+    "luna:wisps/red",
+    "luna:wisps/orange",
+    "luna:wisps/yellow",
+    "luna:wisps/green",
+    "luna:wisps/cyan",
+    "luna:wisps/blue",
+    "luna:wisps/purple",
+    "luna:wisps/bars"
+  ],
   "icon": "minecraft:enchanted_golden_apple",
-  "unchoosable": true,
   "order": 9,
-  "impact": 0,
+  "impact": 3,
   "name": "Lumina",
   "description": "Harness the powers of these diminutive yet powerful wisps to shape the world to your liking."
 }

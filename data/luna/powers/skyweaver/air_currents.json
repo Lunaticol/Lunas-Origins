@@ -17,40 +17,28 @@
       "type": "origins:and",
       "actions": [
         {
-          "type": "origins:selector_action",
-          "selector": "@s",
+          "type": "origins:area_of_effect",
+          "radius": 8,
+          "shape": "sphere",
           "bientity_action": {
-            "type": "origins:target_action",
-            "action": {
-              "type": "origins:area_of_effect",
-              "radius": 8,
-              "bientity_action": {
-                "type": "origins:and",
-                "actions": [
-                  {
-                    "type": "origins:add_velocity",
-                    "z": -1.5
-                  },
-                  {
-                    "type": "origins:actor_action",
-                    "action": {
-                      "type": "origins:execute_command",
-                      "command": "particle minecraft:dust 1.0 1.0 1.0 2.0 ~ ~ ~ 8 8 8 1 100 force"
-                    }
-                  }
-                ]
-              },
-              "bientity_condition": {
-                "type": "origins:target_condition",
-                "condition": {
-                  "type": "origins:origin",
-                  "layer": "origins:origin",
-                  "origin": "skyweaver:skyweaver",
-                  "inverted": true
-                }
-              }
+            "type": "origins:add_velocity",
+            "z": 1.5,
+            "y": 0.1,
+            "set": true
+          },
+          "bientity_condition": {
+            "type": "origins:target_condition",
+            "condition": {
+              "type": "origins:origin",
+              "layer": "origins:origin",
+              "origin": "skyweaver:skyweaver",
+              "inverted": true
             }
           }
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "particle minecraft:dust 1.0 1.0 1.0 2.0 ~ ~ ~ 8 8 8 1 100 force"
         }
       ]
     }
@@ -70,41 +58,28 @@
       "type": "origins:and",
       "actions": [
         {
-          "type": "origins:selector_action",
-          "selector": "@s",
+          "type": "origins:area_of_effect",
+          "radius": 8,
+          "shape": "sphere",
           "bientity_action": {
-            "type": "origins:target_action",
-            "action": {
-              "type": "origins:area_of_effect",
-              "radius": 16,
-              "bientity_action": {
-                "type": "origins:and",
-                "actions": [
-                  {
-                    "type": "origins:add_velocity",
-                    "y": 1,
-                    "z": 1.5
-                  },
-                  {
-                    "type": "origins:actor_action",
-                    "action": {
-                      "type": "origins:execute_command",
-                      "command": "particle minecraft:dust 1.0 1.0 1.0 2.0 ~ ~ ~ 9 9 9 1 100 normal"
-                    }
-                  }
-                ]
-              },
-              "bientity_condition": {
-                "type": "origins:target_condition",
-                "condition": {
-                  "type": "origins:origin",
-                  "layer": "origins:origin",
-                  "origin": "skyweaver:skyweaver",
-                  "inverted": true
-                }
-              }
+            "type": "origins:add_velocity",
+            "z": -1.5,
+            "y": 0.1,
+            "set": true
+          },
+          "bientity_condition": {
+            "type": "origins:target_condition",
+            "condition": {
+              "type": "origins:origin",
+              "layer": "origins:origin",
+              "origin": "skyweaver:skyweaver",
+              "inverted": true
             }
           }
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "particle minecraft:dust 1.0 1.0 1.0 2.0 ~ ~ ~ 8 8 8 1 100 force"
         }
       ]
     }
@@ -124,40 +99,27 @@
       "type": "origins:and",
       "actions": [
         {
-          "type": "origins:selector_action",
-          "selector": "@s",
+          "type": "origins:area_of_effect",
+          "radius": 8,
+          "shape": "sphere",
           "bientity_action": {
-            "type": "origins:target_action",
-            "action": {
-              "type": "origins:area_of_effect",
-              "radius": 5,
-              "bientity_action": {
-                "type": "origins:and",
-                "actions": [
-                  {
-                    "type": "origins:add_velocity",
-                    "y": 2.5
-                  },
-                  {
-                    "type": "origins:actor_action",
-                    "action": {
-                      "type": "origins:execute_command",
-                      "command": "particle minecraft:dust 1.0 1.0 1.0 2.0 ~ ~ ~ 5 5 5 1 100 force"
-                    }
-                  }
-                ]
-              },
-              "bientity_condition": {
-                "type": "origins:target_condition",
-                "condition": {
-                  "type": "origins:origin",
-                  "layer": "origins:origin",
-                  "origin": "skyweaver:skyweaver",
-                  "inverted": true
-                }
-              }
+            "type": "origins:add_velocity",
+            "y": 2.5,
+            "set": true
+          },
+          "bientity_condition": {
+            "type": "origins:target_condition",
+            "condition": {
+              "type": "origins:origin",
+              "layer": "origins:origin",
+              "origin": "skyweaver:skyweaver",
+              "inverted": true
             }
           }
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "particle minecraft:dust 1.0 1.0 1.0 2.0 ~ ~ ~ 8 8 8 1 100 force"
         }
       ]
     }

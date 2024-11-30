@@ -10,3 +10,4 @@ power revoke @s luna:kitsune/nether/flame_ray luna:kitsune_classes/nether_kitsun
 power revoke @s luna:kitsune/nether/nether_body luna:kitsune_classes/nether_kitsune
 power revoke @s luna:kitsune/nether/fire_immunity luna:kitsune_classes/nether_kitsune
 power revoke @s luna:kitsune/nether/soul_mode luna:kitsune_classes/nether_kitsune
+advancement grant @s only luna:kitsune/overworld/overworld

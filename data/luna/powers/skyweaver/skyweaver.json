@@ -96,7 +96,7 @@
       }
     }
   },
-  "bow_expeirince": {
+  "bow_expierince": {
     "type": "origins:modify_projectile_damage",
     "damage_condition": {
       "type": "origins:projectile",

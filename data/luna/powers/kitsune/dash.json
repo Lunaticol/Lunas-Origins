@@ -113,6 +113,10 @@
                       "type": "origins:change_resource",
                       "resource": "*:*_dashes",
                       "change": -2
+                    },
+                    {
+                      "type": "origins:grant_advancement",
+                      "advancement": "luna:kitsune/end/teleport"
                     }
                   ]
                 },
@@ -143,6 +147,10 @@
                       "type": "origins:change_resource",
                       "resource": "*:*_dashes",
                       "change": -2
+                    },
+                    {
+                      "type": "origins:grant_advancement",
+                      "advancement": "luna:kitsune/end/teleport"
                     }
                   ]
                 },
@@ -187,6 +195,10 @@
                       "type": "origins:change_resource",
                       "resource": "*:*_dashes",
                       "change": -2
+                    },
+                    {
+                      "type": "origins:grant_advancement",
+                      "advancement": "luna:kitsune/end/teleport"
                     }
                   ]
                 },
@@ -421,7 +433,7 @@
     "interval": 5,
     "entity_action": {
       "type": "origins:grant_advancement",
-      "advancement": "luna:kitsune/fall"
+      "advancement": "luna:kitsune/overworld/fall"
     },
     "condition": {
       "type": "origins:and",

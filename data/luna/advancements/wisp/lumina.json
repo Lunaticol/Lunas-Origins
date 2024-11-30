@@ -1,24 +1,23 @@
 {
   "display": {
     "title": {
-      "text": "§6Bravery"
+      "text": "Lumina"
     },
     "description": {
-      "text": "Play as Bravery"
+      "text": "Play Lumina"
     },
     "icon": {
-      "item": "minecraft:orange_wool",
-      "nbt": "{CustomModelData:42700}"
+      "item": "minecraft:enchanted_golden_apple"
     },
     "frame": "task",
     "show_toast": true,
     "announce_to_chat": true,
-    "hidden": true
+    "hidden": false
   },
   "criteria": {
     "origins": {
       "trigger": "minecraft:impossible"
     }
   },
-  "parent": "luna:souls/kill_or_be_killed"
+  "parent": "luna:root"
 }

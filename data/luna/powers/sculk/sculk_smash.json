@@ -17,7 +17,7 @@
   "shockwave": {
     "type": "origins:active_self",
     "key": "key.origins.secondary_active",
-    "cooldown": 600,
+    "cooldown": 1200,
     "hud_render": {
       "should_render": true
     },

@@ -124,7 +124,7 @@
     "allow": true,
     "block_condition": {
       "type": "origins:in_tag",
-      "tag": "sf:ender/silk_hands"
+      "tag": "luna:silk_hands"
     },
     "condition": {
       "type": "origins:equipped_item",
@@ -145,10 +145,31 @@
       "chance": 0.3,
       "action": {
         "type": "origins:play_sound",
-        "sound": "minecraft:entity.enderman.death",
+        "sound": "minecraft:entity.enderman.hurt",
         "pitch": 0.8,
         "volume": 1
       }
+    }
+  },
+  "see_attackers": {
+    "type": "origins:entity_glow",
+    "blue": 1,
+    "red": 0.69019607843,
+    "green": 0.35686274509,
+    "use_teams": false,
+    "bientity_condition": {
+      "type": "origins:target_condition",
+      "condition": {
+        "type": "origins:power",
+        "power": "luna:ender/attacked"
+      }
+    }
+  },
+  "projectile": {
+    "type": "origins:modify_projectile_damage",
+    "modifier": {
+      "value": 4,
+      "operation": "addition"
     }
   }
 }

@@ -7,3 +7,4 @@ resource set @s luna:kitsune/mode_switch_mode_resource 0
 power revoke @s luna:kitsune/end/ender_body luna:kitsune_classes/ender_kitsune
 power revoke @s luna:kitsune/end/trickery luna:kitsune_classes/ender_kitsune
 power revoke @s luna:kitsune/end/teleport luna:kitsune_classes/ender_kitsune
+advancement grant @s only luna:kitsune/nether/nether

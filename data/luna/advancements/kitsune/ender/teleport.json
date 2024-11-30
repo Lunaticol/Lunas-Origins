@@ -1,24 +1,23 @@
 {
   "display": {
     "title": {
-      "text": "§1Integrity"
+      "text": "Wardrobe Malfunction!"
     },
     "description": {
-      "text": "Play as Intergrity"
+      "text": "Teleport instead of dashing."
     },
     "icon": {
-      "item": "minecraft:blue_wool",
-      "nbt": "{CustomModelData:42700}"
+      "item": "minecraft:chorus_fruit"
     },
     "frame": "task",
     "show_toast": true,
     "announce_to_chat": true,
-    "hidden": true
+    "hidden": false
   },
   "criteria": {
     "origins": {
       "trigger": "minecraft:impossible"
     }
   },
-  "parent": "luna:souls/kill_or_be_killed"
+  "parent": "luna:kitsune/ender/ender"
 }

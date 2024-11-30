@@ -225,7 +225,7 @@
           "type": "origins:resource",
           "compare_to": 0,
           "comparison": "==",
-          "resource": "*:*_ult_active"
+          "resource": "*:wisps/wisp_ult_active"
         }
       ]
     }

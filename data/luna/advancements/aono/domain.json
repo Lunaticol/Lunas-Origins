@@ -1,24 +1,23 @@
 {
   "display": {
     "title": {
-      "text": "§eJustice"
+      "text": "Domain Expan-"
     },
     "description": {
-      "text": "Play as Justice"
+      "text": "What do you mean its copy righted?"
     },
     "icon": {
-      "item": "minecraft:yellow_wool",
-      "nbt": "{CustomModelData:42700}"
+      "item": "minecraft:soul_campfire"
     },
     "frame": "task",
     "show_toast": true,
     "announce_to_chat": true,
-    "hidden": true
+    "hidden": false
   },
   "criteria": {
     "origins": {
       "trigger": "minecraft:impossible"
     }
   },
-  "parent": "luna:souls/kill_or_be_killed"
+  "parent": "luna:aono/aono"
 }
