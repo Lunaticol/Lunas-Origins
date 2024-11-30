@@ -40,14 +40,12 @@
               },
               {
                 "type": "origins:damage",
-                "amount": 3,
+                "amount": 4,
                 "source": {
                   "name": "explosion",
-                  "fire": true,
-                  "magic": true,
                   "bypasses_armor": true,
                   "unblockable": true,
-                  "out_of_world": true
+                  "magic": true
                 }
               }
             ]

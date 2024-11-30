@@ -7,15 +7,16 @@
     "comparison": ">",
     "compare_to": 0
   },
-  "type": "origins:damage_over_time",
-  "interval": 20,
-  "damage": 4,
-  "damage_source": {
-    "name": "hurt_by_water",
-    "bypasses_armor": true,
-    "unblockable": true,
-    "out_of_world": true,
-    "magic": true
+  "type": "origins:action_over_time",
+  "entity_action": {
+    "type": "origins:damage",
+    "source": {
+      "name": "hurt_by_water",
+      "bypasses_armor": true,
+      "unblockable": true,
+      "magic": true
+    },
+    "amount": 4
   },
-  "protection_effectiveness": 1
+  "interval": 20
 }

@@ -24,8 +24,11 @@
     "entity_action": {
       "type": "origins:damage",
       "amount": 3,
-      "damage_type": "minecraft:player_attack",
-      "source": { "name": "discharge" }
+      "source": {
+        "name": "discharge",
+        "bypasses_armor": true,
+        "unblockable": true
+      }
     }
   },
   "whenhits": {

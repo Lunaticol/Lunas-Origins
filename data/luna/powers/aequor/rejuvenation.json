@@ -1,0 +1,84 @@
+{
+  "name": "A Second Chance",
+  "description": "The Aquatics have put their hope in you. Do not falter.",
+  "type": "origins:action_over_time",
+  "interval": 200,
+  "entity_action": {
+    "type": "origins:area_of_effect",
+    "radius": 30,
+    "bientity_condition": {
+      "type": "origins:target_condition",
+      "condition": {
+        "type": "origins:or",
+        "conditions": [
+          {
+            "type": "origins:origin",
+            "origin": "origins:merling"
+          },
+          { "type": "origins:power", "power": "origins:water_breathing" }
+        ]
+      }
+    },
+    "bientity_action": {
+      "type": "origins:target_action",
+      "action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:area_of_effect",
+            "radius": 30,
+            "bientity_condition": {
+              "type": "origins:target_condition",
+              "condition": {
+                "type": "origins:origin",
+                "origin": "luna:aequora"
+              }
+            },
+            "bientity_action": {
+              "type": "origins:target_action",
+              "action": {
+                "type": "origins:and",
+                "actions": [
+                  {
+                    "type": "origins:execute_command",
+                    "command": "effect give @s minecraft:regeneration 10 0 false"
+                  },
+                  {
+                    "type": "origins:grant_advancement",
+                    "advancement": "luna:aequor/rejuvenate"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "type": "origins:apply_effect",
+            "effects": [
+              {
+                "effect": "minecraft:resistance",
+                "duration": 200,
+                "amplifier": 0,
+                "show_particles": true,
+                "show_icon": true
+              },
+              {
+                "effect": "minecraft:water_breathing",
+                "duration": 200,
+                "amplifier": 0,
+                "show_particles": true,
+                "show_icon": true
+              },
+              {
+                "effect": "minecraft:regeneration",
+                "duration": 200,
+                "amplifier": 0,
+                "show_particles": true,
+                "show_icon": true
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

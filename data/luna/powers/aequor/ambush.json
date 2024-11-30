@@ -1,0 +1,55 @@
+{
+  "name": "Ambush",
+  "description": "Your first attack does +100% damage, but only if you strike before your opponent. If the battle goes too long, you will start losing damage.",
+  "type": "origins:multiple",
+  "fs": {
+    "type": "origins:modify_damage_dealt",
+    "condition": {
+      "type": "origins:relative_health",
+      "comparison": ">=",
+      "compare_to": 1
+    },
+    "bientity_condition": {
+      "type": "apugli:hits_on_target",
+      "compare_to": 0,
+      "comparison": "=="
+    },
+    "modifier": { "operation": "multiply_total_multiplicative", "value": 1 }
+  },
+  "fts": {
+    "type": "origins:modify_damage_dealt",
+    "bientity_condition": {
+      "type": "origins:and",
+      "conditions": [
+        { "type": "apugli:hits_on_target", "compare_to": 1, "comparison": ">" },
+        { "type": "apugli:hits_on_target", "compare_to": 11, "comparison": "<" }
+      ]
+    },
+    "modifier": { "operation": "multiply_total_multiplicative", "value": 0.1 }
+  },
+  "ftws": {
+    "type": "origins:modify_damage_dealt",
+    "bientity_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "apugli:hits_on_target",
+          "compare_to": 10,
+          "comparison": ">"
+        },
+        { "type": "apugli:hits_on_target", "compare_to": 21, "comparison": "<" }
+      ]
+    },
+    "modifier": { "operation": "multiply_total_multiplicative", "value": -0.2 }
+  },
+  "hats": {
+    "type": "origins:modify_damage_dealt",
+    "bientity_condition": {
+      "type": "origins:and",
+      "conditions": [
+        { "type": "apugli:hits_on_target", "compare_to": 20, "comparison": ">" }
+      ]
+    },
+    "modifier": { "operation": "multiply_total_multiplicative", "value": -0.5 }
+  }
+}

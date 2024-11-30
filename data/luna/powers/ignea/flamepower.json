@@ -1,6 +1,6 @@
 {
   "name": "Flame Empowerment",
-  "description": "When set aflame, you will take 15% less damage, and begin to heal a small amount of health.",
+  "description": "When set aflame, you will take 25% less damage, and begin to heal a small amount of health.",
   "type": "origins:multiple",
   "damagetaken": {
     "condition": {
@@ -9,7 +9,7 @@
     "type": "origins:modify_damage_taken",
     "modifier": {
       "operation": "multiply_total",
-      "value": -0.15
+      "value": -0.25
     }
   },
   "heal": {

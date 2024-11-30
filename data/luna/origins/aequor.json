@@ -1,0 +1,20 @@
+{
+  "name": "Precatio Aequor",
+  "description": "The Sea gives life. It always has. Do not believe the lies told by the one lied to.",
+  "icon": "minecraft:potion",
+  "impact": 3,
+  "powers": [
+    "luna:aequor/primary",
+    "luna:aequor/secondary",
+    "luna:aequor/ambush",
+    "luna:aequor/elytra",
+    "luna:aequor/rejuvenation",
+    "luna:aequor/passives",
+    "luna:aequor/water",
+    "origins:aqua_affinity",
+    "origins:swim_speed",
+    "origins:like_water"
+  ],
+  "order": 10,
+  "unchoosable": true
+}

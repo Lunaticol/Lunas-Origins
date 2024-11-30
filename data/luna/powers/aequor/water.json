@@ -1,0 +1,135 @@
+{
+  "name": "Rejuvenating Waters",
+  "description": "You have a Water bar. This is consumed slowly over time, but speeds up if you use your abilities.",
+  "type": "origins:multiple",
+  "water": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 1000,
+    "start_value": 1000,
+    "hud_render": {
+      "bar_index": 1,
+      "should_render": true
+    }
+  },
+  "changebar": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "condition": {
+            "type": "origins:or",
+            "conditions": [
+              {
+                "type": "origins:fluid_height",
+                "fluid": "minecraft:water",
+                "comparison": ">",
+                "compare_to": 0
+              },
+              { "type": "origins:in_rain" }
+            ]
+          },
+          "action": {
+            "type": "origins:change_resource",
+            "change": 20,
+            "resource": "*:aequor/water_water",
+            "operation": "add"
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:resource",
+                "resource": "*:aequor/water_water",
+                "comparison": "<=",
+                "compare_to": 200
+              },
+              {
+                "type": "origins:resource",
+                "resource": "*:aequor/water_water",
+                "comparison": ">=",
+                "compare_to": 151
+              }
+            ]
+          },
+          "action": {
+            "type": "origins:apply_effect",
+            "effect": {
+              "amplifier": 0,
+              "duration": 60,
+              "effect": "minecraft:weakness"
+            }
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:resource",
+                "resource": "*:aequor/water_water",
+                "comparison": "<=",
+                "compare_to": 150
+              },
+              {
+                "type": "origins:resource",
+                "resource": "*:aequor/water_water",
+                "comparison": ">=",
+                "compare_to": 1
+              }
+            ]
+          },
+          "action": {
+            "type": "origins:apply_effect",
+            "effect": {
+              "amplifier": 1,
+              "duration": 60,
+              "effect": "minecraft:weakness"
+            }
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:resource",
+            "resource": "*:aequor/water_water",
+            "comparison": "==",
+            "compare_to": 0
+          },
+          "action": {
+            "type": "origins:apply_effect",
+            "effect": {
+              "amplifier": 9,
+              "duration": 60,
+              "effect": "minecraft:weakness"
+            }
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:and",
+            "inverted": true,
+            "conditions": [
+              {
+                "type": "origins:fluid_height",
+                "fluid": "minecraft:water",
+                "comparison": ">",
+                "compare_to": 0
+              },
+              { "type": "origins:in_rain" }
+            ]
+          },
+          "action": {
+            "type": "origins:change_resource",
+            "change": -2,
+            "resource": "*:aequor/water_water",
+            "operation": "add"
+          }
+        }
+      ]
+    },
+    "interval": 20
+  }
+}

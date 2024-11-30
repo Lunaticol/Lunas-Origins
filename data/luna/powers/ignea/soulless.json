@@ -19,6 +19,6 @@
   },
   "noxp": {
     "type": "origins:modify_xp_gain",
-    "modifier": [{ "operation": "addition", "value": -1 }]
+    "modifier": { "operation": "multiply_total_multiplicative", "value": -1 }
   }
 }

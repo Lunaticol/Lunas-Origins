@@ -1,0 +1,23 @@
+{
+  "display": {
+    "title": {
+      "text": "Precatio Aequor"
+    },
+    "description": {
+      "text": "Play Precatio Aequor"
+    },
+    "icon": {
+      "item": "minecraft:water_bucket"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "origins": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "luna:root"
+}

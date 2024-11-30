@@ -33,9 +33,11 @@
         "type": "origins:target_action",
         "action": {
           "type": "origins:damage",
-          "amount": 10,
-          "damage_type": "minecraft:player_attack",
-          "source": { "name": "lightningdash" }
+          "amount": 8,
+          "source": {
+            "name": "lightningdash",
+            "bypasses_armor": true
+          }
         }
       },
       "distance": 40,
@@ -53,9 +55,11 @@
             "actions": [
               {
                 "type": "origins:damage",
-                "amount": 15,
-                "damage_type": "minecraft:player_attack",
-                "source": { "name": "lightningdash" }
+                "amount": 8,
+                "source": {
+                  "name": "lightningdash",
+                  "bypasses_armor": true
+                }
               },
               {
                 "type": "origins:execute_command",

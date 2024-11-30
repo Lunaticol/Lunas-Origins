@@ -1,0 +1,39 @@
+{
+  "name": "Passive Abilities",
+  "description": "You are marked as Aquatic, granting you their traits. You also have a natural opposition to those of the Nether, doing extra damage to them.",
+  "type": "origins:multiple",
+  "aq": { "type": "origins:entity_group", "group": "aquatic" },
+  "hatenether": {
+    "type": "origins:modify_damage_dealt",
+    "bientity_condition": {
+      "type": "origins:target_condition",
+      "condition": {
+        "type": "origins:or",
+        "conditions": [
+          { "type": "origins:power", "power": "origins:nether_spawn" }
+        ]
+      }
+    },
+    "modifier": { "operation": "addition", "value": 5 }
+  },
+  "particles": {
+    "type": "origins:particle",
+    "frequency": 10,
+    "visible_in_first_person": false,
+    "visible_while_invisible": true,
+    "particle": "minecraft:bubble_pop"
+  },
+  "adv": {
+    "type": "origins:action_on_callback",
+    "entity_action_chosen": {
+      "type": "apoli:grant_advancement",
+      "advancement": "luna:aequor/aequor"
+    },
+    "execute_chosen_when_orb": true
+  },
+  "wb": {
+    "type": "origins:action_over_time",
+    "interval": 19,
+    "entity_action": { "type": "origins:gain_air", "value": 100 }
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "name": "Liquid Wings",
+  "description": "You can conjure a pair of wings, but these will cost you extra Water per second of flight.",
+  "type": "origins:multiple",
+  "toggle": {
+    "type": "origins:toggle",
+    "active_by_default": false,
+    "key": "key.loadToolbarActivator"
+  },
+  "elytra": {
+    "type": "origins:elytra_flight",
+    "render_elytra": true,
+    "texture_location": "minecraft:textures/block/frosted_ice_3.png",
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "comparison": ">",
+          "compare_to": 0,
+          "resource": "*:aequor/water_water"
+        }
+      ]
+    }
+  },
+  "flight": {
+    "type": "origins:prevent_elytra_flight",
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:power_active",
+          "power": "luna:aequor/elytra_toggle",
+          "inverted": true
+        },
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "chest",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": { "item": "minecraft:elytra" }
+          },
+          "inverted": true
+        }
+      ]
+    }
+  },
+  "drain": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        { "type": "origins:fall_flying" },
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "chest",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": { "item": "minecraft:elytra" }
+          },
+          "inverted": true
+        }
+      ]
+    },
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "*:aequor/water_water",
+      "operation": "add",
+      "change": -8
+    }
+  }
+}

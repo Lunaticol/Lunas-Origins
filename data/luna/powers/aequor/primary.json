@@ -1,0 +1,52 @@
+{
+  "name": "Wide Slash",
+  "description": "Your next few performed attacks will damage all nearby enemies, dealing a bit of damage.",
+  "type": "origins:multiple",
+  "ws": {
+    "type": "apugli:damage_nearby_on_hit",
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:aequor/primary_resource",
+      "comparison": ">",
+      "compare_to": 0
+    },
+    "radius": 8,
+    "modifier": { "operation": "addition", "value": -3 }
+  },
+  "resource": { "type": "origins:resource", "min": 0, "max": 7 },
+  "drain": {
+    "type": "origins:action_on_hit",
+    "bientity_action": {
+      "type": "origins:actor_action",
+      "action": {
+        "type": "origins:change_resource",
+        "resource": "*:aequor/primary_resource",
+        "operation": "add",
+        "change": -1
+      }
+    },
+    "cooldown": 10
+  },
+  "active": {
+    "type": "origins:active_self",
+    "key": "key.origins.primary_active",
+    "cooldown": 400,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "resource": "*:aequor/primary_resource",
+          "operation": "add",
+          "change": 7
+        },
+        {
+          "type": "origins:change_resource",
+          "resource": "*:aequor/water_water",
+          "operation": "add",
+          "change": -75
+        }
+      ]
+    }
+  }
+}

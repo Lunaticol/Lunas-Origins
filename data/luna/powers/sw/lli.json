@@ -18,9 +18,11 @@
               },
               {
                 "type": "origins:damage",
-                "amount": 25,
-                "damage_type": "minecraft:player_attack",
-                "source": { "name": "lightningcrash" }
+                "amount": 16,
+                "source": {
+                  "name": "lightningcrash",
+                  "bypasses_armor": true
+                }
               }
             ]
           }
