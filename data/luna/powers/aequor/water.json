@@ -26,8 +26,7 @@
                 "fluid": "minecraft:water",
                 "comparison": ">",
                 "compare_to": 0
-              },
-              { "type": "origins:in_rain" }
+              }
             ]
           },
           "action": {
@@ -117,13 +116,21 @@
                 "fluid": "minecraft:water",
                 "comparison": ">",
                 "compare_to": 0
-              },
-              { "type": "origins:in_rain" }
+              }
             ]
           },
           "action": {
             "type": "origins:change_resource",
             "change": -2,
+            "resource": "*:aequor/water_water",
+            "operation": "add"
+          }
+        },
+        {
+          "condition": { "type": "origins:on_fire" },
+          "action": {
+            "type": "origins:change_resource",
+            "change": -4,
             "resource": "*:aequor/water_water",
             "operation": "add"
           }

@@ -1,7 +1,7 @@
 {
   "order": 2,
   "origins": [
-    "luna:alch",
+    "luna:aequor",
     "luna:artificer",
     "luna:ashley",
     "luna:axolotl",
@@ -22,7 +22,6 @@
     "luna:stormscale",
     "luna:sw",
     "luna:titanmite",
-    "luna:wisp",
-    "luna:aequor"
+    "luna:wisp"
   ]
 }

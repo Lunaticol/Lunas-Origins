@@ -1,18 +1,18 @@
 {
   "display": {
     "title": {
-      "text": "Don't give up yet!"
+      "text": "A Fated Duel."
     },
     "description": {
-      "text": "A second chance at life. Use it well."
+      "text": "Slaughter the Ignea. Slaughter them all."
     },
     "icon": {
-      "item": "minecraft:potion"
+      "item": "minecraft:diamond_sword"
     },
-    "frame": "goal",
+    "frame": "challenge",
     "show_toast": true,
     "announce_to_chat": true,
-    "hidden": false
+    "hidden": true
   },
   "criteria": {
     "origins": {

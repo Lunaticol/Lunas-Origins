@@ -59,5 +59,137 @@
       "resource": "*:aequor/water_water"
     },
     "modifier": { "value": 0, "operation": "set_total" }
+  },
+  "ignea": {
+    "type": "origins:action_on_hit",
+    "bientity_condition": {
+      "type": "origins:target_condition",
+      "condition": { "type": "origins:origin", "origin": "luna:ignea" }
+    },
+    "bientity_action": {
+      "type": "origins:actor_action",
+      "action": {
+        "type": "origins:grant_advancement",
+        "advancement": "luna:aequor/duel"
+      }
+    }
+  },
+  "combo": {
+    "type": "origins:action_on_hit",
+    "bientity_condition": {
+      "type": "origins:target_condition",
+      "condition": {
+        "type": "origins:and",
+        "conditions": [
+          { "type": "origins:power", "power": "luna:wisps/flashbang" },
+          { "type": "origins:power", "power": "luna:aequor/freeze" }
+        ]
+      }
+    },
+    "bientity_action": {
+      "type": "origins:actor_action",
+      "action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:area_of_effect",
+            "radius": 30,
+            "bientity_condition": {
+              "type": "origins:target_condition",
+              "condition": { "type": "origins:origin", "origin": "luna:wisp" }
+            },
+            "bientity_action": {
+              "type": "origins:target_action",
+              "action": {
+                "type": "origins:grant_advancement",
+                "advancement": "luna:aequor/combo"
+              }
+            }
+          },
+          {
+            "type": "origins:grant_advancement",
+            "advancement": "luna:aequor/combo"
+          }
+        ]
+      }
+    }
+  },
+  "base_origin_check": {
+    "type": "origins:action_when_hit",
+    "bientity_condition": {
+      "type": "origins:actor_condition",
+      "condition": {
+        "type": "origins:or",
+        "conditions": [
+          {
+            "type": "origins:origin",
+            "origin": "origins:avian",
+            "layer": "origins:origin"
+          },
+          {
+            "type": "origins:origin",
+            "origin": "origins:arachnid",
+            "layer": "origins:origin"
+          },
+          {
+            "type": "origins:origin",
+            "origin": "origins:blazeborn",
+            "layer": "origins:origin"
+          },
+          {
+            "type": "origins:origin",
+            "origin": "origins:elytrian",
+            "layer": "origins:origin"
+          },
+          {
+            "type": "origins:origin",
+            "origin": "origins:feline",
+            "layer": "origins:origin"
+          },
+          {
+            "type": "origins:origin",
+            "origin": "origins:merling",
+            "layer": "origins:origin"
+          },
+          {
+            "type": "origins:origin",
+            "origin": "origins:shulk",
+            "layer": "origins:origin"
+          },
+          {
+            "type": "origins:origin",
+            "origin": "origins:enderian",
+            "layer": "origins:origin"
+          },
+          {
+            "type": "origins:origin",
+            "origin": "origins:phantom",
+            "layer": "origins:origin"
+          },
+          {
+            "type": "origins:origin",
+            "origin": "luna:kitsune",
+            "layer": "origins:origin"
+          },
+          {
+            "type": "origins:origin",
+            "origin": "luna:bluefox",
+            "layer": "origins:origin"
+          },
+          {
+            "type": "origins:origin",
+            "origin": "luna:kow",
+            "layer": "origins:origin"
+          }
+        ]
+      }
+    },
+    "bientity_action": {
+      "type": "origins:target_action",
+      "action": {
+        "type": "origins:grant_advancement",
+        "advancement": "luna:aequor/abandoned"
+      }
+    }
   }
 }

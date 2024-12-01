@@ -1,0 +1,23 @@
+{
+  "display": {
+    "title": {
+      "text": "Betrayed and Abandoned"
+    },
+    "description": {
+      "text": "They have abandoned you. They said you were lying, and attempted to take your life. Even if it kills you, you will kill the Ignea, and prove them wrong."
+    },
+    "icon": {
+      "item": "minecraft:netherite_sword"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "origins": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "luna:aequor/duel"
+}
