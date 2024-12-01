@@ -15,6 +15,5 @@
     "origins:swim_speed",
     "origins:like_water"
   ],
-  "order": 10,
-  "unchoosable": true
+  "order": 10
 }
