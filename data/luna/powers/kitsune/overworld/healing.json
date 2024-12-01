@@ -2,6 +2,13 @@
   "name": "Healer",
   "description": "You can heal yourself\nYou can heal others by hitting them",
   "type": "origins:multiple",
+  "badges": [
+    {
+      "type": "origins:tooltip",
+      "text": "Use [Load Hotbar] to heal yourself.",
+      "sprite": "origins:textures/gui/badge/info.png"
+    }
+  ],
   "healing_others": {
     "type": "origins:active_self",
     "hud_render": {

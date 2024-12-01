@@ -86,7 +86,7 @@
   "really_high_rn": {
     "type": "origins:creative_flight",
     "condition": {
-      "type": "origins:in_block_anywhere",
+      "type": "origins:in_block",
       "compare_to": 1,
       "comparison": ">=",
       "block_condition": {
@@ -111,8 +111,8 @@
     "type": "origins:attribute",
     "modifier": {
       "attribute": "minecraft:generic.knockback_resistance",
-      "value": -0.5,
-      "operation": "addition"
+      "value": -2,
+      "operation": "multiply_total"
     }
   },
   "fire": {

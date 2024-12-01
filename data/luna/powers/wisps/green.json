@@ -33,7 +33,7 @@
                 },
                 {
                   "type": "origins:grant_power",
-                  "power": "luna:wisps/green_levitate",
+                  "power": "luna:wisps/levitate",
                   "source": "*:wisps/green"
                 },
                 {

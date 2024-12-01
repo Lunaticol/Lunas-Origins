@@ -2,15 +2,14 @@
   "type": "origins:multiple",
   "upside_down": {
     "type": "origins:shader",
-    "shader": "minecraft:shaders/post/flip.json",
-    "toggleable": true
+    "shader": "minecraft:shaders/post/flip.json"
   },
   "remove": {
     "type": "origins:action_over_time",
     "interval": 100,
     "entity_action": {
       "type": "origins:revoke_power",
-      "power": "luna:wisps/green_levitate",
+      "power": "luna:wisps/levitate",
       "source": "*:wisps/green"
     }
   }

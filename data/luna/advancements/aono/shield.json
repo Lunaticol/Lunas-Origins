@@ -1,7 +1,7 @@
 {
   "display": {
     "title": {
-      "text": "It should last 10 million years"
+      "text": "It should last 10 million years."
     },
     "description": {
       "text": "Hey alexa turn the shield off. Okay!"
@@ -12,7 +12,7 @@
     "frame": "task",
     "show_toast": true,
     "announce_to_chat": true,
-    "hidden": false
+    "hidden": true
   },
   "criteria": {
     "origins": {

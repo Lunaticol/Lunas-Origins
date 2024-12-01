@@ -320,5 +320,252 @@
         "tag": "luna:soul_blocks"
       }
     }
+  },
+  "uneasy": {
+    "type": "origins:action_over_time",
+    "interval": 40,
+    "entity_action": {
+      "type": "origins:area_of_effect",
+      "radius": 4,
+      "shape": "sphere",
+      "bientity_action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:target_action",
+            "action": {
+              "type": "origins:and",
+              "actions": [
+                {
+                  "type": "origins:if_else_list",
+                  "actions": [
+                    {
+                      "action": {
+                        "type": "origins:change_resource",
+                        "change": -20,
+                        "operation": "add",
+                        "resource": "*:wisps/bars_red_wisp_bar"
+                      },
+                      "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                          {
+                            "type": "origins:resource",
+                            "compare_to": 0,
+                            "comparison": "==",
+                            "resource": "*:wisps/bars_orange_wisp_bar"
+                          },
+                          {
+                            "type": "origins:resource",
+                            "compare_to": 0,
+                            "comparison": "==",
+                            "resource": "*:wisps/bars_yellow_wisp_bar"
+                          },
+                          {
+                            "type": "origins:resource",
+                            "compare_to": 0,
+                            "comparison": "==",
+                            "resource": "*:wisps/bars_green_wisp_bar"
+                          },
+                          {
+                            "type": "origins:resource",
+                            "compare_to": 0,
+                            "comparison": "==",
+                            "resource": "*:wisps/bars_cyan_wisp_bar"
+                          },
+                          {
+                            "type": "origins:resource",
+                            "compare_to": 0,
+                            "comparison": "==",
+                            "resource": "*:wisps/bars_blue_wisp_bar"
+                          },
+                          {
+                            "type": "origins:resource",
+                            "compare_to": 0,
+                            "comparison": "==",
+                            "resource": "*:wisps/bars_purple_wisp_bar"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "action": {
+                        "type": "origins:change_resource",
+                        "change": -20,
+                        "operation": "add",
+                        "resource": "*:wisps/bars_orange_wisp_bar"
+                      },
+                      "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                          {
+                            "type": "origins:resource",
+                            "compare_to": 0,
+                            "comparison": "==",
+                            "resource": "*:wisps/bars_yellow_wisp_bar"
+                          },
+                          {
+                            "type": "origins:resource",
+                            "compare_to": 0,
+                            "comparison": "==",
+                            "resource": "*:wisps/bars_green_wisp_bar"
+                          },
+                          {
+                            "type": "origins:resource",
+                            "compare_to": 0,
+                            "comparison": "==",
+                            "resource": "*:wisps/bars_cyan_wisp_bar"
+                          },
+                          {
+                            "type": "origins:resource",
+                            "compare_to": 0,
+                            "comparison": "==",
+                            "resource": "*:wisps/bars_blue_wisp_bar"
+                          },
+                          {
+                            "type": "origins:resource",
+                            "compare_to": 0,
+                            "comparison": "==",
+                            "resource": "*:wisps/bars_purple_wisp_bar"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "action": {
+                        "type": "origins:change_resource",
+                        "change": -20,
+                        "operation": "add",
+                        "resource": "*:wisps/bars_yellow_wisp_bar"
+                      },
+                      "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                          {
+                            "type": "origins:resource",
+                            "compare_to": 0,
+                            "comparison": "==",
+                            "resource": "*:wisps/bars_green_wisp_bar"
+                          },
+                          {
+                            "type": "origins:resource",
+                            "compare_to": 0,
+                            "comparison": "==",
+                            "resource": "*:wisps/bars_cyan_wisp_bar"
+                          },
+                          {
+                            "type": "origins:resource",
+                            "compare_to": 0,
+                            "comparison": "==",
+                            "resource": "*:wisps/bars_blue_wisp_bar"
+                          },
+                          {
+                            "type": "origins:resource",
+                            "compare_to": 0,
+                            "comparison": "==",
+                            "resource": "*:wisps/bars_purple_wisp_bar"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "action": {
+                        "type": "origins:change_resource",
+                        "change": -20,
+                        "operation": "add",
+                        "resource": "*:wisps/bars_green_wisp_bar"
+                      },
+                      "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                          {
+                            "type": "origins:resource",
+                            "compare_to": 0,
+                            "comparison": "==",
+                            "resource": "*:wisps/bars_cyan_wisp_bar"
+                          },
+                          {
+                            "type": "origins:resource",
+                            "compare_to": 0,
+                            "comparison": "==",
+                            "resource": "*:wisps/bars_blue_wisp_bar"
+                          },
+                          {
+                            "type": "origins:resource",
+                            "compare_to": 0,
+                            "comparison": "==",
+                            "resource": "*:wisps/bars_purple_wisp_bar"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "action": {
+                        "type": "origins:change_resource",
+                        "change": -20,
+                        "operation": "add",
+                        "resource": "*:wisps/bars_cyan_wisp_bar"
+                      },
+                      "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                          {
+                            "type": "origins:resource",
+                            "compare_to": 0,
+                            "comparison": "==",
+                            "resource": "*:wisps/bars_blue_wisp_bar"
+                          },
+                          {
+                            "type": "origins:resource",
+                            "compare_to": 0,
+                            "comparison": "==",
+                            "resource": "*:wisps/bars_purple_wisp_bar"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "action": {
+                        "type": "origins:change_resource",
+                        "change": -20,
+                        "operation": "add",
+                        "resource": "*:wisps/bars_blue_wisp_bar"
+                      },
+                      "condition": {
+                        "type": "origins:resource",
+                        "compare_to": 0,
+                        "comparison": "==",
+                        "resource": "*:wisps/bars_purple_wisp_bar"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "origins:change_resource",
+                  "change": -20,
+                  "operation": "add",
+                  "resource": "luna:wisps/bars_purple_wisp_bar"
+                }
+              ]
+            }
+          },
+          {
+            "type": "origins:actor_action",
+            "action": {
+              "type": "origins:execute_command",
+              "command": "particle minecraft:electric_spark ~ ~ ~ 2 2 2 0 15 normal"
+            }
+          }
+        ]
+      },
+      "bientity_condition": {
+        "type": "origins:target_condition",
+        "condition": {
+          "type": "origins:origin",
+          "origin": "luna:wisp",
+          "layer": "origins:origin"
+        }
+      }
+    }
   }
 }

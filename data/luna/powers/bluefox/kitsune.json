@@ -826,5 +826,42 @@
       "operation": "addition",
       "value": 1.5
     }
+  },
+  "night_time_debuffs": {
+    "type": "origins:action_over_time",
+    "interval": 10,
+    "entity_action": {
+      "type": "origins:apply_effect",
+      "effects": [
+        {
+          "duration": 40,
+          "amplifier": 2,
+          "effect": "minecraft:weakness",
+          "show_icon": true,
+          "show_particles": false
+        },
+        {
+          "duration": 40,
+          "amplifier": 1,
+          "effect": "minecraft:mining_fatigue",
+          "show_icon": true,
+          "show_particles": false
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:daytime",
+          "inverted": true
+        },
+        {
+          "type": "origins:dimension",
+          "dimension": "minecraft:the_nether",
+          "inverted": true
+        }
+      ]
+    }
   }
 }

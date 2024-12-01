@@ -1238,5 +1238,42 @@
       "comparison": "==",
       "resource": "*:*_ult_active"
     }
+  },
+  "uneasy": {
+    "type": "origins:action_over_time",
+    "interval": 40,
+    "entity_action": {
+      "type": "origins:area_of_effect",
+      "radius": 4,
+      "shape": "sphere",
+      "bientity_action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:target_action",
+            "action": {
+              "type": "origins:change_resource",
+              "change": -20,
+              "resource": "luna:bluefox/soul_soul_bar"
+            }
+          },
+          {
+            "type": "origins:actor_action",
+            "action": {
+              "type": "origins:execute_command",
+              "command": "particle minecraft:electric_spark ~ ~ ~ 2 2 2 0 15 normal"
+            }
+          }
+        ]
+      },
+      "bientity_condition": {
+        "type": "origins:target_condition",
+        "condition": {
+          "type": "origins:origin",
+          "origin": "luna:bluefox",
+          "layer": "origins:origin"
+        }
+      }
+    }
   }
 }

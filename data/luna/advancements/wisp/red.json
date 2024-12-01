@@ -1,23 +1,23 @@
 {
   "display": {
     "title": {
-      "text": "Domain Expan-"
+      "text": "Think fast Chucklenut!"
     },
     "description": {
-      "text": "What do you mean its copy righted?"
+      "text": "Use the Red Wisp!"
     },
     "icon": {
-      "item": "minecraft:soul_campfire"
+      "item": "minecraft:cake"
     },
     "frame": "task",
     "show_toast": true,
     "announce_to_chat": true,
-    "hidden": true
+    "hidden": false
   },
   "criteria": {
     "origins": {
       "trigger": "minecraft:impossible"
     }
   },
-  "parent": "luna:aono/aono"
+  "parent": "luna:root"
 }

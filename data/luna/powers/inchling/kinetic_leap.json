@@ -47,12 +47,10 @@
           "radius": 4,
           "shape": "cube",
           "bientity_action": {
-            "type": "origins:target_action",
-            "action": {
-              "type": "origins:add_velocity",
-              "z": -1,
-              "space": "local_horizontal"
-            }
+            "type": "origins:add_velocity",
+            "z": -1,
+            "space": "local_horizontal",
+            "y": 0.1
           }
         },
         {

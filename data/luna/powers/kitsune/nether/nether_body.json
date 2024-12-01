@@ -1,6 +1,6 @@
 {
   "name": "Vulerable",
-  "description": "Despite having more combat knowledge, the nethers limiting size has reduced your health.",
+  "description": "You've lived in the nether all your life, water is entirely foreign to you, and does not mix well with your lava infused blood.",
   "type": "origins:multiple",
   "nether_size": {
     "type": "origins:action_on_callback",
@@ -48,16 +48,6 @@
       "type": "origins:execute_command",
       "command": "scale set pehkui:width 1 @s"
     }
-  },
-  "less_health": {
-    "type": "origins:attribute",
-    "modifiers": [
-      {
-        "attribute": "generic.max_health",
-        "operation": "addition",
-        "value": -2
-      }
-    ]
   },
   "flame_trail": {
     "type": "origins:action_over_time",

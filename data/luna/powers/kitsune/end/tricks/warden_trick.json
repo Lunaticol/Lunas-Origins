@@ -1,6 +1,13 @@
 {
   "name": "Warden Trick",
   "description": "Appear to grow large, and gain strength.",
+  "badges": [
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/info.png",
+      "text": "Use [Ternary] to activate."
+    }
+  ],
   "type": "origins:multiple",
   "warden_trick": {
     "type": "origins:active_self",
