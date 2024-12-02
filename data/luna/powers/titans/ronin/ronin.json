@@ -447,7 +447,7 @@
           "type": "origins:change_resource",
           "change": 25,
           "operation": "add",
-          "resource": "*:core_core_bar"
+          "resource": "*:titans/ronin/core_core_bar"
         },
         {
           "type": "origins:trigger_cooldown",

@@ -15,7 +15,7 @@
       "actions": [
         {
           "type": "origins:change_resource",
-          "resource": "*:titans/ronin/wraith_wraith_bar",
+          "resource": "*:*_wraith_bar",
           "change": 1
         },
         {
@@ -45,7 +45,7 @@
           "type": "origins:resource",
           "compare_to": 0,
           "comparison": "==",
-          "resource": "*:titans/ronin/wraith_wraith_bar"
+          "resource": "*:*_wraith_bar"
         }
       ]
     }

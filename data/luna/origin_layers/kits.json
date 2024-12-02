@@ -30,6 +30,20 @@
         "luna:kits/scorch/tempered_plating",
         "luna:kits/scorch/wildfire_launcher"
       ]
+    },
+    {
+      "condition": {
+        "type": "origins:origin",
+        "layer": "origins:origin",
+        "origin": "luna:northstar"
+      },
+      "origins": [
+        "luna:kits/northstar/enhancedpayload",
+        "luna:kits/northstar/piercingshot",
+        "luna:kits/northstar/threatoptics",
+        "luna:kits/northstar/twintraps",
+        "luna:kits/northstar/viperthrusters"
+      ]
     }
   ]
 }

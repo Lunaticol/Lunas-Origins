@@ -296,7 +296,7 @@
           "effect": {
             "effect": "minecraft:absorption",
             "amplifier": 1,
-            "duration": 1,
+            "duration": -1,
             "show_icon": true,
             "show_particles": false
           }
@@ -305,7 +305,7 @@
           "type": "origins:change_resource",
           "change": 25,
           "operation": "add",
-          "resource": "*:titans/scorch/core_core_bar"
+          "resource": "luna:titans/scorch/core_core_bar"
         },
         {
           "type": "origins:trigger_cooldown",
@@ -322,11 +322,6 @@
     "condition": {
       "type": "origins:and",
       "conditions": [
-        {
-          "type": "origins:health",
-          "compare_to": 60,
-          "comparison": "<="
-        },
         {
           "type": "origins:resource",
           "compare_to": 0,
@@ -363,7 +358,7 @@
           "effect": {
             "effect": "minecraft:absorption",
             "amplifier": 3,
-            "duration": 1,
+            "duration": -1,
             "show_icon": true,
             "show_particles": false
           }
@@ -390,11 +385,6 @@
       "type": "origins:and",
       "conditions": [
         {
-          "type": "origins:health",
-          "compare_to": 60,
-          "comparison": "<="
-        },
-        {
           "type": "origins:resource",
           "compare_to": 0,
           "comparison": "==",
@@ -402,9 +392,9 @@
         },
         {
           "type": "origins:resource",
-          "compare_to": 0,
+          "compare_to": 1,
           "comparison": "==",
-          "resource": "*:scorch/aegis/shield_aegis_shield"
+          "resource": "*:titans/scorch/aegis/shield_aegis_shield"
         }
       ]
     }

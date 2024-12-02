@@ -19,7 +19,7 @@
       "type": "origins:resource",
       "compare_to": 1,
       "comparison": "==",
-      "resource": "*:titans/ronin/chassis_upgrade_aegis_health"
+      "resource": "*:*_aegis_health"
     }
   },
   "upgrade_health": {
@@ -30,7 +30,7 @@
       "actions": [
         {
           "type": "origins:change_resource",
-          "resource": "*:titans/ronin/chassis_upgrade_aegis_health",
+          "resource": "*:*_aegis_health",
           "change": 1
         },
         {
@@ -60,7 +60,7 @@
           "type": "origins:resource",
           "compare_to": 0,
           "comparison": "==",
-          "resource": "*:titans/ronin/chassis_upgrade_aegis_health"
+          "resource": "*:*_aegis_health"
         }
       ]
     }

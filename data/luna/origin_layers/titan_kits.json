@@ -17,6 +17,11 @@
             "type": "origins:origin",
             "layer": "origins:origin",
             "origin": "luna:ronin"
+          },
+          {
+            "type": "origins:origin",
+            "layer": "origins:origin",
+            "origin": "luna:northstar"
           }
         ]
       },

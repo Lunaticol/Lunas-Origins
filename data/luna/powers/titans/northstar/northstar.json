@@ -7,15 +7,15 @@
     "execute_chosen_when_orb": true,
     "entity_action_chosen": {
       "type": "origins:execute_command",
-      "command": "scale set pehkui:height 1.5 @s"
+      "command": "scale set pehkui:height 2.5 @s"
     },
     "entity_action_respawned": {
       "type": "origins:execute_command",
-      "command": "scale set pehkui:height 1.5 @s"
+      "command": "scale set pehkui:height 2.5 @s"
     },
     "entity_action_added": {
       "type": "origins:execute_command",
-      "command": "scale set pehkui:height 1.5 @s"
+      "command": "scale set pehkui:height 2.5 @s"
     },
     "entity_action_lost": {
       "type": "origins:execute_command",
@@ -33,7 +33,7 @@
       "actions": [
         {
           "type": "origins:execute_command",
-          "command": "scale set pehkui:width 1.5 @s",
+          "command": "scale set pehkui:width 2.5 @s",
           "permission_level": 4
         },
         {
@@ -44,11 +44,11 @@
     },
     "entity_action_respawned": {
       "type": "origins:execute_command",
-      "command": "scale set pehkui:width 1.5 @s"
+      "command": "scale set pehkui:width 2.5 @s"
     },
     "entity_action_added": {
       "type": "origins:execute_command",
-      "command": "scale set pehkui:width 1.5 @s"
+      "command": "scale set pehkui:width 2.5 @s"
     },
     "entity_action_lost": {
       "type": "origins:execute_command",
@@ -87,7 +87,7 @@
     "update_health": true,
     "modifier": {
       "attribute": "minecraft:generic.max_health",
-      "value": 5,
+      "value": 15,
       "operation": "addition"
     }
   },
@@ -171,7 +171,7 @@
               {
                 "type": "origins:add_velocity",
                 "z": 2,
-                "space": "local"
+                "space": "local_horizontal_normalized"
               },
               {
                 "type": "origins:delay",
@@ -179,7 +179,7 @@
                 "action": {
                   "type": "origins:add_velocity",
                   "y": -3,
-                  "space": "local"
+                  "space": "local_horizontal_normalized"
                 }
               },
               {
@@ -204,7 +204,7 @@
               {
                 "type": "origins:add_velocity",
                 "z": 2,
-                "space": "local"
+                "space": "local_horizontal_normalized"
               },
               {
                 "type": "origins:change_resource",
@@ -279,7 +279,7 @@
       "type": "origins:add_velocity",
       "y": -0.5,
       "z": -0.5,
-      "space": "local"
+      "space": "local_horizontal_normalized"
     },
     "condition": {
       "type": "origins:fall_flying"
@@ -294,14 +294,14 @@
     "type": "origins:action_on_callback",
     "entity_action_respawned": {
       "type": "origins:execute_command",
-      "command": "origin gui @s titans:titan_kits"
+      "command": "origin gui @s luna:titan_kits"
     }
   },
   "kit": {
     "type": "origins:action_on_callback",
     "entity_action_respawned": {
       "type": "origins:execute_command",
-      "command": "origin gui @s titans:ronin_kits"
+      "command": "origin gui @s luna:kits"
     }
   },
   "food": {
@@ -333,6 +333,7 @@
           "effect": {
             "effect": "minecraft:absorption",
             "amplifier": 1,
+            "duration": -1,
             "show_icon": true,
             "show_particles": false
           }
@@ -341,7 +342,7 @@
           "type": "origins:change_resource",
           "change": 25,
           "operation": "add",
-          "resource": "titans:ronin/core_core_bar"
+          "resource": "luna:titans/northstar/core_core_bar"
         },
         {
           "type": "origins:trigger_cooldown",
@@ -359,15 +360,16 @@
       "type": "origins:and",
       "conditions": [
         {
-          "type": "origins:health",
-          "compare_to": 60,
-          "comparison": "<="
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:*_battery_cooldown"
         },
         {
           "type": "origins:resource",
           "compare_to": 0,
           "comparison": "==",
-          "resource": "*:*_battery_cooldown"
+          "resource": "*:titans/northstar/aegis/shield_aegis_shield"
         }
       ]
     }
@@ -393,7 +395,7 @@
           "effect": {
             "effect": "minecraft:absorption",
             "amplifier": 3,
-            "duration": 1,
+            "duration": -1,
             "show_icon": true,
             "show_particles": false
           }
@@ -402,7 +404,7 @@
           "type": "origins:change_resource",
           "change": 25,
           "operation": "add",
-          "resource": "*:core_core_bar"
+          "resource": "*:titans/northstar/core_core_bar"
         },
         {
           "type": "origins:trigger_cooldown",
@@ -420,11 +422,6 @@
       "type": "origins:and",
       "conditions": [
         {
-          "type": "origins:health",
-          "compare_to": 60,
-          "comparison": "<="
-        },
-        {
           "type": "origins:resource",
           "compare_to": 0,
           "comparison": "==",
@@ -432,9 +429,9 @@
         },
         {
           "type": "origins:resource",
-          "compare_to": 0,
+          "compare_to": 1,
           "comparison": "==",
-          "resource": "*:scorch/aegis/shield_aegis_shield"
+          "resource": "*:titans/northstar/aegis/shield_aegis_shield"
         }
       ]
     }
@@ -461,7 +458,7 @@
         {
           "type": "origins:health",
           "comparison": "<=",
-          "compare_to": 10
+          "compare_to": 20
         }
       ]
     }
@@ -491,12 +488,12 @@
             "conditions": [
               {
                 "type": "origins:health",
-                "compare_to": 20,
+                "compare_to": 30,
                 "comparison": "<="
               },
               {
                 "type": "origins:health",
-                "compare_to": 16,
+                "compare_to": 26,
                 "comparison": ">="
               }
             ]
@@ -509,7 +506,7 @@
           },
           "condition": {
             "type": "origins:health",
-            "compare_to": 15,
+            "compare_to": 25,
             "comparison": "<="
           }
         }
@@ -523,17 +520,21 @@
       "actions": [
         {
           "type": "origins:execute_command",
-          "command": "origin set @s titans:ronin/kits origins:empty"
+          "command": "origin set @s luna:kits origins:empty"
         },
         {
           "type": "origins:execute_command",
-          "command": "origin set @s titans:titan_kits origins:empty"
+          "command": "origin set @s luna:titan_kits origins:empty"
         }
       ]
     }
   },
   "evade_projectiles": {
     "type": "origins:modify_damage_taken",
+    "modifier": {
+      "value": -1,
+      "operation": "multiply_total"
+    },
     "damage_condition": {
       "type": "origins:or",
       "conditions": [
@@ -560,6 +561,22 @@
       ]
     }
   },
+  "extra_range": {
+    "type": "origins:attribute",
+    "modifier": {
+      "attribute": "reach-entity-attributes:attack_range",
+      "value": 3,
+      "operation": "addition"
+    }
+  },
+  "extra_block_range": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "attribute": "reach-entity-attributes:reach",
+      "value": 3,
+      "operation": "addition"
+    }
+  },
   "fall": {
     "type": "origins:invulnerability",
     "damage_condition": { "type": "origins:name", "name": "fall" }
@@ -578,14 +595,69 @@
     "item_condition": {
       "type": "origins:ingredient",
       "ingredient": {
-        "tag": "titans:bow"
+        "tag": "luna:bow"
       }
     }
   },
-  "no_food": {
-    "type": "origins:prevent_item_use",
-    "item_condition": {
-      "type": "origins:food"
+  "immune_to_counter": {
+    "type": "origins:invulnerability",
+    "damage_condition": {
+      "type": "origins:name",
+      "name": "counter"
+    }
+  },
+  "ridable": {
+    "type": "origins:action_on_being_used",
+    "bientity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:mount"
+        },
+        {
+          "type": "origins:actor_action",
+          "action": {
+            "type": "origins:grant_power",
+            "power": "luna:titans/rodeo",
+            "source": "luna:titans/ronin/ronin"
+          }
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:passenger",
+      "compare_to": 1,
+      "comparison": "<"
+    }
+  },
+  "if_rodeo": {
+    "type": "origins:action_over_time",
+    "interval": 10,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "title @p actionbar {\"text\":\"Warning! Enemy rodeo!\",\"color\":\"dark_red\",\"bold\":true}"
+    },
+    "condition": {
+      "type": "origins:passenger",
+      "compare_to": 1,
+      "comparison": ">="
+    }
+  },
+  "if_rodeo_screen": {
+    "type": "origins:overlay",
+    "texture": "minecraft:textures/misc/nausea.png",
+    "red": 1,
+    "green": 0.2,
+    "blue": 0.2,
+    "strength": 0.7,
+    "draw_mode": "nausea",
+    "draw_phase": "above_hud",
+    "visible_in_third_person": true,
+    "hide_with_hud": true,
+    "condition": {
+      "type": "origins:passenger",
+      "compare_to": 1,
+      "comparison": "=="
     }
   }
 }
