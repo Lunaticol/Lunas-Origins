@@ -49,6 +49,11 @@
           "source": "titans:titans/scorch/scorch"
         },
         {
+          "type": "origins:revoke_power",
+          "power": "luna:titans/rodeo",
+          "source": "titans:titans/northstar/northstar"
+        },
+        {
           "type": "origins:add_velocity",
           "y": 1,
           "z": -1,
@@ -106,6 +111,11 @@
           "type": "origins:revoke_power",
           "power": "luna:titans/rodeo",
           "source": "luna:titans/scorch/scorch"
+        },
+        {
+          "type": "origins:revoke_power",
+          "power": "luna:titans/rodeo",
+          "source": "titans:titans/northstar/northstar"
         },
         {
           "type": "origins:change_resource",

@@ -28,10 +28,21 @@
     "active_by_default": false,
     "key": "key.loadToolbarActivator",
     "condition": {
-      "type": "origins:resource",
-      "compare_to": 200,
-      "comparison": ">=",
-      "resource": "luna:bluefox/soul_soul_bar"
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 200,
+          "comparison": ">=",
+          "resource": "luna:bluefox/soul_soul_bar"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:bluefox/ethereal_domain_active"
+        }
+      ]
     }
   },
   "damage": {
@@ -41,8 +52,19 @@
       "operation": "multiply_total"
     },
     "condition": {
-      "type": "origins:power_active",
-      "power": "*:*_toggle"
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:power_active",
+          "power": "*:*_toggle"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:bluefox/ethereal_domain_active"
+        }
+      ]
     }
   },
   "when_hit_1": {

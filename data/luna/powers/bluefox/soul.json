@@ -567,5 +567,26 @@
         }
       }
     }
+  },
+  "admin": {
+    "type": "origins:action_over_time",
+    "interval": 10,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 2000,
+      "operation": "set",
+      "resource": "*:*_soul_bar"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_admin_resource"
+    }
+  },
+  "admin_resource": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
   }
 }

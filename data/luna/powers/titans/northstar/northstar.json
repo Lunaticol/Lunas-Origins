@@ -619,7 +619,7 @@
           "action": {
             "type": "origins:grant_power",
             "power": "luna:titans/rodeo",
-            "source": "luna:titans/ronin/ronin"
+            "source": "luna:titans/northstar/northstar"
           }
         }
       ]

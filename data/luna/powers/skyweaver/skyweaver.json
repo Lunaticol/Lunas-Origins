@@ -96,7 +96,7 @@
       }
     }
   },
-  "bow_expierince": {
+  "bow_experience": {
     "type": "origins:modify_projectile_damage",
     "damage_condition": {
       "type": "origins:projectile",

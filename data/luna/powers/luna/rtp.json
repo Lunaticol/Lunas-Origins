@@ -398,9 +398,7 @@
           "comparison": ">"
         },
         {
-          "type": "origins:name",
-          "name": "magic",
-          "inverted": true
+          "type": "apugli:magic"
         }
       ]
     }

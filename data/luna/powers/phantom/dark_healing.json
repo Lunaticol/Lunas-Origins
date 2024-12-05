@@ -2,7 +2,6 @@
   "name": "Blood Thirsty",
   "description": "It seems the dark magic has made you acquire a taste for blood. You must feast upon mobs to survive",
   "type": "origins:multiple",
-
   "blood": {
     "type": "origins:resource",
     "max": 100,
@@ -548,5 +547,26 @@
       "operation": "set",
       "resource": "*:*_blood"
     }
+  },
+  "admin": {
+    "type": "origins:action_over_time",
+    "interval": 10,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 100,
+      "operation": "set",
+      "resource": "*:*_blood"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_admin_resource"
+    }
+  },
+  "admin_resource": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
   }
 }

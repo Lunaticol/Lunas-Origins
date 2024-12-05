@@ -323,5 +323,24 @@
       "value": 10,
       "operation": "multiply_total"
     }
+  },
+  "admin": {
+    "type": "origins:action_over_time",
+    "interval": 10,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "xp set @s 200 levels"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_admin_resource"
+    }
+  },
+  "admin_resource": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
   }
 }

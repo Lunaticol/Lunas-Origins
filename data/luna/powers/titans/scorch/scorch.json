@@ -87,7 +87,7 @@
     "update_health": true,
     "modifier": {
       "attribute": "minecraft:generic.movement_speed",
-      "value": -0.05,
+      "value": -0.025,
       "operation": "addition"
     }
   },
@@ -199,33 +199,12 @@
     }
   },
   "fuck_your_shield": {
-    "type": "origins:action_over_time",
-    "interval": 5,
-    "entity_action": {
-      "type": "moborigins:damage_equipment",
-      "equipment_slot": "offhand",
-      "amount": 1
-    },
-    "condition": {
-      "type": "origins:or",
-      "conditions": [
-        {
-          "type": "origins:equipped_item",
-          "equipment_slot": "offhand",
-          "item_condition": {
-            "type": "origins:ingredient",
-            "ingredient": { "item": "minecraft:shield" }
-          }
-        },
-        {
-          "type": "origins:equipped_item",
-          "equipment_slot": "mainhand",
-          "item_condition": {
-            "type": "origins:ingredient",
-            "ingredient": { "item": "minecraft:shield" }
-          }
-        }
-      ]
+    "type": "origins:prevent_item_use",
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:shield"
+      }
     }
   },
   "jump": {
@@ -273,130 +252,6 @@
       "name": "food",
       "operation": "multiply_total",
       "value": -2
-    }
-  },
-  "titan_battery_eat": {
-    "type": "apugli:edible_item",
-    "food_component": {
-      "always_edible": true,
-      "snack": false,
-      "meat": false,
-      "saturation": 2,
-      "hunger": 20
-    },
-    "entity_action": {
-      "type": "origins:and",
-      "actions": [
-        {
-          "type": "origins:heal",
-          "amount": 8
-        },
-        {
-          "type": "origins:apply_effect",
-          "effect": {
-            "effect": "minecraft:absorption",
-            "amplifier": 1,
-            "duration": -1,
-            "show_icon": true,
-            "show_particles": false
-          }
-        },
-        {
-          "type": "origins:change_resource",
-          "change": 25,
-          "operation": "add",
-          "resource": "luna:titans/scorch/core_core_bar"
-        },
-        {
-          "type": "origins:trigger_cooldown",
-          "power": "*:*_battery_cooldown"
-        }
-      ]
-    },
-    "item_condition": {
-      "type": "origins:ingredient",
-      "ingredient": {
-        "item": "minecraft:redstone_block"
-      }
-    },
-    "condition": {
-      "type": "origins:and",
-      "conditions": [
-        {
-          "type": "origins:resource",
-          "compare_to": 0,
-          "comparison": "==",
-          "resource": "*:*_battery_cooldown"
-        },
-        {
-          "type": "origins:resource",
-          "compare_to": 0,
-          "comparison": "==",
-          "resource": "*:titans/scorch/aegis/shield_aegis_shield"
-        }
-      ]
-    }
-  },
-  "titan_battery_eat_shield": {
-    "type": "apugli:edible_item",
-    "food_component": {
-      "always_edible": true,
-      "snack": false,
-      "meat": false,
-      "saturation": 2,
-      "hunger": 20
-    },
-    "entity_action": {
-      "type": "origins:and",
-      "actions": [
-        {
-          "type": "origins:heal",
-          "amount": 8
-        },
-        {
-          "type": "origins:apply_effect",
-          "effect": {
-            "effect": "minecraft:absorption",
-            "amplifier": 3,
-            "duration": -1,
-            "show_icon": true,
-            "show_particles": false
-          }
-        },
-        {
-          "type": "origins:change_resource",
-          "change": 25,
-          "operation": "add",
-          "resource": "*:titans/scorch/core_core_bar"
-        },
-        {
-          "type": "origins:trigger_cooldown",
-          "power": "*:*_battery_cooldown"
-        }
-      ]
-    },
-    "item_condition": {
-      "type": "origins:ingredient",
-      "ingredient": {
-        "item": "minecraft:redstone_block"
-      }
-    },
-    "condition": {
-      "type": "origins:and",
-      "conditions": [
-        {
-          "type": "origins:resource",
-          "compare_to": 0,
-          "comparison": "==",
-          "resource": "*:*_battery_cooldown"
-        },
-        {
-          "type": "origins:resource",
-          "compare_to": 1,
-          "comparison": "==",
-          "resource": "*:titans/scorch/aegis/shield_aegis_shield"
-        }
-      ]
     }
   },
   "death_warning": {
@@ -608,6 +463,176 @@
     "entity_action_chosen": {
       "type": "origins:grant_advancement",
       "advancement": "luna:scorch/scorch"
+    }
+  },
+  "breathe_in_water": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:gain_air",
+      "value": 20
+    },
+    "condition": {
+      "type": "origins:health",
+      "compare_to": 20,
+      "comparison": ">"
+    }
+  },
+  "in_water_reactor": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "title @p actionbar {\"text\":\"Warning! Excessive Hull Damage! Water leaking in!\",\"color\":\"dark_red\",\"bold\":true}"
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:submerged_in",
+          "fluid": "minecraft:water"
+        },
+        {
+          "type": "origins:health",
+          "compare_to": 20,
+          "comparison": "<="
+        }
+      ]
+    }
+  },
+  "burnt": {
+    "type": "origins:model_color",
+    "blue": 0.5,
+    "green": 0.5,
+    "red": 0.5,
+    "condition": {
+      "type": "origins:health",
+      "compare_to": 20,
+      "comparison": "<="
+    }
+  },
+  "titan_battery_eat": {
+    "type": "apugli:edible_item",
+    "food_component": {
+      "always_edible": true,
+      "snack": false,
+      "meat": false,
+      "saturation": 2,
+      "hunger": 20
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:heal",
+          "amount": 8
+        },
+        {
+          "type": "origins:apply_effect",
+          "effect": {
+            "effect": "minecraft:absorption",
+            "amplifier": 1,
+            "duration": -1,
+            "show_icon": true,
+            "show_particles": false
+          }
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 25,
+          "operation": "add",
+          "resource": "luna:titans/scorch/core_core_bar"
+        },
+        {
+          "type": "origins:trigger_cooldown",
+          "power": "*:*_battery_cooldown"
+        }
+      ]
+    },
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:redstone_block"
+      }
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:*_battery_cooldown"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:titans/scorch/aegis/shield_aegis_shield"
+        }
+      ]
+    }
+  },
+  "titan_battery_eat_shield": {
+    "type": "apugli:edible_item",
+    "food_component": {
+      "always_edible": true,
+      "snack": false,
+      "meat": false,
+      "saturation": 2,
+      "hunger": 20
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:heal",
+          "amount": 8
+        },
+        {
+          "type": "origins:apply_effect",
+          "effect": {
+            "effect": "minecraft:absorption",
+            "amplifier": 3,
+            "duration": -1,
+            "show_icon": true,
+            "show_particles": false
+          }
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 25,
+          "operation": "add",
+          "resource": "*:titans/scorch/core_core_bar"
+        },
+        {
+          "type": "origins:trigger_cooldown",
+          "power": "*:*_battery_cooldown"
+        }
+      ]
+    },
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:redstone_block"
+      }
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:titans/scorch/scorch_battery_cooldown"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": "==",
+          "resource": "*:titans/scorch/aegis/shield_aegis_shield"
+        }
+      ]
     }
   }
 }

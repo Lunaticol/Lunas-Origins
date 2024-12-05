@@ -1,7 +1,7 @@
 {
   "type": "origins:multiple",
   "name": "VTOL Hover",
-  "description": "Vertical take-off hover.\nCan be upgraded. Method is unknown.",
+  "description": "Vertical take-off hover.",
   "vtol_resource": {
     "type": "origins:resource",
     "max": 100,
@@ -13,7 +13,13 @@
     "min": 0
   },
   "vtol": {
-    "type": "origins:creative_flight",
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:apply_effect",
+      "effect": {
+        "effect": "minecraft:levitation"
+      }
+    },
     "condition": {
       "type": "origins:and",
       "conditions": [

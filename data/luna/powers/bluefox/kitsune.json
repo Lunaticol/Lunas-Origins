@@ -1,6 +1,6 @@
 {
   "name": "Moonlit Soul",
-  "description": "Your dashes are attuned with the moon. Different phases dictate how good your dashes are.",
+  "description": "You are attuned with the moon. Different moon phases dictate how good your dashes are.",
   "type": "origins:multiple",
   "dash": {
     "type": "origins:active_self",
@@ -827,34 +827,23 @@
       "value": 1.5
     }
   },
-  "night_time_debuffs": {
+  "day_time_debuff": {
     "type": "origins:action_over_time",
     "interval": 10,
     "entity_action": {
       "type": "origins:apply_effect",
-      "effects": [
-        {
-          "duration": 40,
-          "amplifier": 2,
-          "effect": "minecraft:weakness",
-          "show_icon": true,
-          "show_particles": false
-        },
-        {
-          "duration": 40,
-          "amplifier": 1,
-          "effect": "minecraft:mining_fatigue",
-          "show_icon": true,
-          "show_particles": false
-        }
-      ]
+      "effect": {
+        "duration": 40,
+        "effect": "minecraft:slowness",
+        "show_icon": true,
+        "show_particles": false
+      }
     },
     "condition": {
       "type": "origins:and",
       "conditions": [
         {
-          "type": "origins:daytime",
-          "inverted": true
+          "type": "origins:daytime"
         },
         {
           "type": "origins:dimension",
@@ -862,6 +851,48 @@
           "inverted": true
         }
       ]
+    }
+  },
+  "wolf_scared": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:apply_effect",
+      "effect": {
+        "effect": "minecraft:weakness",
+        "amplifier": 3,
+        "duration": 40
+      }
+    },
+    "condition": {
+      "type": "apugli:entity_in_radius",
+      "compare_to": 1,
+      "comparison": ">=",
+      "radius": 3,
+      "condition": {
+        "type": "origins:entity_type",
+        "entity_type": "minecraft:wolf"
+      }
+    }
+  },
+  "no_taming_wolfs": {
+    "type": "origins:prevent_entity_use",
+    "bientity_action": {
+      "type": "origins:nothing"
+    },
+    "bientity_condition": {
+      "type": "origins:target_condition",
+      "condition": {
+        "type": "origins:entity_type",
+        "entity_type": "minecraft:wolf"
+      }
+    }
+  },
+  "soul_speed": {
+    "type": "apugli:modify_soul_speed",
+    "modifier": {
+      "value": 2,
+      "operation": "addition"
     }
   }
 }

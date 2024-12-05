@@ -242,17 +242,40 @@
           "command": "kill @e[tag=armor_scorch_5]"
         }
       ]
-    },
-    "condition": {
-      "type": "origins:resource",
-      "compare_to": 1,
-      "comparison": "==",
-      "resource": "*:*_kill_bar"
     }
   },
   "kill_bar": {
     "type": "origins:resource",
-    "max": 100,
-    "min": 1
+    "max": 1,
+    "min": 0
+  },
+  "failsafe_kill": {
+    "type": "origins:action_over_time",
+    "interval": 100,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "kill @e[tag=armor_scorch_1]"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "kill @e[tag=armor_scorch_2]"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "kill @e[tag=armor_scorch_3]"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "kill @e[tag=armor_scorch_4]"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "kill @e[tag=armor_scorch_5]"
+        }
+      ]
+    }
   }
 }

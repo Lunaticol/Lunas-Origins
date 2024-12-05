@@ -1,7 +1,7 @@
 {
   "type": "origins:multiple",
   "name": "Grapple",
-  "description": "Use your Flower vines to grapple onto surfaces! \n[During Root: Entangle]\nEntangle your opponents, preventing jumping, and applying Blindness + Weakness.",
+  "description": "Use your Flower vines to grapple onto surfaces!\n[During Root: Entangle]\nEntangle your opponents, preventing jumping, and applying Blindness + Weakness.",
   "badges": [
     {
       "type": "origins:tooltip",

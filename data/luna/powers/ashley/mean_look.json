@@ -1,0 +1,28 @@
+{
+  "type": "origins:multiple",
+  "charm": {
+    "type": "origins:active_self",
+    "key": { "key": "key.saveToolbarActivator" },
+    "hud_render": { "should_render": true },
+    "cooldown": 100,
+    "entity_action": {
+      "type": "origins:area_of_effect",
+      "radius": 8,
+      "bientity_action": {
+        "type": "origins:target_action",
+        "action": {
+          "type": "origins:apply_effect",
+          "effects": [
+            {
+              "effect": "minecraft:slowness",
+              "duration": 200,
+              "amplifier": 2,
+              "show_icon": true,
+              "show_particles": true
+            }
+          ]
+        }
+      }
+    }
+  }
+}

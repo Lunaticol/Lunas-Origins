@@ -1,0 +1,13 @@
+{
+  "name": "",
+  "replace": false,
+  "order": 2,
+  "enabled": true,
+  "hidden": true,
+  "auto_choose": true,
+  "origins": [
+    {
+      "origins": ["luna:luna/hidden"]
+    }
+  ]
+}

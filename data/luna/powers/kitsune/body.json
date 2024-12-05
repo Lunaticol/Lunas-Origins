@@ -47,9 +47,13 @@
       "actions": [
         {
           "type": "origins:execute_command",
-          "command": "origin set @s luna:kitsune_subclass origins:empty"
+          "command": "origin set @s luna:luna_layers origins:empty"
         }
       ]
+    },
+    "entity_action_removed": {
+      "type": "origins:execute_command",
+      "command": "origin set @s luna:luna_layers origins:empty"
     }
   },
   "xp": {
@@ -117,6 +121,28 @@
     "saturation_modifier": {
       "operation": "addition",
       "value": 1.5
+    }
+  },
+  "wolf_scared": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:apply_effect",
+      "effect": {
+        "effect": "minecraft:weakness",
+        "amplifier": 3,
+        "duration": 40
+      }
+    },
+    "condition": {
+      "type": "apugli:entity_in_radius",
+      "compare_to": 1,
+      "comparison": ">=",
+      "radius": 3,
+      "condition": {
+        "type": "origins:entity_type",
+        "entity_type": "minecraft:wolf"
+      }
     }
   }
 }

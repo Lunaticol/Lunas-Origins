@@ -2,20 +2,312 @@
   "type": "origins:multiple",
   "name": "Plasma Railgun",
   "description": "Sniper railgun that charges up. The more charge the more damage.",
-  "railgun_resource": {
+  "railgun_resource_0": {
     "type": "origins:resource",
-    "max": 4,
-    "min": 0
+    "max": 0,
+    "min": -1,
+    "hud_render": {
+      "sprite_location": "origins:textures/gui/luna_northstar.png",
+      "should_render": true,
+      "bar_index": 0,
+      "condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:resource",
+            "compare_to": 0,
+            "comparison": "==",
+            "resource": "*:*_railgun_resource_1"
+          },
+          {
+            "type": "origins:resource",
+            "compare_to": 0,
+            "comparison": "==",
+            "resource": "*:*_railgun_resource_2"
+          },
+          {
+            "type": "origins:resource",
+            "compare_to": 0,
+            "comparison": "==",
+            "resource": "*:*_railgun_resource_3"
+          },
+          {
+            "type": "origins:resource",
+            "compare_to": 0,
+            "comparison": "==",
+            "resource": "*:*_railgun_resource_4"
+          }
+        ]
+      }
+    }
   },
-  "charge_up_resource": {
+  "railgun_resource_1": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0,
+    "hud_render": {
+      "sprite_location": "origins:textures/gui/luna_northstar.png",
+      "should_render": true,
+      "bar_index": 1,
+      "condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:resource",
+            "compare_to": 1,
+            "comparison": "==",
+            "resource": "*:*_railgun_resource_1"
+          },
+          {
+            "type": "origins:resource",
+            "compare_to": 0,
+            "comparison": "==",
+            "resource": "*:*_railgun_resource_2"
+          },
+          {
+            "type": "origins:resource",
+            "compare_to": 0,
+            "comparison": "==",
+            "resource": "*:*_railgun_resource_3"
+          },
+          {
+            "type": "origins:resource",
+            "compare_to": 0,
+            "comparison": "==",
+            "resource": "*:*_railgun_resource_4"
+          }
+        ]
+      }
+    }
+  },
+  "railgun_resource_2": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0,
+    "hud_render": {
+      "sprite_location": "origins:textures/gui/luna_northstar.png",
+      "should_render": true,
+      "bar_index": 2,
+      "condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:resource",
+            "compare_to": 0,
+            "comparison": "==",
+            "resource": "*:*_railgun_resource_1"
+          },
+          {
+            "type": "origins:resource",
+            "compare_to": 1,
+            "comparison": "==",
+            "resource": "*:*_railgun_resource_2"
+          },
+          {
+            "type": "origins:resource",
+            "compare_to": 0,
+            "comparison": "==",
+            "resource": "*:*_railgun_resource_3"
+          },
+          {
+            "type": "origins:resource",
+            "compare_to": 0,
+            "comparison": "==",
+            "resource": "*:*_railgun_resource_4"
+          }
+        ]
+      }
+    }
+  },
+  "railgun_resource_3": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0,
+    "hud_render": {
+      "sprite_location": "origins:textures/gui/luna_northstar.png",
+      "should_render": true,
+      "bar_index": 3,
+      "condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:resource",
+            "compare_to": 0,
+            "comparison": "==",
+            "resource": "*:*_railgun_resource_1"
+          },
+          {
+            "type": "origins:resource",
+            "compare_to": 0,
+            "comparison": "==",
+            "resource": "*:*_railgun_resource_2"
+          },
+          {
+            "type": "origins:resource",
+            "compare_to": 1,
+            "comparison": "==",
+            "resource": "*:*_railgun_resource_3"
+          },
+          {
+            "type": "origins:resource",
+            "compare_to": 0,
+            "comparison": "==",
+            "resource": "*:*_railgun_resource_4"
+          }
+        ]
+      }
+    }
+  },
+  "railgun_resource_4": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0,
+    "hud_render": {
+      "sprite_location": "origins:textures/gui/luna_northstar.png",
+      "should_render": true,
+      "bar_index": 4,
+      "condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:resource",
+            "compare_to": 0,
+            "comparison": "==",
+            "resource": "*:*_railgun_resource_1"
+          },
+          {
+            "type": "origins:resource",
+            "compare_to": 0,
+            "comparison": "==",
+            "resource": "*:*_railgun_resource_2"
+          },
+          {
+            "type": "origins:resource",
+            "compare_to": 0,
+            "comparison": "==",
+            "resource": "*:*_railgun_resource_3"
+          },
+          {
+            "type": "origins:resource",
+            "compare_to": 1,
+            "comparison": "==",
+            "resource": "*:*_railgun_resource_4"
+          }
+        ]
+      }
+    }
+  },
+  "charge_up": {
     "type": "origins:active_self",
-    "key": "key.origins.primary_active",
+    "key": {
+      "continuous": true,
+      "key": "key.origins.primary_active"
+    },
     "cooldown": 40,
     "entity_action": {
-      "type": "origins:change_resource",
-      "resource": "*:*_railgun_resource",
-      "operation": "add",
-      "change": 1
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "resource": "*:*_railgun_resource_1",
+                "operation": "add",
+                "change": 1
+              },
+              {
+                "type": "origins:change_resource",
+                "resource": "*:*_railgun_resource_0",
+                "operation": "set",
+                "change": -1
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 0,
+            "comparison": "==",
+            "resource": "*:*_railgun_resource_0"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "resource": "*:*_railgun_resource_2",
+                "operation": "add",
+                "change": 1
+              },
+              {
+                "type": "origins:change_resource",
+                "resource": "*:*_railgun_resource_1",
+                "operation": "set",
+                "change": 0
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 1,
+            "comparison": "==",
+            "resource": "*:*_railgun_resource_1"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "resource": "*:*_railgun_resource_3",
+                "operation": "add",
+                "change": 1
+              },
+              {
+                "type": "origins:change_resource",
+                "resource": "*:*_railgun_resource_2",
+                "operation": "set",
+                "change": 0
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 1,
+            "comparison": "==",
+            "resource": "*:*_railgun_resource_2"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "resource": "*:*_railgun_resource_4",
+                "operation": "add",
+                "change": 1
+              },
+              {
+                "type": "origins:change_resource",
+                "resource": "*:*_railgun_resource_3",
+                "operation": "set",
+                "change": 0
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 1,
+            "comparison": "==",
+            "resource": "*:*_railgun_resource_3"
+          }
+        }
+      ]
     },
     "condition": {
       "type": "origins:resource",
@@ -24,275 +316,198 @@
       "resource": "*:*_cooldown"
     }
   },
-  "charge_up_0": {
+  "firing": {
     "type": "origins:active_self",
-    "hud_render": {
-      "sprite_location": "luna:origins/textures/gui/luna_northstar",
-      "bar_index": 0,
-      "condition": {
-        "type": "origins:resource",
-        "compare_to": 0,
-        "comparison": "==",
-        "resource": "*:*_railgun_resource"
-      }
-    },
     "entity_action": {
-      "type": "origins:and",
+      "type": "origins:if_else_list",
       "actions": [
         {
-          "type": "origins:fire_projectile",
-          "speed": 4,
-          "count": 1,
-          "divergence": 0,
-          "entity_type": "minecraft:arrow",
-          "tag": "{pickup:1b,damage:10d,crit:1b}"
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:fire_projectile",
+                "speed": 4,
+                "count": 1,
+                "divergence": 0,
+                "entity_type": "minecraft:arrow",
+                "tag": "{pickup:1b,damage:10d,crit:1b}"
+              },
+              {
+                "type": "origins:change_resource",
+                "change": 0,
+                "operation": "set",
+                "resource": "*:*_railgun_resource_0"
+              },
+              {
+                "type": "origins:trigger_cooldown",
+                "power": "*:*_cooldown"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 0,
+            "comparison": "==",
+            "resource": "*:*_railgun_resource_0"
+          }
         },
         {
-          "type": "origins:change_resource",
-          "change": 0,
-          "operation": "set",
-          "resource": "*:*_railgun_resource"
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:fire_projectile",
+                "speed": 4,
+                "count": 1,
+                "divergence": 0,
+                "entity_type": "minecraft:arrow",
+                "tag": "{pickup:1b,damage:20d,crit:1b}"
+              },
+              {
+                "type": "origins:change_resource",
+                "change": 0,
+                "operation": "set",
+                "resource": "*:*_railgun_resource_1"
+              },
+              {
+                "type": "origins:change_resource",
+                "change": 0,
+                "operation": "set",
+                "resource": "*:*_railgun_resource_0"
+              },
+              {
+                "type": "origins:trigger_cooldown",
+                "power": "*:*_cooldown"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 1,
+            "comparison": "==",
+            "resource": "*:*_railgun_resource_1"
+          }
         },
         {
-          "type": "origins:trigger_cooldown",
-          "power": "*:*_cooldown"
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:fire_projectile",
+                "speed": 4,
+                "count": 1,
+                "divergence": 0,
+                "entity_type": "minecraft:arrow",
+                "tag": "{pickup:1b,damage:30d,crit:1b}"
+              },
+              {
+                "type": "origins:change_resource",
+                "change": 0,
+                "operation": "set",
+                "resource": "*:*_railgun_resource_2"
+              },
+              {
+                "type": "origins:change_resource",
+                "change": 0,
+                "operation": "set",
+                "resource": "*:*_railgun_resource_0"
+              },
+              {
+                "type": "origins:trigger_cooldown",
+                "power": "*:*_cooldown"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 1,
+            "comparison": "==",
+            "resource": "*:*_railgun_resource_2"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:fire_projectile",
+                "speed": 4,
+                "count": 1,
+                "divergence": 0,
+                "entity_type": "minecraft:arrow",
+                "tag": "{pickup:1b,damage:40d,crit:1b}"
+              },
+              {
+                "type": "origins:change_resource",
+                "change": 0,
+                "operation": "set",
+                "resource": "*:*_railgun_resource_3"
+              },
+              {
+                "type": "origins:change_resource",
+                "change": 0,
+                "operation": "set",
+                "resource": "*:*_railgun_resource_0"
+              },
+              {
+                "type": "origins:trigger_cooldown",
+                "power": "*:*_cooldown"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 1,
+            "comparison": "==",
+            "resource": "*:*_railgun_resource_3"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:fire_projectile",
+                "speed": 4,
+                "count": 1,
+                "divergence": 0,
+                "entity_type": "minecraft:arrow",
+                "tag": "{pickup:1b,damage:50d,crit:1b}"
+              },
+              {
+                "type": "origins:change_resource",
+                "change": 0,
+                "operation": "set",
+                "resource": "*:*_railgun_resource_4"
+              },
+              {
+                "type": "origins:change_resource",
+                "change": 0,
+                "operation": "set",
+                "resource": "*:*_railgun_resource_0"
+              },
+              {
+                "type": "origins:trigger_cooldown",
+                "power": "*:*_cooldown"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 1,
+            "comparison": "==",
+            "resource": "*:*_railgun_resource_4"
+          }
         }
       ]
     },
     "key": "key.use",
     "condition": {
-      "type": "origins:and",
-      "conditions": [
-        {
-          "type": "origins:resource",
-          "compare_to": 0,
-          "comparison": "==",
-          "resource": "*:*_railgun_resource"
-        },
-        {
-          "type": "origins:resource",
-          "compare_to": 0,
-          "comparison": "==",
-          "resource": "*:*_cooldown"
-        }
-      ]
-    }
-  },
-  "charge_up_1": {
-    "type": "origins:active_self",
-    "hud_render": {
-      "sprite_location": "luna:origins/textures/gui/luna_northstar",
-      "bar_index": 1,
-      "condition": {
-        "type": "origins:resource",
-        "compare_to": 1,
-        "comparison": "==",
-        "resource": "*:*_railgun_resource"
-      }
-    },
-    "entity_action": {
-      "type": "origins:and",
-      "actions": [
-        {
-          "type": "origins:fire_projectile",
-          "speed": 4,
-          "count": 1,
-          "divergence": 0,
-          "entity_type": "minecraft:arrow",
-          "tag": "{pickup:1b,damage:20d,crit:1b}"
-        },
-        {
-          "type": "origins:change_resource",
-          "change": 0,
-          "operation": "set",
-          "resource": "*:*_railgun_resource"
-        },
-        {
-          "type": "origins:trigger_cooldown",
-          "power": "*:*_cooldown"
-        }
-      ]
-    },
-    "key": "key.use",
-    "condition": {
-      "type": "origins:and",
-      "conditions": [
-        {
-          "type": "origins:resource",
-          "compare_to": 1,
-          "comparison": "==",
-          "resource": "*:*_railgun_resource"
-        },
-        {
-          "type": "origins:resource",
-          "compare_to": 0,
-          "comparison": "==",
-          "resource": "*:*_cooldown"
-        }
-      ]
-    }
-  },
-  "charge_up_2": {
-    "type": "origins:active_self",
-    "hud_render": {
-      "sprite_location": "luna:origins/textures/gui/luna_northstar",
-      "bar_index": 2,
-      "condition": {
-        "type": "origins:resource",
-        "compare_to": 2,
-        "comparison": "==",
-        "resource": "*:*_railgun_resource"
-      }
-    },
-    "entity_action": {
-      "type": "origins:and",
-      "actions": [
-        {
-          "type": "origins:fire_projectile",
-          "speed": 4,
-          "count": 1,
-          "divergence": 0,
-          "entity_type": "minecraft:arrow",
-          "tag": "{pickup:1b,damage:30d,crit:1b}"
-        },
-        {
-          "type": "origins:change_resource",
-          "change": 0,
-          "operation": "set",
-          "resource": "*:*_railgun_resource"
-        },
-        {
-          "type": "origins:trigger_cooldown",
-          "power": "*:*_cooldown"
-        }
-      ]
-    },
-    "key": "key.use",
-    "condition": {
-      "type": "origins:and",
-      "conditions": [
-        {
-          "type": "origins:resource",
-          "compare_to": 2,
-          "comparison": "==",
-          "resource": "*:*_railgun_resource"
-        },
-        {
-          "type": "origins:resource",
-          "compare_to": 0,
-          "comparison": "==",
-          "resource": "*:*_cooldown"
-        }
-      ]
-    }
-  },
-  "charge_up_3": {
-    "type": "origins:active_self",
-    "hud_render": {
-      "sprite_location": "luna:origins/textures/gui/luna_northstar",
-      "bar_index": 3,
-      "condition": {
-        "type": "origins:resource",
-        "compare_to": 3,
-        "comparison": "==",
-        "resource": "*:*_railgun_resource"
-      }
-    },
-    "cooldown": 100,
-    "entity_action": {
-      "type": "origins:and",
-      "actions": [
-        {
-          "type": "origins:fire_projectile",
-          "speed": 4,
-          "count": 1,
-          "divergence": 0,
-          "entity_type": "minecraft:arrow",
-          "tag": "{pickup:1b,damage:40d,crit:1b}"
-        },
-        {
-          "type": "origins:change_resource",
-          "change": 0,
-          "operation": "set",
-          "resource": "*:*_railgun_resource"
-        },
-        {
-          "type": "origins:trigger_cooldown",
-          "power": "*:*_cooldown"
-        }
-      ]
-    },
-    "key": "key.use",
-    "condition": {
-      "type": "origins:and",
-      "conditions": [
-        {
-          "type": "origins:resource",
-          "compare_to": 3,
-          "comparison": "==",
-          "resource": "*:*_railgun_resource"
-        },
-        {
-          "type": "origins:resource",
-          "compare_to": 0,
-          "comparison": "==",
-          "resource": "*:*_cooldown"
-        }
-      ]
-    }
-  },
-  "charge_up_4": {
-    "type": "origins:active_self",
-    "hud_render": {
-      "sprite_location": "luna:origins/textures/gui/luna_northstar",
-      "bar_index": 4,
-      "condition": {
-        "type": "origins:resource",
-        "compare_to": 4,
-        "comparison": "==",
-        "resource": "*:*_railgun_resource"
-      }
-    },
-    "entity_action": {
-      "type": "origins:and",
-      "actions": [
-        {
-          "type": "origins:fire_projectile",
-          "speed": 4,
-          "count": 1,
-          "divergence": 0,
-          "entity_type": "minecraft:arrow",
-          "tag": "{pickup:1b,damage:50d,crit:1b}"
-        },
-        {
-          "type": "origins:change_resource",
-          "change": 0,
-          "operation": "set",
-          "resource": "*:*_railgun_resource"
-        },
-        {
-          "type": "origins:trigger_cooldown",
-          "power": "*:*_cooldown"
-        }
-      ]
-    },
-    "key": "key.use",
-    "condition": {
-      "type": "origins:and",
-      "conditions": [
-        {
-          "type": "origins:resource",
-          "compare_to": 4,
-          "comparison": "==",
-          "resource": "*:*_railgun_resource"
-        },
-        {
-          "type": "origins:resource",
-          "compare_to": 0,
-          "comparison": "==",
-          "resource": "*:*_cooldown"
-        }
-      ]
+      "type": "origins:resource",
+      "compare_to": 0,
+      "comparison": "==",
+      "resource": "*:*_cooldown"
     }
   },
   "cooldown": {
@@ -301,5 +516,43 @@
     "hud_render": {
       "should_render": false
     }
+  },
+  "zoom": {
+    "type": "apugli:modify_fov",
+    "change_divisor": 1,
+    "modifier": {
+      "value": -0.5,
+      "operation": "multiply_total"
+    },
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": "==",
+          "resource": "*:*_railgun_resource_1"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": "==",
+          "resource": "*:*_railgun_resource_2"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": "==",
+          "resource": "*:*_railgun_resource_3"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": "==",
+          "resource": "*:*_railgun_resource_4"
+        }
+      ]
+    }
+  }
   }
 }

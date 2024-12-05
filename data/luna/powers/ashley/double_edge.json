@@ -5,7 +5,7 @@
     "modifier": {
       "attribute": "minecraft:generic.attack_damage",
       "operation": "addition",
-      "value": 15
+      "value": 20
     }
   },
   "on_hit": {
@@ -17,7 +17,7 @@
         "actions": [
           {
             "type": "origins:damage",
-            "amount": 6,
+            "amount": 5,
             "source": {
               "bypasses_armor": true,
               "magic": true,
@@ -35,7 +35,7 @@
     "damage_condition": {
       "type": "origins:name",
       "inverted": true,
-      "name": "minecraft:thorns"
+      "name": "thorns"
     }
   }
 }

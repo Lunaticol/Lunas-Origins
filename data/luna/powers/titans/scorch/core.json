@@ -23,7 +23,7 @@
       "actions": [
         {
           "type": "origins:execute_command",
-          "command": "function luna:titans/scorch/armor_stands"
+          "command": "function luna:scorch/armor_stands"
         },
         {
           "type": "origins:execute_command",
@@ -61,7 +61,7 @@
     "interval": 5,
     "entity_action": {
       "type": "origins:execute_command",
-      "command": "function luna:titans/scorch/armor_stands_particles"
+      "command": "function luna:scorch/armor_stands_particles"
     },
     "condition": {
       "type": "origins:resource",
@@ -112,5 +112,26 @@
         }
       ]
     }
+  },
+  "admin": {
+    "type": "origins:action_over_time",
+    "interval": 10,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 100,
+      "operation": "set",
+      "resource": "*:*_core_bar"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_admin_resource"
+    }
+  },
+  "admin_resource": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
   }
 }

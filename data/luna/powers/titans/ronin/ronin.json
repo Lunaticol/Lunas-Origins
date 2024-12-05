@@ -728,5 +728,51 @@
       "compare_to": 1,
       "comparison": "=="
     }
+  },
+  "breathe_in_water": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:gain_air",
+      "value": 20
+    },
+    "condition": {
+      "type": "origins:health",
+      "compare_to": 20,
+      "comparison": ">"
+    }
+  },
+  "in_water_reactor": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "title @p actionbar {\"text\":\"Warning! Excessive Hull Damage! Water leaking in!\",\"color\":\"dark_red\",\"bold\":true}"
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:submerged_in",
+          "fluid": "minecraft:water"
+        },
+        {
+          "type": "origins:health",
+          "compare_to": 20,
+          "comparison": "<="
+        }
+      ]
+    }
+  },
+  "burnt": {
+    "type": "origins:model_color",
+    "blue": 0.5,
+    "green": 0.5,
+    "red": 0.5,
+    "condition": {
+      "type": "origins:health",
+      "compare_to": 20,
+      "comparison": "<="
+    }
   }
 }

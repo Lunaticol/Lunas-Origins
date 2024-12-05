@@ -1,0 +1,1 @@
+resource set @s luna:wisps/wisp_admin_resource 0

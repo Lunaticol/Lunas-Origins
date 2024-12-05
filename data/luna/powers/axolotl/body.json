@@ -20,7 +20,7 @@
   },
   "breathe_in_water": {
     "type": "origins:action_over_time",
-    "interval": 1,
+    "interval": 5,
     "conditions": [
       {
         "type": "origins:fluid_height",

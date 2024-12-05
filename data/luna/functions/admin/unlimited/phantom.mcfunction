@@ -1,0 +1,1 @@
+resource set @s luna:phantom/dark_healing_admin_resource 1

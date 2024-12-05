@@ -325,6 +325,20 @@
       }
     }
   },
+  "paper_fly": {
+    "type": "origins:elytra_flight",
+    "render_elytra": false,
+    "condition": {
+      "type": "origins:equipped_item",
+      "equipment_slot": "mainhand",
+      "item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": {
+          "item": "minecraft:paper"
+        }
+      }
+    }
+  },
   "reset_on_spawn": {
     "type": "origins:action_on_callback",
     "entity_action_added": {

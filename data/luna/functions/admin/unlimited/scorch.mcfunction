@@ -1,0 +1,1 @@
+resource set @s luna:titans/scorch/core_admin_resource 1

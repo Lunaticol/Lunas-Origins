@@ -45,10 +45,16 @@
         },
         {
           "type": "origins:apply_effect",
-          "effect": {
-            "effect": "minecraft:speed",
-            "duration": 40
-          }
+          "effects": [
+            {
+              "effect": "minecraft:speed",
+              "duration": 40
+            },
+            {
+              "effect": "minecraft:strength",
+              "duration": 40
+            }
+          ]
         }
       ]
     },
@@ -98,5 +104,42 @@
       "comparison": "==",
       "resource": "*:*_rage_resource"
     }
+  },
+  "sound": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:play_sound",
+      "sound": "minecraft:entity.ender_dragon.ambient",
+      "volume": 2,
+      "pitch": 2
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_rage_active"
+    }
+  },
+  "admin": {
+    "type": "origins:action_over_time",
+    "interval": 10,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 100,
+      "operation": "set",
+      "resource": "*:*_rage_resource"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_admin_resource"
+    }
+  },
+  "admin_resource": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
   }
 }

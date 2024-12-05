@@ -1,0 +1,92 @@
+{
+  "hidden": true,
+  "type": "origins:multiple",
+  "reset_1": {
+    "type": "origins:action_on_callback",
+    "entity_action_respawned": {
+      "type": "origins:execute_command",
+      "command": "function luna:admin/unlimited_end/artificer"
+    },
+    "entity_action_removed": {
+      "type": "origins:execute_command",
+      "command": "function luna:admin/unlimited_end/artificer"
+    }
+  },
+  "reset_2": {
+    "type": "origins:action_on_callback",
+    "entity_action_respawned": {
+      "type": "origins:execute_command",
+      "command": "function luna:admin/unlimited_end/bluefox"
+    },
+    "entity_action_removed": {
+      "type": "origins:execute_command",
+      "command": "function luna:admin/unlimited_end/bluefox"
+    }
+  },
+  "reset_3": {
+    "type": "origins:action_on_callback",
+    "entity_action_respawned": {
+      "type": "origins:execute_command",
+      "command": "function luna:admin/unlimited_end/kow"
+    },
+    "entity_action_removed": {
+      "type": "origins:execute_command",
+      "command": "function luna:admin/unlimited_end/kow"
+    }
+  },
+  "reset_4": {
+    "type": "origins:action_on_callback",
+    "entity_action_respawned": {
+      "type": "origins:execute_command",
+      "command": "function luna:admin/unlimited_end/phantom"
+    },
+    "entity_action_removed": {
+      "type": "origins:execute_command",
+      "command": "function luna:admin/unlimited_end/phantom"
+    }
+  },
+  "reset_5": {
+    "type": "origins:action_on_callback",
+    "entity_action_respawned": {
+      "type": "origins:execute_command",
+      "command": "function luna:admin/unlimited_end/sculk"
+    },
+    "entity_action_removed": {
+      "type": "origins:execute_command",
+      "command": "function luna:admin/unlimited_end/sculk"
+    }
+  },
+  "reset_6": {
+    "type": "origins:action_on_callback",
+    "entity_action_respawned": {
+      "type": "origins:execute_command",
+      "command": "function luna:admin/unlimited_end/wisp"
+    },
+    "entity_action_removed": {
+      "type": "origins:execute_command",
+      "command": "function luna:admin/unlimited_end/wisp"
+    }
+  },
+  "reset_7": {
+    "type": "origins:action_on_callback",
+    "entity_action_respawned": {
+      "type": "origins:execute_command",
+      "command": "function luna:admin/unlimited_end/scorch"
+    },
+    "entity_action_removed": {
+      "type": "origins:execute_command",
+      "command": "function luna:admin/unlimited_end/scorch"
+    }
+  },
+  "reset_8": {
+    "type": "origins:action_on_callback",
+    "entity_action_respawned": {
+      "type": "origins:execute_command",
+      "command": "function luna:admin/unlimited_end/ronin"
+    },
+    "entity_action_removed": {
+      "type": "origins:execute_command",
+      "command": "function luna:admin/unlimited_end/ronin"
+    }
+  }
+}

@@ -8,15 +8,15 @@
     "execute_chosen_when_orb": true,
     "entity_action_chosen": {
       "type": "origins:execute_command",
-      "command": "resource add @s luna:titans/ronin/counter_counter 1"
+      "command": "resource set @s luna:titans/scorch/counter_counter 1"
     },
     "entity_action_added": {
       "type": "origins:execute_command",
-      "command": "resource add @s luna:titans/scorch/counter_counter 1"
+      "command": "resource set @s luna:titans/scorch/counter_counter 1"
     },
     "entity_action_respawned": {
       "type": "origins:execute_command",
-      "command": "resource add @s luna:titans/ronin/counter_counter 1"
+      "command": "resource set @s luna:titans/scorch/counter_counter 1"
     },
     "condition": {
       "type": "origins:origin",
@@ -29,15 +29,15 @@
     "execute_chosen_when_orb": true,
     "entity_action_chosen": {
       "type": "origins:execute_command",
-      "command": "resource add @s luna:titans/ronin/counter_counter 1"
+      "command": "resource set @s luna:titans/ronin/counter_counter 1"
     },
     "entity_action_added": {
       "type": "origins:execute_command",
-      "command": "resource add @s luna:titans/ronin/counter_counter 1"
+      "command": "resource set @s luna:titans/ronin/counter_counter 1"
     },
     "entity_action_respawned": {
       "type": "origins:execute_command",
-      "command": "resource add @s luna:titans/ronin/counter_counter 1"
+      "command": "resource set @s luna:titans/ronin/counter_counter 1"
     },
     "condition": {
       "type": "origins:origin",

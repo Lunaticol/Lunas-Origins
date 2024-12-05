@@ -1,5 +1,6 @@
 {
   "type": "origins:multiple",
+  "hidden": true,
   "hit_ronin": {
     "type": "origins:action_when_damage_taken",
     "cooldown": 200,

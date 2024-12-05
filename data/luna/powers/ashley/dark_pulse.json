@@ -20,7 +20,6 @@
             "action": {
               "type": "origins:damage",
               "amount": 20,
-              "damage_type": "mob_attack_no_aggro",
               "source": {
                 "bypasses_armor": false,
                 "magic": true,

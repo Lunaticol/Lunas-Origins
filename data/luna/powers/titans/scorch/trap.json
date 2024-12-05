@@ -120,7 +120,7 @@
           "type": "origins:resource",
           "compare_to": 1,
           "comparison": "==",
-          "resource": "*:*_exploding_barrels"
+          "resource": "*:titans/scorch/aegis/explosive_barrels_exploding_barrels"
         }
       ]
     }
