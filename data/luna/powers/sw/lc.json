@@ -11,7 +11,7 @@
     },
     "type": "origins:active_self",
     "entity_action": {
-      "type": "origins:raycast",
+      "type": "apugli:raycast",
       "before_action": {
         "type": "origins:and",
         "actions": [
@@ -27,6 +27,7 @@
           }
         ]
       },
+      "pierce": true,
       "command_at_hit": "tp @s ~ ~1 ~",
       "entity": true,
       "bientity_action": {

@@ -20,7 +20,7 @@
   },
   "whenhit": {
     "type": "origins:attacker_action_when_hit",
-    "cooldown": 10,
+    "cooldown": 60,
     "entity_action": {
       "type": "origins:damage",
       "amount": 3,
