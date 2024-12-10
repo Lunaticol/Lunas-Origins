@@ -342,5 +342,8 @@
     "type": "origins:resource",
     "max": 1,
     "min": 0
+  },
+  "no_swim": {
+    "type": "origins:ignore_water"
   }
 }

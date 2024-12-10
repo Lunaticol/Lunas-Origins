@@ -132,9 +132,17 @@
       "advancement": "luna:artificer/rain"
     },
     "condition": {
-      "type": "origins:health",
-      "compare_to": 0,
-      "comparison": "=="
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:health",
+          "compare_to": 0,
+          "comparison": "=="
+        },
+        {
+          "type": "origins:in_rain"
+        }
+      ]
     }
   }
 }

@@ -7,7 +7,7 @@
       "text": "Use the Purple Wisp!"
     },
     "icon": {
-      "item": "minecraft:popped_chorus"
+      "item": "minecraft:popped_chorus_fruit"
     },
     "frame": "task",
     "show_toast": true,
@@ -19,5 +19,5 @@
       "trigger": "minecraft:impossible"
     }
   },
-  "parent": "luna:root"
+  "parent": "luna:wisp/blue"
 }

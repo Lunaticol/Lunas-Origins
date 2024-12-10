@@ -1,0 +1,24 @@
+{
+  "display": {
+    "title": {
+      "text": "A True Ronin"
+    },
+    "description": {
+      "text": "Forever alone, outcasted by the blazeborn council, created to kill aquatics. You roam freely with your own will. Remember those who still believe in your tale."
+    },
+    "icon": {
+      "item": "minecraft:netherite_sword",
+      "nbt": "{Enchantments:[{}]}"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "origins": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "luna:ronin/ronin"
+}

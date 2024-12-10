@@ -120,7 +120,7 @@
     "entity_action": {
       "type": "origins:change_resource",
       "change": -5,
-      "resource": "sf:stormscale/static_charge_static_bar"
+      "resource": "luna:stormscale/static_charge_static_bar"
     },
     "condition": {
       "type": "origins:on_block",
@@ -137,7 +137,7 @@
     "entity_action": {
       "type": "origins:change_resource",
       "change": -5,
-      "resource": "sf:stormscale/static_charge_over_charge"
+      "resource": "luna:stormscale/static_charge_over_charge"
     },
     "condition": {
       "type": "origins:on_block",

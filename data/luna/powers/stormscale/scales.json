@@ -18,7 +18,7 @@
     },
     "condition": {
       "type": "origins:predicate",
-      "predicate": "sf:is_thundering",
+      "predicate": "luna:is_thundering",
       "inverted": true
     }
   },
@@ -39,7 +39,7 @@
     },
     "condition": {
       "type": "origins:predicate",
-      "predicate": "sf:is_thundering"
+      "predicate": "luna:is_thundering"
     }
   }
 }
