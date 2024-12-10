@@ -1,20 +1,25 @@
 {
   "name": "Explosive Projectiles",
-  "description": "Use hunger to make your projectiles explode.",
+  "description": "Use hunger to make your projectiles explode.\nTridents feel more like the weapon for you.",
   "type": "origins:multiple",
-  "explosive_projectiles": {
+  "explosive_trident": {
     "type": "apugli:action_on_projectile_hit",
-    "cooldown": 50,
+    "cooldown": 100,
     "hud_render": {
-      "should_render": true
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
+      "bar_index": 2
     },
     "bientity_action": {
-      "type": "origins:target_action",
+      "type": "origins:actor_action",
       "action": {
         "type": "origins:and",
         "actions": [
           {
             "type": "origins:explode",
+            "create_fire": false,
+            "damage_self": false,
+            "destruction_type": "none",
             "power": 3
           },
           {
@@ -41,10 +46,149 @@
     "condition": {
       "type": "origins:power_active",
       "power": "*:*_toggle"
+    },
+    "bientity_condition": {
+      "type": "origins:actor_condition",
+      "condition": {
+        "type": "origins:entity_type",
+        "entity_type": "minecraft:trident"
+      }
     }
   },
   "toggle": {
     "type": "origins:toggle",
     "key": "key.loadToolbarActivator"
+  },
+  "explosive_arrow": {
+    "type": "apugli:action_on_projectile_hit",
+    "cooldown": 50,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
+      "bar_index": 2
+    },
+    "bientity_action": {
+      "type": "origins:actor_action",
+      "action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:explode",
+            "create_fire": false,
+            "damage_self": false,
+            "destruction_type": "none",
+            "power": 2
+          },
+          {
+            "type": "origins:execute_command",
+            "command": "particle minecraft:explosion ~ ~1 ~ 1 1 1 1 10"
+          },
+          {
+            "type": "origins:play_sound",
+            "sound": "minecraft:entity.generic.explode",
+            "category": "master",
+            "pitch": 1,
+            "volume": 1
+          }
+        ]
+      }
+    },
+    "owner_bientity_action": {
+      "type": "origins:actor_action",
+      "action": {
+        "type": "origins:exhaust",
+        "amount": 15
+      }
+    },
+    "condition": {
+      "type": "origins:power_active",
+      "power": "*:*_toggle"
+    },
+    "bientity_condition": {
+      "type": "origins:actor_condition",
+      "condition": {
+        "type": "origins:entity_type",
+        "entity_type": "minecraft:arrow"
+      }
+    }
+  },
+  "enchant_tridents": {
+    "type": "apugli:allow_anvil_enchant",
+    "enchantments": [
+      "minecraft:looting",
+      "minecraft:knockback",
+      "minecraft:sweeping",
+      "minecraft:sharpness"
+    ],
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:trident"
+      }
+    }
+  },
+  "damage_base": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.attack_damage",
+      "operation": "addition",
+      "value": 6
+    },
+    "tick_rate": 10,
+    "condition": {
+      "type": "origins:equipped_item",
+      "equipment_slot": "mainhand",
+      "item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": {
+          "item": "minecraft:trident"
+        }
+      }
+    }
+  },
+  "damage_tooltip": {
+    "type": "origins:tooltip",
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:trident"
+      }
+    },
+    "texts": [
+      {
+        "text": "+2 Attack Damage",
+        "color": "blue"
+      },
+      {
+        "text": "+6 Thrown Damage",
+        "color": "blue"
+      }
+    ]
+  },
+  "damage_thrown_base": {
+    "type": "origins:modify_projectile_damage",
+    "damage_condition": {
+      "type": "origins:projectile",
+      "projectile": "minecraft:trident"
+    },
+    "modifier": {
+      "operation": "addition",
+      "value": 12
+    }
+  },
+  "smoke": {
+    "type": "apugli:projectile_action_over_time",
+    "interval": 5,
+    "bientity_action": {
+      "type": "origins:target_action",
+      "action": {
+        "type": "origins:execute_command",
+        "command": "particle minecraft:smoke ~ ~ ~ 0.1 0.1 0.1 .1 20 force"
+      }
+    },
+    "condition": {
+      "type": "origins:power_active",
+      "power": "*:*_toggle"
+    }
   }
 }

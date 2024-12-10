@@ -6,6 +6,7 @@
     "type": "origins:resource",
     "max": 0,
     "min": -1,
+    "start_value": 0,
     "hud_render": {
       "sprite_location": "origins:textures/gui/luna_northstar.png",
       "should_render": true,
@@ -203,7 +204,7 @@
       "continuous": true,
       "key": "key.origins.primary_active"
     },
-    "cooldown": 40,
+    "cooldown": 20,
     "entity_action": {
       "type": "origins:if_else_list",
       "actions": [
@@ -331,7 +332,7 @@
                 "count": 1,
                 "divergence": 0,
                 "entity_type": "minecraft:arrow",
-                "tag": "{pickup:1b,damage:10d,crit:1b}"
+                "tag": "{pickup:0b,damage:2d,crit:1b,NoGravity:1b,life:1000}"
               },
               {
                 "type": "origins:change_resource",
@@ -362,7 +363,7 @@
                 "count": 1,
                 "divergence": 0,
                 "entity_type": "minecraft:arrow",
-                "tag": "{pickup:1b,damage:20d,crit:1b}"
+                "tag": "{pickup:0b,damage:4d,crit:1b,NoGravity:1b,life:1000}"
               },
               {
                 "type": "origins:change_resource",
@@ -399,7 +400,7 @@
                 "count": 1,
                 "divergence": 0,
                 "entity_type": "minecraft:arrow",
-                "tag": "{pickup:1b,damage:30d,crit:1b}"
+                "tag": "{pickup:0b,damage:6d,crit:1b,NoGravity:1b,life:1000}"
               },
               {
                 "type": "origins:change_resource",
@@ -436,7 +437,7 @@
                 "count": 1,
                 "divergence": 0,
                 "entity_type": "minecraft:arrow",
-                "tag": "{pickup:1b,damage:40d,crit:1b}"
+                "tag": "{pickup:0b,damage:8d,crit:1b,NoGravity:1b,life:1000}"
               },
               {
                 "type": "origins:change_resource",
@@ -473,7 +474,7 @@
                 "count": 1,
                 "divergence": 0,
                 "entity_type": "minecraft:arrow",
-                "tag": "{pickup:1b,damage:50d,crit:1b}"
+                "tag": "{pickup:0b,damage:12d,crit:1b,NoGravity:1b,life:1000}"
               },
               {
                 "type": "origins:change_resource",
@@ -519,9 +520,9 @@
   },
   "zoom": {
     "type": "apugli:modify_fov",
-    "change_divisor": 1,
+    "change_divisor": 20,
     "modifier": {
-      "value": -0.5,
+      "value": -0.75,
       "operation": "multiply_total"
     },
     "condition": {
@@ -553,6 +554,5 @@
         }
       ]
     }
-  }
   }
 }

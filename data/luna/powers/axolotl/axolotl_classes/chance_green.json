@@ -8,7 +8,7 @@
     "type": "origins:chance",
     "action": {
       "type": "origins:execute_command",
-      "command": "origin set @s luna:luna_layers axolotl:axolotl_classes/green_axolotl"
+      "command": "origin set @s luna:luna_layers luna:axolotl_classes/green_axolotl"
     },
     "chance": 0.05,
     "fail_action": {

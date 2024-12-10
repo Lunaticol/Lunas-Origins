@@ -14,7 +14,7 @@
       "text": "Active ability, use with [Save Hotbar]"
     }
   ],
-  "storm_summon_bar": {
+  "storm_summoning_bar": {
     "type": "origins:resource",
     "max": 1125,
     "min": 0,
@@ -35,7 +35,7 @@
           "type": "origins:change_resource",
           "change": 5,
           "operation": "add",
-          "resource": "*:*_storm_summon_bar"
+          "resource": "*:*_storm_summoning_bar"
         },
         {
           "type": "origins:if_else_list",
@@ -49,7 +49,7 @@
                 "type": "origins:resource",
                 "compare_to": 125,
                 "comparison": "==",
-                "resource": "*:*_storm_summon_bar"
+                "resource": "*:*_storm_summoning_bar"
               }
             },
             {
@@ -61,7 +61,7 @@
                 "type": "origins:resource",
                 "compare_to": 250,
                 "comparison": "==",
-                "resource": "*:*_storm_summon_bar"
+                "resource": "*:*_storm_summoning_bar"
               }
             },
             {
@@ -73,7 +73,7 @@
                 "type": "origins:resource",
                 "compare_to": 375,
                 "comparison": "==",
-                "resource": "*:*_storm_summon_bar"
+                "resource": "*:*_storm_summoning_bar"
               }
             },
             {
@@ -85,7 +85,7 @@
                 "type": "origins:resource",
                 "compare_to": 500,
                 "comparison": "==",
-                "resource": "*:*_storm_summon_bar"
+                "resource": "*:*_storm_summoning_bar"
               }
             },
             {
@@ -97,7 +97,7 @@
                 "type": "origins:resource",
                 "compare_to": 625,
                 "comparison": "==",
-                "resource": "*:*_storm_summon_bar"
+                "resource": "*:*_storm_summoning_bar"
               }
             },
             {
@@ -109,7 +109,7 @@
                 "type": "origins:resource",
                 "compare_to": 750,
                 "comparison": "==",
-                "resource": "*:*_storm_summon_bar"
+                "resource": "*:*_storm_summoning_bar"
               }
             },
             {
@@ -121,7 +121,7 @@
                 "type": "origins:resource",
                 "compare_to": 875,
                 "comparison": "==",
-                "resource": "*:*_storm_summon_bar"
+                "resource": "*:*_storm_summoning_bar"
               }
             },
             {
@@ -133,19 +133,19 @@
                 "type": "origins:resource",
                 "compare_to": 1000,
                 "comparison": "==",
-                "resource": "*:*_storm_summon_bar"
+                "resource": "*:*_storm_summoning_bar"
               }
             },
             {
               "action": {
                 "type": "origins:execute_command",
-                "command": "function sf:stormscale/stormsummon"
+                "command": "function luna:stormscale/stormsummon"
               },
               "condition": {
                 "type": "origins:resource",
                 "compare_to": 1125,
                 "comparison": "==",
-                "resource": "*:*_storm_summon_bar"
+                "resource": "*:*_storm_summoning_bar"
               }
             }
           ]
@@ -159,16 +159,16 @@
           "type": "origins:resource",
           "compare_to": 1000,
           "comparison": "==",
-          "resource": "sf:stormscale/static_charge_static_bar"
+          "resource": "luna:stormscale/static_charge_static_bar"
         },
         {
           "type": "origins:resource",
           "compare_to": 100,
           "comparison": "==",
-          "resource": "sf:stormscale/static_charge_over_charge"
+          "resource": "luna:stormscale/static_charge_over_charge"
         },
         {
-          "type": "origins:on_block",
+          "type": "origins:in_block",
           "block_condition": {
             "type": "origins:height",
             "compare_to": 300,
@@ -192,13 +192,13 @@
       "type": "origins:change_resource",
       "change": -125,
       "operation": "add",
-      "resource": "*:*_storm_summon_bar"
+      "resource": "*:*_storm_summoning_bar"
     },
     "condition": {
       "type": "origins:and",
       "conditions": [
         {
-          "type": "origins:on_block",
+          "type": "origins:in_block",
           "block_condition": {
             "type": "origins:height",
             "compare_to": 299,

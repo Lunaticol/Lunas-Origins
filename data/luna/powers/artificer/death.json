@@ -4,7 +4,7 @@
   "description": "You explode upon death",
   "death": {
     "type": "origins:action_over_time",
-    "interval": 1,
+    "interval": 5,
     "entity_action": {
       "type": "origins:and",
       "actions": [

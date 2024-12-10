@@ -151,6 +151,10 @@
           }
         }
       ]
+    },
+    "condition": {
+      "type": "origins:daytime",
+      "inverted": true
     }
   },
   "night_vis": {

@@ -1,13 +1,13 @@
 {
   "display": {
     "title": {
-      "text": "Think fast Chucklenut!"
+      "text": "Blasting Off!"
     },
     "description": {
-      "text": "Use the Red Wisp!"
+      "text": "Use the Orange Wisp!"
     },
     "icon": {
-      "item": "minecraft:cake"
+      "item": "minecraft:blaze_rod"
     },
     "frame": "task",
     "show_toast": true,
@@ -19,5 +19,5 @@
       "trigger": "minecraft:impossible"
     }
   },
-  "parent": "luna:root"
+  "parent": "luna:wisp/red"
 }

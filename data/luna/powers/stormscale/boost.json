@@ -15,81 +15,19 @@
     }
   ],
   "flying": {
-    "type": "origins:active_self",
-    "cooldown": 100,
-    "key": {
-      "key": "key.origins.primary_active"
-    },
-    "hud_render": {
-      "should_render": true
-    },
+    "type": "origins:action_over_time",
+    "interval": 100,
     "entity_action": {
-      "type": "origins:if_else_list",
+      "type": "origins:and",
       "actions": [
         {
-          "action": {
-            "type": "origins:and",
-            "actions": [
-              {
-                "type": "origins:add_velocity",
-                "z": 1,
-                "space": "local"
-              },
-              {
-                "type": "origins:execute_command",
-                "command": "playsound minecraft:entity.ender_dragon.flap master @s ~ ~ ~ 100 .5"
-              },
-              {
-                "type": "origins:change_resource",
-                "resource": "*:*_tired_bar",
-                "change": -1,
-                "operation": "add"
-              }
-            ]
-          },
-          "condition": {
-            "type": "origins:resource",
-            "compare_to": 50,
-            "comparison": "<=",
-            "resource": "sf:stormscale/static_charge_over_charge"
-          }
+          "type": "origins:add_velocity",
+          "z": 0.5,
+          "space": "local"
         },
         {
-          "action": {
-            "type": "origins:and",
-            "actions": [
-              {
-                "type": "origins:add_velocity",
-                "z": 2,
-                "space": "local"
-              },
-              {
-                "type": "origins:chance",
-                "chance": 0.5,
-                "action": {
-                  "type": "origins:change_resource",
-                  "change": -50,
-                  "resource": "sf:stormscale/static_charge_over_charge"
-                }
-              },
-              {
-                "type": "origins:execute_command",
-                "command": "playsound minecraft:entity.ender_dragon.flap master @s ~ ~ ~ 100 .5"
-              },
-              {
-                "type": "origins:change_resource",
-                "resource": "*:*_tired_bar",
-                "change": -1,
-                "operation": "add"
-              }
-            ]
-          },
-          "condition": {
-            "type": "origins:resource",
-            "compare_to": 50,
-            "comparison": ">=",
-            "resource": "sf:stormscale/static_charge_over_charge"
-          }
+          "type": "origins:execute_command",
+          "command": "playsound minecraft:entity.ender_dragon.flap master @s ~ ~ ~ 100 .5"
         }
       ]
     },
@@ -100,33 +38,14 @@
           "type": "origins:fall_flying"
         },
         {
-          "type": "origins:resource",
-          "compare_to": 1,
-          "comparison": ">=",
-          "resource": "*:*_tired_bar"
+          "type": "origins:power_active",
+          "power": "*:*_toggle"
         }
       ]
     }
   },
-  "tired_bar": {
-    "type": "origins:resource",
-    "max": 5,
-    "min": 0,
-    "start_value": 5,
-    "hud_render": { "should_render": true }
-  },
-  "untired_recharge": {
-    "type": "origins:action_over_time",
-    "interval": 100,
-    "entity_action": {
-      "type": "origins:change_resource",
-      "resource": "*:*_tired_bar",
-      "change": 1,
-      "operation": "add"
-    },
-    "condition": {
-      "type": "origins:fall_flying",
-      "inverted": true
-    }
+  "toggle": {
+    "type": "origins:toggle",
+    "active_by_default": true
   }
 }

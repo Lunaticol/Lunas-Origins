@@ -6,7 +6,7 @@
     {
       "type": "origins:tooltip",
       "sprite": "origins:textures/gui/badge/info.png",
-      "text": "Overcharge can cause you to take damage in water. using abilitys like lightning breath can dispell overcharge"
+      "text": "Overcharge can cause you to take damage in water. Using abilitys like lightning breath can dispell overcharge"
     }
   ],
   "static_bar": {
@@ -34,7 +34,7 @@
           },
           "condition": {
             "type": "origins:predicate",
-            "predicate": "sf:is_thundering",
+            "predicate": "luna:is_thundering",
             "inverted": true
           }
         },
@@ -47,7 +47,7 @@
           },
           "condition": {
             "type": "origins:predicate",
-            "predicate": "sf:is_thundering"
+            "predicate": "luna:is_thundering"
           }
         }
       ]
@@ -84,7 +84,7 @@
           },
           "condition": {
             "type": "origins:predicate",
-            "predicate": "sf:is_thundering",
+            "predicate": "luna:is_thundering",
             "inverted": true
           }
         },
@@ -97,7 +97,7 @@
           },
           "condition": {
             "type": "origins:predicate",
-            "predicate": "sf:is_thundering"
+            "predicate": "luna:is_thundering"
           }
         }
       ]
@@ -128,7 +128,7 @@
       "type": "origins:resource",
       "compare_to": 1,
       "comparison": ">=",
-      "resource": "sf:stormscale/static_charge_over_charge"
+      "resource": "luna:stormscale/static_charge_over_charge"
     }
   },
   "over_charged_in_water": {
@@ -157,7 +157,7 @@
           "type": "origins:resource",
           "compare_to": 1,
           "comparison": ">=",
-          "resource": "sf:stormscale/static_charge_over_charge"
+          "resource": "luna:stormscale/static_charge_over_charge"
         }
       ]
     }

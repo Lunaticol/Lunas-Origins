@@ -19,5 +19,5 @@
       "trigger": "minecraft:impossible"
     }
   },
-  "parent": "luna:root"
+  "parent": "luna:wisp/lumina"
 }

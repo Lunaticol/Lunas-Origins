@@ -6,10 +6,8 @@
     "type": "origins:elytra_flight",
     "render_elytra": true,
     "condition": {
-      "type": "origins:fluid_height",
-      "compare_to": 0.5,
+      "type": "origins:submerged_in",
       "fluid": "minecraft:water",
-      "comparison": ">=",
       "inverted": true
     }
   },
@@ -17,7 +15,7 @@
     "type": "origins:modify_damage_taken",
     "modifier": {
       "value": -1,
-      "operation": "set_total"
+      "operation": "multiply_total"
     },
     "damage_condition": {
       "type": "origins:type",
@@ -53,14 +51,14 @@
     },
     "condition": {
       "type": "origins:predicate",
-      "predicate": "sf:is_thundering"
+      "predicate": "luna:is_thundering"
     }
   },
   "lightning_no_hurt": {
     "type": "origins:modify_damage_taken",
     "modifier": {
-      "value": 0,
-      "operation": "set_base"
+      "value": -1,
+      "operation": "multiply_total"
     },
     "damage_condition": {
       "type": "origins:name",
@@ -71,7 +69,7 @@
     "type": "origins:modify_damage_taken",
     "modifier": {
       "value": 0.5,
-      "operation": "addition"
+      "operation": "multiply_total"
     },
     "damage_condition": {
       "type": "origins:projectile",

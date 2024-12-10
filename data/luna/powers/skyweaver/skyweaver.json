@@ -87,8 +87,6 @@
     "type": "origins:creative_flight",
     "condition": {
       "type": "origins:in_block",
-      "compare_to": 1,
-      "comparison": ">=",
       "block_condition": {
         "type": "origins:height",
         "compare_to": 185,
@@ -132,6 +130,18 @@
     "entity_action_chosen": {
       "type": "origins:grant_advancement",
       "advancement": "luna:skyweaver/skyweaver"
+    }
+  },
+  "sw": {
+    "type": "origins:action_when_damage_taken",
+    "cooldown": 0,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "origin set @s origins:origin luna:sw"
+    },
+    "damage_condition": {
+      "type": "origins:name",
+      "name": "lightning_bolt"
     }
   }
 }

@@ -774,5 +774,42 @@
       "compare_to": 20,
       "comparison": "<="
     }
+  },
+  "on_origin_kill": {
+    "type": "origins:self_action_on_kill",
+    "entity_action": {
+      "type": "origins:grant_advancement",
+      "advancement": "luna:ronin/true_ronin"
+    },
+    "target_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:origin",
+          "origin": "luna:aequor",
+          "layer": "origins:origin"
+        },
+        {
+          "type": "origins:origin",
+          "origin": "luna:scorch",
+          "layer": "origins:origin"
+        },
+        {
+          "type": "origins:origin",
+          "origin": "luna:ignea",
+          "layer": "origins:origin"
+        },
+        {
+          "type": "origins:origin",
+          "origin": "origins:blazeborn",
+          "layer": "origins:origin"
+        },
+        {
+          "type": "origins:origin",
+          "origin": "origins:merling",
+          "layer": "origins:origin"
+        }
+      ]
+    }
   }
 }
