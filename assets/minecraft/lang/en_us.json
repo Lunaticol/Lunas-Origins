@@ -28,5 +28,9 @@
   "death.attack.counter": "%1$s was caught in an electric smoke screen",
   "death.attack.counter.player": "%1$s was caught in an electric smoke screen by %2$s",
   "death.attack.rodeo": "%1$s was rodeoed",
-  "death.attack.rodeo.player": "%1$s was rodeoed by %2$s"
+  "death.attack.rodeo.player": "%1$s was rodeoed by %2$s",
+  "death.attack.sphaghetti": "%1$s was spaghettified",
+  "death.attack.sphaghetti.player": "%1$s was spaghettified by %2$s",
+  "death.attack.hawking": "%1$s experienced Hawking Radiation",
+  "death.attack.hawking.player": "%1$s experienced Hawking Radiation due to %2$s"
 }

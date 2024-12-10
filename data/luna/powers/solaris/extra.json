@@ -110,7 +110,7 @@
       "conditions": [
         {
           "type": "origins:origin",
-          "origin": "luna:solaris_form/protostar",
+          "origin": "luna:solaris_form/base",
           "layer": "luna:luna_layers"
         }
       ]
@@ -152,8 +152,8 @@
     "sound": "minecraft:entity.wither.ambient",
     "food_component": {
       "snack": true,
-      "hunger": 1,
-      "saturation": 1,
+      "hunger": 4,
+      "saturation": 2,
       "meat": false
     }
   },
@@ -163,18 +163,6 @@
     "entity_action": {
       "type": "origins:if_else_list",
       "actions": [
-        {
-          "condition": {
-            "type": "origins:resource",
-            "resource": "luna:solaris/mass_resource",
-            "compare_to": 1000,
-            "comparison": "<"
-          },
-          "action": {
-            "type": "origins:grant_advancement",
-            "advancement": "luna:solaris/protostar"
-          }
-        },
         {
           "condition": {
             "type": "origins:and",
@@ -194,10 +182,6 @@
           "action": {
             "type": "origins:and",
             "actions": [
-              {
-                "type": "origins:grant_advancement",
-                "advancement": "luna:solaris/base"
-              },
               {
                 "type": "origins:execute_command",
                 "command": "origin set @s luna:luna_layers luna:solaris_form/base"
@@ -295,26 +279,30 @@
             "operation": "add",
             "resource": "luna:solaris/mass_resource"
           }
-        },
-        {
-          "condition": {
-            "type": "origins:and",
-            "conditions": [
-              {
-                "type": "origins:resource",
-                "resource": "luna:solaris/mass_resource",
-                "compare_to": 0,
-                "comparison": "=="
-              }
-            ]
-          },
-          "action": {
-            "type": "origins:execute_command",
-            "command": "origin set @s luna:luna_layers luna:solaris_form/protostar"
-          }
         }
       ]
     }
   },
-  "hidden": true
+  "immune": {
+    "type": "origins:modify_damage_taken",
+    "damage_condition": {
+      "type": "origins:or",
+      "conditions": [{ "type": "origins:name", "name": "explosion" }]
+    },
+    "modifier": { "value": -1, "operation": "multiply_total" },
+    "hidden": true
+  },
+  "fi": { "type": "origins:fire_immunity" },
+  "death": {
+    "type": "origins:action_on_death",
+    "bientity_action": {
+      "type": "origins:target_action",
+      "action": {
+        "type": "origins:change_resource",
+        "change": -500,
+        "resource": "luna:solaris/mass_resource",
+        "operation": "add"
+      }
+    }
+  }
 }

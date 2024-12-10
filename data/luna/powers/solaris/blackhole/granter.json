@@ -13,6 +13,10 @@
         {
           "type": "origins:execute_command",
           "command": "scale set pehkui:width 0.7"
+        },
+        {
+          "type": "origins:grant_advancement",
+          "advancement": "luna:solaris/blackhole"
         }
       ]
     },

@@ -1,0 +1,17 @@
+{
+  "type": "origins:multiple",
+  "aot": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "condition": {
+        "type": "origins:resource",
+        "resource": "luna:solaris/mass_resource",
+        "compare_to": 0,
+        "comparison": "=="
+      },
+      "type": "origins:execute_command",
+      "command": "origin set @s luna:luna_layers luna:solaris_form/protostar"
+    }
+  },
+  "hidden": true
+}

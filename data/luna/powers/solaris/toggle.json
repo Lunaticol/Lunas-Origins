@@ -20,5 +20,6 @@
       "operation": "add",
       "resource": "luna:solaris/toggle_resource"
     }
-  }
+  },
+  "hidden": true
 }

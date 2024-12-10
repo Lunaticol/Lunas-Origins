@@ -13,6 +13,14 @@
         {
           "type": "origins:execute_command",
           "command": "scale set pehkui:width 0.5"
+        },
+        {
+          "type": "origins:grant_advancement",
+          "advancement": "luna:solaris/neutron"
+        },
+        {
+          "type": "origins:grant_advancement",
+          "advancement": "luna:solaris/neutron"
         }
       ]
     },

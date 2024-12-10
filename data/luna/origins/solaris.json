@@ -7,6 +7,7 @@
     "luna:solaris/description",
     "luna:solaris/granter",
     "luna:solaris/extra",
+    "luna:solaris/extras2",
     "luna:solaris/rorbit"
   ],
   "icon": "minecraft:lava_bucket",

@@ -17,6 +17,10 @@
         {
           "type": "origins:execute_command",
           "command": "scale set pehkui:health 0.6"
+        },
+        {
+          "type": "origins:grant_advancement",
+          "advancement": "luna:solaris/protostar"
         }
       ]
     },
