@@ -1,0 +1,320 @@
+{
+  "type": "origins:multiple",
+  "flight": {
+    "type": "origins:creative_flight",
+    "condition": {
+      "type": "origins:origin",
+      "origin": "luna:solaris_form/protostar",
+      "layer": "luna:luna_layers",
+      "inverted": true
+    }
+  },
+  "flightspeed": {
+    "type": "origins:modify_air_speed",
+    "condition": { "type": "origins:creative_flying" },
+    "modifier": { "operation": "multiply_total", "value": -0.5 }
+  },
+  "glows": {
+    "type": "origins:self_glow",
+    "blue": 0,
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:origin",
+          "origin": "luna:solaris_form/base",
+          "layer": "luna:luna_layers"
+        },
+        {
+          "type": "origins:origin",
+          "origin": "luna:solaris_form/protostar",
+          "layer": "luna:luna_layers"
+        }
+      ]
+    },
+    "bientity_condition": { "type": "origins:can_see" },
+    "red": 1,
+    "green": 0.6470588235
+  },
+  "glowb": {
+    "type": "origins:self_glow",
+    "blue": 0,
+    "condition": {
+      "type": "origins:origin",
+      "origin": "luna:solaris_form/blackhole",
+      "layer": "luna:luna_layers"
+    },
+    "bientity_condition": { "type": "origins:can_see" },
+    "red": 0,
+    "green": 0
+  },
+  "glown": {
+    "type": "origins:self_glow",
+    "condition": {
+      "type": "origins:origin",
+      "origin": "luna:solaris_form/neutron",
+      "layer": "luna:luna_layers"
+    },
+    "bientity_condition": { "type": "origins:can_see" },
+    "red": 0.07843137255,
+    "green": 0.05098039216,
+    "blue": 0.262745098
+  },
+  "fp": {
+    "type": "origins:modify_exhaustion",
+    "modifier": { "operation": "multiply_total", "value": 1 },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:origin",
+          "origin": "luna:solaris_form/protostar",
+          "layer": "luna:luna_layers"
+        }
+      ]
+    }
+  },
+  "fpb": {
+    "type": "origins:modify_exhaustion",
+    "modifier": { "operation": "multiply_total", "value": 4 },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:origin",
+          "origin": "luna:solaris_form/blackhole",
+          "layer": "luna:luna_layers"
+        }
+      ]
+    }
+  },
+  "fpn": {
+    "type": "origins:modify_exhaustion",
+    "modifier": { "operation": "multiply_total", "value": -0.5 },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:origin",
+          "origin": "luna:solaris_form/neutron",
+          "layer": "luna:luna_layers"
+        }
+      ]
+    }
+  },
+  "fpbs": {
+    "type": "origins:modify_exhaustion",
+    "modifier": { "operation": "multiply_total", "value": -0.5 },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:origin",
+          "origin": "luna:solaris_form/protostar",
+          "layer": "luna:luna_layers"
+        }
+      ]
+    }
+  },
+  "alwayseat": { "type": "origins:modify_food", "always_edible": true },
+  "nosat": {
+    "type": "origins:modify_food",
+    "condition": {
+      "type": "origins:food_level",
+      "comparison": ">=",
+      "compare_to": 20
+    },
+    "saturation_modifier": {
+      "operation": "set_total",
+      "value": 0
+    },
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "luna:solaris/mass_resource",
+      "operation": "add",
+      "change": 15
+    }
+  },
+  "blackholeconsumption": {
+    "type": "apugli:edible_item",
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:origin",
+          "origin": "luna:solaris_form/blackhole",
+          "layer": "luna:luna_layers"
+        },
+        { "type": "origins:sneaking" }
+      ]
+    },
+    "item_condition": { "type": "origins:enchantable", "inverted": true },
+    "sound": "minecraft:entity.wither.ambient",
+    "food_component": {
+      "snack": true,
+      "hunger": 1,
+      "saturation": 1,
+      "meat": false
+    }
+  },
+  "granter": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "condition": {
+            "type": "origins:resource",
+            "resource": "luna:solaris/mass_resource",
+            "compare_to": 1000,
+            "comparison": "<"
+          },
+          "action": {
+            "type": "origins:grant_advancement",
+            "advancement": "luna:solaris/protostar"
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:resource",
+                "resource": "luna:solaris/mass_resource",
+                "compare_to": 1000,
+                "comparison": ">="
+              },
+              {
+                "type": "origins:origin",
+                "origin": "luna:solaris_form/protostar"
+              }
+            ]
+          },
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:grant_advancement",
+                "advancement": "luna:solaris/base"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "origin set @s luna:luna_layers luna:solaris_form/base"
+              }
+            ]
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:origin",
+            "origin": "luna:solaris"
+          },
+          "action": {
+            "type": "origins:grant_advancement",
+            "advancement": "luna:solaris/solaris"
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:resource",
+                "resource": "luna:solaris/mass_resource",
+                "compare_to": 1000,
+                "comparison": "<"
+              },
+              {
+                "type": "origins:origin",
+                "origin": "luna:solaris_form/base"
+              }
+            ]
+          },
+          "action": {
+            "type": "origins:execute_command",
+            "command": "origin set @s luna:luna_layers luna:solaris_form/protostar"
+          }
+        }
+      ]
+    }
+  },
+  "aot": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "condition": {
+            "type": "origins:origin",
+            "origin": "luna:solaris_form/protostar",
+            "layer": "luna:luna_layers"
+          },
+          "action": {
+            "type": "origins:change_resource",
+            "change": 1,
+            "operation": "add",
+            "resource": "luna:solaris/mass_resource"
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:origin",
+            "origin": "luna:solaris_form/base",
+            "layer": "luna:luna_layers"
+          },
+          "action": {
+            "type": "origins:change_resource",
+            "change": 1,
+            "operation": "add",
+            "resource": "luna:solaris/mass_resource"
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:origin",
+            "origin": "luna:solaris_form/blackhole",
+            "layer": "luna:luna_layers"
+          },
+          "action": {
+            "type": "origins:change_resource",
+            "change": -1,
+            "operation": "add",
+            "resource": "luna:solaris/mass_resource"
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:origin",
+            "origin": "luna:solaris_form/neutron",
+            "layer": "luna:luna_layers"
+          },
+          "action": {
+            "type": "origins:change_resource",
+            "change": -1,
+            "operation": "add",
+            "resource": "luna:solaris/mass_resource"
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:resource",
+                "resource": "luna:solaris/mass_resource",
+                "compare_to": 0,
+                "comparison": "=="
+              }
+            ]
+          },
+          "action": {
+            "type": "origins:execute_command",
+            "command": "origin set @s luna:luna_layers luna:solaris_form/protostar"
+          }
+        }
+      ]
+    }
+  },
+  "hidden": true
+}

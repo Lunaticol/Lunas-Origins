@@ -1,0 +1,74 @@
+{
+  "type": "origins:action_over_time",
+  "entity_action": {
+    "condition": {
+      "type": "origins:resource",
+      "comparison": "==",
+      "compare_to": 1,
+      "resource": "luna:solaris/toggle_resource"
+    },
+    "type": "origins:area_of_effect",
+    "radius": 3,
+    "bientity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:damage",
+          "source": { "name": "sphaghetti" },
+          "amount": 30
+        },
+        {
+          "type": "origins:target_action",
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:random_teleport",
+                "area_height": 8,
+                "area_width": 8,
+                "success_action": {
+                  "type": "origins:apply_effect",
+                  "effects": [
+                    {
+                      "amplifier": 0,
+                      "duration": 100,
+                      "show_icon": false,
+                      "show_particles": false,
+                      "is_ambient": true,
+                      "effect": "minecraft:blindness"
+                    },
+                    {
+                      "amplifier": 1,
+                      "duration": 100,
+                      "show_icon": false,
+                      "show_particles": false,
+                      "is_ambient": true,
+                      "effect": "minecraft:mining_fatigue"
+                    },
+                    {
+                      "amplifier": 0,
+                      "duration": 100,
+                      "show_icon": false,
+                      "show_particles": false,
+                      "is_ambient": true,
+                      "effect": "minecraft:weakness"
+                    },
+                    {
+                      "amplifier": 2,
+                      "duration": 100,
+                      "show_icon": false,
+                      "show_particles": false,
+                      "is_ambient": true,
+                      "effect": "minecraft:slowness"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "hidden": true
+}

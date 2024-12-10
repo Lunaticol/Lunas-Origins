@@ -1,0 +1,5 @@
+{
+  "name": "Orbital Field",
+  "description": "Similar to the other forms, you have an Orbit. The difference, is that yours is the most powerful. Entities will be dragged in, and harmed by you. If they get too close, they may experience a \"Wormhole\" effect.",
+  "type": "origins:simple"
+}

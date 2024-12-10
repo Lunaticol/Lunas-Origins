@@ -1,0 +1,23 @@
+{
+  "display": {
+    "title": {
+      "text": "Rebirth"
+    },
+    "description": {
+      "text": "Create a devastating explosion with Supernova."
+    },
+    "icon": {
+      "item": "minecraft:end_crystal"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "origins": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "luna:solaris/base"
+}

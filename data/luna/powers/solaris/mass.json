@@ -1,0 +1,16 @@
+{
+  "name": "Mass",
+  "description": "Mass determines your Age. Eating food will increase Mass, and dying will decrease it.",
+  "type": "origins:multiple",
+  "resource": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 6000,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/luna_resource_bar.png",
+      "bar_index": 15
+    }
+  },
+  "hidden": true
+}

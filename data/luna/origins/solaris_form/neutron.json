@@ -1,0 +1,11 @@
+{
+  "name": "Neutron Star",
+  "description": "Friendly to all, you love storing things and watching them spin around you.",
+  "powers": [
+    "luna:solaris/neutron/storage",
+    "luna:solaris/rorbit",
+    "luna:solaris/neutron/granter"
+  ],
+  "icon": "minecraft:nether_star",
+  "unchoosable": true
+}

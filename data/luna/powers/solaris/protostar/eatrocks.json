@@ -1,0 +1,23 @@
+{
+  "name": "Go eat rocks! Ok!",
+  "hidden": true,
+  "type": "apugli:edible_item",
+  "item_condition": {
+    "type": "origins:fuel",
+    "compare_to": 0,
+    "comparison": ">"
+  },
+  "entity_action": {
+    "type": "origins:change_resource",
+    "change": 15,
+    "operation": "add",
+    "resource": "luna:solaris/mass_resource"
+  },
+  "food_component": {
+    "hunger": 0,
+    "saturation": 0,
+    "always_edible": true,
+    "snack": true,
+    "meat": false
+  }
+}

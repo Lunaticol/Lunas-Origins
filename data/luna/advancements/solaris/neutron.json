@@ -1,0 +1,23 @@
+{
+  "display": {
+    "title": {
+      "text": "Neutron Star"
+    },
+    "description": {
+      "text": "Upon Supernova, collapse into a Neutron Star"
+    },
+    "icon": {
+      "item": "minecraft:nether_star"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "origins": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "luna:solaris/rebirth"
+}

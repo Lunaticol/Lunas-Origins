@@ -1,0 +1,17 @@
+{
+  "name": "Orbital Field",
+  "description": "You may store up to [5] items in your Orbit.",
+  "type": "origins:inventory",
+  "container_type": "hopper",
+  "drop_on_death": false,
+  "recoverable": true,
+  "key": "key.origins.primary_active",
+  "title": "Orbital Field",
+  "badges": [
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/info.png",
+      "text": "Items will pop out of your Inventory if you Supernova. Be warned."
+    }
+  ]
+}

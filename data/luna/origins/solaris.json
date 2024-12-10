@@ -1,0 +1,16 @@
+{
+  "name": "Solaris",
+  "description": "For thousands of years, Astronomers have searched the skies above to know more about Stars. Little did they know, one was with them all along.",
+  "powers": [
+    "luna:solaris/mass",
+    "luna:solaris/toggle",
+    "luna:solaris/description",
+    "luna:solaris/granter",
+    "luna:solaris/extra",
+    "luna:solaris/rorbit"
+  ],
+  "icon": "minecraft:lava_bucket",
+  "impact": 3,
+  "order": 99999,
+  "unchoosable": true
+}

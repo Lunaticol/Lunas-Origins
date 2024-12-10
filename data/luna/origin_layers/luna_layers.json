@@ -10,7 +10,11 @@
     "luna:kitsune_classes/ender_kitsune",
     "luna:kitsune_classes/overworld_kitsune",
     "luna:axolotl_classes/blue_axolotl",
-    "luna:axolotl_classes/green_axolotl"
+    "luna:axolotl_classes/green_axolotl",
+    "luna:solaris_form/base",
+    "luna:solaris_form/neutron",
+    "luna:solaris_form/blackhole",
+    "luna:solaris_form/protostar"
   ],
   "origins": [
     {
@@ -23,7 +27,11 @@
         "luna:axolotl_classes/gold_axolotl",
         "luna:axolotl_classes/cyan_axolotl",
         "luna:axolotl_classes/blue_axolotl",
-        "luna:axolotl_classes/green_axolotl"
+        "luna:axolotl_classes/green_axolotl",
+        "luna:solaris_form/base",
+        "luna:solaris_form/neutron",
+        "luna:solaris_form/blackhole",
+        "luna:solaris_form/protostar"
       ],
       "condition": {
         "type": "origins:or",
@@ -37,6 +45,11 @@
             "type": "origins:origin",
             "layer": "origins:origin",
             "origin": "luna:axolotl"
+          },
+          {
+            "type": "origins:origin",
+            "layer": "origins:origin",
+            "origin": "luna:solaris"
           }
         ]
       }

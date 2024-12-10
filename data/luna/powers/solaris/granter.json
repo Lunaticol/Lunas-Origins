@@ -1,0 +1,25 @@
+{
+  "hidden": true,
+  "type": "origins:action_on_callback",
+  "entity_action_gained": {
+    "type": "origins:delay",
+    "action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "origin set @s luna:luna_layers luna:solaris_form/protostar"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "advancement grant @s only luna:solaris/solaris"
+        }
+      ]
+    },
+    "ticks": 60
+  },
+  "entity_action_lost": {
+    "type": "origins:execute_command",
+    "command": "origin set @s luna:luna_layers origins:empty"
+  }
+}

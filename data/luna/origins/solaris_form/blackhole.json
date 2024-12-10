@@ -1,0 +1,12 @@
+{
+  "name": "Black Hole",
+  "description": "Devoid of life, you seek to destroy everything. Consume all.",
+  "powers": [
+    "luna:solaris/blackhole/orbit",
+    "luna:solaris/blackhole/orbit2",
+    "luna:solaris/blackhole/orbit3",
+    "luna:solaris/blackhole/granter"
+  ],
+  "icon": "minecraft:ender_pearl",
+  "unchoosable": true
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Solaris",
+  "description": "Normal as ever, you seek peace and love.",
+  "powers": [
+    "luna:solaris/base/storage",
+    "luna:solaris/base/supernova",
+    "luna:solaris/base/maxsupernova",
+    "luna:solaris/base/granter"
+  ],
+  "icon": "minecraft:lava_bucket",
+  "unchoosable": true
+}

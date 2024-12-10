@@ -1,0 +1,10 @@
+{
+  "name": "Protostar",
+  "description": "Baby stars, born freshly from the Nebula Cloud. Eat a lot to survive.",
+  "powers": [
+    "luna:solaris/protostar/eatrocks",
+    "luna:solaris/protostar/granter"
+  ],
+  "unchoosable": true,
+  "icon": "minecraft:flint_and_steel"
+}

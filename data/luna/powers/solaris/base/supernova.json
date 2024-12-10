@@ -1,0 +1,50 @@
+{
+  "name": "Kaboom?",
+  "hidden": true,
+  "type": "origins:active_self",
+  "key": "key.origins.secondary_active",
+  "cooldown": 70,
+  "condition": {
+    "type": "origins:and",
+    "conditions": [
+      {
+        "type": "origins:resource",
+        "compare_to": 5000,
+        "comparison": ">",
+        "resource": "luna:solaris/mass_resource"
+      },
+      {
+        "type": "origins:resource",
+        "compare_to": 6000,
+        "comparison": "<",
+        "resource": "luna:solaris/mass_resource"
+      }
+    ]
+  },
+  "entity_action": {
+    "type": "origins:and",
+    "actions": [
+      {
+        "type": "origins:change_resource",
+        "change": -6000,
+        "operation": "add",
+        "resource": "luna:solaris/mass_resource"
+      },
+      {
+        "type": "origins:grant_advancement",
+        "advancement": "luna:solaris/rebirth"
+      },
+      {
+        "type": "origins:execute_command",
+        "command": "origin set @s luna:luna_layers luna:solaris_form/protostar"
+      },
+      {
+        "type": "origins:explode",
+        "create_fire": false,
+        "damage_self": false,
+        "destruction_type": "break",
+        "power": 8
+      }
+    ]
+  }
+}

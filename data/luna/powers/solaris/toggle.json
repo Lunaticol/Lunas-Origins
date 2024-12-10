@@ -1,0 +1,24 @@
+{
+  "type": "origins:multiple",
+  "resource": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 2,
+    "max_action": {
+      "type": "origins:change_resource",
+      "change": 0,
+      "operation": "set",
+      "resource": "luna:solaris/toggle_resource"
+    }
+  },
+  "active": {
+    "type": "origins:active_self",
+    "key": "key.loadToolbarActivator",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 1,
+      "operation": "add",
+      "resource": "luna:solaris/toggle_resource"
+    }
+  }
+}

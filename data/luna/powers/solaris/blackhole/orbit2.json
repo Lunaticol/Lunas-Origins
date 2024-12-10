@@ -1,0 +1,30 @@
+{
+  "type": "origins:action_over_time",
+  "entity_action": {
+    "condition": {
+      "type": "origins:resource",
+      "comparison": "==",
+      "compare_to": 1,
+      "resource": "luna:solaris/toggle_resource"
+    },
+    "type": "origins:area_of_effect",
+    "radius": 8,
+    "bientity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:add_velocity",
+          "x": -0.3,
+          "z": -0.3,
+          "y": 0
+        },
+        {
+          "type": "origins:damage",
+          "source": { "name": "hawking" },
+          "amount": 8
+        }
+      ]
+    }
+  },
+  "hidden": true
+}

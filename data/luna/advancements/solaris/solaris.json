@@ -1,0 +1,23 @@
+{
+  "display": {
+    "title": {
+      "text": "Solaris"
+    },
+    "description": {
+      "text": "Play Solaris"
+    },
+    "icon": {
+      "item": "minecraft:lava_bucket"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "origins": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "luna:root"
+}
