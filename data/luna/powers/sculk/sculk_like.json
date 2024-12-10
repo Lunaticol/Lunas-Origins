@@ -1,6 +1,6 @@
 {
   "name": "Deep and Dark",
-  "description": "Born from Sculk, and kin to the Warden. Go forward, and show these invaders why they shouldnt mess with the Sculk.",
+  "description": "Born from Sculk, and kin to the Warden. Go forward, and show these invaders why they shouldn't mess with the Sculk.",
   "type": "origins:multiple",
   "city": {
     "type": "origins:modify_player_spawn",
@@ -345,5 +345,172 @@
   },
   "no_swim": {
     "type": "origins:ignore_water"
+  },
+  "heart_listen_1": {
+    "type": "origins:action_over_time",
+    "interval": 100,
+    "entity_action": {
+      "type": "origins:play_sound",
+      "sound": "minecraft:entity.warden.heartbeat",
+      "volume": 1,
+      "pitch": 1
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "apugli:entity_in_radius",
+          "compare_to": 1,
+          "comparison": "==",
+          "radius": 16,
+          "bientity_condition": {
+            "type": "origins:target_condition",
+            "condition": {
+              "type": "origins:entity_type",
+              "entity_type": "minecraft:player"
+            }
+          }
+        },
+        {
+          "type": "origins:sneaking",
+          "inverted": true
+        }
+      ]
+    }
+  },
+  "heart_listen_2": {
+    "type": "origins:action_over_time",
+    "interval": 80,
+    "entity_action": {
+      "type": "origins:play_sound",
+      "sound": "minecraft:entity.warden.heartbeat",
+      "volume": 1,
+      "pitch": 1
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "apugli:entity_in_radius",
+          "compare_to": 2,
+          "comparison": "==",
+          "radius": 16,
+          "bientity_condition": {
+            "type": "origins:target_condition",
+            "condition": {
+              "type": "origins:entity_type",
+              "entity_type": "minecraft:player"
+            }
+          }
+        },
+        {
+          "type": "origins:sneaking",
+          "inverted": true
+        }
+      ]
+    }
+  },
+  "heart_listen_3": {
+    "type": "origins:action_over_time",
+    "interval": 60,
+    "entity_action": {
+      "type": "origins:play_sound",
+      "sound": "minecraft:entity.warden.heartbeat",
+      "volume": 1,
+      "pitch": 1
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "apugli:entity_in_radius",
+          "compare_to": 3,
+          "comparison": "==",
+          "radius": 16,
+          "bientity_condition": {
+            "type": "origins:target_condition",
+            "condition": {
+              "type": "origins:entity_type",
+              "entity_type": "minecraft:player"
+            }
+          }
+        },
+        {
+          "type": "origins:sneaking",
+          "inverted": true
+        }
+      ]
+    }
+  },
+  "heart_listen_4": {
+    "type": "origins:action_over_time",
+    "interval": 40,
+    "entity_action": {
+      "type": "origins:play_sound",
+      "sound": "minecraft:entity.warden.heartbeat",
+      "volume": 1,
+      "pitch": 1
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "apugli:entity_in_radius",
+          "compare_to": 4,
+          "comparison": "==",
+          "radius": 16,
+          "bientity_condition": {
+            "type": "origins:target_condition",
+            "condition": {
+              "type": "origins:entity_type",
+              "entity_type": "minecraft:player"
+            }
+          }
+        },
+        {
+          "type": "origins:sneaking",
+          "inverted": true
+        }
+      ]
+    }
+  },
+  "heart_listen_5": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:play_sound",
+      "sound": "minecraft:entity.warden.heartbeat",
+      "volume": 1,
+      "pitch": 1,
+      "bientity_condition": {
+        "type": "origins:target_condition",
+        "condition": {
+          "type": "origins:entity_type",
+          "entity_type": "minecraft:player"
+        }
+      }
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "apugli:entity_in_radius",
+          "compare_to": 5,
+          "comparison": ">=",
+          "radius": 16,
+          "bientity_condition": {
+            "type": "origins:target_condition",
+            "condition": {
+              "type": "origins:entity_type",
+              "entity_type": "minecraft:player"
+            }
+          }
+        },
+        {
+          "type": "origins:sneaking",
+          "inverted": true
+        }
+      ]
+    }
   }
 }

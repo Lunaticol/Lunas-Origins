@@ -11,7 +11,7 @@
     "type": "origins:self_action_when_hit",
     "entity_action": {
       "type": "origins:chance",
-      "chance": 0.1,
+      "chance": 0.15,
       "action": {
         "type": "origins:change_resource",
         "change": 1,
