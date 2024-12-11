@@ -3,16 +3,8 @@
   "description": "Heal others within an area",
   "type": "origins:multiple",
   "healing_others": {
-    "type": "origins:active_self",
-    "hud_render": {
-      "should_render": true,
-      "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
-      "bar_index": 4
-    },
-    "cooldown": 1200,
-    "key": {
-      "key": "key.loadToolbarActivator"
-    },
+    "type": "origins:action_over_time",
+    "interval": 20,
     "entity_action": {
       "type": "origins:area_of_effect",
       "radius": 8,
@@ -26,35 +18,25 @@
               "type": "origins:apply_effect",
               "effect": {
                 "effect": "minecraft:regeneration",
-                "duration": 400,
+                "amplifier": 1,
+                "duration": 60,
                 "show_icon": true,
                 "show_particles": false
               }
             }
-          },
-          {
-            "type": "origins:actor_action",
-            "action": {
-              "type": "origins:and",
-              "actions": [
-                {
-                  "type": "origins:apply_effect",
-                  "effect": {
-                    "effect": "minecraft:regeneration",
-                    "duration": 400,
-                    "show_icon": true,
-                    "show_particles": false
-                  }
-                },
-                {
-                  "type": "origins:execute_command",
-                  "command": "particle heart ~ ~ ~ 8 8 8 1 10 force"
-                }
-              ]
-            }
           }
         ]
       }
+    },
+    "condition": {
+      "type": "origins:power_active",
+      "power": "*:*_toggle"
     }
+  },
+  "toggle": {
+    "type": "origins:toggle",
+    "key": "key.origins.secondary_active",
+    "active_by_default": false,
+    "retain_state": false
   }
 }

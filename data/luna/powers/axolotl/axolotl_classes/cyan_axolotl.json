@@ -1,6 +1,6 @@
 {
   "name": "Fast paced",
-  "description": "You have a need for speed! \n You can eat any ocean blocks!",
+  "description": "You have a need for speed!\n You can eat any ocean blocks!",
   "type": "origins:multiple",
   "color": {
     "type": "origins:model_color",
@@ -51,7 +51,7 @@
     "item_condition": {
       "type": "origins:ingredient",
       "ingredient": {
-        "tag": "axolotl:axolotl/cyan_eat"
+        "tag": "luna:cyan_eat"
       }
     }
   },

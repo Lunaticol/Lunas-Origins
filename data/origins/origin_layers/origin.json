@@ -1,5 +1,7 @@
 {
   "order": 2,
+  "allow_random": true,
+  "replace": false,
   "origins": [
     "luna:aequor",
     "luna:artificer",

@@ -15,7 +15,7 @@
     "item_condition": {
       "type": "origins:ingredient",
       "ingredient": {
-        "tag": "axolotl:axolotl/tridents"
+        "tag": "luna:tridents"
       }
     }
   },
@@ -30,7 +30,7 @@
           "item": "minecraft:prismarine_shard"
         },
         "C": {
-          "item": "minecraft:prismarine_block"
+          "item": "minecraft:prismarine"
         }
       },
       "result": {

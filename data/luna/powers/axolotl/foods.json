@@ -7,7 +7,7 @@
     "item_condition": {
       "type": "origins:ingredient",
       "ingredient": {
-        "tag": "axolotl:axolotl/no_eat"
+        "tag": "luna:no_eat"
       }
     }
   },
@@ -16,7 +16,7 @@
     "item_condition": {
       "type": "origins:ingredient",
       "ingredient": {
-        "tag": "axolotl:axolotl/fish"
+        "tag": "luna:fish"
       }
     },
     "food_modifier": {

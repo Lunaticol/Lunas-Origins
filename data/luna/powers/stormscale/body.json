@@ -1,6 +1,6 @@
 {
   "type": "origins:multiple",
-  "name": "Dragon Body",
+  "name": "Dragonkin",
   "description": "You are a dragon, You have the abilitys of a normal dragon.\nYou take more damage from arrows.\nYou attract more lightning!",
   "elytra": {
     "type": "origins:elytra_flight",

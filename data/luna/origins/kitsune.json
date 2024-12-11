@@ -1,7 +1,7 @@
 {
   "name": "Dimensional Kitsune",
   "description": "Mystical Beings with the power to quickly adapt to any environment they find themselves in. From a Pacifist, To a Trickster, to a Fierce Combatant",
-  "icon": "minecraft:sweet_berries",
+  "icon": "lunasorigins:dimensional_berry",
   "impact": 3,
   "order": 1,
   "powers": [

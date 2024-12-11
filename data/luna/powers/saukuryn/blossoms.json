@@ -1,0 +1,147 @@
+{
+  "name": "Blossoms",
+  "description": "You have blossoms all over you, this flowers slowly feed you through-out the day, but require water to keep healthy.",
+  "type": "origins:multiple",
+  "water": {
+    "type": "origins:resource",
+    "max": 1000,
+    "min": 0,
+    "start_value": 1000,
+    "hud_render": {
+      "bar_index": 1
+    }
+  },
+  "ooooooooooooooough_im_so_thirsty": {
+    "type": "origins:action_over_time",
+    "interval": 1200,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "change": -100,
+          "resource": "*:*_water"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:fluid_height",
+          "compare_to": 0.01,
+          "comparison": ">=",
+          "fluid": "minecraft:water",
+          "inverted": true
+        },
+        {
+          "type": "origins:submerged_in",
+          "fluid": "minecraft:water",
+          "inverted": true
+        },
+        {
+          "type": "origins:in_block",
+          "block_condition": {
+            "type": "origins:block_state",
+            "property": "level",
+            "compare_to": 1,
+            "comparison": ">="
+          },
+          "inverted": true
+        },
+        { "type": "origins:in_rain", "inverted": true }
+      ]
+    }
+  },
+  "water_gain": {
+    "type": "origins:action_over_time",
+    "interval": 100,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "change": 100,
+          "resource": "*:*_water",
+          "operation": "add"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:fluid_height",
+          "compare_to": 0.01,
+          "comparison": ">=",
+          "fluid": "minecraft:water"
+        },
+        {
+          "type": "origins:in_block",
+          "block_condition": {
+            "type": "origins:block_state",
+            "property": "level",
+            "compare_to": 1,
+            "comparison": ">="
+          }
+        },
+        {
+          "type": "origins:submerged_in",
+          "fluid": "minecraft:water"
+        },
+        {
+          "type": "origins:in_rain"
+        }
+      ]
+    }
+  },
+  "out_of_water": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:apply_effect",
+      "effect": {
+        "effect": "minecraft:weakness",
+        "duration": 100,
+        "show_icon": true,
+        "show_particles": false
+      }
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:*_water"
+        },
+        {
+          "type": "origins:fluid_height",
+          "compare_to": 0,
+          "fluid": "minecraft:water",
+          "comparison": ">",
+          "inverted": true
+        }
+      ]
+    }
+  },
+  "feed": {
+    "type": "origins:action_over_time",
+    "interval": 200,
+    "entity_action": { "type": "origins:feed", "food": 2, "saturation": 0.2 },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": ">",
+          "resource": "*:*_water"
+        },
+        {
+          "type": "origins:daytime"
+        }
+      ]
+    }
+  }
+}

@@ -115,7 +115,7 @@
   },
   "lush_regen_in_the_lush_caves_biome": {
     "type": "origins:action_over_time",
-    "interval": 1,
+    "interval": 5,
     "condition": {
       "type": "origins:biome",
       "biome": "minecraft:lush_caves"
@@ -125,7 +125,7 @@
       "effects": [
         {
           "effect": "regeneration",
-          "duration": 2,
+          "duration": 60,
           "show_particles": false,
           "is_ambient": false
         }
@@ -250,16 +250,9 @@
           "compare_to": 0.09
         },
         {
-          "type": "origins:enchantment",
-          "enchantment": "moborigins:ground_spikes",
-          "calculation": "sum",
-          "compare_to": 1,
-          "comparison": "=="
-        },
-        {
           "type": "origins:origin",
           "layer": "luna:luna_layers",
-          "origin": "axolotl:axolotl_classes/green_axolotl"
+          "origin": "luna:axolotl_classes/green_axolotl"
         }
       ]
     }
@@ -268,7 +261,7 @@
     "type": "origins:action_on_callback",
     "entity_action_lost": {
       "type": "origins:execute_command",
-      "command": "origin set @s luna:luna_layers origins:empty"
+      "command": "origin set @s luna:axolotl_sublayer origins:empty"
     }
   },
   "damage_base": {
@@ -293,12 +286,6 @@
                 "ingredient": {
                   "item": "minecraft:trident"
                 }
-              },
-              {
-                "type": "origins:ingredient",
-                "ingredient": {
-                  "item": "dragonloot:dragon_trident"
-                }
               }
             ]
           },
@@ -321,12 +308,6 @@
           "type": "origins:ingredient",
           "ingredient": {
             "item": "minecraft:trident"
-          }
-        },
-        {
-          "type": "origins:ingredient",
-          "ingredient": {
-            "item": "dragonloot:dragon_trident"
           }
         }
       ]
@@ -354,10 +335,6 @@
         {
           "type": "origins:projectile",
           "projectile": "minecraft:trident"
-        },
-        {
-          "type": "origins:projectile",
-          "projectile": "dragonloot:dragon_trident"
         }
       ]
     },
@@ -388,12 +365,6 @@
                 "ingredient": {
                   "item": "minecraft:trident"
                 }
-              },
-              {
-                "type": "origins:ingredient",
-                "ingredient": {
-                  "item": "dragonloot:dragon_trident"
-                }
               }
             ]
           },
@@ -419,12 +390,6 @@
               "type": "origins:ingredient",
               "ingredient": {
                 "item": "minecraft:trident"
-              }
-            },
-            {
-              "type": "origins:ingredient",
-              "ingredient": {
-                "item": "dragonloot:dragon_trident"
               }
             }
           ]
@@ -470,12 +435,6 @@
                 "ingredient": {
                   "item": "minecraft:trident"
                 }
-              },
-              {
-                "type": "origins:ingredient",
-                "ingredient": {
-                  "item": "dragonloot:dragon_trident"
-                }
               }
             ]
           },
@@ -501,12 +460,6 @@
               "type": "origins:ingredient",
               "ingredient": {
                 "item": "minecraft:trident"
-              }
-            },
-            {
-              "type": "origins:ingredient",
-              "ingredient": {
-                "item": "dragonloot:dragon_trident"
               }
             }
           ]
@@ -552,12 +505,6 @@
                 "ingredient": {
                   "item": "minecraft:trident"
                 }
-              },
-              {
-                "type": "origins:ingredient",
-                "ingredient": {
-                  "item": "dragonloot:dragon_trident"
-                }
               }
             ]
           },
@@ -583,12 +530,6 @@
               "type": "origins:ingredient",
               "ingredient": {
                 "item": "minecraft:trident"
-              }
-            },
-            {
-              "type": "origins:ingredient",
-              "ingredient": {
-                "item": "dragonloot:dragon_trident"
               }
             }
           ]
@@ -634,12 +575,6 @@
                 "ingredient": {
                   "item": "minecraft:trident"
                 }
-              },
-              {
-                "type": "origins:ingredient",
-                "ingredient": {
-                  "item": "dragonloot:dragon_trident"
-                }
               }
             ]
           },
@@ -665,12 +600,6 @@
               "type": "origins:ingredient",
               "ingredient": {
                 "item": "minecraft:trident"
-              }
-            },
-            {
-              "type": "origins:ingredient",
-              "ingredient": {
-                "item": "dragonloot:dragon_trident"
               }
             }
           ]
@@ -716,12 +645,6 @@
                 "ingredient": {
                   "item": "minecraft:trident"
                 }
-              },
-              {
-                "type": "origins:ingredient",
-                "ingredient": {
-                  "item": "dragonloot:dragon_trident"
-                }
               }
             ]
           },
@@ -747,12 +670,6 @@
               "type": "origins:ingredient",
               "ingredient": {
                 "item": "minecraft:trident"
-              }
-            },
-            {
-              "type": "origins:ingredient",
-              "ingredient": {
-                "item": "dragonloot:dragon_trident"
               }
             }
           ]
@@ -798,12 +715,6 @@
                 "ingredient": {
                   "item": "minecraft:trident"
                 }
-              },
-              {
-                "type": "origins:ingredient",
-                "ingredient": {
-                  "item": "dragonloot:dragon_trident"
-                }
               }
             ]
           },
@@ -829,12 +740,6 @@
               "type": "origins:ingredient",
               "ingredient": {
                 "item": "minecraft:trident"
-              }
-            },
-            {
-              "type": "origins:ingredient",
-              "ingredient": {
-                "item": "dragonloot:dragon_trident"
               }
             }
           ]
@@ -898,6 +803,13 @@
           "inverted": true
         }
       ]
+    }
+  },
+  "respawn": {
+    "type": "origins:action_on_callback",
+    "entity_action_respawned": {
+      "type": "origins:execute_command",
+      "command": "origin gui @s luna:luna_layers"
     }
   }
 }

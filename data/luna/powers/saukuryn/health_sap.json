@@ -1,5 +1,5 @@
 {
   "name": "Health Sap",
-  "description": "Sap health from your opponents, healing you and damaging them.",
+  "description": "Sap health from your opponents, healing you and damaging them.\nCan work in reverse, Healing them directly instead.",
   "type": "origins:multiple"
 }

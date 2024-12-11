@@ -93,7 +93,7 @@
     },
     "condition": {
       "type": "origins:resource",
-      "compare_to": 2000,
+      "compare_to": 1000,
       "comparison": "==",
       "resource": "luna:bluefox/soul_soul_bar"
     }

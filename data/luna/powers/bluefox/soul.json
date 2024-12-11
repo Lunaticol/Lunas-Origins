@@ -4,7 +4,7 @@
   "type": "origins:multiple",
   "soul_bar": {
     "type": "origins:resource",
-    "max": 2000,
+    "max": 1000,
     "min": 0,
     "hud_render": {
       "should_render": true,
@@ -573,7 +573,7 @@
     "interval": 10,
     "entity_action": {
       "type": "origins:change_resource",
-      "change": 2000,
+      "change": 1000,
       "operation": "set",
       "resource": "*:*_soul_bar"
     },

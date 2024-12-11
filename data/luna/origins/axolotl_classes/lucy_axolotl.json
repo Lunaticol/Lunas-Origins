@@ -1,10 +1,9 @@
 {
   "name": "Lucy Axolotl",
-  "unchoosable": true,
   "description": "[SCROLL]",
   "icon": "minecraft:heart_of_the_sea",
   "loading_priority": 1,
   "impact": 1,
   "order": 1,
   "powers": ["luna:axolotl/axolotl_classes/lucy_axolotl", "luna:axolotl/swim"]
-}
+},
