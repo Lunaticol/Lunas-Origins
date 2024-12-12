@@ -1,0 +1,51 @@
+{
+  "type": "origins:multiple",
+  "fizzles": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:block.lava.extinguish",
+          "pitch": 2,
+          "volume": 1,
+          "category": "master"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        { "type": "origins:in_rain" },
+        {
+          "type": "origins:fluid_height",
+          "compare_to": 0.0,
+          "comparison": ">",
+          "fluid": "minecraft:water"
+        }
+      ]
+    }
+  },
+  "smoke": {
+    "type": "origins:particle",
+    "count": 1,
+    "particle": "minecraft:smoke",
+    "visible_in_first_person": false,
+    "visible_while_invisible": true,
+    "frequency": 10,
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        { "type": "origins:in_rain" },
+        {
+          "type": "origins:fluid_height",
+          "compare_to": 0.0,
+          "comparison": ">",
+          "fluid": "minecraft:water"
+        }
+      ]
+    }
+  },
+  "hidden": true
+}

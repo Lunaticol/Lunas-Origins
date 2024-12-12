@@ -3,7 +3,8 @@
   "description": "Baby stars, born freshly from the Nebula Cloud. Eat a lot to survive.",
   "powers": [
     "luna:solaris/protostar/eatfuel",
-    "luna:solaris/protostar/granter"
+    "luna:solaris/protostar/granter",
+    "luna:solaris/protostar/fizzling"
   ],
   "unchoosable": true,
   "icon": "minecraft:flint_and_steel"

@@ -6,7 +6,9 @@
     "luna:solaris/base/supernova",
     "luna:solaris/base/maxsupernova",
     "luna:solaris/base/granter",
-    "luna:solaris/base/eatrocks"
+    "luna:solaris/base/eatrocks",
+    "luna:solaris/base/fizzling",
+    "luna:solaris/base/byearmour"
   ],
   "icon": "minecraft:lava_bucket",
   "unchoosable": true

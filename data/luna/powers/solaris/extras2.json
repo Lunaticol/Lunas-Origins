@@ -1,16 +1,26 @@
 {
   "type": "origins:multiple",
-  "aot": {
+  "aot2": {
     "type": "origins:action_over_time",
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:origin",
+          "origin": "luna:solaris_form/protostar",
+          "layer": "luna:luna_layers"
+        },
+        {
+          "type": "origins:resource",
+          "resource": "luna:solaris/mass_resource",
+          "compare_to": 1000,
+          "comparison": ">"
+        }
+      ]
+    },
     "entity_action": {
-      "condition": {
-        "type": "origins:resource",
-        "resource": "luna:solaris/mass_resource",
-        "compare_to": 0,
-        "comparison": "=="
-      },
       "type": "origins:execute_command",
-      "command": "origin set @s luna:luna_layers luna:solaris_form/protostar"
+      "command": "origin set @s luna:luna_layers luna:solaris_form/base"
     }
   },
   "hidden": true
