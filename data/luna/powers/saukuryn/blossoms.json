@@ -1,6 +1,6 @@
 {
   "name": "Blossoms",
-  "description": "You have blossoms all over you, this flowers slowly feed you through-out the day, but require water to keep healthy.",
+  "description": "You have blossoms all over you, these flowers slowly feed you through-out the day, but require water to keep healthy.",
   "type": "origins:multiple",
   "water": {
     "type": "origins:resource",
@@ -11,7 +11,7 @@
       "bar_index": 1
     }
   },
-  "ooooooooooooooough_im_so_thirsty": {
+  "its_time_to_drink_water": {
     "type": "origins:action_over_time",
     "interval": 1200,
     "entity_action": {

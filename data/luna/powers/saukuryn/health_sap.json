@@ -1,5 +1,252 @@
 {
   "name": "Health Sap",
-  "description": "Sap health from your opponents, healing you and damaging them.\nCan work in reverse, Healing them directly instead.",
-  "type": "origins:multiple"
+  "description": "Sap health from your opponents, healing you and damaging them.\nCan work in reverse, Healing them directly instead, but hurting you.",
+  "type": "origins:multiple",
+  "cherry_bar": {
+    "type": "origins:resource",
+    "max": 100,
+    "min": 0,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/luna_resource_bar.png",
+      "bar_index": 17,
+      "order": 0
+    }
+  },
+  "switch": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
+  },
+  "sap": {
+    "type": "origins:active_self",
+    "key": {
+      "key": "key.origins.primary_active",
+      "continuous": true
+    },
+    "entity_action": {
+      "type": "origins:raycast",
+      "command_along_ray": "particle dust_color_transition 1.000 0.322 0.706 1 1.000 0.690 0.835 ~ ~ ~ 0 0 0 5 0 normal",
+      "distance": 8,
+      "bientity_action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:actor_action",
+            "action": {
+              "type": "origins:heal",
+              "amount": 1
+            }
+          },
+          {
+            "type": "origins:target_action",
+            "action": {
+              "type": "origins:damage",
+              "amount": 1,
+              "source": {
+                "name": "sap"
+              }
+            }
+          }
+        ]
+      },
+      "hit_action": {
+        "type": "origins:change_resource",
+        "change": -2,
+        "resource": "*:*_cherry_bar"
+      }
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": "==",
+          "resource": "*:*_switch"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": ">",
+          "resource": "*:*_cherry_bar"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:*_lock"
+        }
+      ]
+    }
+  },
+  "sap_reverse": {
+    "type": "origins:active_self",
+    "key": {
+      "key": "key.origins.primary_active",
+      "continuous": true
+    },
+    "entity_action": {
+      "type": "origins:raycast",
+      "command_along_ray": "particle dust_color_transition 1.000 0.322 0.706 1 1.000 0.690 0.835 ~ ~ ~ 0 0 0 5 0 normal",
+      "distance": 8,
+      "bientity_action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:actor_action",
+            "action": {
+              "type": "origins:damage",
+              "amount": 1,
+              "source": {
+                "name": "sap"
+              }
+            }
+          },
+          {
+            "type": "origins:target_action",
+            "action": {
+              "type": "origins:heal",
+              "amount": 1
+            }
+          }
+        ]
+      },
+      "hit_action": {
+        "type": "origins:change_resource",
+        "change": -2,
+        "resource": "*:*_cherry_bar"
+      }
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:*_switch"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": ">",
+          "resource": "*:*_cherry_bar"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:*_lock"
+        }
+      ]
+    }
+  },
+  "switching": {
+    "type": "origins:active_self",
+    "key": "key.loadToolbarActivator",
+    "cooldown": 100,
+    "entity_action": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "change": 1,
+                "resource": "*:*_switch",
+                "operation": "set"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "title @p actionbar {\"text\":\"Health Sap\",\"color\":\"dark_purple\",\"bold\":true}"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 0,
+            "comparison": "==",
+            "resource": "*:*_switch"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "change": 0,
+                "resource": "*:*_switch",
+                "operation": "set"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "title @p actionbar {\"text\":\"Health Pulse\",\"color\":\"light_purple\",\"bold\":true}"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 1,
+            "comparison": "==",
+            "resource": "*:*_switch"
+          }
+        }
+      ]
+    }
+  },
+  "gain": {
+    "type": "origins:action_over_time",
+    "interval": 10,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 1,
+      "operation": "add",
+      "resource": "*:*_cherry_bar"
+    }
+  },
+  "lock": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
+  },
+  "lock_cherry": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:delay",
+      "ticks": 20,
+      "action": {
+        "type": "origins:change_resource",
+        "change": 1,
+        "operation": "set",
+        "resource": "*:*_lock"
+      }
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 10,
+      "comparison": "<=",
+      "resource": "*:*_cherry_bar"
+    }
+  },
+  "unlock_cherry": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 0,
+      "operation": "set",
+      "resource": "*:*_lock"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 11,
+      "comparison": ">=",
+      "resource": "*:*_cherry_bar"
+    }
+  }
 }

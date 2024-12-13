@@ -1,9 +1,14 @@
 {
-  "powers": [],
+  "powers": [
+    "luna:saukuryn/sauk",
+    "luna:saukuryn/health_sap",
+    "luna:saukuryn/healing_pulse",
+    "luna:saukuryn/blossoms"
+  ],
   "icon": "minecraft:cherry_leaves",
   "unchoosable": true,
   "order": 9,
   "impact": 2,
   "name": "Ceravol",
-  "description": "The Saukuryn is a gentle large beast, they crave berries and healthy fruits to constantly keep their flowers healthy! Saukuryns have adept abilities when it comes to flight, and area healing! Though they are slow on ground and have a smaller stamina pool."
+  "description": "The Ceravol is a large and gentle beast, they fly around looking for those in need. They love berries however!"
 }

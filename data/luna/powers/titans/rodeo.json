@@ -17,7 +17,6 @@
                 "amount": 10,
                 "source": {
                   "bypasses_armor": true,
-                  "out_of_world": true,
                   "name": "rodeo"
                 }
               },

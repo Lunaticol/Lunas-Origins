@@ -1,12 +1,12 @@
 {
   "death.attack.dark_healing": "%1$s lost to much blood",
   "death.attack.dark_healing.player": "%1$s lost to much blood from %2$s",
-  "death.attack.shield.player": "%1$s was scorched by %2$s",
   "death.attack.shield": "%1$s was scorched",
+  "death.attack.shield.player": "%1$s was scorched by %2$s",
   "death.attack.dark_pulse": "%1$s was in the way",
   "death.attack.dark_pulse.player": "%1$s got into the way of %2$s",
-  "death.attack.double_edge.player": "%1$s was sliced in half by %2$s",
   "death.attack.double_edge": "%1$s was sliced in half",
+  "death.attack.double_edge.player": "%1$s was sliced in half by %2$s",
   "death.attack.out_of_blood": "%1$s was consumed by dark magic",
   "death.attack.out_of_blood.player": "%1$s was consumed by dark magic while fighting %2$s",
   "death.attack.arc_wave": "%1$s was caught in an arc wave",
@@ -32,5 +32,9 @@
   "death.attack.sphaghetti": "%1$s was spaghettified",
   "death.attack.sphaghetti.player": "%1$s was spaghettified by %2$s",
   "death.attack.hawking": "%1$s experienced Hawking Radiation",
-  "death.attack.hawking.player": "%1$s experienced Hawking Radiation due to %2$s"
+  "death.attack.hawking.player": "%1$s experienced Hawking Radiation due to %2$s",
+  "death.attack.sap": "%1$s had their health sapped",
+  "death.attack.sap.player": "%1$s had their health sapped by %2$s",
+  "death.attack.recoil": "%1$s experienced to much recoil and died.",
+  "death.attack.recoil.player": "%1$s experienced to much recoil trying to hurt %2$s"
 }

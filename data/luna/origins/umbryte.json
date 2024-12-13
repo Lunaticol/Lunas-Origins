@@ -1,8 +1,12 @@
 {
   "powers": [],
-  "icon": "minecraft:end_",
+  "icon": {
+    "item": "minecraft:end_portal_frame",
+    "tag": "{BlockStateTag:{eye:\"true\"}}"
+  },
+  "unchoosable": true,
   "order": 9,
   "impact": 3,
-  "name": "Lumina",
-  "description": "Harness the powers of these diminutive yet powerful wisps to shape the world to your liking."
+  "name": "Umbryte",
+  "description": "An entity tied to the energies of the End, you thrive in the dim light of an eternal twilight, with powers reflecting the End itself."
 }

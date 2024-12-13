@@ -1,1 +1,9 @@
-{ "replace": false, "values": ["luna:out_of_blood", "luna:double_edge"] }
+{
+  "replace": false,
+  "values": [
+    "luna:out_of_blood",
+    "luna:double_edge",
+    "luna:heartattack",
+    "luna:recoil"
+  ]
+}

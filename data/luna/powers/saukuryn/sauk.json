@@ -1,6 +1,6 @@
 {
   "name": "Giant Beast",
-  "description": "You are much larger than other critters. ",
+  "description": "You are much larger than other critters.\nYou have wings, allowing you to fly!\nBeing made of wood on some parts of your body, you burn much easier.",
   "type": "origins:multiple",
   "height": {
     "type": "origins:action_on_callback",
@@ -77,5 +77,99 @@
       "value": 1,
       "operation": "multiply_total"
     }
+  },
+  "fire": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "value": 1.5,
+      "operation": "multiply_total"
+    },
+    "damage_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:name",
+          "name": "minecraft:in_fire"
+        },
+        {
+          "type": "origins:name",
+          "name": "minecraft:on_fire"
+        },
+        {
+          "type": "origins:name",
+          "name": "minecraft:lava"
+        },
+        {
+          "type": "origins:name",
+          "name": "minecraft:campfire"
+        }
+      ]
+    }
+  },
+  "messages": {
+    "type": "origins:self_action_on_hit",
+    "entity_action": {
+      "type": "origins:chance",
+      "chance": 0.3,
+      "action": {
+        "type": "origins:choice",
+        "actions": [
+          {
+            "element": {
+              "type": "origins:execute_command",
+              "command": "tellraw @s {\"text\":\"<Ceravol> Stop hurting them!\"}"
+            },
+            "weight": 1
+          },
+          {
+            "element": {
+              "type": "origins:execute_command",
+              "command": "tellraw @s {\"text\":\"<Ceravol> WHAT ARE YOU DOING?\"}"
+            },
+            "weight": 1
+          },
+          {
+            "element": {
+              "type": "origins:execute_command",
+              "command": "tellraw @s {\"text\":\"<Ceravol> This isn't the way!\"}"
+            },
+            "weight": 1
+          },
+          {
+            "element": {
+              "type": "origins:execute_command",
+              "command": "tellraw @s {\"text\":\"<Ceravol> Don't do this!\"}"
+            },
+            "weight": 1
+          },
+          {
+            "element": {
+              "type": "origins:execute_command",
+              "command": "tellraw @s {\"text\":\"<Ceravol> We protect the critters not hurt them!\"}"
+            },
+            "weight": 1
+          },
+          {
+            "element": {
+              "type": "origins:execute_command",
+              "command": "tellraw @s {\"text\":\"<Ceravol> Life finds a way, except you aren't listening!\"}"
+            },
+            "weight": 1
+          }
+        ]
+      }
+    }
+  },
+  "jump": {
+    "type": "origins:modify_jump",
+    "modifier": {
+      "value": 0.1,
+      "operation": "addition"
+    }
+  },
+  "fall": {
+    "type": "origins:modify_falling",
+    "take_fall_damage": true,
+    "velocity": 0.04
   }
 }

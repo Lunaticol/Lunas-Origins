@@ -1,32 +1,41 @@
 {
   "name": "Healing Pulse",
-  "description": "Heal others within an area",
+  "description": "Heal others within an area.",
   "type": "origins:multiple",
   "healing_others": {
     "type": "origins:action_over_time",
     "interval": 20,
     "entity_action": {
-      "type": "origins:area_of_effect",
-      "radius": 8,
-      "shape": "sphere",
-      "bientity_action": {
-        "type": "origins:and",
-        "actions": [
-          {
-            "type": "origins:target_action",
-            "action": {
-              "type": "origins:apply_effect",
-              "effect": {
-                "effect": "minecraft:regeneration",
-                "amplifier": 1,
-                "duration": 60,
-                "show_icon": true,
-                "show_particles": false
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:area_of_effect",
+          "radius": 8,
+          "shape": "sphere",
+          "bientity_action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:target_action",
+                "action": {
+                  "type": "origins:apply_effect",
+                  "effect": {
+                    "effect": "minecraft:regeneration",
+                    "amplifier": 1,
+                    "duration": 60,
+                    "show_icon": true,
+                    "show_particles": false
+                  }
+                }
               }
-            }
+            ]
           }
-        ]
-      }
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "particle minecraft:cherry_leaves ~ ~6 ~ 5 3 5 1 50"
+        }
+      ]
     },
     "condition": {
       "type": "origins:power_active",

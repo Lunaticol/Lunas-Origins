@@ -29,6 +29,15 @@
           "type": "origins:change_resource",
           "change": -100,
           "resource": "*:wisps/bars_blue_wisp_bar"
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 40,
+          "action": {
+            "type": "origins:add_velocity",
+            "y": -3,
+            "space": "local_horizontal_normalized"
+          }
         }
       ]
     },
