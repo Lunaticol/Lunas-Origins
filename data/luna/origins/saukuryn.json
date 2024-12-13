@@ -3,7 +3,8 @@
     "luna:saukuryn/sauk",
     "luna:saukuryn/health_sap",
     "luna:saukuryn/healing_pulse",
-    "luna:saukuryn/blossoms"
+    "luna:saukuryn/blossoms",
+    "luna:saukuryn/passive_mobs"
   ],
   "icon": "minecraft:cherry_leaves",
   "order": 9,

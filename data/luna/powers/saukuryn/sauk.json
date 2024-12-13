@@ -206,5 +206,12 @@
     "type": "origins:toggle",
     "active_by_default": true,
     "key": "key.saveToolbarActivator"
+  },
+  "hit_reduction": {
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+      "value": -0.5,
+      "operation": "multiply_total"
+    }
   }
 }
