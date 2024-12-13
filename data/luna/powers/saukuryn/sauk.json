@@ -171,5 +171,40 @@
     "type": "origins:modify_falling",
     "take_fall_damage": true,
     "velocity": 0.04
+  },
+  "flying": {
+    "type": "origins:action_over_time",
+    "interval": 60,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:add_velocity",
+          "z": 0.5,
+          "space": "local"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "playsound minecraft:entity.ender_dragon.flap master @s ~ ~ ~ 100 .5"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:fall_flying"
+        },
+        {
+          "type": "origins:power_active",
+          "power": "*:*_toggle"
+        }
+      ]
+    }
+  },
+  "toggle": {
+    "type": "origins:toggle",
+    "active_by_default": true,
+    "key": "key.saveToolbarActivator"
   }
 }

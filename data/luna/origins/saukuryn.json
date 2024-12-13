@@ -6,7 +6,6 @@
     "luna:saukuryn/blossoms"
   ],
   "icon": "minecraft:cherry_leaves",
-  "unchoosable": true,
   "order": 9,
   "impact": 2,
   "name": "Ceravol",
