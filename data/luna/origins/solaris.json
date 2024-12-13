@@ -12,6 +12,5 @@
   ],
   "icon": "minecraft:lava_bucket",
   "impact": 3,
-  "order": 99999,
-  "unchoosable": true
+  "order": 99999
 }

@@ -1,12 +1,12 @@
 {
   "type": "origins:action_over_time",
+  "condition": {
+    "type": "origins:resource",
+    "comparison": "==",
+    "compare_to": 1,
+    "resource": "luna:solaris/toggle_resource"
+  },
   "entity_action": {
-    "condition": {
-      "type": "origins:resource",
-      "comparison": "==",
-      "compare_to": 1,
-      "resource": "luna:solaris/toggle_resource"
-    },
     "type": "origins:area_of_effect",
     "radius": 8,
     "bientity_action": {

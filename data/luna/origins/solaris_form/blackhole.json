@@ -5,7 +5,8 @@
     "luna:solaris/blackhole/orbit",
     "luna:solaris/blackhole/orbit2",
     "luna:solaris/blackhole/orbit3",
-    "luna:solaris/blackhole/granter"
+    "luna:solaris/blackhole/granter",
+    "luna:solaris/blackhole/eat"
   ],
   "icon": "minecraft:ender_pearl",
   "unchoosable": true

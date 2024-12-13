@@ -11,8 +11,34 @@
   },
   "flightspeed": {
     "type": "origins:modify_air_speed",
-    "condition": { "type": "origins:creative_flying" },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        { "type": "origins:creative_flying" },
+        {
+          "type": "origins:origin",
+          "origin": "luna:solaris_form/blackhole",
+          "layer": "luna:luna_layers",
+          "inverted": true
+        }
+      ]
+    },
     "modifier": { "operation": "multiply_total", "value": -0.5 }
+  },
+  "flightspeed2": {
+    "type": "origins:modify_air_speed",
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        { "type": "origins:creative_flying" },
+        {
+          "type": "origins:origin",
+          "origin": "luna:solaris_form/blackhole",
+          "layer": "luna:luna_layers"
+        }
+      ]
+    },
+    "modifier": { "operation": "multiply_total", "value": -0.8 }
   },
   "glows": {
     "type": "origins:self_glow",
@@ -76,7 +102,7 @@
   },
   "fpb": {
     "type": "origins:modify_exhaustion",
-    "modifier": { "operation": "multiply_total", "value": 4 },
+    "modifier": { "operation": "multiply_total", "value": 5 },
     "condition": {
       "type": "origins:and",
       "conditions": [
@@ -133,28 +159,6 @@
       "resource": "luna:solaris/mass_resource",
       "operation": "add",
       "change": 15
-    }
-  },
-  "blackholeconsumption": {
-    "type": "apugli:edible_item",
-    "condition": {
-      "type": "origins:and",
-      "conditions": [
-        {
-          "type": "origins:origin",
-          "origin": "luna:solaris_form/blackhole",
-          "layer": "luna:luna_layers"
-        },
-        { "type": "origins:sneaking" }
-      ]
-    },
-    "item_condition": { "type": "origins:enchantable", "inverted": true },
-    "sound": "minecraft:entity.wither.ambient",
-    "food_component": {
-      "snack": true,
-      "hunger": 4,
-      "saturation": 2,
-      "meat": false
     }
   },
   "aot": {
@@ -238,5 +242,6 @@
         "operation": "add"
       }
     }
-  }
+  },
+  "hidden": true
 }

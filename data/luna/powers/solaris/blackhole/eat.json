@@ -1,0 +1,16 @@
+{
+  "type": "apugli:edible_item",
+  "condition": {
+    "type": "origins:and",
+    "conditions": [{ "type": "origins:sneaking" }]
+  },
+  "sound": "minecraft:entity.wither.ambient",
+  "item_condition": { "type": "origins:enchantable", "inverted": true },
+  "food_component": {
+    "snack": true,
+    "hunger": 4,
+    "saturation": 2,
+    "meat": false,
+    "always_edible": true
+  }
+}

@@ -23,5 +23,10 @@
       "command": "origin set @s luna:luna_layers luna:solaris_form/base"
     }
   },
+  "miningspeed": {
+    "condition": { "type": "origins:on_block", "inverted": true },
+    "type": "origins:modify_break_speed",
+    "modifier": { "operation": "multiply_total", "value": 3 }
+  },
   "hidden": true
 }

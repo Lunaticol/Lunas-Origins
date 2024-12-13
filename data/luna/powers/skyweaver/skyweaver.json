@@ -96,13 +96,66 @@
   },
   "bow_experience": {
     "type": "origins:modify_projectile_damage",
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": { "item": "minecraft:bow" }
+          }
+        },
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "offhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": { "item": "minecraft:bow" }
+          }
+        }
+      ]
+    },
     "damage_condition": {
       "type": "origins:projectile",
       "projectile": "minecraft:arrow"
     },
     "modifier": {
       "operation": "addition",
-      "value": 15.0
+      "value": 20.0
+    }
+  },
+  "bow_experience2": {
+    "type": "origins:modify_projectile_damage",
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": { "item": "minecraft:crossbow" }
+          }
+        },
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "offhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": { "item": "minecraft:crossbow" }
+          }
+        }
+      ]
+    },
+    "damage_condition": {
+      "type": "origins:projectile",
+      "projectile": "minecraft:arrow"
+    },
+    "modifier": {
+      "operation": "addition",
+      "value": 8.0
     }
   },
   "knockback": {
@@ -141,7 +194,12 @@
     },
     "damage_condition": {
       "type": "origins:name",
-      "name": "lightning_bolt"
+      "name": "lightningBolt"
     }
+  },
+  "miningspeed": {
+    "condition": { "type": "origins:on_block", "inverted": true },
+    "type": "origins:modify_break_speed",
+    "modifier": { "operation": "multiply_total", "value": 3 }
   }
 }
