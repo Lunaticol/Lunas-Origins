@@ -1,0 +1,37 @@
+{
+  "name": "Void Affinity",
+  "description": "Manipulate gravity to slow down enemies in a small radius around you.\nStops projectiles from moving",
+  "type": "origins:multiple",
+  "gravity": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:area_of_effect",
+      "radius": 8,
+      "shape": "sphere",
+      "bientity_action": {
+        "type": "origins:add_velocity",
+        "y": -1,
+        "space": "local"
+      },
+      "bientity_condition": {
+        "type": "origins:target_condition",
+        "condition": {
+          "type": "origins:or",
+          "conditions": [
+            { "type": "origins:entity_type", "entity_type": "minecraft:arrow" },
+            {
+              "type": "origins:entity_type",
+              "entity_type": "minecraft:trident"
+            },
+            {
+              "type": "origins:entity_type",
+              "entity_type": "minecraft:spectral_arrow"
+            },
+            { "type": "origins:entity_type", "entity_type": "minecraft:potion" }
+          ]
+        }
+      }
+    }
+  }
+}

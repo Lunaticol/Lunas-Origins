@@ -1,0 +1,61 @@
+{
+  "name": "Double Edge",
+  "description": "You deal 20 damage every hit, but receive 25% of that damage back as true damage.",
+  "type": "origins:multiple",
+  "on_hit": {
+    "type": "origins:action_on_hit",
+    "bientity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:actor_action",
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:damage",
+                "amount": 5,
+                "source": {
+                  "name": "recoil"
+                }
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "particle dust_color_transition 0.000 0.000 0.000 2 1.000 0.267 0.000 ~ ~ ~ 1 1 1 1 100 normal"
+              }
+            ]
+          }
+        },
+        {
+          "type": "origins:target_action",
+          "action": {
+            "type": "origins:damage",
+            "amount": 20,
+            "source": {
+              "name": "double_edge"
+            }
+          }
+        }
+      ]
+    },
+    "damage_condition": {
+      "type": "origins:and",
+      "conditions": [
+        { "type": "origins:type", "inverted": true, "damage_type": "thorns" },
+        {
+          "type": "origins:projectile",
+          "inverted": true
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:power_active",
+      "power": "*:*_toggle"
+    }
+  },
+  "toggle": {
+    "type": "origins:toggle",
+    "key": "key.origins.primary_active",
+    "active_by_default": true
+  }
+}

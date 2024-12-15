@@ -1,5 +1,11 @@
 {
-  "powers": [],
+  "powers": [
+    "luna:umbryte/void_step",
+    "luna:umbryte/gravity",
+    "luna:umbryte/double_edge",
+    "luna:umbryte/void",
+    "luna:umbryte/light"
+  ],
   "icon": {
     "item": "minecraft:end_portal_frame",
     "tag": "{BlockStateTag:{eye:\"true\"}}"

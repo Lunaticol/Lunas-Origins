@@ -811,5 +811,9 @@
       "type": "origins:execute_command",
       "command": "origin gui @s luna:luna_layers"
     }
+  },
+  "effect_remove": {
+    "type": "origins:effect_immunity",
+    "effect": "minecraft:mining_fatigue"
   }
 }

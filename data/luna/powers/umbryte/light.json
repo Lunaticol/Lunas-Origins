@@ -1,0 +1,126 @@
+{
+  "name": "Light Sensitive",
+  "description": "You are only adpated to seeing the dim light in the end, your vision gets blurry if you're in to much light.\nCauses mining fatigue & weakness when exposed to bright lights.",
+  "type": "origins:multiple",
+  "light_sensitive": {
+    "type": "origins:shader",
+    "shader": "minecraft:shaders/post/phosphor.json",
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:block_in_radius",
+          "radius": 1,
+          "shape": "cube",
+          "block_condition": {
+            "type": "origins:light_level",
+            "light_type": "block",
+            "compare_to": 10,
+            "comparison": ">"
+          }
+        },
+        {
+          "type": "origins:and",
+          "conditions": [
+            {
+              "type": "origins:exposed_to_sky"
+            },
+            {
+              "type": "origins:daytime"
+            }
+          ]
+        },
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "tag": "luna:high_light"
+            }
+          }
+        },
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "offhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "tag": "luna:high_light"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "light_weakness": {
+    "type": "origins:action_over_time",
+    "interval": 10,
+    "entity_action": {
+      "type": "origins:apply_effect",
+      "effects": [
+        {
+          "duration": 40,
+          "amplifier": 9,
+          "effect": "minecraft:weakness",
+          "show_icon": true,
+          "show_particles": false
+        },
+        {
+          "duration": 40,
+          "amplifier": 3,
+          "effect": "minecraft:mining_fatigue",
+          "show_icon": true,
+          "show_particles": false
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:block_in_radius",
+          "radius": 1,
+          "shape": "cube",
+          "block_condition": {
+            "type": "origins:light_level",
+            "light_type": "block",
+            "compare_to": 10,
+            "comparison": ">"
+          }
+        },
+        {
+          "type": "origins:and",
+          "conditions": [
+            {
+              "type": "origins:exposed_to_sky"
+            },
+            {
+              "type": "origins:daytime"
+            }
+          ]
+        },
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "tag": "luna:high_light"
+            }
+          }
+        },
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "offhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "tag": "luna:high_light"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

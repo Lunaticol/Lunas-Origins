@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:torch",
+    "minecraft:campfire",
+    "minecraft:lantern",
+    "minecraft:glowstone",
+    "minecraft:jack_o_lantern",
+    "minecraft:lava_bucket",
+    "minecraft:shroomlight"
+  ]
+}

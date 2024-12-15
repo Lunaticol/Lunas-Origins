@@ -42,7 +42,7 @@
             "type": "origins:target_action",
             "action": {
               "type": "origins:damage",
-              "amount": 0.1,
+              "amount": 0.5,
               "source": {
                 "name": "sap"
               }
@@ -97,7 +97,7 @@
             "type": "origins:actor_action",
             "action": {
               "type": "origins:damage",
-              "amount": 0.1,
+              "amount": 0.5,
               "source": {
                 "name": "sap"
               }
