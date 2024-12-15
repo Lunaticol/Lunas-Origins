@@ -71,22 +71,6 @@
         "action": {
           "type": "origins:equipped_item_action",
           "action": { "type": "origins:damage", "amount": 1 },
-          "equipment_slot": "mainhand"
-        },
-        "condition": {
-          "type": "origins:equipped_item",
-          "equipment_slot": "mainhand",
-          "item_condition": {
-            "type": "origins:relative_durability",
-            "comparison": ">",
-            "compare_to": 0.1
-          }
-        }
-      },
-      {
-        "action": {
-          "type": "origins:equipped_item_action",
-          "action": { "type": "origins:damage", "amount": 1 },
           "equipment_slot": "offhand"
         },
         "condition": {
