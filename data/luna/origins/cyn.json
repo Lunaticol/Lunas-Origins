@@ -1,0 +1,14 @@
+{
+  "powers": [
+    "luna:cyn/cyn",
+    "luna:cyn/inject",
+    "luna:cyn/dash",
+    "luna:cyn/back_teleport"
+  ],
+  "icon": "minecraft:yellow_concrete",
+  "unchoosable": true,
+  "order": 9,
+  "impact": 0,
+  "name": "Cynical",
+  "description": "Gifted with the ability to precieve the physical code of this reality, Cynical uses and manipulates it to her will."
+}

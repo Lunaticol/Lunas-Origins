@@ -213,5 +213,28 @@
       "value": -0.5,
       "operation": "multiply_total"
     }
+  },
+  "reach": {
+    "type": "origins:attribute",
+    "modifiers": [
+      {
+        "attribute": "reach-entity-attributes:attack_range",
+        "value": 1,
+        "operation": "addition"
+      },
+      {
+        "attribute": "reach-entity-attributes:reach",
+        "value": 2,
+        "operation": "addition"
+      }
+    ]
+  },
+  "particle": {
+    "type": "origins:action_over_time",
+    "interval": 10,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "particle minecraft:dragon_breath ~ ~1.5 ~ 0.5 0.7 0.5 0.01 10 force"
+    }
   }
 }

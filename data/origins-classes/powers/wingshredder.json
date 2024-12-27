@@ -1,0 +1,23 @@
+{
+  "name": "Wing Shredder",
+  "description": "Hitting flying entitys causes them to plummet to the ground.",
+  "badges": [
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/info.png",
+      "text": "Origins that use Levitation to float are not affected!!"
+    }
+  ],
+  "type": "origins:multiple",
+  "shred": {
+    "type": "origins:action_on_hit",
+    "bientity_action": {
+      "type": "origins:target_action",
+      "action": {
+        "type": "origins:grant_power",
+        "power": "origins-classes:wings_shredded",
+        "source": "origins-classes:wingshredder"
+      }
+    }
+  }
+}

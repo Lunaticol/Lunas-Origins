@@ -1,0 +1,9 @@
+{
+  "powers": [],
+  "icon": "minecraft:piglin_head",
+  "order": 9,
+  "unchoosable": true,
+  "impact": 3,
+  "name": "Piglin",
+  "description": ""
+}

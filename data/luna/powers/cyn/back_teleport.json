@@ -1,0 +1,224 @@
+{
+  "name": "Surprise Attack",
+  "description": "Teleport behind enemys to surprise them.",
+  "type": "origins:multiple",
+  "tag": {
+    "type": "origins:action_on_callback",
+    "entity_action_added": {
+      "type": "origins:execute_command",
+      "command": "tag @s add Cyn"
+    },
+    "entity_action_lost": {
+      "type": "origins:execute_command",
+      "command": "tag @s remove Cyn"
+    }
+  },
+  "teleport": {
+    "type": "origins:active_self",
+    "key": "key.origins.secondary_active",
+    "hud_render": {
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+      "bar_index": 14
+    },
+    "cooldown": 150,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:delay",
+          "ticks": 20,
+          "action": {
+            "type": "origins:change_resource",
+            "change": 1,
+            "operation": "set",
+            "resource": "*:*_active"
+          }
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 1,
+          "operation": "set",
+          "resource": "*:*_teleport_warning"
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 11,
+          "action": {
+            "type": "origins:change_resource",
+            "change": 0,
+            "operation": "set",
+            "resource": "*:*_teleport_warning"
+          }
+        },
+        {
+          "type": "origins:play_sound",
+          "pitch": 2,
+          "sound": "minecraft:block.bell.use",
+          "category": "players",
+          "volume": 1
+        }
+      ]
+    }
+  },
+  "teleport_warning": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
+  },
+  "warning_glow": {
+    "type": "origins:self_glow",
+    "blue": 0.38823529411,
+    "green": 0.81960784313,
+    "red": 0.95686274509,
+    "use_teams": false,
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_teleport_warning"
+    }
+  },
+  "extra_damage": {
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+      "value": 1,
+      "operation": "multiply_total"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_damage"
+    }
+  },
+  "if_hit": {
+    "type": "origins:self_action_when_hit",
+    "cooldown": 0,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 1,
+      "operation": "set",
+      "resource": "*:*_stop"
+    },
+    "damage_condition": {
+      "type": "origins:type",
+      "damage_type": "thorns",
+      "inverted": true
+    }
+  },
+  "damage": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
+  },
+  "reset_damage": {
+    "type": "origins:action_over_time",
+    "interval": 40,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 0,
+      "operation": "set",
+      "resource": "*:*_damage"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_damage"
+    }
+  },
+  "reset_stop": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "change": 0,
+          "operation": "set",
+          "resource": "*:*_stop"
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 0,
+          "operation": "set",
+          "resource": "*:*_active"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_stop"
+    }
+  },
+  "reset_damage_hit": {
+    "type": "origins:self_action_on_hit",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 0,
+      "operation": "set",
+      "resource": "*:*_damage"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_damage"
+    }
+  },
+  "active": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
+  },
+  "stop": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
+  },
+  "when_active": {
+    "type": "origins:action_over_time",
+    "interval": 2,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "execute at @e[tag=!Cyn,distance=..16,sort=furthest,type=!item] rotated ~ 0 run tp @p[tag=Cyn] ^ ^ ^-2 facing entity @e[limit=1,sort=nearest,type=!item]"
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 1,
+          "operation": "set",
+          "resource": "*:*_damage"
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 0,
+          "operation": "set",
+          "resource": "*:*_active"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": "==",
+          "resource": "*:*_active"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:*_stop"
+        }
+      ]
+    }
+  }
+}

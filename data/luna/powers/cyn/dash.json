@@ -1,0 +1,105 @@
+{
+  "name": "Resolved Dash",
+  "description": "Concentrate my energy and dash into enemys.\nI can deal damage to close-by entitys",
+  "type": "origins:multiple",
+  "dash": {
+    "type": "origins:active_self",
+    "cooldown": 100,
+    "key": "key.origins.primary_active",
+    "hud_render": {
+      "should_render": true,
+      "bar_index": 23,
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png"
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:add_velocity",
+          "z": 1.5,
+          "space": "local"
+        },
+        {
+          "type": "origins:apply_effect",
+          "effect": {
+            "effect": "slow_falling",
+            "duration": 10,
+            "show_icon": true
+          }
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:entity.player.attack.knockback",
+          "pitch": 0.5,
+          "volume": 1,
+          "category": "players"
+        },
+        {
+          "type": "origins:exhaust",
+          "amount": 2.5
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 1,
+          "resource": "*:*_active",
+          "operation": "set"
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 15,
+          "action": {
+            "type": "origins:change_resource",
+            "change": 0,
+            "resource": "*:*_active",
+            "operation": "set"
+          }
+        }
+      ]
+    }
+  },
+  "active": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
+  },
+  "particle": {
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "function luna:cyn/particle"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_active"
+    }
+  },
+  "area_of_effect": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:area_of_effect",
+      "radius": 3,
+      "shape": "sphere",
+      "bientity_action": {
+        "type": "origins:target_action",
+        "action": {
+          "type": "origins:damage",
+          "amount": 10,
+          "source": {
+            "magic": true,
+            "name": "dark_pulse"
+          }
+        }
+      }
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_active"
+    }
+  }
+}

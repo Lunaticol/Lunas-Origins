@@ -54,6 +54,18 @@
         "layer": "origins:origin",
         "origin": "luna:axolotl"
       }
+    },
+    {
+      "origins": [
+        "luna:piglin/crimson",
+        "luna:piglin/warped",
+        "luna:piglin/crimson"
+      ],
+      "condition": {
+        "type": "origins:origin",
+        "layer": "origins:origin",
+        "origin": "luna:piglin"
+      }
     }
   ]
 }

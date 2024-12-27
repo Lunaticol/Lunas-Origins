@@ -1,6 +1,6 @@
 {
-  "name": "Soul Barrier",
-  "description": "You can use your souls to void damage, consuming some in the process. \nRequires above 200 souls.",
+  "name": "Soul Counter",
+  "description": "Siphon your souls around you into a powerful burst of energy that sends people flying.\nThis will, in turn, send you flying to.",
   "type": "origins:multiple",
   "shield": {
     "type": "apugli:energy_swirl",
@@ -8,8 +8,10 @@
     "speed": 0.01,
     "size": 1.04,
     "condition": {
-      "type": "origins:power_active",
-      "power": "*:*_toggle"
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_active"
     }
   },
   "shield_2": {
@@ -18,123 +20,131 @@
     "speed": -0.01,
     "size": 1.05,
     "condition": {
-      "type": "origins:power_active",
-      "power": "*:*_toggle"
-    }
-  },
-  "toggle": {
-    "type": "origins:toggle",
-    "retain_state": false,
-    "active_by_default": false,
-    "key": "key.loadToolbarActivator",
-    "condition": {
-      "type": "origins:and",
-      "conditions": [
-        {
-          "type": "origins:resource",
-          "compare_to": 200,
-          "comparison": ">=",
-          "resource": "luna:bluefox/soul_soul_bar"
-        },
-        {
-          "type": "origins:resource",
-          "compare_to": 0,
-          "comparison": "==",
-          "resource": "*:bluefox/ethereal_domain_active"
-        }
-      ]
-    }
-  },
-  "damage": {
-    "type": "origins:modify_damage_taken",
-    "modifier": {
-      "value": -0.9999,
-      "operation": "multiply_total"
-    },
-    "condition": {
-      "type": "origins:and",
-      "conditions": [
-        {
-          "type": "origins:power_active",
-          "power": "*:*_toggle"
-        },
-        {
-          "type": "origins:resource",
-          "compare_to": 0,
-          "comparison": "==",
-          "resource": "*:bluefox/ethereal_domain_active"
-        }
-      ]
-    }
-  },
-  "when_hit_1": {
-    "type": "origins:action_when_damage_taken",
-    "cooldown": 10,
-    "entity_action": {
-      "type": "origins:change_resource",
-      "resource": "*:bluefox/soul_soul_bar",
-      "operation": "add",
-      "change": -30
-    },
-    "condition": {
-      "type": "origins:power_active",
-      "power": "*:*_toggle"
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_active"
     }
   },
   "active": {
-    "type": "origins:action_over_time",
-    "interval": 5,
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
+  },
+  "active_key": {
+    "type": "origins:active_self",
+    "key": "key.saveToolbarActivator",
+    "cooldown": 1200,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/luna_resource_bar.png",
+      "bar_index": 2
+    },
     "entity_action": {
+      "type": "origins:change_resource",
+      "change": 1,
+      "resource": "*:*_active",
+      "operation": "set"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 200,
+      "comparison": ">=",
+      "resource": "*:bluefox/soul_soul_bar"
+    }
+  },
+  "when_active": {
+    "type": "origins:action_when_hit",
+    "bientity_action": {
       "type": "origins:and",
       "actions": [
         {
-          "type": "origins:execute_command",
-          "command": "particle dust_color_transition 0.020 0.051 1.000 1 0.349 1.000 0.957 ~ ~ ~ 0.5 0.5 0.5 1 10 force"
+          "type": "origins:add_velocity",
+          "z": 3,
+          "y": 0.5
         },
         {
-          "type": "origins:execute_command",
-          "command": "particle dust_color_transition 0.349 1.000 0.957 1 0.020 0.051 1.000 ~ ~ ~ 0.5 0.5 0.5 1 10 force"
+          "type": "origins:target_action",
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "execute at @s rotated ~ 0 run particle minecraft:soul_fire_flame ^ ^1 ^0.3 0.1 0 0.1 0.5 100 force"
+              },
+              {
+                "type": "origins:change_resource",
+                "change": 0,
+                "resource": "*:*_active",
+                "operation": "set"
+              },
+              {
+                "type": "origins:play_sound",
+                "category": "players",
+                "pitch": 1.5,
+                "sound": "minecraft:entity.generic.explode",
+                "volume": 1
+              },
+              {
+                "type": "origins:explode",
+                "power": 0,
+                "damage_self": false,
+                "destruction_type": "none"
+              },
+              {
+                "type": "origins:change_resource",
+                "change": -200,
+                "resource": "*:bluefox/soul_soul_bar",
+                "operation": "add"
+              },
+              {
+                "type": "origins:area_of_effect",
+                "radius": 3,
+                "bientity_action": {
+                  "type": "origins:add_velocity",
+                  "z": 3,
+                  "y": 0.5
+                }
+              }
+            ]
+          }
         }
       ]
     },
     "condition": {
-      "type": "origins:power_active",
-      "power": "*:*_toggle"
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_active"
     }
   },
-  "if_fire_magic": {
-    "type": "origins:action_when_damage_taken",
-    "cooldown": 10,
+  "when_active_timer": {
+    "type": "origins:action_over_time",
+    "interval": 40,
     "entity_action": {
       "type": "origins:change_resource",
-      "resource": "*:bluefox/soul_soul_bar",
-      "operation": "add",
-      "change": -50
+      "change": 0,
+      "resource": "*:*_active",
+      "operation": "set"
     },
-    "damage_condition": {
-      "type": "origins:or",
-      "conditions": [
-        {
-          "type": "origins:name",
-          "name": "onFire"
-        },
-        {
-          "type": "origins:name",
-          "name": "onFire.player"
-        },
-        {
-          "type": "origins:name",
-          "name": "inFire"
-        },
-        {
-          "type": "origins:name",
-          "name": "inFire.player"
-        },
-        {
-          "type": "origins:name",
-          "name": "magic"
-        }
-      ]
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_active"
+    }
+  },
+  "glow": {
+    "type": "origins:self_glow",
+    "blue": 0.90588235294,
+    "green": 0.86666666666,
+    "red": 0,
+    "use_teams": false,
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_active"
     }
   }
 }

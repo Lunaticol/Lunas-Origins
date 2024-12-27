@@ -1,5 +1,79 @@
 {
-  "name": "Void Affinity",
-  "description": "Become invulnerable to all damage for 3 seconds.",
-  "type": "origins:multiple"
+  "name": "Void Step",
+  "description": "Channel energy from the void to teleport behind your opponent.",
+  "type": "origins:multiple",
+  "tag": {
+    "type": "origins:action_on_callback",
+    "entity_action_added": {
+      "type": "origins:execute_command",
+      "command": "tag @s add Umb"
+    },
+    "entity_action_lost": {
+      "type": "origins:execute_command",
+      "command": "tag @s remove Umb"
+    }
+  },
+  "teleport": {
+    "type": "origins:active_self",
+    "key": "key.origins.secondary_active",
+    "hud_render": {
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+      "bar_index": 14
+    },
+    "cooldown": 150,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:delay",
+          "ticks": 10,
+          "action": {
+            "type": "origins:execute_command",
+            "command": "execute at @e[tag=!Umb,distance=..16,sort=furthest,type=!item] rotated ~ 0 run tp @p[tag=Umb] ^ ^ ^-2 facing entity @e[limit=1,sort=nearest,type=!item]"
+          }
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 1,
+          "operation": "set",
+          "resource": "*:*_teleport_warning"
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 10,
+          "action": {
+            "type": "origins:change_resource",
+            "change": 0,
+            "operation": "set",
+            "resource": "*:*_teleport_warning"
+          }
+        },
+        {
+          "type": "origins:play_sound",
+          "pitch": 2,
+          "sound": "minecraft:block.bell.use",
+          "category": "players",
+          "volume": 1
+        }
+      ]
+    }
+  },
+  "teleport_warning": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
+  },
+  "warning_glow": {
+    "type": "origins:self_glow",
+    "blue": 1,
+    "red": 0.69019607843,
+    "green": 0.35686274509,
+    "use_teams": false,
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_teleport_warning"
+    }
+  }
 }

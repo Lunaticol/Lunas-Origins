@@ -1,0 +1,126 @@
+{
+  "type": "origins:multiple",
+  "attribute": {
+    "type": "origins:action_over_time",
+    "interval": 10,
+    "entity_action": {
+      "type": "origins:choice",
+      "actions": [
+        {
+          "element": {
+            "type": "origins:change_resource",
+            "change": 1,
+            "operation": "set",
+            "resource": "*:*_attribute_bar"
+          },
+          "weight": 1
+        },
+        {
+          "element": {
+            "type": "origins:change_resource",
+            "change": 2,
+            "operation": "set",
+            "resource": "*:*_attribute_bar"
+          },
+          "weight": 1
+        },
+        {
+          "element": {
+            "type": "origins:change_resource",
+            "change": 3,
+            "operation": "set",
+            "resource": "*:*_attribute_bar"
+          },
+          "weight": 1
+        },
+        {
+          "element": {
+            "type": "origins:change_resource",
+            "change": 4,
+            "operation": "set",
+            "resource": "*:*_attribute_bar"
+          },
+          "weight": 1
+        }
+      ]
+    }
+  },
+  "attribute_bar": {
+    "type": "origins:resource",
+    "max": 4,
+    "min": 0
+  },
+  "health": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "value": 10,
+      "attribute": "minecraft:generic.max_health",
+      "operation": "addition"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_attribute_bar"
+    }
+  },
+  "armor": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "value": 1,
+      "attribute": "minecraft:generic.armor",
+      "operation": "multiply_total"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 2,
+      "comparison": "==",
+      "resource": "*:*_attribute_bar"
+    }
+  },
+  "attack": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "value": 0.5,
+      "attribute": "minecraft:generic.attack_damage",
+      "operation": "multiply_total"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 3,
+      "comparison": "==",
+      "resource": "*:*_attribute_bar"
+    }
+  },
+  "speed": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "value": 0.5,
+      "attribute": "minecraft:generic.movement_speed",
+      "operation": "multiply_total"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 4,
+      "comparison": "==",
+      "resource": "*:*_attribute_bar"
+    }
+  },
+  "remove": {
+    "type": "origins:action_over_time",
+    "interval": 1200,
+    "entity_action": {
+      "type": "origins:revoke_power",
+      "power": "luna:cyn/injections/amplify",
+      "source": "luna:cyn/inject"
+    }
+  },
+  "particle": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "execute at @s rotated ~ 0 run particle minecraft:enchanted_hit ~ ~ ~ 0.3 0.8 0.3 0 100 force"
+    }
+  }
+}

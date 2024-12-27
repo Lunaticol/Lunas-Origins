@@ -1,5 +1,233 @@
 {
   "name": "Void Affinity",
-  "description": "You draw your power from the End, You cannot use your abilitys without End power.\nBeing near end blocks helps charge your End power, however you'll need to get close to the void to charge it.",
-  "type": "origins:multiple"
+  "description": "You draw your power from the End, You cannot use your abilitys without Void power.\nYou can charge up Void Power by being near the void or ender blocks.",
+  "type": "origins:multiple",
+  "color": {
+    "type": "origins:model_color",
+    "red": 0.5,
+    "green": 0.5,
+    "blue": 0.5,
+    "alpha": 1
+  },
+  "height": {
+    "type": "origins:action_on_callback",
+    "execute_chosen_when_orb": true,
+    "entity_action_chosen": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:height 1.5 @s"
+    },
+    "entity_action_respawned": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:height 1.5 @s"
+    },
+    "entity_action_added": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:height 1.5 @s"
+    },
+    "entity_action_lost": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:height 1 @s"
+    },
+    "entity_action_removed": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:height 1 @s"
+    }
+  },
+  "width": {
+    "type": "origins:action_on_callback",
+    "entity_action_chosen": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:width 1.5 @s"
+    },
+    "entity_action_respawned": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:width 1.5 @s"
+    },
+    "entity_action_added": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:width 1.5 @s"
+    },
+    "entity_action_lost": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:width 1 @s"
+    },
+    "entity_action_removed": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:width 1 @s"
+    }
+  },
+  "end_sight": {
+    "type": "origins:night_vision",
+    "strength": 0.7,
+    "condition": {
+      "type": "origins:dimension",
+      "dimension": "minecraft:the_end"
+    }
+  },
+  "endermen_nice": {
+    "type": "apugli:mobs_ignore",
+    "mob_condition": {
+      "type": "origins:entity_type",
+      "entity_type": "minecraft:enderman"
+    }
+  },
+  "particles": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "particle minecraft:dragon_breath ~ ~ ~ 0.5 0.9 0.5 .01 5 normal"
+    },
+    "condition": { "type": "origins:sneaking", "inverted": true }
+  },
+  "glow_berry_death": {
+    "type": "origins:modify_food",
+    "always_edible": false,
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:glow_berries"
+      }
+    },
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "kill @s"
+    },
+    "condition": {
+      "type": "origins:status_effect",
+      "effect": "minecraft:glowing",
+      "inverted": true
+    }
+  },
+  "speed": {
+    "type": "origins:attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.movement_speed",
+      "operation": "addition",
+      "value": 0.02
+    }
+  },
+  "chorus_flowers": {
+    "type": "apugli:edible_item",
+    "food_component": {
+      "always_edible": true,
+      "meat": false,
+      "snack": false,
+      "hunger": 10,
+      "saturation": 1.7
+    },
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": { "item": "minecraft:chorus_flower" }
+    }
+  },
+  "popped_chorus": {
+    "type": "apugli:edible_item",
+    "food_component": {
+      "always_edible": false,
+      "meat": false,
+      "snack": true,
+      "hunger": 3,
+      "saturation": 0.5
+    },
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": { "item": "minecraft:popped_chorus_fruit" }
+    }
+  },
+  "healing_crystals": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:apply_effect",
+      "effects": [
+        {
+          "effect": "minecraft:absorption",
+          "duration": 100,
+          "amplifier": 1
+        },
+        {
+          "effect": "minecraft:regeneration",
+          "duration": 100,
+          "amplifier": 1
+        }
+      ]
+    },
+    "condition": {
+      "type": "moborigins:nearby_entities",
+      "compare_to": 1,
+      "comparison": ">=",
+      "multiplier": 6,
+      "bientity_condition": {
+        "type": "origins:target_condition",
+        "condition": {
+          "type": "origins:entity_type",
+          "entity_type": "minecraft:end_crystal"
+        }
+      }
+    }
+  },
+  "void_bar": {
+    "type": "origins:resource",
+    "max": 1000,
+    "min": 0,
+    "start_value": 1000,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+      "bar_index": 17
+    }
+  },
+  "charge_void": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 25,
+      "operation": "add",
+      "resource": "*:umbryte/void_void_bar"
+    },
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:in_block",
+          "block_condition": {
+            "type": "origins:height",
+            "compare_to": 0,
+            "comparison": "<="
+          }
+        },
+        {
+          "type": "origins:block_in_radius",
+          "compare_to": 1,
+          "comparison": ">=",
+          "radius": 2,
+          "block_condition": {
+            "type": "origins:in_tag",
+            "tag": "luna:end_blocks"
+          }
+        },
+        {
+          "type": "origins:dimension",
+          "dimension": "minecraft:the_end"
+        }
+      ]
+    }
+  },
+  "reach": {
+    "type": "origins:attribute",
+    "modifiers": [
+      {
+        "attribute": "reach-entity-attributes:attack_range",
+        "value": 1,
+        "operation": "addition"
+      },
+      {
+        "attribute": "reach-entity-attributes:reach",
+        "value": 2,
+        "operation": "addition"
+      }
+    ]
+  }
 }

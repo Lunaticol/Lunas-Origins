@@ -1,0 +1,139 @@
+{
+  "name": "Code Breaker",
+  "description": "I can see the code that manifests this world.",
+  "type": "origins:multiple",
+  "sword": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "value": 0.1,
+      "operation": "multiply_total",
+      "attribute": "minecraft:generic.attack_speed"
+    },
+    "condition": {
+      "type": "origins:equipped_item",
+      "equipment_slot": "mainhand",
+      "item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": {
+          "tag": "minecraft:swords"
+        }
+      }
+    }
+  },
+  "projectile_immune": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "value": -1,
+      "operation": "multiply_total"
+    },
+    "damage_condition": {
+      "type": "origins:projectile"
+    }
+  },
+  "elytra": {
+    "type": "origins:elytra_flight",
+    "render_elytra": true,
+    "texture_location": "minecraft:textures/item/iron_ingot.png"
+  },
+  "flying": {
+    "type": "origins:action_over_time",
+    "interval": 40,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:add_velocity",
+          "z": 0.6,
+          "space": "local"
+        },
+        {
+          "type": "origins:play_sound",
+          "pitch": 0.5,
+          "volume": 1,
+          "sound": "minecraft:entity.ender_dragon.flap",
+          "category": "players"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:fall_flying"
+    }
+  },
+  "stable_flight": {
+    "type": "origins:creative_flight",
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": ">=",
+      "resource": "*:*_flight_bar"
+    }
+  },
+  "flight_bar": {
+    "type": "origins:resource",
+    "max": 60,
+    "min": 0,
+    "start_value": 60,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png"
+    }
+  },
+  "drain": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "resource": "*:*_flight_bar",
+          "change": -1
+        },
+        {
+          "type": "origins:play_sound",
+          "pitch": 0.5,
+          "volume": 1,
+          "sound": "minecraft:entity.ender_dragon.flap",
+          "category": "players"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:creative_flying"
+    }
+  },
+  "gain": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "*:*_flight_bar",
+      "change": 1
+    },
+    "condition": {
+      "type": "origins:creative_flying",
+      "inverted": true
+    }
+  },
+  "camera": {
+    "type": "origins:shader",
+    "shader": "minecraft:shaders/post/deconverge.json"
+  },
+  "restart_camera": {
+    "type": "origins:active_self",
+    "key": "key.use",
+    "cooldown": 0,
+    "entity_action": {
+      "type": "origins:delay",
+      "ticks": 40,
+      "action": {
+        "type": "origins:revoke_power",
+        "power": "luna:cyn/flashbang",
+        "source": "*:cyn/cyn"
+      }
+    },
+    "condition": {
+      "type": "origins:sneaking"
+    }
+  }
+}

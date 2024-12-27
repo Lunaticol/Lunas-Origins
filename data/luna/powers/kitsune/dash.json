@@ -41,8 +41,11 @@
                 "command": "particle minecraft:explosion ~ ~ ~ 0.2 0.2 0.2 0.7 6 force"
               },
               {
-                "type": "origins:execute_command",
-                "command": "playsound minecraft:entity.shulker_bullet.hurt master @s ~ ~ ~ 100 1"
+                "type": "origins:play_sound",
+                "category": "players",
+                "volume": 1,
+                "pitch": 1,
+                "sound": "minecraft:entity.shulker_bullet.hurt"
               },
               {
                 "type": "origins:change_resource",
@@ -268,8 +271,11 @@
                 }
               },
               {
-                "type": "origins:execute_command",
-                "command": "playsound minecraft:entity.shulker_bullet.hurt master @s ~ ~ ~ 100 1"
+                "type": "origins:play_sound",
+                "category": "players",
+                "volume": 1,
+                "pitch": 1,
+                "sound": "minecraft:entity.shulker_bullet.hurt"
               },
               {
                 "type": "origins:change_resource",
@@ -354,8 +360,11 @@
                 }
               },
               {
-                "type": "origins:execute_command",
-                "command": "playsound minecraft:entity.shulker_bullet.hurt master @s ~ ~ ~ 100 1"
+                "type": "origins:play_sound",
+                "category": "players",
+                "volume": 1,
+                "pitch": 1,
+                "sound": "minecraft:entity.shulker_bullet.hurt"
               },
               {
                 "type": "origins:execute_command",

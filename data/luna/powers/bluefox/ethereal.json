@@ -4,7 +4,7 @@
   "type": "origins:multiple",
   "ethereal": {
     "type": "origins:active_self",
-    "key": "key.saveToolbarActivator",
+    "key": "key.loadToolbarActivator",
     "cooldown": 3000,
     "hud_render": {
       "should_render": true,
@@ -238,6 +238,10 @@
             {
               "type": "origins:entity_type",
               "entity_type": "minecraft:vex"
+            },
+            {
+              "type": "origins:in_tag",
+              "tag": "luna:immune"
             }
           ]
         }

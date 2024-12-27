@@ -7,7 +7,8 @@
     "luna:bluefox/soul",
     "luna:bluefox/thevoices",
     "luna:bluefox/guard",
-    "luna:bluefox/ethereal"
+    "luna:bluefox/ethereal",
+    "luna:bluefox/simplyswords/soul_weapons"
   ],
   "icon": "minecraft:soul_sand"
 }

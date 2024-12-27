@@ -1,17 +1,17 @@
 {
   "name": "Sculk Veil",
-  "description": "Your outer catalyst's shell hardens, absorbing more damage the angrier you are.",
+  "description": "Your outer catalyst's shell hardens, absorbing more damage the angrier you are.\nThis disables your regen.",
   "type": "origins:multiple",
   "anger": {
     "type": "origins:resource",
-    "max": 8,
+    "max": 10,
     "min": 0
   },
   "anger_rise": {
     "type": "origins:self_action_when_hit",
     "entity_action": {
       "type": "origins:chance",
-      "chance": 0.15,
+      "chance": 0.25,
       "action": {
         "type": "origins:change_resource",
         "change": 1,
@@ -53,7 +53,7 @@
   "veil_2": {
     "type": "origins:modify_damage_taken",
     "modifier": {
-      "value": -0.25,
+      "value": -0.2,
       "operation": "multiply_total"
     },
     "condition": {
@@ -77,7 +77,7 @@
   "veil_3": {
     "type": "origins:modify_damage_taken",
     "modifier": {
-      "value": -0.35,
+      "value": -0.25,
       "operation": "multiply_total"
     },
     "condition": {
@@ -101,7 +101,7 @@
   "veil_4": {
     "type": "origins:modify_damage_taken",
     "modifier": {
-      "value": -0.45,
+      "value": -0.3,
       "operation": "multiply_total"
     },
     "condition": {
@@ -125,7 +125,7 @@
   "veil_5": {
     "type": "origins:modify_damage_taken",
     "modifier": {
-      "value": -0.55,
+      "value": -0.35,
       "operation": "multiply_total"
     },
     "condition": {
@@ -149,7 +149,7 @@
   "veil_6": {
     "type": "origins:modify_damage_taken",
     "modifier": {
-      "value": -0.65,
+      "value": -0.4,
       "operation": "multiply_total"
     },
     "condition": {
@@ -173,7 +173,7 @@
   "veil_7": {
     "type": "origins:modify_damage_taken",
     "modifier": {
-      "value": -0.75,
+      "value": -0.45,
       "operation": "multiply_total"
     },
     "condition": {
@@ -197,7 +197,7 @@
   "veil_8": {
     "type": "origins:modify_damage_taken",
     "modifier": {
-      "value": -0.85,
+      "value": -0.5,
       "operation": "multiply_total"
     },
     "condition": {
@@ -218,9 +218,57 @@
       ]
     }
   },
+  "veil_9": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "value": -0.55,
+      "operation": "multiply_total"
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 9,
+          "comparison": "==",
+          "resource": "*:*_anger"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:sculk/switching_switch_resource"
+        }
+      ]
+    }
+  },
+  "veil_10": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "value": -0.6,
+      "operation": "multiply_total"
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 10,
+          "comparison": "==",
+          "resource": "*:*_anger"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:sculk/switching_switch_resource"
+        }
+      ]
+    }
+  },
   "anger_reset": {
     "type": "origins:action_over_time",
-    "interval": 200,
+    "interval": 250,
     "entity_action": {
       "type": "origins:change_resource",
       "change": -1,
@@ -232,6 +280,15 @@
       "compare_to": 0,
       "comparison": "==",
       "resource": "*:sculk/switching_switch_resource"
+    }
+  },
+  "disable_regen": {
+    "type": "origins:disable_regen",
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": ">=",
+      "resource": "*:*_anger"
     }
   }
 }

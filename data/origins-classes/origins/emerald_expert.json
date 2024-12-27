@@ -2,7 +2,7 @@
   "powers": ["origins-classes:emerald"],
   "icon": "minecraft:emerald",
   "order": 9,
-  "impact": 1,
+  "impact": 0,
   "name": "Villager Hero",
   "description": "This village needs a hero!"
 }

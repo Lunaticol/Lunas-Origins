@@ -1,0 +1,7 @@
+{
+  "powers": ["origins-classes:wingshredder"],
+  "icon": "minecraft:elytra",
+  "impact": 0,
+  "name": "Bird Hunter",
+  "description": "Ground these birds to the ground. The skys belong to nobody."
+}

@@ -1,0 +1,1186 @@
+{
+  "name": "Code Injection",
+  "description": "Inject a piece of code into entitys. Can benefit or harm them.",
+  "type": "origins:multiple",
+  "inject": {
+    "type": "origins:resource",
+    "max": 7,
+    "min": 0
+  },
+  "switch_injection": {
+    "type": "origins:active_self",
+    "key": "key.saveToolbarActivator",
+    "entity_action": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "change": 1,
+                "operation": "add",
+                "resource": "*:*_inject"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "title @p actionbar {\"text\":\"Amplify Injection\",\"color\":\"gold\",\"bold\":true}"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 0,
+            "comparison": "==",
+            "resource": "*:*_inject"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "change": 1,
+                "operation": "add",
+                "resource": "*:*_inject"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "title @p actionbar {\"text\":\"Rescale Injection\",\"color\":\"gold\",\"bold\":true}"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 1,
+            "comparison": "==",
+            "resource": "*:*_inject"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "change": 1,
+                "operation": "add",
+                "resource": "*:*_inject"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "title @p actionbar {\"text\":\"Drain Injection\",\"color\":\"gold\",\"bold\":true}"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 2,
+            "comparison": "==",
+            "resource": "*:*_inject"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "change": 1,
+                "operation": "add",
+                "resource": "*:*_inject"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "title @p actionbar {\"text\":\"Lag Injection\",\"color\":\"gold\",\"bold\":true}"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 3,
+            "comparison": "==",
+            "resource": "*:*_inject"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "change": 1,
+                "operation": "add",
+                "resource": "*:*_inject"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "title @p actionbar {\"text\":\"Fragment Injection\",\"color\":\"gold\",\"bold\":true}"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 4,
+            "comparison": "==",
+            "resource": "*:*_inject"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "change": 1,
+                "operation": "add",
+                "resource": "*:*_inject"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "title @p actionbar {\"text\":\"Stabalize Injection\",\"color\":\"gold\",\"bold\":true}"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 5,
+            "comparison": "==",
+            "resource": "*:*_inject"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "change": 1,
+                "operation": "add",
+                "resource": "*:*_inject"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "title @p actionbar {\"text\":\"Virus Injection\",\"color\":\"gold\",\"bold\":true}"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 6,
+            "comparison": "==",
+            "resource": "*:*_inject"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "change": 0,
+                "operation": "set",
+                "resource": "*:*_inject"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "title @p actionbar {\"text\":\"Disable Injection\",\"color\":\"gold\",\"bold\":true}"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 7,
+            "comparison": "==",
+            "resource": "*:*_inject"
+          }
+        }
+      ]
+    }
+  },
+  "injection": {
+    "type": "origins:action_on_hit",
+    "bientity_action": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:target_action",
+                "action": {
+                  "type": "origins:grant_power",
+                  "power": "luna:cyn/injections/disable",
+                  "source": "luna:cyn/inject"
+                }
+              },
+              {
+                "type": "origins:actor_action",
+                "action": {
+                  "type": "origins:and",
+                  "actions": [
+                    {
+                      "type": "origins:trigger_cooldown",
+                      "power": "*:*_cooldown"
+                    },
+                    {
+                      "type": "origins:execute_command",
+                      "command": "execute at @s rotated ~ 0 run particle lunasorigins:yellow_flame ^-0.3 ^0.8 ^0.1 0 0 0 0.5 100"
+                    },
+                    {
+                      "type": "origins:play_sound",
+                      "volume": 1,
+                      "pitch": 0.5,
+                      "sound": "minecraft:entity.ender_dragon.growl",
+                      "category": "players"
+                    },
+                    {
+                      "type": "origins:change_resource",
+                      "change": -1,
+                      "resource": "*:*_injection_bar"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:actor_condition",
+            "condition": {
+              "type": "origins:and",
+              "conditions": [
+                {
+                  "type": "origins:resource",
+                  "compare_to": 0,
+                  "comparison": "==",
+                  "resource": "*:*_inject"
+                },
+                {
+                  "type": "origins:resource",
+                  "compare_to": 1,
+                  "comparison": ">=",
+                  "resource": "*:*_injection_bar"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:target_action",
+                "action": {
+                  "type": "origins:and",
+                  "actions": [
+                    {
+                      "type": "origins:grant_power",
+                      "power": "luna:cyn/injections/amplify",
+                      "source": "luna:cyn/inject"
+                    },
+                    {
+                      "type": "origins:choice",
+                      "actions": [
+                        {
+                          "element": {
+                            "type": "origins:execute_command",
+                            "command": "tellraw @s [{\"text\":\"<Cynical> \"},{\"text\":\"Your welcome.\",\"color\":\"gold\",\"bold\":true}]"
+                          },
+                          "weight": 1
+                        },
+                        {
+                          "element": {
+                            "type": "origins:execute_command",
+                            "command": "tellraw @s [{\"text\":\"<Cynical> \"},{\"text\":\"Hi \",\"color\":\"gold\",\"bold\":true},{\"selector\":\"@s\",\"color\":\"gold\",\"bold\":true}]"
+                          },
+                          "weight": 1
+                        },
+                        {
+                          "element": {
+                            "type": "origins:execute_command",
+                            "command": "tellraw @s [{\"text\":\"<Cynical> \"},{\"text\":\"This is a gift.\",\"color\":\"gold\",\"bold\":true}]"
+                          },
+                          "weight": 1
+                        },
+                        {
+                          "element": {
+                            "type": "origins:execute_command",
+                            "command": "tellraw @s [{\"text\":\"<Cynical> \"},{\"text\":\"Its cool.\",\"color\":\"gold\",\"bold\":true}]"
+                          },
+                          "weight": 1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "origins:actor_action",
+                "action": {
+                  "type": "origins:and",
+                  "actions": [
+                    {
+                      "type": "origins:trigger_cooldown",
+                      "power": "*:*_cooldown"
+                    },
+                    {
+                      "type": "origins:execute_command",
+                      "command": "execute at @s rotated ~ 0 run particle lunasorigins:yellow_flame ^-0.3 ^0.8 ^0.1 0 0 0 0.5 100"
+                    },
+                    {
+                      "type": "origins:play_sound",
+                      "volume": 1,
+                      "pitch": 0.5,
+                      "sound": "minecraft:entity.ender_dragon.growl",
+                      "category": "players"
+                    },
+                    {
+                      "type": "origins:change_resource",
+                      "change": -2,
+                      "resource": "*:*_injection_bar"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:actor_condition",
+            "condition": {
+              "type": "origins:and",
+              "conditions": [
+                {
+                  "type": "origins:resource",
+                  "compare_to": 1,
+                  "comparison": "==",
+                  "resource": "*:*_inject"
+                },
+                {
+                  "type": "origins:resource",
+                  "compare_to": 2,
+                  "comparison": ">=",
+                  "resource": "*:*_injection_bar"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:target_action",
+                "action": {
+                  "type": "origins:nothing"
+                }
+              },
+              {
+                "type": "origins:actor_action",
+                "action": {
+                  "type": "origins:nothing"
+                }
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:actor_condition",
+            "condition": {
+              "type": "origins:and",
+              "conditions": [
+                {
+                  "type": "origins:resource",
+                  "compare_to": 2,
+                  "comparison": "==",
+                  "resource": "*:*_inject"
+                },
+                {
+                  "type": "origins:resource",
+                  "compare_to": 2,
+                  "comparison": ">=",
+                  "resource": "*:*_injection_bar"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:target_action",
+                "action": {
+                  "type": "origins:and",
+                  "actions": [
+                    {
+                      "type": "origins:feed",
+                      "food": -5,
+                      "saturation": -10
+                    },
+                    {
+                      "type": "origins:choice",
+                      "actions": [
+                        {
+                          "element": {
+                            "type": "origins:execute_command",
+                            "command": "tellraw @s [{\"text\":\"<Cynical> \"},{\"text\":\"Yum Yum in my tum.\",\"color\":\"gold\",\"bold\":true}]"
+                          },
+                          "weight": 1
+                        },
+                        {
+                          "element": {
+                            "type": "origins:execute_command",
+                            "command": "tellraw @s [{\"text\":\"<Cynical> \"},{\"text\":\"Liiick.\",\"color\":\"gold\",\"bold\":true}]"
+                          },
+                          "weight": 1
+                        },
+                        {
+                          "element": {
+                            "type": "origins:execute_command",
+                            "command": "tellraw @s [{\"text\":\"<Cynical> \"},{\"text\":\"Mmm. So yummy.\",\"color\":\"gold\",\"bold\":true}]"
+                          },
+                          "weight": 1
+                        },
+                        {
+                          "element": {
+                            "type": "origins:execute_command",
+                            "command": "tellraw @s [{\"text\":\"<Cynical> \"},{\"text\":\"Just a nibble.\",\"color\":\"gold\",\"bold\":true}]"
+                          },
+                          "weight": 1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "origins:actor_action",
+                "action": {
+                  "type": "origins:and",
+                  "actions": [
+                    {
+                      "type": "origins:trigger_cooldown",
+                      "power": "*:*_cooldown"
+                    },
+                    {
+                      "type": "origins:heal",
+                      "amount": 5
+                    },
+                    {
+                      "type": "origins:execute_command",
+                      "command": "execute at @s rotated ~ 0 run particle lunasorigins:yellow_flame ^-0.3 ^0.8 ^0.1 0 0 0 0.5 100"
+                    },
+                    {
+                      "type": "origins:play_sound",
+                      "volume": 1,
+                      "pitch": 0.5,
+                      "sound": "minecraft:entity.ender_dragon.growl",
+                      "category": "players"
+                    },
+                    {
+                      "type": "origins:change_resource",
+                      "change": -1,
+                      "resource": "*:*_injection_bar"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:actor_condition",
+            "condition": {
+              "type": "origins:and",
+              "conditions": [
+                {
+                  "type": "origins:resource",
+                  "compare_to": 3,
+                  "comparison": "==",
+                  "resource": "*:*_inject"
+                },
+                {
+                  "type": "origins:resource",
+                  "compare_to": 1,
+                  "comparison": ">=",
+                  "resource": "*:*_injection_bar"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:target_action",
+                "action": {
+                  "type": "origins:grant_power",
+                  "power": "luna:cyn/injections/lag",
+                  "source": "luna:cyn/inject"
+                }
+              },
+              {
+                "type": "origins:actor_action",
+                "action": {
+                  "type": "origins:and",
+                  "actions": [
+                    {
+                      "type": "origins:trigger_cooldown",
+                      "power": "*:*_cooldown"
+                    },
+                    {
+                      "type": "origins:execute_command",
+                      "command": "execute at @s rotated ~ 0 run particle lunasorigins:yellow_flame ^-0.3 ^0.8 ^0.1 0 0 0 0.5 100"
+                    },
+                    {
+                      "type": "origins:play_sound",
+                      "volume": 1,
+                      "pitch": 0.5,
+                      "sound": "minecraft:entity.ender_dragon.growl",
+                      "category": "players"
+                    },
+                    {
+                      "type": "origins:change_resource",
+                      "change": -3,
+                      "resource": "*:*_injection_bar"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:actor_condition",
+            "condition": {
+              "type": "origins:and",
+              "conditions": [
+                {
+                  "type": "origins:resource",
+                  "compare_to": 4,
+                  "comparison": "==",
+                  "resource": "*:*_inject"
+                },
+                {
+                  "type": "origins:resource",
+                  "compare_to": 3,
+                  "comparison": ">=",
+                  "resource": "*:*_injection_bar"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:target_action",
+                "action": {
+                  "type": "origins:grant_power",
+                  "power": "luna:cyn/injections/fragment",
+                  "source": "luna:cyn/inject"
+                }
+              },
+              {
+                "type": "origins:actor_action",
+                "action": {
+                  "type": "origins:and",
+                  "actions": [
+                    {
+                      "type": "origins:trigger_cooldown",
+                      "power": "*:*_cooldown"
+                    },
+                    {
+                      "type": "origins:execute_command",
+                      "command": "execute at @s rotated ~ 0 run particle lunasorigins:yellow_flame ^-0.3 ^0.8 ^0.1 0 0 0 0.5 100"
+                    },
+                    {
+                      "type": "origins:play_sound",
+                      "volume": 1,
+                      "pitch": 0.5,
+                      "sound": "minecraft:entity.ender_dragon.growl",
+                      "category": "players"
+                    },
+                    {
+                      "type": "origins:change_resource",
+                      "change": -3,
+                      "resource": "*:*_injection_bar"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:actor_condition",
+            "condition": {
+              "type": "origins:and",
+              "conditions": [
+                {
+                  "type": "origins:resource",
+                  "compare_to": 5,
+                  "comparison": "==",
+                  "resource": "*:*_inject"
+                },
+                {
+                  "type": "origins:resource",
+                  "compare_to": 3,
+                  "comparison": ">=",
+                  "resource": "*:*_injection_bar"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:actor_action",
+                "action": {
+                  "type": "origins:and",
+                  "actions": [
+                    {
+                      "type": "origins:trigger_cooldown",
+                      "power": "*:*_cooldown"
+                    },
+                    {
+                      "type": "origins:execute_command",
+                      "command": "execute at @s rotated ~ 0 run particle lunasorigins:yellow_flame ^-0.3 ^0.8 ^0.1 0 0 0 0.5 100"
+                    },
+                    {
+                      "type": "origins:play_sound",
+                      "volume": 1,
+                      "pitch": 0.5,
+                      "sound": "minecraft:entity.ender_dragon.growl",
+                      "category": "players"
+                    },
+                    {
+                      "type": "origins:change_resource",
+                      "change": -2,
+                      "resource": "*:*_injection_bar"
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "origins:target_action",
+                "action": {
+                  "type": "origins:choice",
+                  "actions": [
+                    {
+                      "element": {
+                        "type": "origins:execute_command",
+                        "command": "tellraw @s [{\"text\":\"<Cynical> \"},{\"text\":\"I don't need this.\",\"color\":\"gold\",\"bold\":true}]"
+                      },
+                      "weight": 1
+                    },
+                    {
+                      "element": {
+                        "type": "origins:execute_command",
+                        "command": "tellraw @s [{\"text\":\"<Cynical> \"},{\"text\":\"Its all yours.\",\"color\":\"gold\",\"bold\":true}]"
+                      },
+                      "weight": 1
+                    },
+                    {
+                      "element": {
+                        "type": "origins:execute_command",
+                        "command": "tellraw @s [{\"text\":\"<Cynical> \"},{\"text\":\"Take it back.\",\"color\":\"gold\",\"bold\":true}]"
+                      },
+                      "weight": 1
+                    },
+                    {
+                      "element": {
+                        "type": "origins:execute_command",
+                        "command": "tellraw @s [{\"text\":\"<Cynical> \"},{\"text\":\"Tried it, wasn't fun.\",\"color\":\"gold\",\"bold\":true}]"
+                      },
+                      "weight": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:actor_condition",
+            "condition": {
+              "type": "origins:and",
+              "conditions": [
+                {
+                  "type": "origins:resource",
+                  "compare_to": 6,
+                  "comparison": "==",
+                  "resource": "*:*_inject"
+                },
+                {
+                  "type": "origins:resource",
+                  "compare_to": 2,
+                  "comparison": ">=",
+                  "resource": "*:*_injection_bar"
+                },
+                {
+                  "type": "origins:or",
+                  "conditions": [
+                    {
+                      "type": "origins:status_effect",
+                      "effect": "minecraft:poison"
+                    },
+                    {
+                      "type": "origins:status_effect",
+                      "effect": "minecraft:wither"
+                    },
+                    {
+                      "type": "origins:status_effect",
+                      "effect": "minecraft:slowness"
+                    },
+                    {
+                      "type": "origins:status_effect",
+                      "effect": "minecraft:weakness"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:target_action",
+                "action": {
+                  "type": "origins:grant_power",
+                  "power": "luna:cyn/injections/virus",
+                  "source": "luna:cyn/inject"
+                }
+              },
+              {
+                "type": "origins:actor_action",
+                "action": {
+                  "type": "origins:and",
+                  "actions": [
+                    {
+                      "type": "origins:trigger_cooldown",
+                      "power": "*:*_cooldown"
+                    },
+                    {
+                      "type": "origins:execute_command",
+                      "command": "execute at @s rotated ~ 0 run particle lunasorigins:yellow_flame ^-0.3 ^0.8 ^0.1 0 0 0 0.5 100"
+                    },
+                    {
+                      "type": "origins:play_sound",
+                      "volume": 1,
+                      "pitch": 0.5,
+                      "sound": "minecraft:entity.ender_dragon.growl",
+                      "category": "players"
+                    },
+                    {
+                      "type": "origins:change_resource",
+                      "change": -6,
+                      "resource": "*:*_injection_bar"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:actor_condition",
+                "condition": {
+                  "type": "origins:and",
+                  "conditions": [
+                    {
+                      "type": "origins:resource",
+                      "compare_to": 7,
+                      "comparison": "==",
+                      "resource": "*:*_inject"
+                    },
+                    {
+                      "type": "origins:resource",
+                      "compare_to": 6,
+                      "comparison": "==",
+                      "resource": "*:*_injection_bar"
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "origins:target_condition",
+                "condition": {
+                  "type": "origins:health",
+                  "compare_to": 4,
+                  "comparison": "<"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:power_active",
+          "power": "*:*_toggle"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:*_cooldown"
+        }
+      ]
+    },
+    "damage_condition": {
+      "type": "origins:type",
+      "damage_type": "thorns",
+      "inverted": true
+    }
+  },
+  "injection_bar": {
+    "type": "origins:resource",
+    "max": 6,
+    "min": 0,
+    "hud_render": {
+      "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
+      "bar_index": 14,
+      "should_render": true
+    }
+  },
+  "cooldown": {
+    "type": "origins:cooldown",
+    "cooldown": 100
+  },
+  "inject_ready_particle": {
+    "type": "origins:action_over_time",
+    "interval": 2,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "execute at @s rotated ~ 0 run particle lunasorigins:yellow_flame ^-0.3 ^0.8 ^0.1 0.1 0 0.1 0 1"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": ">=",
+          "resource": "*:*_injection_bar"
+        },
+        {
+          "type": "origins:power_active",
+          "power": "*:*_toggle"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:*_cooldown"
+        }
+      ]
+    }
+  },
+  "toggle": {
+    "type": "origins:toggle",
+    "key": "key.loadToolbarActivator",
+    "active_by_default": true
+  },
+  "injection_charge": {
+    "type": "origins:self_action_on_hit",
+    "entity_action": {
+      "type": "origins:chance",
+      "chance": 0.5,
+      "action": {
+        "type": "origins:change_resource",
+        "change": 1,
+        "resource": "*:*_injection_bar"
+      }
+    }
+  },
+  "stabilize_poison": {
+    "type": "origins:action_on_hit",
+    "bientity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:target_action",
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:apply_effect",
+                "effect": { "effect": "minecraft:poison", "duration": 200 }
+              },
+              {
+                "type": "origins:clear_effect",
+                "effect": "minecraft:regeneration"
+              }
+            ]
+          }
+        },
+        {
+          "type": "origins:actor_action",
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:apply_effect",
+                "effect": {
+                  "effect": "minecraft:regeneration",
+                  "duration": 200
+                }
+              },
+              {
+                "type": "origins:clear_effect",
+                "effect": "minecraft:poison"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "bientity_condition": {
+      "type": "origins:actor_condition",
+      "condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:resource",
+            "compare_to": 6,
+            "comparison": "==",
+            "resource": "*:*_inject"
+          },
+          {
+            "type": "origins:resource",
+            "compare_to": 2,
+            "comparison": ">=",
+            "resource": "*:*_injection_bar"
+          },
+          {
+            "type": "origins:status_effect",
+            "effect": "minecraft:poison"
+          }
+        ]
+      }
+    }
+  },
+  "stabilize_wither": {
+    "type": "origins:action_on_hit",
+    "bientity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:target_action",
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:apply_effect",
+                "effect": { "effect": "minecraft:wither", "duration": 200 }
+              },
+              {
+                "type": "origins:clear_effect",
+                "effect": "minecraft:regeneration"
+              }
+            ]
+          }
+        },
+        {
+          "type": "origins:actor_action",
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:apply_effect",
+                "effect": {
+                  "effect": "minecraft:regeneration",
+                  "duration": 200
+                }
+              },
+              {
+                "type": "origins:clear_effect",
+                "effect": "minecraft:wither"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "bientity_condition": {
+      "type": "origins:actor_condition",
+      "condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:resource",
+            "compare_to": 6,
+            "comparison": "==",
+            "resource": "*:*_inject"
+          },
+          {
+            "type": "origins:resource",
+            "compare_to": 2,
+            "comparison": ">=",
+            "resource": "*:*_injection_bar"
+          },
+          {
+            "type": "origins:status_effect",
+            "effect": "minecraft:wither"
+          }
+        ]
+      }
+    }
+  },
+  "stabilize_weakness": {
+    "type": "origins:action_on_hit",
+    "bientity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:target_action",
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:apply_effect",
+                "effect": { "effect": "minecraft:weakness", "duration": 200 }
+              },
+              {
+                "type": "origins:clear_effect",
+                "effect": "minecraft:strength"
+              }
+            ]
+          }
+        },
+        {
+          "type": "origins:actor_action",
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:apply_effect",
+                "effect": {
+                  "effect": "minecraft:strength",
+                  "duration": 200
+                }
+              },
+              {
+                "type": "origins:clear_effect",
+                "effect": "minecraft:weakness"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "bientity_condition": {
+      "type": "origins:actor_condition",
+      "condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:resource",
+            "compare_to": 6,
+            "comparison": "==",
+            "resource": "*:*_inject"
+          },
+          {
+            "type": "origins:resource",
+            "compare_to": 2,
+            "comparison": ">=",
+            "resource": "*:*_injection_bar"
+          },
+          {
+            "type": "origins:status_effect",
+            "effect": "minecraft:weakness"
+          }
+        ]
+      }
+    }
+  },
+  "stabilize_slowness": {
+    "type": "origins:action_on_hit",
+    "bientity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:target_action",
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:apply_effect",
+                "effect": { "effect": "minecraft:slowness", "duration": 200 }
+              },
+              {
+                "type": "origins:clear_effect",
+                "effect": "minecraft:speed"
+              }
+            ]
+          }
+        },
+        {
+          "type": "origins:actor_action",
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:apply_effect",
+                "effect": {
+                  "effect": "minecraft:speed",
+                  "duration": 200
+                }
+              },
+              {
+                "type": "origins:clear_effect",
+                "effect": "minecraft:slowness"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "bientity_condition": {
+      "type": "origins:actor_condition",
+      "condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:resource",
+            "compare_to": 6,
+            "comparison": "==",
+            "resource": "*:*_inject"
+          },
+          {
+            "type": "origins:resource",
+            "compare_to": 2,
+            "comparison": ">=",
+            "resource": "*:*_injection_bar"
+          },
+          {
+            "type": "origins:status_effect",
+            "effect": "minecraft:slowness"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,141 @@
+{
+  "type": "origins:multiple",
+  "lag": {
+    "type": "origins:action_over_time",
+    "interval": 10,
+    "entity_action": {
+      "type": "origins:choice",
+      "actions": [
+        {
+          "element": {
+            "type": "origins:change_resource",
+            "change": 1,
+            "operation": "set",
+            "resource": "*:*_movement_speed"
+          },
+          "weight": 1
+        },
+        {
+          "element": {
+            "type": "origins:change_resource",
+            "change": 2,
+            "operation": "set",
+            "resource": "*:*_movement_speed"
+          },
+          "weight": 1
+        },
+        {
+          "element": {
+            "type": "origins:change_resource",
+            "change": 3,
+            "operation": "set",
+            "resource": "*:*_movement_speed"
+          },
+          "weight": 1
+        },
+        {
+          "element": {
+            "type": "origins:change_resource",
+            "change": 4,
+            "operation": "set",
+            "resource": "*:*_movement_speed"
+          },
+          "weight": 1
+        },
+        {
+          "element": {
+            "type": "origins:change_resource",
+            "change": 5,
+            "operation": "set",
+            "resource": "*:*_movement_speed"
+          },
+          "weight": 1
+        }
+      ]
+    }
+  },
+  "movement_speed": {
+    "type": "origins:resource",
+    "max": 5,
+    "min": 0
+  },
+  "speed_1": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "value": -0.1,
+      "attribute": "minecraft:generic.movement_speed",
+      "operation": "multiply_total"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_movement_speed"
+    }
+  },
+  "speed_2": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "value": -0.3,
+      "attribute": "minecraft:generic.movement_speed",
+      "operation": "multiply_total"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 2,
+      "comparison": "==",
+      "resource": "*:*_movement_speed"
+    }
+  },
+  "speed_3": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "value": -0.5,
+      "attribute": "minecraft:generic.movement_speed",
+      "operation": "multiply_total"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 3,
+      "comparison": "==",
+      "resource": "*:*_movement_speed"
+    }
+  },
+  "speed_4": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "value": -0.7,
+      "attribute": "minecraft:generic.movement_speed",
+      "operation": "multiply_total"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 4,
+      "comparison": "==",
+      "resource": "*:*_movement_speed"
+    }
+  },
+  "speed_5": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "value": -0.9,
+      "attribute": "minecraft:generic.movement_speed",
+      "operation": "multiply_total"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 5,
+      "comparison": "==",
+      "resource": "*:*_movement_speed"
+    }
+  },
+  "remove": {
+    "type": "origins:action_over_time",
+    "interval": 200,
+    "entity_action": {
+      "type": "origins:revoke_power",
+      "power": "luna:cyn/injections/lag",
+      "source": "luna:cyn/inject"
+    }
+  }
+}

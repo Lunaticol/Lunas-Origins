@@ -1,0 +1,29 @@
+{
+  "type": "origins:multiple",
+  "teleport": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:chance",
+      "chance": 0.75,
+      "action": {
+        "type": "origins:random_teleport",
+        "area_height": 8,
+        "area_width": 8,
+        "success_action": {
+          "type": "origins:execute_command",
+          "command": "particle dust 1.000 0.933 0.012 1 ~ ~1 ~ 0.3 0.5 0.3 1 100 normal"
+        }
+      }
+    }
+  },
+  "remove": {
+    "type": "origins:action_over_time",
+    "interval": 150,
+    "entity_action": {
+      "type": "origins:revoke_power",
+      "power": "luna:cyn/injections/fragment",
+      "source": "luna:cyn/inject"
+    }
+  }
+}

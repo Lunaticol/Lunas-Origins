@@ -22,6 +22,12 @@
               {
                 "type": "origins:execute_command",
                 "command": "particle dust_color_transition 0.000 0.000 0.000 2 1.000 0.267 0.000 ~ ~ ~ 1 1 1 1 100 normal"
+              },
+              {
+                "type": "origins:change_resource",
+                "change": -250,
+                "operation": "add",
+                "resource": "*:umbryte/void_void_bar"
               }
             ]
           }
@@ -49,13 +55,30 @@
       ]
     },
     "condition": {
-      "type": "origins:power_active",
-      "power": "*:*_toggle"
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 250,
+          "comparison": ">=",
+          "resource": "*:umbryte/void_void_bar"
+        },
+        {
+          "type": "origins:power_active",
+          "power": "*:*_toggle"
+        }
+      ]
     }
   },
   "toggle": {
     "type": "origins:toggle",
     "key": "key.origins.primary_active",
-    "active_by_default": true
+    "active_by_default": true,
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 250,
+      "comparison": ">=",
+      "resource": "*:umbryte/void_void_bar"
+    }
   }
 }

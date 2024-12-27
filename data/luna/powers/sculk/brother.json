@@ -6,6 +6,11 @@
       "type": "origins:tooltip",
       "sprite": "origins:textures/gui/badge/star.png",
       "text": "Requires 100 EXP Levels"
+    },
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/active.png",
+      "text": "Uses Load Hotbar"
     }
   ],
   "type": "origins:multiple",

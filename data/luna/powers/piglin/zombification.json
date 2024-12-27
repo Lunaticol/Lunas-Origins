@@ -1,0 +1,156 @@
+{
+  "name": "Unknown Disease",
+  "description": "The Overworld air contains a disease only piglins contract. This causes them to slowly turn into a zombie when infected. The nethers air is to hot for the virus to survive, causing it to be an instant cure to it.\nUsing nether blocks, such as netherrack, can help stop the infection.\nFully turning into a zombie is permanent.",
+  "type": "origins:multiple",
+  "infection_master_bar": {
+    "type": "origins:resource",
+    "max": 400,
+    "min": 0
+  },
+  "infection_resource_bar_1": {
+    "type": "origins:resource",
+    "max": 400,
+    "min": 0,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/luna_resource_bar.png",
+      "bar_index": 18,
+      "icon_index": 0,
+      "condition": {
+        "type": "origins:resource",
+        "compare_to": 100,
+        "comparison": "<",
+        "resource": "*:*_infection_master_bar"
+      }
+    }
+  },
+  "infection_resource_bar_2": {
+    "type": "origins:resource",
+    "max": 400,
+    "min": 0,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/luna_resource_bar.png",
+      "bar_index": 18,
+      "icon_index": 1,
+      "condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:resource",
+            "compare_to": 200,
+            "comparison": "<",
+            "resource": "*:*_infection_master_bar"
+          },
+          {
+            "type": "origins:resource",
+            "compare_to": 100,
+            "comparison": ">",
+            "resource": "*:*_infection_master_bar"
+          }
+        ]
+      }
+    }
+  },
+  "infection_resource_bar_3": {
+    "type": "origins:resource",
+    "max": 400,
+    "min": 0,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/luna_resource_bar.png",
+      "bar_index": 18,
+      "icon_index": 2,
+      "condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:resource",
+            "compare_to": 400,
+            "comparison": "<",
+            "resource": "*:*_infection_master_bar"
+          },
+          {
+            "type": "origins:resource",
+            "compare_to": 300,
+            "comparison": ">",
+            "resource": "*:*_infection_master_bar"
+          }
+        ]
+      }
+    }
+  },
+  "infection_resource_bar_4": {
+    "type": "origins:resource",
+    "max": 400,
+    "min": 0,
+    "icon_index": 3,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/luna_resource_bar.png",
+      "bar_index": 18,
+      "condition": {
+        "type": "origins:resource",
+        "compare_to": 400,
+        "comparison": "==",
+        "resource": "*:*_infection_master_bar"
+      }
+    }
+  },
+  "infection_progression": {
+    "type": "origins:action_over_time",
+    "interval": 200,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "change": 1,
+          "operation": "add",
+          "resource": "*:*_infection_master_bar"
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 1,
+          "operation": "add",
+          "resource": "*:*_infection_resource_bar_1"
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 1,
+          "operation": "add",
+          "resource": "*:*_infection_resource_bar_2"
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 1,
+          "operation": "add",
+          "resource": "*:*_infection_resource_bar_3"
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 1,
+          "operation": "add",
+          "resource": "*:*_infection_resource_bar_4"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:dimension",
+          "dimension": "minecraft:the_nether",
+          "inverted": true
+        },
+        {
+          "type": "origins:on_block",
+          "block_condition": {
+            "type": "origins:in_tag",
+            "tag": "luna:nether_blocks"
+          }
+        }
+      ]
+    }
+  }
+}

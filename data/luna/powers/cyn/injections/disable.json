@@ -1,0 +1,515 @@
+{
+  "type": "origins:multiple",
+  "main": {
+    "type": "origins:action_on_callback",
+    "entity_action_added": {
+      "type": "origins:choice",
+      "actions": [
+        {
+          "element": {
+            "type": "origins:change_resource",
+            "change": 1,
+            "operation": "set",
+            "resource": "*:*_disable_resource"
+          },
+          "weight": 1
+        },
+        {
+          "element": {
+            "type": "origins:change_resource",
+            "change": 2,
+            "operation": "set",
+            "resource": "*:*_disable_resource"
+          },
+          "weight": 1
+        },
+        {
+          "element": {
+            "type": "origins:change_resource",
+            "change": 3,
+            "operation": "set",
+            "resource": "*:*_disable_resource"
+          },
+          "weight": 1
+        },
+        {
+          "element": {
+            "type": "origins:change_resource",
+            "change": 0,
+            "operation": "set",
+            "resource": "*:*_disable_resource"
+          },
+          "weight": 1
+        },
+        {
+          "element": {
+            "type": "origins:change_resource",
+            "change": 4,
+            "operation": "set",
+            "resource": "*:*_disable_resource"
+          },
+          "weight": 1
+        },
+        {
+          "element": {
+            "type": "origins:change_resource",
+            "change": 5,
+            "operation": "set",
+            "resource": "*:*_disable_resource"
+          },
+          "weight": 1
+        }
+      ]
+    },
+    "entity_action_removed": {
+      "type": "origins:change_resource",
+      "change": -1,
+      "operation": "set",
+      "resource": "*:*_disable_resource"
+    }
+  },
+  "disable_resource": {
+    "type": "origins:resource",
+    "max": 5,
+    "min": -1,
+    "start_value": -1
+  },
+  "prevent_tools": {
+    "type": "origins:prevent_item_use",
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "tag": "luna:sword"
+      }
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 0,
+      "comparison": "==",
+      "resource": "*:*_disable_resource"
+    }
+  },
+  "prevent_food": {
+    "type": "origins:prevent_item_use",
+    "item_condition": {
+      "type": "origins:food"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_disable_resource"
+    }
+  },
+  "prevent_shield": {
+    "type": "origins:prevent_item_use",
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:shield"
+      }
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 2,
+      "comparison": "==",
+      "resource": "*:*_disable_resource"
+    }
+  },
+  "prevent_ranged": {
+    "type": "origins:prevent_item_use",
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "tag": "origins:ranged_weapons"
+      }
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 3,
+      "comparison": "==",
+      "resource": "*:*_disable_resource"
+    }
+  },
+  "prevent_run": {
+    "type": "origins:prevent_sprinting",
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 4,
+      "comparison": "==",
+      "resource": "*:*_disable_resource"
+    }
+  },
+  "prevent_jump": {
+    "type": "origins:modify_jump",
+    "modifier": {
+      "value": -2,
+      "operation": "multiply_total"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 5,
+      "comparison": "==",
+      "resource": "*:*_disable_resource"
+    }
+  },
+  "particle": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "action": {
+            "type": "origins:execute_command",
+            "command": "function luna:cyn/disable"
+          },
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:resource",
+                "compare_to": 0,
+                "comparison": "==",
+                "resource": "*:*_disable_resource"
+              },
+              {
+                "type": "origins:or",
+                "conditions": [
+                  {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                      "type": "origins:ingredient",
+                      "ingredient": {
+                        "tag": "luna:sword"
+                      }
+                    }
+                  },
+                  {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "offhand",
+                    "item_condition": {
+                      "type": "origins:ingredient",
+                      "ingredient": {
+                        "tag": "luna:sword"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "action": {
+            "type": "origins:execute_command",
+            "command": "function luna:cyn/disable"
+          },
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:resource",
+                "compare_to": 1,
+                "comparison": "==",
+                "resource": "*:*_disable_resource"
+              },
+              {
+                "type": "origins:or",
+                "conditions": [
+                  {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                      "type": "origins:food"
+                    }
+                  },
+                  {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "offhand",
+                    "item_condition": {
+                      "type": "origins:food"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "action": {
+            "type": "origins:execute_command",
+            "command": "function luna:cyn/disable"
+          },
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:resource",
+                "compare_to": 2,
+                "comparison": "==",
+                "resource": "*:*_disable_resource"
+              },
+              {
+                "type": "origins:or",
+                "conditions": [
+                  {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                      "type": "origins:ingredient",
+                      "ingredient": {
+                        "item": "minecraft:shield"
+                      }
+                    }
+                  },
+                  {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "offhand",
+                    "item_condition": {
+                      "type": "origins:ingredient",
+                      "ingredient": {
+                        "item": "minecraft:shield"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "action": {
+            "type": "origins:execute_command",
+            "command": "function luna:cyn/disable"
+          },
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:resource",
+                "compare_to": 3,
+                "comparison": "==",
+                "resource": "*:*_disable_resource"
+              },
+              {
+                "type": "origins:or",
+                "conditions": [
+                  {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                      "type": "origins:ingredient",
+                      "ingredient": {
+                        "tag": "origins:ranged_weapons"
+                      }
+                    }
+                  },
+                  {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "offhand",
+                    "item_condition": {
+                      "type": "origins:ingredient",
+                      "ingredient": {
+                        "tag": "origins:ranged_weapons"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "when_tool_disable": {
+    "type": "origins:modify_break_speed",
+    "modifier": {
+      "value": -1,
+      "operation": "multiply_total"
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:*_disable_resource"
+        },
+        {
+          "type": "origins:or",
+          "conditions": [
+            {
+              "type": "origins:equipped_item",
+              "equipment_slot": "mainhand",
+              "item_condition": {
+                "type": "origins:ingredient",
+                "ingredient": {
+                  "tag": "luna:sword"
+                }
+              }
+            },
+            {
+              "type": "origins:equipped_item",
+              "equipment_slot": "offhand",
+              "item_condition": {
+                "type": "origins:ingredient",
+                "ingredient": {
+                  "tag": "luna:sword"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "if_weapon": {
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+      "value": -1,
+      "operation": "multiply_total"
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:*_disable_resource"
+        },
+        {
+          "type": "origins:or",
+          "conditions": [
+            {
+              "type": "origins:equipped_item",
+              "equipment_slot": "mainhand",
+              "item_condition": {
+                "type": "origins:ingredient",
+                "ingredient": {
+                  "tag": "luna:sword"
+                }
+              }
+            },
+            {
+              "type": "origins:equipped_item",
+              "equipment_slot": "offhand",
+              "item_condition": {
+                "type": "origins:ingredient",
+                "ingredient": {
+                  "tag": "luna:sword"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "if_trident": {
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+      "value": -1,
+      "operation": "multiply_total"
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:*_disable_resource"
+        },
+        {
+          "type": "origins:or",
+          "conditions": [
+            {
+              "type": "origins:equipped_item",
+              "equipment_slot": "mainhand",
+              "item_condition": {
+                "type": "origins:ingredient",
+                "ingredient": {
+                  "tag": "origins:ranged_weapons"
+                }
+              }
+            },
+            {
+              "type": "origins:equipped_item",
+              "equipment_slot": "offhand",
+              "item_condition": {
+                "type": "origins:ingredient",
+                "ingredient": {
+                  "tag": "origins:ranged_weapons"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "remove": {
+    "type": "origins:action_over_time",
+    "interval": 200,
+    "entity_action": {
+      "type": "origins:revoke_power",
+      "power": "luna:cyn/injections/disable",
+      "source": "luna:cyn/inject"
+    }
+  },
+  "messages": {
+    "type": "origins:action_on_callback",
+    "entity_action_added": {
+      "type": "origins:choice",
+      "actions": [
+        {
+          "element": {
+            "type": "origins:execute_command",
+            "command": "tellraw @s [{\"text\":\"<Cynical> \"},{\"text\":\"You didn't need this right?\",\"color\":\"gold\",\"bold\":true}]"
+          },
+          "weight": 1
+        },
+        {
+          "element": {
+            "type": "origins:execute_command",
+            "command": "tellraw @s [{\"text\":\"<Cynical> \"},{\"text\":\"Your privileges have been revoked.\",\"color\":\"gold\",\"bold\":true}]"
+          },
+          "weight": 1
+        },
+        {
+          "element": {
+            "type": "origins:execute_command",
+            "command": "tellraw @s [{\"text\":\"<Cynical> \"},{\"text\":\"Error - Invalid password.\",\"color\":\"gold\",\"bold\":true}]"
+          },
+          "weight": 1
+        },
+        {
+          "element": {
+            "type": "origins:execute_command",
+            "command": "tellraw @s [{\"text\":\"<Cynical> \"},{\"text\":\"I'll be taking this from you now.\",\"color\":\"gold\",\"bold\":true}]"
+          },
+          "weight": 1
+        }
+      ]
+    }
+  },
+  "movement_disabled": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "execute at @s rotated ~ 0 run particle minecraft:witch ^ ^ ^ 0.1 0 0.3 0 5 force"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 4,
+      "comparison": ">=",
+      "resource": "*:*_disable_resource"
+    }
+  }
+}

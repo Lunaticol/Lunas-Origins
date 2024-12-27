@@ -1,37 +1,239 @@
 {
   "name": "Void Affinity",
-  "description": "Manipulate gravity to slow down enemies in a small radius around you.\nStops projectiles from moving",
+  "description": "Manipulate gravity to slow down enemies in a small radius around you.\nCauses projecitles to warp around you.",
   "type": "origins:multiple",
   "gravity": {
     "type": "origins:action_over_time",
-    "interval": 5,
+    "interval": 1,
     "entity_action": {
       "type": "origins:area_of_effect",
       "radius": 8,
       "shape": "sphere",
       "bientity_action": {
         "type": "origins:add_velocity",
-        "y": -1,
-        "space": "local"
+        "y": 0.2,
+        "z": 0.1
       },
       "bientity_condition": {
         "type": "origins:target_condition",
         "condition": {
-          "type": "origins:or",
+          "type": "origins:and",
           "conditions": [
-            { "type": "origins:entity_type", "entity_type": "minecraft:arrow" },
             {
-              "type": "origins:entity_type",
-              "entity_type": "minecraft:trident"
+              "type": "origins:or",
+              "conditions": [
+                {
+                  "type": "origins:block_collision",
+                  "offset_x": 0.1,
+                  "offset_y": 0.1,
+                  "offset_z": 0.1,
+                  "inverted": true
+                },
+                {
+                  "type": "origins:block_collision",
+                  "offset_x": -0.1,
+                  "offset_y": -0.1,
+                  "offset_z": -0.1,
+                  "inverted": true
+                }
+              ]
             },
             {
-              "type": "origins:entity_type",
-              "entity_type": "minecraft:spectral_arrow"
-            },
-            { "type": "origins:entity_type", "entity_type": "minecraft:potion" }
+              "type": "origins:or",
+              "conditions": [
+                {
+                  "type": "origins:entity_type",
+                  "entity_type": "minecraft:arrow"
+                },
+                {
+                  "type": "origins:entity_type",
+                  "entity_type": "minecraft:trident"
+                },
+                {
+                  "type": "origins:entity_type",
+                  "entity_type": "minecraft:spectral_arrow"
+                },
+                {
+                  "type": "origins:entity_type",
+                  "entity_type": "minecraft:potion"
+                }
+              ]
+            }
           ]
         }
       }
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:power_active",
+          "power": "*:*_toggle"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": ">=",
+          "resource": "*:umbryte/void_void_bar"
+        }
+      ]
+    }
+  },
+  "particle": {
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "entity_action": {
+      "type": "origins:area_of_effect",
+      "radius": 8,
+      "shape": "sphere",
+      "bientity_action": {
+        "type": "origins:target_action",
+        "action": {
+          "type": "origins:execute_command",
+          "command": "particle dust_color_transition 0.000 0.000 0.000 2 1.000 0.000 0.969 ~ ~1 ~ 0.1 0.1 0.1 1 5 normal"
+        }
+      },
+      "bientity_condition": {
+        "type": "origins:target_condition",
+        "condition": {
+          "type": "origins:and",
+          "conditions": [
+            {
+              "type": "origins:or",
+              "conditions": [
+                {
+                  "type": "origins:block_collision",
+                  "offset_x": 0.1,
+                  "offset_y": 0.1,
+                  "offset_z": 0.1,
+                  "inverted": true
+                },
+                {
+                  "type": "origins:block_collision",
+                  "offset_x": -0.1,
+                  "offset_y": -0.1,
+                  "offset_z": -0.1,
+                  "inverted": true
+                }
+              ]
+            },
+            {
+              "type": "origins:or",
+              "conditions": [
+                {
+                  "type": "origins:entity_type",
+                  "entity_type": "minecraft:arrow"
+                },
+                {
+                  "type": "origins:entity_type",
+                  "entity_type": "minecraft:trident"
+                },
+                {
+                  "type": "origins:entity_type",
+                  "entity_type": "minecraft:spectral_arrow"
+                },
+                {
+                  "type": "origins:entity_type",
+                  "entity_type": "minecraft:potion"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:power_active",
+          "power": "*:*_toggle"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": ">=",
+          "resource": "*:umbryte/void_void_bar"
+        }
+      ]
+    }
+  },
+  "toggle": {
+    "type": "origins:toggle",
+    "active_by_default": false,
+    "key": "key.saveToolbarActivator",
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": ">=",
+      "resource": "*:umbryte/void_void_bar"
+    }
+  },
+  "slow_down": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:area_of_effect",
+      "radius": 3,
+      "bientity_action": {
+        "type": "origins:target_action",
+        "action": {
+          "type": "origins:apply_effect",
+          "effect": {
+            "effect": "minecraft:slowness",
+            "amplifier": 1,
+            "duration": 40
+          }
+        }
+      }
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:power_active",
+          "power": "*:*_toggle"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": ">=",
+          "resource": "*:umbryte/void_void_bar"
+        }
+      ]
+    }
+  },
+  "active": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "particle minecraft:dragon_breath ~ ~ ~ 0.5 0.9 0.5 .1 10 normal"
+        },
+        {
+          "type": "origins:change_resource",
+          "change": -2,
+          "resource": "*:umbryte/void_void_bar"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:power_active",
+          "power": "*:*_toggle"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": ">=",
+          "resource": "*:umbryte/void_void_bar"
+        }
+      ]
     }
   }
 }

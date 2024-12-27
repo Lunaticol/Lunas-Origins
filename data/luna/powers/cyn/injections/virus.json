@@ -1,0 +1,35 @@
+{
+  "type": "origins:multiple",
+  "virus": {
+    "type": "origins:action_on_callback",
+    "entity_action_added": {
+      "type": "origins:chance",
+      "chance": 0.75,
+      "action": {
+        "type": "origins:delay",
+        "ticks": 60,
+        "action": {
+          "type": "origins:damage",
+          "amount": 20,
+          "source": {
+            "name": "double_edge"
+          }
+        }
+      },
+      "fail_action": {
+        "type": "origins:revoke_power",
+        "power": "luna:cyn/injections/virus",
+        "source": "luna:cyn/inject"
+      }
+    }
+  },
+  "fail_safe": {
+    "type": "origins:action_over_time",
+    "interval": 100,
+    "entity_action": {
+      "type": "origins:revoke_power",
+      "power": "luna:cyn/injections/virus",
+      "source": "luna:cyn/inject"
+    }
+  }
+}
