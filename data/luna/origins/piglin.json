@@ -1,9 +1,13 @@
 {
-  "powers": [],
+  "powers": [
+    "luna:piglin/piglin",
+    "luna:piglin/hoglin_rider",
+    "luna:piglin/zombification"
+  ],
   "icon": "minecraft:piglin_head",
   "order": 9,
   "unchoosable": true,
   "impact": 3,
   "name": "Piglin",
-  "description": ""
+  "description": "One of the most influential creatures in the nether. Split into 3 clans, the Piglins are a force to be reckoned with. They are known for their love of gold. They are also known for their love of bartering and their distrust of outsiders."
 }

@@ -18,7 +18,7 @@
       "value": 0.5
     }
   },
-  "swords_no_damage": {
+  "no_weapons": {
     "type": "origins:modify_damage_dealt",
     "modifier": {
       "operation": "addition",
@@ -28,9 +28,10 @@
       "type": "origins:equipped_item",
       "equipment_slot": "mainhand",
       "item_condition": {
+        "inverted": true,
         "type": "origins:ingredient",
         "ingredient": {
-          "tag": "luna:sword"
+          "item": "minecraft:air"
         }
       }
     }

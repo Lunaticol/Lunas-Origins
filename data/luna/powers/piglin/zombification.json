@@ -15,11 +15,10 @@
       "should_render": true,
       "sprite_location": "origins:textures/gui/luna_resource_bar.png",
       "bar_index": 18,
-      "icon_index": 0,
       "condition": {
         "type": "origins:resource",
         "compare_to": 100,
-        "comparison": "<",
+        "comparison": "<=",
         "resource": "*:*_infection_master_bar"
       }
     }
@@ -151,6 +150,15 @@
           }
         }
       ]
+    }
+  },
+  "shake": {
+    "type": "origins:shaking",
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 300,
+      "comparison": ">=",
+      "resource": "*:*_infection_master_bar"
     }
   }
 }

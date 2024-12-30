@@ -1,0 +1,110 @@
+{
+  "type": "origins:multiple",
+  "name": "Wall Cling",
+  "description": "You can use your claws to cling onto walls, you can then leap off them.\nYou'll slowly descend down the wall due to your claws ripping through it.",
+  "climb_overworld": {
+    "type": "origins:active_self",
+    "key": {
+      "key": "key.sneak",
+      "continuous": true
+    },
+    "entity_action": {
+      "type": "origins:add_velocity",
+      "set": true,
+      "z": 0,
+      "y": 0.0005,
+      "x": 0
+    },
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:or",
+          "conditions": [
+            {
+              "type": "origins:block_collision",
+              "offset_x": 0.1,
+              "offset_z": 0.1,
+              "offset_y": 0,
+              "block_condition": {
+                "inverted": true,
+                "type": "origins:in_tag",
+                "tag": "luna:unclingable"
+              }
+            },
+            {
+              "type": "origins:block_collision",
+              "offset_x": -0.1,
+              "offset_z": -0.1,
+              "offset_y": 0,
+              "block_condition": {
+                "inverted": true,
+                "type": "origins:in_tag",
+                "tag": "luna:unclingable"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "leap": {
+    "type": "origins:active_self",
+    "key": {
+      "key": "key.jump"
+    },
+    "entity_action": {
+      "type": "origins:add_velocity",
+      "space": "local",
+      "z": 3,
+      "y": 0.5,
+      "x": 0
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:or",
+          "conditions": [
+            {
+              "type": "origins:block_collision",
+              "offset_x": 0.1,
+              "offset_z": 0.1,
+              "offset_y": 0,
+              "block_condition": {
+                "inverted": true,
+                "type": "origins:in_tag",
+                "tag": "luna:unclingable"
+              }
+            },
+            {
+              "type": "origins:block_collision",
+              "offset_x": -0.1,
+              "offset_z": -0.1,
+              "offset_y": 0,
+              "block_condition": {
+                "inverted": true,
+                "type": "origins:in_tag",
+                "tag": "luna:unclingable"
+              }
+            }
+          ]
+        },
+        {
+          "type": "origins:sneaking"
+        }
+      ]
+    }
+  },
+  "fall_damage": {
+    "type": "origins:modify_damage_taken",
+    "damage_condition": {
+      "type": "origins:name",
+      "name": "fall"
+    },
+    "modifier": {
+      "value": -1,
+      "operation": "multiply_total"
+    }
+  }
+}

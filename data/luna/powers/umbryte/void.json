@@ -1,6 +1,6 @@
 {
   "name": "Void Affinity",
-  "description": "You draw your power from the End, You cannot use your abilitys without Void power.\nYou can charge up Void Power by being near the void or ender blocks.",
+  "description": "You draw your power from the End, You cannot use your abilitys without Void power.\nYou can charge up Void Power by being near the void or ender blocks.\nEating Ender pearls or Eyes Of Ender also charge your Void Energy!",
   "type": "origins:multiple",
   "color": {
     "type": "origins:model_color",
@@ -119,6 +119,24 @@
     "item_condition": {
       "type": "origins:ingredient",
       "ingredient": { "item": "minecraft:chorus_flower" }
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "change": 75,
+          "operation": "add",
+          "resource": "*:umbryte/void_void_bar"
+        },
+        {
+          "type": "origins:apply_effect",
+          "effect": {
+            "effect": "minecraft:regeneration",
+            "duration": 100
+          }
+        }
+      ]
     }
   },
   "popped_chorus": {
@@ -154,10 +172,9 @@
       ]
     },
     "condition": {
-      "type": "moborigins:nearby_entities",
+      "type": "apugli:entity_in_radius",
       "compare_to": 1,
       "comparison": ">=",
-      "multiplier": 6,
       "bientity_condition": {
         "type": "origins:target_condition",
         "condition": {
@@ -229,5 +246,66 @@
         "operation": "addition"
       }
     ]
+  },
+  "magic_and_fire": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "value": 1,
+      "operation": "multiply_total"
+    },
+    "damage_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:name",
+          "name": "inFire"
+        },
+        {
+          "type": "origins:name",
+          "name": "onFire"
+        },
+        {
+          "type": "apugli:magic"
+        }
+      ]
+    }
+  },
+  "eat_pearl_eye": {
+    "type": "apugli:edible_item",
+    "food_component": {
+      "always_edible": true,
+      "hunger": 2,
+      "saturation": 0.4,
+      "snack": true,
+      "meat": false
+    },
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 75,
+      "operation": "add",
+      "resource": "*:umbryte/void_void_bar"
+    },
+    "item_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:ingredient",
+          "ingredient": { "item": "minecraft:ender_eye" }
+        },
+        {
+          "type": "origins:ingredient",
+          "ingredient": { "item": "minecraft:ender_pearl" }
+        }
+      ]
+    }
+  },
+  "no_elytra": {
+    "type": "origins:restrict_armor",
+    "chest": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:elytra"
+      }
+    }
   }
 }

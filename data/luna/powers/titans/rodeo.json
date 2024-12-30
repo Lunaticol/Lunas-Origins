@@ -14,7 +14,7 @@
             "actions": [
               {
                 "type": "origins:damage",
-                "amount": 10,
+                "amount": 5,
                 "source": {
                   "bypasses_armor": true,
                   "name": "rodeo"

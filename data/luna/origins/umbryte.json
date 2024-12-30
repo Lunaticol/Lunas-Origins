@@ -3,6 +3,8 @@
     "luna:umbryte/void_step",
     "luna:umbryte/gravity",
     "luna:umbryte/double_edge",
+    "luna:umbryte/wall_cling",
+    "luna:umbryte/darkness",
     "luna:umbryte/void",
     "luna:umbryte/light"
   ],

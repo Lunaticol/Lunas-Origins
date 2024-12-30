@@ -55,13 +55,13 @@
   },
   "water_gain": {
     "type": "origins:action_over_time",
-    "interval": 100,
+    "interval": 5,
     "entity_action": {
       "type": "origins:and",
       "actions": [
         {
           "type": "origins:change_resource",
-          "change": 100,
+          "change": 5,
           "resource": "*:*_water",
           "operation": "add"
         }

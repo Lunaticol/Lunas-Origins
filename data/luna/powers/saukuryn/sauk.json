@@ -54,21 +54,32 @@
     "render_elytra": true,
     "texture_location": "minecraft:textures/block/cherry_leaves.png"
   },
-  "sweet_berries": {
+  "berries": {
     "type": "origins:modify_food",
     "item_condition": {
-      "type": "origins:ingredient",
-      "ingredient": {
-        "item": "minecraft:sweet_berries"
-      }
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "item": "minecraft:sweet_berries"
+          }
+        },
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "item": "minecraft:glow_berries"
+          }
+        }
+      ]
     },
     "food_modifier": {
       "operation": "addition",
-      "value": 15
+      "value": 8
     },
     "saturation_modifier": {
       "operation": "addition",
-      "value": 1.5
+      "value": 0.8
     }
   },
   "more_food": {

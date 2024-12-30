@@ -1,0 +1,77 @@
+{
+  "name": "One with the Void",
+  "description": "When in complete darkness, you deal x2 more damage\nWhen in complete darkness, and sneaking, you are nearly invisible",
+  "type": "origins:multiple",
+  "darkness": {
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+      "value": 1,
+      "operation": "multiply_total"
+    },
+    "condition": {
+      "type": "origins:in_block",
+      "block_condition": {
+        "type": "origins:light_level",
+        "light_type": "block",
+        "compare_to": 0,
+        "comparison": "=="
+      }
+    }
+  },
+  "darkness_particle": {
+    "type": "origins:action_over_time",
+    "interval": 2,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "execute at @s rotated ~ 0 run particle lunasorigins:purple_flame ^-0.4 ^1.2 ^0.1 0.1 0 0.1 0 1"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "execute at @s rotated ~ 0 run particle lunasorigins:purple_flame ^0.4 ^1.2 ^0.1 0.1 0 0.1 0 1"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:in_block",
+          "block_condition": {
+            "type": "origins:light_level",
+            "light_type": "block",
+            "compare_to": 0,
+            "comparison": "=="
+          }
+        },
+        {
+          "type": "origins:sneaking",
+          "inverted": true
+        }
+      ]
+    }
+  },
+  "invisible": {
+    "type": "origins:model_color",
+    "alpha": 0.15,
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:in_block",
+          "block_condition": {
+            "type": "origins:light_level",
+            "light_type": "block",
+            "compare_to": 0,
+            "comparison": "=="
+          }
+        },
+        {
+          "type": "origins:sneaking"
+        }
+      ]
+    }
+  }
+}

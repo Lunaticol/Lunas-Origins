@@ -1,1 +1,1 @@
-title @a title {"text":"1...","color":"gold","bold":true}
+title @a title {"text":"1...","color":"#83B591","bold":true}

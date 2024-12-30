@@ -54,6 +54,12 @@
           "sound": "minecraft:block.bell.use",
           "category": "players",
           "volume": 1
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 200,
+          "operation": "add",
+          "resource": "*:umbryte/void_void_bar"
         }
       ]
     }
