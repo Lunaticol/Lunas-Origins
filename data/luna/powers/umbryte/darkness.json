@@ -9,13 +9,27 @@
       "operation": "multiply_total"
     },
     "condition": {
-      "type": "origins:in_block",
-      "block_condition": {
-        "type": "origins:light_level",
-        "light_type": "block",
-        "compare_to": 0,
-        "comparison": "=="
-      }
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:in_block",
+          "block_condition": {
+            "type": "origins:light_level",
+            "light_type": "block",
+            "compare_to": 0,
+            "comparison": "=="
+          }
+        },
+        {
+          "type": "origins:in_block",
+          "block_condition": {
+            "type": "origins:light_level",
+            "light_type": "sky",
+            "compare_to": 0,
+            "comparison": "=="
+          }
+        }
+      ]
     }
   },
   "darkness_particle": {
@@ -49,6 +63,19 @@
         {
           "type": "origins:sneaking",
           "inverted": true
+        },
+        {
+          "type": "origins:daytime",
+          "inverted": true
+        },
+        {
+          "type": "origins:in_block",
+          "block_condition": {
+            "type": "origins:light_level",
+            "light_type": "sky",
+            "compare_to": 0,
+            "comparison": "=="
+          }
         }
       ]
     }
@@ -70,6 +97,15 @@
         },
         {
           "type": "origins:sneaking"
+        },
+        {
+          "type": "origins:in_block",
+          "block_condition": {
+            "type": "origins:light_level",
+            "light_type": "sky",
+            "compare_to": 0,
+            "comparison": "=="
+          }
         }
       ]
     }

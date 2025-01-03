@@ -191,5 +191,26 @@
         "advancement": "luna:aequor/abandoned"
       }
     }
+  },
+  "origin_counter": {
+    "type": "origins:action_on_callback",
+    "entity_action_chosen": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "scoreboard players add Aqeuor Origin 1"
+        }
+      ]
+    },
+    "entity_action_lost": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "scoreboard players remove Aequor Origin 1"
+        }
+      ]
+    }
   }
 }

@@ -127,5 +127,75 @@
         }
       }
     }
+  },
+  "origin_counter": {
+    "type": "origins:action_on_callback",
+    "entity_action_chosen": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "scoreboard players add Piglin Origin 1"
+        }
+      ]
+    },
+    "entity_action_lost": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "scoreboard players remove Piglin Origin 1"
+        }
+      ]
+    }
+  },
+  "portal": {
+    "type": "origins:action_over_time",
+    "interval": 40,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:apply_effect",
+          "effects": [
+            {
+              "effect": "minecraft:resistance",
+              "duration": 100
+            },
+            {
+              "effect": "minecraft:regeneration",
+              "duration": 100,
+              "amplifier": 1
+            }
+          ]
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:block_in_radius",
+      "compare_to": 1,
+      "comparison": ">=",
+      "radius": 1,
+      "block_condition": {
+        "type": "origins:block",
+        "block": "minecraft:nether_portal"
+      }
+    }
+  },
+  "eat_netherwart": {
+    "type": "apugli:edible_item",
+    "food_component": {
+      "always_edible": false,
+      "hunger": 3,
+      "meat": false,
+      "saturation": 0.2,
+      "snack": true
+    },
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:nether_wart"
+      }
+    }
   }
 }

@@ -1,0 +1,62 @@
+{
+  "name": "Potion Master",
+  "description": "You can throw a barrage of different potions.",
+  "type": "origins:multiple",
+  "potions": {
+    "type": "origins:resource",
+    "max": 2,
+    "min": 0
+  },
+  "throwing": {
+    "type": "origins:active_self",
+    "key": "key.origins.secondary_active",
+    "cooldown": 600,
+    "entity_action": {
+      "type": "origins:fire_projectile",
+      "entity_type": "minecraft:potion",
+      "tag": "{Passengers:[{id:\"minecraft:armor_stand\",Invisible:1b,Tags:[\"potion\"]}],Item:{id:\"minecraft:warped_fungus\",Count:1b}}",
+      "projectile_action": {
+        "type": "origins:passenger_action",
+        "action": {
+          "type": "origins:choice",
+          "actions": [
+            {
+              "element": {
+                "type": "origins:grant_power",
+                "power": "luna:piglin/warped/potion/weak",
+                "source": "luna:piglin/warped/potions"
+              },
+              "weight": 1
+            },
+            {
+              "element": {
+                "type": "origins:grant_power",
+                "power": "luna:piglin/warped/potion/slow",
+                "source": "luna:piglin/warped/potions"
+              },
+              "weight": 1
+            },
+            {
+              "element": {
+                "type": "origins:grant_power",
+                "power": "luna:piglin/warped/potion/harm",
+                "source": "luna:piglin/warped/potions"
+              },
+              "weight": 1
+            },
+            {
+              "element": {
+                "type": "origins:grant_power",
+                "power": "luna:piglin/warped/potion/poison",
+                "source": "luna:piglin/warped/potions"
+              },
+              "weight": 1
+            }
+          ]
+        }
+      },
+      "count": 1,
+      "speed": 0.5
+    }
+  }
+}

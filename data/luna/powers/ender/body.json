@@ -171,5 +171,26 @@
       "value": 4,
       "operation": "addition"
     }
+  },
+  "origin_counter": {
+    "type": "origins:action_on_callback",
+    "entity_action_chosen": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "scoreboard players add Enderian Origin 1"
+        }
+      ]
+    },
+    "entity_action_lost": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "scoreboard players remove Enderian Origin 1"
+        }
+      ]
+    }
   }
 }

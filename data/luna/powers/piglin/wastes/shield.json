@@ -1,0 +1,6 @@
+{
+  "type": "origins:multiple",
+  "shield": {
+    "type": "origins:action_on_item_use"
+  }
+}

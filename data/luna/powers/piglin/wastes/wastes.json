@@ -1,0 +1,27 @@
+{
+  "name": "",
+  "description": "",
+  "type": "origins:multiple",
+  "barter": {
+    "type": "origins:action_on_being_used",
+    "hands": ["main_hand"],
+    "action_result": "consume",
+    "bientity_action": {
+      "type": "origins:actor_action",
+      "action": {
+        "type": "origins:delay",
+        "ticks": 100,
+        "action": {
+          "type": "origins:execute_command",
+          "command": "loot give @s loot luna:wastes"
+        }
+      }
+    },
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "tag": "minecraft:piglin_loved"
+      }
+    }
+  }
+}

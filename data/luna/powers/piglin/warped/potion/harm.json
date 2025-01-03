@@ -1,0 +1,37 @@
+{
+  "type": "origins:multiple",
+  "on_land": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:spawn_effect_cloud",
+          "radius": 5,
+          "radius_on_use": -0.5,
+          "effect": {
+            "effect": "minecraft:instant_damage",
+            "duration": 20,
+            "amplifier": 1
+          }
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "kill @s"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:on_block"
+    }
+  },
+  "fail_safe": {
+    "type": "origins:action_over_time",
+    "interval": 100,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "kill @s"
+    }
+  }
+}

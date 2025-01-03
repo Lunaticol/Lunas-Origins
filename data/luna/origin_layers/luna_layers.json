@@ -59,7 +59,7 @@
       "origins": [
         "luna:piglin/crimson",
         "luna:piglin/warped",
-        "luna:piglin/crimson"
+        "luna:piglin/wastes"
       ],
       "condition": {
         "type": "origins:origin",

@@ -1,0 +1,330 @@
+{
+  "type": "minecraft:barter",
+  "random_sequence": "minecraft:gameplay/piglin_bartering",
+  "pools": [
+    {
+      "entries": [
+        {
+          "name": "minecraft:obsidian",
+          "quality": 40,
+          "type": "item",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "set_count",
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1.0,
+                "max": 10.0
+              }
+            }
+          ]
+        },
+        {
+          "name": "minecraft:string",
+          "quality": 1,
+          "type": "item",
+          "weight": 80,
+          "functions": [
+            {
+              "function": "set_count",
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1.0,
+                "max": 3.0
+              }
+            }
+          ]
+        },
+        {
+          "name": "minecraft:netherrack",
+          "quality": 1,
+          "type": "item",
+          "weight": 80,
+          "functions": [
+            {
+              "function": "set_count",
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1.0,
+                "max": 12.0
+              }
+            }
+          ]
+        },
+        {
+          "name": "minecraft:blackstone",
+          "quality": 1,
+          "type": "item",
+          "weight": 80,
+          "functions": [
+            {
+              "function": "set_count",
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1.0,
+                "max": 12.0
+              }
+            }
+          ]
+        },
+        {
+          "name": "minecraft:magma_cream",
+          "quality": 1,
+          "type": "item",
+          "weight": 40,
+          "functions": [
+            {
+              "function": "set_count",
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1.0,
+                "max": 12.0
+              }
+            }
+          ]
+        },
+        {
+          "name": "minecraft:magma_block",
+          "quality": 1,
+          "type": "item",
+          "weight": 60,
+          "functions": [
+            {
+              "function": "set_count",
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1.0,
+                "max": 12.0
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:book",
+          "quality": 1,
+          "weight": 10,
+          "functions": [
+            {
+              "function": "set_enchantments",
+              "add": false,
+              "enchantments": {
+                "soul_speed": {
+                  "min": 1,
+                  "max": 3
+                }
+              },
+              "count": {
+                "max": 1,
+                "min": 1
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:ender_pearl",
+          "quality": 1,
+          "weight": 15,
+          "functions": [
+            {
+              "function": "set_count",
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1.0,
+                "max": 3.0
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:iron_nugget",
+          "quality": 1,
+          "weight": 45,
+          "functions": [
+            {
+              "function": "set_count",
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 12.0,
+                "max": 32.0
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:netherite_scrap",
+          "quality": 1,
+          "weight": 1,
+          "functions": [
+            {
+              "function": "set_count",
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 1
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:rotten_flesh",
+          "quality": 1,
+          "weight": 65,
+          "functions": [
+            {
+              "function": "set_count",
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 8,
+                "max": 1
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:soul_sand",
+          "quality": 1,
+          "weight": 35,
+          "functions": [
+            {
+              "function": "set_count",
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 8,
+                "max": 1
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:shield",
+          "quality": 1,
+          "weight": 20,
+          "functions": [
+            {
+              "function": "set_damage",
+              "add": false,
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.1,
+                "max": 0.3
+              }
+            },
+            {
+              "function": "set_enchantments",
+              "add": false,
+              "enchantments": {
+                "unbreaking": {
+                  "min": 0,
+                  "max": 3
+                }
+              },
+              "count": {
+                "max": 1,
+                "min": 0
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:crossbow",
+          "quality": 1,
+          "weight": 5,
+          "functions": [
+            {
+              "function": "set_damage",
+              "add": false,
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.1,
+                "max": 0.3
+              }
+            },
+            {
+              "function": "set_enchantments",
+              "add": false,
+              "enchantments": {
+                "unbreaking": {
+                  "min": 0,
+                  "max": 3
+                },
+                "quick_charge": {
+                  "min": 0,
+                  "max": 3
+                },
+                "piercing": {
+                  "min": 0,
+                  "max": 4
+                }
+              },
+              "count": {
+                "max": 1,
+                "min": 0
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:crossbow",
+          "quality": 1,
+          "weight": 5,
+          "functions": [
+            {
+              "function": "set_damage",
+              "add": false,
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.1,
+                "max": 0.3
+              }
+            },
+            {
+              "function": "set_enchantments",
+              "add": false,
+              "enchantments": {
+                "unbreaking": {
+                  "min": 0,
+                  "max": 3
+                },
+                "quick_charge": {
+                  "min": 0,
+                  "max": 3
+                },
+                "multishot": {
+                  "min": 0,
+                  "max": 1
+                }
+              },
+              "count": {
+                "max": 1,
+                "min": 0
+              }
+            }
+          ]
+        }
+      ],
+      "rolls": 1,
+      "bonus_rolls": 0
+    }
+  ]
+}

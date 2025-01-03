@@ -145,5 +145,26 @@
       "value": -1,
       "operation": "multiply_total"
     }
+  },
+  "origin_counter": {
+    "type": "origins:action_on_callback",
+    "entity_action_chosen": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "scoreboard players add Titanmite Origin 1"
+        }
+      ]
+    },
+    "entity_action_lost": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "scoreboard players remove Titanmite Origin 1"
+        }
+      ]
+    }
   }
 }

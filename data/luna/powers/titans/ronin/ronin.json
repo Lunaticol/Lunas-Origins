@@ -811,5 +811,34 @@
         }
       ]
     }
+  },
+  "origin_counter": {
+    "type": "origins:action_on_callback",
+    "entity_action_chosen": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "scoreboard players add Ronin Origin 1"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "scoreboard players set @s OriginPlayer 12"
+        }
+      ]
+    },
+    "entity_action_lost": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "scoreboard players remove Ronin Origin 1"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "scoreboard players set @s OriginPlayer 0"
+        }
+      ]
+    }
   }
 }

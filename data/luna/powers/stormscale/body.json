@@ -145,5 +145,26 @@
   "lightning_rod": {
     "type": "apugli:redirect_lightning",
     "chance": 0.8
+  },
+  "origin_counter": {
+    "type": "origins:action_on_callback",
+    "entity_action_chosen": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "scoreboard players add Stormscale Origin 1"
+        }
+      ]
+    },
+    "entity_action_lost": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "scoreboard players remove Stormscale Origin 1"
+        }
+      ]
+    }
   }
 }

@@ -201,5 +201,26 @@
     "condition": { "type": "origins:on_block", "inverted": true },
     "type": "origins:modify_break_speed",
     "modifier": { "operation": "multiply_total", "value": 3 }
+  },
+  "origin_counter": {
+    "type": "origins:action_on_callback",
+    "entity_action_chosen": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "scoreboard players add Skyweaver Origin 1"
+        }
+      ]
+    },
+    "entity_action_lost": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "scoreboard players remove Skyweaver Origin 1"
+        }
+      ]
+    }
   }
 }
