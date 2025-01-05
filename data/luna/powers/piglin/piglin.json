@@ -1,15 +1,7 @@
 {
   "name": "Upstraight and on your legs",
-  "description": "After eons of eating that netherwart, you have evolved to become more than just a pig, and more sophisticated than a Hoglin. You are a Piglin, and you are proud of it.",
+  "description": "After eons of eating that netherwart, you have evolved to become more than just a pig, and more sophisticated than a Hoglin. You are a Piglin, and you are proud of it.\nHelmets arent made for your head size. Only Leather, Chain, and Gold can stretch enough to fit you.\nGold Tools function as netherite for you.",
   "type": "origins:multiple",
-  "passive_piglins": {
-    "type": "origins:action_over_time",
-    "interval": 20,
-    "entity_action": {
-      "type": "origins:execute_command",
-      "command": "function piglin:passive"
-    }
-  },
   "piglin_no_hurt": {
     "type": "origins:modify_damage_taken",
     "modifier": {
@@ -37,7 +29,7 @@
     "type": "origins:conditioned_attribute",
     "tick_rate": 5,
     "modifier": {
-      "value": 6,
+      "value": 4,
       "attribute": "minecraft:generic.attack_damage",
       "operation": "addition"
     },
@@ -56,7 +48,7 @@
     "type": "origins:conditioned_attribute",
     "tick_rate": 5,
     "modifier": {
-      "value": 6,
+      "value": 4,
       "attribute": "minecraft:generic.attack_damage",
       "operation": "addition"
     },
@@ -75,7 +67,7 @@
     "type": "origins:conditioned_attribute",
     "tick_rate": 5,
     "modifier": {
-      "value": 4,
+      "value": 3,
       "attribute": "minecraft:generic.attack_damage",
       "operation": "addition"
     },
@@ -113,7 +105,7 @@
     "type": "origins:conditioned_attribute",
     "tick_rate": 5,
     "modifier": {
-      "value": 3,
+      "value": 2,
       "attribute": "minecraft:generic.attack_speed",
       "operation": "addition"
     },
@@ -149,39 +141,6 @@
       ]
     }
   },
-  "portal": {
-    "type": "origins:action_over_time",
-    "interval": 40,
-    "entity_action": {
-      "type": "origins:and",
-      "actions": [
-        {
-          "type": "origins:apply_effect",
-          "effects": [
-            {
-              "effect": "minecraft:resistance",
-              "duration": 100
-            },
-            {
-              "effect": "minecraft:regeneration",
-              "duration": 100,
-              "amplifier": 1
-            }
-          ]
-        }
-      ]
-    },
-    "condition": {
-      "type": "origins:block_in_radius",
-      "compare_to": 1,
-      "comparison": ">=",
-      "radius": 1,
-      "block_condition": {
-        "type": "origins:block",
-        "block": "minecraft:nether_portal"
-      }
-    }
-  },
   "eat_netherwart": {
     "type": "apugli:edible_item",
     "food_component": {
@@ -196,6 +155,90 @@
       "ingredient": {
         "item": "minecraft:nether_wart"
       }
+    }
+  },
+  "helmet": {
+    "type": "origins:restrict_armor",
+    "head": {
+      "inverted": true,
+      "type": "origins:ingredient",
+      "ingredient": {
+        "tag": "luna:helmet_flex"
+      }
+    }
+  },
+  "helmet_strong": {
+    "type": "origins:modify_enchantment_level",
+    "enchantment": "minecraft:unbreaking",
+    "modifier": {
+      "value": 3,
+      "operation": "addition"
+    },
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "tag": "luna:helmet_flex"
+      }
+    },
+    "condition": {
+      "type": "origins:equipped_item",
+      "equipment_slot": "head",
+      "item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": {
+          "tag": "luna:helmet_flex"
+        }
+      }
+    }
+  },
+  "passive_piglins": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:area_of_effect",
+      "radius": 64,
+      "bientity_action": {
+        "type": "origins:target_action",
+        "action": {
+          "type": "origins:execute_command",
+          "command": "function luna:piglin/passive"
+        }
+      },
+      "bientity_condition": {
+        "type": "origins:target_condition",
+        "condition": {
+          "type": "origins:or",
+          "conditions": [
+            {
+              "type": "origins:entity_type",
+              "entity_type": "minecraft:piglin"
+            },
+            {
+              "type": "origins:entity_type",
+              "entity_type": "minecraft:piglin_brute"
+            },
+            {
+              "type": "origins:entity_type",
+              "entity_type": "minecraft:hoglin"
+            },
+            {
+              "type": "origins:entity_type",
+              "entity_type": "minecraft:zombified_piglin"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "team": {
+    "type": "origins:action_on_callback",
+    "entity_action_chosen": {
+      "type": "origins:execute_command",
+      "command": "function luna:piglin/passive"
+    },
+    "entity_action_lost": {
+      "type": "origins:execute_command",
+      "command": "function luna:piglin/passive"
     }
   }
 }

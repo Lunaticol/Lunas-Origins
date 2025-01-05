@@ -22,11 +22,6 @@
                     "type": "origins:damage",
                     "amount": 10,
                     "source": {
-                      "fire": true,
-                      "bypasses_armor": false,
-                      "out_of_world": false,
-                      "magic": false,
-                      "unblockable": false,
                       "name": "shield"
                     }
                   },

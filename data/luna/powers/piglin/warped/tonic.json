@@ -1,0 +1,19 @@
+{
+  "name": "Health Tonic",
+  "description": "Summon a large puddle of health to heal teammates.\nCan heal enemys to if they step in it.",
+  "type": "origins:multiple",
+  "health": {
+    "type": "origins:active_self",
+    "cooldown": 1200,
+    "key": "key.saveToolbarActivator",
+    "entity_action": {
+      "type": "origins:spawn_effect_cloud",
+      "radius": 8,
+      "radius_on_use": -1,
+      "effect": {
+        "effect": "minecraft:instant_health",
+        "amplifier": 1
+      }
+    }
+  }
+}

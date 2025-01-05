@@ -37,7 +37,7 @@
             "effect": "minecraft:speed",
             "show_icon": true,
             "show_particles": false,
-            "duration": 1200
+            "duration": 1400
           }
         },
         {
@@ -45,7 +45,7 @@
           "chance": 0.1,
           "action": {
             "type": "origins:damage",
-            "amount": 100,
+            "amount": 40,
             "source": {
               "out_of_world": true,
               "bypasses_armor": true,
@@ -94,7 +94,7 @@
             "effect": "minecraft:speed",
             "show_icon": true,
             "show_particles": false,
-            "duration": 1200,
+            "duration": 1400,
             "amplifier": 1
           }
         },
@@ -103,7 +103,7 @@
           "chance": 0.2,
           "action": {
             "type": "origins:damage",
-            "amount": 100,
+            "amount": 40,
             "source": {
               "out_of_world": true,
               "bypasses_armor": true,
@@ -152,7 +152,7 @@
             "effect": "minecraft:speed",
             "show_icon": true,
             "show_particles": false,
-            "duration": 1200,
+            "duration": 1400,
             "amplifier": 2
           }
         },
@@ -161,7 +161,7 @@
           "chance": 0.3,
           "action": {
             "type": "origins:damage",
-            "amount": 100,
+            "amount": 40,
             "source": {
               "out_of_world": true,
               "bypasses_armor": true,
@@ -210,7 +210,7 @@
             "effect": "minecraft:speed",
             "show_icon": true,
             "show_particles": false,
-            "duration": 1200,
+            "duration": 1400,
             "amplifier": 3
           }
         },
@@ -219,7 +219,7 @@
           "chance": 0.4,
           "action": {
             "type": "origins:damage",
-            "amount": 100,
+            "amount": 40,
             "source": {
               "out_of_world": true,
               "bypasses_armor": true,
@@ -268,7 +268,7 @@
             "effect": "minecraft:speed",
             "show_icon": true,
             "show_particles": false,
-            "duration": 1200,
+            "duration": 1400,
             "amplifier": 4
           }
         },
@@ -277,7 +277,7 @@
           "chance": 0.5,
           "action": {
             "type": "origins:damage",
-            "amount": 100,
+            "amount": 40,
             "source": {
               "out_of_world": true,
               "bypasses_armor": true,
@@ -297,7 +297,7 @@
   },
   "timer_action": {
     "type": "origins:action_over_time",
-    "interval": 1200,
+    "interval": 1400,
     "entity_action": {
       "type": "origins:change_resource",
       "operation": "add",

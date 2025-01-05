@@ -110,8 +110,7 @@
               "amount": 5,
               "damage_type": "minecraft:lava",
               "source": {
-                "fire": true,
-                "name": "Explode"
+                "name": "explode_trap"
               }
             }
           }

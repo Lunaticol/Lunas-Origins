@@ -174,8 +174,8 @@
       "operation": "addition"
     },
     "damage_condition": {
-      "type": "origins:name",
-      "name": "minecraft:on_fire"
+      "type": "origins:in_tag",
+      "tag": "minecraft:is_fire"
     }
   },
   "advancement": {

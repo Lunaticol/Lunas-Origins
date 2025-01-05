@@ -1,6 +1,98 @@
 {
+  "name": "Healing Shield",
+  "description": "Using shields heals small amounts of health.\nYou can roll with your shield up",
   "type": "origins:multiple",
   "shield": {
-    "type": "origins:action_on_item_use"
+    "type": "origins:action_over_time",
+    "interval": 30,
+    "entity_action": {
+      "type": "origins:heal",
+      "amount": 1
+    },
+    "condition": {
+      "type": "origins:using_item",
+      "item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": {
+          "item": "minecraft:shield"
+        }
+      }
+    }
+  },
+  "roll_w": {
+    "type": "origins:active_self",
+    "key": "key.forward",
+    "cooldown": 40,
+    "entity_action": {
+      "type": "origins:add_velocity",
+      "z": 1,
+      "space": "local_horizontal_normalized"
+    },
+    "condition": {
+      "type": "origins:using_item",
+      "item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": {
+          "item": "minecraft:shield"
+        }
+      }
+    }
+  },
+  "roll_s": {
+    "type": "origins:active_self",
+    "key": "key.back",
+    "cooldown": 40,
+    "entity_action": {
+      "type": "origins:add_velocity",
+      "z": -1,
+      "space": "local_horizontal_normalized"
+    },
+    "condition": {
+      "type": "origins:using_item",
+      "item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": {
+          "item": "minecraft:shield"
+        }
+      }
+    }
+  },
+  "roll_a": {
+    "type": "origins:active_self",
+    "key": "key.left",
+    "cooldown": 40,
+    "entity_action": {
+      "type": "origins:add_velocity",
+      "x": 1,
+      "space": "local_horizontal_normalized"
+    },
+    "condition": {
+      "type": "origins:using_item",
+      "item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": {
+          "item": "minecraft:shield"
+        }
+      }
+    }
+  },
+  "roll_d": {
+    "type": "origins:active_self",
+    "key": "key.right",
+    "cooldown": 40,
+    "entity_action": {
+      "type": "origins:add_velocity",
+      "x": -1,
+      "space": "local_horizontal_normalized"
+    },
+    "condition": {
+      "type": "origins:using_item",
+      "item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": {
+          "item": "minecraft:shield"
+        }
+      }
+    }
   }
 }

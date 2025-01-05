@@ -1,96 +1,96 @@
 {
-    "name": "Soul Restoration",
-    "description": "The souls of the damned know your struggles. Upon standing in the flame they cast, your armour will mend.",
-    "condition": {
-        "type": "origins:in_block",
-        "block_condition": {
-            "type": "origins:block",
-            "block": "minecraft:soul_fire"
-        }
-    },
-    "type": "origins:action_over_time",
-    "interval": 20,
-    "entity_action": {
-        "type": "origins:and",
-        "actions": [
-            {
-                "type": "origins:chance",
-                "chance": 1,
-                "action": {
-                    "type": "origins:equipped_item_action",
-                    "equipment_slot": "mainhand",
-                    "action": {
-                        "type": "origins:damage",
-                        "amount": -5,
-                        "ignore_unbreaking": true
-                    }
-                }
-            },
-            {
-                "type": "origins:chance",
-                "chance": 1,
-                "action": {
-                    "type": "origins:equipped_item_action",
-                    "equipment_slot": "offhand",
-                    "action": {
-                        "type": "origins:damage",
-                        "amount": -5,
-                        "ignore_unbreaking": true
-                    }
-                }
-            },
-            {
-                "type": "origins:chance",
-                "chance": 1,
-                "action": {
-                    "type": "origins:equipped_item_action",
-                    "equipment_slot": "head",
-                    "action": {
-                        "type": "origins:damage",
-                        "amount": -5,
-                        "ignore_unbreaking": true
-                    }
-                }
-            },
-            {
-                "type": "origins:chance",
-                "chance": 1,
-                "action": {
-                    "type": "origins:equipped_item_action",
-                    "equipment_slot": "chest",
-                    "action": {
-                        "type": "origins:damage",
-                        "amount": -5,
-                        "ignore_unbreaking": true
-                    }
-                }
-            },
-            {
-                "type": "origins:chance",
-                "chance": 1,
-                "action": {
-                    "type": "origins:equipped_item_action",
-                    "equipment_slot": "legs",
-                    "action": {
-                        "type": "origins:damage",
-                        "amount": -5,
-                        "ignore_unbreaking": true
-                    }
-                }
-            },
-            {
-                "type": "origins:chance",
-                "chance": 1,
-                "action": {
-                    "type": "origins:equipped_item_action",
-                    "equipment_slot": "feet",
-                    "action": {
-                        "type": "origins:damage",
-                        "amount": -5,
-                        "ignore_unbreaking": true
-                    }
-                }
-            }
-        ]
+  "name": "Soul Restoration",
+  "description": "The souls of the damned know your struggles. Upon standing in the flame they cast, your armour will mend.",
+  "condition": {
+    "type": "origins:in_block",
+    "block_condition": {
+      "type": "origins:block",
+      "block": "minecraft:soul_fire"
     }
+  },
+  "type": "origins:action_over_time",
+  "interval": 20,
+  "entity_action": {
+    "type": "origins:and",
+    "actions": [
+      {
+        "type": "origins:chance",
+        "chance": 1,
+        "action": {
+          "type": "origins:equipped_item_action",
+          "equipment_slot": "mainhand",
+          "action": {
+            "type": "origins:damage",
+            "amount": -5,
+            "ignore_unbreaking": true
+          }
+        }
+      },
+      {
+        "type": "origins:chance",
+        "chance": 1,
+        "action": {
+          "type": "origins:equipped_item_action",
+          "equipment_slot": "offhand",
+          "action": {
+            "type": "origins:damage",
+            "amount": -5,
+            "ignore_unbreaking": true
+          }
+        }
+      },
+      {
+        "type": "origins:chance",
+        "chance": 1,
+        "action": {
+          "type": "origins:equipped_item_action",
+          "equipment_slot": "head",
+          "action": {
+            "type": "origins:damage",
+            "amount": -5,
+            "ignore_unbreaking": true
+          }
+        }
+      },
+      {
+        "type": "origins:chance",
+        "chance": 1,
+        "action": {
+          "type": "origins:equipped_item_action",
+          "equipment_slot": "chest",
+          "action": {
+            "type": "origins:damage",
+            "amount": -5,
+            "ignore_unbreaking": true
+          }
+        }
+      },
+      {
+        "type": "origins:chance",
+        "chance": 1,
+        "action": {
+          "type": "origins:equipped_item_action",
+          "equipment_slot": "legs",
+          "action": {
+            "type": "origins:damage",
+            "amount": -5,
+            "ignore_unbreaking": true
+          }
+        }
+      },
+      {
+        "type": "origins:chance",
+        "chance": 1,
+        "action": {
+          "type": "origins:equipped_item_action",
+          "equipment_slot": "feet",
+          "action": {
+            "type": "origins:damage",
+            "amount": -5,
+            "ignore_unbreaking": true
+          }
+        }
+      }
+    ]
+  }
 }

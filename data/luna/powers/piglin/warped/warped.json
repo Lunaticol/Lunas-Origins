@@ -1,19 +1,12 @@
 {
   "name": "Insatiable Hunger",
-  "description": "Being a warped piglin, you are always looking for your next meal, always hungry, never satisfied.\nYou can eat food whenever you want, even fi youre full!\nYour hunger drains 3x as fast.",
+  "description": "Being a Warped Piglin, you are always looking for your next meal, always hungry, never satisfied.\nYou can eat food whenever you want, even fi youre full!\nYour hunger drains 3x as fast.",
   "type": "origins:multiple",
   "food_eat": {
     "type": "origins:modify_food",
     "always_edible": true,
     "item_condition": {
       "type": "origins:food"
-    }
-  },
-  "hunger": {
-    "type": "origins:modify_exhaustion",
-    "modifier": {
-      "value": 2,
-      "operation": "multiply_total"
     }
   },
   "barter": {
@@ -24,10 +17,10 @@
       "type": "origins:actor_action",
       "action": {
         "type": "origins:delay",
-        "ticks": 100,
+        "ticks": 60,
         "action": {
           "type": "origins:execute_command",
-          "command": "loot give @s loot luna:warped"
+          "command": "loot spawn ~ ~ ~ @s loot luna:warped"
         }
       }
     },
@@ -36,6 +29,80 @@
       "ingredient": {
         "tag": "minecraft:piglin_loved"
       }
+    }
+  },
+  "hunger_1": {
+    "type": "origins:modify_exhaustion",
+    "modifier": {
+      "value": 2,
+      "operation": "multiply_total"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 100,
+      "comparison": "<",
+      "resource": "luna:piglin/zombification_infection_master_bar"
+    }
+  },
+  "hunger_2": {
+    "type": "origins:modify_exhaustion",
+    "modifier": {
+      "value": 3,
+      "operation": "multiply_total"
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 100,
+          "comparison": ">=",
+          "resource": "luna:piglin/zombification_infection_master_bar"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 200,
+          "comparison": "<",
+          "resource": "luna:piglin/zombification_infection_master_bar"
+        }
+      ]
+    }
+  },
+  "hunger_3": {
+    "type": "origins:modify_exhaustion",
+    "modifier": {
+      "value": 4,
+      "operation": "multiply_total"
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 200,
+          "comparison": ">=",
+          "resource": "luna:piglin/zombification_infection_master_bar"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 300,
+          "comparison": "<",
+          "resource": "luna:piglin/zombification_infection_master_bar"
+        }
+      ]
+    }
+  },
+  "hunger_4": {
+    "type": "origins:modify_exhaustion",
+    "modifier": {
+      "value": 5,
+      "operation": "multiply_total"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 300,
+      "comparison": ">=",
+      "resource": "luna:piglin/zombification_infection_master_bar"
     }
   }
 }

@@ -1,0 +1,110 @@
+{
+  "name": "Aggressive",
+  "description": "Crimson Piglins are aggressive to any entitys who are not wearing gold armor.\nProvides speed & strength buffs when pursuing an active non-gold target.",
+  "type": "origins:multiple",
+  "pursue": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:apply_effect",
+      "effects": [
+        {
+          "effect": "minecraft:speed",
+          "duration": 100,
+          "amplifier": 1,
+          "show_icon": true,
+          "show_particles": false
+        },
+        {
+          "effect": "minecraft:strength",
+          "duration": 100,
+          "show_icon": true,
+          "show_particles": false
+        }
+      ]
+    },
+    "condition": {
+      "type": "apugli:entity_in_radius",
+      "radius": 8,
+      "compare_to": 1,
+      "comparison": ">=",
+      "bientity_condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:can_see"
+          },
+          {
+            "type": "origins:target_condition",
+            "condition": {
+              "type": "origins:or",
+              "inverted": true,
+              "conditions": [
+                {
+                  "type": "origins:equipped_item",
+                  "equipment_slot": "head",
+                  "item_condition": {
+                    "type": "origins:ingredient",
+                    "ingredient": {
+                      "item": "minecraft:golden_helmet"
+                    }
+                  }
+                },
+                {
+                  "type": "origins:equipped_item",
+                  "equipment_slot": "chest",
+                  "item_condition": {
+                    "type": "origins:ingredient",
+                    "ingredient": {
+                      "item": "minecraft:golden_chestplate"
+                    }
+                  }
+                },
+                {
+                  "type": "origins:equipped_item",
+                  "equipment_slot": "legs",
+                  "item_condition": {
+                    "type": "origins:ingredient",
+                    "ingredient": {
+                      "item": "minecraft:golden_leggings"
+                    }
+                  }
+                },
+                {
+                  "type": "origins:equipped_item",
+                  "equipment_slot": "feet",
+                  "item_condition": {
+                    "type": "origins:ingredient",
+                    "ingredient": {
+                      "item": "minecraft:golden_boots"
+                    }
+                  }
+                },
+                {
+                  "type": "origins:entity_type",
+                  "entity_type": "minecraft:piglin"
+                },
+                {
+                  "type": "origins:entity_type",
+                  "entity_type": "minecraft:piglin_brute"
+                },
+                {
+                  "type": "origins:entity_type",
+                  "entity_type": "minecraft:hoglin"
+                },
+                {
+                  "type": "origins:entity_type",
+                  "entity_type": "minecraft:zombified_piglin"
+                },
+                {
+                  "type": "origins:in_tag",
+                  "tag": "luna:piglin_no_pursue"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}

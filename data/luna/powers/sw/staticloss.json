@@ -25,9 +25,7 @@
       "type": "origins:damage",
       "amount": 3,
       "source": {
-        "name": "discharge",
-        "bypasses_armor": true,
-        "unblockable": true
+        "name": "discharge"
       }
     }
   },

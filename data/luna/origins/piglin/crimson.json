@@ -1,10 +1,13 @@
 {
   "name": "Crimson Piglin",
-  "unchoosable": true,
-  "description": "Choosing this clan is permanent.",
+  "description": "Crimson Piglins are some of the most common piglins you can find, mainly for being the largest Clan. Although they arent really smart. Choosing this clan is permanent.",
   "icon": "minecraft:crimson_nylium",
   "loading_priority": 1,
-  "impact": 2,
+  "impact": 3,
   "order": 1,
-  "powers": ["luna:piglin/crimson/crimson"]
+  "powers": [
+    "luna:piglin/crimson/crimson",
+    "luna:piglin/crimson/aggressive",
+    "luna:piglin/crimson/bezerker"
+  ]
 }

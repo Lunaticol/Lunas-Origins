@@ -1,6 +1,6 @@
 {
-  "name": "Crimson",
-  "description": "",
+  "name": "Always on the hunt",
+  "description": "Crimson Piglins have always been known for their hostile and brutual behavior, usually rushing in head on without thinking.",
   "type": "origins:multiple",
   "barter": {
     "type": "origins:action_on_being_used",
@@ -12,7 +12,7 @@
         "ticks": 100,
         "action": {
           "type": "origins:execute_command",
-          "command": "loot give @s loot luna:crimson"
+          "command": "loot spawn ~ ~ ~ @s loot luna:crimson"
         }
       }
     },
@@ -24,16 +24,6 @@
     },
     "held_item_action": {
       "type": "origins:consume"
-    },
-    "bientity_condition": {
-      "type": "origins:actor_condition",
-      "condition": {
-        "inverted": true,
-        "type": "origins:inventory",
-        "process_mode": "stacks",
-        "comparison": "==",
-        "compare_to": 36
-      }
     }
   }
 }

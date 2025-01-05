@@ -6,6 +6,11 @@
     "luna:arc_wave_core",
     "luna:dark_pulse",
     "luna:recoil",
-    "luna:sap"
+    "luna:sap",
+    "luna:red_wisp",
+    "luna:orange_wisp",
+    "luna:flame_core",
+    "luna:discharge",
+    "luna:lightningdash"
   ]
 }

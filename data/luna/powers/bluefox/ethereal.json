@@ -207,10 +207,7 @@
               "type": "origins:damage",
               "amount": 2,
               "source": {
-                "bypasses_armor": true,
-                "magic": true,
-                "unblockable": true,
-                "name": "magic"
+                "name": "sukuna"
               }
             },
             {

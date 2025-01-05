@@ -96,25 +96,8 @@
       "operation": "multiply_total"
     },
     "damage_condition": {
-      "type": "origins:or",
-      "conditions": [
-        {
-          "type": "origins:name",
-          "name": "minecraft:in_fire"
-        },
-        {
-          "type": "origins:name",
-          "name": "minecraft:on_fire"
-        },
-        {
-          "type": "origins:name",
-          "name": "minecraft:lava"
-        },
-        {
-          "type": "origins:name",
-          "name": "minecraft:campfire"
-        }
-      ]
+      "type": "origins:in_tag",
+      "tag": "minecraft:is_fire"
     }
   },
   "messages": {

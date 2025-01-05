@@ -256,14 +256,7 @@
     "damage_condition": {
       "type": "origins:or",
       "conditions": [
-        {
-          "type": "origins:name",
-          "name": "inFire"
-        },
-        {
-          "type": "origins:name",
-          "name": "onFire"
-        },
+        { "type": "origins:in_tag", "tag": "minecraft:is_fire" },
         {
           "type": "apugli:magic"
         }

@@ -1,6 +1,6 @@
 {
-  "name": "",
-  "description": "",
+  "name": "War Hardened",
+  "description": "Waste Piglins have seen the onslaught that the aquatic war has brought on. Their lands now ravaged and wasted away, Wastes Piglins have adpated to become more resistant to attacks.",
   "type": "origins:multiple",
   "barter": {
     "type": "origins:action_on_being_used",
@@ -13,7 +13,7 @@
         "ticks": 100,
         "action": {
           "type": "origins:execute_command",
-          "command": "loot give @s loot luna:wastes"
+          "command": "loot spawn ~ ~ ~ @s loot luna:wastes"
         }
       }
     },
@@ -22,6 +22,96 @@
       "ingredient": {
         "tag": "minecraft:piglin_loved"
       }
+    }
+  },
+  "protected": {
+    "type": "origins:modify_enchantment_level",
+    "enchantment": "minecraft:protection",
+    "modifier": {
+      "operation": "addition",
+      "value": 1
+    }
+  },
+  "knockback_1": {
+    "type": "origins:conditioned_attribute",
+    "tick_rate": 5,
+    "modifier": {
+      "value": 0.25,
+      "operation": "multiply_total",
+      "attribute": "minecraft:generic.knockback_resistance"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 100,
+      "comparison": "<",
+      "resource": "luna:piglin/zombification_infection_master_bar"
+    }
+  },
+  "knockback_2": {
+    "type": "origins:conditioned_attribute",
+    "tick_rate": 5,
+    "modifier": {
+      "value": 0.25,
+      "operation": "multiply_total",
+      "attribute": "minecraft:generic.knockback_resistance"
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 100,
+          "comparison": ">=",
+          "resource": "luna:piglin/zombification_infection_master_bar"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 200,
+          "comparison": "<",
+          "resource": "luna:piglin/zombification_infection_master_bar"
+        }
+      ]
+    }
+  },
+  "knockback_3": {
+    "type": "origins:conditioned_attribute",
+    "tick_rate": 5,
+    "modifier": {
+      "value": 0.25,
+      "operation": "multiply_total",
+      "attribute": "minecraft:generic.knockback_resistance"
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 200,
+          "comparison": ">=",
+          "resource": "luna:piglin/zombification_infection_master_bar"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 300,
+          "comparison": "<",
+          "resource": "luna:piglin/zombification_infection_master_bar"
+        }
+      ]
+    }
+  },
+  "knockback_4": {
+    "type": "origins:conditioned_attribute",
+    "tick_rate": 5,
+    "modifier": {
+      "value": 0.25,
+      "operation": "multiply_total",
+      "attribute": "minecraft:generic.knockback_resistance"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 300,
+      "comparison": ">=",
+      "resource": "luna:piglin/zombification_infection_master_bar"
     }
   }
 }

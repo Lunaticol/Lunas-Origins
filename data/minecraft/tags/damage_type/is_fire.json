@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "luna:red_wisp",
+    "luna:shield",
+    "luna:flame_core",
+    "luna:orange_wisp",
+    "luna:trap",
+    "luna:explode_trap"
+  ]
+}

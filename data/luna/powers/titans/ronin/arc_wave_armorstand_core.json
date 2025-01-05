@@ -23,10 +23,7 @@
               "type": "origins:damage",
               "amount": 30,
               "source": {
-                "name": "arc_wave_core",
-                "magic": true,
-                "bypasses_armor": true,
-                "unblockable": false
+                "name": "arc_wave_core"
               }
             },
             {

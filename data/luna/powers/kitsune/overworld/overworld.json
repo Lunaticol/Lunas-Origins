@@ -67,23 +67,14 @@
   },
   "fire": {
     "type": "origins:modify_damage_taken",
-    "damage_condition": {
-      "type": "origins:or",
-      "conditions": [
-        {
-          "type": "origins:name",
-          "name": "minecraft:on_fire"
-        },
-        {
-          "type": "origins:name",
-          "name": "minecraft:lava"
-        }
-      ]
-    },
     "modifier": {
       "operation": "addition",
       "name": "fire",
       "value": 4
+    },
+    "damage_condition": {
+      "type": "origins:in_tag",
+      "tag": "minecraft:is_fire"
     }
   },
   "knockback": {

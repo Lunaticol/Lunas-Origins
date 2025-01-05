@@ -104,7 +104,6 @@
               "amount": 5,
               "damage_type": "minecraft:lava",
               "source": {
-                "fire": true,
                 "name": "trap"
               }
             }

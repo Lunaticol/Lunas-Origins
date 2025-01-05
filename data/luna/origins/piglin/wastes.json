@@ -1,10 +1,13 @@
 {
   "name": "Wastes Piglin",
-  "unchoosable": true,
-  "description": "Choosing this clan is permanent.",
+  "description": "Battle harden piglins, these piglins live in the wastes biomes, and are the smallest clan. They survive through their tough fortification skills. Choosing this clan is permanent.",
   "icon": "minecraft:netherrack",
   "loading_priority": 1,
-  "impact": 2,
+  "impact": 1,
   "order": 1,
-  "powers": ["luna:piglin/wastes/wastes"]
+  "powers": [
+    "luna:piglin/wastes/wastes",
+    "luna:piglin/wastes/shield",
+    "luna:piglin/wastes/bulk"
+  ]
 }

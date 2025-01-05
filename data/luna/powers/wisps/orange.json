@@ -253,10 +253,7 @@
               "type": "origins:damage",
               "amount": 5,
               "source": {
-                "fire": true,
-                "unblockable": true,
-                "bypasses_armor": true,
-                "name": "explosion"
+                "name": "orange_wisp"
               }
             }
           }
@@ -383,10 +380,7 @@
               "type": "origins:damage",
               "amount": 10,
               "source": {
-                "fire": true,
-                "unblockable": true,
-                "bypasses_armor": true,
-                "name": "explosion"
+                "name": "orange_wisp"
               }
             }
           }

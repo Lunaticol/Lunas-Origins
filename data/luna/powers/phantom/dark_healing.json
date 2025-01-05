@@ -59,11 +59,6 @@
                 "amount": 8,
                 "damage_type": "minecraft:player_attack",
                 "source": {
-                  "bypasses_armor": false,
-                  "fire": false,
-                  "magic": true,
-                  "unblockable": false,
-                  "out_of_world": false,
                   "name": "dark_healing"
                 }
               }
@@ -195,11 +190,6 @@
                 "amount": 4,
                 "damage_type": "minecraft:player_attack",
                 "source": {
-                  "bypasses_armor": false,
-                  "fire": false,
-                  "magic": true,
-                  "unblockable": false,
-                  "out_of_world": false,
                   "name": "dark_healing"
                 }
               }

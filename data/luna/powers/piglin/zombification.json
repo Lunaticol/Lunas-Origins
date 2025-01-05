@@ -1,11 +1,95 @@
 {
   "name": "Unknown Disease",
-  "description": "The Overworld air contains a disease only piglins contract. This causes them to slowly turn into a zombie when infected. The nethers air is to hot for the virus to survive, causing it to be an instant cure to it.\nUsing nether blocks, such as netherrack, can help stop the infection.\nFully turning into a zombie is permanent.",
+  "description": "The Overworld air contains a disease only piglins contract. This causes them to slowly turn into a zombie when infected. The nethers air is to hot for the virus to survive, causing it to be an instant cure to it.\nUsing nether blocks, such as netherrack, can help stop the infection.\nSome of your abilitys get buffed the further your infection gets, but weaknesses also get amplified.",
   "type": "origins:multiple",
   "infection_master_bar": {
     "type": "origins:resource",
     "max": 400,
-    "min": 0
+    "min": 0,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/luna_resource_bar.png",
+      "bar_index": 18,
+      "condition": {
+        "type": "origins:resource",
+        "compare_to": 100,
+        "comparison": "<",
+        "resource": "*:*_infection_master_bar"
+      }
+    }
+  },
+  "infection_resource_2": {
+    "type": "origins:resource",
+    "max": 400,
+    "min": 0,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/luna_resource_bar.png",
+      "bar_index": 18,
+      "icon_index": 1,
+      "condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:resource",
+            "compare_to": 100,
+            "comparison": ">=",
+            "resource": "*:*_infection_master_bar"
+          },
+          {
+            "type": "origins:resource",
+            "compare_to": 200,
+            "comparison": "<",
+            "resource": "*:*_infection_master_bar"
+          }
+        ]
+      }
+    }
+  },
+  "infection_resource_3": {
+    "type": "origins:resource",
+    "max": 400,
+    "min": 0,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/luna_resource_bar.png",
+      "bar_index": 18,
+      "icon_index": 2,
+      "condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:resource",
+            "compare_to": 200,
+            "comparison": ">=",
+            "resource": "*:*_infection_master_bar"
+          },
+          {
+            "type": "origins:resource",
+            "compare_to": 300,
+            "comparison": "<",
+            "resource": "*:*_infection_master_bar"
+          }
+        ]
+      }
+    }
+  },
+  "infection_resource_4": {
+    "type": "origins:resource",
+    "max": 400,
+    "min": 0,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/luna_resource_bar.png",
+      "bar_index": 18,
+      "icon_index": 3,
+      "condition": {
+        "type": "origins:resource",
+        "compare_to": 300,
+        "comparison": ">=",
+        "resource": "*:*_infection_master_bar"
+      }
+    }
   },
   "infection_progression": {
     "type": "origins:action_over_time",
@@ -15,33 +99,78 @@
       "actions": [
         {
           "type": "origins:change_resource",
-          "change": 1,
+          "change": 2,
           "operation": "add",
           "resource": "*:*_infection_master_bar"
         },
         {
           "type": "origins:change_resource",
-          "change": 1,
+          "change": 2,
           "operation": "add",
-          "resource": "*:*_infection_resource_bar_1"
+          "resource": "*:*_infection_resource_2"
         },
         {
           "type": "origins:change_resource",
-          "change": 1,
+          "change": 2,
           "operation": "add",
-          "resource": "*:*_infection_resource_bar_2"
+          "resource": "*:*_infection_resource_3"
         },
         {
           "type": "origins:change_resource",
-          "change": 1,
+          "change": 2,
           "operation": "add",
-          "resource": "*:*_infection_resource_bar_3"
+          "resource": "*:*_infection_resource_4"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:dimension",
+          "dimension": "minecraft:the_nether",
+          "inverted": true
+        },
+        {
+          "type": "origins:on_block",
+          "inverted": true,
+          "block_condition": {
+            "type": "origins:in_tag",
+            "tag": "luna:nether_blocks"
+          }
+        }
+      ]
+    }
+  },
+  "infection_reverse": {
+    "type": "origins:action_over_time",
+    "interval": 40,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "change": -5,
+          "operation": "add",
+          "resource": "*:*_infection_master_bar"
         },
         {
           "type": "origins:change_resource",
-          "change": 1,
+          "change": -5,
           "operation": "add",
-          "resource": "*:*_infection_resource_bar_4"
+          "resource": "*:*_infection_resource_2"
+        },
+        {
+          "type": "origins:change_resource",
+          "change": -5,
+          "operation": "add",
+          "resource": "*:*_infection_resource_3"
+        },
+        {
+          "type": "origins:change_resource",
+          "change": -5,
+          "operation": "add",
+          "resource": "*:*_infection_resource_4"
         }
       ]
     },
@@ -50,8 +179,7 @@
       "conditions": [
         {
           "type": "origins:dimension",
-          "dimension": "minecraft:the_nether",
-          "inverted": true
+          "dimension": "minecraft:the_nether"
         },
         {
           "type": "origins:on_block",
@@ -65,6 +193,116 @@
   },
   "shake": {
     "type": "origins:shaking",
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 300,
+      "comparison": ">=",
+      "resource": "*:*_infection_master_bar"
+    }
+  },
+  "zombie": {
+    "type": "origins:entity_group",
+    "group": "undead",
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 400,
+      "comparison": "==",
+      "resource": "*:*_infection_master_bar"
+    }
+  },
+  "fire_1": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "value": -0.25,
+      "operation": "multiply_total"
+    },
+    "damage_condition": {
+      "type": "origins:in_tag",
+      "tag": "minecraft:is_fire"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 100,
+      "comparison": "<",
+      "resource": "*:*_infection_master_bar"
+    }
+  },
+  "fire_2": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "value": -0.5,
+      "operation": "multiply_total"
+    },
+    "damage_condition": {
+      "type": "origins:in_tag",
+      "tag": "minecraft:is_fire"
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 100,
+          "comparison": ">=",
+          "resource": "*:*_infection_master_bar"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 200,
+          "comparison": "<",
+          "resource": "*:*_infection_master_bar"
+        }
+      ]
+    }
+  },
+  "fire_3": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "value": -0.75,
+      "operation": "multiply_total"
+    },
+    "damage_condition": {
+      "type": "origins:in_tag",
+      "tag": "minecraft:is_fire"
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 200,
+          "comparison": ">=",
+          "resource": "*:*_infection_master_bar"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 300,
+          "comparison": "<",
+          "resource": "*:*_infection_master_bar"
+        }
+      ]
+    }
+  },
+  "fire_4": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "value": -1,
+      "operation": "multiply_total"
+    },
+    "damage_condition": {
+      "type": "origins:in_tag",
+      "tag": "minecraft:is_fire"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 300,
+      "comparison": ">=",
+      "resource": "*:*_infection_master_bar"
+    }
+  },
+  "shader": {
+    "type": "origins:shader",
+    "shader": "minecraft:shaders/post/desaturate.json",
     "condition": {
       "type": "origins:resource",
       "compare_to": 300,

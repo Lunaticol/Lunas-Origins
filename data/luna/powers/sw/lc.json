@@ -35,11 +35,7 @@
           "type": "origins:damage",
           "amount": 12,
           "source": {
-            "name": "lightningdash",
-            "out_of_world": true,
-            "bypasses_armor": true,
-            "magic": true,
-            "unblockable": true
+            "name": "lightningdash"
           }
         }
       },
@@ -60,11 +56,7 @@
                 "type": "origins:damage",
                 "amount": 12,
                 "source": {
-                  "name": "lightningdash",
-                  "out_of_world": true,
-                  "bypasses_armor": true,
-                  "magic": true,
-                  "unblockable": true
+                  "name": "lightningdash"
                 }
               },
               {

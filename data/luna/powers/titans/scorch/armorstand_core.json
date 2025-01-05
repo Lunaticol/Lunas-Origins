@@ -27,12 +27,7 @@
                     "amount": 5,
                     "damage_type": "minecraft:lava",
                     "source": {
-                      "bypasses_armor": true,
-                      "fire": true,
-                      "magic": true,
-                      "out_of_world": false,
-                      "unblockable": true,
-                      "name": "lava.player"
+                      "name": "flame_core"
                     }
                   },
                   {
@@ -64,12 +59,7 @@
                     "amount": 5,
                     "damage_type": "minecraft:lava",
                     "source": {
-                      "bypasses_armor": true,
-                      "fire": true,
-                      "magic": true,
-                      "out_of_world": false,
-                      "unblockable": true,
-                      "name": "lava.player"
+                      "name": "flame_core"
                     }
                   },
                   {
@@ -101,12 +91,7 @@
                     "amount": 5,
                     "damage_type": "minecraft:lava",
                     "source": {
-                      "bypasses_armor": true,
-                      "fire": true,
-                      "magic": true,
-                      "out_of_world": false,
-                      "unblockable": true,
-                      "name": "lava.player"
+                      "name": "flame_core"
                     }
                   },
                   {
@@ -138,12 +123,7 @@
                     "amount": 5,
                     "damage_type": "minecraft:lava",
                     "source": {
-                      "bypasses_armor": true,
-                      "fire": true,
-                      "magic": true,
-                      "out_of_world": false,
-                      "unblockable": true,
-                      "name": "lava.player"
+                      "name": "flame_core"
                     }
                   },
                   {
@@ -175,12 +155,7 @@
                     "amount": 5,
                     "damage_type": "minecraft:lava",
                     "source": {
-                      "bypasses_armor": true,
-                      "fire": true,
-                      "magic": true,
-                      "out_of_world": false,
-                      "unblockable": true,
-                      "name": "lava.player"
+                      "name": "flame_core"
                     }
                   },
                   {

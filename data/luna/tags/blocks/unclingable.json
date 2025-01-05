@@ -17,6 +17,8 @@
     "minecraft:gravel",
     "minecraft:suspicious_gravel",
     "#minecraft:sand",
-    "#c:dirt"
+    "#c:dirt",
+    "minecraft:mycelium",
+    "minecraft:podzol"
   ]
 }

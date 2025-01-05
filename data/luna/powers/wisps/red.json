@@ -41,9 +41,7 @@
                   "type": "origins:damage",
                   "amount": 10,
                   "source": {
-                    "fire": true,
-                    "unblockable": true,
-                    "name": "explosion"
+                    "name": "red_wisp"
                   }
                 },
                 {
@@ -307,9 +305,7 @@
                   "type": "origins:damage",
                   "amount": 20,
                   "source": {
-                    "fire": true,
-                    "unblockable": true,
-                    "name": "explosion"
+                    "name": "red_wisp"
                   }
                 },
                 {

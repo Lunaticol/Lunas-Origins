@@ -1,0 +1,108 @@
+{
+  "name": "Bezerker",
+  "description": "Your clan views death as a failure, show them the true warriors spirit.",
+  "type": "origins:multiple",
+  "bezerk": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "action": {
+            "type": "origins:apply_effect",
+            "effects": [
+              {
+                "effect": "minecraft:strength",
+                "duration": 100
+              },
+              {
+                "effect": "minecraft:speed",
+                "duration": 100
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:health",
+                "compare_to": 5,
+                "comparison": ">="
+              },
+              {
+                "type": "origins:health",
+                "compare_to": 6,
+                "comparison": "<="
+              }
+            ]
+          }
+        },
+        {
+          "action": {
+            "type": "origins:apply_effect",
+            "effects": [
+              {
+                "effect": "minecraft:strength",
+                "duration": 100,
+                "amplifier": 1
+              },
+              {
+                "effect": "minecraft:speed",
+                "duration": 100,
+                "amplifier": 1
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:health",
+                "compare_to": 3,
+                "comparison": ">="
+              },
+              {
+                "type": "origins:health",
+                "compare_to": 4,
+                "comparison": "<="
+              }
+            ]
+          }
+        },
+        {
+          "action": {
+            "type": "origins:apply_effect",
+            "effects": [
+              {
+                "effect": "minecraft:strength",
+                "duration": 100,
+                "amplifier": 2
+              },
+              {
+                "effect": "minecraft:speed",
+                "duration": 100,
+                "amplifier": 2
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:health",
+                "compare_to": 1,
+                "comparison": ">="
+              },
+              {
+                "type": "origins:health",
+                "compare_to": 2,
+                "comparison": "<="
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

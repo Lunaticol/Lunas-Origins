@@ -199,12 +199,30 @@
     }
   },
   "fuck_your_shield": {
-    "type": "origins:prevent_item_use",
-    "item_condition": {
-      "type": "origins:ingredient",
-      "ingredient": {
-        "item": "minecraft:shield"
-      }
+    "type": "origins:action_over_time",
+    "interval": 10,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:equipped_item_action",
+          "equipment_slot": "mainhand",
+          "action": {
+            "type": "origins:damage",
+            "amount": 1,
+            "ignore_unbreaking": true
+          }
+        },
+        {
+          "type": "origins:equipped_item_action",
+          "equipment_slot": "offhand",
+          "action": {
+            "type": "origins:damage",
+            "amount": 1,
+            "ignore_unbreaking": true
+          }
+        }
+      ]
     }
   },
   "jump": {

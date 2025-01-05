@@ -301,9 +301,6 @@
                     "type": "origins:damage",
                     "amount": 10,
                     "source": {
-                      "bypasses_armor": false,
-                      "magic": true,
-                      "unblockable": true,
                       "name": "dark_pulse"
                     }
                   }
