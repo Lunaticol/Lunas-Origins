@@ -70,9 +70,9 @@
   },
   "flight_bar": {
     "type": "origins:resource",
-    "max": 60,
+    "max": 30,
     "min": 0,
-    "start_value": 60,
+    "start_value": 30,
     "hud_render": {
       "should_render": true,
       "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png"
@@ -119,21 +119,48 @@
     "type": "origins:shader",
     "shader": "minecraft:shaders/post/deconverge.json"
   },
-  "restart_camera": {
-    "type": "origins:active_self",
-    "key": "key.use",
-    "cooldown": 0,
-    "entity_action": {
-      "type": "origins:delay",
-      "ticks": 40,
-      "action": {
-        "type": "origins:revoke_power",
-        "power": "luna:cyn/flashbang",
-        "source": "*:cyn/cyn"
-      }
+  "fire": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "value": 1,
+      "operation": "multiply_total"
     },
-    "condition": {
-      "type": "origins:sneaking"
+    "damage_condition": {
+      "type": "origins:in_tag",
+      "tag": "minecraft:is_fire"
+    }
+  },
+  "meat": {
+    "type": "origins:prevent_item_use",
+    "item_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:or",
+          "conditions": [
+            {
+              "type": "origins:ingredient",
+              "ingredient": {
+                "tag": "origins:meat"
+              }
+            },
+            {
+              "type": "origins:meat"
+            }
+          ],
+          "inverted": true
+        },
+        {
+          "type": "origins:food"
+        },
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "tag": "origins:ignore_diet"
+          },
+          "inverted": true
+        }
+      ]
     }
   }
 }

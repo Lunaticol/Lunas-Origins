@@ -1,12 +1,12 @@
 {
   "type": "origins:multiple",
   "name": "Storm Summoner",
-  "description": "You can expel your over charge by summoning a thunderstorm.",
+  "description": "After channeling enough static charge & overcharge, you can summon a short thunderstorm",
   "badges": [
     {
       "type": "origins:tooltip",
       "sprite": "origins:textures/gui/badge/info.png",
-      "text": "Go to Y = 300, Crouch, and hold down C to activate."
+      "text": "Go to Y = 300, Crouch, and hold down [Save Hotbar]] to activate."
     },
     {
       "type": "origins:keybind",
@@ -157,15 +157,15 @@
       "conditions": [
         {
           "type": "origins:resource",
-          "compare_to": 1000,
+          "compare_to": 1400,
           "comparison": "==",
-          "resource": "luna:stormscale/static_charge_static_bar"
+          "resource": "luna:stormscale/lightning_breath_energy"
         },
         {
           "type": "origins:resource",
-          "compare_to": 100,
+          "compare_to": 700,
           "comparison": "==",
-          "resource": "luna:stormscale/static_charge_over_charge"
+          "resource": "luna:stormscale/lightning_breath_overcharge"
         },
         {
           "type": "origins:in_block",
@@ -195,7 +195,7 @@
       "resource": "*:*_storm_summoning_bar"
     },
     "condition": {
-      "type": "origins:and",
+      "type": "origins:or",
       "conditions": [
         {
           "type": "origins:in_block",

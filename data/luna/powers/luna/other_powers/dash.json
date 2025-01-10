@@ -1,0 +1,36 @@
+{
+  "type": "origins:multiple",
+  "resource": {
+    "type": "origins:resource",
+    "max": 20,
+    "min": -4,
+    "start_value": -4
+  },
+  "kill": {
+    "type": "origins:self_action_on_kill",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "resource": "*:*_resource",
+          "change": 1,
+          "operation": "add"
+        },
+        {
+          "type": "origins:damage",
+          "amount": 0
+        }
+      ]
+    }
+  },
+  "attribute": {
+    "type": "origins:modify_attribute",
+    "attribute": "minecraft:generic.max_health",
+    "modifier": {
+      "operation": "addition",
+      "resource": "*:*_resource",
+      "value": 1
+    }
+  }
+}

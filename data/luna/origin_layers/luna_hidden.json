@@ -6,8 +6,6 @@
   "hidden": true,
   "auto_choose": true,
   "origins": [
-    {
-      "origins": ["luna:luna/hidden"]
-    }
+    "luna:luna/hidden"
   ]
 }

@@ -4,14 +4,13 @@
   "name": "Stormscale",
   "unchoosable": true,
   "order": 0,
-  "impact": 2,
+  "impact": 3,
   "powers": [
     "luna:stormscale/body",
-    "luna:stormscale/static_charge",
+    "luna:stormscale/boost",
     "luna:stormscale/lightning_breath",
     "luna:stormscale/scales",
-    "luna:stormscale/storm_summon",
     "luna:stormscale/claustrophobic",
-    "luna:stormscale/boost"
+    "luna:stormscale/storm_summon"
   ]
 }

@@ -1,6 +1,6 @@
 {
   "name": "Surprise Attack",
-  "description": "Teleport behind enemys to surprise them.",
+  "description": "Teleport behind the target to surprise them.",
   "type": "origins:multiple",
   "tag": {
     "type": "origins:action_on_callback",
@@ -26,7 +26,7 @@
       "actions": [
         {
           "type": "origins:delay",
-          "ticks": 20,
+          "ticks": 10,
           "action": {
             "type": "origins:change_resource",
             "change": 1,
@@ -113,7 +113,7 @@
   },
   "reset_damage": {
     "type": "origins:action_over_time",
-    "interval": 40,
+    "interval": 20,
     "entity_action": {
       "type": "origins:change_resource",
       "change": 0,
@@ -129,7 +129,7 @@
   },
   "reset_stop": {
     "type": "origins:action_over_time",
-    "interval": 20,
+    "interval": 10,
     "entity_action": {
       "type": "origins:and",
       "actions": [

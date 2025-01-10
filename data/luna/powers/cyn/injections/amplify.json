@@ -120,7 +120,7 @@
     "interval": 5,
     "entity_action": {
       "type": "origins:execute_command",
-      "command": "execute at @s rotated ~ 0 run particle minecraft:enchanted_hit ~ ~ ~ 0.3 0.8 0.3 0 100 force"
+      "command": "execute at @s rotated ~ 0 run particle minecraft:enchanted_hit ~ ~ ~ 0.3 0.8 0.3 0 50 force"
     }
   }
 }

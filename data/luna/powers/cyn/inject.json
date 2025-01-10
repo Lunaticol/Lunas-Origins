@@ -376,13 +376,75 @@
               {
                 "type": "origins:target_action",
                 "action": {
-                  "type": "origins:nothing"
+                  "type": "origins:and",
+                  "actions": [
+                    {
+                      "type": "origins:grant_power",
+                      "power": "luna:cyn/injections/rescale",
+                      "source": "luna:cyn/inject"
+                    },
+                    {
+                      "type": "origins:choice",
+                      "actions": [
+                        {
+                          "element": {
+                            "type": "origins:execute_command",
+                            "command": "tellraw @s [{\"text\":\"<Cynical> \"},{\"text\":\"Feel different?\",\"color\":\"gold\",\"bold\":true}]"
+                          },
+                          "weight": 1
+                        },
+                        {
+                          "element": {
+                            "type": "origins:execute_command",
+                            "command": "tellraw @s [{\"text\":\"<Cynical> \"},{\"text\":\"Disabling firewall.\",\"color\":\"gold\",\"bold\":true},{\"selector\":\"@s\",\"color\":\"gold\",\"bold\":true}]"
+                          },
+                          "weight": 1
+                        },
+                        {
+                          "element": {
+                            "type": "origins:execute_command",
+                            "command": "tellraw @s [{\"text\":\"<Cynical> \"},{\"text\":\"Your mainframe has been hacked!! XD!!\",\"color\":\"gold\",\"bold\":true}]"
+                          },
+                          "weight": 1
+                        },
+                        {
+                          "element": {
+                            "type": "origins:execute_command",
+                            "command": "tellraw @s [{\"text\":\"<Cynical> \"},{\"text\":\":3\",\"color\":\"gold\",\"bold\":true}]"
+                          },
+                          "weight": 1
+                        }
+                      ]
+                    }
+                  ]
                 }
               },
               {
                 "type": "origins:actor_action",
                 "action": {
-                  "type": "origins:nothing"
+                  "type": "origins:and",
+                  "actions": [
+                    {
+                      "type": "origins:trigger_cooldown",
+                      "power": "*:*_cooldown"
+                    },
+                    {
+                      "type": "origins:execute_command",
+                      "command": "execute at @s rotated ~ 0 run particle lunasorigins:yellow_flame ^-0.3 ^0.8 ^0.1 0 0 0 0.5 100"
+                    },
+                    {
+                      "type": "origins:play_sound",
+                      "volume": 1,
+                      "pitch": 0.5,
+                      "sound": "minecraft:entity.ender_dragon.growl",
+                      "category": "players"
+                    },
+                    {
+                      "type": "origins:change_resource",
+                      "change": -2,
+                      "resource": "*:*_injection_bar"
+                    }
+                  ]
                 }
               }
             ]
@@ -758,9 +820,40 @@
               {
                 "type": "origins:target_action",
                 "action": {
-                  "type": "origins:grant_power",
-                  "power": "luna:cyn/injections/virus",
-                  "source": "luna:cyn/inject"
+                  "type": "origins:and",
+                  "actions": [
+                    {
+                      "type": "origins:grant_power",
+                      "power": "luna:cyn/injections/virus",
+                      "source": "luna:cyn/inject"
+                    },
+                    {
+                      "type": "origins:choice",
+                      "actions": [
+                        {
+                          "element": {
+                            "type": "origins:execute_command",
+                            "command": "tellraw @s [{\"text\":\"<Cynical> \"},{\"text\":\"This is your last stop.\",\"color\":\"gold\",\"bold\":true}]"
+                          },
+                          "weight": 1
+                        },
+                        {
+                          "element": {
+                            "type": "origins:execute_command",
+                            "command": "tellraw @s [{\"text\":\"<Cynical> \"},{\"text\":\"Had fun playing!!\",\"color\":\"gold\",\"bold\":true}]"
+                          },
+                          "weight": 1
+                        },
+                        {
+                          "element": {
+                            "type": "origins:execute_command",
+                            "command": "tellraw @s [{\"text\":\"<Cynical> \"},{\"text\":\"oh you'll make a delicious meal!\",\"color\":\"gold\",\"bold\":true}]"
+                          },
+                          "weight": 1
+                        }
+                      ]
+                    }
+                  ]
                 }
               },
               {
@@ -846,8 +939,8 @@
     },
     "damage_condition": {
       "type": "origins:type",
-      "damage_type": "thorns",
-      "inverted": true
+      "inverted": true,
+      "damage_type": "thorns"
     }
   },
   "injection_bar": {

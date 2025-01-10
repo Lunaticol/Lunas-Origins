@@ -13,7 +13,7 @@
         "ticks": 100,
         "action": {
           "type": "origins:execute_command",
-          "command": "loot spawn ~ ~ ~ @s loot luna:wastes"
+          "command": "loot spawn ~ ~ ~ loot luna:wastes"
         }
       }
     },
@@ -113,5 +113,11 @@
       "comparison": ">=",
       "resource": "luna:piglin/zombification_infection_master_bar"
     }
+  },
+  "spawn": {
+    "type": "origins:modify_player_spawn",
+    "biome": "minecraft:nether_wastes",
+    "dimension": "minecraft:the_nether",
+    "spawn_strategy": "default"
   }
 }

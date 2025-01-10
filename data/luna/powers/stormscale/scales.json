@@ -7,12 +7,13 @@
     "bientity_action": {
       "type": "origins:actor_action",
       "action": {
-        "type": "origins:apply_effect",
-        "effect": {
-          "duration": 100,
-          "effect": "resistance",
-          "show_icon": true,
-          "show_particles": false
+        "type": "origins:chance",
+        "chance": 0.15,
+        "action": {
+          "type": "origins:change_resource",
+          "change": 1,
+          "resource": "*:*_scales",
+          "operation": "add"
         }
       }
     },
@@ -22,24 +23,119 @@
       "inverted": true
     }
   },
-  "scales_strong_storm": {
-    "type": "origins:action_when_hit",
-    "bientity_action": {
-      "type": "origins:actor_action",
-      "action": {
-        "type": "origins:apply_effect",
-        "effect": {
-          "duration": 100,
-          "effect": "resistance",
-          "amplifier": 1,
-          "show_icon": true,
-          "show_particles": false
-        }
-      }
+  "scales": {
+    "type": "origins:resource",
+    "max": 3,
+    "min": 0
+  },
+  "reset": {
+    "type": "origins:action_over_time",
+    "interval": 200,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": -1,
+      "resource": "*:*_scales",
+      "operation": "add"
+    },
+    "condition": {
+      "type": "origins:predicate",
+      "predicate": "luna:is_thundering",
+      "inverted": true
+    }
+  },
+  "thundering": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 3,
+      "resource": "*:*_scales",
+      "operation": "set"
     },
     "condition": {
       "type": "origins:predicate",
       "predicate": "luna:is_thundering"
+    }
+  },
+  "reduced_damage": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "value": -0.05,
+      "operation": "multiply_total"
+    },
+    "damage_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:projectile",
+          "inverted": true
+        },
+        {
+          "type": "origins:type",
+          "damage_type": "explosion",
+          "inverted": true
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_scales"
+    }
+  },
+  "reduced_damage_2": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "value": -0.1,
+      "operation": "multiply_total"
+    },
+    "damage_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:projectile",
+          "inverted": true
+        },
+        {
+          "type": "origins:type",
+          "damage_type": "explosion",
+          "inverted": true
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 2,
+      "comparison": "==",
+      "resource": "*:*_scales"
+    }
+  },
+  "reduced_damage_3": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "value": -0.15,
+      "operation": "multiply_total"
+    },
+    "damage_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:projectile",
+          "inverted": true
+        },
+        {
+          "type": "origins:type",
+          "damage_type": "explosion",
+          "inverted": true
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 3,
+      "comparison": "==",
+      "resource": "*:*_scales"
     }
   }
 }

@@ -10,8 +10,185 @@
     },
     "entity_action": {
       "type": "origins:raycast",
-      "command_along_ray": "particle minecraft:electric_spark ~ ~ ~ 0 0 0 1 10",
-      "bientity_action": {}
+      "command_along_ray": "particle minecraft:electric_spark ~ ~ ~ 0 0 0 0.1 10",
+      "bientity_action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:if_else_list",
+            "actions": [
+              {
+                "action": {
+                  "type": "origins:target_action",
+                  "action": {
+                    "type": "origins:and",
+                    "actions": [
+                      {
+                        "type": "origins:damage",
+                        "amount": 2,
+                        "source": {
+                          "name": "lightningbreath"
+                        }
+                      },
+                      {
+                        "type": "origins:area_of_effect",
+                        "radius": 8,
+                        "shape": "cube",
+                        "bientity_action": {
+                          "type": "origins:and",
+                          "actions": [
+                            {
+                              "type": "apugli:raycast_between",
+                              "particle": "minecraft:electric_spark"
+                            },
+                            {
+                              "type": "origins:damage",
+                              "amount": 2,
+                              "source": {
+                                "name": "lightningbreath"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                "condition": {
+                  "type": "origins:actor_condition",
+                  "condition": {
+                    "type": "origins:resource",
+                    "compare_to": 0,
+                    "comparison": "==",
+                    "resource": "*:*_overcharge"
+                  }
+                }
+              },
+              {
+                "action": {
+                  "type": "origins:target_action",
+                  "action": {
+                    "type": "origins:and",
+                    "actions": [
+                      {
+                        "type": "origins:damage",
+                        "amount": 4,
+                        "source": {
+                          "name": "lightningbreath"
+                        }
+                      },
+                      {
+                        "type": "origins:area_of_effect",
+                        "radius": 8,
+                        "shape": "cube",
+                        "bientity_action": {
+                          "type": "origins:and",
+                          "actions": [
+                            {
+                              "type": "apugli:raycast_between",
+                              "particle": "minecraft:electric_spark"
+                            },
+                            {
+                              "type": "origins:damage",
+                              "amount": 4,
+                              "source": {
+                                "name": "lightningbreath"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                "condition": {
+                  "type": "origins:actor_condition",
+                  "condition": {
+                    "type": "origins:resource",
+                    "compare_to": 0,
+                    "comparison": ">",
+                    "resource": "*:*_overcharge"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "type": "origins:actor_action",
+            "action": {
+              "type": "origins:if_else_list",
+              "actions": [
+                {
+                  "action": {
+                    "type": "origins:change_resource",
+                    "change": -2,
+                    "operation": "add",
+                    "resource": "*:*_overcharge"
+                  },
+                  "condition": {
+                    "type": "origins:resource",
+                    "compare_to": 0,
+                    "comparison": ">",
+                    "resource": "*:*_overcharge"
+                  }
+                },
+                {
+                  "action": {
+                    "type": "origins:change_resource",
+                    "change": -2,
+                    "operation": "add",
+                    "resource": "*:*_energy"
+                  },
+                  "condition": {
+                    "type": "origins:resource",
+                    "compare_to": 0,
+                    "comparison": "<",
+                    "resource": "*:*_overcharge"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": ">",
+          "resource": "*:*_overcharge"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": ">",
+          "resource": "*:*_energy"
+        }
+      ]
+    }
+  },
+  "overcharge": {
+    "type": "origins:resource",
+    "max": 1400,
+    "min": 0
+  },
+  "energy": {
+    "type": "origins:resource",
+    "max": 700,
+    "min": 0
+  },
+  "immune": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "value": -1,
+      "operation": "multiply_total"
+    },
+    "damage_condition": {
+      "type": "origins:name",
+      "name": "lightningbreath"
     }
   }
 }

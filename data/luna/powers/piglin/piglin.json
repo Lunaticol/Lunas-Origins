@@ -240,5 +240,19 @@
       "type": "origins:execute_command",
       "command": "function luna:piglin/passive"
     }
+  },
+  "harvest": {
+    "type": "origins:modify_harvest",
+    "allow": true,
+    "condition": {
+      "type": "origins:equipped_item",
+      "equipment_slot": "mainhand",
+      "item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": {
+          "item": "minecraft:golden_pickaxe"
+        }
+      }
+    }
   }
 }

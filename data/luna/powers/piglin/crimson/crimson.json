@@ -12,7 +12,7 @@
         "ticks": 100,
         "action": {
           "type": "origins:execute_command",
-          "command": "loot spawn ~ ~ ~ @s loot luna:crimson"
+          "command": "loot spawn ~ ~ ~ loot luna:crimson"
         }
       }
     },
@@ -25,5 +25,11 @@
     "held_item_action": {
       "type": "origins:consume"
     }
+  },
+  "spawn": {
+    "type": "origins:modify_player_spawn",
+    "biome": "minecraft:crimson_forest",
+    "dimension": "minecraft:the_nether",
+    "spawn_strategy": "default"
   }
 }

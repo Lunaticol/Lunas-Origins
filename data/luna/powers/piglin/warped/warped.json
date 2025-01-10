@@ -20,7 +20,7 @@
         "ticks": 60,
         "action": {
           "type": "origins:execute_command",
-          "command": "loot spawn ~ ~ ~ @s loot luna:warped"
+          "command": "loot spawn ~ ~ ~ loot luna:warped"
         }
       }
     },
@@ -104,5 +104,11 @@
       "comparison": ">=",
       "resource": "luna:piglin/zombification_infection_master_bar"
     }
+  },
+  "spawn": {
+    "type": "origins:modify_player_spawn",
+    "biome": "minecraft:warped_forest",
+    "dimension": "minecraft:the_nether",
+    "spawn_strategy": "default"
   }
 }

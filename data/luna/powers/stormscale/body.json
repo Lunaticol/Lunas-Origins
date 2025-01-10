@@ -1,7 +1,7 @@
 {
-  "type": "origins:multiple",
   "name": "Dragonkin",
-  "description": "You are a dragon, You have the abilitys of a normal dragon.\nYou take more damage from arrows.\nYou attract more lightning!",
+  "description": "You are a dragon, You have the abilitys of a normal dragon.\nYou take more damage from arrows.\nYou attract more lightning!\nYou have more health",
+  "type": "origins:multiple",
   "elytra": {
     "type": "origins:elytra_flight",
     "render_elytra": true,
@@ -146,6 +146,21 @@
     "type": "apugli:redirect_lightning",
     "chance": 0.8
   },
+  "reach": {
+    "type": "origins:attribute",
+    "modifiers": [
+      {
+        "attribute": "reach-entity-attributes:attack_range",
+        "value": 1,
+        "operation": "addition"
+      },
+      {
+        "attribute": "reach-entity-attributes:reach",
+        "value": 2,
+        "operation": "addition"
+      }
+    ]
+  },
   "origin_counter": {
     "type": "origins:action_on_callback",
     "entity_action_chosen": {
@@ -165,6 +180,15 @@
           "command": "scoreboard players remove Stormscale Origin 1"
         }
       ]
+    }
+  },
+  "health": {
+    "type": "origins:attribute",
+    "update_health": true,
+    "modifier": {
+      "value": 4,
+      "attribute": "minecraft:generic.max_health",
+      "operation": "addition"
     }
   }
 }
