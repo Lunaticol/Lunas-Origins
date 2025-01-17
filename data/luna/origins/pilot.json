@@ -2,7 +2,7 @@
   "name": "The Pilot",
   "description": "Trained to fight from an ancient time, you fight alongside the ancient sentinels of this world and traverse any terrain with terrifying ease",
   "impact": 3,
-  "icon": "minecraft:amethyst_shard",
+  "icon": "minecraft:grindstone",
   "unchoosable": true,
   "powers": []
 }

@@ -1,0 +1,30 @@
+{
+  "type": "origins:multiple",
+  "running": {
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "entity_action": {
+      "type": "origins:add_velocity",
+      "z": 0.5,
+      "y": 0.07,
+      "set": true,
+      "space": "local_horizontal_normalized"
+    },
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:block_collision",
+          "offset_x": 0.1,
+          "offset_z": 0.1
+        },
+        {
+          "type": "origins:block_collision",
+          "offset_x": -0.1,
+          "offset_z": -0.1
+        }
+      ]
+    }
+  },
+  "name": "Wallrun"
+}

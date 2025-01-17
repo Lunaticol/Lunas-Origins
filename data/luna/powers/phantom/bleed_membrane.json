@@ -1,0 +1,127 @@
+{
+  "name": "Forbidden Ritual",
+  "description": "It must never be known. Destroy these books, never let a single page see the light of day agian.",
+  "type": "origins:multiple",
+  "bleed": {
+    "type": "origins:active_self",
+    "cooldown": 0,
+    "key": "key.use",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:damage",
+          "amount": 13,
+          "source": {
+            "name": "out_of_blood"
+          }
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "item replace entity @s weapon.offhand with lunasorigins:crimson_membrane 1"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "particle minecraft:dust 1.0 0.0 0.0 1.0 ~ ~1 ~ 0.1 0.1 0.1 1 100 force"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": { "item": "minecraft:iron_sword" }
+          }
+        },
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "offhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": { "item": "minecraft:phantom_membrane" }
+          }
+        },
+        {
+          "type": "origins:health",
+          "compare_to": 14,
+          "comparison": "=="
+        },
+        {
+          "type": "origins:sneaking"
+        }
+      ]
+    }
+  },
+  "eat_membrane": {
+    "type": "apugli:edible_item",
+    "food_component": {
+      "always_edible": true,
+      "hunger": 0,
+      "meat": false,
+      "saturation": 0,
+      "snack": false
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "origin set @s origins:origin luna:crimson"
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:block.sculk_shrieker.shriek",
+          "pitch": 0.1,
+          "volume": 1
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "particle falling_dust crimson_planks ~ ~ ~ 1 1 1 1 100 normal"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "particle falling_dust magma_block ~ ~ ~ 1 1 1 1 100 normal"
+        },
+        {
+          "type": "origins:apply_effect",
+          "effects": [
+            {
+              "effect": "minecraft:nausea",
+              "duration": 200,
+              "amplifier": 1
+            },
+            {
+              "effect": "minecraft:weakness",
+              "duration": 600,
+              "amplifier": 2
+            },
+            {
+              "effect": "minecraft:slowness",
+              "duration": 400,
+              "amplifier": 2
+            }
+          ]
+        },
+        {
+          "type": "origins:play_sound",
+          "category": "players",
+          "pitch": 0.5,
+          "sound": "minecraft:item.totem.use",
+          "volume": 1
+        },
+        {
+          "type": "origins:grant_advancement",
+          "advancement": "luna:crimson/ritual"
+        }
+      ]
+    },
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": { "item": "lunasorigins:crimson_membrane" }
+    }
+  }
+}

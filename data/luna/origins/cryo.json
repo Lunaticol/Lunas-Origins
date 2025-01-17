@@ -1,0 +1,9 @@
+{
+  "powers": [],
+  "icon": "minecraft:blue_ice",
+  "unchoosable": true,
+  "order": 9,
+  "impact": 3,
+  "name": "Cryogen",
+  "description": "Sub-Zero from Mortal Kombat"
+}

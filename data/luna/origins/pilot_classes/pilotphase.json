@@ -1,0 +1,8 @@
+{
+  "powers": ["pilot:pilot_phase/phase", "pilot:pilot_phase/firestar"],
+  "icon": "minecraft:ender_chest",
+  "order": 10,
+  "impact": 2,
+  "name": "Phase Pilot",
+  "description": "Simulacrum pilots with the ability to phase"
+}

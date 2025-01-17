@@ -1,0 +1,8 @@
+{
+  "powers": ["pilot:pilot_holo/holo"],
+  "icon": "minecraft:stone",
+  "order": 10,
+  "impact": 2,
+  "name": "Holo Pilot",
+  "description": "Pilots equipped with hologram technology."
+}

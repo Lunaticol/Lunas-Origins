@@ -12,7 +12,7 @@
   ],
   "icon": "minecraft:enchanted_golden_apple",
   "order": 9,
-  "impact": 3,
+  "impact": 2,
   "name": "Lumina",
   "description": "Harness the powers of these diminutive yet powerful wisps to shape the world to your liking."
 }

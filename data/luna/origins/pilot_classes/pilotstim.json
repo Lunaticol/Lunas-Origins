@@ -1,0 +1,8 @@
+{
+  "powers": ["pilot:pilot_stim/stim"],
+  "icon": "minecraft:rabbit_foot",
+  "order": 10,
+  "impact": 2,
+  "name": "Stim Pilot",
+  "description": "Simulacrum pilots that inject themselves with stimulin making them faster"
+}

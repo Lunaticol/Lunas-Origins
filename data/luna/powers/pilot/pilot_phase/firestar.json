@@ -1,0 +1,15 @@
+{
+  "name": "Fire Star",
+  "description": "Throw a Fire Star at your foes",
+  "type": "origins:fire_projectile",
+  "entity_type": "minecraft:small_fireball",
+  "cooldown": 400,
+  "hud_render": {
+    "should_render": true
+  },
+  "tag": "{pickup:0b}",
+  "key": {
+    "key": "secondary",
+    "continuous": true
+  }
+}

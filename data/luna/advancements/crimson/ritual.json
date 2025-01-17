@@ -1,0 +1,24 @@
+{
+  "display": {
+    "title": {
+      "text": "Blood Ritual"
+    },
+    "description": {
+      "text": "Preform the Crimson Phantom blood ritual. Becoming a Crimson Phantom."
+    },
+    "icon": {
+      "item": "minecraft:phantom_membrane",
+      "nbt": "{CustomModelData:42700}"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "leechedwither": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "luna:crimson/crimson"
+}

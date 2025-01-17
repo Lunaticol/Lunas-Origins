@@ -655,11 +655,11 @@ Impact: 🔴 🔴 🔴
 </details>
 
 <details>
-<summary><strong>Skyweaver</strong> (Impact: 🔴🔴🔴)</summary>
+<summary><strong>Skyweaver</strong> (Impact: 🟡🟡)</summary>
 
 # Skyweaver
 
-Impact: 🔴🔴🔴
+Impact: 🟡🟡
 
 `Skyweavers are beings born with an innate affinity for the air element. They possess the ability to control and manipulate air currents, allowing them to float above the ground effortlessly and move through the sky with grace.`
 
@@ -695,7 +695,7 @@ Impact: 🔴🔴🔴
 </details>
 
 <details>
-<summary><strong>Stormweaver</strong> (Impact: 🔴🔴🔴)</summary>
+<summary><strong>Stormweaver</strong> (Impact: 🟡🟡)</summary>
 
 </details>
 

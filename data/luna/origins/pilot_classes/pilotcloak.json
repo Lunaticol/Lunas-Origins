@@ -1,0 +1,11 @@
+{
+  "powers": [
+    "pilot:pilot_cloak/cloak",
+    "pilot:pilot_cloak/firestar"
+  ],
+  "icon": "minecraft:glass",
+  "order": 10,
+  "impact": 2,
+  "name": "Cloak Pilot",
+  "description": "Pilots equipped with technology that turns them almost entirely invisible"
+}

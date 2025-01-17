@@ -1,0 +1,8 @@
+{
+  "powers": ["pilot:pilot_pulse/pulseblade"],
+  "icon": "minecraft:iron_sword",
+  "order": 10,
+  "impact": 2,
+  "name": "Pulse Blade Pilot",
+  "description": "Pilots equipped with the Sonar Blade."
+}

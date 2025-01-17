@@ -3,7 +3,7 @@
   "icon": "minecraft:ender_eye",
   "unchoosable": true,
   "order": 9,
-  "impact": 0,
+  "impact": 3,
   "name": "Ashley",
   "description": "Ashley.exe is not responding"
 }

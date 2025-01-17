@@ -9,7 +9,7 @@
   ],
   "icon": "minecraft:pink_tulip",
   "order": 9,
-  "impact": 3,
+  "impact": 2,
   "name": "Noctilith",
   "description": "A beautiful flower that only blooms at night."
 }

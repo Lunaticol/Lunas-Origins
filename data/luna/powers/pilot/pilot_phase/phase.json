@@ -1,0 +1,56 @@
+{
+  "name": "Phase Shift",
+  "description": "Phase into an alternate plane to escape danger",
+  "type": "origins:multiple",
+  "phase_activate": {
+    "type": "origins:active_self",
+    "cooldown": 60,
+    "key": {
+      "key": "primary"
+    },
+    "hud_render": {
+      "should_render": true
+    },
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "/function originpilot:phaseparticles"
+    }
+  },
+  "ivis": {
+    "type": "origins:invisibility",
+    "render_armor": false,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_phase_activate",
+      "comparison": "!=",
+      "compare_to": 0
+    }
+  },
+  "phase_vision": {
+    "type": "origins:shader",
+    "shader": "minecraft:shaders/post/pencil.json",
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_phase_activate",
+      "comparison": "!=",
+      "compare_to": 0
+    }
+  },
+  "no_fall_damage": {
+    "type": "origins:modify_damage_taken",
+    "damage_condition": {
+      "type": "origins:name",
+      "name": "fall"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_phase_activate",
+      "comparison": "!=",
+      "compare_to": 0
+    },
+    "modifier": {
+      "operation": "multiply_total",
+      "value": -1
+    }
+  }
+}

@@ -938,9 +938,9 @@
       ]
     },
     "damage_condition": {
-      "type": "origins:type",
+      "type": "origins:name",
       "inverted": true,
-      "damage_type": "thorns"
+      "name": "thorns"
     }
   },
   "injection_bar": {

@@ -53,8 +53,11 @@
           "resource": "*:*_died"
         },
         {
-          "type": "origins:execute_command",
-          "command": "playsound minecraft:item.totem.use ambient @s ~ ~ ~ 1 1"
+          "type": "origins:play_sound",
+          "category": "players",
+          "pitch": 0.5,
+          "sound": "minecraft:item.totem.use",
+          "volume": 1
         },
         {
           "type": "origins:change_resource",
