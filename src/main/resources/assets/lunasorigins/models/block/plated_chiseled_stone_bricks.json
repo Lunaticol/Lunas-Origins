@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "lunasorigins:block/plated_chiseled_stone_bricks"
+  }
+}

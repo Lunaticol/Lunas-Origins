@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "lunasorigins:pink_command_log",
+    "lunasorigins:green_command_log",
+    "lunasorigins:red_command_log",
+    "lunasorigins:yellow_command_log",
+    "lunasorigins:stripped_command_log",
+    "lunasorigins:pink_command_wood",
+    "lunasorigins:green_command_wood",
+    "lunasorigins:red_command_wood",
+    "lunasorigins:yellow_command_wood",
+    "lunasorigins:stripped_command_wood"
+  ]
+}

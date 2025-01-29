@@ -1,0 +1,11 @@
+{
+  "type": "crafting_shaped",
+  "key": {
+    "Y": { "item": "lunasorigins:yellow_command_log" }
+  },
+  "pattern": ["YY ", "YY ", "   "],
+  "result": {
+    "item": "lunasorigins:yellow_command_wood",
+    "count": 3
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "type": "crafting_shaped",
+  "key": {
+    "Y": { "item": "lunasorigins:command_planks" }
+  },
+  "pattern": ["   ", "   ", " YY"],
+  "result": {
+    "item": "lunasorigins:command_slab"
+  }
+}

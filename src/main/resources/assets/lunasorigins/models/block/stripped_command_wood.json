@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "lunasorigins:block/stripped_command_log",
+    "side": "lunasorigins:block/stripped_command_log"
+  }
+}

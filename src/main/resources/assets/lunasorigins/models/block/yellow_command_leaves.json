@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/leaves",
+  "textures": {
+    "all": "lunasorigins:block/yellow_command_leaves"
+  }
+}

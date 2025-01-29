@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "lunasorigins:block/plated_smooth_stone",
+    "side": "lunasorigins:block/plated_smooth_stone_slab_side"
+  }
+}

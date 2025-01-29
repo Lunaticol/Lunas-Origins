@@ -1,0 +1,42 @@
+{
+  "carvers": {
+    "air": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ]
+  },
+  "downfall": 0,
+  "effects": {
+    "fog_color": 12638463,
+    "sky_color": 7972607,
+    "water_color": 4159204,
+    "water_fog_color": 329011,
+    "grass_color": 11054002,
+    "foliage_color": 11054002,
+    "particle": {
+      "options": {
+        "type": "minecraft:white_ash"
+      },
+      "probability": 0.118093334
+    }
+  },
+  "features": [
+    ["lunasorigins:green_command_tree"],
+    ["minecraft:glow_lichen", "minecraft:patch_grass_forest"],
+    ["minecraft:freeze_top_layer"]
+  ],
+  "has_precipitation": true,
+  "spawn_costs": {},
+  "spawners": {
+    "ambient": [],
+    "axolotls": [],
+    "creature": [],
+    "misc": [],
+    "monster": [],
+    "underground_water_creature": [],
+    "water_ambient": [],
+    "water_creature": []
+  },
+  "temperature": 0
+}

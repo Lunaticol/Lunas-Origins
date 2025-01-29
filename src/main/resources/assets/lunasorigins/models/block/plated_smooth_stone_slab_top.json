@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "lunasorigins:block/plated_smooth_stone",
+    "side": "lunasorigins:block/plated_smooth_stone_slab_side",
+    "top": "lunasorigins:block/plated_smooth_stone"
+  }
+}

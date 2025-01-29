@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "lunasorigins:command_logs"
+    }
+  ],
+  "result": {
+    "item": "lunasorigins:command_planks",
+    "count": 4
+  }
+}

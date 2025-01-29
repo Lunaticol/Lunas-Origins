@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "lunasorigins:block/pink_command_log_top",
+    "side": "lunasorigins:block/pink_command_log"
+  }
+}

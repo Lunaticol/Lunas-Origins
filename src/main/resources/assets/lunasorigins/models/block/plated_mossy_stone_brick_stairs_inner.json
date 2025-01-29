@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "lunasorigins:block/plated_mossy_stone_bricks",
+    "side": "lunasorigins:block/plated_mossy_stone_bricks",
+    "top": "lunasorigins:block/plated_mossy_stone_bricks"
+  }
+}

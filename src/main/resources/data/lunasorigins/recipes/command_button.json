@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lunasorigins:command_planks"
+    }
+  ],
+  "result": {
+    "item": "lunasorigins:command_button"
+  }
+}

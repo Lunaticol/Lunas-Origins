@@ -1,0 +1,12 @@
+{
+  "type": "crafting_shaped",
+  "key": {
+    "Y": { "item": "lunasorigins:command_planks" },
+    "S": { "item": "minecraft:stick" }
+  },
+  "pattern": ["   ", "SYS", "SYS"],
+  "result": {
+    "item": "lunasorigins:command_door",
+    "count": 3
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "lunasorigins:block/plated_stone_brick_slab"
+    },
+    "type=double": {
+      "model": "lunasorigins:block/plated_stone_bricks"
+    },
+    "type=top": {
+      "model": "lunasorigins:block/plated_stone_brick_slab_top"
+    }
+  }
+}

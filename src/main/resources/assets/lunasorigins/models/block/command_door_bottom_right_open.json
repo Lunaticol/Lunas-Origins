@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_right_open",
+  "textures": {
+    "bottom": "lunasorigins:block/command_door_bottom",
+    "top": "lunasorigins:block/command_door_top"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "lunasorigins:block/yellow_command_log_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "lunasorigins:block/yellow_command_log"
+    },
+    "axis=z": {
+      "model": "lunasorigins:block/yellow_command_log_horizontal",
+      "x": 90
+    }
+  }
+}

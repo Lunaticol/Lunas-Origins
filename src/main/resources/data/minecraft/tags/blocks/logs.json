@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "lunasorigins:pink_command_log",
+    "lunasorigins:green_command_log",
+    "lunasorigins:red_command_log",
+    "lunasorigins:yellow_command_log"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "type": "crafting_shaped",
+  "key": {
+    "Y": { "item": "lunasorigins:command_planks" }
+  },
+  "pattern": ["   ", "YYY", "YYY"],
+  "result": {
+    "item": "lunasorigins:command_trapdoor",
+    "count": 6
+  }
+}

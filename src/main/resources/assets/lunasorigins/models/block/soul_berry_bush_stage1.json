@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "lunasorigins:block/soul_berry_bush_stage1"
+  }
+}

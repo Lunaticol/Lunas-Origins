@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "lunas-origins",
+  "version": "${version}",
+  "name": "Lunas Origins",
+  "description": "It adds things I think.",
+  "authors": ["Lunaticol"],
+  "contact": {
+    "homepage": "https://fabricmc.net/",
+    "sources": "https://github.com/FabricMC/fabric-example-mod"
+  },
+  "license": "CC0-1.0",
+  "icon": "assets/lunas-origins/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": ["luna.lunasorigins.LunasOrigins"],
+    "client": ["luna.lunasorigins.LunasOriginsClient"],
+    "fabric-datagen": ["luna.lunasorigins.LunasOriginsDataGenerator"],
+    "terrablender": ["luna.lunasorigins.worldgen.LunaTerrablender"]
+  },
+  "mixins": [
+    "lunas-origins.mixins.json",
+    {
+      "config": "lunas-origins.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.5",
+    "minecraft": "~1.20.1",
+    "java": ">=17",
+    "fabric-api": "*"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}

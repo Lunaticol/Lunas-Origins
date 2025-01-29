@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "lunasorigins:block/command_slab"
+    },
+    "type=double": {
+      "model": "lunasorigins:block/command_planks"
+    },
+    "type=top": {
+      "model": "lunasorigins:block/command_slab_top"
+    }
+  }
+}

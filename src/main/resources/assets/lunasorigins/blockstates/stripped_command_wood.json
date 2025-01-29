@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "lunasorigins:block/stripped_command_wood",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "lunasorigins:block/stripped_command_wood"
+    },
+    "axis=z": {
+      "model": "lunasorigins:block/stripped_command_wood",
+      "x": 90
+    }
+  }
+}
