@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "base": {
+    "item": "minecraft:bedrock"
+  },
+  "addition": {
+    "item": "minecraft:barrier"
+  },
+  "template": {
+    "item": "minecraft:bedrock"
+  },
+  "result": {
+    "item": "lunasorigins:karl"
+  }
+}

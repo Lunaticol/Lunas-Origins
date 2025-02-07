@@ -101,33 +101,61 @@
     "shader": "minecraft:shaders/post/sobel.json"
   },
   "vibrations": {
-    "type": "origins:game_event_listener",
-    "entity": true,
-    "trigger_order": "by_distance",
-    "show_particle": true,
-    "event_tag": "minecraft:vibrations",
-    "cooldown": 0,
-    "bientity_action": {
-      "type": "origins:actor_action",
-      "action": {
-        "type": "origins:and",
-        "actions": [
-          {
-            "type": "origins:grant_power",
-            "power": "*:sculk/detected",
-            "source": "luna:sculk/sculk_like"
-          }
-        ]
-      }
+    "type": "origins:active_self",
+    "key": "key.use",
+    "cooldown": 40,
+    "hud_render": {
+      "should_render": false
     },
-    "bientity_condition": {
-      "type": "origins:actor_condition",
-      "condition": {
-        "type": "origins:and",
-        "conditions": [
-          { "type": "origins:exists" },
-          { "type": "origins:living" }
-        ]
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:area_of_effect",
+          "radius": 32,
+          "bientity_action": {
+            "type": "origins:target_action",
+            "action": {
+              "type": "origins:grant_power",
+              "power": "*:sculk/detected",
+              "source": "luna:sculk/sculk_like"
+            }
+          },
+          "bientity_condition": {
+            "type": "origins:actor_condition",
+            "condition": {
+              "type": "origins:and",
+              "conditions": [
+                { "type": "origins:exists" },
+                { "type": "origins:living" }
+              ]
+            }
+          }
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:item.lodestone_compass.lock",
+          "pitch": 2
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:item.lodestone_compass.lock",
+          "pitch": 0.5
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:block.conduit.attack.target",
+          "pitch": 1
+        }
+      ]
+    },
+    "condition": {
+      "inverted": true,
+      "type": "origins:equipped_item",
+      "equipment_slot": "mainhand",
+      "item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": { "item": "minecraft:echo_shard" }
       }
     }
   },

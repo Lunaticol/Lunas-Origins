@@ -1,0 +1,22 @@
+{
+  "name": "Tactical Slide",
+  "description": "You can evade enemys by sliding along the ground, provides extra speed and agility.",
+  "type": "origins:multiple",
+  "slide": {
+    "type": "origins:swimming",
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:sneaking"
+        },
+        {
+          "type": "origins:sprinting"
+        },
+        {
+          "type": "origins:on_block"
+        }
+      ]
+    }
+  }
+}

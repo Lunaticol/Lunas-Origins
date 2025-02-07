@@ -10,6 +10,8 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import luna.lunasorigins.effects.LunaCorruptedEffect;
 import luna.lunasorigins.effects.SoulTunedEffect;
 
 public class LunasOrigins implements ModInitializer {
@@ -27,10 +29,16 @@ public class LunasOrigins implements ModInitializer {
 
   // Effect
   public static final StatusEffect SOUL_TUNED_EFFECT;
+  public static final StatusEffect LUNA_CORRUPTION;
 
   static {
     SOUL_TUNED_EFFECT = Registry.register(Registries.STATUS_EFFECT, Identifier.of(MOD_ID, "soul_tuned"),
-        new SoulTunedEffect(StatusEffectCategory.BENEFICIAL, 0));
+        new SoulTunedEffect(StatusEffectCategory.BENEFICIAL, 0x60f5fa));
+  }
+
+  static {
+    LUNA_CORRUPTION = Registry.register(Registries.STATUS_EFFECT, Identifier.of(MOD_ID, "corruption"),
+        new LunaCorruptedEffect(StatusEffectCategory.HARMFUL, 0xcc9ad7));
   }
 
   @Override
@@ -44,7 +52,6 @@ public class LunasOrigins implements ModInitializer {
     LunaBlocks.initialize();
     SoulTunedEffect.initialize();
     LunaEvent.initialize();
-    // Use the Registerable API for ConfiguredFeature
     LOGGER.info("Wow I have a mod now this is great");
 
   }

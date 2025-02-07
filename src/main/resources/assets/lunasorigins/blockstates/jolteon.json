@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "lunasorigins:block/jolteon",
+      "y": 90
+    },
+    "facing=east": {
+      "model": "lunasorigins:block/jolteon",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "lunasorigins:block/jolteon",
+      "y": 270
+    },
+    "facing=west": {
+      "model": "lunasorigins:block/jolteon"
+    },
+    "facing=up": {
+      "model": "lunasorigins:block/jolteon",
+      "x": 270
+    },
+    "facing=down": {
+      "model": "lunasorigins:block/jolteon",
+      "x": 90
+    }
+  }
+}

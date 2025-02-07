@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "lunasorigins:soul_berry",
+          "terms": [
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "minecraft:soul_berry_bush",
+              "properties": {
+                "age": "2"
+              }
+            },
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "minecraft:soul_berry_bush",
+              "properties": {
+                "age": "3"
+              }
+            }
+          ]
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ]
+    }
+  ]
+}

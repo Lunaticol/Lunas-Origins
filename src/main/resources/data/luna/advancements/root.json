@@ -9,14 +9,13 @@
       "text": "Advancements for my origins"
     },
     "icon": {
-      "item": "minecraft:player_head",
-      "nbt": "{SkullOwner:\"Lunaticol\"}"
+      "item": "lunasorigins:luna"
     },
     "frame": "challenge",
     "show_toast": true,
     "announce_to_chat": false,
     "hidden": false,
-    "background": "minecraft:textures/block/cherry_leaves.png"
+    "background": "lunasorigins:textures/item/stars.png"
   },
   "criteria": {
     "spawn": {

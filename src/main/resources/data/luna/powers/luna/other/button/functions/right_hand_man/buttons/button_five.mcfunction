@@ -1,1 +1,0 @@
-summon item ~ ~ ~ {Item:{id:"minecraft:warped_button",Count:1b,tag:{display:{Name:'{"text":"A Button V","color":"gold","bold":true,"italic":true}',Lore:['{"text":"\'From a simple button to a series.\'","color":"gray"}']},Enchantments:[{}]}}}

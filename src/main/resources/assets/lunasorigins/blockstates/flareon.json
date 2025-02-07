@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "lunasorigins:block/flareon",
+      "y": 90
+    },
+    "facing=east": {
+      "model": "lunasorigins:block/flareon",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "lunasorigins:block/flareon",
+      "y": 270
+    },
+    "facing=west": {
+      "model": "lunasorigins:block/flareon"
+    },
+    "facing=up": {
+      "model": "lunasorigins:block/flareon",
+      "x": 270
+    },
+    "facing=down": {
+      "model": "lunasorigins:block/flareon",
+      "x": 90
+    }
+  }
+}

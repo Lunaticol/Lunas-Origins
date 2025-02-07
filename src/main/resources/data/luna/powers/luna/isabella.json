@@ -45,5 +45,14 @@
   "sounds": {
     "type": "origins:prevent_game_event",
     "events": ["minecraft:hit_ground", "minecraft:step", "minecraft:swim"]
+  },
+  "fly": {
+    "type": "origins:creative_flight",
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 10,
+      "comparison": "==",
+      "resource": "luna:luna/rtp_rtp_bar"
+    }
   }
 }

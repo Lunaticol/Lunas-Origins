@@ -1,0 +1,8 @@
+{
+  "type": "origins:action_over_time",
+  "interval": 5,
+  "entity_action": {
+    "type": "origins:heal",
+    "amount": 999
+  }
+}

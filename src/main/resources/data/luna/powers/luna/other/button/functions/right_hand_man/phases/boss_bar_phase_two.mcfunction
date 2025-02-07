@@ -1,1 +1,0 @@
-bossbar set minecraft:brh color red

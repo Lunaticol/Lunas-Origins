@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "base": {
+    "item": "minecraft:lime_wool"
+  },
+  "addition": {
+    "item": "minecraft:oak_leaves"
+  },
+  "template": {
+    "item": "lunasorigins:eevee"
+  },
+  "result": {
+    "item": "lunasorigins:leafeon"
+  }
+}

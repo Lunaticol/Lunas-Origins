@@ -1,8 +1,10 @@
 package luna.lunasorigins;
 
+import luna.lunasorigins.items.Luna;
+import luna.lunasorigins.items.LunaHeadTaker;
+import luna.lunasorigins.items.Time;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.item.AxeItem;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.FoodComponent;
 import net.minecraft.item.HangingSignItem;
@@ -28,7 +30,6 @@ public class LunaItems {
                         .displayName(Text.translatable("itemGroup.lunaitemgroup"))
                         .build();
 
-        // Initialize method to modify item groups
         public static void initialize() {
 
                 Registry.register(Registries.ITEM_GROUP, LUNASORIGINS_ITEM_GROUP_KEY, LUNASORIGINS_ITEM_GROUP);
@@ -42,15 +43,9 @@ public class LunaItems {
                 });
         }
 
-        // Register an item
         public static Item register(Item item, String id) {
-                // Create the identifier for the item.
                 Identifier itemID = new Identifier(LunasOrigins.MOD_ID, id);
-
-                // Register the item.
                 Item registeredItem = Registry.register(Registries.ITEM, itemID, item);
-
-                // Return the registered item!
                 return registeredItem;
         }
 
@@ -90,6 +85,27 @@ public class LunaItems {
                         "soul_berry");
 
         public static final Item LUNA_HEADTAKER = register(
-                        new AxeItem(ToolMaterials.NETHERITE, 10F, -2F, new Item.Settings()),
+                        new LunaHeadTaker(ToolMaterials.NETHERITE, 10F, -3.2F,
+                                        new Item.Settings()),
                         "luna_headtaker");
+
+        public static final Item LUNA = register(
+                        new Luna(new Item.Settings()),
+                        "luna");
+
+        public static final Item TIME = register(
+                        new Time(new Item.Settings()),
+                        "time");
+
+        public static final Item PIW = register(
+                        new Item(new Item.Settings()),
+                        "piw");
+
+        public static final Item MINEWARRIOR = register(
+                        new Item(new Item.Settings()),
+                        "minewarrior");
+
+        public static final Item DONATOR = register(
+                        new Item(new Item.Settings()),
+                        "donator");
 }

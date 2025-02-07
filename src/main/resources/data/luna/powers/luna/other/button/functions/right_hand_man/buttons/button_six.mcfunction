@@ -1,1 +1,0 @@
-summon item ~ ~ ~ {Item:{id:"minecraft:crimson_button",Count:1b,tag:{display:{Name:'{"text":"A Button VI","color":"gold","bold":true,"italic":true}',Lore:['{"text":"\'It does something!.\'","color":"gray"}']},Enchantments:[{}]}}}

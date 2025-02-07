@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "lunasorigins:block/eevee",
+      "y": 90
+    },
+    "facing=east": {
+      "model": "lunasorigins:block/eevee",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "lunasorigins:block/eevee",
+      "y": 270
+    },
+    "facing=west": {
+      "model": "lunasorigins:block/eevee"
+    },
+    "facing=up": {
+      "model": "lunasorigins:block/eevee",
+      "x": 270
+    },
+    "facing=down": {
+      "model": "lunasorigins:block/eevee",
+      "x": 90
+    }
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "name": "Cloak",
+  "description": "Cloak yourself for a few seconds, making you near invisible",
+  "type": "origins:multiple",
+  "translucency": {
+    "type": "origins:model_color",
+    "alpha": 0.05,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_cloak_activate",
+      "comparison": ">",
+      "compare_to": 30
+    }
+  },
+  "flicker": {
+    "type": "origins:model_color",
+    "alpha": 0.5,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_cloak_activate",
+      "comparison": ">=",
+      "compare_to": 5
+    }
+  },
+  "flicker_1": {
+    "type": "origins:model_color",
+    "alpha": 0.7,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_cloak_activate",
+      "comparison": ">=",
+      "compare_to": 10
+    }
+  },
+  "flicker_2": {
+    "type": "origins:model_color",
+    "alpha": 0.3,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_cloak_activate",
+      "comparison": ">=",
+      "compare_to": 15
+    }
+  },
+  "flicker_3": {
+    "type": "origins:model_color",
+    "alpha": 0.5,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_cloak_activate",
+      "comparison": ">=",
+      "compare_to": 20
+    }
+  },
+  "flicker_4": {
+    "type": "origins:model_color",
+    "alpha": 0.1,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_cloak_activate",
+      "comparison": ">=",
+      "compare_to": 25
+    }
+  },
+  "flicker_5": {
+    "type": "origins:model_color",
+    "alpha": 0.4,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_cloak_activate",
+      "comparison": ">=",
+      "compare_to": 30
+    }
+  },
+  "cloak_active_self": {
+    "type": "origins:active_self",
+    "cooldown": 340,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 1,
+      "operation": "add",
+      "resource": "*:*_cloak_active"
+    }
+  },
+  "cloak_active": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
+  },
+  "cloak_activate": {
+    "type": "origins:resource",
+    "max": 360,
+    "min": 0
+  },
+  "change_resource": {
+    "type": "origins:action_over_time",
+    "interval": 10,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 5,
+      "operation": "add",
+      "resource": "*:*_cloak_activate"
+    }
+  }
+}

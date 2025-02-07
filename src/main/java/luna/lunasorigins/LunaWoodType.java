@@ -6,16 +6,14 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.sound.SoundEvents;
 
 public class LunaWoodType {
-    // Create a custom WoodType
     public static final WoodType COMMAND = new WoodType(
             "my_custom_wood",
-            BlockSetType.CHERRY, // Use an existing BlockSetType, or create a new one
+            BlockSetType.CHERRY,
             BlockSoundGroup.CHERRY_WOOD,
             BlockSoundGroup.HANGING_SIGN,
             SoundEvents.BLOCK_FENCE_GATE_CLOSE,
             SoundEvents.BLOCK_FENCE_GATE_OPEN);
 
-    // Register your custom WoodType
     public static void registerWoodTypes() {
     }
 }

@@ -25,16 +25,14 @@ public class SoulTunedEffect extends StatusEffect {
         boolean onSoulBlock = world.getBlockState(pos.down()).isOf(net.minecraft.block.Blocks.SOUL_SAND) ||
                 world.getBlockState(pos.down()).isOf(net.minecraft.block.Blocks.SOUL_SOIL);
 
-        // Get the remaining duration of the effect
         int remainingDuration = entity.getStatusEffect(this).getDuration();
 
-        // If near the end of the effect, remove the speed boost early
-        if (remainingDuration <= 20) { // 1 second before the effect ends
+        if (remainingDuration <= 20) {
             removeSpeedBoost(entity);
         } else if (onSoulBlock) {
             applySpeedBoost(entity, amplifier);
         } else {
-            removeSpeedBoost(entity); // Remove if not on soul blocks
+            removeSpeedBoost(entity);
         }
     }
 
@@ -65,7 +63,6 @@ public class SoulTunedEffect extends StatusEffect {
 
     @Override
     public boolean canApplyUpdateEffect(int duration, int amplifier) {
-        // Ensure the effect updates every tick
         return true;
     }
 

@@ -1,0 +1,37 @@
+{
+  "name": "Stim",
+  "description": "Inject yourself with Stimulen, making you faster.",
+  "type": "origins:multiple",
+  "stim_activate": {
+    "type": "origins:active_self",
+    "cooldown": 340,
+    "key": {
+      "key": "primary"
+    },
+    "hud_render": {
+      "should_render": true
+    },
+    "entity_action": {
+      "type": "origins:apply_effect",
+      "effect": {
+        "effect": "minecraft:speed",
+        "duration": 100,
+        "amplifier": 4
+      }
+    }
+  },
+  "particle": {
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "particle minecraft:dust 0.000 0.267 1.000 1 ~ ~-1 ~ 0.1 1.8 0.1 0 25"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 0,
+      "comparison": ">",
+      "resource": "stim_activate"
+    }
+  }
+}

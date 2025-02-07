@@ -1,0 +1,25 @@
+{
+  "display": {
+    "title": {
+      "text": "Donators",
+      "color": "gold",
+      "bold": true
+    },
+    "description": {
+      "text": "Thank you for donating!"
+    },
+    "icon": {
+      "item": "minecraft:emerald"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false,
+    "background": "minecraft:textures/block/cherry_leaves.png"
+  },
+  "criteria": {
+    "spawn": {
+      "trigger": "minecraft:tick"
+    }
+  }
+}

@@ -7,8 +7,7 @@
       "text": "Play Crimson Phantom"
     },
     "icon": {
-      "item": "minecraft:phantom_membrane",
-      "nbt": "{CustomModelData:42700}"
+      "item": "lunasorigins:crimson_membrane"
     },
     "frame": "task",
     "show_toast": true,

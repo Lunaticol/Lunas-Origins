@@ -64,11 +64,10 @@ public class LunaEvent {
         });
 
         UseBlockCallback.EVENT.register((player, world, hand, hitResult) -> {
-            if (!world.isClient) { // Ensure the logic runs server-side
+            if (!world.isClient) {
                 BlockPos pos = hitResult.getBlockPos();
                 BlockState state = world.getBlockState(pos);
 
-                // Check if the block is the Dimensional Berry Bush
                 if (state.isOf(LunaBlocks.DIMENSIONAL_BERRY_BUSH_BLOCK)) {
                     return handleBerryPicking(player, hand, state, pos, world);
                 }
@@ -79,11 +78,9 @@ public class LunaEvent {
         UseBlockCallback.EVENT.register((player, world, hand, hitResult) ->
 
         {
-            if (!world.isClient) { // Ensure the logic runs server-side
+            if (!world.isClient) {
                 BlockPos pos = hitResult.getBlockPos();
                 BlockState state = world.getBlockState(pos);
-
-                // Check if the block is the Dimensional Berry Bush
                 if (state.isOf(LunaBlocks.SOUL_BERRY_BUSH_BLOCK)) {
                     return handleSoulBerryPicking(player, hand, state, pos, world);
                 }
@@ -95,7 +92,7 @@ public class LunaEvent {
 
     private static ActionResult handleBerryPicking(PlayerEntity player, Hand hand, BlockState state, BlockPos pos,
             World world) {
-        int age = state.get(SweetBerryBushBlock.AGE); // Use SweetBerryBushBlock.AGE property
+        int age = state.get(SweetBerryBushBlock.AGE);
         ItemStack heldItem = player.getStackInHand(hand);
 
         if (age == 2 && !heldItem.isOf(Items.BONE_MEAL) || age == 3) {
@@ -106,25 +103,22 @@ public class LunaEvent {
             dropDimensionalBerries(world, pos, age);
             world.setBlockState(pos, state.with(SweetBerryBushBlock.AGE, 1));
 
-            return ActionResult.SUCCESS; // Indicate the action was successful
+            return ActionResult.SUCCESS;
         }
 
-        return ActionResult.PASS; // Let other interactions proceed if no action was taken
+        return ActionResult.PASS;
     }
 
     private static void dropDimensionalBerries(World world, BlockPos pos, int age) {
-        int berryCount = age == 3 ? 2 : 1; // More berries for fully grown bushes
-        ItemStack berries = new ItemStack(LunaItems.DIMENSIONAL_BERRY, berryCount); // Replace with custom berries if
-                                                                                    // needed
-
-        // Drop the berries and play a sound
+        int berryCount = age == 3 ? 2 : 1;
+        ItemStack berries = new ItemStack(LunaItems.DIMENSIONAL_BERRY, berryCount);
         net.minecraft.util.ItemScatterer.spawn(world, pos.getX(), pos.getY(), pos.getZ(), berries);
         world.playSound(null, pos, SoundEvents.BLOCK_SWEET_BERRY_BUSH_PICK_BERRIES, SoundCategory.BLOCKS, 1.0F, 1.0F);
     }
 
     private static ActionResult handleSoulBerryPicking(PlayerEntity player, Hand hand, BlockState state, BlockPos pos,
             World world) {
-        int age = state.get(SweetBerryBushBlock.AGE); // Use SweetBerryBushBlock.AGE property
+        int age = state.get(SweetBerryBushBlock.AGE);
         ItemStack heldItem = player.getStackInHand(hand);
 
         if (age == 2 && !heldItem.isOf(Items.BONE_MEAL) || age == 3) {
@@ -133,22 +127,19 @@ public class LunaEvent {
 
             }
 
-            // Drop berries and reset bush age
             dropSoulBerries(world, pos, age);
             world.setBlockState(pos, state.with(SweetBerryBushBlock.AGE, 1));
 
-            return ActionResult.SUCCESS; // Indicate the action was successful
+            return ActionResult.SUCCESS;
         }
 
-        return ActionResult.PASS; // Let other interactions proceed if no action was taken
+        return ActionResult.PASS;
     }
 
     private static void dropSoulBerries(World world, BlockPos pos, int age) {
-        int berryCount = age == 3 ? 2 : 1; // More berries for fully grown bushes
-        ItemStack berries = new ItemStack(LunaItems.SOUL_BERRY, berryCount); // Replace with custom berries if
-                                                                             // needed
+        int berryCount = age == 3 ? 2 : 1;
+        ItemStack berries = new ItemStack(LunaItems.SOUL_BERRY, berryCount);
 
-        // Drop the berries and play a sound
         net.minecraft.util.ItemScatterer.spawn(world, pos.getX(), pos.getY(), pos.getZ(), berries);
         world.playSound(null, pos, SoundEvents.BLOCK_SWEET_BERRY_BUSH_PICK_BERRIES, SoundCategory.BLOCKS, 1.0F, 1.0F);
     }

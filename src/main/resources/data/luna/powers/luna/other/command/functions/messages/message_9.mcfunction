@@ -1,1 +1,0 @@
-tellraw @a[distance=..200] [{"text":"<","color":"white"},{"text":"Command Block","color":"gold","bold":true},{"text":">"},{"text":" This wouldn't be necessary if you had just accepted your fate."}]

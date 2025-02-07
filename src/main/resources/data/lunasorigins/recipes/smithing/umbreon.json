@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "base": {
+    "item": "minecraft:black_wool"
+  },
+  "addition": {
+    "item": "minecraft:coal_block"
+  },
+  "template": {
+    "item": "lunasorigins:eevee"
+  },
+  "result": {
+    "item": "lunasorigins:umbreon"
+  }
+}

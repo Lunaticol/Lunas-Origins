@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "base": {
+    "item": "minecraft:white_wool"
+  },
+  "addition": {
+    "item": "minecraft:netherite_block"
+  },
+  "template": {
+    "item": "lunasorigins:eevee"
+  },
+  "result": {
+    "item": "lunasorigins:abominaceon"
+  }
+}

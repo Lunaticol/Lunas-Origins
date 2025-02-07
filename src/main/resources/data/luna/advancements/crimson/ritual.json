@@ -7,8 +7,7 @@
       "text": "Preform the Crimson Phantom blood ritual. Becoming a Crimson Phantom."
     },
     "icon": {
-      "item": "minecraft:phantom_membrane",
-      "nbt": "{CustomModelData:42700}"
+      "item": "lunasorigins:crimson_membrane"
     },
     "frame": "challenge",
     "show_toast": true,

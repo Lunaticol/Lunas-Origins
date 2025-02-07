@@ -36,6 +36,18 @@ import luna.lunasorigins.worldgen.tree.GreenCommandTreeSaplingGenerator;
 import luna.lunasorigins.worldgen.tree.PinkCommandTreeSaplingGenerator;
 import luna.lunasorigins.worldgen.tree.RedCommandTreeSaplingGenerator;
 import luna.lunasorigins.worldgen.tree.YellowCommandTreeSaplingGenerator;
+import luna.lunasorigins.blocks.stuffy.AbominaceonStuffy;
+import luna.lunasorigins.blocks.stuffy.EeveeStuffy;
+import luna.lunasorigins.blocks.stuffy.EspeonStuffy;
+import luna.lunasorigins.blocks.stuffy.FlareonStuffy;
+import luna.lunasorigins.blocks.stuffy.GlaceonStuffy;
+import luna.lunasorigins.blocks.stuffy.JolteonStuffy;
+import luna.lunasorigins.blocks.stuffy.Karl;
+import luna.lunasorigins.blocks.stuffy.LeafeonStuffy;
+import luna.lunasorigins.blocks.stuffy.StuffyBlock;
+import luna.lunasorigins.blocks.stuffy.SylveonStuffy;
+import luna.lunasorigins.blocks.stuffy.UmbreonStuffy;
+import luna.lunasorigins.blocks.stuffy.VaporeonStuffy;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 
@@ -89,6 +101,7 @@ public class LunaBlocks {
                         new LeavesBlock(AbstractBlock.Settings.create()
                                         .noCollision()
                                         .nonOpaque()
+                                        .strength(0.2F)
                                         .sounds(BlockSoundGroup.GRASS)),
                         "pink_command_leaves",
                         true);
@@ -97,6 +110,7 @@ public class LunaBlocks {
                         new LeavesBlock(AbstractBlock.Settings.create()
                                         .noCollision()
                                         .nonOpaque()
+                                        .strength(0.2F)
                                         .sounds(BlockSoundGroup.GRASS)),
                         "green_command_leaves",
                         true);
@@ -105,6 +119,7 @@ public class LunaBlocks {
                         new LeavesBlock(AbstractBlock.Settings.create()
                                         .noCollision()
                                         .nonOpaque()
+                                        .strength(0.2F)
                                         .sounds(BlockSoundGroup.GRASS)),
                         "red_command_leaves",
                         true);
@@ -113,13 +128,15 @@ public class LunaBlocks {
                         new LeavesBlock(AbstractBlock.Settings.create()
                                         .noCollision()
                                         .nonOpaque()
+                                        .strength(0.2F)
                                         .sounds(BlockSoundGroup.GRASS)),
                         "yellow_command_leaves",
                         true);
 
         public static final Block COMMAND_PLANKS = register(
                         new Block(AbstractBlock.Settings.create()
-                                        .sounds(BlockSoundGroup.WOOD)),
+                                        .sounds(BlockSoundGroup.WOOD)
+                                        .strength(2.0F, 3.0F)),
                         "command_planks",
                         true);
 
@@ -136,7 +153,7 @@ public class LunaBlocks {
 
         public static final Block COMMAND_TRAPDOOR = register(
                         new TrapdoorBlock(AbstractBlock.Settings.create()
-                                        .sounds(BlockSoundGroup.WOOD).nonOpaque(), BlockSetType.CHERRY),
+                                        .sounds(BlockSoundGroup.WOOD).strength(3.0F).nonOpaque(), BlockSetType.CHERRY),
                         "command_trapdoor",
                         true);
 
@@ -157,26 +174,31 @@ public class LunaBlocks {
 
         public static final Block COMMAND_BUTTON = register(
                         new ButtonBlock(AbstractBlock.Settings.create()
-                                        .sounds(BlockSoundGroup.WOOD), BlockSetType.CHERRY, 30, true),
+                                        .sounds(BlockSoundGroup.WOOD)
+                                        .strength(2.0F, 3.0F), BlockSetType.CHERRY, 30, true),
                         "command_button",
                         true);
 
         public static final Block COMMAND_FENCE_GATE = register(
-                        new FenceGateBlock(AbstractBlock.Settings.create().sounds(BlockSoundGroup.WOOD),
+                        new FenceGateBlock(
+                                        AbstractBlock.Settings.create().strength(2.0F, 3.0F)
+                                                        .sounds(BlockSoundGroup.WOOD),
                                         LunaWoodType.COMMAND),
                         "command_fence_gate", true);
 
         public static final Block COMMAND_PRESSURE_PLATE = register(
                         new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING,
                                         AbstractBlock.Settings.create()
-                                                        .sounds(BlockSoundGroup.WOOD),
+                                                        .sounds(BlockSoundGroup.WOOD)
+                                                        .strength(2.0F, 3.0F),
                                         BlockSetType.CHERRY),
                         "command_pressure_plate",
                         true);
 
         public static final Block COMMAND_SLAB = register(
                         new SlabBlock(AbstractBlock.Settings.create()
-                                        .sounds(BlockSoundGroup.WOOD)),
+                                        .sounds(BlockSoundGroup.WOOD)
+                                        .strength(2.0F, 3.0F)),
                         "command_slab",
                         true);
 
@@ -386,6 +408,38 @@ public class LunaBlocks {
                                         .sounds(BlockSoundGroup.ANVIL).nonOpaque()),
                         "titan_battery", false);
 
+        public static final Block KARL = register(
+                        new Karl(AbstractBlock.Settings.create().sounds(BlockSoundGroup.WOOL)), "karl", true);
+        public static final Block EEVEE = register(
+                        new EeveeStuffy(AbstractBlock.Settings.create().sounds(BlockSoundGroup.WOOL)), "eevee", true);
+        public static final Block FLAREON = register(
+                        new FlareonStuffy(AbstractBlock.Settings.create().sounds(BlockSoundGroup.WOOL)), "flareon",
+                        true);
+        public static final Block JOLTEON = register(
+                        new JolteonStuffy(AbstractBlock.Settings.create().sounds(BlockSoundGroup.WOOL)), "jolteon",
+                        true);
+        public static final Block VAPOREON = register(
+                        new VaporeonStuffy(AbstractBlock.Settings.create().sounds(BlockSoundGroup.WOOL)), "vaporeon",
+                        true);
+        public static final Block ESPEON = register(
+                        new EspeonStuffy(AbstractBlock.Settings.create().sounds(BlockSoundGroup.WOOL)), "espeon", true);
+        public static final Block UMBREON = register(
+                        new UmbreonStuffy(AbstractBlock.Settings.create().sounds(BlockSoundGroup.WOOL)), "umbreon",
+                        true);
+        public static final Block LEAFEON = register(
+                        new LeafeonStuffy(AbstractBlock.Settings.create().sounds(BlockSoundGroup.WOOL)), "leafeon",
+                        true);
+        public static final Block GLACEON = register(
+                        new GlaceonStuffy(AbstractBlock.Settings.create().sounds(BlockSoundGroup.WOOL)), "glaceon",
+                        true);
+        public static final Block SYLVEON = register(
+                        new SylveonStuffy(AbstractBlock.Settings.create().sounds(BlockSoundGroup.WOOL)), "sylveon",
+                        true);
+        public static final Block ABOMINACEON = register(
+                        new AbominaceonStuffy(AbstractBlock.Settings.create().sounds(BlockSoundGroup.WOOL)),
+                        "abominaceon",
+                        true);
+
         public static void initialize() {
 
                 ItemGroupEvents.modifyEntriesEvent(LunaItems.LUNASORIGINS_ITEM_GROUP_KEY)
@@ -476,6 +530,51 @@ public class LunaBlocks {
                 ItemGroupEvents.modifyEntriesEvent(LunaItems.LUNASORIGINS_ITEM_GROUP_KEY)
                                 .register(itemGroup -> itemGroup
                                                 .add(LunaBlocks.COMMAND_PLATED_STONE_BRICK_SLAB.asItem()));
+
+                ItemGroupEvents.modifyEntriesEvent(LunaItems.LUNASORIGINS_ITEM_GROUP_KEY)
+                                .register(itemGroup -> itemGroup
+                                                .add(LunaBlocks.KARL.asItem()));
+
+                ItemGroupEvents.modifyEntriesEvent(LunaItems.LUNASORIGINS_ITEM_GROUP_KEY)
+                                .register(itemGroup -> itemGroup
+                                                .add(LunaBlocks.EEVEE.asItem()));
+
+                ItemGroupEvents.modifyEntriesEvent(LunaItems.LUNASORIGINS_ITEM_GROUP_KEY)
+                                .register(itemGroup -> itemGroup
+                                                .add(LunaBlocks.FLAREON.asItem()));
+
+                ItemGroupEvents.modifyEntriesEvent(LunaItems.LUNASORIGINS_ITEM_GROUP_KEY)
+                                .register(itemGroup -> itemGroup
+                                                .add(LunaBlocks.JOLTEON.asItem()));
+
+                ItemGroupEvents.modifyEntriesEvent(LunaItems.LUNASORIGINS_ITEM_GROUP_KEY)
+                                .register(itemGroup -> itemGroup
+                                                .add(LunaBlocks.VAPOREON.asItem()));
+
+                ItemGroupEvents.modifyEntriesEvent(LunaItems.LUNASORIGINS_ITEM_GROUP_KEY)
+                                .register(itemGroup -> itemGroup
+                                                .add(LunaBlocks.ESPEON.asItem()));
+
+                ItemGroupEvents.modifyEntriesEvent(LunaItems.LUNASORIGINS_ITEM_GROUP_KEY)
+                                .register(itemGroup -> itemGroup
+                                                .add(LunaBlocks.UMBREON.asItem()));
+
+                ItemGroupEvents.modifyEntriesEvent(LunaItems.LUNASORIGINS_ITEM_GROUP_KEY)
+                                .register(itemGroup -> itemGroup
+                                                .add(LunaBlocks.LEAFEON.asItem()));
+
+                ItemGroupEvents.modifyEntriesEvent(LunaItems.LUNASORIGINS_ITEM_GROUP_KEY)
+                                .register(itemGroup -> itemGroup
+                                                .add(LunaBlocks.GLACEON.asItem()));
+
+                ItemGroupEvents.modifyEntriesEvent(LunaItems.LUNASORIGINS_ITEM_GROUP_KEY)
+                                .register(itemGroup -> itemGroup
+                                                .add(LunaBlocks.SYLVEON.asItem()));
+
+                ItemGroupEvents.modifyEntriesEvent(LunaItems.LUNASORIGINS_ITEM_GROUP_KEY)
+                                .register(itemGroup -> itemGroup
+                                                .add(LunaBlocks.ABOMINACEON.asItem()));
+
         }
 
         private static Block register(Block block, String name, boolean registerBlockItem) {

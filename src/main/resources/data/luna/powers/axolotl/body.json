@@ -226,21 +226,8 @@
           "radius": 1,
           "shape": "cube",
           "block_condition": {
-            "type": "origins:or",
-            "conditions": [
-              {
-                "type": "origins:in_tag",
-                "tag": "chipped:ice"
-              },
-              {
-                "type": "origins:in_tag",
-                "tag": "chipped:packed_ice"
-              },
-              {
-                "type": "origins:in_tag",
-                "tag": "chipped:blue_ice"
-              }
-            ]
+            "type": "origins:in_tag",
+            "tag": "luna:ice"
           }
         },
         {

@@ -20,8 +20,19 @@
       ]
     },
     "entity_action_added": {
-      "type": "origins:execute_command",
-      "command": "function luna:kitsune/respawn"
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "function luna:kitsune/respawn"
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 1,
+          "operation": "set",
+          "resource": "luna:kitsune/mode_switch_mode_resource"
+        }
+      ]
     },
     "entity_action_chosen": {
       "type": "origins:and",
@@ -116,11 +127,11 @@
     },
     "food_modifier": {
       "operation": "addition",
-      "value": 15
+      "value": 7
     },
     "saturation_modifier": {
       "operation": "addition",
-      "value": 1.5
+      "value": 0.7
     }
   },
   "wolf_scared": {
@@ -164,6 +175,23 @@
           "command": "scoreboard players remove DimensionalKitsune Origin 1"
         }
       ]
+    }
+  },
+  "dimensional_berries": {
+    "type": "origins:modify_food",
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "lunasorigins:dimensional_berry"
+      }
+    },
+    "food_modifier": {
+      "operation": "addition",
+      "value": 15
+    },
+    "saturation_modifier": {
+      "operation": "addition",
+      "value": 1.5
     }
   }
 }

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "base": {
+    "item": "minecraft:orange_wool"
+  },
+  "addition": {
+    "item": "minecraft:magma_block"
+  },
+  "template": {
+    "item": "lunasorigins:eevee"
+  },
+  "result": {
+    "item": "lunasorigins:flareon"
+  }
+}

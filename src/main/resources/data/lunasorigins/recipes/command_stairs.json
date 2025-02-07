@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "C": { "item": "lunasorigins:command_planks" }
+  },
+  "pattern": ["C  ", "CC ", "CCC"],
+  "result": {
+    "item": "lunasorigins:command_planks",
+    "count": 4
+  }
+}

@@ -1,4 +1,4 @@
-package luna.lunaorigins.mixin.client;
+package luna.lunasorigins.mixin.client;
 
 import net.minecraft.client.MinecraftClient;
 import org.spongepowered.asm.mixin.Mixin;

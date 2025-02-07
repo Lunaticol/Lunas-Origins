@@ -9,8 +9,7 @@
     "luna:phantom/blood_requiem"
   ],
   "icon": {
-    "item": "minecraft:phantom_membrane",
-    "tag": "{CustomModelData:42700}"
+    "item": "lunasorigins:crimson_membrane"
   },
   "order": 9,
   "impact": 3,

@@ -1,0 +1,24 @@
+{
+  "display": {
+    "title": {
+      "text": "Spoopy"
+    },
+    "description": {
+      "text": "Thank you for donating!"
+    },
+    "icon": {
+      "item": "lunasorigins:donator"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "origins": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {},
+  "parent": "donator:root"
+}

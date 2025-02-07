@@ -1,0 +1,24 @@
+{
+  "display": {
+    "title": {
+      "text": "itsamatteroftime"
+    },
+    "description": {
+      "text": "Mahito will get done in 2069"
+    },
+    "icon": {
+      "item": "lunasorigins:time"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "origins": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {},
+  "parent": "donator:root"
+}

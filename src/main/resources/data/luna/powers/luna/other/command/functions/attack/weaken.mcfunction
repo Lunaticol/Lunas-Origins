@@ -1,2 +1,0 @@
-effect give @a[team=!Command,distance=..200] minecraft:weakness 30 1
-tellraw @a[distance=..200] [{"text":"<","color":"white"},{"text":"Command Block","color":"gold","bold":true},{"text":">"},{"text":" Weakening dissenters..."}]

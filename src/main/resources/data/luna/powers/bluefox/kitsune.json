@@ -820,11 +820,11 @@
     },
     "food_modifier": {
       "operation": "addition",
-      "value": 15
+      "value": 7
     },
     "saturation_modifier": {
       "operation": "addition",
-      "value": 1.5
+      "value": 0.7
     }
   },
   "day_time_debuff": {
@@ -909,6 +909,23 @@
     "entity_action_lost": {
       "type": "origins:execute_command",
       "command": "scoreboard players remove AonoKitsune Origin 1"
+    }
+  },
+  "soul_berries": {
+    "type": "origins:modify_food",
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:soul_berry"
+      }
+    },
+    "food_modifier": {
+      "operation": "addition",
+      "value": 15
+    },
+    "saturation_modifier": {
+      "operation": "addition",
+      "value": 1.5
     }
   }
 }

@@ -47,7 +47,7 @@
     "damage_condition": {
       "type": "origins:and",
       "conditions": [
-        { "type": "origins:type", "inverted": true, "damage_type": "thorns" },
+        { "type": "origins:name", "inverted": true, "name": "thorns" },
         {
           "type": "origins:projectile",
           "inverted": true
