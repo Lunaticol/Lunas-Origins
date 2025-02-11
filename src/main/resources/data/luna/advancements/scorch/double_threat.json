@@ -1,0 +1,23 @@
+{
+  "display": {
+    "title": {
+      "text": "Double Threat"
+    },
+    "description": {
+      "text": "Upgrade More Trouble Aegis rank once"
+    },
+    "icon": {
+      "item": "minecraft:magma_cream"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "origins": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "luna:scorch/scorch"
+}

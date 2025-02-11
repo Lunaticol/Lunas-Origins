@@ -61,9 +61,6 @@
           "name": "magic.player"
         },
         {
-          "type": "moborigins:is_magic"
-        },
-        {
           "type": "apugli:magic"
         }
       ]

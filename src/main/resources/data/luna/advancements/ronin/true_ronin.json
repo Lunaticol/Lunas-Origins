@@ -7,7 +7,7 @@
       "text": "Forever alone, outcasted by the blazeborn council, created to kill aquatics. You roam freely with your own will. Remember those who still believe in your tale."
     },
     "icon": {
-      "item": "minecraft:netherite_sword",
+      "item": "lunasorigins:ronin_sword",
       "nbt": "{Enchantments:[{}]}"
     },
     "frame": "challenge",

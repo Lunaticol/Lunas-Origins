@@ -61,10 +61,19 @@
     },
     "cooldown": 1200,
     "entity_action": {
-      "type": "origins:change_resource",
-      "change": 1,
-      "operation": "set",
-      "resource": "*:*_immune_bar"
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "change": 1,
+          "operation": "set",
+          "resource": "*:*_immune_bar"
+        },
+        {
+          "type": "origins:grant_advancement",
+          "advancement": "luna:skyweaver/shield"
+        }
+      ]
     }
   },
   "reset": {

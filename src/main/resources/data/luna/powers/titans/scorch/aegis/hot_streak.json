@@ -42,6 +42,10 @@
         {
           "type": "origins:execute_command",
           "command": "title @p actionbar {\"bold\":true,\"color\":\"gold\",\"text\":\"Hot Streak Unlocked!\"}"
+        },
+        {
+          "type": "origins:grant_advancement",
+          "advancement": "luna:scorch/hotstreak"
         }
       ]
     },

@@ -1,0 +1,23 @@
+{
+  "display": {
+    "title": {
+      "text": "Ceravol"
+    },
+    "description": {
+      "text": "Play Ceravol"
+    },
+    "icon": {
+      "item": "minecraft:cherry_leaves"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "origins": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "luna:root"
+}

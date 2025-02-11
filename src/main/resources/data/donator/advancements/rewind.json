@@ -1,13 +1,13 @@
 {
   "display": {
     "title": {
-      "text": "RewindT1ME"
+      "text": "Rewind_T1ME"
     },
     "description": {
-      "text": "Thank you for donating!"
+      "text": "Tick Tock"
     },
     "icon": {
-      "item": "lunasorigins:donator"
+      "item": "lunasorigins:rewind"
     },
     "frame": "task",
     "show_toast": true,

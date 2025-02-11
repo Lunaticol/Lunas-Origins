@@ -1,0 +1,23 @@
+{
+  "display": {
+    "title": {
+      "text": "Copper Efficient"
+    },
+    "description": {
+      "text": "Eat oxidized copper and turn into a skyweaver. It was disguisting to watch."
+    },
+    "icon": {
+      "item": "minecraft:oxidized_copper"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "origins": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "luna:sw/stormweaver"
+}

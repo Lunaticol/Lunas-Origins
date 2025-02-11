@@ -30,7 +30,7 @@ public class LunaHeadTaker extends AxeItem {
   @Override
   public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
     if (!target.getWorld().isClient) {
-      target.addStatusEffect(new StatusEffectInstance(LunasOrigins.LUNA_CORRUPTION, 100, 1)); // 5 seconds of Wither II
+      target.addStatusEffect(new StatusEffectInstance(LunasOrigins.LUNA_CORRUPTION, 100, 2));
     }
     return super.postHit(stack, target, attacker);
   }

@@ -2,6 +2,7 @@ package luna.lunasorigins;
 
 import luna.lunasorigins.items.Luna;
 import luna.lunasorigins.items.LunaHeadTaker;
+import luna.lunasorigins.items.RoninSword;
 import luna.lunasorigins.items.Time;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
@@ -39,7 +40,22 @@ public class LunaItems {
                         itemGroup.add(LunaItems.TITAN_BATTERY);
                         itemGroup.add(LunaItems.DIMENSIONAL_BERRY);
                         itemGroup.add(LunaItems.SOUL_BERRY);
+                        // Weapons
                         itemGroup.add(LunaItems.LUNA_HEADTAKER);
+                        itemGroup.add(LunaItems.RONIN_SWORD);
+                        // Donators
+                        itemGroup.add(LunaItems.LUNA);
+                        itemGroup.add(LunaItems.TIME);
+                        itemGroup.add(LunaItems.PIW);
+                        itemGroup.add(LunaItems.MINEWARRIOR);
+                        itemGroup.add(LunaItems.DASH);
+                        itemGroup.add(LunaItems.REWIND);
+                        itemGroup.add(LunaItems.MOOSHEKING);
+                        // Origins
+                        itemGroup.add(LunaItems.STARS);
+                        itemGroup.add(LunaItems.UMBRYTE);
+                        itemGroup.add(LunaItems.WIND_CHARGE);
+                        itemGroup.add(LunaItems.WISPS);
                 });
         }
 
@@ -84,10 +100,19 @@ public class LunaItems {
                                                         .build())),
                         "soul_berry");
 
+        // Weapons
+
         public static final Item LUNA_HEADTAKER = register(
                         new LunaHeadTaker(ToolMaterials.NETHERITE, 10F, -3.2F,
                                         new Item.Settings()),
                         "luna_headtaker");
+
+        public static final Item RONIN_SWORD = register(
+                        new RoninSword(ToolMaterials.NETHERITE, 5F, -3.2F,
+                                        new Item.Settings()),
+                        "ronin_sword");
+
+        // Donators/Players
 
         public static final Item LUNA = register(
                         new Luna(new Item.Settings()),
@@ -108,4 +133,34 @@ public class LunaItems {
         public static final Item DONATOR = register(
                         new Item(new Item.Settings()),
                         "donator");
+
+        public static final Item REWIND = register(
+                        new Item(new Item.Settings()),
+                        "rewind");
+
+        public static final Item DASH = register(
+                        new Item(new Item.Settings()),
+                        "dash");
+
+        public static final Item MOOSHEKING = register(
+                        new Item(new Item.Settings()),
+                        "moosheking");
+
+        // Origins
+
+        public static final Item WIND_CHARGE = register(
+                        new Item(new Item.Settings()),
+                        "wind_charge");
+
+        public static final Item WISPS = register(
+                        new Item(new Item.Settings()),
+                        "wisps");
+
+        public static final Item UMBRYTE = register(
+                        new Item(new Item.Settings()),
+                        "umbryte");
+
+        public static final Item STARS = register(
+                        new Item(new Item.Settings()),
+                        "stars");
 }

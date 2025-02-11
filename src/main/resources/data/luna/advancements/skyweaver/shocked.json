@@ -1,0 +1,23 @@
+{
+  "display": {
+    "title": {
+      "text": "Shocking Discovery"
+    },
+    "description": {
+      "text": "Get electricuted by lightning and become a stormweaver"
+    },
+    "icon": {
+      "item": "minecraft:lightning_rod"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "origins": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "luna:skyweaver/skyweaver"
+}

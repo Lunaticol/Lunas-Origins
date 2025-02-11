@@ -4,10 +4,10 @@
       "text": "Always_dash_"
     },
     "description": {
-      "text": "Thank you for donating!"
+      "text": "§oI think I'§oll live my life in stereo"
     },
     "icon": {
-      "item": "lunasorigins:donator"
+      "item": "lunasorigins:dash"
     },
     "frame": "task",
     "show_toast": true,

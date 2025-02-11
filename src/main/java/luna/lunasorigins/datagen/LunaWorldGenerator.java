@@ -18,9 +18,6 @@ public class LunaWorldGenerator extends FabricDynamicRegistryProvider {
 
   @Override
   protected void configure(RegistryWrapper.WrapperLookup registries, Entries entries) {
-    // Retrieve the blockRegistryLookup from registries
-
-    // Register your configured features
     entries.add(
         LunaFeatures.PINK_COMMAND_TREE,
         LunaFeatures.PinkCommandTree());

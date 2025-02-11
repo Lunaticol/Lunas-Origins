@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "T": { "item": "lunasorigins:titan_battery" },
+    "N": { "item": "minecraft:netherite_sword" },
+    "I": { "item": "minecraft:iron_ingot" }
+  },
+  "pattern": [" II", "TNI", " T "],
+  "result": {
+    "item": "lunasorigins:ronin_sword"
+  }
+}

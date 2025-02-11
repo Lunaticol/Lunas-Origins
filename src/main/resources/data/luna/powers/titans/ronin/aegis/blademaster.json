@@ -25,6 +25,10 @@
         {
           "type": "origins:execute_command",
           "command": "title @p actionbar {\"bold\":true,\"color\":\"gold\",\"text\":\"Blade Master Unlocked!\"}"
+        },
+        {
+          "type": "origins:grant_advancement",
+          "advancement": "luna:ronin/blademaster"
         }
       ]
     },

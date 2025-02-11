@@ -1,0 +1,23 @@
+{
+  "display": {
+    "title": {
+      "text": "Shield Upgrade"
+    },
+    "description": {
+      "text": "Obtain the Shield Upgrade Aegis rank."
+    },
+    "icon": {
+      "item": "minecraft:golden_apple"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "origins": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "luna:scorch/roaring_flames"
+}

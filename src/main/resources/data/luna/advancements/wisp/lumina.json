@@ -7,7 +7,7 @@
       "text": "Play Lumina"
     },
     "icon": {
-      "item": "minecraft:enchanted_golden_apple"
+      "item": "lunasorigins:wisps"
     },
     "frame": "task",
     "show_toast": true,

@@ -1,0 +1,23 @@
+{
+  "display": {
+    "title": {
+      "text": "Chassis Upgrade"
+    },
+    "description": {
+      "text": "Obtain the Chassis Upgrade Aegis rank"
+    },
+    "icon": {
+      "item": "minecraft:netherite_upgrade_smithing_template"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "origins": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "luna:ronin/sword_mastery"
+}

@@ -44,7 +44,6 @@ import luna.lunasorigins.blocks.stuffy.GlaceonStuffy;
 import luna.lunasorigins.blocks.stuffy.JolteonStuffy;
 import luna.lunasorigins.blocks.stuffy.Karl;
 import luna.lunasorigins.blocks.stuffy.LeafeonStuffy;
-import luna.lunasorigins.blocks.stuffy.StuffyBlock;
 import luna.lunasorigins.blocks.stuffy.SylveonStuffy;
 import luna.lunasorigins.blocks.stuffy.UmbreonStuffy;
 import luna.lunasorigins.blocks.stuffy.VaporeonStuffy;

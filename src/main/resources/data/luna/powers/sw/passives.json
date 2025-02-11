@@ -47,5 +47,66 @@
         }
       ]
     }
+  },
+  "skyweaver": {
+    "type": "apugli:edible_item",
+    "food_component": {
+      "hunger": 1,
+      "saturation": 0.1,
+      "snack": false,
+      "always_edible": true
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "change": 1,
+          "operation": "add",
+          "resource": "*:*_copper_bar"
+        },
+        {
+          "type": "origins:apply_effect",
+          "effect": {
+            "effect": "minecraft:nausea",
+            "duration": 300,
+            "amplifier": 2
+          }
+        }
+      ]
+    },
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:oxidized_copper"
+      }
+    }
+  },
+  "copper_bar": {
+    "type": "origins:resource",
+    "max": 5,
+    "min": 0
+  },
+  "on_max_copper": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "origin set @s origins:origin luna:skyweaver"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 5,
+      "comparison": "==",
+      "resource": "*:*_copper_bar"
+    }
+  },
+  "advancement": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:grant_advancement",
+      "advancement": "luna:umbryte/umbryte"
+    }
   }
 }

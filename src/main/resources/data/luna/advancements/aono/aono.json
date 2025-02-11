@@ -7,7 +7,7 @@
       "text": "Play Aono Kitsune"
     },
     "icon": {
-      "item": "minecraft:soul_sand"
+      "item": "lunasorigins:soul_berry"
     },
     "frame": "task",
     "show_toast": true,

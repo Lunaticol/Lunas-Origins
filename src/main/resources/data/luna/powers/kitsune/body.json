@@ -5,34 +5,42 @@
     "type": "origins:action_on_callback",
     "execute_chosen_when_orb": true,
     "entity_action_respawned": {
-      "type": "origins:and",
-      "actions": [
-        {
-          "type": "origins:execute_command",
-          "command": "function luna:kitsune/respawn"
-        },
-        {
-          "type": "origins:change_resource",
-          "change": 1,
-          "operation": "set",
-          "resource": "luna:kitsune/mode_switch_mode_resource"
-        }
-      ]
+      "type": "origins:delay",
+      "ticks": 3,
+      "action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:execute_command",
+            "command": "function luna:kitsune/respawn"
+          },
+          {
+            "type": "origins:change_resource",
+            "change": 1,
+            "operation": "set",
+            "resource": "luna:kitsune/mode_switch_mode_resource"
+          }
+        ]
+      }
     },
     "entity_action_added": {
-      "type": "origins:and",
-      "actions": [
-        {
-          "type": "origins:execute_command",
-          "command": "function luna:kitsune/respawn"
-        },
-        {
-          "type": "origins:change_resource",
-          "change": 1,
-          "operation": "set",
-          "resource": "luna:kitsune/mode_switch_mode_resource"
-        }
-      ]
+      "type": "origins:delay",
+      "ticks": 3,
+      "action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:execute_command",
+            "command": "function luna:kitsune/respawn"
+          },
+          {
+            "type": "origins:change_resource",
+            "change": 1,
+            "operation": "set",
+            "resource": "luna:kitsune/mode_switch_mode_resource"
+          }
+        ]
+      }
     },
     "entity_action_chosen": {
       "type": "origins:and",
@@ -54,13 +62,8 @@
       ]
     },
     "entity_action_lost": {
-      "type": "origins:and",
-      "actions": [
-        {
-          "type": "origins:execute_command",
-          "command": "origin set @s luna:luna_layers origins:empty"
-        }
-      ]
+      "type": "origins:execute_command",
+      "command": "origin set @s luna:luna_layers origins:empty"
     },
     "entity_action_removed": {
       "type": "origins:execute_command",

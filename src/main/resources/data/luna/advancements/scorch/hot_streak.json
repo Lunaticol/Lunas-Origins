@@ -1,0 +1,23 @@
+{
+  "display": {
+    "title": {
+      "text": "Hot Streak"
+    },
+    "description": {
+      "text": "Obtain the Hot Streak Aegis rank"
+    },
+    "icon": {
+      "item": "minecraft:flint_and_steel"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "origins": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "luna:scorch/chassis_upgrade"
+}

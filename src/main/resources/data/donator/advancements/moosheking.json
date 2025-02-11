@@ -1,0 +1,24 @@
+{
+  "display": {
+    "title": {
+      "text": "Moosheking"
+    },
+    "description": {
+      "text": "Flying is not enabled on this Server"
+    },
+    "icon": {
+      "item": "lunasorigins:moosheking"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "origins": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {},
+  "parent": "donator:root"
+}

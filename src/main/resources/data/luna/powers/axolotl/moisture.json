@@ -4,7 +4,7 @@
   "type": "origins:multiple",
   "water": {
     "type": "origins:resource",
-    "start_value": 7000,
+    "start_value": 2000,
     "min": 0,
     "max": 6000,
     "hud_render": {

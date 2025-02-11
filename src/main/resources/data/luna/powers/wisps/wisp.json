@@ -461,6 +461,10 @@
                 "type": "origins:change_resource",
                 "change": 1,
                 "resource": "*:*_can_drain"
+              },
+              {
+                "type": "origins:grant_advancement",
+                "advancement": "luna:wisp/ult"
               }
             ]
           }

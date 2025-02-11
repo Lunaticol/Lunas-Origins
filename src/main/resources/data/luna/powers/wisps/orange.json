@@ -452,22 +452,22 @@
       "resource": "*:wisps/bars_orange_wisp_bar"
     },
     "condition": {
-      "type": "origins:biome",
-      "condition": {
-        "type": "origins:and",
-        "conditions": [
-          {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:biome",
+          "condition": {
             "type": "origins:temperature",
             "compare_to": 2,
             "comparison": ">="
-          },
-          {
-            "type": "origins:dimension",
-            "dimension": "minecraft:the_nether",
-            "inverted": true
           }
-        ]
-      }
+        },
+        {
+          "type": "origins:dimension",
+          "dimension": "minecraft:the_nether",
+          "inverted": true
+        }
+      ]
     }
   }
 }

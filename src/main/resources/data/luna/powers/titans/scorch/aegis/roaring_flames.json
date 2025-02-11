@@ -25,6 +25,10 @@
         {
           "type": "origins:execute_command",
           "command": "title @p actionbar {\"bold\":true,\"color\":\"gold\",\"text\":\"Roaring Flames Unlocked!\"}"
+        },
+        {
+          "type": "origins:grant_advancement",
+          "advancement": "luna:scorch/roaring_flames"
         }
       ]
     },

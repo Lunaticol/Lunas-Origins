@@ -1,5 +1,5 @@
 {
-  "name": "Feral",
+  "name": "Feral Creature",
   "description": "You can climb walls, jump higher, dash, and break things faster with your fists",
   "type": "origins:multiple",
   "walls": {
@@ -117,6 +117,37 @@
         {
           "type": "origins:execute_command",
           "command": "scoreboard players remove KingOfWrath Origin 1"
+        }
+      ]
+    }
+  },
+  "true_king": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:grant_advancement",
+      "advancement": "luna:kow/true_kow"
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 3,
+          "comparison": "==",
+          "resource": "*:kow/fury_combo"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 20,
+          "comparison": "==",
+          "resource": "*:kow/imbued_level"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": "==",
+          "resource": "*:kow/rage_rage_active"
         }
       ]
     }

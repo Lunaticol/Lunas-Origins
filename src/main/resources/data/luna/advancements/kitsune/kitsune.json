@@ -7,7 +7,7 @@
       "text": "Play Dimensional Kitsune"
     },
     "icon": {
-      "item": "minecraft:sweet_berries"
+      "item": "lunasorigins:dimensional_berry"
     },
     "frame": "task",
     "show_toast": true,

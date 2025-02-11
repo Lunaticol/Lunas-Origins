@@ -1,0 +1,23 @@
+{
+  "display": {
+    "title": {
+      "text": "Crimson Clan"
+    },
+    "description": {
+      "text": "Join the Crimson Piglins. The netherwart tastes especially good here."
+    },
+    "icon": {
+      "item": "minecraft:crimson_nylium"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "origins": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "luna:piglin/hogrider"
+}

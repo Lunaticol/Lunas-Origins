@@ -54,5 +54,25 @@
         }
       ]
     }
+  },
+  "craft_shards": {
+    "type": "origins:recipe",
+    "recipe": {
+      "id": "sculk:shard",
+      "type": "minecraft:crafting_shaped",
+      "key": {
+        "A": {
+          "item": "minecraft:amethyst_shard"
+        },
+        "S": {
+          "item": "minecraft:sculk"
+        }
+      },
+      "pattern": ["SSS", "SAS", "SSS"],
+      "result": {
+        "item": "minecraft:echo_shard",
+        "count": 2
+      }
+    }
   }
 }

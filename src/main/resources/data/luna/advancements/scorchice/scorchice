@@ -1,0 +1,23 @@
+{
+  "display": {
+    "title": {
+      "text": "Name Pending"
+    },
+    "description": {
+      "text": "Play Name Pending"
+    },
+    "icon": {
+      "item": "minecraft:blue_ice"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "origins": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "luna:root"
+}

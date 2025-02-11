@@ -1,0 +1,30 @@
+{
+  "display": {
+    "title": {
+      "text": "Ronin Sword"
+    },
+    "description": {
+      "text": "Obtain the Ronin Sword. Uses electricity to cut through enemys."
+    },
+    "icon": {
+      "item": "lunasorigins:ronin_sword"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "item": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["lunasorigins:ronin_sword"]
+          }
+        ]
+      }
+    }
+  },
+  "parent": "luna:luna/headtaker"
+}

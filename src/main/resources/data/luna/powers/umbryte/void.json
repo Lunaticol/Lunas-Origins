@@ -21,8 +21,17 @@
       "command": "scale set pehkui:height 1.5 @s"
     },
     "entity_action_added": {
-      "type": "origins:execute_command",
-      "command": "scale set pehkui:height 1.5 @s"
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "scale set pehkui:height 1.5 @s"
+        },
+        {
+          "type": "origins:grant_advancement",
+          "advancement": "luna:umbryte/umbryte"
+        }
+      ]
     },
     "entity_action_lost": {
       "type": "origins:execute_command",
@@ -321,6 +330,19 @@
           "command": "scoreboard players remove Umbryte Origin 1"
         }
       ]
+    }
+  },
+  "kill_ronin": {
+    "type": "origins:self_action_on_kill",
+    "cooldown": 0,
+    "entity_action": {
+      "type": "origins:grant_advancement",
+      "advancement": "luna:umbryte/unrivaled_beast"
+    },
+    "target_condition": {
+      "type": "origins:origin",
+      "layer": "origins:origin",
+      "origin": "origins:ronin"
     }
   }
 }

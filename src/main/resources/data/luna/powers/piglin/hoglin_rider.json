@@ -5,7 +5,19 @@
   "ride_hoglin": {
     "type": "origins:action_on_entity_use",
     "bientity_action": {
-      "type": "origins:mount"
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:mount"
+        },
+        {
+          "type": "origins:actor_action",
+          "action": {
+            "type": "origins:grant_advancement",
+            "advancement": "luna:piglin/hogrider"
+          }
+        }
+      ]
     },
     "bientity_condition": {
       "type": "origins:target_condition",

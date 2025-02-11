@@ -1,0 +1,23 @@
+{
+  "display": {
+    "title": {
+      "text": "I TRULY AM THE KING OF WRATH!!"
+    },
+    "description": {
+      "text": "Have all of your abilities active at once."
+    },
+    "icon": {
+      "item": "minecraft:nether_bricks"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "origins": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "luna:kow/kow"
+}

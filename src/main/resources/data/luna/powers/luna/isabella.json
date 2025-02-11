@@ -54,5 +54,10 @@
       "comparison": "==",
       "resource": "luna:luna/rtp_rtp_bar"
     }
+  },
+  "night_vis": {
+    "type": "origins:toggle_night_vision",
+    "strength": 0.8,
+    "key": "key.loadToolbarActivator"
   }
 }

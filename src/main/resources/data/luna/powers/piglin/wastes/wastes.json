@@ -25,11 +25,10 @@
     }
   },
   "protected": {
-    "type": "origins:modify_enchantment_level",
-    "enchantment": "minecraft:protection",
+    "type": "origins:modify_damage_taken",
     "modifier": {
-      "operation": "addition",
-      "value": 1
+      "operation": "multiply_total",
+      "value": -0.1
     }
   },
   "knockback_1": {
@@ -119,5 +118,13 @@
     "biome": "minecraft:nether_wastes",
     "dimension": "minecraft:the_nether",
     "spawn_strategy": "default"
+  },
+  "advancement": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:grant_advancement",
+      "advancement": "luna:piglin/wastes"
+    }
   }
 }

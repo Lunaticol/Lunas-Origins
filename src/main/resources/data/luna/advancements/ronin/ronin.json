@@ -7,7 +7,7 @@
       "text": "Play Ronin"
     },
     "icon": {
-      "item": "minecraft:netherite_sword"
+      "item": "lunasorigins:ronin_sword"
     },
     "frame": "task",
     "show_toast": true,

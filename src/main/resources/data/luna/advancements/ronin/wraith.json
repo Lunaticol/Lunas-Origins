@@ -1,0 +1,23 @@
+{
+  "display": {
+    "title": {
+      "text": "Wraith"
+    },
+    "description": {
+      "text": "Obtain the Wraith Aegis rank"
+    },
+    "icon": {
+      "item": "minecraft:dragon_head"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "origins": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "luna:ronin/shield"
+}

@@ -300,5 +300,13 @@
         }
       ]
     }
+  },
+  "advancement": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:grant_advancement",
+      "advancement": "luna:noctilith/noctilith"
+    }
   }
 }

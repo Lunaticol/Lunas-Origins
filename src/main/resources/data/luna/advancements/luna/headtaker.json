@@ -4,7 +4,7 @@
       "text": "The Headtaker"
     },
     "description": {
-      "text": "Obtain Isabellas fabled weapon. Be careful, its quiet heavy."
+      "text": "Obtain Isabellas fabled weapon. Can cause corruption to surfaces it slices."
     },
     "icon": {
       "item": "lunasorigins:luna_headtaker"
@@ -15,8 +15,15 @@
     "hidden": false
   },
   "criteria": {
-    "origins": {
-      "trigger": "minecraft:impossible"
+    "item": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["lunasorigins:luna_headtaker"]
+          }
+        ]
+      }
     }
   },
   "parent": "luna:root"

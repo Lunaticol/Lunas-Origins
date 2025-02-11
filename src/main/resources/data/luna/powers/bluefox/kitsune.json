@@ -916,7 +916,7 @@
     "item_condition": {
       "type": "origins:ingredient",
       "ingredient": {
-        "item": "minecraft:soul_berry"
+        "item": "lunasorigins:soul_berry"
       }
     },
     "food_modifier": {

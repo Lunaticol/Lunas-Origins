@@ -49,5 +49,47 @@
         }
       ]
     }
+  },
+  "grant_advancements": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "action": {
+            "type": "origins:grant_advancement",
+            "advancement": "luna:scorch/double_threat"
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 1,
+            "comparison": "==",
+            "resource": "*:*_trouble_bar"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:grant_advancement",
+                "advancement": "luna:scorch/double_threat"
+              },
+              {
+                "type": "origins:grant_advancement",
+                "advancement": "luna:scorch/triple_threat"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 2,
+            "comparison": "==",
+            "resource": "*:*_trouble_bar"
+          }
+        }
+      ]
+    }
   }
 }

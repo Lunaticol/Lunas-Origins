@@ -17,9 +17,9 @@
     "luna:titans/create",
     "luna:titans/sound"
   ],
-  "icon": "minecraft:netherite_sword",
+  "icon": "lunasorigins:ronin_sword",
   "order": 9,
   "impact": 3,
   "name": "Ronin",
-  "description": "Ronin is a hit and run specialist. He can do a lot of damage in short bursts, but his fragility makes it suboptimal to stay in range for long. His speed, combined with Arc Wave's ability to slow, gives him the tools to get into and out of any fight."
+  "description": "Ronin was created in secrecy to fight along side Scorch, however, the blazeborn council outcasted it for being to dangerous. Ronin now roams the end searching for threats to the overworld."
 }
