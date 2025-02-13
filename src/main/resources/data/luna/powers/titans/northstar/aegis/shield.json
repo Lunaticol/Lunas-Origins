@@ -1,6 +1,6 @@
 {
   "type": "origins:multiple",
-  "name": "Chassis Upgrade",
+  "name": "Shield Upgrade",
   "description": "Your shield is increased by one level\nUse [Enchanted Golden Apple] To obtain this upgrade!",
   "aegis_shield": {
     "type": "origins:resource",

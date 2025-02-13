@@ -1,3 +1,105 @@
 {
-  "name": "Ice Hook"
+  "name": "Ice Hook",
+  "description": "Throw out an Ice Hook in the direction you're looking, anyone hit in its path will be pulled towards you with immense strength.",
+  "type": "origins:multiple",
+  "ice_hook": {
+    "type": "origins:active_self",
+    "key": {
+      "key": "key.origins.primary_active",
+      "continuous": true
+    },
+    "cooldown": 0,
+    "entity_action": {
+      "type": "origins:raycast",
+      "command_along_ray": "particle dust 0.278 0.686 1.000 1 ~ ~-1 ~ 0 0 0 0 10 force",
+      "block": true,
+      "entity": true,
+      "distance": 12,
+      "bientity_action": {
+        "type": "origins:add_velocity",
+        "z": -0.7,
+        "y": 0.2
+      },
+      "hit_action": {
+        "type": "origins:change_resource",
+        "change": -2,
+        "operation": "add",
+        "resource": "*:*_ice_hook_resource"
+      }
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": ">",
+          "resource": "*:*_ice_hook_resource"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:*_lock_resource"
+        }
+      ]
+    }
+  },
+  "ice_hook_resource": {
+    "type": "origins:resource",
+    "max": 100,
+    "min": 0,
+    "hud_render": {
+      "should_render": true
+    }
+  },
+  "charge": {
+    "type": "origins:action_over_time",
+    "interval": 10,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 1,
+      "operation": "add",
+      "resource": "*:*_ice_hook_resource"
+    }
+  },
+  "lock": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:delay",
+      "ticks": 20,
+      "action": {
+        "type": "origins:change_resource",
+        "change": 1,
+        "operation": "set",
+        "resource": "*:*_lock_resource"
+      }
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 10,
+      "comparison": "<=",
+      "resource": "*:*_ice_hook_resource"
+    }
+  },
+  "unlock": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 0,
+      "operation": "set",
+      "resource": "*:*_lock_resource"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 50,
+      "comparison": ">=",
+      "resource": "*:*_ice_hook_resource"
+    }
+  },
+  "lock_resource": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
+  }
 }

@@ -1,6 +1,6 @@
 {
   "name": "Resilient Scales",
-  "description": "Your scales protect When attacked!",
+  "description": "Your scales protect you when attacked!",
   "type": "origins:multiple",
   "scales_strong": {
     "type": "origins:action_when_hit",

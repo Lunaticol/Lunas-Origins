@@ -1,9 +1,9 @@
 {
-  "feature": "lunasorigins:patch_soul_berry_bush",
+  "feature": "lunasorigins:patch_dimensional_berry_bush",
   "placement": [
     {
       "type": "minecraft:rarity_filter",
-      "chance": 384
+      "chance": 15
     },
     {
       "type": "minecraft:in_square"

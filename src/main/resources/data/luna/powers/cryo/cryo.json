@@ -1,4 +1,12 @@
 {
   "name": "They call me ice for how I be chill to these bitches",
-  "description": "Is this rizz???"
+  "description": "Is this rizz???",
+  "type": "origins:multiple",
+  "color": {
+    "type": "origins:model_color",
+    "alpha": 0.6,
+    "blue": 1,
+    "green": 0.5,
+    "red": 0
+  }
 }

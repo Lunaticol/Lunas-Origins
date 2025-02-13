@@ -1,0 +1,211 @@
+{
+  "name": "Liquify",
+  "description": "Ice is just an extension of water. I can melt myself to evade enemy attacks, or make any quick escapes if the fight has gone on to long.\nYou are unable to attack while melted.",
+  "type": "origins:multiple",
+  "melt": {
+    "type": "origins:active_self",
+    "key": "key.origins.secondary_active",
+    "entity_action": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:height 0.1 @s"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:hitbox_height 0.1 @s"
+              },
+              {
+                "type": "origins:change_resource",
+                "change": 1,
+                "operation": "set",
+                "resource": "*:*_mode"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "particle minecraft:splash ~ ~ ~ 0.3 1 0.3 0.01 250 force"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:third_person 3 @s"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:resource",
+                "compare_to": 0,
+                "comparison": "==",
+                "resource": "*:*_mode"
+              },
+              {
+                "type": "origins:resource",
+                "compare_to": 0,
+                "comparison": ">",
+                "resource": "*:*_liquify"
+              }
+            ]
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "scale reset @s"
+              },
+              {
+                "type": "origins:change_resource",
+                "change": 0,
+                "operation": "set",
+                "resource": "*:*_mode"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 1,
+            "comparison": "==",
+            "resource": "*:*_mode"
+          }
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 0,
+      "comparison": ">",
+      "resource": "*:*_liquify"
+    }
+  },
+  "mode": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0,
+    "start_value": 0
+  },
+  "liquify": {
+    "type": "origins:resource",
+    "max": 1000,
+    "min": 0,
+    "hud_render": {
+      "should_render": true
+    }
+  },
+  "if_active": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "change": -10,
+          "operation": "add",
+          "resource": "*:*_liquify"
+        },
+        {
+          "type": "origins:apply_effect",
+          "effect": {
+            "effect": "minecraft:speed",
+            "amplifier": 2,
+            "duration": 20
+          }
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_mode"
+    }
+  },
+  "if_drained": {
+    "type": "origins:action_over_time",
+    "interval": 10,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "scale reset @s"
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 0,
+          "operation": "set",
+          "resource": "*:*_mode"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "<=",
+          "resource": "*:*_liquify"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": "==",
+          "resource": "*:*_mode"
+        }
+      ]
+    }
+  },
+  "charge": {
+    "type": "origins:action_over_time",
+    "interval": 10,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 10,
+      "operation": "add",
+      "resource": "*:*_liquify"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 0,
+      "comparison": "==",
+      "resource": "*:*_mode"
+    }
+  },
+  "particles": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "particle minecraft:splash ~ ~ ~ 0.2 0.1 0.2 0.01 125 force"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_mode"
+    }
+  },
+  "damage": {
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+      "value": -1,
+      "operation": "multiply_total"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_mode"
+    }
+  }
+}

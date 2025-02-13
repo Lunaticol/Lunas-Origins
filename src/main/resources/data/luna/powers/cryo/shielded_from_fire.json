@@ -1,6 +1,6 @@
 {
   "name": "Heat Protection",
-  "description": "You can apply blue ice to your armor to protect you from heat elements",
+  "description": "You can apply blue ice to your armor to protect you from heat elements.",
   "type": "origins:multiple",
   "protection_resource": {
     "type": "origins:resource",
@@ -10,9 +10,9 @@
   "overlay_1": {
     "type": "origins:overlay",
     "blue": 1,
-    "green": 1,
+    "green": 0.5,
     "red": 0,
-    "strength": 0.1,
+    "strength": 0.2,
     "draw_mode": "nausea",
     "draw_phase": "below_hud",
     "texture": "minecraft:textures/misc/nausea.png",
@@ -37,9 +37,9 @@
   "overlay_2": {
     "type": "origins:overlay",
     "blue": 1,
-    "green": 1,
+    "green": 0.5,
     "red": 0,
-    "strength": 0.2,
+    "strength": 0.4,
     "draw_mode": "nausea",
     "draw_phase": "below_hud",
     "texture": "minecraft:textures/misc/nausea.png",
@@ -64,9 +64,9 @@
   "overlay_3": {
     "type": "origins:overlay",
     "blue": 1,
-    "green": 1,
+    "green": 0.5,
     "red": 0,
-    "strength": 0.3,
+    "strength": 0.6,
     "draw_mode": "nausea",
     "draw_phase": "below_hud",
     "texture": "minecraft:textures/misc/nausea.png",
@@ -91,9 +91,9 @@
   "overlay_4": {
     "type": "origins:overlay",
     "blue": 1,
-    "green": 1,
+    "green": 0.5,
     "red": 0,
-    "strength": 0.4,
+    "strength": 0.8,
     "draw_mode": "nausea",
     "draw_phase": "below_hud",
     "texture": "minecraft:textures/misc/nausea.png",
@@ -134,7 +134,7 @@
               },
               {
                 "type": "origins:execute_command",
-                "command": "clear @s minecraft:blue_ice"
+                "command": "clear @s minecraft:blue_ice 1"
               }
             ]
           },
@@ -183,7 +183,7 @@
               },
               {
                 "type": "origins:execute_command",
-                "command": "clear @s minecraft:blue_ice"
+                "command": "clear @s minecraft:blue_ice 1"
               }
             ]
           },
@@ -203,7 +203,13 @@
               },
               {
                 "type": "origins:resource",
-                "compare_to": 4,
+                "compare_to": 0,
+                "comparison": ">=",
+                "resource": "*:*_protection_resource"
+              },
+              {
+                "type": "origins:resource",
+                "compare_to": 8,
                 "comparison": "<",
                 "resource": "*:*_protection_resource"
               },
@@ -232,7 +238,7 @@
               },
               {
                 "type": "origins:execute_command",
-                "command": "clear @s minecraft:blue_ice"
+                "command": "clear @s minecraft:blue_ice 1"
               }
             ]
           },
@@ -252,7 +258,13 @@
               },
               {
                 "type": "origins:resource",
-                "compare_to": 4,
+                "compare_to": 0,
+                "comparison": ">=",
+                "resource": "*:*_protection_resource"
+              },
+              {
+                "type": "origins:resource",
+                "compare_to": 12,
                 "comparison": "<",
                 "resource": "*:*_protection_resource"
               },
@@ -281,7 +293,7 @@
               },
               {
                 "type": "origins:execute_command",
-                "command": "clear @s minecraft:blue_ice"
+                "command": "clear @s minecraft:blue_ice 1"
               }
             ]
           },
@@ -301,7 +313,13 @@
               },
               {
                 "type": "origins:resource",
-                "compare_to": 4,
+                "compare_to": 0,
+                "comparison": ">=",
+                "resource": "*:*_protection_resource"
+              },
+              {
+                "type": "origins:resource",
+                "compare_to": 16,
                 "comparison": "<",
                 "resource": "*:*_protection_resource"
               },
@@ -342,8 +360,8 @@
         },
         {
           "type": "origins:resource",
-          "compare_to": 1,
-          "comparison": ">=",
+          "compare_to": 0,
+          "comparison": ">",
           "resource": "*:*_protection_resource"
         }
       ]
@@ -370,8 +388,8 @@
         },
         {
           "type": "origins:resource",
-          "compare_to": 5,
-          "comparison": ">=",
+          "compare_to": 4,
+          "comparison": ">",
           "resource": "*:*_protection_resource"
         }
       ]
@@ -398,8 +416,8 @@
         },
         {
           "type": "origins:resource",
-          "compare_to": 9,
-          "comparison": ">=",
+          "compare_to": 8,
+          "comparison": ">",
           "resource": "*:*_protection_resource"
         }
       ]
@@ -426,8 +444,8 @@
         },
         {
           "type": "origins:resource",
-          "compare_to": 13,
-          "comparison": ">=",
+          "compare_to": 12,
+          "comparison": ">",
           "resource": "*:*_protection_resource"
         }
       ]
