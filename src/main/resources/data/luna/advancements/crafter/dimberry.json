@@ -1,0 +1,23 @@
+{
+  "display": {
+    "title": {
+      "text": "Dimensional Trust"
+    },
+    "description": {
+      "text": "Be Blessed by the Dimensional Kitsunes, granting you a fraction of their knowledge on Dimensions."
+    },
+    "icon": {
+      "item": "lunasorigins:dimensional_berry"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "origins": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "luna:crafter/crafter"
+}

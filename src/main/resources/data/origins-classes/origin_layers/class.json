@@ -1,5 +1,9 @@
 {
   "order": 9,
   "name": "Classes",
-  "origins": ["origins-classes:emerald_expert", "origins-classes:bird_hunter"]
+  "origins": [
+    "origins-classes:emerald_expert",
+    "origins-classes:bird_hunter",
+    "origins-classes:crafter"
+  ]
 }

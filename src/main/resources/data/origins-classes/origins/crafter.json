@@ -1,0 +1,10 @@
+{
+  "name": "Crafter",
+  "description": "A Blacksmith of old, forced to live for themselves.",
+  "impact": 0,
+  "icon": "minecraft:crafting_table",
+  "powers": [
+    "origins-classes:crafter/crafts",
+    "origins-classes:crafter/advancements"
+  ]
+}

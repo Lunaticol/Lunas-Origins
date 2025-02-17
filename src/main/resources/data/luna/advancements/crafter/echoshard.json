@@ -1,0 +1,23 @@
+{
+  "display": {
+    "title": {
+      "text": "Of Sculk and Stone"
+    },
+    "description": {
+      "text": "Discover the Secrets of the Depths."
+    },
+    "icon": {
+      "item": "minecraft:echo_shard"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "origins": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "luna:crafter/crafter"
+}

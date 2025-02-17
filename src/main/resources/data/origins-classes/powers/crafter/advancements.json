@@ -1,0 +1,168 @@
+{
+  "hidden": true,
+  "type": "origins:multiple",
+  "granter": {
+    "type": "apoli:action_on_callback",
+    "entity_action_gained": {
+      "type": "origins:grant_advancement",
+      "advancement": "luna:crafter/crafter"
+    }
+  },
+  "origins": {
+    "type": "origins:action_over_time",
+    "interval": 1200,
+    "entity_action": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "condition": {
+            "type": "apugli:entity_in_radius",
+            "compare_to": 0,
+            "comparison": ">",
+            "bientity_condition": {
+              "type": "origins:target_condition",
+              "condition": {
+                "type": "origins:origin",
+                "layer": "origins:origin",
+                "origin": "luna:bluefox"
+              }
+            },
+            "radius": 4
+          },
+          "action": {
+            "type": "origins:grant_advancement",
+            "advancement": "luna:crafter/soulberry"
+          }
+        },
+        {
+          "condition": {
+            "type": "apugli:entity_in_radius",
+            "compare_to": 0,
+            "comparison": ">",
+            "bientity_condition": {
+              "type": "origins:target_condition",
+              "condition": {
+                "type": "origins:origin",
+                "layer": "origins:origin",
+                "origin": "luna:sculk"
+              }
+            },
+            "radius": 4
+          },
+          "action": {
+            "type": "origins:grant_advancement",
+            "advancement": "luna:crafter/echoshard"
+          }
+        },
+        {
+          "condition": {
+            "type": "apugli:entity_in_radius",
+            "compare_to": 0,
+            "comparison": ">",
+            "bientity_condition": {
+              "type": "origins:target_condition",
+              "condition": {
+                "type": "origins:origin",
+                "layer": "luna_layers",
+                "origin": "luna:kitsune_classes/overworld_kitsune"
+              }
+            },
+            "radius": 4
+          },
+          "action": {
+            "type": "origins:change_resource",
+            "change": 1,
+            "operation": "add",
+            "resource": "luna:crafter/achievements_dimkr1"
+          }
+        },
+        {
+          "condition": {
+            "type": "apugli:entity_in_radius",
+            "compare_to": 0,
+            "comparison": ">",
+            "bientity_condition": {
+              "type": "origins:target_condition",
+              "condition": {
+                "type": "origins:origin",
+                "layer": "luna_layers",
+                "origin": "luna:kitsune_classes/nether_kitsune"
+              }
+            },
+            "radius": 4
+          },
+          "action": {
+            "type": "origins:change_resource",
+            "change": 1,
+            "operation": "add",
+            "resource": "luna:crafter/achievements_dimkr2"
+          }
+        },
+        {
+          "condition": {
+            "type": "apugli:entity_in_radius",
+            "compare_to": 0,
+            "comparison": ">",
+            "bientity_condition": {
+              "type": "origins:target_condition",
+              "condition": {
+                "type": "origins:origin",
+                "layer": "luna_layers",
+                "origin": "luna:kitsune_classes/overworld_kitsune"
+              }
+            },
+            "radius": 4
+          },
+          "action": {
+            "type": "origins:change_resource",
+            "change": 1,
+            "operation": "add",
+            "resource": "luna:crafter/achievements_dimkr3"
+          }
+        }
+      ]
+    }
+  },
+  "dimkr1": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 1,
+    "max_action": {
+      "type": "origins:change_resource",
+      "change": 1,
+      "operation": "add",
+      "resource": "origins-classes:crafter/advancements_mr"
+    }
+  },
+  "dimkr2": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 1,
+    "max_action": {
+      "type": "origins:change_resource",
+      "change": 1,
+      "operation": "add",
+      "resource": "origins-classes:crafter/advancements_mr"
+    }
+  },
+  "dimkr3": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 1,
+    "max_action": {
+      "type": "origins:change_resource",
+      "change": 1,
+      "operation": "add",
+      "resource": "origins-classes:crafter/advancements_mr"
+    }
+  },
+  "mr": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 3,
+    "max_action": {
+      "type": "origins:grant_advancement",
+      "advancement": "luna:crafter/dimberry"
+    }
+  }
+}

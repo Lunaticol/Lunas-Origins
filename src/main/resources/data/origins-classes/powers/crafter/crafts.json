@@ -1,0 +1,78 @@
+{
+  "name": "Secrets of the Craft",
+  "description": "By exploring the world, you can find new recipes.",
+  "type": "origins:multiple",
+  "echo": {
+    "type": "origins:recipe",
+    "condition": {
+      "type": "origins:advancement",
+      "advancement": "luna:crafter/echoshard"
+    },
+    "recipe": {
+      "id": "crafter:echoshard",
+      "type": "minecraft:crafting_shaped",
+      "key": {
+        "A": {
+          "item": "minecraft:amethyst_shard"
+        },
+        "S": {
+          "item": "minecraft:sculk"
+        }
+      },
+      "pattern": ["SSS", "SAS", "SSS"],
+      "result": {
+        "item": "minecraft:echo_shard",
+        "count": 1
+      }
+    }
+  },
+  "db": {
+    "type": "origins:recipe",
+    "condition": {
+      "type": "origins:advancement",
+      "advancement": "luna:crafter/dimberry"
+    },
+    "recipe": {
+      "id": "crafter:dimberry",
+      "type": "minecraft:crafting_shaped",
+      "key": {
+        "A": {
+          "item": "minecraft:sweet_berries"
+        },
+        "S": {
+          "item": "minecraft:crying_obsidian"
+        }
+      },
+      "pattern": ["SSS", "SAS", "SSS"],
+      "result": {
+        "item": "lunasorigins:dimensional_berry",
+        "count": 1
+      }
+    }
+  },
+
+  "sb": {
+    "type": "origins:recipe",
+    "condition": {
+      "type": "origins:advancement",
+      "advancement": "luna:crafter/soulberry"
+    },
+    "recipe": {
+      "id": "crafter:soulberry",
+      "type": "minecraft:crafting_shaped",
+      "key": {
+        "A": {
+          "item": "minecraft:soul_soil"
+        },
+        "S": {
+          "item": "minecraft:sweet_berries"
+        }
+      },
+      "pattern": ["SSS", "SAS", "SSS"],
+      "result": {
+        "item": "lunasorigins:soul_berry",
+        "count": 8
+      }
+    }
+  }
+}
