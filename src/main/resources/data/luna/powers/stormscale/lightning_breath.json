@@ -190,5 +190,23 @@
       "type": "origins:name",
       "name": "lightningbreath"
     }
+  },
+  "charge": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 2,
+      "resource": "*:*_energy"
+    }
+  },
+  "overcharge_charge": {
+    "type": "origins:action_over_time",
+    "interval": 60,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 1,
+      "resource": "*:*_overcharge"
+    }
   }
 }

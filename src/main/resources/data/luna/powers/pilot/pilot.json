@@ -1,7 +1,15 @@
 {
-  "name": "Tactical Slide",
-  "description": "You can evade enemys by sliding along the ground, provides extra speed and agility.",
+  "name": "Jump Kit",
+  "description": "",
   "type": "origins:multiple",
+  "speed": {
+    "type": "origins:attribute",
+    "modifier": {
+      "value": 0.1,
+      "operation": "multiply_total",
+      "attribute": "minecraft:generic.movement_speed"
+    }
+  },
   "slide": {
     "type": "origins:swimming",
     "condition": {

@@ -1,0 +1,89 @@
+{
+  "type": "origins:multiple",
+  "message": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "title @s actionbar {\"text\":\"Right click 5 times to escape!!\",\"color\":\"dark_green\",\"bold\":true}"
+    }
+  },
+  "entangled": {
+    "type": "origins:active_self",
+    "key": "key.use",
+    "cooldown": 5,
+    "hud_render": {
+      "should_render": false
+    },
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 1,
+      "operation": "add",
+      "resource": "entangled_resource"
+    }
+  },
+  "entangled_resource": {
+    "type": "origins:resource",
+    "max": 5,
+    "min": 0
+  },
+  "remove_power": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:revoke_power",
+          "power": "luna:codec/entangled",
+          "source": "luna:codec/entangled_armorstand"
+        },
+        {
+          "type": "origins:damage",
+          "amount": 5,
+          "source": {
+            "name": "entangled"
+          }
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 5,
+      "comparison": "==",
+      "resource": "entangled_resource"
+    }
+  },
+  "failsafe": {
+    "type": "origins:action_over_time",
+    "interval": 300,
+    "entity_action": {
+      "type": "origins:revoke_power",
+      "power": "luna:codec/entangled",
+      "source": "luna:codec/entangled_armorstand"
+    }
+  },
+  "second_failsafe": {
+    "type": "origins:action_on_callback",
+    "entity_action_lost": {
+      "type": "origins:revoke_power",
+      "power": "luna:codec/entangled",
+      "source": "luna:codec/entangled_armorstand"
+    }
+  },
+  "no_movement": {
+    "type": "origins:attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.movement_speed",
+      "value": -1,
+      "operation": "multiply_total"
+    }
+  },
+  "no_jump": {
+    "type": "origins:modify_jump",
+    "modifier": {
+      "value": -2,
+      "operation": "multiply_total"
+    }
+  }
+}

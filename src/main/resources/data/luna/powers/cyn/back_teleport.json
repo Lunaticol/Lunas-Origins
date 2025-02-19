@@ -101,8 +101,8 @@
       "resource": "*:*_stop"
     },
     "damage_condition": {
-      "type": "origins:type",
-      "damage_type": "thorns",
+      "type": "origins:name",
+      "name": "thorns",
       "inverted": true
     }
   },

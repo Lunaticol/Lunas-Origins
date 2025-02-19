@@ -6,7 +6,7 @@
     {
       "type": "origins:tooltip",
       "sprite": "origins:textures/gui/badge/info.png",
-      "text": "Go to Y = 300, Crouch, and hold down [Save Hotbar]] to activate."
+      "text": "Go to Y = 300, Crouch, and hold down [Save Hotbar] to activate."
     },
     {
       "type": "origins:keybind",

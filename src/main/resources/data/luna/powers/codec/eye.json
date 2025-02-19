@@ -1,0 +1,76 @@
+{
+  "name": "Unstable Eye",
+  "description": "I see you...\nTear at your eye and reveal the locations of entitys.",
+  "type": "origins:multiple",
+  "eye": {
+    "type": "origins:entity_glow",
+    "red": 1,
+    "green": 1,
+    "blue": 0,
+    "use_teams": false,
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 2,
+      "comparison": "==",
+      "resource": "*:*_eye_resource"
+    }
+  },
+  "shader": {
+    "type": "origins:shader",
+    "shader": "minecraft:shaders/post/blobs2.json",
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 0,
+      "comparison": ">",
+      "resource": "*:*_eye_resource"
+    }
+  },
+  "eye_active": {
+    "type": "origins:active_self",
+    "key": "key.saveToolbarActivator",
+    "cooldown": 500,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/luna_resource_bar.png",
+      "bar_index": 0
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "change": 1,
+          "resource": "*:*_eye_resource"
+        },
+        {
+          "type": "origins:apply_effect",
+          "effect": {
+            "effect": "minecraft:speed",
+            "duration": 160
+          }
+        }
+      ]
+    }
+  },
+  "eye_resource": {
+    "type": "origins:resource",
+    "max": 2,
+    "min": 0
+  },
+  "reset": {
+    "type": "origins:action_over_time",
+    "interval": 80,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": -1,
+      "operation": "add",
+      "resource": "*:*_eye_resource"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 0,
+      "comparison": ">",
+      "resource": "*:*_eye_resource"
+    }
+  }
+}

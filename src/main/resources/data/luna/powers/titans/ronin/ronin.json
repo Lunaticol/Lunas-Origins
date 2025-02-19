@@ -827,23 +827,29 @@
           "command": "scoreboard players add Ronin Origin 1"
         },
         {
-          "type": "origins:execute_command",
-          "command": "scoreboard players set @s OriginPlayer 12"
+          "type": "origins:change_resource",
+          "change": 1,
+          "resource": "*:*_added"
         }
       ]
     },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 0,
+      "comparison": "==",
+      "resource": "*:*_added"
+    }
+  },
+  "added": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
+  },
+  "origin_counter_remove": {
+    "type": "origins:action_on_callback",
     "entity_action_lost": {
-      "type": "origins:and",
-      "actions": [
-        {
-          "type": "origins:execute_command",
-          "command": "scoreboard players remove Ronin Origin 1"
-        },
-        {
-          "type": "origins:execute_command",
-          "command": "scoreboard players set @s OriginPlayer 0"
-        }
-      ]
+      "type": "origins:execute_command",
+      "command": "scoreboard players remove Ronin Origin 1"
     }
   }
 }

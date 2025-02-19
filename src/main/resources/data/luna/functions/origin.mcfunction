@@ -2,6 +2,7 @@ tellraw @p [{"text":"There are "},{"score":{"name":"Aequor","objective":"Origin"
 tellraw @p [{"text":"There are "},{"score":{"name":"Artificer","objective":"Origin"}},{"text":" artificers"}]
 tellraw @p [{"text":"There are "},{"score":{"name":"Axolotl","objective":"Origin"}},{"text":" axolotls"}]
 tellraw @p [{"text":"There are "},{"score":{"name":"AonoKitsune","objective":"Origin"}},{"text":" aono kitsunes"}]
+tellraw @p [{"text":"There are "},{"score":{"name":"Codec","objective":"Origin"}},{"text":" codec's"}]
 tellraw @p [{"text":"There are "},{"score":{"name":"CrimsonPhantom","objective":"Origin"}},{"text":" crimson phantoms"}]
 tellraw @p [{"text":"There are "},{"score":{"name":"Enderian","objective":"Origin"}},{"text":" enderians"}]
 tellraw @p [{"text":"There are "},{"score":{"name":"Ignea","objective":"Origin"}},{"text":" igneas"}]

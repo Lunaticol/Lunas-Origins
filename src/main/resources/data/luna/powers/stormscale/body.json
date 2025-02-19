@@ -90,9 +90,17 @@
       "permission_level": 4
     },
     "entity_action_added": {
-      "type": "origins:execute_command",
-      "command": "scale set pehkui:height 1.3 @s",
-      "permission_level": 4
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "scale set pehkui:height 1.3 @s"
+        },
+        {
+          "type": "origins:grant_advancement",
+          "advancement": "luna:stormscale/stormscale"
+        }
+      ]
     },
     "entity_action_lost": {
       "type": "origins:execute_command",

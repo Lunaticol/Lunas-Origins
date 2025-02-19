@@ -1,0 +1,112 @@
+{
+  "name": "Entanglement",
+  "description": "Throw both of your sword and entangle people in the way, stunning them.\nRequires two swords in hand",
+  "type": "origins:multiple",
+  "entangle": {
+    "type": "origins:active_self",
+    "key": "key.origins.secondary_active",
+    "cooldown": 360,
+    "hud_render": {
+      "should_render": true,
+      "bar_index": 20,
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png"
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "change": 1,
+          "operation": "set",
+          "resource": "*:*_active"
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 15,
+          "action": {
+            "type": "origins:fire_projectile",
+            "speed": 2,
+            "entity_type": "minecraft:armor_stand",
+            "tag": "{Tags:[\"entanglement\"],ShowArms:true,Pose:{LeftArm:[350f,0f,0f],RightArm:[350f,0f,0f]},HandItems:[{id:\"lunasorigins:entangled_sword\",Count:1},{id:\"lunasorigins:entangled_sword\",Count:1}],NoGravity:1b,Invisible:1b}",
+            "projectile_action": {
+              "type": "origins:and",
+              "actions": [
+                {
+                  "type": "origins:grant_power",
+                  "power": "luna:codec/entangled_armorstand",
+                  "source": "luna:codec/entanglement"
+                },
+                {
+                  "type": "origins:execute_command",
+                  "command": "execute as @s at @s run tp @s ^ ^-1 ^"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "type": "origins:apply_effect",
+          "effect": {
+            "effect": "minecraft:speed",
+            "duration": 60,
+            "amplifier": 1
+          }
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 15,
+          "action": {
+            "type": "origins:change_resource",
+            "change": 0,
+            "operation": "set",
+            "resource": "*:*_active"
+          }
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "tag": "minecraft:swords"
+            }
+          }
+        },
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "offhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "tag": "minecraft:swords"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "no_movement": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.movement_speed",
+      "value": -1,
+      "operation": "multiply_total"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_active"
+    }
+  },
+  "active": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
+  }
+}

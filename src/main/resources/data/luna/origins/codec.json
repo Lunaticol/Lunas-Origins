@@ -1,0 +1,16 @@
+{
+  "powers": [
+    "luna:codec/codec",
+    "luna:codec/infection",
+    "luna:codec/entanglement",
+    "luna:codec/eye",
+    "luna:codec/necromancer"
+  ],
+  "icon": {
+    "item": "lunasorigins:entangled_sword"
+  },
+  "order": 9,
+  "impact": 3,
+  "name": "Codec",
+  "description": "Fallen Warriors on a long ago battle. These warriors bodys and weapons absorbed the poisonous chemicals around them and were revived. They now wonder the wrold looking for their killers."
+}

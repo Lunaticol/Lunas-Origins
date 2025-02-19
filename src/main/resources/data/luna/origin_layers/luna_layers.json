@@ -66,6 +66,21 @@
         "layer": "origins:origin",
         "origin": "luna:piglin"
       }
+    },
+    {
+      "origins": [
+        "luna:pilot_classes/pilotcloak",
+        "luna:pilot_classes/pilotgrapple",
+        "luna:pilot_classes/pilotholo",
+        "luna:pilot_classes/pilotphase",
+        "luna:pilot_classes/pilotpulse",
+        "luna:pilot_classes/pilotstim"
+      ],
+      "condition": {
+        "type": "origins:origin",
+        "layer": "origins:origin",
+        "origin": "luna:pilot"
+      }
     }
   ]
 }

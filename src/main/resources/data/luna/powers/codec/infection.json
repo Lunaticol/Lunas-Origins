@@ -1,0 +1,131 @@
+{
+  "name": "Mass Infection",
+  "description": "Using both of your swords, you can create a shock wave that damages enemys in the way.\nRequires two swords in hand",
+  "type": "origins:multiple",
+  "entangle": {
+    "type": "origins:active_self",
+    "key": "key.origins.primary_active",
+    "cooldown": 360,
+    "hud_render": {
+      "should_render": true,
+      "bar_index": 20,
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png"
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "change": 1,
+          "operation": "set",
+          "resource": "*:*_active"
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 35,
+          "action": {
+            "type": "origins:fire_projectile",
+            "speed": 2,
+            "entity_type": "minecraft:armor_stand",
+            "tag": "{Tags:[\"infection\"],NoGravity:1b,Invisible:1b}",
+            "projectile_action": {
+              "type": "origins:and",
+              "actions": [
+                {
+                  "type": "origins:grant_power",
+                  "power": "luna:codec/infection_armorstand",
+                  "source": "luna:codec/infection"
+                },
+                {
+                  "type": "origins:execute_command",
+                  "command": "execute as @s at @s run tp @s ^ ^-1 ^"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 35,
+          "action": {
+            "type": "origins:change_resource",
+            "change": 0,
+            "operation": "set",
+            "resource": "*:*_active"
+          }
+        },
+        {
+          "type": "origins:area_of_effect",
+          "radius": 2,
+          "shape": "cube",
+          "bientity_action": {
+            "type": "origins:target_action",
+            "action": {
+              "type": "origins:and",
+              "actions": [
+                {
+                  "type": "origins:apply_effect",
+                  "effect": {
+                    "effect": "minecraft:poison",
+                    "duration": 100
+                  }
+                },
+                {
+                  "type": "origins:damage",
+                  "amount": 35,
+                  "source": {
+                    "name": "infection_shockwave"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "tag": "minecraft:swords"
+            }
+          }
+        },
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "offhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "tag": "minecraft:swords"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "no_movement": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.movement_speed",
+      "value": -1,
+      "operation": "multiply_total"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_active"
+    }
+  },
+  "active": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
+  }
+}

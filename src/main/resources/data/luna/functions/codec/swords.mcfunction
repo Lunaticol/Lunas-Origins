@@ -1,0 +1,2 @@
+summon minecraft:armor_stand ~ ~ ~ {Tags:["entanglement"],ShowArms:true,Pose:{LeftArm:[350f,0f,0f],RightArm:[350f,0f,0f]},HandItems:[{id:"lunasorigins:entangled_sword",Count:1},{id:"lunasorigins:entangled_sword",Count:1}],NoGravity:1b,Invisible:1b}
+tp @e[tag=entanglement,distance=..1] @s

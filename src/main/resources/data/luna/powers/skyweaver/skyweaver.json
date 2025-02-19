@@ -76,7 +76,7 @@
     "entity_action": {
       "type": "origins:apply_effect",
       "effect": {
-        "duration": -1,
+        "duration": 20,
         "effect": "minecraft:slow_falling",
         "show_particles": false,
         "show_icon": false

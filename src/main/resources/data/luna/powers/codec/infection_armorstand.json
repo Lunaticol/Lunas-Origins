@@ -1,0 +1,76 @@
+{
+  "type": "origins:multiple",
+  "kill": {
+    "type": "origins:action_over_time",
+    "interval": 120,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "kill @s"
+    }
+  },
+  "entangle_around": {
+    "type": "origins:action_over_time",
+    "interval": 10,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:area_of_effect",
+          "radius": 2,
+          "shape": "cube",
+          "bientity_action": {
+            "type": "origins:target_action",
+            "action": {
+              "type": "origins:and",
+              "actions": [
+                {
+                  "type": "origins:apply_effect",
+                  "effect": {
+                    "effect": "minecraft:poison",
+                    "amplifier": 4,
+                    "duration": 40
+                  }
+                },
+                {
+                  "type": "origins:damage",
+                  "amount": 5,
+                  "source": {
+                    "name": "infection"
+                  }
+                }
+              ]
+            }
+          },
+          "bientity_condition": {
+            "type": "origins:target_condition",
+            "condition": {
+              "type": "origins:origin",
+              "layer": "origins:origin",
+              "origin": "origins:codec"
+            }
+          }
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "particle dust_color_transition 0.000 0.000 0.000 1 0.035 1.000 0.000 ~ ~1 ~ 0.2 0 0.2 1 25 normal"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "execute rotated ~ 1 run particle sweep_attack ~ ~1 ~ 0 0 0 1 1 normal"
+        }
+      ]
+    }
+  },
+  "phase": {
+    "type": "origins:phasing",
+    "blacklist": false
+  },
+  "move": {
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "execute as @s at @s run tp @s ^ ^ ^0.3"
+    }
+  }
+}

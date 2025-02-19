@@ -2,7 +2,6 @@
   "description": "A formidable force, capable of harnessing the raw energy of lightning to your advantage.",
   "icon": "minecraft:elytra",
   "name": "Stormscale",
-  "unchoosable": true,
   "order": 0,
   "impact": 3,
   "powers": [

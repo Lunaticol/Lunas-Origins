@@ -61,10 +61,32 @@
       "value": 6
     },
     "condition": {
-      "type": "origins:resource",
-      "compare_to": 1,
-      "comparison": "==",
-      "resource": "*:*_blade_bar"
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": "==",
+          "resource": "*:*_blade_bar"
+        },
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "tag": "luna:sword"
+            }
+          }
+        },
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "offhand",
+          "item_condition": {
+            "type": "origins:empty"
+          }
+        }
+      ]
     }
   }
 }

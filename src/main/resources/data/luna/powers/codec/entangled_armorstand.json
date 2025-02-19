@@ -1,0 +1,57 @@
+{
+  "type": "origins:multiple",
+  "kill": {
+    "type": "origins:action_over_time",
+    "interval": 120,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "kill @s"
+    }
+  },
+  "entangle_around": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:area_of_effect",
+          "radius": 2,
+          "shape": "cube",
+          "bientity_action": {
+            "type": "origins:target_action",
+            "action": {
+              "type": "origins:grant_power",
+              "power": "luna:codec/entangled",
+              "source": "luna:codec/entangled_armorstand"
+            }
+          },
+          "bientity_condition": {
+            "type": "origins:target_condition",
+            "condition": {
+              "type": "origins:origin",
+              "layer": "origins:origin",
+              "origin": "origins:codec"
+            }
+          }
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "particle dust_color_transition 0.000 0.000 0.000 1 0.035 1.000 0.000 ~ ~1 ~ 0.2 0 0.2 1 25 normal"
+        }
+      ]
+    }
+  },
+  "phase": {
+    "type": "origins:phasing",
+    "blacklist": false
+  },
+  "move": {
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "execute as @s at @s run tp @s ^ ^ ^0.3"
+    }
+  }
+}

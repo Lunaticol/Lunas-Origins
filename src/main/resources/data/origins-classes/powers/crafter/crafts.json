@@ -4,10 +4,6 @@
   "type": "origins:multiple",
   "echo": {
     "type": "origins:recipe",
-    "condition": {
-      "type": "origins:advancement",
-      "advancement": "luna:crafter/echoshard"
-    },
     "recipe": {
       "id": "crafter:echoshard",
       "type": "minecraft:crafting_shaped",
@@ -24,14 +20,14 @@
         "item": "minecraft:echo_shard",
         "count": 1
       }
+    },
+    "condition": {
+      "type": "origins:advancement",
+      "advancement": "luna:crafter/echoshard"
     }
   },
   "db": {
     "type": "origins:recipe",
-    "condition": {
-      "type": "origins:advancement",
-      "advancement": "luna:crafter/dimberry"
-    },
     "recipe": {
       "id": "crafter:dimberry",
       "type": "minecraft:crafting_shaped",
@@ -48,15 +44,14 @@
         "item": "lunasorigins:dimensional_berry",
         "count": 1
       }
-    }
-  },
-
-  "sb": {
-    "type": "origins:recipe",
+    },
     "condition": {
       "type": "origins:advancement",
-      "advancement": "luna:crafter/soulberry"
-    },
+      "advancement": "luna:crafter/dimberry"
+    }
+  },
+  "sb": {
+    "type": "origins:recipe",
     "recipe": {
       "id": "crafter:soulberry",
       "type": "minecraft:crafting_shaped",
@@ -73,6 +68,10 @@
         "item": "lunasorigins:soul_berry",
         "count": 8
       }
+    },
+    "condition": {
+      "type": "origins:advancement",
+      "advancement": "luna:crafter/soulberry"
     }
   }
 }

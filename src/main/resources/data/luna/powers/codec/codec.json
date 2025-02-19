@@ -1,0 +1,219 @@
+{
+  "name": "Poisoned Spirit",
+  "description": "When you died on the battle field, your body absorbed great amounts of poisonous chemical, this allows you to poison targets on hit.\nYou need two swords to do any worth while damage.\nThe poison dissolves food quicker then normal.\nThe poison has destroyed your legs, you can no longer jump, However you can run quicker, but walk slower.\nConsidered undead. Watch out for smite users.",
+  "type": "origins:multiple",
+  "slow_walk": {
+    "type": "origins:conditioned_attribute",
+    "tick_rate": 5,
+    "modifier": {
+      "attribute": "minecraft:generic.movement_speed",
+      "value": -0.2,
+      "operation": "multiply_total"
+    },
+    "condition": {
+      "type": "origins:sprinting",
+      "inverted": true
+    }
+  },
+  "faster_run": {
+    "type": "origins:conditioned_attribute",
+    "tick_rate": 5,
+    "modifier": {
+      "attribute": "minecraft:generic.movement_speed",
+      "value": 0.1,
+      "operation": "multiply_total"
+    },
+    "condition": {
+      "type": "origins:sprinting"
+    }
+  },
+  "hunger": {
+    "type": "origins:exhaust",
+    "interval": 100,
+    "exhaustion": 4
+  },
+  "i_hate_wood_planks": {
+    "type": "origins:action_when_hit",
+    "cooldown": 100,
+    "bientity_action": {
+      "type": "origins:target_action",
+      "action": {
+        "type": "origins:chance",
+        "chance": 0.1,
+        "action": {
+          "type": "origins:apply_effect",
+          "effects": [
+            {
+              "effect": "minecraft:slowness",
+              "amplifier": 9,
+              "duration": 100
+            },
+            {
+              "effect": "minecraft:weakness",
+              "amplifier": 9,
+              "duration": 100
+            }
+          ]
+        }
+      }
+    },
+    "bientity_condition": {
+      "type": "origins:actor_condition",
+      "condition": {
+        "type": "origins:equipped_item",
+        "equipment_slot": "mainhand",
+        "item_condition": {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "tag": "minecraft:planks"
+          }
+        }
+      }
+    }
+  },
+  "slash": {
+    "type": "origins:action_on_hit",
+    "bientity_action": {
+      "type": "origins:target_action",
+      "action": {
+        "type": "origins:apply_effect",
+        "effects": [
+          {
+            "effect": "minecraft:poison",
+            "duration": 100
+          },
+          {
+            "effect": "minecraft:blindness",
+            "duration": 100
+          },
+          {
+            "effect": "minecraft:speed",
+            "duration": 100,
+            "amplifier": 1
+          }
+        ]
+      }
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "tag": "minecraft:swords"
+            }
+          }
+        },
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "offhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "tag": "minecraft:swords"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "no_jump": {
+    "type": "origins:modify_jump",
+    "modifier": {
+      "value": -2,
+      "operation": "multiply_total"
+    }
+  },
+  "step_height": {
+    "type": "origins:action_on_callback",
+    "entity_action_chosen": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:step_height 2 @s"
+    },
+    "entity_action_respawned": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:step_height 2 @s"
+    },
+    "entity_action_added": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:step_height 2 @s"
+    },
+    "entity_action_lost": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:step_height 1 @s"
+    },
+    "entity_action_removed": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:step_height 1 @s"
+    }
+  },
+  "needs_two_swords": {
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+      "value": -0.5,
+      "operation": "multiply_total"
+    },
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:equipped_item",
+          "inverted": true,
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "tag": "minecraft:swords"
+            }
+          }
+        },
+        {
+          "type": "origins:equipped_item",
+          "inverted": true,
+          "equipment_slot": "offhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "tag": "minecraft:swords"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "undead_ignore": {
+    "type": "apugli:mobs_ignore",
+    "mob_condition": {
+      "type": "origins:entity_group",
+      "group": "undead"
+    }
+  },
+  "undead": {
+    "type": "origins:entity_group",
+    "group": "undead"
+  },
+  "origin_counter": {
+    "type": "origins:action_on_callback",
+    "entity_action_chosen": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "scoreboard players add Codec Origin 1"
+        }
+      ]
+    },
+    "entity_action_lost": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "scoreboard players remove Codec Origin 1"
+        }
+      ]
+    }
+  }
+}

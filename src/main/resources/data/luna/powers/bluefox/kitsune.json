@@ -926,6 +926,12 @@
     "saturation_modifier": {
       "operation": "addition",
       "value": 1.5
+    },
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 5,
+      "operation": "add",
+      "resource": "*:*_soul_bar"
     }
   }
 }

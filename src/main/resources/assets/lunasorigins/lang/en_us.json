@@ -11,6 +11,7 @@
   "biome.lunasorigins.command_snowy": "Snowy Command Forest",
   "item.lunasorigins.crimson_membrane": "§cCrimson Membrane",
   "item.lunasorigins.ronin_sword": "§bRonin Sword",
+  "item.lunasorigins.entangled_sword": "Entangled Sword",
   "item.lunasorigins.wisps": "§cW§6i§es§ap§9s",
   "item.lunasorigins.luna_headtaker": "§dThe Headtaker§r",
   "item.lunasorigins.luna": "§dLuna§r",
@@ -21,6 +22,8 @@
   "item.lunasorigins.minewarrior": "§dMinewarrior§r",
   "item.lunasorigins.moosheking": "§dMoosheking§r",
   "item.lunasorigins.stars": "Stars",
+  "item.lunasorigins.umbrtye": "Umbrtye",
+  "item.lunasorigins.wind_charge": "Wind Charge",
   "block.lunasorigins.titan_battery": "Titan Battery",
   "block.lunasorigins.dimensional_berry_bush": "Dimensional Berries",
   "block.lunasorigins.soul_berry_bush": "Soul Berries",
@@ -125,5 +128,11 @@
   "death.attack.trap": "%1$s was caught in a barrel trap.",
   "death.attack.trap.player": "%1$s was caught in a barrel trap by %2$s",
   "death.attack.trap_explode": "%1$s was blown up by a barrel trap.",
-  "death.attack.trap_explode.player": "%1$s was blown up by a barrel trap from %2$s"
+  "death.attack.trap_explode.player": "%1$s was blown up by a barrel trap from %2$s",
+  "death.attack.infection": "%1$s was hit by mass infection",
+  "death.attack.infection.player": "%1$s was hit by mass infection from %2$s",
+  "death.attack.infection_shockwave": "%1$s was caught in the mass infection shockwave.",
+  "death.attack.infection_shockwave.player": "%1$s was caught in the mass infection shockwave from %2$s",
+  "death.attack.entangled": "%1$s was entangled",
+  "death.attack.entangled.player": "%1$s was entangled by %2$s"
 }

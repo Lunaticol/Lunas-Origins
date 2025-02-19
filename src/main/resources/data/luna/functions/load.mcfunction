@@ -8,6 +8,7 @@ scoreboard players add Aequor Origin 0
 scoreboard players add Artificer Origin 0
 scoreboard players add Axolotl Origin 0
 scoreboard players add AonoKitsune Origin 0
+scoreboard players add Codec Origin 0
 scoreboard players add CrimsonPhantom Origin 0
 scoreboard players add Enderian Origin 0
 scoreboard players add Ignea Origin 0

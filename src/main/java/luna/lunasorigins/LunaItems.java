@@ -13,6 +13,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.SignItem;
+import net.minecraft.item.SwordItem;
 import net.minecraft.item.ToolMaterials;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -43,6 +44,7 @@ public class LunaItems {
                         // Weapons
                         itemGroup.add(LunaItems.LUNA_HEADTAKER);
                         itemGroup.add(LunaItems.RONIN_SWORD);
+                        itemGroup.add(LunaItems.ENTANGLED_SWORD);
                         // Donators
                         itemGroup.add(LunaItems.LUNA);
                         itemGroup.add(LunaItems.TIME);
@@ -111,6 +113,11 @@ public class LunaItems {
                         new RoninSword(ToolMaterials.NETHERITE, 5F, -3.2F,
                                         new Item.Settings()),
                         "ronin_sword");
+
+        public static final Item ENTANGLED_SWORD = register(
+                        new SwordItem(ToolMaterials.NETHERITE, 3, -2.4F,
+                                        new Item.Settings()),
+                        "entangled_sword");
 
         // Donators/Players
 

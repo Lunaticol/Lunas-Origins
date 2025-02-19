@@ -1,0 +1,160 @@
+{
+  "name": "Necormancer",
+  "description": "Bring forth the dead to aid you in battle.",
+  "type": "origins:multiple",
+  "necro_bar": {
+    "type": "origins:resource",
+    "max": 10,
+    "min": 0,
+    "hud_render": {
+      "should_render": true,
+      "bar_index": 18,
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png"
+    }
+  },
+  "on_kill": {
+    "type": "origins:self_action_on_kill",
+    "cooldown": 0,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 1,
+      "resource": "*:*_necro_bar"
+    }
+  },
+  "summoning": {
+    "type": "origins:active_self",
+    "key": "key.loadToolbarActivator",
+    "cooldown": 4000,
+    "entity_action": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "action": {
+            "type": "origins:execute_command",
+            "command": "function luna:codec/zombie_1"
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 1,
+            "comparison": "==",
+            "resource": "*:*_necro_bar"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:execute_command",
+            "command": "function luna:codec/zombie_2"
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 2,
+            "comparison": "==",
+            "resource": "*:*_necro_bar"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:execute_command",
+            "command": "function luna:codec/zombie_3"
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 3,
+            "comparison": "==",
+            "resource": "*:*_necro_bar"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:execute_command",
+            "command": "function luna:codec/zombie_4"
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 4,
+            "comparison": "==",
+            "resource": "*:*_necro_bar"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:execute_command",
+            "command": "function luna:codec/zombie_5"
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 5,
+            "comparison": "==",
+            "resource": "*:*_necro_bar"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:execute_command",
+            "command": "function luna:codec/zombie_6"
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 6,
+            "comparison": "==",
+            "resource": "*:*_necro_bar"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:execute_command",
+            "command": "function luna:codec/zombie_7"
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 7,
+            "comparison": "==",
+            "resource": "*:*_necro_bar"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:execute_command",
+            "command": "function luna:codec/zombie_8"
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 8,
+            "comparison": "==",
+            "resource": "*:*_necro_bar"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:execute_command",
+            "command": "function luna:codec/zombie_9"
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 9,
+            "comparison": "==",
+            "resource": "*:*_necro_bar"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:execute_command",
+            "command": "function luna:codec/zombie_10"
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 10,
+            "comparison": "==",
+            "resource": "*:*_necro_bar"
+          }
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 0,
+      "comparison": ">",
+      "resource": "*:*_necro_bar"
+    }
+  }
+}

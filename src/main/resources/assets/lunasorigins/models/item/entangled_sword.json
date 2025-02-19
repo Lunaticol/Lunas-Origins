@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "lunasorigins:item/entangled_sword",
+    "layer1": "lunasorigins:item/entangled_sword_two"
+  }
+}
