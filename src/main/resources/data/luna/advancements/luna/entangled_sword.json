@@ -1,0 +1,30 @@
+{
+  "display": {
+    "title": {
+      "text": "Entangled Sword"
+    },
+    "description": {
+      "text": "Obtain the Entangled Sword."
+    },
+    "icon": {
+      "item": "lunasorigins:entangled_sword"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "item": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["lunasorigins:entangled_sword"]
+          }
+        ]
+      }
+    }
+  },
+  "parent": "luna:root"
+}

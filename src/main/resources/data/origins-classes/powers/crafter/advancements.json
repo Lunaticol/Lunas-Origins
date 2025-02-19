@@ -62,9 +62,18 @@
             "bientity_condition": {
               "type": "origins:target_condition",
               "condition": {
-                "type": "origins:origin",
-                "layer": "luna_layers",
-                "origin": "luna:kitsune_classes/overworld_kitsune"
+                "type": "origins:and",
+                "conditions": [
+                  {
+                    "type": "origins:origin",
+                    "layer": "luna:luna_layers",
+                    "origin": "luna:kitsune_classes/overworld_kitsune"
+                  },
+                  {
+                    "type": "origins:entity_type",
+                    "entity_type": "minecraft:player"
+                  }
+                ]
               }
             },
             "radius": 4
@@ -82,12 +91,18 @@
             "compare_to": 0,
             "comparison": ">",
             "bientity_condition": {
-              "type": "origins:target_condition",
-              "condition": {
-                "type": "origins:origin",
-                "layer": "luna_layers",
-                "origin": "luna:kitsune_classes/nether_kitsune"
-              }
+              "type": "origins:and",
+              "conditions": [
+                {
+                  "type": "origins:origin",
+                  "layer": "luna:luna_layers",
+                  "origin": "luna:kitsune_classes/nether_kitsune"
+                },
+                {
+                  "type": "origins:entity_type",
+                  "entity_type": "minecraft:player"
+                }
+              ]
             },
             "radius": 4
           },
@@ -106,9 +121,18 @@
             "bientity_condition": {
               "type": "origins:target_condition",
               "condition": {
-                "type": "origins:origin",
-                "layer": "luna_layers",
-                "origin": "luna:kitsune_classes/overworld_kitsune"
+                "type": "origins:and",
+                "conditions": [
+                  {
+                    "type": "origins:origin",
+                    "layer": "luna:luna_layers",
+                    "origin": "luna:kitsune_classes/ender_kitsune"
+                  },
+                  {
+                    "type": "origins:entity_type",
+                    "entity_type": "minecraft:player"
+                  }
+                ]
               }
             },
             "radius": 4

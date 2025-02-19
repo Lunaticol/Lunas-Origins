@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "F": { "item": "minecraft:fermented_spider_eye" },
+    "N": { "item": "minecraft:netherite_sword" },
+    "D": { "item": "minecraft:diamond" }
+  },
+  "pattern": ["DFD", "FNF", "DFD"],
+  "result": {
+    "item": "lunasorigins:entangled_sword"
+  }
+}
