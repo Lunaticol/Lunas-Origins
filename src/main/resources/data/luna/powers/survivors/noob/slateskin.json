@@ -1,0 +1,85 @@
+{
+  "name": "Slate Skin",
+  "description": "Makes your skin as hard as a rock",
+  "type": "origins:multiple",
+  "slate": {
+    "type": "origins:active_self",
+    "key": "key.loadToolbarActivator",
+    "cooldown": 2000,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:delay",
+          "ticks": 20,
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:apply_effect",
+                "effects": [
+                  {
+                    "effect": "minecraft:resistance",
+                    "amplifier": 4,
+                    "duration": 160
+                  },
+                  {
+                    "effect": "minecraft:slowness",
+                    "amplifier": 3,
+                    "duration": 160
+                  }
+                ]
+              },
+              {
+                "type": "origins:change_resource",
+                "change": 1,
+                "resource": "*:*_slate_resource"
+              }
+            ]
+          }
+        },
+        {
+          "type": "origins:apply_effect",
+          "effect": {
+            "effect": "minecraft:slowness",
+            "amplifier": 1,
+            "duration": 20
+          }
+        }
+      ]
+    }
+  },
+  "slate_resource": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
+  },
+  "transparent": {
+    "type": "origins:model_color",
+    "red": 0.0101010101,
+    "green": 0.0101010101,
+    "blue": 0.0101010101,
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_slate_resource"
+    }
+  },
+  "reset": {
+    "type": "origins:action_over_time",
+    "interval": 160,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 0,
+      "operation": "set",
+      "resource": "*:*_slate_resource"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_slate_resource"
+    }
+  }
+}

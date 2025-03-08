@@ -1,0 +1,24 @@
+{
+  "name": "Trowel",
+  "description": "While holding a shovel, if he presses the primary key, he builds a 3x3 wall in front of him.",
+  "type": "origins:multiple",
+  "wall": {
+    "type": "origins:active_self",
+    "key": "key.origins.primary_active",
+    "cooldown": 400,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "luna:survivors/wall"
+    },
+    "condition": {
+      "type": "origins:equipped_item",
+      "equipment_slot": "mainhand",
+      "item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": {
+          "tag": "minecraft:shovels"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "name": "Cursed in Damnation",
+  "description": "The forksaken lose hunger at a fixed rate, only actions as walking or running will use hunger. The forsaken do not get natural regeneration from hunger.",
+  "type": "origins:multiple",
+  "exhaust_sat": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:feed",
+      "saturation": -0.25,
+      "food": 0
+    },
+    "condition": {
+      "type": "origins:sprinting"
+    }
+  },
+  "exhaust_food": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:feed",
+      "food": -1,
+      "saturation": 0
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:sprinting"
+        },
+        {
+          "type": "origins:saturation_level",
+          "compare_to": 0,
+          "comparison": "=="
+        }
+      ]
+    }
+  },
+  "no_exhaust": {
+    "type": "origins:modify_exhaustion",
+    "modifier": {
+      "value": -2,
+      "operation": "multiply_total"
+    }
+  },
+  "no_regen": {
+    "type": "origins:disable_regen"
+  },
+  "respawn": {
+    "type": "origins:action_on_callback",
+    "entity_action_respawned": {
+      "type": "origins:execute_command",
+      "command": "origin gui @s forken:survivors"
+    }
+  },
+  "when_hit": {
+    "type": "origins:action_when_hit",
+    "cooldown": 0,
+    "bientity_action": {
+      "type": "origins:target_action",
+      "action": {
+        "type": "origins:apply_effect",
+        "effect": {
+          "duration": 40,
+          "effect": "minecraft:speed",
+          "amplifier": 1
+        }
+      }
+    }
+  }
+}

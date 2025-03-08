@@ -61,6 +61,10 @@
             "operation": "set",
             "resource": "*:*_active"
           }
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "tellraw @a[distance=..32] [{\"text\":\"<Codec> \"},{\"text\":\"Feel my entaglement!\",\"color\":\"green\",\"bold\":true}]"
         }
       ]
     },

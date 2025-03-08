@@ -1,0 +1,70 @@
+{
+  "name": "Ghost Burger",
+  "description": "Hopefully this isnt a burger king partnership... eat this to become almost invisible",
+  "type": "origins:multiple",
+  "ghost": {
+    "type": "origins:active_self",
+    "key": "key.origins.secondary_active",
+    "cooldown": 800,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:delay",
+          "ticks": 20,
+          "action": {
+            "type": "origins:change_resource",
+            "change": 1,
+            "resource": "*:*_ghost_resource"
+          }
+        },
+        {
+          "type": "origins:apply_effect",
+          "effect": {
+            "effect": "minecraft:slowness",
+            "amplifier": 1,
+            "duration": 20
+          }
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:entity.generic.eat",
+          "pitch": 1,
+          "volume": 1,
+          "category": "players"
+        }
+      ]
+    }
+  },
+  "ghost_resource": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
+  },
+  "transparent": {
+    "type": "origins:model_color",
+    "alpha": 0.1,
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_ghost_resource"
+    }
+  },
+  "reset": {
+    "type": "origins:action_over_time",
+    "interval": 100,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 0,
+      "operation": "set",
+      "resource": "*:*_ghost_resource"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_ghost_resource"
+    }
+  }
+}

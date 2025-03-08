@@ -71,7 +71,8 @@
               {
                 "type": "origins:add_velocity",
                 "z": 1,
-                "space": "local"
+                "y": 1,
+                "space": "local_horizontal_normalized"
               },
               {
                 "type": "origins:apply_effect",
@@ -354,28 +355,23 @@
     "execute_chosen_when_orb": true,
     "entity_action_chosen": {
       "type": "origins:execute_command",
-      "command": "scale set pehkui:height 0.80 @s",
-      "permission_level": 4
+      "command": "scale set pehkui:height 0.80 @s"
     },
     "entity_action_respawned": {
       "type": "origins:execute_command",
-      "command": "scale set pehkui:height 0.80 @s",
-      "permission_level": 4
+      "command": "scale set pehkui:height 0.80 @s"
     },
     "entity_action_added": {
       "type": "origins:execute_command",
-      "command": "scale set pehkui:height 0.80 @s",
-      "permission_level": 4
+      "command": "scale set pehkui:height 0.80 @s"
     },
     "entity_action_lost": {
       "type": "origins:execute_command",
-      "command": "scale set pehkui:height 1 @s",
-      "permission_level": 4
+      "command": "scale set pehkui:height 1 @s"
     },
     "entity_action_removed": {
       "type": "origins:execute_command",
-      "command": "scale set pehkui:height 1 @s",
-      "permission_level": 4
+      "command": "scale set pehkui:height 1 @s"
     }
   },
   "width": {
@@ -396,23 +392,19 @@
     },
     "entity_action_respawned": {
       "type": "origins:execute_command",
-      "command": "scale set pehkui:width 0.80 @s",
-      "permission_level": 4
+      "command": "scale set pehkui:width 0.80 @s"
     },
     "entity_action_added": {
       "type": "origins:execute_command",
-      "command": "scale set pehkui:width 0.80 @s",
-      "permission_level": 4
+      "command": "scale set pehkui:width 0.80 @s"
     },
     "entity_action_lost": {
       "type": "origins:execute_command",
-      "command": "scale set pehkui:width 1 @s",
-      "permission_level": 4
+      "command": "scale set pehkui:width 1 @s"
     },
     "entity_action_removed": {
       "type": "origins:execute_command",
-      "command": "scale set pehkui:width 1 @s",
-      "permission_level": 4
+      "command": "scale set pehkui:width 1 @s"
     }
   },
   "no_elytra": {

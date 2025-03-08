@@ -26,5 +26,5 @@
       }
     }
   },
-  "parent": "luna:root"
+  "parent": "luna:luna/ronin_sword"
 }

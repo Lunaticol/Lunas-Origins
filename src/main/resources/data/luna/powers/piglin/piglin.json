@@ -238,7 +238,7 @@
     },
     "entity_action_lost": {
       "type": "origins:execute_command",
-      "command": "function luna:piglin/passive"
+      "command": "team leave @s"
     }
   },
   "harvest": {

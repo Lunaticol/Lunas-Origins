@@ -2,7 +2,7 @@ package luna.lunasorigins.blocks.stuffy;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.PumpkinBlock;
+import net.minecraft.block.CarvedPumpkinBlock;
 import net.minecraft.util.BlockMirror;
 import net.minecraft.util.BlockRotation;
 import net.minecraft.util.math.BlockPos;
@@ -13,7 +13,7 @@ import net.minecraft.world.BlockView;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.Properties;
 
-public class StuffyBlock extends PumpkinBlock {
+public class StuffyBlock extends CarvedPumpkinBlock {
 
   public StuffyBlock(Settings settings) {
     super(settings);

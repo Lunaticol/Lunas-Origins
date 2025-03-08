@@ -1,0 +1,9 @@
+{
+  "powers": ["luna:human_souls/kindness"],
+  "icon": "lunasorigins:soul_green",
+  "loading_priority": 9,
+  "order": 0,
+  "impact": 1,
+  "name": "Kindness",
+  "description": "You have Kindness."
+}

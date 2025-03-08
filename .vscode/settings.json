@@ -1,4 +1,6 @@
 {
   "java.configuration.updateBuildConfiguration": "automatic",
-  "java.format.settings.url": "eclipse-formatter.xml"
+  "java.format.settings.url": "eclipse-formatter.xml",
+  "java.compile.nullAnalysis.mode": "automatic",
+  "figura.librariesFolderPath": "C:\\Users\\Lunatico\\AppData\\Roaming\\.minecraft\\figura\\avatars\\libraries\\"
 }

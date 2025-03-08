@@ -66,7 +66,7 @@
         {
           "action": {
             "type": "origins:execute_command",
-            "command": "function luna:stormscale/wing_boost_active"
+            "command": "function luna:stormscale/wing_boost_deactive"
           },
           "condition": {
             "type": "origins:power_active",

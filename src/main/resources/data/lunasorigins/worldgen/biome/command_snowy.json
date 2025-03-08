@@ -19,7 +19,8 @@
         "type": "minecraft:white_ash"
       },
       "probability": 0.118093334
-    }
+    },
+    "ambient_sound": "lunasorigins:command_forest_ambience"
   },
   "features": [
     ["lunasorigins:green_command_tree"],

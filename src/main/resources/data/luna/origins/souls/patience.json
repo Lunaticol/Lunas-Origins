@@ -1,0 +1,9 @@
+{
+  "powers": ["luna:human_souls/patience"],
+  "icon": "lunasorigins:soul_cyan",
+  "loading_priority": 9,
+  "order": 0,
+  "impact": 1,
+  "name": "Patience",
+  "description": "You have Patience."
+}

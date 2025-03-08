@@ -7,7 +7,7 @@
     "luna:moonflower/grapple",
     "luna:moonflower/root"
   ],
-  "icon": "minecraft:pink_tulip",
+  "icon": "lunasorigins:noctilith",
   "order": 9,
   "impact": 2,
   "name": "Noctilith",

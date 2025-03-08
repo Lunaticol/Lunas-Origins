@@ -44,7 +44,6 @@
   },
   "hold": {
     "type": "origins:active_self",
-    "cooldown": 5,
     "key": {
       "key": "key.origins.primary_active",
       "continuous": true

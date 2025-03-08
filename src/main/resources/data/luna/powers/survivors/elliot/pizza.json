@@ -1,0 +1,41 @@
+{
+  "name": "Pizza Delivery",
+  "description": "Elliot throws out a slice of pizza that instantly heals other players who walk into it.",
+  "type": "origins:multiple",
+  "charges": {
+    "type": "origins:resource",
+    "max": 2,
+    "min": 0
+  },
+  "rush": {
+    "type": "origins:active_self",
+    "cooldown": 1200,
+    "key": "key.origins.primary_active",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:fire_projectile",
+          "entity_type": "minecraft:potion",
+          "tag": "{Passengers:[{id:\"minecraft:armor_stand\",Invisible:1b,Tags:[\"potion\"]}],Item:{id:\"minecraft:beetroot_soup\",Count:1b}}",
+          "projectile_action": {
+            "type": "origins:passenger_action",
+            "action": {
+              "type": "origins:grant_power",
+              "power": "luna:survivors/elliot/potion",
+              "source": "luna:survivors/elliot/pizza"
+            }
+          },
+          "count": 1,
+          "speed": 0.5
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 1,
+          "operation": "add",
+          "resource": "luna:survivors/elliot/rush_charges"
+        }
+      ]
+    }
+  }
+}

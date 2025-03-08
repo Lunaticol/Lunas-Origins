@@ -1,0 +1,150 @@
+{
+  "name": "Sword Swing",
+  "description": "All swords have been upgraded to have an M2 attack. This attack does 40 damage(10 for players) and stuns opponents for 4 seconds(2 for players) and has a cooldown of 20 seconds,. You stay in place for the duration of the attack.",
+  "type": "origins:multiple",
+  "stun_resource": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
+  },
+  "stun": {
+    "type": "origins:active_self",
+    "cooldown": 400,
+    "key": "key.use",
+    "entity_action": {
+      "type": "origins:area_of_effect",
+      "radius": 1,
+      "shape": "cube",
+      "bientity_action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:target_action",
+            "action": {
+              "type": "origins:if_else_list",
+              "actions": [
+                {
+                  "action": {
+                    "type": "origins:delay",
+                    "ticks": 10,
+                    "action": {
+                      "type": "origins:and",
+                      "actions": [
+                        {
+                          "type": "origins:apply_effect",
+                          "effect": {
+                            "effect": "minecraft:slowness",
+                            "duration": 40,
+                            "amplifier": 9
+                          }
+                        },
+                        {
+                          "type": "origins:damage",
+                          "amount": 10,
+                          "source": {
+                            "name": "generic"
+                          }
+                        },
+                        {
+                          "type": "origins:play_sound",
+                          "sound": "minecraft:entity.item.break",
+                          "pitch": 0.5,
+                          "volume": 1,
+                          "category": "players"
+                        }
+                      ]
+                    }
+                  },
+                  "condition": {
+                    "type": "origins:entity_type",
+                    "entity_type": "minecraft:player"
+                  }
+                },
+                {
+                  "action": {
+                    "type": "origins:delay",
+                    "ticks": 10,
+                    "action": {
+                      "type": "origins:and",
+                      "actions": [
+                        {
+                          "type": "origins:apply_effect",
+                          "effect": {
+                            "effect": "minecraft:slowness",
+                            "duration": 40,
+                            "amplifier": 9
+                          }
+                        },
+                        {
+                          "type": "origins:damage",
+                          "amount": 40,
+                          "damage_type": "magic"
+                        },
+                        {
+                          "type": "origins:play_sound",
+                          "sound": "minecraft:entity.item.break",
+                          "pitch": 0.5,
+                          "volume": 1,
+                          "category": "players"
+                        }
+                      ]
+                    }
+                  },
+                  "condition": {
+                    "type": "origins:entity_type",
+                    "entity_type": "minecraft:player",
+                    "inverted": true
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "type": "origins:actor_action",
+            "action": {
+              "type": "origins:and",
+              "actions": [
+                {
+                  "type": "origins:trigger_cooldown",
+                  "power": "*:*_cooldown"
+                },
+                {
+                  "type": "origins:play_sound",
+                  "sound": "minecraft:block.amethyst_cluster.break",
+                  "pitch": 2,
+                  "volume": 1,
+                  "category": "players"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:*_cooldown"
+        },
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "tag": "minecraft:swords"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "cooldown": {
+    "type": "origins:cooldown",
+    "cooldown": 400
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "name": "Chances Flavor",
+  "description": "Flip a coin 50/50 for Strength 1/Regen 1/Speed 1/Resistence 1 or Weakness 1/Slowness 1/Blindness 1/nausea 1",
+  "type": "origins:multiple",
+  "coin": {
+    "type": "origins:active_self",
+    "key": "key.origins.primary_active",
+    "cooldown": 0,
+    "entity_action": {
+      "type": "origins:choice",
+      "actions": [
+        {
+          "weight": 2,
+          "element": {
+            "type": "origins:chance",
+            "chance": 0.5,
+            "action": {
+              "type": "origins:apply_effect",
+              "effect": {
+                "duration": 100,
+                "effect": "minecraft:strength"
+              }
+            }
+          }
+        },
+        {
+          "weight": 2,
+          "element": {
+            "type": "origins:chance",
+            "chance": 0.5,
+            "action": {
+              "type": "origins:apply_effect",
+              "effect": {
+                "duration": 100,
+                "effect": "minecraft:regeneration"
+              }
+            }
+          }
+        },
+        {
+          "weight": 2,
+          "element": {
+            "type": "origins:chance",
+            "chance": 0.5,
+            "action": {
+              "type": "origins:apply_effect",
+              "effect": {
+                "duration": 100,
+                "effect": "minecraft:speed"
+              }
+            }
+          }
+        },
+        {
+          "weight": 2,
+          "element": {
+            "type": "origins:chance",
+            "chance": 0.5,
+            "action": {
+              "type": "origins:apply_effect",
+              "effect": {
+                "duration": 100,
+                "effect": "minecraft:resistance"
+              }
+            }
+          }
+        },
+        {
+          "weight": 2,
+          "element": {
+            "type": "origins:chance",
+            "chance": 0.5,
+            "action": {
+              "type": "origins:apply_effect",
+              "effect": {
+                "duration": 300,
+                "effect": "minecraft:weakness"
+              }
+            }
+          }
+        },
+        {
+          "weight": 2,
+          "element": {
+            "type": "origins:chance",
+            "chance": 0.5,
+            "action": {
+              "type": "origins:apply_effect",
+              "effect": {
+                "duration": 300,
+                "effect": "minecraft:blindness"
+              }
+            }
+          }
+        },
+        {
+          "weight": 2,
+          "element": {
+            "type": "origins:chance",
+            "chance": 0.5,
+            "action": {
+              "type": "origins:apply_effect",
+              "effect": {
+                "duration": 300,
+                "effect": "minecraft:slowness"
+              }
+            }
+          }
+        },
+        {
+          "weight": 1,
+          "element": {
+            "type": "origins:chance",
+            "chance": 0.5,
+            "action": {
+              "type": "origins:apply_effect",
+              "effect": {
+                "duration": 300,
+                "effect": "minecraft:nausea"
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

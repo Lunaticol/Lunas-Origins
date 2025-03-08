@@ -1,0 +1,11 @@
+{
+  "name": "Chance",
+  "description": "Its always a flip of the coin",
+  "icon": "minecraft:sunflower",
+  "impact": 3,
+  "powers": [
+    "luna:survivors/chance/flavor",
+    "luna:survivors/chance/flintflock",
+    "luna:survivors/chance/reroll"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Flint Flock",
+  "description": "Shoot a projectile out that stuns anything in its path for 2 seconds",
+  "type": "origins:multiple",
+  "gun": {
+    "type": "origins:active_self",
+    "key": "key.origins.secondary_active",
+    "cooldown": 600,
+    "entity_action": {
+      "type": "origins:raycast",
+      "command_along_ray": "particle minecraft:lava ~ ~ ~ 1 1 1 0 10 force",
+      "bientity_action": {
+        "type": "origins:target_action",
+        "action": {
+          "type": "origins:apply_effect",
+          "effect": {
+            "effect": "minecraft:slowness",
+            "amplifier": 9,
+            "duration": 40
+          }
+        }
+      }
+    }
+  }
+}

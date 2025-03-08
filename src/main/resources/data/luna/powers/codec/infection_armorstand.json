@@ -44,9 +44,10 @@
           "bientity_condition": {
             "type": "origins:target_condition",
             "condition": {
+              "inverted": true,
               "type": "origins:origin",
               "layer": "origins:origin",
-              "origin": "origins:codec"
+              "origin": "luna:codec"
             }
           }
         },

@@ -34,7 +34,7 @@
   },
   "i_hate_wood_planks": {
     "type": "origins:action_when_hit",
-    "cooldown": 100,
+    "cooldown": 500,
     "bientity_action": {
       "type": "origins:target_action",
       "action": {
@@ -214,6 +214,15 @@
           "command": "scoreboard players remove Codec Origin 1"
         }
       ]
+    }
+  },
+  "health": {
+    "type": "origins:attribute",
+    "update_health": true,
+    "modifier": {
+      "value": 4,
+      "operation": "addition",
+      "attribute": "minecraft:generic.max_health"
     }
   }
 }

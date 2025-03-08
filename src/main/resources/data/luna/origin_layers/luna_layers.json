@@ -81,6 +81,40 @@
         "layer": "origins:origin",
         "origin": "luna:pilot"
       }
+    },
+    {
+      "origins": [
+        "luna:souls/determination",
+        "luna:souls/bravery",
+        "luna:souls/justice",
+        "luna:souls/kindness",
+        "luna:souls/patience",
+        "luna:souls/integrity",
+        "luna:souls/perseverance",
+        "luna:souls/weird"
+      ],
+      "condition": {
+        "type": "origins:origin",
+        "origin": "origins:human",
+        "layer": "origins:origin"
+      }
+    },
+    {
+      "condition": {
+        "type": "origins:origin",
+        "layer": "origins:origin",
+        "origin": "luna:foresaken"
+      },
+      "origins": [
+        "luna:forken/twotime",
+        "luna:forken/shedletsky",
+        "luna:forken/noob",
+        "luna:forken/guest",
+        "luna:forken/elliot",
+        "luna:forken/chance",
+        "luna:forken/builderman",
+        "luna:forken/007n7"
+      ]
     }
   ]
 }

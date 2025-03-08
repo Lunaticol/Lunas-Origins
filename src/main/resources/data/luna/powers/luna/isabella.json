@@ -58,6 +58,6 @@
   "night_vis": {
     "type": "origins:toggle_night_vision",
     "strength": 0.8,
-    "key": "key.loadToolbarActivator"
+    "key": "key.origins.ternary_active"
   }
 }

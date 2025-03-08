@@ -1,0 +1,9 @@
+{
+  "powers": ["luna:human_souls/determination"],
+  "icon": "lunasorigins:soul_red",
+  "loading_priority": 9,
+  "order": 0,
+  "impact": 1,
+  "name": "Determination",
+  "description": "You are Determined."
+}

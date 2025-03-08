@@ -1,0 +1,14 @@
+{
+  "name": "Delicate",
+  "description": "Elliot has 8 hearts",
+  "type": "origins:multiple",
+  "delicate": {
+    "type": "origins:attribute",
+    "update_health": true,
+    "modifier": {
+      "value": -4,
+      "operation": "addition",
+      "attribute": "minecraft:generic.max_health"
+    }
+  }
+}

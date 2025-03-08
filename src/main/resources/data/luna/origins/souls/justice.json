@@ -1,0 +1,9 @@
+{
+  "powers": ["luna:human_souls/justice"],
+  "icon": "lunasorigins:soul_yellow",
+  "loading_priority": 9,
+  "order": 0,
+  "impact": 1,
+  "name": "Justice",
+  "description": "You stand for Justice."
+}

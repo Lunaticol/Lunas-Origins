@@ -8,6 +8,7 @@ import net.minecraft.block.ButtonBlock;
 import net.minecraft.block.DoorBlock;
 import net.minecraft.block.FenceBlock;
 import net.minecraft.block.FenceGateBlock;
+import net.minecraft.block.FlowerBlock;
 import net.minecraft.block.HangingSignBlock;
 import net.minecraft.block.LeavesBlock;
 import net.minecraft.block.MapColor;
@@ -22,6 +23,7 @@ import net.minecraft.block.WallBlock;
 import net.minecraft.block.WallSignBlock;
 import net.minecraft.block.enums.Instrument;
 import net.minecraft.block.piston.PistonBehavior;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
@@ -439,6 +441,16 @@ public class LunaBlocks {
                         "abominaceon",
                         true);
 
+        public static final Block NOCTILITH = register(
+                        new FlowerBlock(StatusEffects.WITHER, 20, AbstractBlock.Settings.create()),
+                        "noctilith",
+                        true);
+
+        public static final Block WHITE_LILY = register(
+                        new FlowerBlock(StatusEffects.REGENERATION, 20, AbstractBlock.Settings.create()),
+                        "white_lily",
+                        true);
+
         public static void initialize() {
 
                 ItemGroupEvents.modifyEntriesEvent(LunaItems.LUNASORIGINS_ITEM_GROUP_KEY)
@@ -574,6 +586,13 @@ public class LunaBlocks {
                                 .register(itemGroup -> itemGroup
                                                 .add(LunaBlocks.ABOMINACEON.asItem()));
 
+                ItemGroupEvents.modifyEntriesEvent(LunaItems.LUNASORIGINS_ITEM_GROUP_KEY)
+                                .register(itemGroup -> itemGroup
+                                                .add(LunaBlocks.NOCTILITH.asItem()));
+
+                ItemGroupEvents.modifyEntriesEvent(LunaItems.LUNASORIGINS_ITEM_GROUP_KEY)
+                                .register(itemGroup -> itemGroup
+                                                .add(LunaBlocks.WHITE_LILY.asItem()));
         }
 
         private static Block register(Block block, String name, boolean registerBlockItem) {

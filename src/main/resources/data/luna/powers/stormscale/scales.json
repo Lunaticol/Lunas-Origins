@@ -71,8 +71,8 @@
           "inverted": true
         },
         {
-          "type": "origins:type",
-          "damage_type": "explosion",
+          "type": "origins:name",
+          "name": "explosion",
           "inverted": true
         }
       ]
@@ -98,8 +98,8 @@
           "inverted": true
         },
         {
-          "type": "origins:type",
-          "damage_type": "explosion",
+          "type": "origins:name",
+          "name": "explosion",
           "inverted": true
         }
       ]
@@ -125,8 +125,8 @@
           "inverted": true
         },
         {
-          "type": "origins:type",
-          "damage_type": "explosion",
+          "type": "origins:name",
+          "name": "explosion",
           "inverted": true
         }
       ]

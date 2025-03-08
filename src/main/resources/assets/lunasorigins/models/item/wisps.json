@@ -2,6 +2,5 @@
   "parent": "minecraft:item/generated",
   "textures": {
     "layer0": "lunasorigins:item/wisps"
-  },
-  "display": {}
+  }
 }

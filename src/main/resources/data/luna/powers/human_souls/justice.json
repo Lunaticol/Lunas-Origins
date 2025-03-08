@@ -1,0 +1,144 @@
+{
+  "name": "§eJustical Spirit§r",
+  "description": "You stand for §eJustice§r.",
+  "type": "origins:multiple",
+  "justice": {
+    "type": "origins:action_when_hit",
+    "cooldown": 10,
+    "bientity_action": {
+      "type": "origins:actor_action",
+      "action": {
+        "type": "origins:damage",
+        "amount": 2,
+        "damage_type": "thorns"
+      }
+    }
+  },
+  "soul_detection": {
+    "type": "origins:action_over_time",
+    "interval": 1200,
+    "entity_action": {
+      "type": "origins:area_of_effect",
+      "radius": 16,
+      "shape": "sphere",
+      "bientity_action": {
+        "type": "origins:target_action",
+        "action": {
+          "type": "origins:apply_effect",
+          "effects": [
+            {
+              "effect": "minecraft:absorption",
+              "duration": 1200,
+              "show_particles": false
+            }
+          ]
+        }
+      },
+      "bientity_condition": {
+        "type": "origins:target_condition",
+        "condition": {
+          "type": "origins:or",
+          "conditions": [
+            {
+              "type": "origins:origin",
+              "layer": "luna:luna_layers",
+              "origin": "luna:human_souls/bravery"
+            },
+            {
+              "type": "origins:origin",
+              "layer": "luna:luna_layers",
+              "origin": "luna:human_souls/determination"
+            },
+            {
+              "type": "origins:origin",
+              "layer": "luna:luna_layers",
+              "origin": "luna:human_souls/kindness"
+            },
+            {
+              "type": "origins:origin",
+              "layer": "luna:luna_layers",
+              "origin": "luna:human_souls/patience"
+            },
+            {
+              "type": "origins:origin",
+              "layer": "luna:luna_layers",
+              "origin": "luna:human_souls/integrity"
+            },
+            {
+              "type": "origins:origin",
+              "layer": "luna:luna_layers",
+              "origin": "luna:human_souls/perseverance"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "it_refused": {
+    "type": "origins:action_when_damage_taken",
+    "cooldown": 1,
+    "entity_action": {
+      "type": "origins:chance",
+      "chance": 0.05,
+      "action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:apply_effect",
+            "effects": [
+              {
+                "effect": "minecraft:regeneration",
+                "amplifier": 1,
+                "duration": 900
+              },
+              {
+                "effect": "minecraft:fire_resistance",
+                "duration": 900
+              },
+              {
+                "effect": "minecraft:absorption",
+                "amplifier": 1,
+                "duration": 900
+              },
+              {
+                "effect": "minecraft:strength",
+                "amplifier": 1,
+                "duration": 900
+              },
+              {
+                "effect": "minecraft:resistance",
+                "amplifier": 1,
+                "duration": 900
+              }
+            ]
+          },
+          {
+            "type": "origins:execute_command",
+            "command": "playsound minecraft:item.totem.use ambient @s ~ ~ ~ 1 1"
+          },
+          {
+            "type": "origins:execute_command",
+            "command": "particle minecraft:totem_of_undying ~ ~ ~ .5 1 .5 .5 500 force"
+          },
+          {
+            "type": "origins:execute_command",
+            "command": "title @p title {\"bold\":true,\"color\":\"yellow\",\"text\":\"But it Refused!\"}"
+          }
+        ]
+      }
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        { "type": "origins:health", "comparison": "==", "compare_to": 2 }
+      ]
+    }
+  },
+  "advancement": {
+    "type": "origins:action_on_callback",
+    "entity_action_chosen": {
+      "type": "origins:grant_advancement",
+      "advancement": "luna:souls/kill_or_be_killed"
+    }
+  }
+}

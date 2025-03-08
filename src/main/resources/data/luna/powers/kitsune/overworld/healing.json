@@ -62,6 +62,13 @@
     "condition": {
       "type": "origins:on_fire",
       "inverted": true
+    },
+    "bientity_condition": {
+      "type": "origins:target_condition",
+      "condition": {
+        "type": "origins:living",
+        "inverted": true
+      }
     }
   },
   "pa_reset": {

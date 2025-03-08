@@ -1,0 +1,9 @@
+{
+  "powers": ["luna:human_souls/perseverance"],
+  "icon": "lunasorigins:soul_purple",
+  "loading_priority": 9,
+  "order": 0,
+  "impact": 1,
+  "name": "Perseverance",
+  "description": "You have Perseverance."
+}

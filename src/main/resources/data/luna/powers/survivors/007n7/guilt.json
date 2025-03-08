@@ -1,0 +1,14 @@
+{
+  "name": "Guilt",
+  "description": "Because he abandoned his son, he is stricken with guilt. For being so foresaken he has 9 hearts.",
+  "type": "origins:multiple",
+  "less_health": {
+    "type": "origins:attribute",
+    "update_health": true,
+    "modifier": {
+      "value": -2,
+      "operation": "addition",
+      "attribute": "minecraft:generic.max_health"
+    }
+  }
+}

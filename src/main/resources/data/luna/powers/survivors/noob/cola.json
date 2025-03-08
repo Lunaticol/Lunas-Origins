@@ -1,0 +1,42 @@
+{
+  "name": "Bloxy Cola",
+  "description": "Drink your generic soda to gain a slight speed gain",
+  "type": "origins:multiple",
+  "cola": {
+    "type": "origins:active_self",
+    "key": "key.origins.primary_active",
+    "cooldown": 240,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:delay",
+          "ticks": 20,
+          "action": {
+            "type": "origins:apply_effect",
+            "effect": {
+              "effect": "minecraft:speed",
+              "amplifier": 3,
+              "duration": 100
+            }
+          }
+        },
+        {
+          "type": "origins:apply_effect",
+          "effect": {
+            "effect": "minecraft:slowness",
+            "amplifier": 1,
+            "duration": 20
+          }
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:entity.generic.drink",
+          "pitch": 1,
+          "volume": 1,
+          "category": "players"
+        }
+      ]
+    }
+  }
+}

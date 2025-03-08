@@ -58,6 +58,14 @@ public class LunaItems {
                         itemGroup.add(LunaItems.UMBRYTE);
                         itemGroup.add(LunaItems.WIND_CHARGE);
                         itemGroup.add(LunaItems.WISPS);
+                        itemGroup.add(LunaItems.SOUL_RED);
+                        itemGroup.add(LunaItems.SOUL_ORANGE);
+                        itemGroup.add(LunaItems.SOUL_YELLOW);
+                        itemGroup.add(LunaItems.SOUL_GREEN);
+                        itemGroup.add(LunaItems.SOUL_CYAN);
+                        itemGroup.add(LunaItems.SOUL_BLUE);
+                        itemGroup.add(LunaItems.SOUL_PURPLE);
+                        itemGroup.add(LunaItems.SOUL_WHITE);
                 });
         }
 
@@ -170,4 +178,37 @@ public class LunaItems {
         public static final Item STARS = register(
                         new Item(new Item.Settings()),
                         "stars");
+
+        public static final Item SOUL_RED = register(
+                        new Item(new Item.Settings()),
+                        "soul_red");
+
+        public static final Item SOUL_ORANGE = register(
+                        new Item(new Item.Settings()),
+                        "soul_orange");
+
+        public static final Item SOUL_YELLOW = register(
+                        new Item(new Item.Settings()),
+                        "soul_yellow");
+
+        public static final Item SOUL_GREEN = register(
+                        new Item(new Item.Settings()),
+                        "soul_green");
+
+        public static final Item SOUL_CYAN = register(
+                        new Item(new Item.Settings()),
+                        "soul_cyan");
+
+        public static final Item SOUL_BLUE = register(
+                        new Item(new Item.Settings()),
+                        "soul_blue");
+
+        public static final Item SOUL_PURPLE = register(
+                        new Item(new Item.Settings()),
+                        "soul_purple");
+
+        public static final Item SOUL_WHITE = register(
+                        new Item(new Item.Settings()),
+                        "soul_white");
+
 }

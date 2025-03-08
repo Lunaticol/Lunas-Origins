@@ -1,0 +1,10 @@
+{
+  "name": "John",
+  "description": "Equppied with a sword and fried chicken, hes the myth and legend.",
+  "icon": "minecraft:cooked_chicken",
+  "impact": 3,
+  "powers": [
+    "luna:survivors/shedletsky/sword",
+    "luna:survivors/shedletsky/chicken"
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "name": "Rush Hour",
+  "description": "Elliot gains speed 5 for 10 seconds, this ability can hold up to 2 charges, you start with 1 and If the pizza is picked up you get another charge",
+  "type": "origins:multiple",
+  "charges": {
+    "type": "origins:resource",
+    "max": 2,
+    "min": 0
+  },
+  "rush": {
+    "type": "origins:active_self",
+    "cooldown": 400,
+    "key": "key.origins.secondary_active",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:apply_effect",
+          "effect": {
+            "effect": "minecraft:speed",
+            "amplifier": 4,
+            "duration": 100
+          }
+        },
+        {
+          "type": "origins:change_resource",
+          "change": -1,
+          "operation": "add",
+          "resource": "*:*_charges"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": ">=",
+      "resource": "*:*_charges"
+    }
+  }
+}

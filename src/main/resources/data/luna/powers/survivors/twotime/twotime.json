@@ -1,0 +1,509 @@
+{
+  "name": "Two Time",
+  "description": "Once taking fatal damage, max hp is set to 4 hearts and you get 30 seconds of speed 2\nLoud volume warning",
+  "type": "origins:multiple",
+  "fuck_you_said_dash_who_was_actually_the_fuck_you_guy": {
+    "type": "origins:prevent_death",
+    "hud_render": {
+      "should_render": true
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "particle dust 1.000 1.000 1.000 2 ~ ~ ~ 0.5 0.5 0.5 1 50 normal"
+        },
+        {
+          "type": "origins:apply_effect",
+          "effects": [
+            {
+              "effect": "minecraft:strength",
+              "amplifier": 1,
+              "duration": 900
+            },
+            {
+              "effect": "minecraft:fire_resistance",
+              "duration": 800
+            },
+            {
+              "effect": "minecraft:resistance",
+              "duration": 500,
+              "amplifier": 1
+            },
+            {
+              "effect": "minecraft:absorption",
+              "amplifier": 1,
+              "duration": 900
+            },
+            {
+              "effect": "minecraft:speed",
+              "amplifier": 1,
+              "duration": 900
+            }
+          ]
+        },
+        {
+          "type": "origins:heal",
+          "amount": 20
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 1,
+          "operation": "set",
+          "resource": "*:*_died"
+        },
+        {
+          "type": "origins:play_sound",
+          "category": "players",
+          "sound": "minecraft:item.totem.use",
+          "volume": 1
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 40,
+          "action": {
+            "type": "origins:play_sound",
+            "category": "players",
+            "sound": "minecraft:entity.wither.death",
+            "volume": 1
+          }
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 40,
+          "action": {
+            "type": "origins:play_sound",
+            "category": "players",
+            "sound": "minecraft:entity.wither.spawn",
+            "volume": 1
+          }
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 40,
+          "action": {
+            "type": "origins:play_sound",
+            "category": "players",
+            "sound": "minecraft:entity.ender_dragon.death",
+            "volume": 1
+          }
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 40,
+          "action": {
+            "type": "origins:play_sound",
+            "category": "players",
+            "sound": "minecraft:entity.ender_dragon.growl",
+            "volume": 1
+          }
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 40,
+          "action": {
+            "type": "origins:play_sound",
+            "category": "players",
+            "sound": "minecraft:ui.toast.challenge_complete",
+            "volume": 1
+          }
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 40,
+          "action": {
+            "type": "origins:play_sound",
+            "category": "players",
+            "sound": "minecraft:entity.wither.death",
+            "volume": 1
+          }
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 40,
+          "action": {
+            "type": "origins:play_sound",
+            "category": "players",
+            "sound": "minecraft:entity.wither.spawn",
+            "volume": 1
+          }
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 40,
+          "action": {
+            "type": "origins:play_sound",
+            "category": "players",
+            "sound": "minecraft:entity.ender_dragon.death",
+            "volume": 1
+          }
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 40,
+          "action": {
+            "type": "origins:play_sound",
+            "category": "players",
+            "sound": "minecraft:entity.ender_dragon.growl",
+            "volume": 1
+          }
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 40,
+          "action": {
+            "type": "origins:play_sound",
+            "category": "players",
+            "sound": "minecraft:ui.toast.challenge_complete",
+            "volume": 1
+          }
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 40,
+          "action": {
+            "type": "origins:play_sound",
+            "category": "players",
+            "sound": "minecraft:entity.wither.death",
+            "volume": 1
+          }
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 40,
+          "action": {
+            "type": "origins:play_sound",
+            "category": "players",
+            "sound": "minecraft:entity.wither.spawn",
+            "volume": 1
+          }
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 40,
+          "action": {
+            "type": "origins:play_sound",
+            "category": "players",
+            "sound": "minecraft:entity.ender_dragon.death",
+            "volume": 1
+          }
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 40,
+          "action": {
+            "type": "origins:play_sound",
+            "category": "players",
+            "sound": "minecraft:entity.ender_dragon.growl",
+            "volume": 1
+          }
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 40,
+          "action": {
+            "type": "origins:play_sound",
+            "category": "players",
+            "sound": "minecraft:ui.toast.challenge_complete",
+            "volume": 1
+          }
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 40,
+          "action": {
+            "type": "origins:play_sound",
+            "category": "players",
+            "sound": "minecraft:entity.wither.death",
+            "volume": 1
+          }
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 40,
+          "action": {
+            "type": "origins:play_sound",
+            "category": "players",
+            "sound": "minecraft:entity.wither.spawn",
+            "volume": 1
+          }
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 40,
+          "action": {
+            "type": "origins:play_sound",
+            "category": "players",
+            "sound": "minecraft:entity.ender_dragon.death",
+            "volume": 1
+          }
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 40,
+          "action": {
+            "type": "origins:play_sound",
+            "category": "players",
+            "sound": "minecraft:entity.ender_dragon.growl",
+            "volume": 1
+          }
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 40,
+          "action": {
+            "type": "origins:play_sound",
+            "category": "players",
+            "sound": "minecraft:ui.toast.challenge_complete",
+            "volume": 1
+          }
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 40,
+          "action": {
+            "type": "origins:play_sound",
+            "category": "players",
+            "sound": "minecraft:entity.wither.death",
+            "volume": 1
+          }
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 40,
+          "action": {
+            "type": "origins:play_sound",
+            "category": "players",
+            "sound": "minecraft:entity.wither.spawn",
+            "volume": 1
+          }
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 40,
+          "action": {
+            "type": "origins:play_sound",
+            "category": "players",
+            "sound": "minecraft:entity.ender_dragon.death",
+            "volume": 1
+          }
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 40,
+          "action": {
+            "type": "origins:play_sound",
+            "category": "players",
+            "sound": "minecraft:entity.ender_dragon.growl",
+            "volume": 1
+          }
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 40,
+          "action": {
+            "type": "origins:play_sound",
+            "category": "players",
+            "sound": "minecraft:ui.toast.challenge_complete",
+            "volume": 1
+          }
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 40,
+          "action": {
+            "type": "origins:play_sound",
+            "category": "players",
+            "sound": "minecraft:entity.wither.death",
+            "volume": 1
+          }
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 40,
+          "action": {
+            "type": "origins:play_sound",
+            "category": "players",
+            "sound": "minecraft:entity.wither.spawn",
+            "volume": 1
+          }
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 40,
+          "action": {
+            "type": "origins:play_sound",
+            "category": "players",
+            "sound": "minecraft:entity.ender_dragon.death",
+            "volume": 1
+          }
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 40,
+          "action": {
+            "type": "origins:play_sound",
+            "category": "players",
+            "sound": "minecraft:entity.ender_dragon.growl",
+            "volume": 1
+          }
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 40,
+          "action": {
+            "type": "origins:play_sound",
+            "category": "players",
+            "sound": "minecraft:ui.toast.challenge_complete",
+            "volume": 1
+          }
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 40,
+          "action": {
+            "type": "origins:play_sound",
+            "category": "players",
+            "sound": "minecraft:entity.wither.death",
+            "volume": 1
+          }
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 40,
+          "action": {
+            "type": "origins:play_sound",
+            "category": "players",
+            "sound": "minecraft:entity.wither.spawn",
+            "volume": 1
+          }
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 40,
+          "action": {
+            "type": "origins:play_sound",
+            "category": "players",
+            "sound": "minecraft:entity.ender_dragon.death",
+            "volume": 1
+          }
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 40,
+          "action": {
+            "type": "origins:play_sound",
+            "category": "players",
+            "sound": "minecraft:entity.ender_dragon.growl",
+            "volume": 1
+          }
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 40,
+          "action": {
+            "type": "origins:play_sound",
+            "category": "players",
+            "sound": "minecraft:ui.toast.challenge_complete",
+            "volume": 1
+          }
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 40,
+          "action": {
+            "type": "origins:play_sound",
+            "category": "players",
+            "sound": "minecraft:entity.wither.death",
+            "volume": 1
+          }
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 40,
+          "action": {
+            "type": "origins:play_sound",
+            "category": "players",
+            "sound": "minecraft:entity.wither.spawn",
+            "volume": 1
+          }
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 40,
+          "action": {
+            "type": "origins:play_sound",
+            "category": "players",
+            "sound": "minecraft:entity.ender_dragon.death",
+            "volume": 1
+          }
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 40,
+          "action": {
+            "type": "origins:play_sound",
+            "category": "players",
+            "sound": "minecraft:entity.ender_dragon.growl",
+            "volume": 1
+          }
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 40,
+          "action": {
+            "type": "origins:play_sound",
+            "category": "players",
+            "sound": "minecraft:ui.toast.challenge_complete",
+            "volume": 1
+          }
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 0,
+      "comparison": "==",
+      "resource": "*:*_died"
+    }
+  },
+  "died": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
+  },
+  "on_respawn": {
+    "type": "origins:action_on_callback",
+    "entity_action_respawned": {
+      "type": "origins:change_resource",
+      "change": 0,
+      "operation": "set",
+      "resource": "*:*_died"
+    }
+  },
+  "fuck_you_agian_said_dash_who_was_actually_the_fuck_you_guy": {
+    "type": "origins:attribute",
+    "update_health": true,
+    "modifier": {
+      "value": -4,
+      "operation": "addition",
+      "attribute": "minecraft:generic.max_health"
+    }
+  },
+  "when_died": {
+    "type": "origins:conditioned_attribute",
+    "update_health": true,
+    "modifier": {
+      "value": -8,
+      "operation": "addition",
+      "attribute": "minecraft:generic.max_health"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_died"
+    }
+  }
+}

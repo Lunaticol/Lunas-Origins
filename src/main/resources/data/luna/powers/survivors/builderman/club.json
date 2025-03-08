@@ -1,0 +1,17 @@
+{
+  "name": "Builders Club Exclusive",
+  "description": "Buildermans hats have infinite durability",
+  "type": "origins:multiple",
+  "when_hurt": {
+    "type": "origins:action_when_damage_taken",
+    "cooldown": 0,
+    "entity_action": {
+      "type": "origins:equipped_item_action",
+      "equipment_slot": "head",
+      "action": {
+        "type": "origins:damage",
+        "amount": -999
+      }
+    }
+  }
+}

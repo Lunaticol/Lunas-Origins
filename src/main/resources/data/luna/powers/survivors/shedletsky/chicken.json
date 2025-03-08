@@ -1,0 +1,45 @@
+{
+  "name": "John",
+  "description": "John can infinitly eat chicken that heals overtime. This ability has a cooldown of 40 seconds",
+  "type": "origins:multiple",
+  "chicken": {
+    "type": "origins:modify_food",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:heal",
+          "amount": 2
+        },
+        {
+          "type": "origins:apply_effect",
+          "effect": {
+            "effect": "minecraft:regeneration",
+            "duration": 200
+          }
+        },
+        {
+          "type": "origins:trigger_cooldown",
+          "power": "*:*_cooldown"
+        }
+      ],
+      "always_edible": true,
+      "item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": {
+          "item": "minecraft:cooked_chicken"
+        }
+      }
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 0,
+      "comparison": "==",
+      "resource": "*:*_cooldown"
+    }
+  },
+  "cooldown": {
+    "type": "origins:cooldown",
+    "cooldown": 800
+  }
+}

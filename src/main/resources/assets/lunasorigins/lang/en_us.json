@@ -1,4 +1,5 @@
 {
+  "sound.lunasorigins.command_forest_ambience": "Command Forest Ambience",
   "effect.lunasorigins.corruption": "Corruption",
   "itemGroup.lunaitemgroup": "Lunas Origins",
   "itemTooltip.lunasorigins.time": "§7Mind the hands.§r",
@@ -22,7 +23,7 @@
   "item.lunasorigins.minewarrior": "§dMinewarrior§r",
   "item.lunasorigins.moosheking": "§dMoosheking§r",
   "item.lunasorigins.stars": "Stars",
-  "item.lunasorigins.umbrtye": "Umbrtye",
+  "item.lunasorigins.umbryte": "Umbryte",
   "item.lunasorigins.wind_charge": "Wind Charge",
   "block.lunasorigins.titan_battery": "Titan Battery",
   "block.lunasorigins.dimensional_berry_bush": "Dimensional Berries",

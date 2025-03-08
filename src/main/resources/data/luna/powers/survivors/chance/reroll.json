@@ -1,0 +1,127 @@
+{
+  "name": "Reroll",
+  "description": "Chance can gamble his max health for 5-15 hearts(once per life)",
+  "type": "origins:multiple",
+  "hearts": {
+    "type": "origins:resource",
+    "max": 5,
+    "min": -5
+  },
+  "modify_health": {
+    "type": "origins:modify_attribute",
+    "attribute": "minecraft:generic.max_health",
+    "modifier": {
+      "operation": "addition",
+      "resource": "*:*_hearts"
+    }
+  },
+  "gamble": {
+    "type": "origins:active_self",
+    "cooldown": 72000,
+    "key": "key.loadToolbarActivator",
+    "entity_action": {
+      "type": "origins:choice",
+      "actions": [
+        {
+          "element": {
+            "type": "origins:change_resource",
+            "change": 5,
+            "operation": "set",
+            "resource": "*:*_hearts"
+          },
+          "weight": 1
+        },
+        {
+          "element": {
+            "type": "origins:change_resource",
+            "change": 4,
+            "operation": "set",
+            "resource": "*:*_hearts"
+          },
+          "weight": 1
+        },
+        {
+          "element": {
+            "type": "origins:change_resource",
+            "change": 3,
+            "operation": "set",
+            "resource": "*:*_hearts"
+          },
+          "weight": 1
+        },
+        {
+          "element": {
+            "type": "origins:change_resource",
+            "change": 2,
+            "operation": "set",
+            "resource": "*:*_hearts"
+          },
+          "weight": 1
+        },
+        {
+          "element": {
+            "type": "origins:change_resource",
+            "change": 1,
+            "operation": "set",
+            "resource": "*:*_hearts"
+          },
+          "weight": 1
+        },
+        {
+          "element": {
+            "type": "origins:change_resource",
+            "change": -1,
+            "operation": "set",
+            "resource": "*:*_hearts"
+          },
+          "weight": 1
+        },
+        {
+          "element": {
+            "type": "origins:change_resource",
+            "change": -2,
+            "operation": "set",
+            "resource": "*:*_hearts"
+          },
+          "weight": 1
+        },
+        {
+          "element": {
+            "type": "origins:change_resource",
+            "change": -3,
+            "operation": "set",
+            "resource": "*:*_hearts"
+          },
+          "weight": 1
+        },
+        {
+          "element": {
+            "type": "origins:change_resource",
+            "change": -4,
+            "operation": "set",
+            "resource": "*:*_hearts"
+          },
+          "weight": 1
+        },
+        {
+          "element": {
+            "type": "origins:change_resource",
+            "change": -5,
+            "operation": "set",
+            "resource": "*:*_hearts"
+          },
+          "weight": 1
+        },
+        {
+          "element": {
+            "type": "origins:change_resource",
+            "change": 0,
+            "operation": "set",
+            "resource": "*:*_hearts"
+          },
+          "weight": 1
+        }
+      ]
+    }
+  }
+}

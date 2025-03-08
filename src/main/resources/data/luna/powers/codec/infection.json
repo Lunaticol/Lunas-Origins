@@ -80,6 +80,10 @@
               ]
             }
           }
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "tellraw @a[distance=..32] [{\"text\":\"<Codec> \"},{\"text\":\"Mass infection!\",\"color\":\"green\",\"bold\":true}]"
         }
       ]
     },

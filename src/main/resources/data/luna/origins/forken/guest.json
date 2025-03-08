@@ -1,0 +1,11 @@
+{
+  "name": "Guest",
+  "description": "Hes the guest around here, show him some respect!",
+  "icon": "minecraft:shield",
+  "impact": 3,
+  "powers": [
+    "luna:survivors/guest/charge",
+    "luna:survivors/guest/block",
+    "luna:survivors/guest/parry"
+  ]
+}

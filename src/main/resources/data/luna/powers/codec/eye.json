@@ -10,7 +10,7 @@
     "use_teams": false,
     "condition": {
       "type": "origins:resource",
-      "compare_to": 2,
+      "compare_to": 1,
       "comparison": "==",
       "resource": "*:*_eye_resource"
     }
@@ -48,13 +48,17 @@
             "effect": "minecraft:speed",
             "duration": 160
           }
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "tellraw @a[distance=..128] [{\"text\":\"<Codec> \"},{\"text\":\"I see you...\",\"color\":\"green\",\"bold\":true}]"
         }
       ]
     }
   },
   "eye_resource": {
     "type": "origins:resource",
-    "max": 2,
+    "max": 1,
     "min": 0
   },
   "reset": {

@@ -13,6 +13,10 @@ import org.slf4j.LoggerFactory;
 
 import luna.lunasorigins.effects.LunaCorruptedEffect;
 import luna.lunasorigins.effects.SoulTunedEffect;
+import luna.lunasorigins.entity.LunaEntities;
+import luna.lunasorigins.entity.LunaEntityTags;
+import luna.lunasorigins.entity.LunaSensorType;
+import luna.lunasorigins.entity.LunaSpawnRestrict;
 
 public class LunasOrigins implements ModInitializer {
 
@@ -52,6 +56,11 @@ public class LunasOrigins implements ModInitializer {
     LunaBlocks.initialize();
     SoulTunedEffect.initialize();
     LunaEvent.initialize();
+    LunaEntities.registerEntities();
+    LunaSpawnRestrict.registerSpawnRestriction();
+    LunaEntityTags.initialize();
+    LunaSensorType.initialize();
+    LunaSounds.initialize();
     LOGGER.info("Wow I have a mod now this is great");
 
   }

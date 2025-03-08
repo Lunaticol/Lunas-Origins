@@ -1,0 +1,9 @@
+{
+  "powers": ["luna:human_souls/integrity"],
+  "icon": "lunasorigins:soul_blue",
+  "loading_priority": 9,
+  "order": 0,
+  "impact": 1,
+  "name": "Integrity",
+  "description": "You have Integrity."
+}

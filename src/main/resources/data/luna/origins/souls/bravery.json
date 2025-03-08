@@ -1,0 +1,9 @@
+{
+  "powers": ["luna:human_souls/bravery"],
+  "icon": "lunasorigins:soul_orange",
+  "loading_priority": 9,
+  "order": 0,
+  "impact": 1,
+  "name": "Bravery",
+  "description": "You have Bravery."
+}
