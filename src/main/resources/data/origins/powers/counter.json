@@ -1,0 +1,15 @@
+{
+  "hidden": true,
+  "type": "origins:multiple",
+  "origin_counter": {
+    "type": "origins:action_on_callback",
+    "entity_action_chosen": {
+      "type": "origins:execute_command",
+      "command": "scoreboard players add Human Origin 1"
+    },
+    "entity_action_lost": {
+      "type": "origins:execute_command",
+      "command": "scoreboard players remove Human Origin 1"
+    }
+  }
+}

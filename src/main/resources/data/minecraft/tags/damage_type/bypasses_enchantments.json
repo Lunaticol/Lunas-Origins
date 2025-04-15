@@ -1,4 +1,10 @@
 {
   "replace": false,
-  "values": ["luna:out_of_blood", "luna:heartattack", "luna:recoil", "luna:sap"]
+  "values": [
+    "luna:out_of_blood",
+    "luna:heartattack",
+    "luna:recoil",
+    "luna:sap",
+    "luna:lumina"
+  ]
 }

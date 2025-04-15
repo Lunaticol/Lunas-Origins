@@ -1,6 +1,6 @@
 {
   "name": "Soul Absorbtion",
-  "description": "You are able to absorb souls into yourself. This provides many benefits for you.",
+  "description": "You are able to absorb souls into yourself. This provides many benefits for you.\nKilling various different may provide more souls\nYou can use soulsand to gain souls",
   "type": "origins:multiple",
   "soul_bar": {
     "type": "origins:resource",

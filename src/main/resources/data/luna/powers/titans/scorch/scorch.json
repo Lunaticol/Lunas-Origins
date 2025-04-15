@@ -687,5 +687,100 @@
       "type": "origins:execute_command",
       "command": "scoreboard players remove Scorch Origin 1"
     }
+  },
+  "destroy_bed": {
+    "type": "origins:action_on_block_use",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:play_sound",
+          "volume": 1,
+          "sound": "minecraft:entity.zombie.break_wooden_door"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "title @s actionbar {\"text\":\"You crushed the bed under your weight.\"}"
+        }
+      ]
+    },
+    "block_action": {
+      "type": "origins:set_block",
+      "block": "air"
+    },
+    "block_condition": {
+      "type": "origins:in_tag",
+      "tag": "minecraft:beds"
+    }
+  },
+  "physical_damage_reduction": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "value": -0.2,
+      "operation": "multiply_total"
+    },
+    "damage_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:name",
+          "name": "mob"
+        },
+        {
+          "type": "origins:name",
+          "name": "mob.item"
+        },
+        {
+          "type": "origins:name",
+          "name": "player"
+        },
+        {
+          "type": "origins:name",
+          "name": "player.item"
+        },
+        {
+          "type": "origins:attacker",
+          "entity_condition": {
+            "type": "origins:exists"
+          }
+        }
+      ]
+    }
+  },
+  "artificer_field_day": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "value": 0.5,
+      "operation": "multiply_total"
+    },
+    "damage_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:name",
+          "name": "explosion"
+        },
+        {
+          "type": "origins:name",
+          "name": "explosion.player"
+        },
+        {
+          "type": "origins:name",
+          "name": "fireworks"
+        },
+        {
+          "type": "origins:name",
+          "name": "fireworks.item"
+        },
+        {
+          "type": "origins:name",
+          "name": "fireworks.player"
+        },
+        {
+          "type": "origins:name",
+          "name": "badRespawnPoint"
+        }
+      ]
+    }
   }
 }

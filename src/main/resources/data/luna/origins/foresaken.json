@@ -1,7 +1,0 @@
-{
-  "name": "The Foresaken",
-  "description": "Cursed to forever run from the horrors the hide.",
-  "icon": "minecraft:dirt",
-  "impact": 3,
-  "powers": ["luna:survivors/forken"]
-}

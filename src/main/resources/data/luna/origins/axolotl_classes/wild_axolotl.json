@@ -1,9 +1,10 @@
 {
   "name": "Wild Axolotl",
-  "description": "[SCROLL]",
+  "description": "Your free spirit makes you the toughest one in the wild.",
   "icon": "minecraft:heart_of_the_sea",
   "loading_priority": 1,
   "impact": 1,
   "order": 1,
+  "unchoosable": true,
   "powers": ["luna:axolotl/axolotl_classes/wild_axolotl", "luna:axolotl/swim"]
-},
+}

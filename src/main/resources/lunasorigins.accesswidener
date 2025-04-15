@@ -1,0 +1,8 @@
+accessWidener v2 named
+accessible class net/minecraft/client/particle/BlockLeakParticle$Dripping
+accessible class net/minecraft/client/particle/BlockLeakParticle$ContinuousFalling
+accessible class net/minecraft/client/particle/BlockLeakParticle$Landing
+accessible class net/minecraft/client/particle/ParticleManager$SpriteAwareFactory
+accessible field net/minecraft/client/particle/BlockLeakParticle obsidianTear Z
+accessible field net/minecraft/client/particle/Particle gravityStrength F
+accessible field net/minecraft/client/particle/Particle maxAge I

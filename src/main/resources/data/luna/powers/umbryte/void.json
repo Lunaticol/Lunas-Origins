@@ -1,6 +1,6 @@
 {
   "name": "Void Affinity",
-  "description": "You draw your power from the End, You cannot use your abilitys without Void power.\nYou can charge up Void Power by being near the void or ender blocks.\nEating Ender pearls or Eyes Of Ender also charge your Void Energy!",
+  "description": "You come from the darkest areas of the end, places where the physical world and the consuming void blur.\nYou can eat Ender Pearls or Eyes Of Ender.",
   "type": "origins:multiple",
   "color": {
     "type": "origins:model_color",
@@ -99,8 +99,11 @@
       }
     },
     "entity_action": {
-      "type": "origins:execute_command",
-      "command": "kill @s"
+      "type": "origins:damage",
+      "amount": 40,
+      "source": {
+        "name": "heartattack"
+      }
     },
     "condition": {
       "type": "origins:status_effect",

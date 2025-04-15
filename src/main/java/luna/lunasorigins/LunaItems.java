@@ -45,6 +45,7 @@ public class LunaItems {
                         itemGroup.add(LunaItems.LUNA_HEADTAKER);
                         itemGroup.add(LunaItems.RONIN_SWORD);
                         itemGroup.add(LunaItems.ENTANGLED_SWORD);
+                        itemGroup.add(LunaItems.JAX_SWORD);
                         // Donators
                         itemGroup.add(LunaItems.LUNA);
                         itemGroup.add(LunaItems.TIME);
@@ -66,6 +67,7 @@ public class LunaItems {
                         itemGroup.add(LunaItems.SOUL_BLUE);
                         itemGroup.add(LunaItems.SOUL_PURPLE);
                         itemGroup.add(LunaItems.SOUL_WHITE);
+                        itemGroup.add(LunaItems.LUMINA);
                 });
         }
 
@@ -113,12 +115,12 @@ public class LunaItems {
         // Weapons
 
         public static final Item LUNA_HEADTAKER = register(
-                        new LunaHeadTaker(ToolMaterials.NETHERITE, 10F, -3.2F,
+                        new LunaHeadTaker(ToolMaterials.NETHERITE, 10, -3.2F,
                                         new Item.Settings()),
                         "luna_headtaker");
 
         public static final Item RONIN_SWORD = register(
-                        new RoninSword(ToolMaterials.NETHERITE, 5F, -3.2F,
+                        new RoninSword(ToolMaterials.NETHERITE, 5, -3.2F,
                                         new Item.Settings()),
                         "ronin_sword");
 
@@ -126,6 +128,11 @@ public class LunaItems {
                         new SwordItem(ToolMaterials.NETHERITE, 3, -2.4F,
                                         new Item.Settings()),
                         "entangled_sword");
+
+        public static final Item JAX_SWORD = register(
+                        new SwordItem(ToolMaterials.NETHERITE, 6, -3.2F,
+                                        new Item.Settings()),
+                        "jax_sword");
 
         // Donators/Players
 
@@ -210,5 +217,8 @@ public class LunaItems {
         public static final Item SOUL_WHITE = register(
                         new Item(new Item.Settings()),
                         "soul_white");
+
+        public static final Item LUMINA = register(
+                        new Item(new Item.Settings()), "lumina");
 
 }

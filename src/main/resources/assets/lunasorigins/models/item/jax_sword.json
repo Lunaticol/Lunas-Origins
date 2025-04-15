@@ -1,0 +1,36 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "lunasorigins:item/jax_sword"
+  },
+  "display": {
+    "thirdperson_righthand": {
+      "rotation": [-50, -90, 0],
+      "translation": [0, 11.25, 0.5],
+      "scale": [2, 2, 0.85]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [-50, 90, 0],
+      "translation": [0, 11.25, 0.5],
+      "scale": [2, 2, 0.85]
+    },
+    "firstperson_righthand": {
+      "rotation": [-50, -90, 0],
+      "translation": [0, 11.25, 0.5],
+      "scale": [2, 2, 0.85]
+    },
+    "firstperson_lefthand": {
+      "rotation": [-50, 90, 0],
+      "translation": [0, 11.25, 0.5],
+      "scale": [2, 2, 0.85]
+    },
+    "ground": {
+      "translation": [0, 5, 0]
+    },
+    "head": {
+      "rotation": [178.54, -0.52, -30],
+      "translation": [-5.75, 3, 0.5],
+      "scale": [2, 2, 0.85]
+    }
+  }
+}

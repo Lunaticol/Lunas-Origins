@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "lunas-origins",
+  "id": "lunasorigins",
   "version": "${version}",
   "name": "Lunas Origins",
   "description": "It adds things I think.\nDeveloped by Lunaticol & Itsamatteroftime\nMusic & sounds by A_Crab_bar",
@@ -10,7 +10,7 @@
     "sources": "https://github.com/FabricMC/fabric-example-mod"
   },
   "license": "CC0-1.0",
-  "icon": "assets/lunas-origins/icon.png",
+  "icon": "assets/LT_icon.png",
   "environment": "*",
   "entrypoints": {
     "main": ["luna.lunasorigins.LunasOrigins"],
@@ -31,6 +31,7 @@
     "java": ">=17",
     "fabric-api": "*"
   },
+  "accessWidener": "lunasorigins.accesswidener",
   "suggests": {
     "another-mod": "*"
   }

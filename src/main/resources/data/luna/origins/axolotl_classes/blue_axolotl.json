@@ -1,9 +1,10 @@
 {
   "name": "Blue Axolotl",
-  "description": "[SCROLL]",
+  "description": "The rare blue axolotl.",
   "icon": "minecraft:heart_of_the_sea",
   "loading_priority": 1,
   "impact": 1,
   "order": 1,
+  "unchoosable": true,
   "powers": ["luna:axolotl/axolotl_classes/blue_axolotl", "luna:axolotl/swim"]
 }

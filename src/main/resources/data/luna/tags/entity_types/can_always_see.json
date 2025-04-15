@@ -13,6 +13,7 @@
     "minecraft:item_frame",
     "minecraft:glow_item_frame",
     "minecraft:arrow",
-    "minecraft:end_crystal"
+    "minecraft:end_crystal",
+    "minecraft:painting"
   ]
 }

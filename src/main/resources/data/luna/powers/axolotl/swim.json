@@ -35,6 +35,6 @@
   },
   "toggle": {
     "type": "origins:toggle",
-    "key": "key.loadToolbarActivator"
+    "key": "key.saveToolbarActivator"
   }
 }

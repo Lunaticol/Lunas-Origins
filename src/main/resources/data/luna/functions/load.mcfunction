@@ -28,3 +28,5 @@ scoreboard players add Solaris Origin 0
 scoreboard players add Ceravol Origin 0
 scoreboard players add Umbryte Origin 0
 scoreboard players add Piglin Origin 0
+scoreboard players add Forsaken Origin 0
+scoreboard players add Human Origin 0

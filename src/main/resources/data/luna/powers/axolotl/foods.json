@@ -1,16 +1,14 @@
 {
   "name": "Fish Diet",
   "description": "You are limited to fish based foods",
-  "type": "origins:multiple",
-  "bucket": {
-    "type": "origins:prevent_item_use",
-    "item_condition": {
-      "type": "origins:ingredient",
-      "ingredient": {
-        "tag": "luna:no_eat"
-      }
+  "badges": [
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/info.png",
+      "text": "Vanilla only"
     }
-  },
+  ],
+  "type": "origins:multiple",
   "fulfilling_fish": {
     "type": "origins:modify_food",
     "item_condition": {

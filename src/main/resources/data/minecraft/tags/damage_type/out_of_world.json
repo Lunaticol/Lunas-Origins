@@ -1,4 +1,10 @@
 {
   "replace": false,
-  "values": ["luna:lightningcrash", "luna:lightningdash", "luna:sap"]
+  "values": [
+    "luna:lightningcrash",
+    "luna:lightningdash",
+    "luna:sap",
+    "luna:lumina",
+    "luna:heartattack"
+  ]
 }

@@ -1,0 +1,88 @@
+{
+  "hidden": true,
+  "type": "origins:multiple",
+  "thermal_shield_helm": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "value": -0.125,
+      "operation": "multiply_total"
+    },
+    "condition": {
+      "type": "origins:equipped_item",
+      "equipment_slot": "head",
+      "item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": {
+          "item": "minecraft:netherite_helmet"
+        }
+      }
+    },
+    "damage_condition": {
+      "type": "origins:name",
+      "name": "luna:shield"
+    }
+  },
+  "thermal_shield_chest": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "value": -0.125,
+      "operation": "multiply_total"
+    },
+    "condition": {
+      "type": "origins:equipped_item",
+      "equipment_slot": "head",
+      "item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": {
+          "item": "minecraft:netherite_chestplate"
+        }
+      }
+    },
+    "damage_condition": {
+      "type": "origins:name",
+      "name": "luna:shield"
+    }
+  },
+  "thermal_shield_leggings": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "value": -0.125,
+      "operation": "multiply_total"
+    },
+    "condition": {
+      "type": "origins:equipped_item",
+      "equipment_slot": "head",
+      "item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": {
+          "item": "minecraft:netherite_leggings"
+        }
+      }
+    },
+    "damage_condition": {
+      "type": "origins:name",
+      "name": "luna:shield"
+    }
+  },
+  "thermal_shield_boots": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "value": -0.125,
+      "operation": "multiply_total"
+    },
+    "condition": {
+      "type": "origins:equipped_item",
+      "equipment_slot": "head",
+      "item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": {
+          "item": "minecraft:netherite_boots"
+        }
+      }
+    },
+    "damage_condition": {
+      "type": "origins:name",
+      "name": "luna:shield"
+    }
+  }
+}

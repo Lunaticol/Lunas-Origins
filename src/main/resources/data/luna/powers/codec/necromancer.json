@@ -1,6 +1,6 @@
 {
   "name": "Necromancer",
-  "description": "Bring forth the dead to aid you in battle.",
+  "description": "Bring forth the dead to aid you in battle.\nMax cap of 10, kill mobs to gain summons.",
   "type": "origins:multiple",
   "necro_bar": {
     "type": "origins:resource",

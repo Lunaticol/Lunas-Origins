@@ -61,10 +61,41 @@
       ]
     },
     "condition": {
-      "type": "origins:resource",
-      "compare_to": 1,
-      "comparison": "==",
-      "resource": "*:*_ready"
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": "==",
+          "resource": "*:*_ready"
+        },
+        {
+          "type": "origins:riding",
+          "bientity_condition": {
+            "type": "origins:target_condition",
+            "condition": {
+              "type": "origins:or",
+              "conditions": [
+                {
+                  "type": "origins:origin",
+                  "layer": "origins:origin",
+                  "origin": "luna:ronin"
+                },
+                {
+                  "type": "origins:origin",
+                  "layer": "origins:origin",
+                  "origin": "luna:scorch"
+                },
+                {
+                  "type": "origins:origin",
+                  "layer": "origins:origin",
+                  "origin": "luna:northstar"
+                }
+              ]
+            }
+          }
+        }
+      ]
     }
   },
   "message": {

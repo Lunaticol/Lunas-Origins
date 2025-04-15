@@ -1,9 +1,10 @@
 {
   "name": "Lucy Axolotl",
-  "description": "[SCROLL]",
+  "description": "One of the most common axolotls. They yearn for exploration.",
   "icon": "minecraft:heart_of_the_sea",
   "loading_priority": 1,
   "impact": 1,
   "order": 1,
+  "unchoosable": true,
   "powers": ["luna:axolotl/axolotl_classes/lucy_axolotl", "luna:axolotl/swim"]
-},
+}

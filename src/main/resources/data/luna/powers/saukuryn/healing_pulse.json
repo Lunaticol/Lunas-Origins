@@ -1,6 +1,6 @@
 {
   "name": "Healing Pulse",
-  "description": "Heal others within an area.",
+  "description": "Heal others within an area.\nCherry leaves will begin falling when this is active",
   "type": "origins:multiple",
   "healing_others": {
     "type": "origins:action_over_time",

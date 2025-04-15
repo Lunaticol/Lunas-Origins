@@ -10,12 +10,16 @@
       "actions": [
         {
           "type": "origins:add_velocity",
-          "z": 0.7,
+          "z": 0.8,
           "space": "local"
         },
         {
           "type": "origins:execute_command",
           "command": "playsound minecraft:entity.ender_dragon.flap master @s ~ ~ ~ 100 .5"
+        },
+        {
+          "type": "origins:exhaust",
+          "amount": 0.4
         }
       ]
     },

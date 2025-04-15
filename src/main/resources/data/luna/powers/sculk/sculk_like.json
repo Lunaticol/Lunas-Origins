@@ -1,6 +1,13 @@
 {
   "name": "Deep and Dark",
-  "description": "Born from Sculk, and kin to the Warden. Go forward, and show these invaders why they shouldn't mess with the Sculk.",
+  "description": "Born from Sculk, and kin to the Warden. Go forward, and show these invaders why they shouldn't mess with the Sculk.\n§lYou are blind. You cannot see entitys around you.",
+  "badges": [
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/star.png",
+      "text": "Press F4 to disable the shader. Not recommended."
+    }
+  ],
   "type": "origins:multiple",
   "city": {
     "type": "origins:modify_player_spawn",
@@ -560,6 +567,31 @@
           "command": "scoreboard players remove Lyst Origin 1"
         }
       ]
+    }
+  },
+  "destroy_bed": {
+    "type": "origins:action_on_block_use",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:play_sound",
+          "volume": 1,
+          "sound": "minecraft:entity.zombie.break_wooden_door"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "title @s actionbar {\"text\":\"You crushed the bed under your weight.\"}"
+        }
+      ]
+    },
+    "block_action": {
+      "type": "origins:set_block",
+      "block": "air"
+    },
+    "block_condition": {
+      "type": "origins:in_tag",
+      "tag": "minecraft:beds"
     }
   }
 }

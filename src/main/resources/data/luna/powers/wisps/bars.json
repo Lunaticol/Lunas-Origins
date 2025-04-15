@@ -9,7 +9,13 @@
       "should_render": true,
       "sprite_location": "origins:textures/gui/luna_resource_bar.png",
       "bar_index": 7,
-      "order": 0
+      "order": 0,
+      "condition": {
+        "type": "origins:resource",
+        "compare_to": 0,
+        "comparison": "==",
+        "resource": "luna:wisps/wisp_ult_active"
+      }
     }
   },
   "orange_wisp_bar": {
@@ -20,7 +26,13 @@
       "should_render": true,
       "sprite_location": "origins:textures/gui/luna_resource_bar.png",
       "bar_index": 8,
-      "order": 1
+      "order": 1,
+      "condition": {
+        "type": "origins:resource",
+        "compare_to": 0,
+        "comparison": "==",
+        "resource": "luna:wisps/wisp_ult_active"
+      }
     }
   },
   "yellow_wisp_bar": {
@@ -31,7 +43,13 @@
       "should_render": true,
       "sprite_location": "origins:textures/gui/luna_resource_bar.png",
       "bar_index": 9,
-      "order": 2
+      "order": 2,
+      "condition": {
+        "type": "origins:resource",
+        "compare_to": 0,
+        "comparison": "==",
+        "resource": "luna:wisps/wisp_ult_active"
+      }
     }
   },
   "green_wisp_bar": {
@@ -42,7 +60,13 @@
       "should_render": true,
       "sprite_location": "origins:textures/gui/luna_resource_bar.png",
       "bar_index": 10,
-      "order": 3
+      "order": 3,
+      "condition": {
+        "type": "origins:resource",
+        "compare_to": 0,
+        "comparison": "==",
+        "resource": "luna:wisps/wisp_ult_active"
+      }
     }
   },
   "cyan_wisp_bar": {
@@ -53,7 +77,13 @@
       "should_render": true,
       "sprite_location": "origins:textures/gui/luna_resource_bar.png",
       "bar_index": 11,
-      "order": 4
+      "order": 4,
+      "condition": {
+        "type": "origins:resource",
+        "compare_to": 0,
+        "comparison": "==",
+        "resource": "luna:wisps/wisp_ult_active"
+      }
     }
   },
   "blue_wisp_bar": {
@@ -64,7 +94,13 @@
       "should_render": true,
       "sprite_location": "origins:textures/gui/luna_resource_bar.png",
       "bar_index": 12,
-      "order": 5
+      "order": 5,
+      "condition": {
+        "type": "origins:resource",
+        "compare_to": 0,
+        "comparison": "==",
+        "resource": "luna:wisps/wisp_ult_active"
+      }
     }
   },
   "purple_wisp_bar": {
@@ -75,7 +111,30 @@
       "should_render": true,
       "sprite_location": "origins:textures/gui/luna_resource_bar.png",
       "bar_index": 13,
-      "order": 6
+      "order": 6,
+      "condition": {
+        "type": "origins:resource",
+        "compare_to": 0,
+        "comparison": "==",
+        "resource": "luna:wisps/wisp_ult_active"
+      }
+    }
+  },
+  "ult_wisp_bar": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 3500,
+    "start_value": 3500,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/luna_resource_bar.png",
+      "bar_index": 14,
+      "condition": {
+        "type": "origins:resource",
+        "compare_to": 1,
+        "comparison": "==",
+        "resource": "luna:wisps/wisp_ult_active"
+      }
     }
   }
 }

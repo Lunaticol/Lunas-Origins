@@ -1,6 +1,6 @@
 {
   "name": "Tiny Titan",
-  "description": "You are significantly smaller than any other mob, with only 6 hearts.\nProjectiles have a harder time hitting you when you sprint.",
+  "description": "You are significantly smaller than any other mob, with only 6 hearts.\nProjectiles hurt 0.5x more due to their size.\nYou are able to climb walls",
   "type": "origins:multiple",
   "size": {
     "type": "origins:action_on_callback",
@@ -65,10 +65,7 @@
     },
     "modifier": {
       "operation": "multiply_total",
-      "value": -0.25
-    },
-    "condition": {
-      "type": "origins:sprinting"
+      "value": 0.5
     }
   },
   "walls": {

@@ -1,6 +1,7 @@
 {
   "sound.lunasorigins.command_forest_ambience": "Command Forest Ambience",
-  "effect.lunasorigins.corruption": "Corruption",
+  "sound.lunasorigins.lumina_ult": "Lumina Ult Activated",
+  "sound.lunasorigins.aono_ult": "Aono Kitsune Ult Activated",
   "itemGroup.lunaitemgroup": "Lunas Origins",
   "itemTooltip.lunasorigins.time": "§7Mind the hands.§r",
   "itemTooltip.lunasorigins.luna": "§7Let go of me.§r",
@@ -80,6 +81,7 @@
   "block.lunasorigins.sylveon": "Sylveon",
   "block.lunasorigins.abominaceon": "Abominaceon",
   "effect.lunasorigins.soul_tuned": "Soul Tuned",
+  "effect.lunasorigins.corruption": "Corruption",
   "death.attack.dark_healing": "%1$s lost to much blood",
   "death.attack.dark_healing.player": "%1$s lost to much blood from %2$s",
   "death.attack.shield": "%1$s was scorched",
@@ -133,7 +135,9 @@
   "death.attack.infection": "%1$s was hit by mass infection",
   "death.attack.infection.player": "%1$s was hit by mass infection from %2$s",
   "death.attack.infection_shockwave": "%1$s was caught in the mass infection shockwave.",
-  "death.attack.infection_shockwave.player": "%1$s was caught in the mass infection shockwave from %2$s",
+  "death.attack.infection_shockwave.player": "%1$s was caught in a mass infection shockwave from %2$s",
   "death.attack.entangled": "%1$s was entangled",
-  "death.attack.entangled.player": "%1$s was entangled by %2$s"
+  "death.attack.entangled.player": "%1$s was entangled by %2$s",
+  "death.attack.lumina": "The colors felt right to %1$s",
+  "death.attack.lumina.player": "%2$s showed the colors to %1$s"
 }

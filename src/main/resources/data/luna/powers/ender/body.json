@@ -1,6 +1,6 @@
 {
   "name": "Ender-Locked",
-  "description": "Your body has adapted to the end alot more since you were originally locked in.",
+  "description": "Your body has adapted to the end alot more since you were originally locked in.\nFarther attack and block reach.\nYou deal more projectile damage.",
   "type": "origins:multiple",
   "color": {
     "type": "origins:model_color",

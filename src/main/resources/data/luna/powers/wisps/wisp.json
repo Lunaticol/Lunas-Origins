@@ -1,6 +1,6 @@
 {
   "name": "Will'o'Wisp",
-  "description": "Use the wisps to your advantage.",
+  "description": "You can use wisp abilitys to aid you in your needs. Without the wisps you are just a human, but that doesnt mean you're nothing without them.",
   "type": "origins:multiple",
   "switch": {
     "type": "origins:active_self",
@@ -300,6 +300,18 @@
   },
   "ult": {
     "type": "origins:active_self",
+    "cooldown": 14400,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/luna_resource_bar.png",
+      "bar_index": 14,
+      "condition": {
+        "type": "origins:resource",
+        "compare_to": 0,
+        "comparison": "==",
+        "resource": "*:wisps/wisp_ult_active"
+      }
+    },
     "key": "key.loadToolbarActivator",
     "entity_action": {
       "type": "origins:and",
@@ -458,13 +470,19 @@
                 "operation": "set"
               },
               {
-                "type": "origins:change_resource",
-                "change": 1,
-                "resource": "*:*_can_drain"
-              },
-              {
                 "type": "origins:grant_advancement",
                 "advancement": "luna:wisp/ult"
+              },
+              {
+                "type": "origins:play_sound",
+                "sound": "lunasorigins:lumina_ult",
+                "volume": 1,
+                "category": "music",
+                "pitch": 1
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "luna:wisps/bar_drain"
               }
             ]
           }
@@ -704,411 +722,97 @@
   },
   "drain": {
     "type": "origins:action_over_time",
-    "interval": 5,
+    "interval": 20,
     "entity_action": {
-      "type": "origins:if_else_list",
-      "actions": [
-        {
-          "action": {
-            "type": "origins:change_resource",
-            "change": -10,
-            "operation": "add",
-            "resource": "*:wisps/bars_red_wisp_bar"
-          },
-          "condition": {
-            "type": "origins:and",
-            "conditions": [
-              {
-                "type": "origins:resource",
-                "compare_to": 0,
-                "comparison": "==",
-                "resource": "*:wisps/bars_orange_wisp_bar"
-              },
-              {
-                "type": "origins:resource",
-                "compare_to": 0,
-                "comparison": "==",
-                "resource": "*:wisps/bars_yellow_wisp_bar"
-              },
-              {
-                "type": "origins:resource",
-                "compare_to": 0,
-                "comparison": "==",
-                "resource": "*:wisps/bars_green_wisp_bar"
-              },
-              {
-                "type": "origins:resource",
-                "compare_to": 0,
-                "comparison": "==",
-                "resource": "*:wisps/bars_cyan_wisp_bar"
-              },
-              {
-                "type": "origins:resource",
-                "compare_to": 0,
-                "comparison": "==",
-                "resource": "*:wisps/bars_blue_wisp_bar"
-              },
-              {
-                "type": "origins:resource",
-                "compare_to": 0,
-                "comparison": "==",
-                "resource": "*:wisps/bars_purple_wisp_bar"
-              }
-            ]
-          }
-        },
-        {
-          "action": {
-            "type": "origins:change_resource",
-            "change": -10,
-            "operation": "add",
-            "resource": "*:wisps/bars_orange_wisp_bar"
-          },
-          "condition": {
-            "type": "origins:and",
-            "conditions": [
-              {
-                "type": "origins:resource",
-                "compare_to": 0,
-                "comparison": "==",
-                "resource": "*:wisps/bars_yellow_wisp_bar"
-              },
-              {
-                "type": "origins:resource",
-                "compare_to": 0,
-                "comparison": "==",
-                "resource": "*:wisps/bars_green_wisp_bar"
-              },
-              {
-                "type": "origins:resource",
-                "compare_to": 0,
-                "comparison": "==",
-                "resource": "*:wisps/bars_cyan_wisp_bar"
-              },
-              {
-                "type": "origins:resource",
-                "compare_to": 0,
-                "comparison": "==",
-                "resource": "*:wisps/bars_blue_wisp_bar"
-              },
-              {
-                "type": "origins:resource",
-                "compare_to": 0,
-                "comparison": "==",
-                "resource": "*:wisps/bars_purple_wisp_bar"
-              }
-            ]
-          }
-        },
-        {
-          "action": {
-            "type": "origins:change_resource",
-            "change": -10,
-            "operation": "add",
-            "resource": "*:wisps/bars_yellow_wisp_bar"
-          },
-          "condition": {
-            "type": "origins:and",
-            "conditions": [
-              {
-                "type": "origins:resource",
-                "compare_to": 0,
-                "comparison": "==",
-                "resource": "*:wisps/bars_green_wisp_bar"
-              },
-              {
-                "type": "origins:resource",
-                "compare_to": 0,
-                "comparison": "==",
-                "resource": "*:wisps/bars_cyan_wisp_bar"
-              },
-              {
-                "type": "origins:resource",
-                "compare_to": 0,
-                "comparison": "==",
-                "resource": "*:wisps/bars_blue_wisp_bar"
-              },
-              {
-                "type": "origins:resource",
-                "compare_to": 0,
-                "comparison": "==",
-                "resource": "*:wisps/bars_purple_wisp_bar"
-              }
-            ]
-          }
-        },
-        {
-          "action": {
-            "type": "origins:change_resource",
-            "change": -10,
-            "operation": "add",
-            "resource": "*:wisps/bars_green_wisp_bar"
-          },
-          "condition": {
-            "type": "origins:and",
-            "conditions": [
-              {
-                "type": "origins:resource",
-                "compare_to": 0,
-                "comparison": "==",
-                "resource": "*:wisps/bars_cyan_wisp_bar"
-              },
-              {
-                "type": "origins:resource",
-                "compare_to": 0,
-                "comparison": "==",
-                "resource": "*:wisps/bars_blue_wisp_bar"
-              },
-              {
-                "type": "origins:resource",
-                "compare_to": 0,
-                "comparison": "==",
-                "resource": "*:wisps/bars_purple_wisp_bar"
-              }
-            ]
-          }
-        },
-        {
-          "action": {
-            "type": "origins:change_resource",
-            "change": -10,
-            "operation": "add",
-            "resource": "*:wisps/bars_cyan_wisp_bar"
-          },
-          "condition": {
-            "type": "origins:and",
-            "conditions": [
-              {
-                "type": "origins:resource",
-                "compare_to": 0,
-                "comparison": "==",
-                "resource": "*:wisps/bars_blue_wisp_bar"
-              },
-              {
-                "type": "origins:resource",
-                "compare_to": 0,
-                "comparison": "==",
-                "resource": "*:wisps/bars_purple_wisp_bar"
-              }
-            ]
-          }
-        },
-        {
-          "action": {
-            "type": "origins:change_resource",
-            "change": -10,
-            "operation": "add",
-            "resource": "*:wisps/bars_blue_wisp_bar"
-          },
-          "condition": {
-            "type": "origins:resource",
-            "compare_to": 0,
-            "comparison": "==",
-            "resource": "*:wisps/bars_purple_wisp_bar"
-          }
-        },
-        {
-          "action": {
-            "type": "origins:change_resource",
-            "change": -10,
-            "operation": "add",
-            "resource": "*:wisps/bars_purple_wisp_bar"
-          },
-          "condition": {
-            "type": "origins:resource",
-            "compare_to": 1,
-            "comparison": "==",
-            "resource": "*:*_can_drain"
-          }
-        }
-      ]
+      "type": "origins:change_resource",
+      "change": -20,
+      "resource": "*:wisps/bars_ult_wisp_bar"
     },
     "condition": {
       "type": "origins:resource",
       "compare_to": 1,
       "comparison": "==",
-      "resource": "*:*_ult_active"
+      "resource": "*:*_purple"
     }
   },
-  "can_drain": {
-    "type": "origins:resource",
-    "max": 1,
-    "min": 0
-  },
-  "switch_ult": {
+  "gay_blast": {
     "type": "origins:active_self",
-    "key": "key.origins.primary_active",
+    "key": {
+      "key": "key.origins.primary_active",
+      "continuous": true
+    },
+    "cooldown": 20,
     "entity_action": {
-      "type": "origins:if_else_list",
-      "actions": [
-        {
-          "action": {
-            "type": "origins:and",
-            "actions": [
-              {
-                "type": "origins:execute_command",
-                "command": "function luna:wisps/red"
-              },
-              {
-                "type": "origins:play_sound",
-                "sound": "minecraft:block.bell.resonate",
-                "category": "players",
-                "pitch": 2
-              }
-            ]
+      "type": "origins:raycast",
+      "distance": 12,
+      "entity": true,
+      "block": true,
+      "fluid_handling": "any",
+      "command_along_ray": "function luna:wisps/ult_beam_particle",
+      "command_at_hit": "function luna:wisps/boom",
+      "command_step": 0.1,
+      "bientity_action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:target_action",
+            "action": {
+              "type": "origins:and",
+              "actions": [
+                {
+                  "type": "origins:damage",
+                  "amount": 10,
+                  "source": {
+                    "name": "lumina"
+                  }
+                }
+              ]
+            }
           },
-          "condition": {
-            "type": "origins:resource",
-            "compare_to": 7,
-            "comparison": "==",
-            "resource": "*:*_switch_resource"
+          {
+            "type": "origins:add_velocity",
+            "z": 2,
+            "y": 1,
+            "space": "local_horizontal_normalized"
           }
-        },
-        {
-          "action": {
-            "type": "origins:and",
-            "actions": [
-              {
-                "type": "origins:execute_command",
-                "command": "function luna:wisps/orange"
-              },
-              {
-                "type": "origins:play_sound",
-                "sound": "minecraft:block.bell.resonate",
-                "category": "players",
-                "pitch": 2
-              }
-            ]
-          },
-          "condition": {
-            "type": "origins:resource",
-            "compare_to": 1,
-            "comparison": "==",
-            "resource": "*:*_switch_resource"
-          }
-        },
-        {
-          "action": {
-            "type": "origins:and",
-            "actions": [
-              {
-                "type": "origins:execute_command",
-                "command": "function luna:wisps/yellow"
-              },
-              {
-                "type": "origins:play_sound",
-                "sound": "minecraft:block.bell.resonate",
-                "category": "players",
-                "pitch": 2
-              }
-            ]
-          },
-          "condition": {
-            "type": "origins:resource",
-            "compare_to": 2,
-            "comparison": "==",
-            "resource": "*:*_switch_resource"
-          }
-        },
-        {
-          "action": {
-            "type": "origins:and",
-            "actions": [
-              {
-                "type": "origins:execute_command",
-                "command": "function luna:wisps/green"
-              },
-              {
-                "type": "origins:play_sound",
-                "sound": "minecraft:block.bell.resonate",
-                "category": "players",
-                "pitch": 2
-              }
-            ]
-          },
-          "condition": {
-            "type": "origins:resource",
-            "compare_to": 3,
-            "comparison": "==",
-            "resource": "*:*_switch_resource"
-          }
-        },
-        {
-          "action": {
-            "type": "origins:and",
-            "actions": [
-              {
-                "type": "origins:execute_command",
-                "command": "function luna:wisps/cyan"
-              },
-              {
-                "type": "origins:play_sound",
-                "sound": "minecraft:block.bell.resonate",
-                "category": "players",
-                "pitch": 2
-              }
-            ]
-          },
-          "condition": {
-            "type": "origins:resource",
-            "compare_to": 4,
-            "comparison": "==",
-            "resource": "*:*_switch_resource"
-          }
-        },
-        {
-          "action": {
-            "type": "origins:and",
-            "actions": [
-              {
-                "type": "origins:execute_command",
-                "command": "function luna:wisps/blue"
-              },
-              {
-                "type": "origins:play_sound",
-                "sound": "minecraft:block.bell.resonate",
-                "category": "players",
-                "pitch": 2
-              }
-            ]
-          },
-          "condition": {
-            "type": "origins:resource",
-            "compare_to": 5,
-            "comparison": "==",
-            "resource": "*:*_switch_resource"
-          }
-        },
-        {
-          "action": {
-            "type": "origins:and",
-            "actions": [
-              {
-                "type": "origins:execute_command",
-                "command": "function luna:wisps/purple"
-              },
-              {
-                "type": "origins:play_sound",
-                "sound": "minecraft:block.bell.resonate",
-                "category": "players",
-                "pitch": 2
-              }
-            ]
-          },
-          "condition": {
-            "type": "origins:resource",
-            "compare_to": 6,
-            "comparison": "==",
-            "resource": "*:*_switch_resource"
-          }
-        }
-      ]
+        ]
+      }
     },
     "condition": {
       "type": "origins:resource",
       "compare_to": 1,
       "comparison": "==",
-      "resource": "*:*_ult_active"
+      "resource": "*:wisps/wisp_ult_active"
+    }
+  },
+  "night_time_debuffs": {
+    "type": "origins:action_over_time",
+    "interval": 10,
+    "entity_action": {
+      "type": "origins:apply_effect",
+      "effects": [
+        {
+          "duration": 40,
+          "amplifier": 2,
+          "effect": "minecraft:weakness",
+          "show_icon": true,
+          "show_particles": false
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:daytime",
+          "inverted": true
+        },
+        {
+          "type": "origins:dimension",
+          "dimension": "minecraft:the_nether",
+          "inverted": true
+        }
+      ]
     }
   },
   "end": {
@@ -1164,62 +868,32 @@
           "change": 0,
           "operation": "set",
           "resource": "*:*_ult_active"
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 5,
+          "action": {
+            "type": "origins:change_resource",
+            "change": 3500,
+            "operation": "set",
+            "resource": "luna:wisps/bars_ult_wisp_bar"
+          }
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 1,
+          "action": {
+            "type": "origins:execute_command",
+            "command": "luna:wisps/bar_drain"
+          }
         }
       ]
     },
     "condition": {
-      "type": "origins:and",
-      "conditions": [
-        {
-          "type": "origins:resource",
-          "compare_to": 1,
-          "comparison": "==",
-          "resource": "*:*_ult_active"
-        },
-        {
-          "type": "origins:resource",
-          "compare_to": 0,
-          "comparison": "==",
-          "resource": "*:wisps/bars_red_wisp_bar"
-        }
-      ]
-    }
-  },
-  "night_time_debuffs": {
-    "type": "origins:action_over_time",
-    "interval": 10,
-    "entity_action": {
-      "type": "origins:apply_effect",
-      "effects": [
-        {
-          "duration": 40,
-          "amplifier": 2,
-          "effect": "minecraft:weakness",
-          "show_icon": true,
-          "show_particles": false
-        },
-        {
-          "duration": 40,
-          "amplifier": 1,
-          "effect": "minecraft:mining_fatigue",
-          "show_icon": true,
-          "show_particles": false
-        }
-      ]
-    },
-    "condition": {
-      "type": "origins:and",
-      "conditions": [
-        {
-          "type": "origins:daytime",
-          "inverted": true
-        },
-        {
-          "type": "origins:dimension",
-          "dimension": "minecraft:the_nether",
-          "inverted": true
-        }
-      ]
+      "type": "origins:resource",
+      "compare_to": 0,
+      "comparison": "==",
+      "resource": "luna:wisps/bars_ult_wisp_bar"
     }
   },
   "advancement": {

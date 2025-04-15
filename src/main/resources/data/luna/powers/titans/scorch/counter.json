@@ -2,10 +2,17 @@
   "name": "Counter",
   "description": "After charging your core enough you are given a counter, repelling enemys",
   "type": "origins:multiple",
+  "badges": [
+    {
+      "type": "origins:keybind",
+      "sprite": "origins:textures/gui/badge/toggle.png",
+      "text": "Activate with [Ternary]"
+    }
+  ],
   "counter_active": {
     "type": "origins:active_self",
     "key": {
-      "key": "key.loadToolbarActivator"
+      "key": "key.origins.ternary_active"
     },
     "entity_action": {
       "type": "origins:spawn_entity",

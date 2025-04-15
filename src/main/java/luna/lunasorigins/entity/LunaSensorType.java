@@ -1,7 +1,6 @@
 package luna.lunasorigins.entity;
 
-import java.util.function.Supplier;
-
+import luna.lunasorigins.LunasOrigins;
 import net.minecraft.entity.ai.brain.sensor.Sensor;
 import net.minecraft.entity.ai.brain.sensor.SensorType;
 import net.minecraft.registry.Registries;
@@ -9,24 +8,13 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
 public class LunaSensorType<U extends Sensor<?>> {
-  public static final SensorType<HostileAxolotlAttackables> HOSTILE_AXOLOTL_ATTACKABLES = register(
-      "hostile_axolotl_attackables",
-      HostileAxolotlAttackables::new);
 
-  private final Supplier<U> factory;
+  public static final SensorType<HostileAxolotlAttackablesSensor> HOSTILE_AXOLOTL_ATTACKABLES = Registry.register(
+      Registries.SENSOR_TYPE,
+      new Identifier("lunasorigins", "hostile_axolotl_attackables"),
+      new SensorType<>(HostileAxolotlAttackablesSensor::new));
 
-  public LunaSensorType(Supplier<U> factory) {
-    this.factory = factory;
-  }
-
-  public U create() {
-    return (U) this.factory.get();
-  }
-
-  private static <U extends Sensor<?>> SensorType<U> register(String id, Supplier<U> factory) {
-    return Registry.register(Registries.SENSOR_TYPE, new Identifier(id), new SensorType<>(factory));
-  }
-
-  public static void initialize() {
+  public static void registerSensors() {
+    LunasOrigins.LOGGER.info("They're sensing alright...");
   }
 }

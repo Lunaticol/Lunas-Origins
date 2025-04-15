@@ -34,7 +34,7 @@
     "type": "origins:modify_damage_taken",
     "modifier": {
       "operation": "multiply_total",
-      "value": -0.7
+      "value": -0.75
     },
     "condition": {
       "type": "origins:and",
@@ -94,6 +94,20 @@
       "operation": "addition",
       "attribute": "minecraft:generic.movement_speed",
       "value": -0.075
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_block_resource"
+    }
+  },
+  "no_damage": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "operation": "addition",
+      "attribute": "minecraft:generic.attack_damage",
+      "value": -1
     },
     "condition": {
       "type": "origins:resource",

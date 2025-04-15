@@ -22,3 +22,5 @@ tellraw @p [{"text":"There are "},{"score":{"name":"Solaris","objective":"Origin
 tellraw @p [{"text":"There are "},{"score":{"name":"Ceravol","objective":"Origin"}},{"text":" ceravols"}]
 tellraw @p [{"text":"There are "},{"score":{"name":"Umbryte","objective":"Origin"}},{"text":" umbrytes"}]
 tellraw @p [{"text":"There are "},{"score":{"name":"Piglin","objective":"Origin"}},{"text":" piglins"}]
+tellraw @p [{"text":"There are "},{"score":{"name":"Forsaken","objective":"Origin"}},{"text":" forsaken"}]
+tellraw @p [{"text":"There are "},{"score":{"name":"Human","objective":"Origin"}},{"text":" humans"}]

@@ -4,6 +4,7 @@
   "order": 2,
   "enabled": true,
   "allow_random": true,
+  "allow_random_unchoosable": true,
   "exclude_random": [
     "luna:kitsune_classes/nether_kitsune",
     "luna:kitsune_classes/ender_kitsune",
@@ -98,23 +99,6 @@
         "origin": "origins:human",
         "layer": "origins:origin"
       }
-    },
-    {
-      "condition": {
-        "type": "origins:origin",
-        "layer": "origins:origin",
-        "origin": "luna:foresaken"
-      },
-      "origins": [
-        "luna:forken/twotime",
-        "luna:forken/shedletsky",
-        "luna:forken/noob",
-        "luna:forken/guest",
-        "luna:forken/elliot",
-        "luna:forken/chance",
-        "luna:forken/builderman",
-        "luna:forken/007n7"
-      ]
     }
   ]
 }

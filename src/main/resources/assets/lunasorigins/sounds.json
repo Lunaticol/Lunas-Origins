@@ -2,5 +2,13 @@
   "command_forest_ambience": {
     "subtitle": "sound.lunasorigins.command_forest_ambience",
     "sounds": ["lunasorigins:command_forest_ambience"]
+  },
+  "lumina_ult": {
+    "subtitle": "sound.lunasorigins.lumina_ult",
+    "sounds": ["lunasorigins:lumina_ult"]
+  },
+  "aono_ult": {
+    "subtitle": "sound.lunasorigins.aono_ult",
+    "sounds": ["lunasorigins:aono_ult"]
   }
 }

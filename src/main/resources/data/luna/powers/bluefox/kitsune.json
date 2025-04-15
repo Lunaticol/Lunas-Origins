@@ -1,6 +1,6 @@
 {
   "name": "Moonlit Soul",
-  "description": "You are attuned with the moon. Different moon phases dictate how good your dashes are.",
+  "description": "You are attuned with the moon. Different moon phases dictate how good your dashes are.\nYou take 3x more fire & 1.5x more magic damage",
   "type": "origins:multiple",
   "dash": {
     "type": "origins:active_self",

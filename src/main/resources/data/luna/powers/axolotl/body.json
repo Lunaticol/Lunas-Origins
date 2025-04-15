@@ -335,7 +335,7 @@
     "modifier": {
       "attribute": "minecraft:generic.attack_damage",
       "operation": "addition",
-      "value": 6.1
+      "value": 2
     },
     "tick_rate": 10,
     "condition": {
@@ -395,7 +395,7 @@
         "color": "gray"
       },
       {
-        "text": "+4.1 Attack Damage",
+        "text": "+2 Attack Damage",
         "color": "blue"
       }
     ]
@@ -405,7 +405,7 @@
     "modifier": {
       "attribute": "minecraft:generic.attack_damage",
       "operation": "addition",
-      "value": 7.1
+      "value": 4
     },
     "tick_rate": 10,
     "condition": {
@@ -465,7 +465,7 @@
         "color": "gray"
       },
       {
-        "text": "+5.1 Attack Damage",
+        "text": "+4 Attack Damage",
         "color": "blue"
       }
     ]
@@ -475,7 +475,7 @@
     "modifier": {
       "attribute": "minecraft:generic.attack_damage",
       "operation": "addition",
-      "value": 8.1
+      "value": 8
     },
     "tick_rate": 10,
     "condition": {
@@ -535,7 +535,7 @@
         "color": "gray"
       },
       {
-        "text": "+6.1 Attack Damage",
+        "text": "+6 Attack Damage",
         "color": "blue"
       }
     ]
@@ -545,7 +545,7 @@
     "modifier": {
       "attribute": "minecraft:generic.attack_damage",
       "operation": "addition",
-      "value": 9.1
+      "value": 8
     },
     "tick_rate": 10,
     "condition": {
@@ -605,7 +605,7 @@
         "color": "gray"
       },
       {
-        "text": "+7.1 Attack Damage",
+        "text": "+8 Attack Damage",
         "color": "blue"
       }
     ]
@@ -615,7 +615,7 @@
     "modifier": {
       "attribute": "minecraft:generic.attack_damage",
       "operation": "addition",
-      "value": 10.1
+      "value": 10
     },
     "tick_rate": 10,
     "condition": {
@@ -675,7 +675,7 @@
         "color": "gray"
       },
       {
-        "text": "+8.1 Attack Damage",
+        "text": "+10 Attack Damage",
         "color": "blue"
       }
     ]
@@ -685,7 +685,7 @@
     "modifier": {
       "attribute": "minecraft:generic.attack_damage",
       "operation": "addition",
-      "value": 11.1
+      "value": 12
     },
     "tick_rate": 10,
     "condition": {
@@ -745,7 +745,7 @@
         "color": "gray"
       },
       {
-        "text": "+11.1 Attack Damage",
+        "text": "+12 Attack Damage",
         "color": "blue"
       }
     ]
@@ -790,6 +790,12 @@
           "inverted": true
         }
       ]
+    },
+    "condition": {
+      "type": "origins:fluid_height",
+      "compare_to": 0.1,
+      "comparison": ">=",
+      "fluid": "minecraft:water"
     }
   },
   "respawn": {

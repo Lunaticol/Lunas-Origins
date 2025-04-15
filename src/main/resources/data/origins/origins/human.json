@@ -2,7 +2,8 @@
   "icon": {
     "item": "minecraft:player_head"
   },
-  "description": "A regular Human, Far from your ordinary minecraft expierience!",
+  "powers": ["origins:counter"],
+  "description": "A regular Human, far from your ordinary minecraft expierience!",
   "order": 0,
   "impact": 0,
   "loading_priority": 11

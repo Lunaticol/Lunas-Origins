@@ -1,54 +1,19 @@
 package luna.lunasorigins;
 
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockSetType;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.ButtonBlock;
-import net.minecraft.block.DoorBlock;
-import net.minecraft.block.FenceBlock;
-import net.minecraft.block.FenceGateBlock;
-import net.minecraft.block.FlowerBlock;
-import net.minecraft.block.HangingSignBlock;
-import net.minecraft.block.LeavesBlock;
-import net.minecraft.block.MapColor;
-import net.minecraft.block.PillarBlock;
-import net.minecraft.block.PressurePlateBlock;
-import net.minecraft.block.SaplingBlock;
-import net.minecraft.block.SignBlock;
-import net.minecraft.block.SlabBlock;
-import net.minecraft.block.StairsBlock;
-import net.minecraft.block.TrapdoorBlock;
-import net.minecraft.block.WallBlock;
-import net.minecraft.block.WallSignBlock;
-import net.minecraft.block.enums.Instrument;
-import net.minecraft.block.piston.PistonBehavior;
+import net.minecraft.block.*;
+import net.minecraft.block.enums.*;
+import net.minecraft.block.piston.*;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
-import net.minecraft.sound.BlockSoundGroup;
+import net.minecraft.sound.*;
 import net.minecraft.util.DyeColor;
 import net.minecraft.util.Identifier;
-import luna.lunasorigins.blocks.DimensionalBerryBushBlock;
-import luna.lunasorigins.blocks.SoulBerryBushBlock;
-import luna.lunasorigins.blocks.TitanBatteryBlock;
-import luna.lunasorigins.worldgen.tree.GreenCommandTreeSaplingGenerator;
-import luna.lunasorigins.worldgen.tree.PinkCommandTreeSaplingGenerator;
-import luna.lunasorigins.worldgen.tree.RedCommandTreeSaplingGenerator;
-import luna.lunasorigins.worldgen.tree.YellowCommandTreeSaplingGenerator;
-import luna.lunasorigins.blocks.stuffy.AbominaceonStuffy;
-import luna.lunasorigins.blocks.stuffy.EeveeStuffy;
-import luna.lunasorigins.blocks.stuffy.EspeonStuffy;
-import luna.lunasorigins.blocks.stuffy.FlareonStuffy;
-import luna.lunasorigins.blocks.stuffy.GlaceonStuffy;
-import luna.lunasorigins.blocks.stuffy.JolteonStuffy;
-import luna.lunasorigins.blocks.stuffy.Karl;
-import luna.lunasorigins.blocks.stuffy.LeafeonStuffy;
-import luna.lunasorigins.blocks.stuffy.SylveonStuffy;
-import luna.lunasorigins.blocks.stuffy.UmbreonStuffy;
-import luna.lunasorigins.blocks.stuffy.VaporeonStuffy;
+import luna.lunasorigins.blocks.*;
+import luna.lunasorigins.worldgen.tree.*;
+import luna.lunasorigins.blocks.stuffy.*;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 
@@ -442,14 +407,37 @@ public class LunaBlocks {
                         true);
 
         public static final Block NOCTILITH = register(
-                        new FlowerBlock(StatusEffects.WITHER, 20, AbstractBlock.Settings.create()),
+                        new FlowerBlock(StatusEffects.WITHER, 20, AbstractBlock.Settings.copy(Blocks.WHITE_TULIP)),
                         "noctilith",
                         true);
 
         public static final Block WHITE_LILY = register(
-                        new FlowerBlock(StatusEffects.REGENERATION, 20, AbstractBlock.Settings.create()),
+                        new FlowerBlock(StatusEffects.REGENERATION, 20,
+                                        AbstractBlock.Settings.copy(Blocks.WHITE_TULIP)),
                         "white_lily",
                         true);
+
+        public static final Block BLUE_OBSIDIAN = register(
+                        new Block(AbstractBlock.Settings.copy(Blocks.OBSIDIAN).mapColor(MapColor.BLUE)),
+                        "blue_obsidian", true);
+
+        public static final Block BLUE_CRYING_OBSIDIAN = register(
+                        new BlueCryingObsidian(AbstractBlock.Settings.create().mapColor(MapColor.BLUE)
+                                        .instrument(Instrument.BASEDRUM).requiresTool().strength(25.0F, 1200.0F)
+                                        .luminance((state) -> {
+                                                return 10;
+                                        })),
+                        "blue_crying_obsidian", true);
+
+        public static final Block ENDER_FIRE = register(
+                        new EnderFire(AbstractBlock.Settings.copy(Blocks.SOUL_FIRE)), "ender_fire", false);
+
+        public static final Block DROP_POINT = register(
+                        new Block(AbstractBlock.Settings.copy(Blocks.BLUE_BED).mapColor(MapColor.BLUE)
+                                        .luminance((state) -> {
+                                                return 15;
+                                        }).nonOpaque().noCollision()),
+                        "drop_point", true);
 
         public static void initialize() {
 
@@ -593,6 +581,18 @@ public class LunaBlocks {
                 ItemGroupEvents.modifyEntriesEvent(LunaItems.LUNASORIGINS_ITEM_GROUP_KEY)
                                 .register(itemGroup -> itemGroup
                                                 .add(LunaBlocks.WHITE_LILY.asItem()));
+
+                ItemGroupEvents.modifyEntriesEvent(LunaItems.LUNASORIGINS_ITEM_GROUP_KEY)
+                                .register(itemGroup -> itemGroup
+                                                .add(LunaBlocks.BLUE_OBSIDIAN.asItem()));
+
+                ItemGroupEvents.modifyEntriesEvent(LunaItems.LUNASORIGINS_ITEM_GROUP_KEY)
+                                .register(itemGroup -> itemGroup
+                                                .add(LunaBlocks.BLUE_CRYING_OBSIDIAN.asItem()));
+
+                ItemGroupEvents.modifyEntriesEvent(LunaItems.LUNASORIGINS_ITEM_GROUP_KEY)
+                                .register(itemGroup -> itemGroup
+                                                .add(LunaBlocks.DROP_POINT.asItem()));
         }
 
         private static Block register(Block block, String name, boolean registerBlockItem) {

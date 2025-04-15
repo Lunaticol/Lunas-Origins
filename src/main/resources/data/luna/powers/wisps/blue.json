@@ -18,7 +18,7 @@
         {
           "type": "origins:add_velocity",
           "y": 2,
-          "space": "local_horizontal_normalized"
+          "space": "world"
         },
         {
           "type": "origins:change_resource",
@@ -32,11 +32,11 @@
         },
         {
           "type": "origins:delay",
-          "ticks": 40,
+          "ticks": 20,
           "action": {
             "type": "origins:add_velocity",
             "y": -3,
-            "space": "local_horizontal_normalized"
+            "space": "world"
           }
         }
       ]
@@ -265,55 +265,6 @@
       "compare_to": 1,
       "comparison": "==",
       "resource": "*:*_in_air"
-    }
-  },
-  "pound_ult": {
-    "type": "origins:active_self",
-    "cooldown": 50,
-    "hud_render": {
-      "should_render": true,
-      "sprite_location": "origins:textures/gui/luna_resource_bar.png",
-      "bar_index": 14,
-      "order": 7
-    },
-    "key": "key.origins.secondary_active",
-    "entity_action": {
-      "type": "origins:and",
-      "actions": [
-        {
-          "type": "origins:add_velocity",
-          "y": 2,
-          "space": "local_horizontal_normalized"
-        },
-        {
-          "type": "origins:change_resource",
-          "change": 1,
-          "resource": "*:*_in_air"
-        }
-      ]
-    },
-    "condition": {
-      "type": "origins:and",
-      "conditions": [
-        {
-          "type": "origins:resource",
-          "compare_to": 6,
-          "comparison": "==",
-          "resource": "*:wisps/wisp_switch_resource"
-        },
-        {
-          "type": "origins:resource",
-          "compare_to": 1,
-          "comparison": ">=",
-          "resource": "*:wisps/bars_blue_wisp_bar"
-        },
-        {
-          "type": "origins:resource",
-          "compare_to": 1,
-          "comparison": "==",
-          "resource": "*:wisps/wisp_ult_active"
-        }
-      ]
     }
   }
 }

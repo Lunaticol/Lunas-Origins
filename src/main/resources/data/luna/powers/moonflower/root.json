@@ -17,7 +17,7 @@
   "aot": {
     "type": "origins:action_over_time",
     "entity_action": {
-      "type": "apoli:and",
+      "type": "origins:and",
       "actions": [
         {
           "type": "origins:change_resource",

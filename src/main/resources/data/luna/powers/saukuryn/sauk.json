@@ -1,6 +1,6 @@
 {
   "name": "Giant Beast",
-  "description": "You are much larger than other critters.\nYou have wings, allowing you to fly!\nBeing made of wood on some parts of your body, you burn much easier.",
+  "description": "You are much larger than other critters.\nYou have wings, allowing you to fly!\nBeing made of wood on some parts of your body, you burn much easier.\nYou deal 50% less damage.",
   "type": "origins:multiple",
   "height": {
     "type": "origins:action_on_callback",
@@ -174,12 +174,16 @@
       "actions": [
         {
           "type": "origins:add_velocity",
-          "z": 0.5,
+          "z": 0.7,
           "space": "local"
         },
         {
           "type": "origins:execute_command",
           "command": "playsound minecraft:entity.ender_dragon.flap master @s ~ ~ ~ 100 .5"
+        },
+        {
+          "type": "origins:exhaust",
+          "amount": 0.2
         }
       ]
     },

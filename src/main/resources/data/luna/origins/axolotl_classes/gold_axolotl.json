@@ -1,9 +1,10 @@
 {
   "name": "Gold Axolotl",
-  "description": "[SCROLL]",
+  "description": "Their golden skin shines brightly!",
   "icon": "minecraft:heart_of_the_sea",
   "loading_priority": 1,
   "impact": 1,
   "order": 1,
+  "unchoosable": true,
   "powers": ["luna:axolotl/axolotl_classes/gold_axolotl", "luna:axolotl/swim"]
 }

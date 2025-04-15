@@ -1,7 +1,0 @@
-{
-  "name": "Two Time",
-  "description": "He comes twice",
-  "icon": "minecraft:totem_of_undying",
-  "impact": 3,
-  "powers": ["luna:survivors/twotime/twotime"]
-}

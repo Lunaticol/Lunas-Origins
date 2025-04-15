@@ -116,59 +116,6 @@
       ]
     }
   },
-  "suck_ult": {
-    "type": "origins:active_self",
-    "key": { "key": "key.origins.secondary_active", "continuous": true },
-    "entity_action": {
-      "type": "origins:and",
-      "actions": [
-        {
-          "type": "origins:area_of_effect",
-          "radius": 8,
-          "bientity_action": {
-            "type": "origins:and",
-            "actions": [
-              {
-                "type": "origins:target_action",
-                "action": {
-                  "type": "origins:execute_command",
-                  "command": "particle lunasorigins:purple_flame ~ ~1 ~ 0.5 0.5 0.8 0.2 10"
-                }
-              },
-              {
-                "type": "origins:add_velocity",
-                "z": -0.5,
-                "y": 0.1
-              }
-            ]
-          }
-        }
-      ]
-    },
-    "condition": {
-      "type": "origins:and",
-      "conditions": [
-        {
-          "type": "origins:resource",
-          "compare_to": 7,
-          "comparison": "==",
-          "resource": "*:wisps/wisp_switch_resource"
-        },
-        {
-          "type": "origins:resource",
-          "compare_to": 1,
-          "comparison": "==",
-          "resource": "*:wisps/wisp_ult_active"
-        },
-        {
-          "type": "origins:resource",
-          "compare_to": 1,
-          "comparison": ">=",
-          "resource": "*:wisps/bars_purple_wisp_bar"
-        }
-      ]
-    }
-  },
   "gain": {
     "type": "origins:action_over_time",
     "interval": 20,

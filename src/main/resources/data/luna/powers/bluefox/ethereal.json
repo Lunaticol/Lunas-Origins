@@ -5,7 +5,7 @@
   "ethereal": {
     "type": "origins:active_self",
     "key": "key.loadToolbarActivator",
-    "cooldown": 3000,
+    "cooldown": 14400,
     "hud_render": {
       "should_render": true,
       "sprite_location": "origins:textures/gui/luna_resource_bar.png",
@@ -166,10 +166,21 @@
     "type": "origins:action_over_time",
     "interval": 5,
     "entity_action": {
-      "type": "origins:change_resource",
-      "change": 0,
-      "operation": "set",
-      "resource": "*:*_domain_active"
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "change": 0,
+          "operation": "set",
+          "resource": "*:*_domain_active"
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 1415,
+          "operation": "set",
+          "resource": "*:*_music_resource"
+        }
+      ]
     },
     "condition": {
       "type": "origins:resource",
@@ -250,6 +261,56 @@
       "compare_to": 1,
       "comparison": "==",
       "resource": "*:*_domain_active"
+    }
+  },
+  "music": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 5,
+      "operation": "add",
+      "resource": "*:*_music_resource"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_domain_active"
+    }
+  },
+  "music_resource": {
+    "type": "origins:resource",
+    "max": 1420,
+    "min": 0,
+    "start_value": 1415
+  },
+  "music_reset": {
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:play_sound",
+          "sound": "lunasorigins:aono_ult",
+          "category": "music",
+          "pitch": 1,
+          "volume": 1
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 0,
+          "operation": "set",
+          "resource": "*:*_music_resource"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1420,
+      "comparison": "==",
+      "resource": "*:*_music_resource"
     }
   }
 }

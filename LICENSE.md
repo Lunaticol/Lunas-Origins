@@ -10,7 +10,7 @@ Modification:
 You are allowed to modify the asset to suit your needs, but any modified version of the asset must be distributed under the same terms as the original asset.
 
 Reservation of Rights:
-The licensor reserves all rights not expressly granted to you under this license. The licensor may, at its sole discretion, prohibit you from using the asset under this license if it determines that you have violated any terms of this license.
+The licensor reserves all rights not expressly granted to you under this license. The licensor may, at its sole discretion, prohibit you from using the asset under any circumstances.
 
 Acceptance:
 By downloading, using, or distributing the asset, you agree to be bound by the terms of this license.

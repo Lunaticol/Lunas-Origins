@@ -12,7 +12,7 @@
     "entity_action": {
       "type": "origins:raycast",
       "distance": 8,
-      "command_along_ray": "particle minecraft:electric_spark ~ ~ ~ 0 0 0 0.1 10",
+      "command_along_ray": "particle minecraft:electric_spark ~ ~-0.2 ~ 0 0 0 0.1 10",
       "bientity_action": {
         "type": "origins:and",
         "actions": [
