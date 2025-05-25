@@ -100,11 +100,6 @@
                     "type": "origins:entity_type",
                     "entity_type": "minecraft:villager",
                     "inverted": true
-                  },
-                  {
-                    "type": "origins:health",
-                    "compare_to": 2,
-                    "comparison": ">"
                   }
                 ]
               }
@@ -241,11 +236,6 @@
                     "type": "origins:entity_type",
                     "entity_type": "minecraft:villager",
                     "inverted": true
-                  },
-                  {
-                    "type": "origins:health",
-                    "compare_to": 2,
-                    "comparison": ">"
                   }
                 ]
               }

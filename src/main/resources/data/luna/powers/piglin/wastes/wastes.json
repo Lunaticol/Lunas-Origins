@@ -25,10 +25,11 @@
     }
   },
   "protected": {
-    "type": "origins:modify_damage_taken",
+    "type": "apugli:modify_enchantment_level",
+    "enchantment": "minecraft:protection",
     "modifier": {
-      "operation": "multiply_total",
-      "value": -0.1
+      "operation": "addition",
+      "value": 1
     }
   },
   "knockback_1": {

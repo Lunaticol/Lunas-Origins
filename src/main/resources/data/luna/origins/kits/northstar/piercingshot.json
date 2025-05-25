@@ -1,5 +1,5 @@
 {
   "name": "Piercing Shot",
-  "description": "",
+  "description": "Pierce through 6 enemys with the Plasma Railgun.",
   "powers": ["luna:titans/northstar/kits/piercingshot"]
 }

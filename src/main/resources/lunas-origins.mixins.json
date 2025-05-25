@@ -1,9 +1,0 @@
-{
-  "required": true,
-  "package": "luna.lunasorigins.mixin",
-  "compatibilityLevel": "JAVA_17",
-  "mixins": ["ExampleMixin", "PhantomSpawnerMixin"],
-  "injectors": {
-    "defaultRequire": 1
-  }
-}

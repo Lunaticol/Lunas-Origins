@@ -1,7 +1,7 @@
 {
   "type": "origins:multiple",
   "name": "Ronin",
-  "description": "An ancient sentinel reawakened. Ronin's were mass produced with the combat of a samurai.\nYour sword is the shield, therfore you cannot use shields.\nYou eat redstone to recover health.\nYour thick metal protects your core from projectiles.\nYou have a shotgun, why would you use less advanced ranged weapons?",
+  "description": "A Stryder Class Sentinel casted away for being to dangerous and unstable, with the combat of a samurai.\nYour sword is the shield, therfore you cannot use shields.\nYou eat redstone to recover health.\nYour thick metal protects your core from projectiles.\nYou have a shotgun, why would you use less advanced ranged weapons?",
   "height": {
     "type": "origins:action_on_callback",
     "execute_chosen_when_orb": true,
@@ -126,7 +126,7 @@
   },
   "dash_resource": {
     "type": "origins:resource",
-    "max": 2,
+    "max": 100,
     "min": 0,
     "hud_render": {
       "should_render": true,
@@ -142,7 +142,7 @@
   },
   "dash_resource_turbo": {
     "type": "origins:resource",
-    "max": 3,
+    "max": 150,
     "min": 0,
     "hud_render": {
       "should_render": true,
@@ -170,21 +170,13 @@
             "actions": [
               {
                 "type": "origins:add_velocity",
-                "z": 2,
+                "z": 3,
+                "y": -3,
                 "space": "local_horizontal_normalized"
               },
               {
-                "type": "origins:delay",
-                "ticks": 2,
-                "action": {
-                  "type": "origins:add_velocity",
-                  "y": -3,
-                  "space": "local_horizontal_normalized"
-                }
-              },
-              {
                 "type": "origins:change_resource",
-                "change": -1,
+                "change": -50,
                 "operation": "add",
                 "resource": "*:*_dash_resource"
               }
@@ -192,7 +184,7 @@
           },
           "condition": {
             "type": "origins:resource",
-            "compare_to": 1,
+            "compare_to": 50,
             "comparison": ">=",
             "resource": "*:*_dash_resource"
           }
@@ -203,12 +195,13 @@
             "actions": [
               {
                 "type": "origins:add_velocity",
-                "z": 2,
+                "z": 3,
+                "y": -3,
                 "space": "local_horizontal_normalized"
               },
               {
                 "type": "origins:change_resource",
-                "change": -1,
+                "change": -50,
                 "operation": "add",
                 "resource": "*:*_dash_resource_turbo"
               }
@@ -216,7 +209,7 @@
           },
           "condition": {
             "type": "origins:resource",
-            "compare_to": 1,
+            "compare_to": 50,
             "comparison": ">=",
             "resource": "*:*_dash_resource_turbo"
           }
@@ -226,14 +219,14 @@
   },
   "dash_charge": {
     "type": "origins:action_over_time",
-    "interval": 80,
+    "interval": 8,
     "entity_action": {
       "type": "origins:if_else_list",
       "actions": [
         {
           "action": {
             "type": "origins:change_resource",
-            "change": 1,
+            "change": 5,
             "operation": "add",
             "resource": "*:*_dash_resource"
           },
@@ -247,7 +240,7 @@
         {
           "action": {
             "type": "origins:change_resource",
-            "change": 1,
+            "change": 5,
             "operation": "add",
             "resource": "*:*_dash_resource_turbo"
           },
@@ -943,6 +936,141 @@
         {
           "type": "origins:name",
           "name": "badRespawnPoint"
+        }
+      ]
+    }
+  },
+  "spawn_point": {
+    "type": "origins:action_on_block_use",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "spawnpoint @s ~ ~ ~"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "title @p actionbar {\"text\":\"Respawn point set.\"}"
+        }
+      ]
+    },
+    "block_condition": {
+      "type": "origins:block",
+      "block": "lunasorigins:drop_point"
+    }
+  },
+  "respawn_drop": {
+    "type": "origins:action_on_callback",
+    "execute_chosen_when_orb": true,
+    "entity_action_respawned": {
+      "type": "origins:execute_command",
+      "command": "tp @s ~ 320 ~"
+    }
+  },
+  "luna_origin_ult": {
+    "type": "origins:self_action_on_hit",
+    "cooldown": 600,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "tellraw @s {\"text\":\"<Ronin> Warning, enemy hostile has core.\"}"
+    },
+    "target_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:and",
+          "conditions": [
+            {
+              "type": "origins:resource",
+              "compare_to": 1000,
+              "comparison": "==",
+              "resource": "*:wisps/bars_red_wisp_bar"
+            },
+            {
+              "type": "origins:resource",
+              "compare_to": 1000,
+              "comparison": "==",
+              "resource": "*:wisps/bars_orange_wisp_bar"
+            },
+            {
+              "type": "origins:resource",
+              "compare_to": 1000,
+              "comparison": "==",
+              "resource": "*:wisps/bars_yellow_wisp_bar"
+            },
+            {
+              "type": "origins:resource",
+              "compare_to": 1000,
+              "comparison": "==",
+              "resource": "*:wisps/bars_green_wisp_bar"
+            },
+            {
+              "type": "origins:resource",
+              "compare_to": 1000,
+              "comparison": "==",
+              "resource": "*:wisps/bars_cyan_wisp_bar"
+            },
+            {
+              "type": "origins:resource",
+              "compare_to": 1000,
+              "comparison": "==",
+              "resource": "*:wisps/bars_blue_wisp_bar"
+            },
+            {
+              "type": "origins:resource",
+              "compare_to": 1000,
+              "comparison": "==",
+              "resource": "*:wisps/bars_purple_wisp_bar"
+            }
+          ]
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 100,
+          "comparison": "==",
+          "resource": "*:titans/scorch/core_core_bar"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 100,
+          "comparison": "==",
+          "resource": "*:titans/ronin/core_core_bar"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 100,
+          "comparison": "==",
+          "resource": "*:titans/northstar/core_core_bar"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 1000,
+          "comparison": "==",
+          "resource": "*:bluefox/soul_soul_bar"
+        }
+      ]
+    }
+  },
+  "specifically_lyst": {
+    "type": "origins:self_action_on_hit",
+    "cooldown": 600,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "tellraw @s {\"text\":\"<Ronin> Warning! Warning! Disengage! Disengage! Warden Imminent!\"}"
+    },
+    "target_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:xp_levels",
+          "compare_to": 100,
+          "comparison": ">="
+        },
+        {
+          "type": "origins:origin",
+          "layer": "origins:origin",
+          "origin": "luna:sculk"
         }
       ]
     }

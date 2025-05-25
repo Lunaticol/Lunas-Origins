@@ -6,6 +6,7 @@
     "luna:flame_core",
     "luna:orange_wisp",
     "luna:trap",
-    "luna:explode_trap"
+    "luna:explode_trap",
+    "luna:melt"
   ]
 }

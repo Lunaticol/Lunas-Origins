@@ -1,3 +1,27 @@
 {
-  "type": "origins:multiple"
+  "hidden": true,
+  "type": "origins:multiple",
+  "turbo_engine": {
+    "type": "origins:action_on_callback",
+    "entity_action_added": {
+      "type": "origins:execute_command",
+      "command": "resource set @s luna:titans/northstar/clustermissile_payload 1"
+    },
+    "entity_action_gained": {
+      "type": "origins:execute_command",
+      "command": "resource set @s luna:titans/northstar/clustermissile_payload 1"
+    },
+    "entity_action_respawned": {
+      "type": "origins:execute_command",
+      "command": "resource set @s luna:titans/northstar/clustermissile_payload 1"
+    },
+    "entity_action_lost": {
+      "type": "origins:execute_command",
+      "command": "resource set @s luna:titans/northstar/clustermissile_payload 0"
+    },
+    "entity_action_removed": {
+      "type": "origins:execute_command",
+      "command": "resource set @s luna:titans/northstar/clustermissile_payload 0"
+    }
+  }
 }

@@ -2,6 +2,23 @@
   "type": "origins:multiple",
   "name": "Air Manipulation",
   "description": "You can manipulate the air around you to your advantage.\nYou can Push, Pull, and Launch entitys!",
+  "badges": [
+    {
+      "type": "origins:keybind",
+      "sprite": "origins:textures/gui/badge/active.png",
+      "text": "Push with [Load Hotbar]"
+    },
+    {
+      "type": "origins:keybind",
+      "sprite": "origins:textures/gui/badge/active.png",
+      "text": "Pull with [Save Hotbar]"
+    },
+    {
+      "type": "origins:keybind",
+      "sprite": "origins:textures/gui/badge/active.png",
+      "text": "Launch with [Ternary]"
+    }
+  ],
   "push": {
     "type": "origins:active_self",
     "cooldown": 100,

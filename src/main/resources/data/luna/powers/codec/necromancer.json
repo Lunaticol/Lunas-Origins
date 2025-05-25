@@ -19,12 +19,22 @@
       "type": "origins:change_resource",
       "change": 1,
       "resource": "*:*_necro_bar"
+    },
+    "target_condition": {
+      "type": "origins:nbt",
+      "nbt": "{Tags:[\"necro\"]}",
+      "inverted": true
     }
   },
   "summoning": {
     "type": "origins:active_self",
     "key": "key.loadToolbarActivator",
     "cooldown": 4000,
+    "hud_render": {
+      "should_render": true,
+      "bar_index": 19,
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png"
+    },
     "entity_action": {
       "type": "origins:if_else_list",
       "actions": [
@@ -155,6 +165,20 @@
       "compare_to": 0,
       "comparison": ">",
       "resource": "*:*_necro_bar"
+    }
+  },
+  "kill_necro_zombie": {
+    "type": "origins:self_action_on_kill",
+    "entity_action": {
+      "type": "origins:apply_effect",
+      "effect": {
+        "effect": "minecraft:speed",
+        "duration": 100
+      }
+    },
+    "target_condition": {
+      "type": "origins:nbt",
+      "nbt": "{Tags:[\"necro\"]}"
     }
   }
 }

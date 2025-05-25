@@ -117,10 +117,33 @@
     "type": "origins:action_over_time",
     "interval": 10,
     "entity_action": {
-      "type": "origins:change_resource",
-      "change": 100,
-      "operation": "set",
-      "resource": "*:*_core_bar"
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "change": 100,
+          "operation": "set",
+          "resource": "*:*_core_bar"
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 100,
+          "operation": "set",
+          "resource": "luna:titans/scorch/thermal_shield_flame_fuel"
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 3,
+          "operation": "set",
+          "resource": "luna:titans/scorch/thermite_launcher_charges"
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 3,
+          "operation": "set",
+          "resource": "luna:titans/scorch/trap_traps"
+        }
+      ]
     },
     "condition": {
       "type": "origins:resource",

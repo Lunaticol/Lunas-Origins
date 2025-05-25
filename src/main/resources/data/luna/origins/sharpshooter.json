@@ -1,0 +1,7 @@
+{
+  "name": "Sharpshooter",
+  "description": "With your trusty steed and your steady hands, nothing can stop you.",
+  "icon": "minecraft:horse_spawn_egg",
+  "impact": 3,
+  "powers": []
+}

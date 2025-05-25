@@ -10,6 +10,9 @@ import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.passive.AxolotlEntity;
 import net.minecraft.world.World;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.ai.brain.MemoryModuleType;
+import java.util.Optional;
 
 public class HostileAxolotl extends AxolotlEntity {
 
@@ -32,4 +35,20 @@ public class HostileAxolotl extends AxolotlEntity {
   protected Brain.Profile<AxolotlEntity> createBrainProfile() {
     return Brain.createProfile(MEMORY_MODULES, SENSORS);
   }
+
+  @Override
+  public void mobTick() {
+    super.mobTick();
+    // Custom attack logic using NEAREST_ATTACKABLE memory
+    Optional<LivingEntity> targetOpt = this.getBrain().getOptionalMemory(MemoryModuleType.NEAREST_ATTACKABLE);
+    if (targetOpt.isPresent()) {
+      LivingEntity target = targetOpt.get();
+      if (this.canSee(target) && this.squaredDistanceTo(target) < 4.0) { // within attack range
+        this.tryAttack(target);
+      } else {
+        this.getNavigation().startMovingTo(target, 1.2);
+      }
+    }
+  }
+
 }

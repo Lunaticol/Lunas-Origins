@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "X": {
+      "item": "minecraft:iron_nugget"
+    }
+  },
+  "pattern": ["XXX", "X X", "XXX"],
+  "result": {
+    "item": "lunasorigin:lantern_casing"
+  }
+}

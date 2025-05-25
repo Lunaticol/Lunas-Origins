@@ -1,0 +1,27 @@
+{
+  "type": "origins:multiple",
+  "freeze": {
+    "type": "origins:freeze"
+  },
+  "remove": {
+    "type": "origins:action_over_time",
+    "interval": 60,
+    "entity_action": {
+      "type": "origins:revoke_power",
+      "power": "luna:cryo/freezing_punch",
+      "source": "luna:cryo/cryo"
+    }
+  },
+  "slow": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:apply_effect",
+      "effect": {
+        "effect": "minecraft:slowness",
+        "duration": 5,
+        "amplifier": 1
+      }
+    }
+  }
+}

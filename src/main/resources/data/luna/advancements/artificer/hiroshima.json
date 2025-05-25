@@ -7,7 +7,8 @@
       "text": "Die as artificer"
     },
     "icon": {
-      "item": "minecraft:tnt"
+      "item": "minecraft:tnt",
+      "nbt": "{Enchantments:[{}]}"
     },
     "frame": "challenge",
     "show_toast": true,

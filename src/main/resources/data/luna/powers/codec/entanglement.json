@@ -45,11 +45,15 @@
           }
         },
         {
-          "type": "origins:apply_effect",
-          "effect": {
-            "effect": "minecraft:speed",
-            "duration": 60,
-            "amplifier": 1
+          "type": "origins:delay",
+          "ticks": 15,
+          "action": {
+            "type": "origins:apply_effect",
+            "effect": {
+              "effect": "minecraft:speed",
+              "duration": 60,
+              "amplifier": 1
+            }
           }
         },
         {

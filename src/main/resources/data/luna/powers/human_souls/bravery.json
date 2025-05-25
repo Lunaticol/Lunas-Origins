@@ -6,7 +6,8 @@
     "type": "origins:conditioned_attribute",
     "modifier": {
       "value": 0.5,
-      "attribute": "minecraft:generic.movement_speed"
+      "attribute": "minecraft:generic.movement_speed",
+      "operation": "addition"
     },
     "condition": {
       "type": "origins:or",

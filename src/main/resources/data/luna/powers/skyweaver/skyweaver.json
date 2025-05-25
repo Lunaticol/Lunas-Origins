@@ -7,14 +7,12 @@
     "interval": 15,
     "entity_action": {
       "type": "origins:apply_effect",
-      "effects": [
-        {
-          "effect": "minecraft:levitation",
-          "duration": 13,
-          "show_particles": false,
-          "show_icon": false
-        }
-      ]
+      "effect": {
+        "effect": "minecraft:levitation",
+        "duration": 13,
+        "show_particles": false,
+        "show_icon": false
+      }
     },
     "condition": {
       "type": "origins:and",
@@ -195,11 +193,6 @@
       "name": "lightningBolt"
     }
   },
-  "miningspeed": {
-    "condition": { "type": "origins:on_block", "inverted": true },
-    "type": "origins:modify_break_speed",
-    "modifier": { "operation": "multiply_total", "value": 3 }
-  },
   "origin_counter": {
     "type": "origins:action_on_callback",
     "entity_action_chosen": {
@@ -220,5 +213,8 @@
         }
       ]
     }
+  },
+  "mining_air": {
+    "type": "apugli:aerial_affinity"
   }
 }

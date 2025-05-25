@@ -13,7 +13,7 @@
         {
           "type": "origins:add_velocity",
           "y": 0.5,
-          "space": "local_horizontal_normalized"
+          "space": "local_horizontal"
         },
         {
           "type": "origins:apply_effect",

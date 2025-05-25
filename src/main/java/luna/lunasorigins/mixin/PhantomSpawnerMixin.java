@@ -79,11 +79,15 @@ public abstract class PhantomSpawnerMixin implements Spawner {
                             null);
                         world.spawnEntityAndPassengers(crimsonPhantom);
                         spawnCount++;
-                        System.out.println("timeSinceRest: " + timeSinceRest + ", spawning Crimson Phantom.");
+                        if (world.getServer() != null && world.getServer().isDedicated() == false) {
+                          System.out.println("timeSinceRest: " + timeSinceRest + ", spawning Crimson Phantom.");
+                        }
                       }
                     } else {
                       PhantomEntity phantom = EntityType.PHANTOM.create(world);
-                      System.out.println("timeSinceRest: " + timeSinceRest + ", spawning Phantom.");
+                      if (world.getServer() != null && world.getServer().isDedicated() == false) {
+                        System.out.println("timeSinceRest: " + timeSinceRest + ", spawning Phantom.");
+                      }
                       if (phantom != null) {
                         phantom.refreshPositionAndAngles(spawnPos, 0.0F, 0.0F);
                         entityData = phantom.initialize(world, difficulty, SpawnReason.NATURAL, entityData, null);

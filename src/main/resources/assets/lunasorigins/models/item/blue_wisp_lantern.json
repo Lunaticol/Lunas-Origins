@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "lunasorigins:item/blue_wisp_lantern"
+  }
+}

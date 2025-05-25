@@ -5,7 +5,9 @@ import org.slf4j.LoggerFactory;
 
 import luna.lunasorigins.entity.CrimsonPhantomRender;
 import luna.lunasorigins.entity.HostileAxolotlRender;
+import luna.lunasorigins.entity.LunaBlockEntities;
 import luna.lunasorigins.entity.LunaEntities;
+import luna.lunasorigins.particle.ElectricSparkParticleFactory;
 import luna.lunasorigins.particle.ModParticleFactories;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
@@ -13,6 +15,9 @@ import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.particle.FlameParticle;
 import net.minecraft.client.render.RenderLayer;
+import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
+import net.minecraft.client.render.block.entity.HangingSignBlockEntityRenderer;
+import net.minecraft.client.render.block.entity.SignBlockEntityRenderer;
 
 public class LunasOriginsClient implements ClientModInitializer {
         public static final String MOD_ID = "lunasorigins";
@@ -20,7 +25,6 @@ public class LunasOriginsClient implements ClientModInitializer {
 
         @Override
         public void onInitializeClient() {
-                registerThroughParticleFactoryRegistry();
 
                 LOGGER.info("WORKS!!!");
                 ParticleFactoryRegistry.getInstance().register(LunaParticles.RED_FLAME, FlameParticle.Factory::new);
@@ -29,6 +33,17 @@ public class LunasOriginsClient implements ClientModInitializer {
                 ParticleFactoryRegistry.getInstance().register(LunaParticles.BLUE_FLAME, FlameParticle.Factory::new);
                 ParticleFactoryRegistry.getInstance().register(LunaParticles.PURPLE_FLAME, FlameParticle.Factory::new);
                 ParticleFactoryRegistry.getInstance().register(LunaParticles.WHITE_FLAME, FlameParticle.Factory::new);
+
+                ParticleFactoryRegistry.getInstance().register(LunaParticles.BLUE_SPARK,
+                                ElectricSparkParticleFactory.BlueElectricSparkFactory::new);
+                ParticleFactoryRegistry.getInstance().register(LunaParticles.ORANGE_SPARK,
+                                ElectricSparkParticleFactory.OrangeElectricSparkFactory::new);
+                ParticleFactoryRegistry.getInstance().register(LunaParticles.BLUE_DRIPPING_OBSIDIAN_TEAR,
+                                ModParticleFactories.DrippingBlueObsidianTearFactory::new);
+                ParticleFactoryRegistry.getInstance().register(LunaParticles.BLUE_FALLING_OBSIDIAN_TEAR,
+                                ModParticleFactories.FallingBlueObsidianTearFactory::new);
+                ParticleFactoryRegistry.getInstance().register(LunaParticles.BLUE_LANDING_OBSIDIAN_TEAR,
+                                ModParticleFactories.LandingBlueObsidianTearFactory::new);
                 // BlockRenderLayerMap.INSTANCE.putBlock(LunaBlocks.BLOCK, RenderLayer.getCutout());
                 BlockRenderLayerMap.INSTANCE.putBlock(LunaBlocks.DIMENSIONAL_BERRY_BUSH_BLOCK, RenderLayer.getCutout());
                 BlockRenderLayerMap.INSTANCE.putBlock(LunaBlocks.SOUL_BERRY_BUSH_BLOCK, RenderLayer.getCutout());
@@ -52,18 +67,21 @@ public class LunasOriginsClient implements ClientModInitializer {
                 BlockRenderLayerMap.INSTANCE.putBlock(LunaBlocks.WHITE_LILY, RenderLayer.getCutout());
                 BlockRenderLayerMap.INSTANCE.putBlock(LunaBlocks.DROP_POINT, RenderLayer.getCutout());
                 BlockRenderLayerMap.INSTANCE.putBlock(LunaBlocks.ENDER_FIRE, RenderLayer.getCutout());
-                // BlockEntityRendererFactories.register(LunaBlockEntity.HANGING_SIGN, SignBlockEntityRenderer::new);
-                // EntityRendererRegistry.register(LunaEntities.ENTITY, EntityRender::new);
+                BlockRenderLayerMap.INSTANCE.putBlock(LunaBlocks.RED_WISP_LANTERN, RenderLayer.getCutout());
+                BlockRenderLayerMap.INSTANCE.putBlock(LunaBlocks.ORANGE_WISP_LANTERN, RenderLayer.getCutout());
+                BlockRenderLayerMap.INSTANCE.putBlock(LunaBlocks.YELLOW_WISP_LANTERN, RenderLayer.getCutout());
+                BlockRenderLayerMap.INSTANCE.putBlock(LunaBlocks.GREEN_WISP_LANTERN, RenderLayer.getCutout());
+                BlockRenderLayerMap.INSTANCE.putBlock(LunaBlocks.CYAN_WISP_LANTERN, RenderLayer.getCutout());
+                BlockRenderLayerMap.INSTANCE.putBlock(LunaBlocks.BLUE_WISP_LANTERN, RenderLayer.getCutout());
+                BlockRenderLayerMap.INSTANCE.putBlock(LunaBlocks.PURPLE_WISP_LANTERN, RenderLayer.getCutout());
+                BlockRenderLayerMap.INSTANCE.putBlock(LunaBlocks.WHITE_WISP_LANTERN, RenderLayer.getCutout());
+                BlockRenderLayerMap.INSTANCE.putBlock(LunaBlocks.LANTERN_CASING, RenderLayer.getCutout());
                 EntityRendererRegistry.register(LunaEntities.CRIMSON_PHANTOM, CrimsonPhantomRender::new);
                 EntityRendererRegistry.register(LunaEntities.HOSTILE_AXOLOTL, HostileAxolotlRender::new);
-        }
+                BlockEntityRendererFactories.register(LunaBlockEntities.COMMAND_SIGN,
+                                SignBlockEntityRenderer::new);
+                BlockEntityRendererFactories.register(LunaBlockEntities.COMMAND_HANGING_SIGN,
+                                HangingSignBlockEntityRenderer::new);
 
-        private void registerThroughParticleFactoryRegistry() {
-                ParticleFactoryRegistry.getInstance().register(LunaParticles.BLUE_DRIPPING_OBSIDIAN_TEAR,
-                                ModParticleFactories.DrippingBlueObsidianTearFactory::new);
-                ParticleFactoryRegistry.getInstance().register(LunaParticles.BLUE_FALLING_OBSIDIAN_TEAR,
-                                ModParticleFactories.FallingBlueObsidianTearFactory::new);
-                ParticleFactoryRegistry.getInstance().register(LunaParticles.BLUE_LANDING_OBSIDIAN_TEAR,
-                                ModParticleFactories.LandingBlueObsidianTearFactory::new);
         }
 }

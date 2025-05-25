@@ -1,5 +1,183 @@
 {
   "type": "origins:multiple",
   "name": "Cluster Missile",
-  "description": "Creates sustained explosions on impact."
+  "description": "Creates sustained explosions on impact.",
+  "missle": {
+    "type": "origins:fire_projectile",
+    "key": "key.origins.ternary_active",
+    "entity_type": "minecraft:armor_stand",
+    "tag": "{Silent:1b,Invisible:1b}",
+    "speed": 2,
+    "projectile_action": {
+      "type": "origins:grant_power",
+      "power": "luna:titans/northstar/clustermissile_armorstand",
+      "source": "luna:titans/northstar/clustermissile"
+    },
+    "shooter_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:chance",
+          "chance": 0.1,
+          "action": {
+            "type": "origins:execute_command",
+            "command": "execute at @a[distance=..32] run tellraw @s {\"text\":\"<Northstar> Dodge this.\"}"
+          }
+        },
+        {
+          "type": "origins:change_resource",
+          "operation": "add",
+          "change": -1,
+          "resource": "*:*_cluster_missile_resource"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:*_payload"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "luna:titans/northstar/core_core_active"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "luna:titans/northstar/cluster_missile_resource"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": ">",
+          "resource": "*:*_cluster_missile_resource"
+        }
+      ]
+    }
+  },
+  "payload": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
+  },
+  "missle_payload": {
+    "type": "origins:fire_projectile",
+    "key": "key.origins.ternary_active",
+    "entity_type": "minecraft:armor_stand",
+    "tag": "{Silent:1b,Invisible:1b}",
+    "speed": 2,
+    "projectile_action": {
+      "type": "origins:grant_power",
+      "power": "luna:titans/northstar/clustermissile_armorstand_payload",
+      "source": "luna:titans/northstar/clustermissile"
+    },
+    "shooter_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:chance",
+          "chance": 0.1,
+          "action": {
+            "type": "origins:execute_command",
+            "command": "execute at @a[distance=..32] run tellraw @s {\"text\":\"<Northstar> Dodge this.\"}"
+          }
+        },
+        {
+          "type": "origins:change_resource",
+          "operation": "add",
+          "change": -1,
+          "resource": "*:*_cluster_missile_resource"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": "==",
+          "resource": "*:*_payload"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "luna:titans/northstar/core_core_active"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": ">",
+          "resource": "*:*_cluster_missile_resource"
+        }
+      ]
+    }
+  },
+  "cluster_missile_resource": {
+    "type": "origins:resource",
+    "max": 2,
+    "min": 0,
+    "hud_render": {
+      "should_render": true,
+      "bar_index": 2,
+      "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png"
+    }
+  },
+  "charge": {
+    "type": "origins:action_over_time",
+    "interval": 200,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 1,
+      "operation": "add",
+      "resource": "*:*_cluster_missile_resource"
+    },
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:and",
+          "conditions": [
+            {
+              "type": "origins:resource",
+              "compare_to": 1,
+              "comparison": "!=",
+              "resource": "*:*_cluster_missile_resource"
+            },
+            {
+              "type": "origins:resource",
+              "compare_to": 0,
+              "comparison": "==",
+              "resource": "luna:titans/northstar/aegis/twincluster_twin_cluster"
+            }
+          ]
+        },
+        {
+          "type": "origins:and",
+          "conditions": [
+            {
+              "type": "origins:resource",
+              "compare_to": 2,
+              "comparison": "!=",
+              "resource": "*:*_cluster_missile_resource"
+            },
+            {
+              "type": "origins:resource",
+              "compare_to": 1,
+              "comparison": "==",
+              "resource": "luna:titans/northstar/aegis/twincluster_twin_cluster"
+            }
+          ]
+        }
+      ]
+    }
+  }
 }

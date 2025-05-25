@@ -476,7 +476,7 @@
               {
                 "type": "origins:play_sound",
                 "sound": "lunasorigins:lumina_ult",
-                "volume": 1,
+                "volume": 4,
                 "category": "music",
                 "pitch": 1
               },
@@ -1035,6 +1035,372 @@
           "command": "scoreboard players remove Lumina Origin 1"
         }
       ]
+    }
+  },
+  "reset_when_death": {
+    "type": "origins:action_on_callback",
+    "entity_action_respawned": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "change": 0,
+          "operation": "set",
+          "resource": "*:*_red"
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 0,
+          "operation": "set",
+          "resource": "*:*_orange"
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 0,
+          "operation": "set",
+          "resource": "*:*_yellow"
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 0,
+          "operation": "set",
+          "resource": "*:*_green"
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 0,
+          "operation": "set",
+          "resource": "*:*_cyan"
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 0,
+          "operation": "set",
+          "resource": "*:*_blue"
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 0,
+          "operation": "set",
+          "resource": "*:*_purple"
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 0,
+          "operation": "set",
+          "resource": "*:*_ult_active"
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 5,
+          "action": {
+            "type": "origins:change_resource",
+            "change": 3500,
+            "operation": "set",
+            "resource": "luna:wisps/bars_ult_wisp_bar"
+          }
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 1,
+          "action": {
+            "type": "origins:execute_command",
+            "command": "luna:wisps/bar_drain"
+          }
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "stopsound @s * lunasorigins:lumina_ult"
+        }
+      ]
+    }
+  },
+  "make_wisp_lanterns": {
+    "type": "origins:active_self",
+    "hud_render": {
+      "should_render": false
+    },
+    "key": "key.use",
+    "entity_action": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "give @s lunasorigins:red_wisp_lantern"
+              },
+              {
+                "type": "origins:change_resource",
+                "change": -5,
+                "operation": "add",
+                "resource": "luna:wisps/bars_red_wisp_bar"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "clear @s lunasorigins:lantern_casing 1"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:resource",
+                "compare_to": 1,
+                "comparison": "==",
+                "resource": "*:*_switch_resource"
+              },
+              {
+                "type": "origins:resource",
+                "compare_to": 5,
+                "comparison": ">=",
+                "resource": "luna:wisps/bars_red_wisp_bar"
+              }
+            ]
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "give @s lunasorigins:orange_wisp_lantern"
+              },
+              {
+                "type": "origins:change_resource",
+                "change": -5,
+                "operation": "add",
+                "resource": "luna:wisps/bars_orange_wisp_bar"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "clear @s lunasorigins:lantern_casing 1"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:resource",
+                "compare_to": 2,
+                "comparison": "==",
+                "resource": "*:*_switch_resource"
+              },
+              {
+                "type": "origins:resource",
+                "compare_to": 5,
+                "comparison": ">=",
+                "resource": "luna:wisps/bars_orange_wisp_bar"
+              }
+            ]
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "give @s lunasorigins:yellow_wisp_lantern"
+              },
+              {
+                "type": "origins:change_resource",
+                "change": -5,
+                "operation": "add",
+                "resource": "luna:wisps/bars_yellow_wisp_bar"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "clear @s lunasorigins:lantern_casing 1"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:resource",
+                "compare_to": 3,
+                "comparison": "==",
+                "resource": "*:*_switch_resource"
+              },
+              {
+                "type": "origins:resource",
+                "compare_to": 5,
+                "comparison": ">=",
+                "resource": "luna:wisps/bars_yellow_wisp_bar"
+              }
+            ]
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "give @s lunasorigins:green_wisp_lantern"
+              },
+              {
+                "type": "origins:change_resource",
+                "change": -5,
+                "operation": "add",
+                "resource": "luna:wisps/bars_green_wisp_bar"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "clear @s lunasorigins:lantern_casing 1"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:resource",
+                "compare_to": 4,
+                "comparison": "==",
+                "resource": "*:*_switch_resource"
+              },
+              {
+                "type": "origins:resource",
+                "compare_to": 5,
+                "comparison": ">=",
+                "resource": "luna:wisps/bars_green_wisp_bar"
+              }
+            ]
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "give @s lunasorigins:cyan_wisp_lantern"
+              },
+              {
+                "type": "origins:change_resource",
+                "change": -5,
+                "operation": "add",
+                "resource": "luna:wisps/bars_cyan_wisp_bar"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "clear @s lunasorigins:lantern_casing 1"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:resource",
+                "compare_to": 5,
+                "comparison": "==",
+                "resource": "*:*_switch_resource"
+              },
+              {
+                "type": "origins:resource",
+                "compare_to": 5,
+                "comparison": ">=",
+                "resource": "luna:wisps/bars_cyan_wisp_bar"
+              }
+            ]
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "give @s lunasorigins:blue_wisp_lantern"
+              },
+              {
+                "type": "origins:change_resource",
+                "change": -5,
+                "operation": "add",
+                "resource": "luna:wisps/bars_blue_wisp_bar"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "clear @s lunasorigins:lantern_casing 1"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:resource",
+                "compare_to": 6,
+                "comparison": "==",
+                "resource": "*:*_switch_resource"
+              },
+              {
+                "type": "origins:resource",
+                "compare_to": 5,
+                "comparison": ">=",
+                "resource": "luna:wisps/bars_blue_wisp_bar"
+              }
+            ]
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "give @s lunasorigins:purple_wisp_lantern"
+              },
+              {
+                "type": "origins:change_resource",
+                "change": -5,
+                "operation": "add",
+                "resource": "luna:wisps/bars_purple_wisp_bar"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "clear @s lunasorigins:lantern_casing 1"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:resource",
+                "compare_to": 7,
+                "comparison": "==",
+                "resource": "*:*_switch_resource"
+              },
+              {
+                "type": "origins:resource",
+                "compare_to": 5,
+                "comparison": ">=",
+                "resource": "luna:wisps/bars_purple_wisp_bar"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:equipped_item",
+      "equipment_slot": "mainhand",
+      "item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": {
+          "item": "lunasorigins:lantern_casing"
+        }
+      }
     }
   }
 }

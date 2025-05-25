@@ -14,14 +14,6 @@
     },
     "facing=west": {
       "model": "lunasorigins:block/karl"
-    },
-    "facing=up": {
-      "model": "lunasorigins:block/karl",
-      "x": 270
-    },
-    "facing=down": {
-      "model": "lunasorigins:block/karl",
-      "x": 90
     }
   }
 }

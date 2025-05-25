@@ -5,5 +5,5 @@
   "enabled": true,
   "hidden": true,
   "auto_choose": true,
-  "origins": ["luna:luna/on_death", "luna:luna/damage_reductions"]
+  "origins": ["luna:lune/hidden"]
 }

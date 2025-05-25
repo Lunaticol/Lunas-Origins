@@ -19,7 +19,7 @@
     },
     "damage_condition": {
       "type": "origins:name",
-      "name": "luna:shield"
+      "name": "shield"
     }
   },
   "thermal_shield_chest": {
@@ -40,7 +40,7 @@
     },
     "damage_condition": {
       "type": "origins:name",
-      "name": "luna:shield"
+      "name": "shield"
     }
   },
   "thermal_shield_leggings": {
@@ -61,7 +61,7 @@
     },
     "damage_condition": {
       "type": "origins:name",
-      "name": "luna:shield"
+      "name": "shield"
     }
   },
   "thermal_shield_boots": {
@@ -82,7 +82,7 @@
     },
     "damage_condition": {
       "type": "origins:name",
-      "name": "luna:shield"
+      "name": "shield"
     }
   }
 }

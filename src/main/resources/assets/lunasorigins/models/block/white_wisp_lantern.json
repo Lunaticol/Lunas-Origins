@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_lantern",
+  "textures": {
+    "lantern": "lunasorigins:block/white_wisp_lantern"
+  }
+}

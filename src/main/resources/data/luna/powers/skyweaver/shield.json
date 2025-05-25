@@ -18,7 +18,7 @@
     "type": "origins:modify_damage_taken",
     "modifier": {
       "operation": "multiply_total",
-      "value": -2
+      "value": -1
     },
     "condition": {
       "type": "origins:resource",
@@ -70,26 +70,20 @@
           "resource": "*:*_immune_bar"
         },
         {
+          "type": "origins:delay",
+          "ticks": 60,
+          "action": {
+            "type": "origins:change_resource",
+            "change": 0,
+            "operation": "set",
+            "resource": "*:*_immune_bar"
+          }
+        },
+        {
           "type": "origins:grant_advancement",
           "advancement": "luna:skyweaver/shield"
         }
       ]
-    }
-  },
-  "reset": {
-    "type": "origins:action_over_time",
-    "interval": 60,
-    "entity_action": {
-      "type": "origins:change_resource",
-      "change": 0,
-      "operation": "set",
-      "resource": "*:*_immune_bar"
-    },
-    "condition": {
-      "type": "origins:resource",
-      "compare_to": 1,
-      "comparison": "==",
-      "resource": "*:*_immune_bar"
     }
   }
 }

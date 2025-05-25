@@ -1,6 +1,8 @@
 package luna.lunasorigins;
 
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
+import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.registry.Registries;
@@ -8,6 +10,8 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import net.fabricmc.loader.api.FabricLoader;
+import net.fabricmc.loader.api.ModContainer;
 
 import luna.lunasorigins.effects.LunaCorruptedEffect;
 import luna.lunasorigins.effects.SoulTunedEffect;
@@ -38,8 +42,17 @@ public class LunasOrigins implements ModInitializer {
         new LunaCorruptedEffect(StatusEffectCategory.HARMFUL, 0xcc9ad7));
   }
 
+  ModContainer modContainer = FabricLoader.getInstance().getModContainer(MOD_ID)
+      .orElseThrow(() -> new RuntimeException("ModContainer not found for "
+          + MOD_ID));
+
   @Override
   public void onInitialize() {
+
+    ResourceManagerHelper.registerBuiltinResourcePack(
+        Identifier.of(MOD_ID, "lunasorigins_resources"),
+        modContainer,
+        ResourcePackActivationType.ALWAYS_ENABLED);
 
     LunaItems.initialize();
     LunaBlocks.initialize();
@@ -51,6 +64,8 @@ public class LunasOrigins implements ModInitializer {
     LunaParticles.initalize();
     LunaSensorType.registerSensors();
     LunaEntityTypeTags.registerEntityTags();
+    LunaEnchantments.initalizeLunaEnchantments();
+
     LOGGER.info("Wow I have a mod now this is great");
 
   }

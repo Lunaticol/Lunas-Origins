@@ -1,5 +1,5 @@
 {
-  "name": "Enchanced Payload",
-  "description": "",
+  "name": "Twin Traps",
+  "description": "Increases the amount of traps you can carry at once.",
   "powers": ["luna:titans/northstar/kits/twintraps"]
 }

@@ -1,0 +1,50 @@
+{
+  "name": "Quick Hands",
+  "description": "Your experience in combat has lead you to sacrifice heavier blows in order to learn how to attack faster, alongside faster crossbow reloads",
+  "type": "origins:multiple",
+  "badges": [
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/info.png",
+      "text": "50% Faster attack speed, 50% Less damage."
+    }
+  ],
+  "modifiers": {
+    "type": "origins:attribute",
+    "modifiers": [
+      {
+        "attribute": "minecraft:generic.attack_speed",
+        "value": 0.5,
+        "operation": "multiply_total"
+      },
+      {
+        "attribute": "minecraft:generic.attack_damage",
+        "value": -0.5,
+        "operation": "multiply_total"
+      },
+      {
+        "attribute": "minecraft:generic.movement_speed",
+        "value": 0.5,
+        "operation": "multiply_total"
+      }
+    ]
+  },
+  "crossbows": {
+    "type": "apugli:modify_enchantment_level",
+    "enchantment": "minecraft:quick_charge",
+    "modifier": {
+      "value": 1,
+      "operation": "addition"
+    },
+    "condition": {
+      "type": "origins:equipped_item",
+      "equipment_slot": "mainhand",
+      "item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": {
+          "item": "minecraft:crossbow"
+        }
+      }
+    }
+  }
+}

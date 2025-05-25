@@ -1,5 +1,262 @@
 {
   "type": "origins:multiple",
   "name": "Tether Trap",
-  "description": "Mine that locks enemies down."
+  "description": "Mine that locks enemies down.",
+  "trap": {
+    "type": "origins:fire_projectile",
+    "key": "key.saveToolbarActivator",
+    "entity_type": "minecraft:armor_stand",
+    "tag": "{Silent:1b,Invisible:1b}",
+    "speed": 0.5,
+    "divergence": 50,
+    "projectile_action": {
+      "type": "origins:grant_power",
+      "power": "luna:titans/northstar/tether_armorstand",
+      "source": "luna:titans/northstar/tether"
+    },
+    "shooter_action": {
+      "type": "origins:change_resource",
+      "operation": "add",
+      "change": -1,
+      "resource": "*:*_tether_resource"
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:*_twin"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "luna:titans/northstar/core_core_active"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "luna:titans/northstar/aegis/explodetrap_explode_trap"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": ">",
+          "resource": "*:*_tether_resource"
+        }
+      ]
+    }
+  },
+  "twin_trap": {
+    "type": "origins:fire_projectile",
+    "key": "key.saveToolbarActivator",
+    "entity_type": "minecraft:armor_stand",
+    "tag": "{Silent:1b,Invisible:1b}",
+    "speed": 0.5,
+    "divergence": 50,
+    "projectile_action": {
+      "type": "origins:grant_power",
+      "power": "luna:titans/northstar/tether_armorstand",
+      "source": "luna:titans/northstar/tether"
+    },
+    "shooter_action": {
+      "type": "origins:change_resource",
+      "operation": "add",
+      "change": -1,
+      "resource": "*:*_tether_resource"
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": "==",
+          "resource": "*:*_twin"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "luna:titans/northstar/core_core_active"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "luna:titans/northstar/aegis/explodetrap_explode_trap"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": ">",
+          "resource": "*:*_tether_resource"
+        }
+      ]
+    }
+  },
+  "explode_trap": {
+    "type": "origins:fire_projectile",
+    "key": "key.saveToolbarActivator",
+    "entity_type": "minecraft:armor_stand",
+    "tag": "{Silent:1b,Invisible:1b}",
+    "speed": 0.5,
+    "divergence": 50,
+    "projectile_action": {
+      "type": "origins:grant_power",
+      "power": "luna:titans/northstar/tether_explode_armorstand",
+      "source": "luna:titans/northstar/tether"
+    },
+    "shooter_action": {
+      "type": "origins:change_resource",
+      "operation": "add",
+      "change": -1,
+      "resource": "*:*_tether_resource"
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:*_twin"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "luna:titans/northstar/core_core_active"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": "==",
+          "resource": "luna:titans/northstar/aegis/explodetrap_explode_trap"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": ">",
+          "resource": "*:*_tether_resource"
+        }
+      ]
+    }
+  },
+  "explode_twin_trap": {
+    "type": "origins:fire_projectile",
+    "key": "key.saveToolbarActivator",
+    "entity_type": "minecraft:armor_stand",
+    "tag": "{Silent:1b,Invisible:1b}",
+    "speed": 0.5,
+    "divergence": 50,
+    "count": 2,
+    "projectile_action": {
+      "type": "origins:grant_power",
+      "power": "luna:titans/northstar/tether_explode_armorstand",
+      "source": "luna:titans/northstar/tether"
+    },
+    "shooter_action": {
+      "type": "origins:change_resource",
+      "operation": "add",
+      "change": -1,
+      "resource": "*:*_tether_resource"
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": "==",
+          "resource": "*:*_twin"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "luna:titans/northstar/core_core_active"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": "==",
+          "resource": "luna:titans/northstar/aegis/explodetrap_explode_trap"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": ">",
+          "resource": "*:*_tether_resource"
+        }
+      ]
+    }
+  },
+  "twin": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
+  },
+  "tether_resource": {
+    "type": "origins:resource",
+    "max": 2,
+    "min": 0,
+    "hud_render": {
+      "should_render": true,
+      "bar_index": 2,
+      "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png"
+    }
+  },
+  "charge": {
+    "type": "origins:action_over_time",
+    "interval": 200,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 1,
+      "operation": "add",
+      "resource": "*:*_tether_resource"
+    },
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:and",
+          "conditions": [
+            {
+              "type": "origins:resource",
+              "compare_to": 0,
+              "comparison": "<=",
+              "resource": "*:*_tether_resource"
+            },
+            {
+              "type": "origins:resource",
+              "compare_to": 0,
+              "comparison": "==",
+              "resource": "luna:titans/northstar/aegis/trapmaster_trap_master"
+            }
+          ]
+        },
+        {
+          "type": "origins:and",
+          "conditions": [
+            {
+              "type": "origins:resource",
+              "compare_to": 1,
+              "comparison": "<=",
+              "resource": "*:*_tether_resource"
+            },
+            {
+              "type": "origins:resource",
+              "compare_to": 1,
+              "comparison": "==",
+              "resource": "luna:titans/northstar/aegis/trapmaster_trap_master"
+            }
+          ]
+        }
+      ]
+    }
+  }
 }

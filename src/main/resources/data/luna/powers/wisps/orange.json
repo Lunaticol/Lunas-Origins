@@ -324,7 +324,7 @@
       "resource": "*:wisps/bars_orange_wisp_bar"
     },
     "condition": {
-      "type": "origins:or",
+      "type": "origins:and",
       "conditions": [
         {
           "type": "origins:biome",

@@ -18,7 +18,8 @@
         {
           "type": "origins:add_velocity",
           "y": 2,
-          "space": "world"
+          "space": "local_horizontal_normalized",
+          "set": true
         },
         {
           "type": "origins:change_resource",

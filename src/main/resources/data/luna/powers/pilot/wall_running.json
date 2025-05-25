@@ -20,21 +20,168 @@
       "space": "local_horizontal_normalized"
     },
     "condition": {
-      "type": "origins:or",
+      "type": "origins:and",
       "conditions": [
         {
-          "type": "origins:block_collision",
-          "offset_x": 0.1,
-          "offset_z": 0.1
-        },
-        {
-          "type": "origins:block_collision",
-          "offset_x": -0.1,
-          "offset_z": -0.1
+          "type": "origins:or",
+          "conditions": [
+            {
+              "type": "origins:block_collision",
+              "offset_x": 0.1,
+              "offset_z": 0.1,
+              "block_condition": {
+                "inverted": true,
+                "type": "origins:in_tag",
+                "tag": "luna:unclingable"
+              }
+            },
+            {
+              "type": "origins:block_collision",
+              "offset_x": -0.1,
+              "offset_z": -0.1,
+              "block_condition": {
+                "inverted": true,
+                "type": "origins:in_tag",
+                "tag": "luna:unclingable"
+              }
+            }
+          ]
         },
         {
           "type": "origins:power_active",
           "power": "*:*_toggle"
+        },
+        {
+          "type": "origins:submerged_in",
+          "fluid": "minecraft:water",
+          "inverted": true
+        },
+        {
+          "type": "origins:submerged_in",
+          "fluid": "minecraft:lava",
+          "inverted": true
+        }
+      ]
+    }
+  },
+  "jump_off_wall": {
+    "type": "origins:active_self",
+    "cooldown": 10,
+    "key": "key.jump",
+    "entity_action": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "action": {
+            "type": "origins:add_velocity",
+            "z": 0.3,
+            "x": 0.5,
+            "space": "local_horizontal"
+          },
+          "condition": {
+            "type": "origins:block_collision",
+            "offset_x": 0.1,
+            "block_condition": {
+              "inverted": true,
+              "type": "origins:in_tag",
+              "tag": "luna:unclingable"
+            }
+          }
+        },
+        {
+          "action": {
+            "type": "origins:add_velocity",
+            "z": 0.3,
+            "x": -0.5,
+            "space": "local_horizontal"
+          },
+          "condition": {
+            "type": "origins:block_collision",
+            "offset_x": -0.1,
+            "block_condition": {
+              "inverted": true,
+              "type": "origins:in_tag",
+              "tag": "luna:unclingable"
+            }
+          }
+        },
+        {
+          "action": {
+            "type": "origins:add_velocity",
+            "z": 0.3,
+            "x": -0.5,
+            "space": "local_horizontal"
+          },
+          "condition": {
+            "type": "origins:block_collision",
+            "offset_z": -0.1,
+            "block_condition": {
+              "inverted": true,
+              "type": "origins:in_tag",
+              "tag": "luna:unclingable"
+            }
+          }
+        },
+        {
+          "action": {
+            "type": "origins:add_velocity",
+            "z": 0.3,
+            "x": 0.5,
+            "space": "local_horizontal"
+          },
+          "condition": {
+            "type": "origins:block_collision",
+            "offset_z": 0.1,
+            "block_condition": {
+              "inverted": true,
+              "type": "origins:in_tag",
+              "tag": "luna:unclingable"
+            }
+          }
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:or",
+          "conditions": [
+            {
+              "type": "origins:block_collision",
+              "offset_x": 0.1,
+              "offset_z": 0.1,
+              "block_condition": {
+                "inverted": true,
+                "type": "origins:in_tag",
+                "tag": "luna:unclingable"
+              }
+            },
+            {
+              "type": "origins:block_collision",
+              "offset_x": -0.1,
+              "offset_z": -0.1,
+              "block_condition": {
+                "inverted": true,
+                "type": "origins:in_tag",
+                "tag": "luna:unclingable"
+              }
+            }
+          ]
+        },
+        {
+          "type": "origins:power_active",
+          "power": "*:*_toggle"
+        },
+        {
+          "type": "origins:submerged_in",
+          "fluid": "minecraft:water",
+          "inverted": true
+        },
+        {
+          "type": "origins:submerged_in",
+          "fluid": "minecraft:lava",
+          "inverted": true
         }
       ]
     }

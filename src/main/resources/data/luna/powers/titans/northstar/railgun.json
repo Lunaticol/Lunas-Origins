@@ -202,7 +202,7 @@
     "type": "origins:active_self",
     "key": {
       "continuous": true,
-      "key": "key.origins.primary_active"
+      "key": "key.use"
     },
     "cooldown": 20,
     "entity_action": {
@@ -311,14 +311,188 @@
       ]
     },
     "condition": {
-      "type": "origins:resource",
-      "compare_to": 0,
-      "comparison": "==",
-      "resource": "*:*_cooldown"
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:*_cooldown"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "luna:titans/northstar/core_core_active"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "luna:titans/northstar/aegis/quickcharge_quick_charge"
+        },
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "item": "minecraft:crossbow"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "charge_up_quick": {
+    "type": "origins:active_self",
+    "key": {
+      "continuous": true,
+      "key": "key.use"
+    },
+    "cooldown": 10,
+    "entity_action": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "resource": "*:*_railgun_resource_1",
+                "operation": "add",
+                "change": 1
+              },
+              {
+                "type": "origins:change_resource",
+                "resource": "*:*_railgun_resource_0",
+                "operation": "set",
+                "change": -1
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 0,
+            "comparison": "==",
+            "resource": "*:*_railgun_resource_0"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "resource": "*:*_railgun_resource_2",
+                "operation": "add",
+                "change": 1
+              },
+              {
+                "type": "origins:change_resource",
+                "resource": "*:*_railgun_resource_1",
+                "operation": "set",
+                "change": 0
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 1,
+            "comparison": "==",
+            "resource": "*:*_railgun_resource_1"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "resource": "*:*_railgun_resource_3",
+                "operation": "add",
+                "change": 1
+              },
+              {
+                "type": "origins:change_resource",
+                "resource": "*:*_railgun_resource_2",
+                "operation": "set",
+                "change": 0
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 1,
+            "comparison": "==",
+            "resource": "*:*_railgun_resource_2"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "resource": "*:*_railgun_resource_4",
+                "operation": "add",
+                "change": 1
+              },
+              {
+                "type": "origins:change_resource",
+                "resource": "*:*_railgun_resource_3",
+                "operation": "set",
+                "change": 0
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 1,
+            "comparison": "==",
+            "resource": "*:*_railgun_resource_3"
+          }
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:*_cooldown"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "luna:titans/northstar/core_core_active"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": "==",
+          "resource": "luna:titans/northstar/aegis/quickcharge_quick_charge"
+        },
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "item": "minecraft:crossbow"
+            }
+          }
+        }
+      ]
     }
   },
   "firing": {
     "type": "origins:active_self",
+    "key": "key.attack",
     "entity_action": {
       "type": "origins:if_else_list",
       "actions": [
@@ -343,6 +517,12 @@
               {
                 "type": "origins:trigger_cooldown",
                 "power": "*:*_cooldown"
+              },
+              {
+                "type": "origins:play_sound",
+                "sound": "minecraft:entity.generic.explode",
+                "pitch": 0.5,
+                "volume": 1
               }
             ]
           },
@@ -380,6 +560,12 @@
               {
                 "type": "origins:trigger_cooldown",
                 "power": "*:*_cooldown"
+              },
+              {
+                "type": "origins:play_sound",
+                "sound": "minecraft:entity.generic.explode",
+                "pitch": 0.5,
+                "volume": 1
               }
             ]
           },
@@ -417,6 +603,12 @@
               {
                 "type": "origins:trigger_cooldown",
                 "power": "*:*_cooldown"
+              },
+              {
+                "type": "origins:play_sound",
+                "sound": "minecraft:entity.generic.explode",
+                "pitch": 0.5,
+                "volume": 1
               }
             ]
           },
@@ -454,6 +646,12 @@
               {
                 "type": "origins:trigger_cooldown",
                 "power": "*:*_cooldown"
+              },
+              {
+                "type": "origins:play_sound",
+                "sound": "minecraft:entity.generic.explode",
+                "pitch": 0.5,
+                "volume": 1
               }
             ]
           },
@@ -491,6 +689,12 @@
               {
                 "type": "origins:trigger_cooldown",
                 "power": "*:*_cooldown"
+              },
+              {
+                "type": "origins:play_sound",
+                "sound": "minecraft:entity.generic.explode",
+                "pitch": 0.5,
+                "volume": 1
               }
             ]
           },
@@ -503,12 +707,289 @@
         }
       ]
     },
-    "key": "key.use",
     "condition": {
-      "type": "origins:resource",
-      "compare_to": 0,
-      "comparison": "==",
-      "resource": "*:*_cooldown"
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:*_cooldown"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:*_pierce"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 100,
+          "comparison": "!=",
+          "resource": "luna:titans/northstar/core_core_active"
+        },
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "item": "minecraft:crossbow"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "firing_pierce": {
+    "type": "origins:active_self",
+    "key": "key.attack",
+    "entity_action": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:fire_projectile",
+                "speed": 4,
+                "count": 1,
+                "divergence": 0,
+                "entity_type": "minecraft:arrow",
+                "tag": "{pickup:0b,damage:2d,crit:1b,NoGravity:1b,life:1000,PierceLevel:6b}"
+              },
+              {
+                "type": "origins:change_resource",
+                "change": 0,
+                "operation": "set",
+                "resource": "*:*_railgun_resource_0"
+              },
+              {
+                "type": "origins:trigger_cooldown",
+                "power": "*:*_cooldown"
+              },
+              {
+                "type": "origins:play_sound",
+                "sound": "minecraft:entity.generic.explode",
+                "pitch": 0.5,
+                "volume": 1
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 0,
+            "comparison": "==",
+            "resource": "*:*_railgun_resource_0"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:fire_projectile",
+                "speed": 4,
+                "count": 1,
+                "divergence": 0,
+                "entity_type": "minecraft:arrow",
+                "tag": "{pickup:0b,damage:4d,crit:1b,NoGravity:1b,life:1000,PierceLevel:6b}"
+              },
+              {
+                "type": "origins:change_resource",
+                "change": 0,
+                "operation": "set",
+                "resource": "*:*_railgun_resource_1"
+              },
+              {
+                "type": "origins:change_resource",
+                "change": 0,
+                "operation": "set",
+                "resource": "*:*_railgun_resource_0"
+              },
+              {
+                "type": "origins:trigger_cooldown",
+                "power": "*:*_cooldown"
+              },
+              {
+                "type": "origins:play_sound",
+                "sound": "minecraft:entity.generic.explode",
+                "pitch": 0.5,
+                "volume": 1
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 1,
+            "comparison": "==",
+            "resource": "*:*_railgun_resource_1"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:fire_projectile",
+                "speed": 4,
+                "count": 1,
+                "divergence": 0,
+                "entity_type": "minecraft:arrow",
+                "tag": "{pickup:0b,damage:6d,crit:1b,NoGravity:1b,life:1000,PierceLevel:6b}"
+              },
+              {
+                "type": "origins:change_resource",
+                "change": 0,
+                "operation": "set",
+                "resource": "*:*_railgun_resource_2"
+              },
+              {
+                "type": "origins:change_resource",
+                "change": 0,
+                "operation": "set",
+                "resource": "*:*_railgun_resource_0"
+              },
+              {
+                "type": "origins:trigger_cooldown",
+                "power": "*:*_cooldown"
+              },
+              {
+                "type": "origins:play_sound",
+                "sound": "minecraft:entity.generic.explode",
+                "pitch": 0.5,
+                "volume": 1
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 1,
+            "comparison": "==",
+            "resource": "*:*_railgun_resource_2"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:fire_projectile",
+                "speed": 4,
+                "count": 1,
+                "divergence": 0,
+                "entity_type": "minecraft:arrow",
+                "tag": "{pickup:0b,damage:8d,crit:1b,NoGravity:1b,life:1000,PierceLevel:6b}"
+              },
+              {
+                "type": "origins:change_resource",
+                "change": 0,
+                "operation": "set",
+                "resource": "*:*_railgun_resource_3"
+              },
+              {
+                "type": "origins:change_resource",
+                "change": 0,
+                "operation": "set",
+                "resource": "*:*_railgun_resource_0"
+              },
+              {
+                "type": "origins:trigger_cooldown",
+                "power": "*:*_cooldown"
+              },
+              {
+                "type": "origins:play_sound",
+                "sound": "minecraft:entity.generic.explode",
+                "pitch": 0.5,
+                "volume": 1
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 1,
+            "comparison": "==",
+            "resource": "*:*_railgun_resource_3"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:fire_projectile",
+                "speed": 4,
+                "count": 1,
+                "divergence": 0,
+                "entity_type": "minecraft:arrow",
+                "tag": "{pickup:0b,damage:12d,crit:1b,NoGravity:1b,life:1000,PierceLevel:6b}"
+              },
+              {
+                "type": "origins:change_resource",
+                "change": 0,
+                "operation": "set",
+                "resource": "*:*_railgun_resource_4"
+              },
+              {
+                "type": "origins:change_resource",
+                "change": 0,
+                "operation": "set",
+                "resource": "*:*_railgun_resource_0"
+              },
+              {
+                "type": "origins:trigger_cooldown",
+                "power": "*:*_cooldown"
+              },
+              {
+                "type": "origins:play_sound",
+                "sound": "minecraft:entity.generic.explode",
+                "pitch": 0.5,
+                "volume": 1
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 1,
+            "comparison": "==",
+            "resource": "*:*_railgun_resource_4"
+          }
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:*_cooldown"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 1,
+          "comparison": "==",
+          "resource": "*:*_pierce"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "luna:titans/northstar/core_core_active"
+        },
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "item": "minecraft:crossbow"
+            }
+          }
+        }
+      ]
     }
   },
   "cooldown": {
@@ -554,5 +1035,10 @@
         }
       ]
     }
+  },
+  "pierce": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
   }
 }

@@ -41,10 +41,25 @@
       "bar_index": 2
     },
     "entity_action": {
-      "type": "origins:change_resource",
-      "change": 1,
-      "resource": "*:*_active",
-      "operation": "set"
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "change": 1,
+          "resource": "*:*_active",
+          "operation": "set"
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 40,
+          "action": {
+            "type": "origins:change_resource",
+            "change": 0,
+            "resource": "*:*_active",
+            "operation": "set"
+          }
+        }
+      ]
     },
     "condition": {
       "type": "origins:resource",
@@ -86,16 +101,16 @@
                 "volume": 1
               },
               {
-                "type": "origins:explode",
-                "power": 0,
-                "damage_self": false,
-                "destruction_type": "none"
-              },
-              {
                 "type": "origins:change_resource",
                 "change": -200,
                 "resource": "*:bluefox/soul_soul_bar",
                 "operation": "add"
+              },
+              {
+                "type": "origins:explode",
+                "power": 2,
+                "damage_self": false,
+                "destruction_type": "none"
               },
               {
                 "type": "origins:area_of_effect",
@@ -110,22 +125,6 @@
           }
         }
       ]
-    },
-    "condition": {
-      "type": "origins:resource",
-      "compare_to": 1,
-      "comparison": "==",
-      "resource": "*:*_active"
-    }
-  },
-  "when_active_timer": {
-    "type": "origins:action_over_time",
-    "interval": 40,
-    "entity_action": {
-      "type": "origins:change_resource",
-      "change": 0,
-      "resource": "*:*_active",
-      "operation": "set"
     },
     "condition": {
       "type": "origins:resource",

@@ -1,6 +1,6 @@
 {
   "name": "RTP (Random Teleport)",
-  "description": "You are able to randomly teleport.\nYou sometimes teleport when hit.\nProjectiles cannot harm you.\n You can see attackers after theyve hit you.",
+  "description": "You are able to randomly teleport.\nYou sometimes teleport when hit.\nProjectiles cannot harm you.\nYou can see attackers after they have hit you.",
   "type": "origins:multiple",
   "badges": [
     {

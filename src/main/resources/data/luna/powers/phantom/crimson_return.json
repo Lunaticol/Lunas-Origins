@@ -1,12 +1,9 @@
 {
-  "name": "Blood Rebirth",
-  "description": "The dark magic inside you brings you back from death but only for a short time. Do not fail this next life or it will be your last.",
+  "name": "Blood Requiem",
+  "description": "The dark magic inside you brings you back from death but only for a short time.\nThis is your ultimate form, strong yet agile.",
   "type": "origins:multiple",
   "respawn": {
     "type": "origins:prevent_death",
-    "hud_render": {
-      "should_render": true
-    },
     "entity_action": {
       "type": "origins:and",
       "actions": [
@@ -32,8 +29,7 @@
             },
             {
               "effect": "minecraft:resistance",
-              "duration": 500,
-              "amplifier": 1
+              "duration": 500
             },
             {
               "effect": "minecraft:absorption",
@@ -67,7 +63,29 @@
         },
         {
           "type": "origins:execute_command",
-          "command": "title @s actionbar {\"text\":\"GET UP! THIS IS NO PLACE TO DIE.\",\"color\":\"dark_red\",\"bold\":true}"
+          "command": "title @s actionbar {\"text\":\"Stand up and Fight! Disappoint me and you will regret it.\",\"color\":\"dark_red\",\"bold\":true}"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "execute at @s rotated ~ 0 run summon lunasorigins:crimson_phantom ~ ~ ~1"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "execute at @s rotated ~ 0 run summon lunasorigins:crimson_phantom ~ ~ ~-1"
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:block.sculk_shrieker.shriek",
+          "pitch": 1,
+          "volume": 1,
+          "category": "players"
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "lunasorigins:crimson_ult",
+          "pitch": 1,
+          "volume": 4,
+          "category": "players"
         }
       ]
     },
@@ -81,10 +99,20 @@
           "resource": "*:*_died"
         },
         {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "tag": "minecraft:swords"
+            }
+          }
+        },
+        {
           "type": "origins:resource",
-          "compare_to": 0,
-          "comparison": "!=",
-          "resource": "luna:phantom/dark_healing_blood"
+          "compare_to": 100,
+          "comparison": "==",
+          "resource": "*:phantom/dark_healing_blood"
         }
       ]
     }
@@ -96,7 +124,7 @@
   },
   "blood_drain": {
     "type": "origins:action_over_time",
-    "interval": 20,
+    "interval": 34,
     "entity_action": {
       "type": "origins:change_resource",
       "change": -1,
@@ -114,10 +142,19 @@
     "type": "origins:self_action_on_kill",
     "cooldown": 0,
     "entity_action": {
-      "type": "origins:change_resource",
-      "change": 0,
-      "operation": "set",
-      "resource": "*:*_died"
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "change": 0,
+          "operation": "set",
+          "resource": "*:*_died"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "stopsound @s * lunasorigins:crimson_ult"
+        }
+      ]
     }
   },
   "on_respawn": {
@@ -127,6 +164,79 @@
       "change": 0,
       "operation": "set",
       "resource": "*:*_died"
+    }
+  },
+  "phase_inf": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 300,
+      "resource": "*:phantom/phase_phase_bar",
+      "operation": "set"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_died"
+    }
+  },
+  "stats": {
+    "type": "origins:conditioned_attribute",
+    "tick_rate": 10,
+    "update_health": true,
+    "modifiers": [
+      {
+        "attribute": "minecraft:generic.attack_speed",
+        "value": 2,
+        "operation": "addition"
+      },
+      {
+        "attribute": "minecraft:generic.movement_speed",
+        "value": 0.2,
+        "operation": "multiply_total"
+      },
+      {
+        "attribute": "minecraft:generic.max_health",
+        "value": -2,
+        "operation": "addition"
+      }
+    ],
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_died"
+    }
+  },
+  "press_0_to_move_faster": {
+    "type": "origins:active_self",
+    "key": "key.use",
+    "entity_action": {
+      "type": "origins:damage",
+      "amount": 20,
+      "source": {
+        "name": "luna:out_of_blood"
+      }
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:sneaking"
+        },
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "item": "lunasorigins:crimson_dagger"
+            }
+          }
+        }
+      ]
     }
   }
 }

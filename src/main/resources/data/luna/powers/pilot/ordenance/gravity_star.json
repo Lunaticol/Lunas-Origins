@@ -1,0 +1,18 @@
+{
+  "name": "Gravity Star",
+  "description": "A throwing star that creates a gravity well on impact.",
+  "type": "origins:multiple",
+  "throw": {
+    "type": "origins:fire_projectile",
+    "key": "key.origins.secondary_active",
+    "cooldown": 400,
+    "entity_type": "minecraft:armor_stand",
+    "tag": "{Silent:1b,Invisible:1b}",
+    "speed": 2,
+    "projectile_action": {
+      "type": "origins:grant_power",
+      "power": "luna:pilot/ordenance/gravity_star_armorstand",
+      "source": "luna:pilot/ordenance/gravity_star"
+    }
+  }
+}

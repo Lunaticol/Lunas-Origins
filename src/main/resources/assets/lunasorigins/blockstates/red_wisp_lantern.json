@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "lunasorigins:block/red_wisp_lantern"
+    },
+    "hanging=true": {
+      "model": "lunasorigins:block/red_wisp_lantern_hanging"
+    }
+  }
+}

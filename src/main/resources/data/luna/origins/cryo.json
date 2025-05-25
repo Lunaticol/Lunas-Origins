@@ -3,12 +3,12 @@
     "luna:cryo/cryo",
     "luna:cryo/chain",
     "luna:cryo/liquify",
+    "luna:cryo/quick_hands",
     "luna:cryo/shielded_from_fire"
   ],
   "icon": "minecraft:blue_ice",
-  "unchoosable": true,
   "order": 9,
   "impact": 3,
   "name": "Cryogen",
-  "description": "Cryogen is a skilled combative assassin trained to kill on sight. Using their abilities, such as Ice Hook to rope people in and slaughter them. The definitive definitive of an anti-hero."
+  "description": "Cryogen is a skilled assassin trained to hunt down targets with grace. Using their abilities, they hunt down their targets with silence and grace. Cryogens are commonly looked down upon by Ronin Sentinels."
 }

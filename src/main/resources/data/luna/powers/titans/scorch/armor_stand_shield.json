@@ -20,7 +20,7 @@
                 "actions": [
                   {
                     "type": "origins:damage",
-                    "amount": 10,
+                    "amount": 5,
                     "source": {
                       "name": "shield"
                     }

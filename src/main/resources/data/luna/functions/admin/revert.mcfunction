@@ -7,3 +7,4 @@ execute as @a run resource set @s luna:sculk/sculk_like_admin_resource 0
 execute as @a run resource set @s luna:wisps/wisp_admin_resource 0
 execute as @a run resource set @s luna:titans/ronin/core_admin_resource 0
 execute as @a run resource set @s luna:titans/scorch/core_admin_resource 0
+tellraw @a {"text":"Carnage mode deactivated!","color":"dark_red"}

@@ -1,5 +1,5 @@
 {
-  "powers": ["pilot:pilot_grapple/pilotgrapple"],
+  "powers": ["luna:pilot/pilotgrapple", "luna:pilot/ordenance/gravity_star"],
   "icon": "minecraft:crossbow",
   "order": 10,
   "impact": 2,

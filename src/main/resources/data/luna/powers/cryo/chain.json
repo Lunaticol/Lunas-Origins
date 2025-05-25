@@ -9,6 +9,11 @@
       "continuous": true
     },
     "cooldown": 200,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+      "bar_index": 0
+    },
     "entity_action": {
       "type": "origins:raycast",
       "command_along_ray": "particle dust 0.278 0.686 1.000 1 ~ ~-1 ~ 0 0 0 0 10 force",
@@ -16,15 +21,22 @@
       "entity": true,
       "distance": 12,
       "bientity_action": {
-        "type": "origins:add_velocity",
-        "z": -0.7,
-        "y": 0.2
-      },
-      "hit_action": {
-        "type": "origins:change_resource",
-        "change": -2,
-        "operation": "add",
-        "resource": "*:*_ice_hook_resource"
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:add_velocity",
+            "z": -2,
+            "y": 0.2
+          },
+          {
+            "type": "origins:target_action",
+            "action": {
+              "type": "origins:grant_power",
+              "power": "luna:cryo/freezing",
+              "source": "luna:cryo/chain"
+            }
+          }
+        ]
       }
     }
   }

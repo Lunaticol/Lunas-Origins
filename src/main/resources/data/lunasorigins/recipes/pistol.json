@@ -1,0 +1,15 @@
+{
+  "type": "crafting_shaped",
+  "key": {
+    "R": { "item": "minecraft:redstone_torch" },
+    "C": { "item": "minecraft:copper_ingot" },
+    "L": { "item": "minecraft:lever" },
+    "S": { "item": "minecraft:smooth_stone" },
+    "D": { "item": "minecraft:dispenser" }
+  },
+  "pattern": ["RRS", "RDC", "CL "],
+  "result": {
+    "item": "lunasorigins:pistol",
+    "count": 1
+  }
+}

@@ -12,6 +12,10 @@ import net.minecraft.sound.*;
 import net.minecraft.util.DyeColor;
 import net.minecraft.util.Identifier;
 import luna.lunasorigins.blocks.*;
+import luna.lunasorigins.blocks.signs.CommandSignBlock;
+import luna.lunasorigins.blocks.signs.CommandWallHangingSign;
+import luna.lunasorigins.blocks.signs.CommandWallSign;
+import luna.lunasorigins.blocks.signs.HangingCommandSignBlock;
 import luna.lunasorigins.worldgen.tree.*;
 import luna.lunasorigins.blocks.stuffy.*;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
@@ -168,26 +172,27 @@ public class LunaBlocks {
                         "command_slab",
                         true);
 
-        public static final Block COMMAND_SIGN_BLOCK = register(
-                        new SignBlock(AbstractBlock.Settings.create()
-                                        .sounds(BlockSoundGroup.WOOD), LunaWoodType.COMMAND),
+        public static final Block COMMAND_SIGN = register(
+                        new CommandSignBlock(AbstractBlock.Settings.create()
+                                        .sounds(BlockSoundGroup.WOOD).noCollision(), LunaWoodType.COMMAND),
                         "command_sign",
                         false);
 
-        public static final Block COMMAND_WALL_SIGN_BLOCK = register(
-                        new WallSignBlock(FabricBlockSettings.copy(Blocks.CHERRY_SIGN), LunaWoodType.COMMAND),
+        public static final Block COMMAND_WALL_SIGN = register(
+                        new CommandWallSign(AbstractBlock.Settings.create()
+                                        .sounds(BlockSoundGroup.WOOD).noCollision(), LunaWoodType.COMMAND),
                         "command_wall_sign",
                         false);
 
         public static final Block COMMAND_HANGING_SIGN = register(
-                        new HangingSignBlock(AbstractBlock.Settings.create()
-                                        .sounds(BlockSoundGroup.WOOD), LunaWoodType.COMMAND),
+                        new HangingCommandSignBlock(AbstractBlock.Settings.create()
+                                        .sounds(BlockSoundGroup.WOOD).noCollision(), LunaWoodType.COMMAND),
                         "command_hanging_sign",
                         false);
 
         public static final Block COMMAND_HANGING_WALL_SIGN = register(
-                        new HangingSignBlock(AbstractBlock.Settings.create()
-                                        .sounds(BlockSoundGroup.WOOD), LunaWoodType.COMMAND),
+                        new CommandWallHangingSign(AbstractBlock.Settings.create()
+                                        .sounds(BlockSoundGroup.WOOD).noCollision(), LunaWoodType.COMMAND),
                         "command_hanging_wall_sign",
                         false);
 
@@ -319,13 +324,15 @@ public class LunaBlocks {
 
         public static final Block COMMAND_PLATED_STONE_BRICK_STAIRS = register(
                         new StairsBlock(COMMAND_PLATED_STONE.getDefaultState(),
-                                        AbstractBlock.Settings.copy(COMMAND_PLATED_STONE)),
+                                        AbstractBlock.Settings.copy(COMMAND_PLATED_STONE)
+                                                        .strength(2.0F, 3.0F)),
                         "plated_stone_brick_stairs",
                         true);
 
         public static final Block COMMAND_PLATED_STONE_STAIRS = register(
                         new StairsBlock(COMMAND_PLATED_STONE.getDefaultState(),
-                                        AbstractBlock.Settings.copy(COMMAND_PLATED_STONE)),
+                                        AbstractBlock.Settings.copy(COMMAND_PLATED_STONE)
+                                                        .strength(2.0F, 3.0F)),
                         "plated_stone_stairs",
                         true);
 
@@ -337,13 +344,15 @@ public class LunaBlocks {
                         true);
 
         public static final Block COMMAND_PLATED_STONE_BRICK_WALL = register(
-                        new WallBlock(AbstractBlock.Settings.copy(Blocks.STONE_BRICKS).solid()),
+                        new WallBlock(AbstractBlock.Settings.copy(Blocks.STONE_BRICKS).solid()
+                                        .strength(2.0F, 3.0F)),
                         "plated_stone_brick_wall",
                         true);
 
         public static final Block COMMAND_PLATED_MOSSY_STONE_BRICK_WALL = register(
-                        new WallBlock(AbstractBlock.Settings.copy(Blocks.STONE_BRICKS).solid()),
-                        "plated_stone_mossy_brick_wall",
+                        new WallBlock(AbstractBlock.Settings.copy(Blocks.STONE_BRICKS).solid()
+                                        .strength(2.0F, 3.0F)),
+                        "plated_mossy_stone_brick_wall",
                         true);
 
         public static final Block COMMAND_PLATED_MOSSY_STONE_BRICK_SLAB = register(
@@ -430,7 +439,8 @@ public class LunaBlocks {
                         "blue_crying_obsidian", true);
 
         public static final Block ENDER_FIRE = register(
-                        new EnderFire(AbstractBlock.Settings.copy(Blocks.SOUL_FIRE)), "ender_fire", false);
+                        new EnderFire(AbstractBlock.Settings.copy(Blocks.SOUL_FIRE).mapColor(MapColor.PALE_PURPLE)),
+                        "ender_fire", false);
 
         public static final Block DROP_POINT = register(
                         new Block(AbstractBlock.Settings.copy(Blocks.BLUE_BED).mapColor(MapColor.BLUE)
@@ -438,6 +448,96 @@ public class LunaBlocks {
                                                 return 15;
                                         }).nonOpaque().noCollision()),
                         "drop_point", true);
+
+        public static final Block RED_WISP_LANTERN = register(
+                        new LanternBlock(AbstractBlock.Settings.create()
+                                        .sounds(BlockSoundGroup.LANTERN)
+                                        .strength(2.0F, 3.0F)
+                                        .luminance((state) -> {
+                                                return 15;
+                                        })
+                                        .nonOpaque()),
+                        "red_wisp_lantern", true);
+
+        public static final Block ORANGE_WISP_LANTERN = register(
+                        new LanternBlock(AbstractBlock.Settings.create()
+                                        .sounds(BlockSoundGroup.LANTERN)
+                                        .strength(2.0F, 3.0F)
+                                        .luminance((state) -> {
+                                                return 15;
+                                        })
+                                        .nonOpaque()),
+                        "orange_wisp_lantern", true);
+
+        public static final Block YELLOW_WISP_LANTERN = register(
+                        new LanternBlock(AbstractBlock.Settings.create()
+                                        .sounds(BlockSoundGroup.LANTERN)
+                                        .strength(2.0F, 3.0F)
+                                        .luminance((state) -> {
+                                                return 15;
+                                        })
+                                        .nonOpaque()),
+                        "yellow_wisp_lantern", true);
+
+        public static final Block GREEN_WISP_LANTERN = register(
+                        new LanternBlock(AbstractBlock.Settings.create()
+                                        .sounds(BlockSoundGroup.LANTERN)
+                                        .strength(2.0F, 3.0F)
+                                        .luminance((state) -> {
+                                                return 10;
+                                        })
+                                        .nonOpaque()),
+                        "green_wisp_lantern", true);
+
+        public static final Block CYAN_WISP_LANTERN = register(
+                        new LanternBlock(AbstractBlock.Settings.create()
+                                        .sounds(BlockSoundGroup.LANTERN)
+                                        .strength(2.0F, 3.0F)
+                                        .luminance((state) -> {
+                                                return 15;
+                                        })
+                                        .nonOpaque()),
+                        "cyan_wisp_lantern", true);
+
+        public static final Block BLUE_WISP_LANTERN = register(
+                        new LanternBlock(AbstractBlock.Settings.create()
+                                        .sounds(BlockSoundGroup.LANTERN)
+                                        .strength(2.0F, 3.0F)
+                                        .luminance((state) -> {
+                                                return 8;
+                                        })
+                                        .nonOpaque()),
+                        "blue_wisp_lantern", true);
+
+        public static final Block PURPLE_WISP_LANTERN = register(
+                        new LanternBlock(AbstractBlock.Settings.create()
+                                        .sounds(BlockSoundGroup.LANTERN)
+                                        .strength(2.0F, 3.0F)
+                                        .luminance((state) -> {
+                                                return 4;
+                                        })
+                                        .nonOpaque()),
+                        "purple_wisp_lantern", true);
+
+        public static final Block WHITE_WISP_LANTERN = register(
+                        new LanternBlock(AbstractBlock.Settings.create()
+                                        .sounds(BlockSoundGroup.LANTERN)
+                                        .strength(2.0F, 3.0F)
+                                        .luminance((state) -> {
+                                                return 15;
+                                        })
+                                        .nonOpaque()),
+                        "white_wisp_lantern", true);
+
+        public static final Block LANTERN_CASING = register(
+                        new LanternBlock(AbstractBlock.Settings.create()
+                                        .sounds(BlockSoundGroup.LANTERN)
+                                        .strength(2.0F, 3.0F)
+                                        .luminance((state) -> {
+                                                return 0;
+                                        })
+                                        .nonOpaque()),
+                        "lantern_casing", true);
 
         public static void initialize() {
 
@@ -505,6 +605,9 @@ public class LunaBlocks {
                                 .register(itemGroup -> itemGroup.add(LunaBlocks.COMMAND_PLATED_STONE_BRICKS.asItem()));
                 ItemGroupEvents.modifyEntriesEvent(LunaItems.LUNASORIGINS_ITEM_GROUP_KEY)
                                 .register(itemGroup -> itemGroup
+                                                .add(LunaBlocks.COMMAND_PLATED_STONE_BRICK_WALL.asItem()));
+                ItemGroupEvents.modifyEntriesEvent(LunaItems.LUNASORIGINS_ITEM_GROUP_KEY)
+                                .register(itemGroup -> itemGroup
                                                 .add(LunaBlocks.COMMAND_PLATED_MOSSY_STONE_BRICKS.asItem()));
                 ItemGroupEvents.modifyEntriesEvent(LunaItems.LUNASORIGINS_ITEM_GROUP_KEY)
                                 .register(itemGroup -> itemGroup
@@ -526,6 +629,9 @@ public class LunaBlocks {
                 ItemGroupEvents.modifyEntriesEvent(LunaItems.LUNASORIGINS_ITEM_GROUP_KEY)
                                 .register(itemGroup -> itemGroup
                                                 .add(LunaBlocks.COMMAND_PLATED_MOSSY_STONE_BRICK_SLAB.asItem()));
+                ItemGroupEvents.modifyEntriesEvent(LunaItems.LUNASORIGINS_ITEM_GROUP_KEY)
+                                .register(itemGroup -> itemGroup
+                                                .add(LunaBlocks.COMMAND_PLATED_MOSSY_STONE_BRICK_WALL.asItem()));
                 ItemGroupEvents.modifyEntriesEvent(LunaItems.LUNASORIGINS_ITEM_GROUP_KEY)
                                 .register(itemGroup -> itemGroup
                                                 .add(LunaBlocks.COMMAND_PLATED_STONE_BRICK_SLAB.asItem()));
@@ -593,6 +699,42 @@ public class LunaBlocks {
                 ItemGroupEvents.modifyEntriesEvent(LunaItems.LUNASORIGINS_ITEM_GROUP_KEY)
                                 .register(itemGroup -> itemGroup
                                                 .add(LunaBlocks.DROP_POINT.asItem()));
+
+                ItemGroupEvents.modifyEntriesEvent(LunaItems.LUNASORIGINS_ITEM_GROUP_KEY)
+                                .register(itemGroup -> itemGroup
+                                                .add(LunaBlocks.RED_WISP_LANTERN.asItem()));
+
+                ItemGroupEvents.modifyEntriesEvent(LunaItems.LUNASORIGINS_ITEM_GROUP_KEY)
+                                .register(itemGroup -> itemGroup
+                                                .add(LunaBlocks.ORANGE_WISP_LANTERN.asItem()));
+
+                ItemGroupEvents.modifyEntriesEvent(LunaItems.LUNASORIGINS_ITEM_GROUP_KEY)
+                                .register(itemGroup -> itemGroup
+                                                .add(LunaBlocks.YELLOW_WISP_LANTERN.asItem()));
+
+                ItemGroupEvents.modifyEntriesEvent(LunaItems.LUNASORIGINS_ITEM_GROUP_KEY)
+                                .register(itemGroup -> itemGroup
+                                                .add(LunaBlocks.GREEN_WISP_LANTERN.asItem()));
+
+                ItemGroupEvents.modifyEntriesEvent(LunaItems.LUNASORIGINS_ITEM_GROUP_KEY)
+                                .register(itemGroup -> itemGroup
+                                                .add(LunaBlocks.CYAN_WISP_LANTERN.asItem()));
+
+                ItemGroupEvents.modifyEntriesEvent(LunaItems.LUNASORIGINS_ITEM_GROUP_KEY)
+                                .register(itemGroup -> itemGroup
+                                                .add(LunaBlocks.BLUE_WISP_LANTERN.asItem()));
+
+                ItemGroupEvents.modifyEntriesEvent(LunaItems.LUNASORIGINS_ITEM_GROUP_KEY)
+                                .register(itemGroup -> itemGroup
+                                                .add(LunaBlocks.PURPLE_WISP_LANTERN.asItem()));
+
+                ItemGroupEvents.modifyEntriesEvent(LunaItems.LUNASORIGINS_ITEM_GROUP_KEY)
+                                .register(itemGroup -> itemGroup
+                                                .add(LunaBlocks.WHITE_WISP_LANTERN.asItem()));
+
+                ItemGroupEvents.modifyEntriesEvent(LunaItems.LUNASORIGINS_ITEM_GROUP_KEY)
+                                .register(itemGroup -> itemGroup
+                                                .add(LunaBlocks.LANTERN_CASING.asItem()));
         }
 
         private static Block register(Block block, String name, boolean registerBlockItem) {
