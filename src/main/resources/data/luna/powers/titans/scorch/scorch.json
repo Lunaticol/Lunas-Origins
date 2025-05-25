@@ -1,7 +1,7 @@
 {
   "type": "origins:multiple",
   "name": "Scorched",
-  "description": "Scorch's primary offensive and defensive weapon is fire.\nYour thermite would burn any shields you touch.\n You eat redstone to recover health.\nYour thick metal protects your core from projectiles.\nDue to your bulky armor you are slowed by 50%",
+  "description": "An Ogre Class Sentinel designed by the Blazeborns & Ignea to eradicate the aquatic race, Scorch's primary offensive and defensive weapon is fire.\nYour thermite would burn any shields you touch.\n You eat redstone to recover health.\nYour thick metal protects your core from projectiles.\nDue to your bulky armor you are slowed by 50%",
   "height": {
     "type": "origins:action_on_callback",
     "execute_chosen_when_orb": true,
@@ -220,6 +220,31 @@
             "type": "origins:damage",
             "amount": 1,
             "ignore_unbreaking": true
+          }
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "item": "minecraft:shield"
+            }
+          }
+        },
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "offhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "item": "minecraft:shield"
+            }
           }
         }
       ]
@@ -779,6 +804,141 @@
         {
           "type": "origins:name",
           "name": "badRespawnPoint"
+        }
+      ]
+    }
+  },
+  "spawn_point": {
+    "type": "origins:action_on_block_use",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "spawnpoint @s ~ ~ ~"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "title @p actionbar {\"text\":\"Respawn point set.\"}"
+        }
+      ]
+    },
+    "block_condition": {
+      "type": "origins:block",
+      "block": "lunasorigins:drop_point"
+    }
+  },
+  "respawn_drop": {
+    "type": "origins:action_on_callback",
+    "execute_chosen_when_orb": true,
+    "entity_action_respawned": {
+      "type": "origins:execute_command",
+      "command": "tp @s ~ 320 ~"
+    }
+  },
+  "luna_origin_ult": {
+    "type": "origins:self_action_on_hit",
+    "cooldown": 600,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "tellraw @s {\"text\":\"<Scorch> Warning, enemy hostile has core.\"}"
+    },
+    "target_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:and",
+          "conditions": [
+            {
+              "type": "origins:resource",
+              "compare_to": 1000,
+              "comparison": "==",
+              "resource": "*:wisps/bars_red_wisp_bar"
+            },
+            {
+              "type": "origins:resource",
+              "compare_to": 1000,
+              "comparison": "==",
+              "resource": "*:wisps/bars_orange_wisp_bar"
+            },
+            {
+              "type": "origins:resource",
+              "compare_to": 1000,
+              "comparison": "==",
+              "resource": "*:wisps/bars_yellow_wisp_bar"
+            },
+            {
+              "type": "origins:resource",
+              "compare_to": 1000,
+              "comparison": "==",
+              "resource": "*:wisps/bars_green_wisp_bar"
+            },
+            {
+              "type": "origins:resource",
+              "compare_to": 1000,
+              "comparison": "==",
+              "resource": "*:wisps/bars_cyan_wisp_bar"
+            },
+            {
+              "type": "origins:resource",
+              "compare_to": 1000,
+              "comparison": "==",
+              "resource": "*:wisps/bars_blue_wisp_bar"
+            },
+            {
+              "type": "origins:resource",
+              "compare_to": 1000,
+              "comparison": "==",
+              "resource": "*:wisps/bars_purple_wisp_bar"
+            }
+          ]
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 100,
+          "comparison": "==",
+          "resource": "*:titans/scorch/core_core_bar"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 100,
+          "comparison": "==",
+          "resource": "*:titans/ronin/core_core_bar"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 100,
+          "comparison": "==",
+          "resource": "*:titans/northstar/core_core_bar"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 1000,
+          "comparison": "==",
+          "resource": "*:bluefox/soul_soul_bar"
+        }
+      ]
+    }
+  },
+  "specifically_lyst": {
+    "type": "origins:self_action_on_hit",
+    "cooldown": 600,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "tellraw @s {\"text\":\"<Scorch> Warning! Warning! Disengage! Disengage! Warden Imminent!\"}"
+    },
+    "target_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:xp_levels",
+          "compare_to": 100,
+          "comparison": ">="
+        },
+        {
+          "type": "origins:origin",
+          "layer": "origins:origin",
+          "origin": "luna:sculk"
         }
       ]
     }

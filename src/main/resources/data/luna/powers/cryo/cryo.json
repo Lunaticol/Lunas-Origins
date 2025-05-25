@@ -1,12 +1,213 @@
 {
-  "name": "They call me ice for how I be chill to these bitches",
-  "description": "Is this rizz???",
+  "name": "Cryogenic",
+  "description": "Frozen solid, you are more dense and colder then blue ice.\nYour punches inflict slowness 2 for 3 seconds and freeze\nYour footsteps no longer make noise and your name tag cannot be seen. You also move 50% faster while crouching\nYou have no honor, Ronins look down on you for your crude and ambush based fighting styles.",
   "type": "origins:multiple",
+  "badges": [
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/info.png",
+      "text": "Freezing punch only works when not holding anything."
+    },
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/info.png",
+      "text": "Ice floats on water, so you cannot swim in it. You can also walk on lava, however it will still burn."
+    }
+  ],
   "color": {
     "type": "origins:model_color",
     "alpha": 0.5,
     "blue": 1,
     "green": 0.5,
     "red": 0
+  },
+  "water_invisible": {
+    "type": "origins:model_color",
+    "alpha": 0,
+    "condition": {
+      "type": "origins:submerged_in",
+      "fluid": "minecraft:water"
+    }
+  },
+  "in_nether": {
+    "type": "origins:action_over_time",
+    "interval": 100,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:apply_effect",
+          "effects": [
+            {
+              "amplifier": 1,
+              "duration": 200,
+              "show_icon": true,
+              "show_particles": true,
+              "effect": "minecraft:weakness"
+            },
+            {
+              "amplifier": 1,
+              "duration": 200,
+              "show_icon": true,
+              "show_particles": true,
+              "effect": "minecraft:slowness"
+            }
+          ]
+        },
+        {
+          "type": "origins:damage",
+          "amount": 2,
+          "source": {
+            "name": "melt"
+          }
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:dimension",
+          "dimension": "minecraft:the_nether"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:cryo/shielded_from_fire_protection_resource"
+        }
+      ]
+    }
+  },
+  "punch": {
+    "type": "origins:action_on_hit",
+    "bientity_action": {
+      "type": "origins:target_action",
+      "action": {
+        "type": "origins:grant_power",
+        "power": "luna:cryo/freezing_punch",
+        "source": "luna:cryo/cryo"
+      }
+    },
+    "condition": {
+      "type": "origins:equipped_item",
+      "equipment_slot": "mainhand",
+      "item_condition": { "type": "origins:empty" }
+    }
+  },
+  "swift_sneak": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "value": 0.5,
+      "operation": "multiply_total",
+      "attribute": "minecraft:generic.movement_speed"
+    },
+    "condition": {
+      "type": "origins:sneaking"
+    }
+  },
+  "sounds": {
+    "type": "origins:prevent_game_event",
+    "tag": "minecraft:vibrations"
+  },
+  "nametag": {
+    "type": "origins:action_on_callback",
+    "execute_chosen_when_orb": true,
+    "entity_action_chosen": {
+      "type": "origins:execute_command",
+      "command": "function lune:cryogen/nametag"
+    },
+    "entity_action_added": {
+      "type": "origins:execute_command",
+      "command": "function lune:cryogen/nametag"
+    },
+    "entity_action_lost": {
+      "type": "origins:execute_command",
+      "command": "team leave @s"
+    },
+    "entity_action_removed": {
+      "type": "origins:execute_command",
+      "command": "team leave @s"
+    }
+  },
+  "bouyent": {
+    "type": "origins:walk_on_fluid",
+    "fluid": "minecraft:water",
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:fluid_height",
+          "compare_to": 0.4,
+          "comparison": "<=",
+          "fluid": "minecraft:water"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:cryo/liquify_mode"
+        }
+      ]
+    }
+  },
+  "bouyent_lava_ig": {
+    "type": "origins:walk_on_fluid",
+    "fluid": "minecraft:lava",
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:fluid_height",
+          "compare_to": 0.4,
+          "comparison": "<=",
+          "fluid": "minecraft:lava"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:cryo/liquify_mode"
+        }
+      ]
+    }
+  },
+  "float_in_water": {
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "entity_action": {
+      "type": "origins:add_velocity",
+      "y": 0.1,
+      "space": "world"
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:fluid_height",
+          "compare_to": 0.4,
+          "comparison": ">",
+          "fluid": "minecraft:water"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:cryo/liquify_mode"
+        }
+      ]
+    }
+  },
+  "less_ronin_damage": {
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+      "operation": "multiply_total",
+      "value": -0.25
+    },
+    "target_condition": {
+      "type": "origins:origin",
+      "layer": "origins:origin",
+      "origin": "luna:ronin"
+    }
   }
 }

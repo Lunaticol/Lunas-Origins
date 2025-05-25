@@ -1,5 +1,5 @@
 {
-  "powers": ["pilot:pilot_phase/phase", "pilot:pilot_phase/firestar"],
+  "powers": ["luna:pilot/phase", "luna:pilot/ordenance/firestar"],
   "icon": "minecraft:ender_chest",
   "order": 10,
   "impact": 2,

@@ -1,7 +1,7 @@
 {
   "type": "origins:multiple",
   "name": "Northstar",
-  "description": "A Stryder Class Titan, Equiped with a Railgun.\nA sheild would get in the way with the precision of your Railgun.\nYou eat redstone to recover health.\nYour thick metal protects your core from projectiles.\nYou have a Railgun, why would you use less advanced ranged weapons?",
+  "description": "The newest Stryder Class Sentinel in the line-up, Equiped with a Railgun.\nA shield would get in the way with the precision of your Railgun.\nYou eat redstone to recover health.\nYour thick metal protects your core from projectiles.\nYou have a Railgun, why would you use less advanced ranged weapons?",
   "height": {
     "type": "origins:action_on_callback",
     "execute_chosen_when_orb": true,
@@ -172,15 +172,6 @@
                 "type": "origins:add_velocity",
                 "z": 2,
                 "space": "local_horizontal_normalized"
-              },
-              {
-                "type": "origins:delay",
-                "ticks": 2,
-                "action": {
-                  "type": "origins:add_velocity",
-                  "y": -3,
-                  "space": "local_horizontal_normalized"
-                }
               },
               {
                 "type": "origins:change_resource",
@@ -658,6 +649,317 @@
       "type": "origins:passenger",
       "compare_to": 1,
       "comparison": "=="
+    }
+  },
+  "breathe_in_water": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:gain_air",
+      "value": 20
+    },
+    "condition": {
+      "type": "origins:health",
+      "compare_to": 20,
+      "comparison": ">"
+    }
+  },
+  "in_water_reactor": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "title @p actionbar {\"text\":\"Warning! Excessive Hull Damage! Water leaking in!\",\"color\":\"dark_red\",\"bold\":true}"
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:submerged_in",
+          "fluid": "minecraft:water"
+        },
+        {
+          "type": "origins:health",
+          "compare_to": 20,
+          "comparison": "<="
+        }
+      ]
+    }
+  },
+  "burnt": {
+    "type": "origins:model_color",
+    "blue": 0.5,
+    "green": 0.5,
+    "red": 0.5,
+    "condition": {
+      "type": "origins:health",
+      "compare_to": 20,
+      "comparison": "<="
+    }
+  },
+  "origin_counter": {
+    "type": "origins:action_on_callback",
+    "entity_action_chosen": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "scoreboard players add Northstar Origin 1"
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 1,
+          "resource": "*:*_added"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 0,
+      "comparison": "==",
+      "resource": "*:*_added"
+    }
+  },
+  "added": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
+  },
+  "origin_counter_remove": {
+    "type": "origins:action_on_callback",
+    "entity_action_lost": {
+      "type": "origins:execute_command",
+      "command": "scoreboard players remove Northstar Origin 1"
+    }
+  },
+  "destroy_bed": {
+    "type": "origins:action_on_block_use",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:play_sound",
+          "volume": 1,
+          "sound": "minecraft:entity.zombie.break_wooden_door"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "title @s actionbar {\"text\":\"You crushed the bed under your weight.\"}"
+        }
+      ]
+    },
+    "block_action": {
+      "type": "origins:set_block",
+      "block": "air"
+    },
+    "block_condition": {
+      "type": "origins:in_tag",
+      "tag": "minecraft:beds"
+    }
+  },
+  "physical_damage_reduction": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "value": -0.2,
+      "operation": "multiply_total"
+    },
+    "damage_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:name",
+          "name": "mob"
+        },
+        {
+          "type": "origins:name",
+          "name": "mob.item"
+        },
+        {
+          "type": "origins:name",
+          "name": "player"
+        },
+        {
+          "type": "origins:name",
+          "name": "player.item"
+        },
+        {
+          "type": "origins:attacker",
+          "entity_condition": {
+            "type": "origins:exists"
+          }
+        }
+      ]
+    }
+  },
+  "artificer_field_day": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "value": 0.5,
+      "operation": "multiply_total"
+    },
+    "damage_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:name",
+          "name": "explosion"
+        },
+        {
+          "type": "origins:name",
+          "name": "explosion.player"
+        },
+        {
+          "type": "origins:name",
+          "name": "fireworks"
+        },
+        {
+          "type": "origins:name",
+          "name": "fireworks.item"
+        },
+        {
+          "type": "origins:name",
+          "name": "fireworks.player"
+        },
+        {
+          "type": "origins:name",
+          "name": "badRespawnPoint"
+        }
+      ]
+    }
+  },
+  "spawn_point": {
+    "type": "origins:action_on_block_use",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "spawnpoint @s ~ ~ ~"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "title @p actionbar {\"text\":\"Respawn point set.\"}"
+        }
+      ]
+    },
+    "block_condition": {
+      "type": "origins:block",
+      "block": "lunasorigins:drop_point"
+    }
+  },
+  "respawn_drop": {
+    "type": "origins:action_on_callback",
+    "execute_chosen_when_orb": true,
+    "entity_action_respawned": {
+      "type": "origins:execute_command",
+      "command": "tp @s ~ 320 ~"
+    }
+  },
+  "luna_origin_ult": {
+    "type": "origins:self_action_on_hit",
+    "cooldown": 600,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "tellraw @s {\"text\":\"<Northstar> Warning, Bandits got core.\"}"
+    },
+    "target_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:and",
+          "conditions": [
+            {
+              "type": "origins:resource",
+              "compare_to": 1000,
+              "comparison": "==",
+              "resource": "*:wisps/bars_red_wisp_bar"
+            },
+            {
+              "type": "origins:resource",
+              "compare_to": 1000,
+              "comparison": "==",
+              "resource": "*:wisps/bars_orange_wisp_bar"
+            },
+            {
+              "type": "origins:resource",
+              "compare_to": 1000,
+              "comparison": "==",
+              "resource": "*:wisps/bars_yellow_wisp_bar"
+            },
+            {
+              "type": "origins:resource",
+              "compare_to": 1000,
+              "comparison": "==",
+              "resource": "*:wisps/bars_green_wisp_bar"
+            },
+            {
+              "type": "origins:resource",
+              "compare_to": 1000,
+              "comparison": "==",
+              "resource": "*:wisps/bars_cyan_wisp_bar"
+            },
+            {
+              "type": "origins:resource",
+              "compare_to": 1000,
+              "comparison": "==",
+              "resource": "*:wisps/bars_blue_wisp_bar"
+            },
+            {
+              "type": "origins:resource",
+              "compare_to": 1000,
+              "comparison": "==",
+              "resource": "*:wisps/bars_purple_wisp_bar"
+            }
+          ]
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 100,
+          "comparison": "==",
+          "resource": "*:titans/scorch/core_core_bar"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 100,
+          "comparison": "==",
+          "resource": "*:titans/ronin/core_core_bar"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 100,
+          "comparison": "==",
+          "resource": "*:titans/northstar/core_core_bar"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 1000,
+          "comparison": "==",
+          "resource": "*:bluefox/soul_soul_bar"
+        }
+      ]
+    }
+  },
+  "specifically_lyst": {
+    "type": "origins:self_action_on_hit",
+    "cooldown": 600,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "tellraw @s {\"text\":\"<Northstar> Warning! Warning! Disengage! Disengage! Warden Imminent!\"}"
+    },
+    "target_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:xp_levels",
+          "compare_to": 100,
+          "comparison": ">="
+        },
+        {
+          "type": "origins:origin",
+          "layer": "origins:origin",
+          "origin": "luna:sculk"
+        }
+      ]
     }
   }
 }

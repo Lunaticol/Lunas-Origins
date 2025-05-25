@@ -1,0 +1,49 @@
+{
+  "type": "origins:multiple",
+  "missile_particle": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "execute at @s rotated ~ 0 run particle dust 0.369 0.369 0.369 2 ^ ^ ^ 0.5 0.5 0.5 1 50 normal"
+    }
+  },
+  "trap": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:area_of_effect",
+      "radius": 6,
+      "bientity_action": {
+        "type": "origins:add_velocity",
+        "z": -0.5
+      },
+      "bientity_condition": {
+        "type": "origins:target_condition",
+        "condition": {
+          "type": "origins:and",
+          "conditions": [
+            {
+              "type": "origins:origin",
+              "layer": "origins:origin",
+              "origin": "luna:northstar",
+              "inverted": true
+            },
+            {
+              "type": "origins:in_tag",
+              "tag": "luna:can_always_see",
+              "inverted": true
+            }
+          ]
+        }
+      }
+    }
+  },
+  "kill": {
+    "type": "origins:action_over_time",
+    "interval": 80,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "kill @s"
+    }
+  }
+}

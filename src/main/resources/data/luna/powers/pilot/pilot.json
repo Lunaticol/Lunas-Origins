@@ -1,6 +1,6 @@
 {
   "name": "Jump Kit",
-  "description": "",
+  "description": "Your jumpkit provides you more movement, specifically wall-running & double jumping. The jumpkit will also activate when falling from a lethal height, saving you.",
   "type": "origins:multiple",
   "speed": {
     "type": "origins:attribute",
@@ -19,12 +19,400 @@
           "type": "origins:sneaking"
         },
         {
-          "type": "origins:sprinting"
+          "type": "origins:moving"
         },
         {
           "type": "origins:on_block"
         }
       ]
+    }
+  },
+  "propel": {
+    "type": "origins:active_self",
+    "cooldown": 10,
+    "hud_render": {
+      "should_render": false
+    },
+    "key": "key.sneak",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:add_velocity",
+          "z": 1,
+          "space": "local_horizontal_normalized"
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 1,
+          "operation": "set",
+          "resource": "*:*_lock_slide_launch"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:*_lock_slide_launch"
+        },
+        {
+          "type": "origins:on_block"
+        }
+      ]
+    }
+  },
+  "lock_slide_launch": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
+  },
+  "unlock": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 0,
+      "operation": "set",
+      "resource": "*:*_lock_slide_launch"
+    },
+    "condition": {
+      "type": "origins:swimming",
+      "inverted": true
+    }
+  },
+  "double_jump_resource": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 2,
+    "start_value": 0
+  },
+  "double_jump": {
+    "type": "origins:active_self",
+    "cooldown": 10,
+    "hud_render": {
+      "should_render": false
+    },
+    "key": "key.jump",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:add_velocity",
+          "y": 0,
+          "z": 0,
+          "space": "world",
+          "set": true
+        },
+        {
+          "type": "origins:add_velocity",
+          "y": 0.6,
+          "z": 0.3,
+          "space": "local_horizontal"
+        },
+        {
+          "type": "origins:change_resource",
+          "resource": "*:*_double_jump_resource",
+          "change": -1,
+          "operation": "add"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "inverted": true,
+          "type": "origins:on_block"
+        },
+        {
+          "type": "origins:resource",
+          "resource": "*:*_double_jump_resource",
+          "comparison": "==",
+          "compare_to": 1
+        }
+      ]
+    }
+  },
+  "reset_if_land": {
+    "type": "origins:action_on_land",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "*:*_double_jump_resource",
+      "change": 1,
+      "operation": "set"
+    }
+  },
+  "particle": {
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "entity_action": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "execute at @s rotated ~ 0 run particle lunasorigins:red_flame ^-0.15 ^0.7 ^-0.2 0 0 0 0 1 force"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "execute at @s rotated ~ 0 run particle lunasorigins:red_flame ^0.15 ^0.7 ^-0.2 0 0 0 0 1 force"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 1,
+            "comparison": "==",
+            "resource": "*:*_flame_resource"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "execute at @s rotated ~ 0 run particle minecraft:flame ^-0.15 ^0.7 ^-0.2 0 0 0 0 1 force"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "execute at @s rotated ~ 0 run particle minecraft:flame ^0.15 ^0.7 ^-0.2 0 0 0 0 1 force"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 2,
+            "comparison": "==",
+            "resource": "*:*_flame_resource"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "execute at @s rotated ~ 0 run particle lunasorigins:yellow_flame ^-0.15 ^0.7 ^-0.2 0 0 0 0 1 force"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "execute at @s rotated ~ 0 run particle lunasorigins:yellow_flame ^0.15 ^0.7 ^-0.2 0 0 0 0 1 force"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 3,
+            "comparison": "==",
+            "resource": "*:*_flame_resource"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "execute at @s rotated ~ 0 run particle lunasorigins:green_flame ^-0.15 ^0.7 ^-0.2 0 0 0 0 1 force"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "execute at @s rotated ~ 0 run particle lunasorigins:green_flame ^0.15 ^0.7 ^-0.2 0 0 0 0 1 force"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 4,
+            "comparison": "==",
+            "resource": "*:*_flame_resource"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "execute at @s rotated ~ 0 run particle minecraft:soul_fire_flame ^-0.15 ^0.7 ^-0.2 0 0 0 0 1 force"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "execute at @s rotated ~ 0 run particle minecraft:soul_fire_flame ^0.15 ^0.7 ^-0.2 0 0 0 0 1 force"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 5,
+            "comparison": "==",
+            "resource": "*:*_flame_resource"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "execute at @s rotated ~ 0 run particle lunasorigins:blue_flame ^-0.15 ^0.7 ^-0.2 0 0 0 0 1 force"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "execute at @s rotated ~ 0 run particle lunasorigins:blue_flame ^0.15 ^0.7 ^-0.2 0 0 0 0 1 force"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 6,
+            "comparison": "==",
+            "resource": "*:*_flame_resource"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "execute at @s rotated ~ 0 run particle lunasorigins:purple_flame ^-0.15 ^0.7 ^-0.2 0 0 0 0 1 force"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "execute at @s rotated ~ 0 run particle lunasorigins:purple_flame ^0.15 ^0.7 ^-0.2 0 0 0 0 1 force"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 7,
+            "comparison": "==",
+            "resource": "*:*_flame_resource"
+          }
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "resource": "*:*_double_jump_resource",
+          "comparison": "==",
+          "compare_to": 0
+        },
+        {
+          "type": "origins:fall_distance",
+          "comparison": ">=",
+          "compare_to": 4
+        },
+        {
+          "type": "origins:and",
+          "conditions": [
+            {
+              "type": "origins:or",
+              "conditions": [
+                {
+                  "type": "origins:block_collision",
+                  "offset_x": 0.1,
+                  "offset_z": 0.1,
+                  "block_condition": {
+                    "inverted": true,
+                    "type": "origins:in_tag",
+                    "tag": "luna:unclingable"
+                  }
+                },
+                {
+                  "type": "origins:block_collision",
+                  "offset_x": -0.1,
+                  "offset_z": -0.1,
+                  "block_condition": {
+                    "inverted": true,
+                    "type": "origins:in_tag",
+                    "tag": "luna:unclingable"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "origins:power_active",
+              "power": "luna:pilot/wall_running_toggle"
+            },
+            {
+              "type": "origins:submerged_in",
+              "fluid": "minecraft:water",
+              "inverted": true
+            },
+            {
+              "type": "origins:submerged_in",
+              "fluid": "minecraft:lava",
+              "inverted": true
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "flame_resource": {
+    "type": "origins:resource",
+    "max": 7,
+    "min": 1
+  },
+  "switch": {
+    "type": "origins:active_self",
+    "key": "key.origins.ternary_active",
+    "entity_action": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "action": {
+            "type": "origins:change_resource",
+            "operation": "add",
+            "change": 1,
+            "resource": "*:*_flame_resource"
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 7,
+            "comparison": "!=",
+            "resource": "*:*_flame_resource"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:change_resource",
+            "operation": "set",
+            "change": 1,
+            "resource": "*:*_flame_resource"
+          },
+          "condition": {
+            "type": "origins:resource",
+            "compare_to": 7,
+            "comparison": "==",
+            "resource": "*:*_flame_resource"
+          }
+        }
+      ]
+    }
+  },
+  "fall_damage": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "value": -1,
+      "operation": "multiply_total"
+    },
+    "damage_condition": {
+      "type": "origins:type",
+      "damage_type": "minecraft:fall"
     }
   }
 }

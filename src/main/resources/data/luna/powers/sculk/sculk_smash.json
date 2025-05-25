@@ -19,7 +19,9 @@
     "key": "key.origins.secondary_active",
     "cooldown": 1200,
     "hud_render": {
-      "should_render": true
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+      "bar_index": 17
     },
     "entity_action": {
       "type": "origins:and",
@@ -27,7 +29,7 @@
         {
           "type": "origins:add_velocity",
           "y": 3,
-          "space": "local_horizontal_normalized"
+          "space": "world"
         },
         {
           "type": "origins:change_resource",

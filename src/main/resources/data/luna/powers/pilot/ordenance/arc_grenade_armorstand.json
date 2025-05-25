@@ -1,0 +1,85 @@
+{
+  "type": "origins:multiple",
+  "explode": {
+    "type": "origins:action_over_time",
+    "interval": 70,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:explode",
+          "power": 2,
+          "destruction_type": "none"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "kill @s"
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:entity.generic.explode",
+          "pitch": 0.5
+        },
+        {
+          "type": "origins:area_of_effect",
+          "radius": 4,
+          "bientity_action": {
+            "type": "origins:target_action",
+            "action": {
+              "type": "origins:apply_effect",
+              "effect": {
+                "effect": "minecraft:slowness",
+                "duration": 60,
+                "amplifier": 2
+              }
+            }
+          }
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "particle minecraft:electric_spark ~ ~ ~ 2 2 2 .01 100 force"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "particle minecraft:explosion ~ ~ ~ 1 1 1 1 10"
+        }
+      ]
+    }
+  },
+  "fail_safe": {
+    "type": "origins:action_over_time",
+    "interval": 80,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "kill @s"
+        }
+      ]
+    }
+  },
+  "warning": {
+    "type": "origins:action_over_time",
+    "interval": 10,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:entity.experience_orb.pickup",
+          "pitch": 2
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:entity.experience_orb.pickup",
+          "pitch": 1.5
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "particle dust_color_transition 0.420 0.847 1.000 1 0.322 0.322 0.322 ~ ~ ~ 0.5 0.5 0.5 1 25 normal"
+        }
+      ]
+    }
+  }
+}

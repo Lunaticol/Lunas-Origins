@@ -16,13 +16,6 @@
       "type": "origins:and",
       "conditions": [
         {
-          "inverted": true,
-          "type": "origins:command",
-          "command": "flan claimInfo",
-          "comparison": "==",
-          "compare_to": 1
-        },
-        {
           "type": "origins:resource",
           "compare_to": 0,
           "comparison": "==",
@@ -102,7 +95,6 @@
             "action": {
               "type": "origins:damage",
               "amount": 5,
-              "damage_type": "minecraft:lava",
               "source": {
                 "name": "trap"
               }
@@ -125,13 +117,6 @@
           },
           "shape": "cube",
           "radius": 6
-        },
-        {
-          "inverted": true,
-          "type": "origins:command",
-          "command": "flan claimInfo",
-          "comparison": "==",
-          "compare_to": 1
         }
       ]
     }
@@ -151,13 +136,6 @@
     "condition": {
       "type": "origins:and",
       "conditions": [
-        {
-          "inverted": true,
-          "type": "origins:command",
-          "command": "flan claimInfo",
-          "comparison": "==",
-          "compare_to": 1
-        },
         {
           "type": "origins:resource",
           "compare_to": 0,

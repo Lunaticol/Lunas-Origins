@@ -1,7 +1,7 @@
 {
   "type": "origins:multiple",
   "name": "Air Launch",
-  "description": "Launch yourself into the air",
+  "description": "Launch yourself into the air.\nVery intuitive I know.",
   "dash": {
     "type": "origins:launch",
     "speed": 2,

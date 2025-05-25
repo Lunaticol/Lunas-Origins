@@ -1,5 +1,5 @@
 {
-  "powers": ["luna:luna/on_death"],
+  "powers": ["luna:luna/on_death", "luna:luna/damage_reductions"],
   "icon": "minecraft:air",
   "impact": 0,
   "name": "",

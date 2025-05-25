@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "lunasorigins:block/lantern_casing"
+    },
+    "hanging=true": {
+      "model": "lunasorigins:block/lantern_casing_hanging"
+    }
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "powers": ["pilot:pilotawall"],
+  "powers": ["luna:pilot/pilotawall"],
   "icon": "minecraft:red_sandstone_wall",
   "order": 10,
   "impact": 2,

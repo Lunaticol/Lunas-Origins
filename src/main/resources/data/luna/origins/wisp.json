@@ -10,9 +10,9 @@
     "luna:wisps/purple",
     "luna:wisps/bars"
   ],
-  "icon": "lunasorigins:wisps",
+  "icon": "lunasorigins:lumina",
   "order": 9,
   "impact": 2,
   "name": "Lumina",
-  "description": "Harness the powers of these diminutive yet powerful wisps to shape the world to your liking."
+  "description": "Harness the powers of these diminutive yet powerful wisps to shape the world into a brighter light."
 }

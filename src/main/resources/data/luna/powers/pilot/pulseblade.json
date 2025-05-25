@@ -5,9 +5,7 @@
   "pulse_blade": {
     "type": "origins:fire_projectile",
     "cooldown": 340,
-    "key": {
-      "key": "primary"
-    },
+    "key": "key.origins.primary_active",
     "hud_render": {
       "should_render": true
     },
@@ -16,16 +14,14 @@
   },
   "lefunction": {
     "type": "origins:active_self",
+    "key": "key.origins.primary_active",
+    "hud_render": {
+      "should_render": true
+    },
     "cooldown": 400,
     "entity_action": {
       "type": "origins:execute_command",
       "command": "function luna:pilot/pulsebladescan"
-    },
-    "hud_render": {
-      "should_render": false
-    },
-    "key": {
-      "key": "primary"
     }
   }
 }

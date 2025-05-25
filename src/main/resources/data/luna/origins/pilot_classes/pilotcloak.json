@@ -1,8 +1,5 @@
 {
-  "powers": [
-    "pilot:pilot_cloak/cloak",
-    "pilot:pilot_cloak/firestar"
-  ],
+  "powers": ["luna:pilot/cloak", "luna:pilot/ordenance/firestar"],
   "icon": "minecraft:glass",
   "order": 10,
   "impact": 2,

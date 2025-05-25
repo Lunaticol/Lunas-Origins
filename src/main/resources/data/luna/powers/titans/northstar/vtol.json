@@ -1,62 +1,11 @@
 {
   "type": "origins:multiple",
   "name": "VTOL Hover",
-  "description": "Vertical take-off hover.",
-  "vtol_resource": {
-    "type": "origins:resource",
-    "max": 100,
-    "min": 0
-  },
-  "vtol_active": {
-    "type": "origins:resource",
-    "max": 1,
-    "min": 0
-  },
-  "vtol": {
-    "type": "origins:action_over_time",
-    "entity_action": {
-      "type": "origins:apply_effect",
-      "effect": {
-        "effect": "minecraft:levitation"
-      }
-    },
-    "condition": {
-      "type": "origins:and",
-      "conditions": [
-        {
-          "type": "origins:resource",
-          "compare_to": 1,
-          "comparison": ">=",
-          "resource": "*:*_vtol_resource"
-        },
-        {
-          "type": "origins:resource",
-          "compare_to": 1,
-          "comparison": ">=",
-          "resource": "*:*_vtol_active"
-        }
-      ]
-    }
-  },
-  "cooldown": {
-    "type": "origins:action_over_time",
-    "interval": 20,
-    "entity_action": {
-      "type": "origins:change_resource",
-      "change": -40,
-      "operation": "add",
-      "resource": "*:*_vtol_active"
-    },
-    "condition": {
-      "type": "origins:resource",
-      "compare_to": 1,
-      "comparison": ">=",
-      "resource": "*:*_vtol_active"
-    }
-  },
+  "description": "Vertical take-off hover. Hover above the ground for a short period of time.",
   "activate": {
     "type": "origins:active_self",
     "key": "key.origins.secondary_active",
+    "cooldown": 300,
     "entity_action": {
       "type": "origins:and",
       "actions": [
@@ -67,16 +16,83 @@
           "resource": "*:*_vtol_active"
         },
         {
+          "type": "origins:apply_effect",
+          "effect": {
+            "effect": "minecraft:levitation",
+            "duration": 110
+          }
+        },
+        {
           "type": "origins:delay",
-          "ticks": 50,
+          "ticks": 100,
           "action": {
             "type": "origins:change_resource",
-            "change": 0,
+            "change": 1,
             "operation": "set",
-            "resource": "*:*_vtol_active"
+            "resource": "*:*_vtol_hover_active"
+          }
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 200,
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "change": 0,
+                "operation": "set",
+                "resource": "*:*_vtol_active"
+              },
+              {
+                "type": "origins:change_resource",
+                "change": 0,
+                "operation": "set",
+                "resource": "*:*_vtol_hover_active"
+              }
+            ]
           }
         }
       ]
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 0,
+      "comparison": "==",
+      "resource": "luna:titans/northstar/core_core_active"
+    }
+  },
+  "vtol_active": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
+  },
+  "vtol_hover_active": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
+  },
+  "vtol": {
+    "type": "apugli:hover",
+    "step_assist": 8,
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_vtol_hover_active"
+    }
+  },
+  "slip_while_hover": {
+    "type": "origins:modify_slipperiness",
+    "modifier": {
+      "value": 0.5,
+      "operation": "addition"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": ">=",
+      "resource": "*:*_vtol_active"
     }
   }
 }

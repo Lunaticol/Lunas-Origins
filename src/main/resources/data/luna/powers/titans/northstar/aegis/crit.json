@@ -1,3 +1,75 @@
 {
-  "type": "origins:multiple"
+  "type": "origins:multiple",
+  "name": "Railgun: Critical Hit",
+  "description": "Your Plasma Railgun deals increased damage.\nUse [Power V Book] To obtain this upgrade!",
+  "crit": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
+  },
+  "crit_upgrade": {
+    "type": "origins:active_self",
+    "key": "key.use",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "resource": "*:*_crit",
+          "change": 1
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "clear @s minecraft:enchanted_book{StoredEnchantments:[{id:\"minecraft:power\",lvl:5s}]} 1"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "title @p actionbar {\"bold\":true,\"color\":\"gold\",\"text\":\"Trap Master Unlocked!\"}"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:ingredient",
+                "ingredient": {
+                  "item": "minecraft:enchanted_book"
+                }
+              },
+              {
+                "type": "origins:nbt",
+                "nbt": "{StoredEnchantments:[{id:\"minecraft:power\",lvl:5s}]}"
+              }
+            ]
+          }
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 0,
+          "comparison": "==",
+          "resource": "*:*_crit"
+        }
+      ]
+    }
+  },
+  "projectile": {
+    "type": "origins:modify_projectile_damage",
+    "modifier": {
+      "operation": "addition",
+      "value": 5
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_crit"
+    }
+  }
 }

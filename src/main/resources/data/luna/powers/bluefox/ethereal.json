@@ -179,6 +179,10 @@
           "change": 1415,
           "operation": "set",
           "resource": "*:*_music_resource"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "stopsound @s * lunasorigins:aono_ult"
         }
       ]
     },
@@ -296,7 +300,7 @@
           "sound": "lunasorigins:aono_ult",
           "category": "music",
           "pitch": 1,
-          "volume": 1
+          "volume": 4
         },
         {
           "type": "origins:change_resource",
@@ -311,6 +315,30 @@
       "compare_to": 1420,
       "comparison": "==",
       "resource": "*:*_music_resource"
+    }
+  },
+  "reset_when_death": {
+    "type": "origins:action_on_callback",
+    "entity_action_respawned": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "change": 0,
+          "operation": "set",
+          "resource": "*:*_domain_active"
+        },
+        {
+          "type": "origins:change_resource",
+          "change": 1415,
+          "operation": "set",
+          "resource": "*:*_music_resource"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "stopsound @s * lunasorigins:aono_ult"
+        }
+      ]
     }
   }
 }

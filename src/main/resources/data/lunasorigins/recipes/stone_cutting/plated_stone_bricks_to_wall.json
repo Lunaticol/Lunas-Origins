@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "lunasorigins:plated_stone_bricks"
+  },
+  "result": "lunasorigins:plated_stone_brick_wall",
+  "count": 1
+}

@@ -168,7 +168,7 @@
     }
   },
   "helmet_strong": {
-    "type": "origins:modify_enchantment_level",
+    "type": "apugli:modify_enchantment_level",
     "enchantment": "minecraft:unbreaking",
     "modifier": {
       "value": 3,

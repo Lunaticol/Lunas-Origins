@@ -1,0 +1,14 @@
+{
+  "name": "Hipfire",
+  "description": "Pressing secondary, you fire six arrows in quick succession. But you cannot hipfire your fanfire.",
+  "type": "origins:multiple",
+  "replace": {
+    "type": "origins:active_self",
+    "key": "key.origins.secondary_active",
+    "entity_action": {
+      "type": "origins:replace_inventory",
+      "slot": "weapon.mainhand",
+      "inventory_type": "inventory"
+    }
+  }
+}

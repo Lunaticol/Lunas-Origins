@@ -19,7 +19,7 @@
       "type": "origins:change_resource",
       "change": 1,
       "operation": "add",
-      "resource": "entangled_resource"
+      "resource": "*:*_entangled_resource"
     }
   },
   "entangled_resource": {

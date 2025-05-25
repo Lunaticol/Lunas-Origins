@@ -1,5 +1,5 @@
 {
-  "powers": ["pilot:pilot_holo/holo"],
+  "powers": ["luna:pilot/holo"],
   "icon": "minecraft:stone",
   "order": 10,
   "impact": 2,

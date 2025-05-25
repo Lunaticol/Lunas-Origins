@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "package": "luna.lunasorigins.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "ExampleMixin",
+    "PhantomSpawnerMixin",
+    "enchant.QuickChargeEnchantmentMixin",
+    "enchant.SharpnessEnchantmentMixin",
+    "origin.OriginMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

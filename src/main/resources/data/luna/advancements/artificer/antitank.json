@@ -1,0 +1,24 @@
+{
+  "display": {
+    "title": {
+      "text": "Antitank Mine"
+    },
+    "description": {
+      "text": "Kill a sentinel."
+    },
+    "icon": {
+      "item": "minecraft:stone_sword",
+      "nbt": "{Enchantments:[{}]}"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "origins": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "luna:artificer/rain"
+}

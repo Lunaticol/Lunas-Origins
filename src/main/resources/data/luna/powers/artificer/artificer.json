@@ -493,5 +493,33 @@
         }
       ]
     }
+  },
+  "antitank_mine": {
+    "type": "origins:self_action_on_kill",
+    "cooldown": 0,
+    "entity_action": {
+      "type": "origins:grant_advancement",
+      "advancement": "luna:artificer/antitank"
+    },
+    "target_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:origin",
+          "layer": "origins:origin",
+          "origin": "luna:ronin"
+        },
+        {
+          "type": "origins:origin",
+          "layer": "origins:origin",
+          "origin": "luna:scorch"
+        },
+        {
+          "type": "origins:origin",
+          "layer": "origins:origin",
+          "origin": "luna:northstar"
+        }
+      ]
+    }
   }
 }

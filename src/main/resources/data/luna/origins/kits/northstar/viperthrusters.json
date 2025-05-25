@@ -1,5 +1,5 @@
 {
-  "name": "Enchanced Payload",
-  "description": "",
+  "name": "Viper Thrusters",
+  "description": "Increased movement speed while airborne.\nOnly applys to VTOL Hover & Flight Core.",
   "powers": ["luna:titans/northstar/kits/viperthrusters"]
 }

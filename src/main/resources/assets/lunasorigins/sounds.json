@@ -5,10 +5,14 @@
   },
   "lumina_ult": {
     "subtitle": "sound.lunasorigins.lumina_ult",
-    "sounds": ["lunasorigins:lumina_ult"]
+    "sounds": [{ "name": "lunasorigins:lumina_ult" }]
   },
   "aono_ult": {
     "subtitle": "sound.lunasorigins.aono_ult",
-    "sounds": ["lunasorigins:aono_ult"]
+    "sounds": [{ "name": "lunasorigins:aono_ult" }]
+  },
+  "crimson_ult": {
+    "subtitle": "sound.lunasorigins.crimson_ult",
+    "sounds": [{ "name": "lunasorigins:crimson_ult" }]
   }
 }

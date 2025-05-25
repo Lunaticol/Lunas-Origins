@@ -2,7 +2,7 @@
   "type": "origins:multiple",
   "kill": {
     "type": "origins:action_over_time",
-    "interval": 120,
+    "interval": 80,
     "entity_action": {
       "type": "origins:execute_command",
       "command": "kill @s"
@@ -35,10 +35,6 @@
               "origin": "luna:codec"
             }
           }
-        },
-        {
-          "type": "origins:execute_command",
-          "command": "particle dust_color_transition 0.000 0.000 0.000 1 0.035 1.000 0.000 ~ ~1 ~ 0.2 0 0.2 1 25 normal"
         }
       ]
     }
@@ -52,7 +48,15 @@
     "interval": 1,
     "entity_action": {
       "type": "origins:execute_command",
-      "command": "execute as @s at @s run tp @s ^ ^ ^0.3"
+      "command": "execute as @s at @s run tp @s ^ ^ ^1"
+    }
+  },
+  "particle": {
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "particle dust_color_transition 0.000 0.000 0.000 1 0.035 1.000 0.000 ~ ~1 ~ 0.2 0 0.2 1 25 normal"
     }
   }
 }

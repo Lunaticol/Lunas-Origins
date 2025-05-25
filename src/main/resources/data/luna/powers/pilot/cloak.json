@@ -4,12 +4,12 @@
   "type": "origins:multiple",
   "translucency": {
     "type": "origins:model_color",
-    "alpha": 0.05,
+    "alpha": 0.11,
     "condition": {
       "type": "origins:resource",
       "resource": "*:*_cloak_activate",
-      "comparison": ">",
-      "compare_to": 30
+      "comparison": ">=",
+      "compare_to": 35
     }
   },
   "flicker": {
@@ -18,7 +18,7 @@
     "condition": {
       "type": "origins:resource",
       "resource": "*:*_cloak_activate",
-      "comparison": ">=",
+      "comparison": "==",
       "compare_to": 5
     }
   },
@@ -28,7 +28,7 @@
     "condition": {
       "type": "origins:resource",
       "resource": "*:*_cloak_activate",
-      "comparison": ">=",
+      "comparison": "==",
       "compare_to": 10
     }
   },
@@ -38,7 +38,7 @@
     "condition": {
       "type": "origins:resource",
       "resource": "*:*_cloak_activate",
-      "comparison": ">=",
+      "comparison": "==",
       "compare_to": 15
     }
   },
@@ -48,7 +48,7 @@
     "condition": {
       "type": "origins:resource",
       "resource": "*:*_cloak_activate",
-      "comparison": ">=",
+      "comparison": "==",
       "compare_to": 20
     }
   },
@@ -58,7 +58,7 @@
     "condition": {
       "type": "origins:resource",
       "resource": "*:*_cloak_activate",
-      "comparison": ">=",
+      "comparison": "==",
       "compare_to": 25
     }
   },
@@ -68,13 +68,17 @@
     "condition": {
       "type": "origins:resource",
       "resource": "*:*_cloak_activate",
-      "comparison": ">=",
+      "comparison": "==",
       "compare_to": 30
     }
   },
   "cloak_active_self": {
     "type": "origins:active_self",
+    "key": "key.origins.primary_active",
     "cooldown": 340,
+    "hud_render": {
+      "should_render": true
+    },
     "entity_action": {
       "type": "origins:change_resource",
       "change": 1,
@@ -90,16 +94,39 @@
   "cloak_activate": {
     "type": "origins:resource",
     "max": 360,
-    "min": 0
+    "min": 0,
+    "start_value": 0
   },
   "change_resource": {
     "type": "origins:action_over_time",
-    "interval": 10,
+    "interval": 5,
     "entity_action": {
       "type": "origins:change_resource",
       "change": 5,
       "operation": "add",
       "resource": "*:*_cloak_activate"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_cloak_active",
+      "comparison": "==",
+      "compare_to": 1
+    }
+  },
+  "reset_resource": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 0,
+      "operation": "set",
+      "resource": "*:*_cloak_activate"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_cloak_active_self",
+      "comparison": "==",
+      "compare_to": 0
     }
   }
 }

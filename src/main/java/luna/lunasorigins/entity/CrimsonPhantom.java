@@ -25,4 +25,10 @@ public class CrimsonPhantom extends PhantomEntity {
     super.initGoals();
   }
 
+  @Override
+  public void tickMovement() {
+
+    super.tickMovement();
+  }
+
 }

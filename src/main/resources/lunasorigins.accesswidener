@@ -6,3 +6,5 @@ accessible class net/minecraft/client/particle/ParticleManager$SpriteAwareFactor
 accessible field net/minecraft/client/particle/BlockLeakParticle obsidianTear Z
 accessible field net/minecraft/client/particle/Particle gravityStrength F
 accessible field net/minecraft/client/particle/Particle maxAge I
+extendable class net/minecraft/enchantment/EnchantmentTarget
+accessible method net/minecraft/entity/ai/brain/sensor/AxolotlAttackablesSensor isAlwaysHostileTo (Lnet/minecraft/entity/LivingEntity;)Z

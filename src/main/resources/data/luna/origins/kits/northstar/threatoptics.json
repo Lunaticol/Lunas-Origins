@@ -1,5 +1,5 @@
 {
-  "name": "Enchanced Payload",
-  "description": "",
+  "name": "Threat Optics",
+  "description": "Highlights enemys in red.",
   "powers": ["luna:titans/northstar/kits/threatoptics"]
 }

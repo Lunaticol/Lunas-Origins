@@ -1,0 +1,15 @@
+{
+  "type": "origins:multiple",
+  "freeze": {
+    "type": "origins:freeze"
+  },
+  "remove": {
+    "type": "origins:action_over_time",
+    "interval": 140,
+    "entity_action": {
+      "type": "origins:revoke_power",
+      "power": "luna:cryo/freezing",
+      "source": "luna:cryo/chain"
+    }
+  }
+}

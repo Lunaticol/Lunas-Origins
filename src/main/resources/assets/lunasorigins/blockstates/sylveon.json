@@ -14,14 +14,6 @@
     },
     "facing=west": {
       "model": "lunasorigins:block/sylveon"
-    },
-    "facing=up": {
-      "model": "lunasorigins:block/sylveon",
-      "x": 270
-    },
-    "facing=down": {
-      "model": "lunasorigins:block/sylveon",
-      "x": 90
     }
   }
 }

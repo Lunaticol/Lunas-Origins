@@ -1,19 +1,15 @@
 package luna.lunasorigins;
 
+import net.fabricmc.fabric.api.object.builder.v1.block.type.WoodTypeBuilder;
 import net.minecraft.block.BlockSetType;
 import net.minecraft.block.WoodType;
-import net.minecraft.sound.BlockSoundGroup;
-import net.minecraft.sound.SoundEvents;
+import net.minecraft.util.Identifier;
 
 public class LunaWoodType {
-    public static final WoodType COMMAND = new WoodType(
-            "my_custom_wood",
-            BlockSetType.CHERRY,
-            BlockSoundGroup.CHERRY_WOOD,
-            BlockSoundGroup.HANGING_SIGN,
-            SoundEvents.BLOCK_FENCE_GATE_CLOSE,
-            SoundEvents.BLOCK_FENCE_GATE_OPEN);
+    public static final WoodType COMMAND = register("command", WoodTypeBuilder.copyOf(WoodType.WARPED),
+            LunaBlockSetType.COMMAND);
 
-    public static void registerWoodTypes() {
+    public static WoodType register(String id, WoodTypeBuilder woodTypeBuilder, BlockSetType blockSetType) {
+        return woodTypeBuilder.register(new Identifier(LunasOrigins.MOD_ID, id), blockSetType);
     }
 }

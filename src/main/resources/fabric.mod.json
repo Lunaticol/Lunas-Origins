@@ -16,12 +16,14 @@
     "main": ["luna.lunasorigins.LunasOrigins"],
     "client": ["luna.lunasorigins.LunasOriginsClient"],
     "fabric-datagen": ["luna.lunasorigins.LunasOriginsDataGenerator"],
-    "terrablender": ["luna.lunasorigins.worldgen.LunaTerrablender"]
+    "terrablender": ["luna.lunasorigins.worldgen.LunaTerrablender"],
+    "mm:early_risers": ["luna.lunasorigins.LunaEarlyRiser"],
+    "preLaunch": ["luna.lunasorigins.LunaEarlyRiser"]
   },
   "mixins": [
-    "lunas-origins.mixins.json",
+    "lunasorigins.mixins.json",
     {
-      "config": "lunas-origins.client.mixins.json",
+      "config": "lunasorigins.client.mixins.json",
       "environment": "client"
     }
   ],

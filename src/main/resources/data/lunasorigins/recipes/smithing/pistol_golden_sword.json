@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "base": {
+    "item": "lunasorigins:pistol"
+  },
+  "addition": {
+    "item": "minecraft:golden_sword"
+  },
+  "template": {
+    "item": "minecraft:copper_ingot"
+  },
+  "result": {
+    "item": "lunasorigins:pistol_golden_sword"
+  }
+}

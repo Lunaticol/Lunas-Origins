@@ -1,12 +1,22 @@
 {
   "powers": [
     "luna:titans/northstar/northstar",
-    "luna:titans/northstar/railgun"
+    "luna:titans/northstar/core",
+    "luna:titans/northstar/railgun",
+    "luna:titans/northstar/vtol",
+    "luna:titans/northstar/tether",
+    "luna:titans/northstar/clustermissile",
+    "luna:titans/northstar/aegis/chasis",
+    "luna:titans/northstar/aegis/crit",
+    "luna:titans/northstar/aegis/explodetrap",
+    "luna:titans/northstar/aegis/quickcharge",
+    "luna:titans/northstar/aegis/shield",
+    "luna:titans/northstar/aegis/trapmaster",
+    "luna:titans/northstar/aegis/twincluster"
   ],
   "icon": "minecraft:crossbow",
   "order": 9,
-  "unchoosable": true,
-  "impact": 3,
+  "impact": 4,
   "name": "Northstar",
-  "description": "Northstar is a Titan class that is based on the Stryder chassis design. Northstar is built on high mobility and precision attacks with her railgun and cluster missiles, and can perform vertical takeoffs and landings to access unorthodox lines of sight."
+  "description": "After years of the Scorch Sentinel terrorizing Aquatics, they have adapted to grow more resistant to the sentinel. Northstar was constructed as a far-ranged sniper, nearly impossible to detect from afar."
 }

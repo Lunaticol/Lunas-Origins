@@ -1,0 +1,74 @@
+{
+  "type": "origins:multiple",
+  "missile_particle": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "execute at @s rotated ~ 0 run particle dust 1.000 0.482 0.031 1 ^ ^ ^ 1 0.5 1 1 25 normal"
+    }
+  },
+  "explode": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:explode",
+          "power": 3,
+          "destruction_type": "none"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "particle minecraft:explosion ~ ~1 ~ 1 1 1 1 10"
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:entity.generic.explode",
+          "category": "master",
+          "pitch": 2,
+          "volume": 1
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "kill @s"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:block_collision",
+          "offset_x": 0.1,
+          "offset_z": 0.1,
+          "offset_y": 0.1,
+          "block_condition": {
+            "inverted": true,
+            "type": "origins:in_tag",
+            "tag": "luna:unclingable"
+          }
+        },
+        {
+          "type": "origins:block_collision",
+          "offset_x": -0.1,
+          "offset_z": -0.1,
+          "offset_y": -0.1,
+          "block_condition": {
+            "inverted": true,
+            "type": "origins:in_tag",
+            "tag": "luna:unclingable"
+          }
+        }
+      ]
+    }
+  },
+  "kill": {
+    "type": "origins:action_over_time",
+    "interval": 80,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "kill @s"
+    }
+  }
+}

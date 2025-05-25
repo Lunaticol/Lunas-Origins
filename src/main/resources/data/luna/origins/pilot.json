@@ -4,5 +4,5 @@
   "impact": 3,
   "icon": "minecraft:grindstone",
   "unchoosable": true,
-  "powers": []
+  "powers": ["luna:pilot/wall_running", "luna:pilot/pilot"]
 }

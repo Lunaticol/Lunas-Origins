@@ -97,7 +97,10 @@
     "max": 1000,
     "min": 0,
     "hud_render": {
-      "should_render": true
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+      "bar_index": 0,
+      "icon_index": 1
     }
   },
   "if_active": {
@@ -201,6 +204,35 @@
       "value": -1,
       "operation": "multiply_total"
     },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_mode"
+    }
+  },
+  "no_jump": {
+    "type": "origins:modify_jump",
+    "modifier": { "value": -2, "operation": "multiply_total" },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_mode"
+    }
+  },
+  "step_height": {
+    "type": "apugli:step_height",
+    "lower_height": 1,
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_mode"
+    }
+  },
+  "sink_in_water": {
+    "type": "origins:ignore_water",
     "condition": {
       "type": "origins:resource",
       "compare_to": 1,

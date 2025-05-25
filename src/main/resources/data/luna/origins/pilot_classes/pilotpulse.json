@@ -1,5 +1,5 @@
 {
-  "powers": ["pilot:pilot_pulse/pulseblade"],
+  "powers": ["luna:pilot/pulseblade", "luna:pilot/ordenance/arc_grenade"],
   "icon": "minecraft:iron_sword",
   "order": 10,
   "impact": 2,

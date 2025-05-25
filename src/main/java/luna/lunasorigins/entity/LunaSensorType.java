@@ -11,7 +11,7 @@ public class LunaSensorType<U extends Sensor<?>> {
 
   public static final SensorType<HostileAxolotlAttackablesSensor> HOSTILE_AXOLOTL_ATTACKABLES = Registry.register(
       Registries.SENSOR_TYPE,
-      new Identifier("lunasorigins", "hostile_axolotl_attackables"),
+      new Identifier(LunasOrigins.MOD_ID, "hostile_axolotl_attackables"),
       new SensorType<>(HostileAxolotlAttackablesSensor::new));
 
   public static void registerSensors() {

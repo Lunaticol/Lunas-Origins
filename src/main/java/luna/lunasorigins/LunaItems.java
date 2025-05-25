@@ -1,25 +1,13 @@
 package luna.lunasorigins;
 
-import luna.lunasorigins.items.Luna;
-import luna.lunasorigins.items.LunaHeadTaker;
-import luna.lunasorigins.items.RoninSword;
-import luna.lunasorigins.items.Time;
+import luna.lunasorigins.items.*;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.FoodComponent;
-import net.minecraft.item.HangingSignItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.SignItem;
-import net.minecraft.item.SwordItem;
-import net.minecraft.item.ToolMaterials;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.registry.RegistryKey;
+import net.minecraft.item.*;
+import net.minecraft.registry.*;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.Rarity;
 
 public class LunaItems {
 
@@ -37,6 +25,8 @@ public class LunaItems {
                 Registry.register(Registries.ITEM_GROUP, LUNASORIGINS_ITEM_GROUP_KEY, LUNASORIGINS_ITEM_GROUP);
 
                 ItemGroupEvents.modifyEntriesEvent(LUNASORIGINS_ITEM_GROUP_KEY).register(itemGroup -> {
+
+                        itemGroup.add(LunaItems.DONATOR);
                         itemGroup.add(LunaItems.CRIMSON_MEMBRANE);
                         itemGroup.add(LunaItems.TITAN_BATTERY);
                         itemGroup.add(LunaItems.DIMENSIONAL_BERRY);
@@ -46,6 +36,14 @@ public class LunaItems {
                         itemGroup.add(LunaItems.RONIN_SWORD);
                         itemGroup.add(LunaItems.ENTANGLED_SWORD);
                         itemGroup.add(LunaItems.JAX_SWORD);
+                        itemGroup.add(LunaItems.CRIMSON_DAGGER);
+                        itemGroup.add(LunaItems.PISTOL);
+                        itemGroup.add(LunaItems.PISTOL_WOODEN_SWORD);
+                        itemGroup.add(LunaItems.PISTOL_STONE_SWORD);
+                        itemGroup.add(LunaItems.PISTOL_GOLDEN_SWORD);
+                        itemGroup.add(LunaItems.PISTOL_IRON_SWORD);
+                        itemGroup.add(LunaItems.PISTOL_DIAMOND_SWORD);
+                        itemGroup.add(LunaItems.PISTOL_NETHERITE_SWORD);
                         // Donators
                         itemGroup.add(LunaItems.LUNA);
                         itemGroup.add(LunaItems.TIME);
@@ -54,6 +52,7 @@ public class LunaItems {
                         itemGroup.add(LunaItems.DASH);
                         itemGroup.add(LunaItems.REWIND);
                         itemGroup.add(LunaItems.MOOSHEKING);
+                        itemGroup.add(LunaItems.IDKMN);
                         // Origins
                         itemGroup.add(LunaItems.STARS);
                         itemGroup.add(LunaItems.UMBRYTE);
@@ -68,6 +67,11 @@ public class LunaItems {
                         itemGroup.add(LunaItems.SOUL_PURPLE);
                         itemGroup.add(LunaItems.SOUL_WHITE);
                         itemGroup.add(LunaItems.LUMINA);
+                        // Music Discs
+                        itemGroup.add(LunaItems.LUMINA_DISC);
+                        itemGroup.add(LunaItems.AONO_DISC);
+                        itemGroup.add(LunaItems.CRIMSON_DISC);
+
                 });
         }
 
@@ -83,12 +87,12 @@ public class LunaItems {
                         "crimson_membrane");
 
         public static final Item COMMAND_SIGN = register(
-                        new SignItem(new Item.Settings().maxCount(16), LunaBlocks.COMMAND_SIGN_BLOCK,
-                                        LunaBlocks.COMMAND_WALL_SIGN_BLOCK),
+                        new SignItem(new Item.Settings().maxCount(16), LunaBlocks.COMMAND_SIGN,
+                                        LunaBlocks.COMMAND_WALL_SIGN),
                         "command_sign");
 
         public static final Item COMMAND_HANGING_SIGN = register(
-                        new HangingSignItem(LunaBlocks.COMMAND_HANGING_WALL_SIGN, LunaBlocks.COMMAND_HANGING_SIGN,
+                        new HangingSignItem(LunaBlocks.COMMAND_HANGING_SIGN, LunaBlocks.COMMAND_HANGING_WALL_SIGN,
                                         new Item.Settings().maxCount(16)),
                         "command_hanging_sign");
 
@@ -112,16 +116,20 @@ public class LunaItems {
                                                         .build())),
                         "soul_berry");
 
+        public static final Item AMMO = register(
+                        new Item(new Item.Settings()),
+                        "ammo");
+
         // Weapons
 
         public static final Item LUNA_HEADTAKER = register(
                         new LunaHeadTaker(ToolMaterials.NETHERITE, 10, -3.2F,
-                                        new Item.Settings()),
+                                        new Item.Settings().rarity(Rarity.EPIC)),
                         "luna_headtaker");
 
         public static final Item RONIN_SWORD = register(
                         new RoninSword(ToolMaterials.NETHERITE, 5, -3.2F,
-                                        new Item.Settings()),
+                                        new Item.Settings().rarity(Rarity.RARE)),
                         "ronin_sword");
 
         public static final Item ENTANGLED_SWORD = register(
@@ -131,42 +139,73 @@ public class LunaItems {
 
         public static final Item JAX_SWORD = register(
                         new SwordItem(ToolMaterials.NETHERITE, 6, -3.2F,
-                                        new Item.Settings()),
+                                        new Item.Settings().rarity(Rarity.EPIC)),
                         "jax_sword");
+
+        public static final Item CRIMSON_DAGGER = register(
+                        new SwordItem(ToolMaterials.NETHERITE, 0, 1F,
+                                        new Item.Settings()),
+                        "crimson_dagger");
+
+        public static final Item PISTOL = register(
+                        new Pistol(-1, -2.6F, new Item.Settings().maxCount(1)),
+                        "pistol");
+        public static final Item PISTOL_WOODEN_SWORD = register(
+                        new Pistol(1, -2.6F, new Item.Settings().maxCount(1)),
+                        "pistol_wooden_sword");
+        public static final Item PISTOL_STONE_SWORD = register(
+                        new Pistol(2, -2.6F, new Item.Settings().maxCount(1)),
+                        "pistol_stone_sword");
+        public static final Item PISTOL_GOLDEN_SWORD = register(
+                        new Pistol(3, -2.6F, new Item.Settings().maxCount(1)),
+                        "pistol_golden_sword");
+        public static final Item PISTOL_IRON_SWORD = register(
+                        new Pistol(4, -2.6F, new Item.Settings().maxCount(1)),
+                        "pistol_iron_sword");
+        public static final Item PISTOL_DIAMOND_SWORD = register(
+                        new Pistol(5, -2.6F, new Item.Settings().maxCount(1)),
+                        "pistol_diamond_sword");
+        public static final Item PISTOL_NETHERITE_SWORD = register(
+                        new Pistol(6, -2.6F, new Item.Settings().maxCount(1)),
+                        "pistol_netherite_sword");
 
         // Donators/Players
 
         public static final Item LUNA = register(
-                        new Luna(new Item.Settings()),
+                        new Luna(new Item.Settings().rarity(Rarity.EPIC)),
                         "luna");
 
         public static final Item TIME = register(
-                        new Time(new Item.Settings()),
+                        new Time(new Item.Settings().rarity(Rarity.EPIC)),
                         "time");
 
         public static final Item PIW = register(
-                        new Item(new Item.Settings()),
+                        new Item(new Item.Settings().rarity(Rarity.EPIC)),
                         "piw");
 
         public static final Item MINEWARRIOR = register(
-                        new Item(new Item.Settings()),
+                        new Item(new Item.Settings().rarity(Rarity.EPIC)),
                         "minewarrior");
 
         public static final Item DONATOR = register(
-                        new Item(new Item.Settings()),
+                        new Item(new Item.Settings().rarity(Rarity.EPIC)),
                         "donator");
 
         public static final Item REWIND = register(
-                        new Item(new Item.Settings()),
+                        new Item(new Item.Settings().rarity(Rarity.EPIC)),
                         "rewind");
 
         public static final Item DASH = register(
-                        new Item(new Item.Settings()),
+                        new Item(new Item.Settings().rarity(Rarity.EPIC)),
                         "dash");
 
         public static final Item MOOSHEKING = register(
-                        new Item(new Item.Settings()),
+                        new Item(new Item.Settings().rarity(Rarity.EPIC)),
                         "moosheking");
+
+        public static final Item IDKMN = register(
+                        new Item(new Item.Settings().rarity(Rarity.EPIC)),
+                        "idkmn");
 
         // Origins
 
@@ -220,5 +259,22 @@ public class LunaItems {
 
         public static final Item LUMINA = register(
                         new Item(new Item.Settings()), "lumina");
+
+        // Music Discs
+
+        public static final Item LUMINA_DISC = register(
+                        new MusicDiscItem(15, LunaSounds.LUMINA_ULT,
+                                        new Item.Settings().maxCount(1).rarity(Rarity.RARE), 146),
+                        "lumina_disc");
+
+        public static final Item AONO_DISC = register(
+                        new MusicDiscItem(3, LunaSounds.AONO_ULT,
+                                        new Item.Settings().maxCount(1).rarity(Rarity.RARE), 72),
+                        "aono_disc");
+
+        public static final Item CRIMSON_DISC = register(
+                        new MusicDiscItem(1, LunaSounds.CRIMSON_ULT,
+                                        new Item.Settings().maxCount(1).rarity(Rarity.RARE), 172),
+                        "crimson_disc");
 
 }

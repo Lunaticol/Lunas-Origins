@@ -6,6 +6,7 @@
     "type": "origins:fire_projectile",
     "entity_type": "minecraft:small_fireball",
     "cooldown": 400,
+    "key": "key.origins.secondary_active",
     "hud_render": {
       "should_render": true
     },
@@ -52,10 +53,6 @@
             "command": "playsound minecraft:entity.generic.explode master @s ~ ~ ~ 100 1"
           }
         ]
-      },
-      "key": {
-        "key": "secondary",
-        "continuous": true
       }
     }
   }
