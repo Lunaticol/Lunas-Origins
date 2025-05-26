@@ -179,7 +179,7 @@
       "actions": [
         {
           "type": "origins:change_resource",
-          "resource": "*:ronin/counter_counter",
+          "resource": "*:titans/ronin/counter_counter",
           "change": 1,
           "operation": "add"
         }

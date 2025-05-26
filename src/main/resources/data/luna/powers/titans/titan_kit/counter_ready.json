@@ -44,5 +44,26 @@
       "layer": "origins:origin",
       "origin": "luna:ronin"
     }
+  },
+  "counter_ready_northstar": {
+    "type": "origins:action_on_callback",
+    "execute_chosen_when_orb": true,
+    "entity_action_chosen": {
+      "type": "origins:execute_command",
+      "command": "resource set @s luna:titans/northstar/counter_counter 1"
+    },
+    "entity_action_added": {
+      "type": "origins:execute_command",
+      "command": "resource set @s luna:titans/northstar/counter_counter 1"
+    },
+    "entity_action_respawned": {
+      "type": "origins:execute_command",
+      "command": "resource set @s luna:titans/northstar/counter_counter 1"
+    },
+    "condition": {
+      "type": "origins:origin",
+      "layer": "origins:origin",
+      "origin": "luna:northstar"
+    }
   }
 }

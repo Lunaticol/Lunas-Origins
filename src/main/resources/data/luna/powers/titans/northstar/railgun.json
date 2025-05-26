@@ -506,7 +506,7 @@
                 "count": 1,
                 "divergence": 0,
                 "entity_type": "minecraft:arrow",
-                "tag": "{pickup:0b,damage:2d,crit:1b,NoGravity:1b,life:1000}"
+                "tag": "{pickup:0b,damage:1d,crit:1b,NoGravity:1b,life:1000}"
               },
               {
                 "type": "origins:change_resource",
@@ -543,7 +543,7 @@
                 "count": 1,
                 "divergence": 0,
                 "entity_type": "minecraft:arrow",
-                "tag": "{pickup:0b,damage:4d,crit:1b,NoGravity:1b,life:1000}"
+                "tag": "{pickup:0b,damage:2d,crit:1b,NoGravity:1b,life:1000}"
               },
               {
                 "type": "origins:change_resource",
@@ -586,7 +586,7 @@
                 "count": 1,
                 "divergence": 0,
                 "entity_type": "minecraft:arrow",
-                "tag": "{pickup:0b,damage:6d,crit:1b,NoGravity:1b,life:1000}"
+                "tag": "{pickup:0b,damage:3d,crit:1b,NoGravity:1b,life:1000}"
               },
               {
                 "type": "origins:change_resource",
@@ -629,7 +629,7 @@
                 "count": 1,
                 "divergence": 0,
                 "entity_type": "minecraft:arrow",
-                "tag": "{pickup:0b,damage:8d,crit:1b,NoGravity:1b,life:1000}"
+                "tag": "{pickup:0b,damage:4d,crit:1b,NoGravity:1b,life:1000}"
               },
               {
                 "type": "origins:change_resource",
@@ -672,7 +672,7 @@
                 "count": 1,
                 "divergence": 0,
                 "entity_type": "minecraft:arrow",
-                "tag": "{pickup:0b,damage:12d,crit:1b,NoGravity:1b,life:1000}"
+                "tag": "{pickup:0b,damage:5d,crit:1b,NoGravity:1b,life:1000}"
               },
               {
                 "type": "origins:change_resource",
@@ -757,7 +757,7 @@
                 "count": 1,
                 "divergence": 0,
                 "entity_type": "minecraft:arrow",
-                "tag": "{pickup:0b,damage:2d,crit:1b,NoGravity:1b,life:1000,PierceLevel:6b}"
+                "tag": "{pickup:0b,damage:1d,crit:1b,NoGravity:1b,life:1000,PierceLevel:6b}"
               },
               {
                 "type": "origins:change_resource",
@@ -794,7 +794,7 @@
                 "count": 1,
                 "divergence": 0,
                 "entity_type": "minecraft:arrow",
-                "tag": "{pickup:0b,damage:4d,crit:1b,NoGravity:1b,life:1000,PierceLevel:6b}"
+                "tag": "{pickup:0b,damage:2d,crit:1b,NoGravity:1b,life:1000,PierceLevel:6b}"
               },
               {
                 "type": "origins:change_resource",
@@ -837,7 +837,7 @@
                 "count": 1,
                 "divergence": 0,
                 "entity_type": "minecraft:arrow",
-                "tag": "{pickup:0b,damage:6d,crit:1b,NoGravity:1b,life:1000,PierceLevel:6b}"
+                "tag": "{pickup:0b,damage:3d,crit:1b,NoGravity:1b,life:1000,PierceLevel:6b}"
               },
               {
                 "type": "origins:change_resource",
@@ -880,7 +880,7 @@
                 "count": 1,
                 "divergence": 0,
                 "entity_type": "minecraft:arrow",
-                "tag": "{pickup:0b,damage:8d,crit:1b,NoGravity:1b,life:1000,PierceLevel:6b}"
+                "tag": "{pickup:0b,damage:4d,crit:1b,NoGravity:1b,life:1000,PierceLevel:6b}"
               },
               {
                 "type": "origins:change_resource",
@@ -923,7 +923,7 @@
                 "count": 1,
                 "divergence": 0,
                 "entity_type": "minecraft:arrow",
-                "tag": "{pickup:0b,damage:12d,crit:1b,NoGravity:1b,life:1000,PierceLevel:6b}"
+                "tag": "{pickup:0b,damage:5d,crit:1b,NoGravity:1b,life:1000,PierceLevel:6b}"
               },
               {
                 "type": "origins:change_resource",

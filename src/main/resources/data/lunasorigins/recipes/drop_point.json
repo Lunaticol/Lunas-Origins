@@ -1,0 +1,13 @@
+{
+  "type": "crafting_shaped",
+  "key": {
+    "L": { "item": "minecraft:light_blue_stained_glass" },
+    "C": { "item": "minecraft:cyan_stained_glass" },
+    "B": { "item": "minecraft:blue_stained_glass" }
+  },
+  "pattern": ["LLL", "CCC", "BBB"],
+  "result": {
+    "item": "lunasorigins:drop_point",
+    "count": 6
+  }
+}

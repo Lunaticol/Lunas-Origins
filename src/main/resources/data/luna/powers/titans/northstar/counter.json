@@ -32,7 +32,7 @@
               {
                 "type": "origins:grant_power",
                 "power": "luna:titans/armor_stand_counter",
-                "source": "luna:titans/scorch/counter"
+                "source": "luna:titans/northstar/counter"
               }
             ]
           }
@@ -41,7 +41,7 @@
           "type": "origins:change_resource",
           "change": 5,
           "operation": "add",
-          "resource": "*:titans/scorch/core_core_bar"
+          "resource": "*:titans/northstar/core_core_bar"
         },
         {
           "type": "origins:change_resource",
@@ -58,7 +58,7 @@
           "type": "origins:resource",
           "compare_to": 99,
           "comparison": "<=",
-          "resource": "*:titans/scorch/core_core_bar"
+          "resource": "*:titans/northstar/core_core_bar"
         },
         {
           "type": "origins:resource",
