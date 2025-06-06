@@ -52,7 +52,6 @@ public class ElectricSparkParticleFactory extends SpriteBillboardParticle {
   }
 
   public static class BlueElectricSparkFactory implements ParticleFactory<DefaultParticleType> {
-    private final double velocityMultiplier = 0.25;
     private final SpriteProvider spriteProvider;
 
     public BlueElectricSparkFactory(SpriteProvider spriteProvider) {
@@ -65,15 +64,12 @@ public class ElectricSparkParticleFactory extends SpriteBillboardParticle {
           this.spriteProvider);
       glowParticle.setColor(0.211764706F, 0.517647059F, 0.847058824F);
       glowParticle.setVelocity(g * 0.25, h * 0.25, i * 0.25);
-      int j = 2;
-      int k = 4;
       glowParticle.setMaxAge(clientWorld.random.nextInt(2) + 2);
       return glowParticle;
     }
   }
 
   public static class OrangeElectricSparkFactory implements ParticleFactory<DefaultParticleType> {
-    private final double velocityMultiplier = 0.25;
     private final SpriteProvider spriteProvider;
 
     public OrangeElectricSparkFactory(SpriteProvider spriteProvider) {
@@ -86,8 +82,24 @@ public class ElectricSparkParticleFactory extends SpriteBillboardParticle {
           this.spriteProvider);
       glowParticle.setColor(0.847058824F, 0.466666667F, 0.211764706F);
       glowParticle.setVelocity(g * 0.25, h * 0.25, i * 0.25);
-      int j = 2;
-      int k = 4;
+      glowParticle.setMaxAge(clientWorld.random.nextInt(2) + 2);
+      return glowParticle;
+    }
+  }
+
+  public static class GemElectricSparkFactory implements ParticleFactory<DefaultParticleType> {
+    private final SpriteProvider spriteProvider;
+
+    public GemElectricSparkFactory(SpriteProvider spriteProvider) {
+      this.spriteProvider = spriteProvider;
+    }
+
+    public Particle createParticle(DefaultParticleType defaultParticleType, ClientWorld clientWorld, double d, double e,
+        double f, double g, double h, double i) {
+      ElectricSparkParticleFactory glowParticle = new ElectricSparkParticleFactory(clientWorld, d, e, f, 0.0, 0.0, 0.0,
+          this.spriteProvider);
+      glowParticle.setColor(0.9921568634F, 0.341176471F, 0.793548387F);
+      glowParticle.setVelocity(g * 0.25, h * 0.25, i * 0.25);
       glowParticle.setMaxAge(clientWorld.random.nextInt(2) + 2);
       return glowParticle;
     }

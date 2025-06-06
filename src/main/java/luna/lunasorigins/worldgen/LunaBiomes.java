@@ -15,10 +15,13 @@ public class LunaBiomes {
       new Identifier(LunasOrigins.MOD_ID, "command_savannah"));
   public static final RegistryKey<Biome> COMMAND_SNOWY = RegistryKey.of(RegistryKeys.BIOME,
       new Identifier(LunasOrigins.MOD_ID, "command_snowy"));
+  // public static final RegistryKey<Biome> CONCORD_GROVE = RegistryKey.of(RegistryKeys.BIOME,
+  //   new Identifier(LunasOrigins.MOD_ID, "concord_grove"));
 
   public static void bootstrap(Registerable<Biome> context) {
     context.register(COMMAND_FOREST, new Biome.Builder().build());
     context.register(COMMAND_SAVANNAH, new Biome.Builder().build());
     context.register(COMMAND_SNOWY, new Biome.Builder().build());
+    //context.register(CONCORD_GROVE, new Biome.Builder().build());
   }
 }

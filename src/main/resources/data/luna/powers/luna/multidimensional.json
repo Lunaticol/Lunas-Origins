@@ -10,7 +10,7 @@
       "bar_index": 7,
       "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png"
     },
-    "key": "key.loadToolbarActivator",
+    "key": "key.origins.quaternary_active",
     "entity_action": {
       "type": "origins:and",
       "actions": [
@@ -24,7 +24,7 @@
         },
         {
           "type": "origins:delay",
-          "ticks": 2,
+          "ticks": 20,
           "action": {
             "type": "origins:execute_command",
             "command": "spreadplayers ~ ~ 8 128 under 127 false @s"
@@ -90,7 +90,7 @@
               },
               {
                 "type": "origins:delay",
-                "ticks": 2,
+                "ticks": 20,
                 "action": {
                   "type": "origins:execute_command",
                   "command": "spreadplayers ~ ~ 8 128 under 127 false @s"
@@ -151,7 +151,7 @@
         },
         {
           "type": "origins:delay",
-          "ticks": 2,
+          "ticks": 20,
           "action": {
             "type": "origins:execute_command",
             "command": "spreadplayers ~ ~ 8 128 under 319 false @s"

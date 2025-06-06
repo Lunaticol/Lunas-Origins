@@ -1,5 +1,6 @@
 {
   "name": "Enchanced Payload",
   "description": "Increases the duration of the Cluster Missile",
+  "icon": "minecraft:tnt",
   "powers": ["luna:titans/northstar/kits/enhancedpayload"]
 }

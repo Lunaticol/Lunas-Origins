@@ -1,5 +1,5 @@
 {
-  "name": "Upstraight and on your legs",
+  "name": "On your legs",
   "description": "After eons of eating that netherwart, you have evolved to become more than just a pig, and more sophisticated than a Hoglin. You are a Piglin, and you are proud of it.\nHelmets arent made for your head size. Only Leather, Chain, and Gold can stretch enough to fit you.\nGold Tools function as netherite for you.",
   "type": "origins:multiple",
   "piglin_no_hurt": {
@@ -261,6 +261,26 @@
     "entity_action": {
       "type": "origins:grant_advancement",
       "advancement": "luna:piglin/piglin"
+    }
+  },
+  "piglin_xray": {
+    "type": "origins:action_over_time",
+    "interval": 1200,
+    "entity_action": {
+      "type": "origins:play_sound",
+      "volume": 1,
+      "sound": "minecraft:entity.piglin.admiring_item",
+      "pitch": 1
+    },
+    "condition": {
+      "type": "origins:block_in_radius",
+      "compare_to": 1,
+      "comparison": ">=",
+      "radius": 32,
+      "block_condition": {
+        "type": "origins:in_tag",
+        "tag": "luna:piglin_search"
+      }
     }
   }
 }

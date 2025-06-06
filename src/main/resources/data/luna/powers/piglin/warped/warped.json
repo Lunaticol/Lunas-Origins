@@ -19,8 +19,17 @@
         "type": "origins:delay",
         "ticks": 60,
         "action": {
-          "type": "origins:execute_command",
-          "command": "loot spawn ~ ~ ~ loot luna:warped"
+          "type": "origins:and",
+          "actions": [
+            {
+              "type": "origins:execute_command",
+              "command": "loot spawn ~ ~ ~ loot luna:warped"
+            },
+            {
+              "type": "origins:execute_command",
+              "command": "clear @s minecraft:gold_ingot 1"
+            }
+          ]
         }
       }
     },

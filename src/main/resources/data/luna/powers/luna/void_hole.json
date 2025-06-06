@@ -1,0 +1,159 @@
+{
+  "type": "origins:multiple",
+  "suck": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:area_of_effect",
+      "radius": 16,
+      "bientity_action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:add_velocity",
+            "z": -2,
+            "y": 0.1
+          },
+          {
+            "type": "origins:actor_action",
+            "action": {
+              "type": "origins:and",
+              "actions": [
+                {
+                  "type": "origins:execute_command",
+                  "command": "particle dust 0.000 0.000 0.000 2 ~ ~ ~ 1.5 1.5 1.5 1 150 normal"
+                },
+                {
+                  "type": "origins:execute_command",
+                  "command": "particle dust 0.467 0.000 1.000 2 ~ ~ ~ 1.5 1.5 1.5 1 125 normal"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "bientity_condition": {
+        "type": "origins:target_condition",
+        "condition": {
+          "type": "origins:origin",
+          "layer": "origins:origin",
+          "origin": "luna:luna",
+          "inverted": true
+        }
+      }
+    }
+  },
+  "damage_close": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:area_of_effect",
+      "radius": 4,
+      "bientity_action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:target_action",
+            "action": {
+              "type": "origins:damage",
+              "amount": 1,
+              "source": {
+                "name": "void_burned"
+              }
+            }
+          },
+          {
+            "type": "origins:actor_action",
+            "action": {
+              "type": "origins:play_sound",
+              "category": "players",
+              "volume": 1,
+              "sound": "minecraft:block.netherite_block.place",
+              "pitch": 1
+            }
+          }
+        ]
+      },
+      "bientity_condition": {
+        "type": "origins:target_condition",
+        "condition": {
+          "type": "origins:origin",
+          "layer": "origins:origin",
+          "origin": "luna:luna",
+          "inverted": true
+        }
+      }
+    }
+  },
+  "explode": {
+    "type": "origins:action_over_time",
+    "interval": 60,
+    "entity_action": {
+      "type": "origins:area_of_effect",
+      "radius": 4,
+      "bientity_action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:target_action",
+            "action": {
+              "type": "origins:damage",
+              "amount": 1,
+              "source": {
+                "name": "void_burned"
+              }
+            }
+          },
+          {
+            "type": "origins:actor_action",
+            "action": {
+              "type": "origins:and",
+              "actions": [
+                {
+                  "type": "origins:explode",
+                  "power": 5,
+                  "destruction_type": "none"
+                },
+                {
+                  "type": "origins:execute_command",
+                  "command": "particle explosion ~ ~ ~ 1 1 1 1 10 normal"
+                },
+                {
+                  "type": "origins:execute_command",
+                  "command": "kill @s"
+                },
+                {
+                  "type": "origins:play_sound",
+                  "sound": "minecraft:entity.generic.explode",
+                  "pitch": 0.5,
+                  "category": "players",
+                  "volume": 6
+                },
+                {
+                  "type": "origins:play_sound",
+                  "sound": "minecraft:entity.ender_dragon.growl",
+                  "pitch": 0.5,
+                  "category": "players"
+                }
+              ]
+            }
+          },
+          {
+            "type": "origins:add_velocity",
+            "z": 4,
+            "set": true
+          }
+        ]
+      },
+      "bientity_condition": {
+        "type": "origins:target_condition",
+        "condition": {
+          "type": "origins:origin",
+          "layer": "origins:origin",
+          "origin": "luna:luna",
+          "inverted": true
+        }
+      }
+    }
+  }
+}

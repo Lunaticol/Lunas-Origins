@@ -1,5 +1,6 @@
 {
   "name": "Threat Optics",
   "description": "Highlights enemys in red.",
+  "icon": "minecraft:spyglass",
   "powers": ["luna:titans/northstar/kits/threatoptics"]
 }

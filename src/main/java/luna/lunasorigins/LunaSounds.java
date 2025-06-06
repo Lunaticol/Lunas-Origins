@@ -11,6 +11,7 @@ public class LunaSounds {
   public static final SoundEvent LUMINA_ULT = registerSound("lumina_ult");
   public static final SoundEvent AONO_ULT = registerSound("aono_ult");
   public static final SoundEvent CRIMSON_ULT = registerSound("crimson_ult");
+  public static final SoundEvent LUNA_ULT = registerSound("luna_ult");
 
   private static SoundEvent registerSound(String id) {
     Identifier identifier = Identifier.of(LunasOrigins.MOD_ID, id);

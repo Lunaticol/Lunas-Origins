@@ -24,7 +24,7 @@
         },
         {
           "type": "origins:execute_command",
-          "command": "title @p actionbar {\"bold\":true,\"color\":\"gold\",\"text\":\"Trap Master Unlocked!\"}"
+          "command": "title @p actionbar {\"bold\":true,\"color\":\"gold\",\"text\":\"Critical Hit Unlocked!\"}"
         }
       ]
     },

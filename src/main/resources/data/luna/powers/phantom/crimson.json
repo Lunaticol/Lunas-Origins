@@ -201,5 +201,10 @@
       "type": "origins:entity_type",
       "entity_type": "lunasorigins:crimson_phantom"
     }
+  },
+  "glow": {
+    "type": "lunasorigins:glowing",
+    "glow": 15,
+    "dynamic_light": 15
   }
 }

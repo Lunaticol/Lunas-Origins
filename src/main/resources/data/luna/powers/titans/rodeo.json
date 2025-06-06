@@ -45,12 +45,12 @@
         {
           "type": "origins:revoke_power",
           "power": "luna:titans/rodeo",
-          "source": "titans:titans/scorch/scorch"
+          "source": "luna:titans/scorch/scorch"
         },
         {
           "type": "origins:revoke_power",
           "power": "luna:titans/rodeo",
-          "source": "titans:titans/northstar/northstar"
+          "source": "luna:titans/northstar/northstar"
         },
         {
           "type": "origins:add_velocity",
@@ -145,7 +145,7 @@
         {
           "type": "origins:revoke_power",
           "power": "luna:titans/rodeo",
-          "source": "titans:titans/northstar/northstar"
+          "source": "luna:titans/northstar/northstar"
         },
         {
           "type": "origins:change_resource",

@@ -55,6 +55,15 @@ public class LunaOverworldRegion extends Region {
         .weirdness(Weirdness.MID_SLICE_NORMAL_ASCENDING, Weirdness.MID_SLICE_NORMAL_DESCENDING)
         .build().forEach(point -> builder.add(point, LunaBiomes.COMMAND_SNOWY));
 
+    /*   new ParameterPointListBuilder()
+        .temperature(Temperature.span(Temperature.NEUTRAL, Temperature.COOL))
+        .humidity(Humidity.span(Humidity.NEUTRAL, Humidity.HUMID))
+        .continentalness(Continentalness.INLAND)
+        .erosion(Erosion.EROSION_0, Erosion.EROSION_1)
+        .depth(Depth.FULL_RANGE)
+        .weirdness(Weirdness.MID_SLICE_NORMAL_ASCENDING, Weirdness.MID_SLICE_NORMAL_DESCENDING)
+        .build().forEach(point -> builder.add(point, LunaBiomes.CONCORD_GROVE)); */
+
     builder.build().forEach(mapper);
   }
 }

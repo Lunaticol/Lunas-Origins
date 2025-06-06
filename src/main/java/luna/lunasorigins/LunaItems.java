@@ -4,6 +4,7 @@ import luna.lunasorigins.items.*;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.*;
+import net.minecraft.item.ArmorItem.Type;
 import net.minecraft.registry.*;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
@@ -116,10 +117,10 @@ public class LunaItems {
                                                         .build())),
                         "soul_berry");
 
-        public static final Item AMMO = register(
-                        new Item(new Item.Settings()),
-                        "ammo");
-
+        public static final Item BLIND_FOLD = register(
+                        new DyeableArmorItem(ArmorMaterials.LEATHER, Type.HELMET, new Item.Settings().maxCount(1)
+                                        .rarity(Rarity.UNCOMMON)),
+                        "blind_fold");
         // Weapons
 
         public static final Item LUNA_HEADTAKER = register(

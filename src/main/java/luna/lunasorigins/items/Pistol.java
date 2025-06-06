@@ -111,17 +111,38 @@ public class Pistol extends Item implements Vanishable {
 
   @Override
   public ItemStack finishUsing(ItemStack stack, World world, LivingEntity user) {
-    if (!world.isClient && user instanceof PlayerEntity) {
+    if (!world.isClient && user instanceof PlayerEntity player) {
       int currentShots = getShotsLeft(stack);
-      if (currentShots < getMaxShots(stack)) {
-        setShotsLeft(stack, currentShots + 1);
-        world.playSound(null, user.getX(), user.getY(), user.getZ(),
-            SoundEvents.ITEM_CROSSBOW_LOADING_END, SoundCategory.PLAYERS, 1.0f, 1.0f);
+      int maxShots = getMaxShots(stack);
+      if (currentShots < maxShots) {
+        // Require arrow in inventory to reload
+        ItemStack arrowStack = findAmmo(player);
+        if (!arrowStack.isEmpty()) {
+          setShotsLeft(stack, currentShots + 1);
+          world.playSound(null, user.getX(), user.getY(), user.getZ(),
+              SoundEvents.ITEM_CROSSBOW_LOADING_END, SoundCategory.PLAYERS, 1.0f, 1.0f);
+          if (!player.getAbilities().creativeMode) {
+            arrowStack.decrement(1);
+          }
+        }
       }
     }
-
     stack.getOrCreateNbt().putBoolean(RELOADING_KEY, false);
     return stack;
+  }
+
+  private ItemStack findAmmo(PlayerEntity player) {
+    ItemStack offhand = player.getOffHandStack();
+    if (offhand.getItem() == Items.ARROW && offhand.getCount() > 0) {
+      return offhand;
+    }
+    for (int i = 0; i < player.getInventory().size(); ++i) {
+      ItemStack stack = player.getInventory().getStack(i);
+      if (stack.getItem() == Items.ARROW && stack.getCount() > 0) {
+        return stack;
+      }
+    }
+    return ItemStack.EMPTY;
   }
 
   private int getShotsLeft(ItemStack stack) {
@@ -160,7 +181,7 @@ public class Pistol extends Item implements Vanishable {
   @Override
   public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context) {
     tooltip.add(Text.literal("Ammo: " + getShotsLeft(stack) + "/" + getMaxShots(stack)).formatted(Formatting.GRAY));
-    tooltip.add(Text.literal("Shift right click to reload.").formatted(Formatting.GRAY));
+    tooltip.add(Text.literal("Shift right click to reload. Requires arrows.").formatted(Formatting.GRAY));
     String itemId = Registries.ITEM.getId(stack.getItem()).toString();
     String tier = switch (itemId) {
       case "lunasorigins:pistol_wooden_sword" -> "Tier: Wooden";

@@ -54,11 +54,22 @@
       "key": "key.jump"
     },
     "entity_action": {
-      "type": "origins:add_velocity",
-      "space": "local",
-      "z": 3,
-      "y": 0.5,
-      "x": 0
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:add_velocity",
+          "space": "local",
+          "z": 3,
+          "y": 0.5,
+          "x": 0
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:entity.wither.break_block",
+          "pitch": 1,
+          "volume": 1
+        }
+      ]
     },
     "condition": {
       "type": "origins:and",

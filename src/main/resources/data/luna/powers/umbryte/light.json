@@ -1,54 +1,145 @@
 {
   "name": "Light Sensitive",
-  "description": "You are only adpated to seeing the dim light in the end, your vision gets blurry if you're in to much light.\nCauses mining fatigue & weakness when exposed to bright lights.",
+  "description": "You are only adpated to seeing the dim light in the end, your vision gets blurry if you're in to much light.\nCauses mining fatigue & weakness when exposed to bright lights.\nDO NOT PLAY IF YOU EPILEPTIC",
   "type": "origins:multiple",
+  "badges": [
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/star.png",
+      "text": "DO NOT PLAY IF YOU EPILEPTIC"
+    },
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/star.png",
+      "text": "DO NOT PLAY IF YOU EPILEPTIC"
+    },
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/star.png",
+      "text": "DO NOT PLAY IF YOU EPILEPTIC"
+    },
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/star.png",
+      "text": "DO NOT PLAY IF YOU EPILEPTIC"
+    },
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/star.png",
+      "text": "DO NOT PLAY IF YOU EPILEPTIC"
+    },
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/star.png",
+      "text": "DO NOT PLAY IF YOU EPILEPTIC"
+    },
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/star.png",
+      "text": "DO NOT PLAY IF YOU EPILEPTIC"
+    },
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/star.png",
+      "text": "DO NOT PLAY IF YOU EPILEPTIC"
+    },
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/star.png",
+      "text": "DO NOT PLAY IF YOU EPILEPTIC"
+    },
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/star.png",
+      "text": "DO NOT PLAY IF YOU EPILEPTIC"
+    },
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/star.png",
+      "text": "DO NOT PLAY IF YOU EPILEPTIC"
+    },
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/star.png",
+      "text": "DO NOT PLAY IF YOU EPILEPTIC"
+    },
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/star.png",
+      "text": "DO NOT PLAY IF YOU EPILEPTIC"
+    },
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/star.png",
+      "text": "DO NOT PLAY IF YOU EPILEPTIC"
+    },
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/star.png",
+      "text": "DO NOT PLAY IF YOU EPILEPTIC"
+    }
+  ],
   "light_sensitive": {
     "type": "origins:shader",
     "shader": "minecraft:shaders/post/phosphor.json",
     "condition": {
-      "type": "origins:or",
+      "type": "origins:and",
       "conditions": [
         {
-          "type": "origins:block_in_radius",
-          "radius": 1,
-          "shape": "cube",
-          "block_condition": {
-            "type": "origins:light_level",
-            "light_type": "block",
-            "compare_to": 10,
-            "comparison": ">"
+          "type": "origins:equipped_item",
+          "inverted": true,
+          "equipment_slot": "head",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": { "item": "lunasorigins:blind_fold" }
           }
         },
         {
-          "type": "origins:and",
+          "type": "origins:or",
           "conditions": [
             {
-              "type": "origins:exposed_to_sky"
+              "type": "origins:block_in_radius",
+              "radius": 1,
+              "shape": "cube",
+              "block_condition": {
+                "type": "origins:light_level",
+                "light_type": "block",
+                "compare_to": 10,
+                "comparison": ">"
+              }
             },
             {
-              "type": "origins:daytime"
+              "type": "origins:and",
+              "conditions": [
+                {
+                  "type": "origins:exposed_to_sky"
+                },
+                {
+                  "type": "origins:daytime"
+                }
+              ]
+            },
+            {
+              "type": "origins:equipped_item",
+              "equipment_slot": "mainhand",
+              "item_condition": {
+                "type": "origins:ingredient",
+                "ingredient": {
+                  "tag": "luna:high_light"
+                }
+              }
+            },
+            {
+              "type": "origins:equipped_item",
+              "equipment_slot": "offhand",
+              "item_condition": {
+                "type": "origins:ingredient",
+                "ingredient": {
+                  "tag": "luna:high_light"
+                }
+              }
             }
           ]
-        },
-        {
-          "type": "origins:equipped_item",
-          "equipment_slot": "mainhand",
-          "item_condition": {
-            "type": "origins:ingredient",
-            "ingredient": {
-              "tag": "luna:high_light"
-            }
-          }
-        },
-        {
-          "type": "origins:equipped_item",
-          "equipment_slot": "offhand",
-          "item_condition": {
-            "type": "origins:ingredient",
-            "ingredient": {
-              "tag": "luna:high_light"
-            }
-          }
         }
       ]
     }
@@ -76,49 +167,63 @@
       ]
     },
     "condition": {
-      "type": "origins:or",
+      "type": "origins:and",
       "conditions": [
         {
-          "type": "origins:block_in_radius",
-          "radius": 1,
-          "shape": "cube",
-          "block_condition": {
-            "type": "origins:light_level",
-            "light_type": "block",
-            "compare_to": 10,
-            "comparison": ">"
+          "type": "origins:equipped_item",
+          "inverted": true,
+          "equipment_slot": "head",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": { "item": "lunasorigins:blind_fold" }
           }
         },
         {
-          "type": "origins:and",
+          "type": "origins:or",
           "conditions": [
             {
-              "type": "origins:exposed_to_sky"
+              "type": "origins:block_in_radius",
+              "radius": 1,
+              "shape": "cube",
+              "block_condition": {
+                "type": "origins:light_level",
+                "light_type": "block",
+                "compare_to": 10,
+                "comparison": ">"
+              }
             },
             {
-              "type": "origins:daytime"
+              "type": "origins:and",
+              "conditions": [
+                {
+                  "type": "origins:exposed_to_sky"
+                },
+                {
+                  "type": "origins:daytime"
+                }
+              ]
+            },
+            {
+              "type": "origins:equipped_item",
+              "equipment_slot": "mainhand",
+              "item_condition": {
+                "type": "origins:ingredient",
+                "ingredient": {
+                  "tag": "luna:high_light"
+                }
+              }
+            },
+            {
+              "type": "origins:equipped_item",
+              "equipment_slot": "offhand",
+              "item_condition": {
+                "type": "origins:ingredient",
+                "ingredient": {
+                  "tag": "luna:high_light"
+                }
+              }
             }
           ]
-        },
-        {
-          "type": "origins:equipped_item",
-          "equipment_slot": "mainhand",
-          "item_condition": {
-            "type": "origins:ingredient",
-            "ingredient": {
-              "tag": "luna:high_light"
-            }
-          }
-        },
-        {
-          "type": "origins:equipped_item",
-          "equipment_slot": "offhand",
-          "item_condition": {
-            "type": "origins:ingredient",
-            "ingredient": {
-              "tag": "luna:high_light"
-            }
-          }
         }
       ]
     }
@@ -131,27 +236,41 @@
       "advancement": "luna:umbryte/light"
     },
     "condition": {
-      "type": "origins:or",
+      "type": "origins:and",
       "conditions": [
         {
           "type": "origins:equipped_item",
-          "equipment_slot": "mainhand",
+          "inverted": true,
+          "equipment_slot": "head",
           "item_condition": {
             "type": "origins:ingredient",
-            "ingredient": {
-              "tag": "luna:high_light"
-            }
+            "ingredient": { "item": "lunasorigins:blind_fold" }
           }
         },
         {
-          "type": "origins:equipped_item",
-          "equipment_slot": "offhand",
-          "item_condition": {
-            "type": "origins:ingredient",
-            "ingredient": {
-              "tag": "luna:high_light"
+          "type": "origins:or",
+          "conditions": [
+            {
+              "type": "origins:equipped_item",
+              "equipment_slot": "mainhand",
+              "item_condition": {
+                "type": "origins:ingredient",
+                "ingredient": {
+                  "tag": "luna:high_light"
+                }
+              }
+            },
+            {
+              "type": "origins:equipped_item",
+              "equipment_slot": "offhand",
+              "item_condition": {
+                "type": "origins:ingredient",
+                "ingredient": {
+                  "tag": "luna:high_light"
+                }
+              }
             }
-          }
+          ]
         }
       ]
     }

@@ -1,5 +1,6 @@
 {
   "name": "Twin Traps",
   "description": "Increases the amount of traps you can carry at once.",
+  "icon": "minecraft:stone_pressure_plate",
   "powers": ["luna:titans/northstar/kits/twintraps"]
 }

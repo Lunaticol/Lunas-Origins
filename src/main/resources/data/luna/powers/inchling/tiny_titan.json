@@ -1,6 +1,6 @@
 {
   "name": "Tiny Titan",
-  "description": "You are significantly smaller than any other mob, with only 6 hearts.\nProjectiles hurt 0.5x more due to their size.\nYou are able to climb walls",
+  "description": "You are significantly smaller than any other mob, with only 6 hearts.\nProjectiles hurt 0.5x more due to their size.\nYou are able to climb walls\nYou take 50% more physical damage due to your small size. Anything could cut you in half!",
   "type": "origins:multiple",
   "size": {
     "type": "origins:action_on_callback",
@@ -160,6 +160,40 @@
         {
           "type": "origins:execute_command",
           "command": "scoreboard players remove Titanmite Origin 1"
+        }
+      ]
+    }
+  },
+  "frail_bones": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "value": 0.5,
+      "operation": "multiply_total"
+    },
+    "damage_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:name",
+          "name": "mob"
+        },
+        {
+          "type": "origins:name",
+          "name": "mob.item"
+        },
+        {
+          "type": "origins:name",
+          "name": "player"
+        },
+        {
+          "type": "origins:name",
+          "name": "player.item"
+        },
+        {
+          "type": "origins:attacker",
+          "entity_condition": {
+            "type": "origins:exists"
+          }
         }
       ]
     }

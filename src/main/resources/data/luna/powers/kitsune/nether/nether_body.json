@@ -1,5 +1,5 @@
 {
-  "name": "Vulerable",
+  "name": "Nether Life",
   "description": "You've lived in the nether all your life, water is entirely foreign to you, and does not mix well with your lava infused blood.",
   "type": "origins:multiple",
   "nether_size": {
@@ -86,7 +86,7 @@
     "type": "origins:damage_over_time",
     "interval": 40,
     "onset_delay": 0,
-    "damage": 10,
+    "damage": 5,
     "damage_easy": 1,
     "damage_source": {
       "name": "hurt_by_water",

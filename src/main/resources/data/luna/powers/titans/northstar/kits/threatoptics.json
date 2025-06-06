@@ -37,25 +37,25 @@
           "type": "origins:resource",
           "compare_to": 1,
           "comparison": "==",
-          "resource": "*:*_railgun_resource_1"
+          "resource": "*:titans/northstar_railgun_railgun_resource_1"
         },
         {
           "type": "origins:resource",
           "compare_to": 1,
           "comparison": "==",
-          "resource": "*:*_railgun_resource_2"
+          "resource": "*:titans/northstar_railgun_railgun_resource_2"
         },
         {
           "type": "origins:resource",
           "compare_to": 1,
           "comparison": "==",
-          "resource": "*:*_railgun_resource_3"
+          "resource": "*:titans/northstar_railgun_railgun_resource_3"
         },
         {
           "type": "origins:resource",
           "compare_to": 1,
           "comparison": "==",
-          "resource": "*:*_railgun_resource_4"
+          "resource": "*:titans/northstar_railgun_railgun_resource_4"
         }
       ]
     }
@@ -93,25 +93,25 @@
           "type": "origins:resource",
           "compare_to": 1,
           "comparison": "==",
-          "resource": "*:*_railgun_resource_1"
+          "resource": "*:titans/northstar_railgun_railgun_resource_1"
         },
         {
           "type": "origins:resource",
           "compare_to": 1,
           "comparison": "==",
-          "resource": "*:*_railgun_resource_2"
+          "resource": "*:titans/northstar_railgun_railgun_resource_2"
         },
         {
           "type": "origins:resource",
           "compare_to": 1,
           "comparison": "==",
-          "resource": "*:*_railgun_resource_3"
+          "resource": "*:titans/northstar_railgun_railgun_resource_3"
         },
         {
           "type": "origins:resource",
           "compare_to": 1,
           "comparison": "==",
-          "resource": "*:*_railgun_resource_4"
+          "resource": "*:titans/northstar_railgun_railgun_resource_4"
         }
       ]
     }

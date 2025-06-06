@@ -67,11 +67,7 @@
   },
   "end_sight": {
     "type": "origins:night_vision",
-    "strength": 0.7,
-    "condition": {
-      "type": "origins:dimension",
-      "dimension": "minecraft:the_end"
-    }
+    "strength": 0.7
   },
   "endermen_nice": {
     "type": "apugli:mobs_ignore",
@@ -335,7 +331,7 @@
       ]
     }
   },
-  "kill_ronin": {
+  "kill_sentinel": {
     "type": "origins:self_action_on_kill",
     "cooldown": 0,
     "entity_action": {
@@ -343,9 +339,24 @@
       "advancement": "luna:umbryte/unrivaled_beast"
     },
     "target_condition": {
-      "type": "origins:origin",
-      "layer": "origins:origin",
-      "origin": "origins:ronin"
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:origin",
+          "layer": "origins:origin",
+          "origin": "origins:ronin"
+        },
+        {
+          "type": "origins:origin",
+          "layer": "origins:origin",
+          "origin": "origins:scorch"
+        },
+        {
+          "type": "origins:origin",
+          "layer": "origins:origin",
+          "origin": "origins:northstar"
+        }
+      ]
     }
   }
 }

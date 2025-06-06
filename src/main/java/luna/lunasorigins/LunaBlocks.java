@@ -751,4 +751,5 @@ public class LunaBlocks {
 
                 return registeredBlock;
         }
+
 }

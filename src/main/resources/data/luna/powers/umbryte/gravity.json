@@ -1,6 +1,6 @@
 {
   "name": "Void Affinity",
-  "description": "Manipulate gravity to slow down enemies in a small radius around you.\nCauses projecitles to warp around you.",
+  "description": "Manipulate gravity to slow down pray in a small radius around you.\nCauses projecitles to warp around you.",
   "type": "origins:multiple",
   "gravity": {
     "type": "origins:action_over_time",
@@ -107,25 +107,25 @@
                 {
                   "type": "origins:command",
                   "command": "scale get pehkui:base @s 10",
-                  "comparison": ">",
+                  "comparison": "<=",
                   "compare_to": 5
                 },
                 {
                   "type": "origins:command",
                   "command": "scale get pehkui:height @s 10",
-                  "comparison": ">",
+                  "comparison": "<=",
                   "compare_to": 5
                 },
                 {
                   "type": "origins:command",
                   "command": "scale get pehkui:width @s 10",
-                  "comparison": ">",
+                  "comparison": "<=",
                   "compare_to": 5
                 },
                 {
                   "type": "origins:command",
                   "command": "scale get @s 10",
-                  "comparison": ">",
+                  "comparison": "<=",
                   "compare_to": 5
                 }
               ]
@@ -229,25 +229,25 @@
             {
               "type": "origins:command",
               "command": "scale get pehkui:base @s 10",
-              "comparison": ">",
+              "comparison": "<=",
               "compare_to": 5
             },
             {
               "type": "origins:command",
               "command": "scale get pehkui:height @s 10",
-              "comparison": ">",
+              "comparison": "<=",
               "compare_to": 5
             },
             {
               "type": "origins:command",
               "command": "scale get pehkui:width @s 10",
-              "comparison": ">",
+              "comparison": "<=",
               "compare_to": 5
             },
             {
               "type": "origins:command",
               "command": "scale get @s 10",
-              "comparison": ">",
+              "comparison": "<=",
               "compare_to": 5
             }
           ]

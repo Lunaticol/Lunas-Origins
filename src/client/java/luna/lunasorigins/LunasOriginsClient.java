@@ -1,5 +1,6 @@
 package luna.lunasorigins;
 
+import org.lwjgl.glfw.GLFW;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -11,8 +12,10 @@ import luna.lunasorigins.particle.ElectricSparkParticleFactory;
 import luna.lunasorigins.particle.ModParticleFactories;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
+import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.particle.FlameParticle;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
@@ -38,6 +41,8 @@ public class LunasOriginsClient implements ClientModInitializer {
                                 ElectricSparkParticleFactory.BlueElectricSparkFactory::new);
                 ParticleFactoryRegistry.getInstance().register(LunaParticles.ORANGE_SPARK,
                                 ElectricSparkParticleFactory.OrangeElectricSparkFactory::new);
+                ParticleFactoryRegistry.getInstance().register(LunaParticles.GEM_SPARK,
+                                ElectricSparkParticleFactory.GemElectricSparkFactory::new);
                 ParticleFactoryRegistry.getInstance().register(LunaParticles.BLUE_DRIPPING_OBSIDIAN_TEAR,
                                 ModParticleFactories.DrippingBlueObsidianTearFactory::new);
                 ParticleFactoryRegistry.getInstance().register(LunaParticles.BLUE_FALLING_OBSIDIAN_TEAR,
@@ -84,4 +89,10 @@ public class LunasOriginsClient implements ClientModInitializer {
                                 HangingSignBlockEntityRenderer::new);
 
         }
+
+        public static KeyBinding nullary = KeyBindingHelper.registerKeyBinding(new KeyBinding(
+                        "key.lunasorigins.nullary",
+                        GLFW.GLFW_KEY_0,
+                        "category.origins"));
+
 }

@@ -2,6 +2,13 @@
   "name": "Blood Requiem",
   "description": "The dark magic inside you brings you back from death but only for a short time.\nThis is your ultimate form, strong yet agile.",
   "type": "origins:multiple",
+  "badges": [
+    {
+      "type": "origins:tooltip",
+      "text": "Activates on death if blood bar is full.",
+      "sprite": "origins:textures/gui/badge/info.png"
+    }
+  ],
   "respawn": {
     "type": "origins:prevent_death",
     "entity_action": {
@@ -212,7 +219,7 @@
   },
   "press_0_to_move_faster": {
     "type": "origins:active_self",
-    "key": "key.use",
+    "key": "key.lunasorigins.nullary",
     "entity_action": {
       "type": "origins:damage",
       "amount": 20,

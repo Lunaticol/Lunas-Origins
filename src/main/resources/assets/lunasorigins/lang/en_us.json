@@ -3,6 +3,7 @@
   "sound.lunasorigins.lumina_ult": "Lumina Ult Activated",
   "sound.lunasorigins.aono_ult": "Aono Kitsune Ult Activated",
   "sound.lunasorigins.crimson_ult": "Crimson Phantom Ult Activated",
+  "sound.lunasorigins.luna_ult": "Luna Ult Activated",
   "itemGroup.lunaitemgroup": "Lunas Origins",
   "enchantment.lunasorigins.rapid_fire": "Rapid Fire",
   "enchantment.lunasorigins.capacity": "Capacity",
@@ -127,9 +128,11 @@
   "block.lunasorigins.lantern_casing": "Lantern Casing",
   "effect.lunasorigins.soul_tuned": "Soul Tuned",
   "effect.lunasorigins.corruption": "Corruption",
+  "entity.lunasorigins.crimson_phantom": "Crimson Phantom",
   "origins.gui.impact.extreme": "Extreme",
   "origins.gui.impact.boss": "Boss",
   "origins.gui.impact.custom": "Custom",
+  "key.lunasorigins.nullary": "Active Power (Nullary)",
   "death.attack.dark_healing": "%1$s lost to much blood",
   "death.attack.dark_healing.player": "%1$s lost to much blood from %2$s",
   "death.attack.shield": "%1$s was scorched",
@@ -189,5 +192,9 @@
   "death.attack.lumina": "The colors felt right to %1$s",
   "death.attack.lumina.player": "%2$s showed the colors to %1$s",
   "death.attack.melt": "%1$s melted into a puddle",
-  "death.attack.melt.player": "%1$s was melting while fighting %2$s"
+  "death.attack.melt.player": "%1$s was melting while fighting %2$s",
+  "death.attack.lightningbreath": "%1$s was struck down by condensed lightning",
+  "death.attack.lightningbreath.player": "%1$s was struck down by condensed lightning by %2$s",
+  "death.attack.void_burned": "%1$s was burnt by the void.",
+  "death.attack.void_burned.player": "%1$s was scorched by the void from %2$s"
 }

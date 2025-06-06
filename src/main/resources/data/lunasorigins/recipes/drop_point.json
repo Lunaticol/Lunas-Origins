@@ -8,6 +8,6 @@
   "pattern": ["LLL", "CCC", "BBB"],
   "result": {
     "item": "lunasorigins:drop_point",
-    "count": 6
+    "count": 1
   }
 }

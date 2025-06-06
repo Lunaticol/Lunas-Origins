@@ -1,13 +1,16 @@
 {
   "type": "origins:multiple",
   "name": "Telekinesis",
-  "description": "Get fucked",
-  "tag": {
+  "description": "Lets put down our weapons and talk this out. No? Alright then, I like playing with mortals anyways.",
+  "telekinesis": {
     "type": "origins:active_self",
-    "key": {
-      "key": "primary",
-      "continuous": true
+    "cooldown": 1200,
+    "hud_render": {
+      "should_render": true,
+      "bar_index": 5,
+      "sprite_location": "origins:textures/gui/luna_resource_bar.png"
     },
+    "key": "key.origins.primary_active",
     "entity_action": {
       "type": "origins:raycast",
       "distance": 16,
@@ -16,6 +19,16 @@
       "entity": true,
       "fluid_handling": "any",
       "command_along_ray": "particle minecraft:dust 1.0 0.0 0.0 1.0 ~ ~ ~ 0 0 0 1 1 normal @a",
+      "miss_action": {
+        "type": "origins:delay",
+        "ticks": 1,
+        "action": {
+          "type": "origins:change_resource",
+          "change": 1200,
+          "operation": "set",
+          "resource": "*:*_telekinesis"
+        }
+      },
       "bientity_action": {
         "type": "origins:and",
         "actions": [
@@ -25,45 +38,131 @@
               "type": "origins:and",
               "actions": [
                 {
-                  "type": "origins:execute_command",
-                  "command": "tag @s add Grabbed"
+                  "type": "origins:grant_power",
+                  "power": "luna:luna/tele_frozen",
+                  "source": "luna:luna/telekinesis"
+                },
+                {
+                  "type": "origins:choice",
+                  "actions": [
+                    {
+                      "element": {
+                        "type": "origins:execute_command",
+                        "command": "tellraw @s [{\"text\":\"<Isabella> \"},{\"text\":\"Chill out man!\",\"color\":\"#B05BFF\",\"bold\":true}]"
+                      },
+                      "weight": 1
+                    },
+                    {
+                      "element": {
+                        "type": "origins:execute_command",
+                        "command": "tellraw @s [{\"text\":\"<Isabella> \"},{\"text\":\"Alright to the timeout corner with you!\",\"color\":\"#B05BFF\",\"bold\":true}]"
+                      },
+                      "weight": 1
+                    },
+                    {
+                      "element": {
+                        "type": "origins:execute_command",
+                        "command": "tellraw @s [{\"text\":\"<Isabella> \"},{\"text\":\"Lets take a break real quick.\",\"color\":\"#B05BFF\",\"bold\":true}]"
+                      },
+                      "weight": 1
+                    },
+                    {
+                      "element": {
+                        "type": "origins:execute_command",
+                        "command": "tellraw @s [{\"text\":\"<Isabella> \"},{\"text\":\"No need for all this fighting.\",\"color\":\"#B05BFF\",\"bold\":true}]"
+                      },
+                      "weight": 1
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "condition": {
+      "type": "origins:sneaking",
+      "inverted": true
+    }
+  },
+  "telekinesis_push": {
+    "type": "origins:active_self",
+    "cooldown": 1200,
+    "hud_render": {
+      "should_render": true,
+      "bar_index": 5,
+      "sprite_location": "origins:textures/gui/luna_resource_bar.png"
+    },
+    "key": "key.origins.primary_active",
+    "entity_action": {
+      "type": "origins:raycast",
+      "distance": 16,
+      "shape_type": "visual",
+      "block": false,
+      "entity": true,
+      "fluid_handling": "any",
+      "command_along_ray": "particle minecraft:dust 1.0 0.0 0.0 1.0 ~ ~ ~ 0 0 0 1 1 normal @a",
+      "miss_action": {
+        "type": "origins:delay",
+        "ticks": 1,
+        "action": {
+          "type": "origins:change_resource",
+          "change": 1200,
+          "operation": "set",
+          "resource": "*:*_telekinesis_push"
+        }
+      },
+      "bientity_action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:target_action",
+            "action": {
+              "type": "origins:choice",
+              "actions": [
+                {
+                  "element": {
+                    "type": "origins:execute_command",
+                    "command": "tellraw @s [{\"text\":\"<Isabella> \"},{\"text\":\"Chill out man!\",\"color\":\"#B05BFF\",\"bold\":true}]"
+                  },
+                  "weight": 1
+                },
+                {
+                  "element": {
+                    "type": "origins:execute_command",
+                    "command": "tellraw @s [{\"text\":\"<Isabella> \"},{\"text\":\"Alright to the timeout corner with you!\",\"color\":\"#B05BFF\",\"bold\":true}]"
+                  },
+                  "weight": 1
+                },
+                {
+                  "element": {
+                    "type": "origins:execute_command",
+                    "command": "tellraw @s [{\"text\":\"<Isabella> \"},{\"text\":\"Lets take a break real quick.\",\"color\":\"#B05BFF\",\"bold\":true}]"
+                  },
+                  "weight": 1
+                },
+                {
+                  "element": {
+                    "type": "origins:execute_command",
+                    "command": "tellraw @s [{\"text\":\"<Isabella> \"},{\"text\":\"No need for all this fighting.\",\"color\":\"#B05BFF\",\"bold\":true}]"
+                  },
+                  "weight": 1
                 }
               ]
             }
           },
           {
-            "type": "origins:actor_action",
-            "action": {
-              "type": "origins:exhaust",
-              "amount": 0.5
-            }
+            "type": "origins:add_velocity",
+            "z": 3,
+            "y": 0.2,
+            "set": true
           }
         ]
       }
-    }
-  },
-  "hold": {
-    "type": "origins:active_self",
-    "key": {
-      "key": "key.origins.primary_active",
-      "continuous": true
     },
-    "entity_action": {
-      "type": "origins:execute_command",
-      "command": "tp @e[tag=Grabbed,distance=..32] ^ ^1 ^8.5"
-    }
-  },
-  "un-tag": {
-    "type": "origins:action_over_time",
-    "interval": 10,
-    "entity_action": {
-      "type": "origins:and",
-      "actions": [
-        {
-          "type": "origins:execute_command",
-          "command": "tag @e[distance=..16] remove Grabbed"
-        }
-      ]
+    "condition": {
+      "type": "origins:sneaking"
     }
   }
 }

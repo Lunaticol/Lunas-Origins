@@ -1,0 +1,11 @@
+{
+  "type": "crafting_shaped",
+  "key": {
+    "W": { "item": "minecraft:white_wool" }
+  },
+  "pattern": ["W W", "WWW", "   "],
+  "result": {
+    "item": "lunasorigins:blind_fold",
+    "count": 1
+  }
+}

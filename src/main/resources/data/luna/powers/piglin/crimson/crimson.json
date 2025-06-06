@@ -11,8 +11,17 @@
         "type": "origins:delay",
         "ticks": 100,
         "action": {
-          "type": "origins:execute_command",
-          "command": "loot spawn ~ ~ ~ loot luna:crimson"
+          "type": "origins:and",
+          "actions": [
+            {
+              "type": "origins:execute_command",
+              "command": "loot spawn ~ ~ ~ loot luna:crimson"
+            },
+            {
+              "type": "origins:execute_command",
+              "command": "clear @s minecraft:gold_ingot 1"
+            }
+          ]
         }
       }
     },

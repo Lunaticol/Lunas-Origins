@@ -1,6 +1,6 @@
 {
   "name": "Dragonkin",
-  "description": "You are a dragon, You have the abilitys of a normal dragon.\nYou take more damage from arrows.\nYou attract more lightning!\nYou have more health",
+  "description": "You are a dragon, You have the abilitys of a normal dragon.\nYou take more damage from arrows.\nYou attract more lightning!\nYou have more health\nYou are a carnivore. You do not care for meat.",
   "type": "origins:multiple",
   "elytra": {
     "type": "origins:elytra_flight",
@@ -197,6 +197,45 @@
       "value": 4,
       "attribute": "minecraft:generic.max_health",
       "operation": "addition"
+    }
+  },
+  "vegetarian": {
+    "type": "origins:modify_food",
+    "item_condition": {
+      "type": "origins:meat",
+      "inverted": true
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:damage",
+          "amount": 10,
+          "source": {
+            "name": "magic"
+          }
+        },
+        {
+          "type": "origins:apply_effect",
+          "effect": {
+            "effect": "minecraft:nausea",
+            "amplifier": 1,
+            "duration": 200
+          }
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "title @p actionbar {\"text\":\"Yuck!\",\"color\":\"gold\",\"bold\":true}"
+        }
+      ]
+    },
+    "food_modifier": {
+      "value": -0.9,
+      "operation": "multiply_total"
+    },
+    "saturation_modifier": {
+      "value": -0.9,
+      "operation": "multiply_total"
     }
   }
 }

@@ -35,29 +35,130 @@
     "green": 0.35686274509,
     "use_teams": false,
     "bientity_condition": {
-      "type": "origins:target_condition",
-      "condition": {
-        "type": "origins:power",
-        "power": "luna:luna/attacked"
-      }
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:target_condition",
+          "condition": {
+            "type": "origins:power",
+            "power": "luna:luna/attacked"
+          }
+        },
+        {
+          "type": "origins:distance",
+          "compare_to": 8,
+          "comparison": "<="
+        }
+      ]
     }
   },
-  "sounds": {
+  "no_sounds": {
     "type": "origins:prevent_game_event",
-    "events": ["minecraft:hit_ground", "minecraft:step", "minecraft:swim"]
+    "tag": "minecraft:vibrations"
   },
   "fly": {
     "type": "origins:creative_flight",
     "condition": {
       "type": "origins:resource",
-      "compare_to": 10,
+      "compare_to": 0,
       "comparison": "==",
-      "resource": "luna:luna/rtp_rtp_bar"
+      "resource": "*:*_hit"
     }
   },
   "night_vis": {
     "type": "origins:toggle_night_vision",
     "strength": 0.8,
     "key": "key.origins.ternary_active"
+  },
+  "hit": {
+    "type": "origins:resource",
+    "max": 1,
+    "min": 0
+  },
+  "if_hit": {
+    "type": "origins:action_over_time",
+    "interval": 100,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "change": 0,
+      "operation": "set",
+      "resource": "*:*_hit"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 1,
+      "comparison": "==",
+      "resource": "*:*_hit"
+    }
+  },
+  "when_hit": {
+    "type": "origins:action_when_hit",
+    "bientity_action": {
+      "type": "origins:target_action",
+      "action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:change_resource",
+            "change": 1,
+            "operation": "set",
+            "resource": "*:*_hit"
+          }
+        ]
+      }
+    },
+    "damage_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:name",
+          "name": "onFire",
+          "inverted": true
+        },
+        {
+          "type": "origins:name",
+          "name": "inFire",
+          "inverted": true
+        },
+        {
+          "type": "origins:name",
+          "name": "fall",
+          "inverted": true
+        },
+        {
+          "type": "origins:projectile",
+          "inverted": true
+        },
+        {
+          "type": "origins:name",
+          "name": "thorns",
+          "inverted": true
+        },
+        {
+          "type": "origins:name",
+          "name": "hotFloor",
+          "inverted": true
+        },
+        {
+          "type": "origins:amount",
+          "compare_to": 1,
+          "comparison": ">"
+        }
+      ]
+    }
+  },
+  "no_helmets": {
+    "type": "origins:restrict_armor",
+    "head": {
+      "type": "origins:is_equippable",
+      "equipment_slot": "head"
+    }
+  },
+  "hunger_drain": {
+    "type": "origins:modify_exhaustion",
+    "modifier": {
+      "value": 0.5,
+      "operation": "multiply_total"
+    }
   }
 }

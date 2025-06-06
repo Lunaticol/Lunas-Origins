@@ -593,5 +593,25 @@
       "type": "origins:in_tag",
       "tag": "minecraft:beds"
     }
+  },
+  "set_spawn": {
+    "type": "origins:action_on_block_use",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "spawnpoint @s ~ ~ ~"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "title @p actionbar {\"text\":\"Respawn point set.\"}"
+        }
+      ]
+    },
+    "block_condition": {
+      "type": "origins:block",
+      "block": "minecraft:sculk_catalyst"
+    }
   }
 }

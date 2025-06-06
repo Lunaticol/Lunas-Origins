@@ -3,12 +3,14 @@
     "luna:luna/isabella",
     "luna:luna/rtp",
     "luna:luna/telekinesis",
-    "luna:luna/multidimensional"
+    "luna:luna/violent_rage",
+    "luna:luna/multidimensional",
+    "luna:luna/void_called"
   ],
   "icon": "minecraft:blue_orchid",
   "unchoosable": true,
   "order": 9,
   "impact": 6,
   "name": "Isabella",
-  "description": "Isabella Kitsune or Isabella Prime, is the source of all other Isabellas, a constant in the multiverse. She has extremely powerful magical and physical abilities that exceed far beyond any other variant of Isabella."
+  "description": "The source of all. Eternal. Unbound. You were never meant to find her."
 }

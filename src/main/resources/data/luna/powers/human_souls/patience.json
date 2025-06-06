@@ -45,32 +45,32 @@
           "conditions": [
             {
               "type": "origins:origin",
-              "layer": "luna:human_souls/",
+              "layer": "luna:luna_layers",
               "origin": "luna:human_souls/bravery"
             },
             {
               "type": "origins:origin",
-              "layer": "luna:human_souls/",
+              "layer": "luna:luna_layers",
               "origin": "luna:human_souls/justice"
             },
             {
               "type": "origins:origin",
-              "layer": "luna:human_souls/",
+              "layer": "luna:luna_layers",
               "origin": "luna:human_souls/kindness"
             },
             {
               "type": "origins:origin",
-              "layer": "luna:human_souls/",
+              "layer": "luna:luna_layers",
               "origin": "luna:human_souls/determination"
             },
             {
               "type": "origins:origin",
-              "layer": "luna:human_souls/",
+              "layer": "luna:luna_layers",
               "origin": "luna:human_souls/integrity"
             },
             {
               "type": "origins:origin",
-              "layer": "luna:human_souls/",
+              "layer": "luna:luna_layers",
               "origin": "luna:human_souls/perseverance"
             }
           ]

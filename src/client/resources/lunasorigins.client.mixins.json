@@ -8,7 +8,8 @@
     "DrippingAccessor",
     "LandingAccessor",
     "BipedEntityModelMixin",
-    "origin.OriginDisplayScreenMixin"
+    "origin.OriginDisplayScreenMixin",
+    "origin.EntityRenderMixin"
   ],
   "injectors": {
     "defaultRequire": 1

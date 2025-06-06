@@ -1,6 +1,6 @@
 {
   "name": "Void Step",
-  "description": "Channel energy from the void to teleport behind your opponent.",
+  "description": "Channel energy from the void to teleport behind your pray.",
   "type": "origins:multiple",
   "tag": {
     "type": "origins:action_on_callback",

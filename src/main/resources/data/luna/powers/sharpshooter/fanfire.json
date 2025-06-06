@@ -6,9 +6,7 @@
     "type": "origins:active_self",
     "key": "key.origins.secondary_active",
     "entity_action": {
-      "type": "origins:replace_inventory",
-      "slot": "weapon.mainhand",
-      "inventory_type": "inventory"
+      "type": "origins:crafting_table"
     }
   }
 }

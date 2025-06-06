@@ -1,0 +1,97 @@
+{
+  "type": "origins:multiple",
+  "freeze": {
+    "type": "origins:action_on_callback",
+    "entity_action_added": {
+      "type": "origins:delay",
+      "ticks": 10,
+      "action": {
+        "type": "origins:execute_command",
+        "command": "scale set pehkui:motion 0 @s"
+      }
+    },
+    "entity_action_lost": {
+      "type": "origins:delay",
+      "ticks": 10,
+      "action": {
+        "type": "origins:execute_command",
+        "command": "scale reset pehkui:motion @s"
+      }
+    },
+    "entity_action_removed": {
+      "type": "origins:delay",
+      "ticks": 10,
+      "action": {
+        "type": "origins:execute_command",
+        "command": "scale reset pehkui:motion @s"
+      }
+    },
+    "entity_action_respawned": {
+      "type": "origins:delay",
+      "ticks": 10,
+      "action": {
+        "type": "origins:execute_command",
+        "command": "scale reset pehkui:motion @s"
+      }
+    },
+    "entity_action_gained": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:delay",
+          "ticks": 10,
+          "action": {
+            "type": "origins:execute_command",
+            "command": "scale set pehkui:motion 0 @s"
+          }
+        },
+        {
+          "type": "origins:add_velocity",
+          "y": 1,
+          "space": "local_horizontal"
+        }
+      ]
+    }
+  },
+  "glow": {
+    "type": "origins:self_glow",
+    "blue": 1,
+    "red": 0.69019607843,
+    "green": 0.35686274509,
+    "use_teams": false
+  },
+  "invuln": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "value": -1,
+      "operation": "multiply_total"
+    }
+  },
+  "remove": {
+    "type": "origins:action_over_time",
+    "interval": 100,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:add_velocity",
+          "z": -1,
+          "space": "local_horizontal"
+        },
+        {
+          "type": "origins:revoke_power",
+          "power": "luna:luna/void_frozen",
+          "source": "luna:luna/void_called"
+        }
+      ]
+    }
+  },
+  "particle": {
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "particle dust_color_transition 0.467 0.000 1.000 10 0.000 0.000 0.000 ~ ~ ~ 1 1 1 1 10 normal"
+    }
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "name": "Feral Roar",
+  "description": "Roar loudly to instill fear in pray around you.\nApplys weakness II to pray 32 blocks away, reveals pray 16 blocks away.",
+  "type": "origins:multiple",
+  "roar": {
+    "type": "origins:active_self",
+    "key": "key.loadToolbarActivator",
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+      "bar_index": 22
+    },
+    "cooldown": 1200,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:play_sound",
+          "volume": 2,
+          "pitch": 0.4,
+          "sound": "minecraft:entity.ender_dragon.growl"
+        },
+        {
+          "type": "origins:play_sound",
+          "volume": 2,
+          "pitch": 1,
+          "sound": "minecraft:entity.warden.roar"
+        },
+        {
+          "type": "origins:area_of_effect",
+          "radius": 32,
+          "bientity_action": {
+            "type": "origins:target_action",
+            "action": {
+              "type": "origins:apply_effect",
+              "effect": {
+                "effect": "minecraft:weakness",
+                "duration": 200,
+                "amplifier": 1
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "reveal": {
+    "type": "origins:entity_glow",
+    "blue": 1,
+    "red": 0.69019607843,
+    "green": 0.35686274509,
+    "use_teams": false,
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "apugli:entity_in_radius",
+          "radius": 16,
+          "comparison": ">=",
+          "compare_to": 1
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 1200,
+          "comparison": "<",
+          "resource": "*:*_roar"
+        },
+        {
+          "type": "origins:resource",
+          "compare_to": 1000,
+          "comparison": ">=",
+          "resource": "*:*_roar"
+        }
+      ]
+    }
+  }
+}

@@ -60,7 +60,7 @@
     "type": "origins:damage_over_time",
     "interval": 40,
     "onset_delay": 0,
-    "damage": 10,
+    "damage": 5,
     "damage_easy": 1,
     "damage_source": {
       "name": "hurt_by_water",
@@ -130,6 +130,40 @@
       "operation": "addition",
       "name": "fire",
       "value": 4
+    }
+  },
+  "frail_bones": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "value": 0.5,
+      "operation": "multiply_total"
+    },
+    "damage_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:name",
+          "name": "mob"
+        },
+        {
+          "type": "origins:name",
+          "name": "mob.item"
+        },
+        {
+          "type": "origins:name",
+          "name": "player"
+        },
+        {
+          "type": "origins:name",
+          "name": "player.item"
+        },
+        {
+          "type": "origins:attacker",
+          "entity_condition": {
+            "type": "origins:exists"
+          }
+        }
+      ]
     }
   }
 }

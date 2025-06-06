@@ -68,5 +68,53 @@
         }
       ]
     }
+  },
+  "disable_lunasorigins_boosts": {
+    "type": "origins:action_over_time",
+    "interval": 10,
+    "entity_action": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "action": {
+            "type": "origins:change_resource",
+            "resource": "*:kitsune/body_dashes",
+            "operation": "set",
+            "change": 0
+          },
+          "condition": {
+            "type": "origins:origin",
+            "layer": "origins:origin",
+            "origin": "luna:kitsune"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:change_resource",
+            "resource": "*:bluefox/kitsune_dashes",
+            "operation": "set",
+            "change": 0
+          },
+          "condition": {
+            "type": "origins:origin",
+            "layer": "origins:origin",
+            "origin": "luna:bluefox"
+          }
+        },
+        {
+          "action": {
+            "type": "origins:change_resource",
+            "resource": "*:kow/feral_dash",
+            "operation": "set",
+            "change": 200
+          },
+          "condition": {
+            "type": "origins:origin",
+            "layer": "origins:origin",
+            "origin": "luna:kow"
+          }
+        }
+      ]
+    }
   }
 }

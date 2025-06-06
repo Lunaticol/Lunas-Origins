@@ -21,6 +21,7 @@ public class LunaParticles {
   public static final DefaultParticleType BLUE_LANDING_OBSIDIAN_TEAR = register("blue_landing_obsidian_tear", false);
   public static final DefaultParticleType BLUE_SPARK = register("blue_spark", false);
   public static final DefaultParticleType ORANGE_SPARK = register("orange_spark", false);
+  public static final DefaultParticleType GEM_SPARK = register("gem_spark", false);
 
   private static DefaultParticleType register(String name, boolean alwaysShow) {
     return Registry.register(Registries.PARTICLE_TYPE, new Identifier(MOD_ID, name),

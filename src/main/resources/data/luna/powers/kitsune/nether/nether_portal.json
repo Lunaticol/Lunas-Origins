@@ -45,7 +45,7 @@
         },
         {
           "type": "origins:delay",
-          "ticks": 2,
+          "ticks": 20,
           "action": {
             "type": "origins:execute_command",
             "command": "spreadplayers ~ ~ 8 128 under 127 false @s"
@@ -101,7 +101,7 @@
         },
         {
           "type": "origins:delay",
-          "ticks": 2,
+          "ticks": 20,
           "action": {
             "type": "origins:execute_command",
             "command": "spreadplayers ~ ~ 8 128 under 127 false @s"

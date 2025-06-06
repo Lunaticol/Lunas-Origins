@@ -1,0 +1,19 @@
+{
+  "type": "origins:multiple",
+  "invuln": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "value": -1,
+      "operation": "multiply_total"
+    }
+  },
+  "remove": {
+    "type": "origins:action_over_time",
+    "interval": 10,
+    "entity_action": {
+      "type": "origins:revoke_power",
+      "power": "luna:luna/invuln",
+      "source": "luna:luna/telekinesis"
+    }
+  }
+}

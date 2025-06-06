@@ -10,6 +10,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.loader.api.ModContainer;
 
@@ -19,11 +20,18 @@ import luna.lunasorigins.entity.LunaEntities;
 import luna.lunasorigins.entity.LunaEntityTypeTags;
 import luna.lunasorigins.entity.LunaSensorType;
 import luna.lunasorigins.entity.LunaSpawnRestrict;
+import luna.lunasorigins.origin.LunaPowerFactory;
 
 public class LunasOrigins implements ModInitializer {
 
   // State Mod ID
   public static final String MOD_ID = "lunasorigins";
+
+  // Identifier
+  public static Identifier identifier(String path) {
+    return new Identifier(MOD_ID, path);
+  }
+
   // Logger
   public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
   // Particle
@@ -65,6 +73,7 @@ public class LunasOrigins implements ModInitializer {
     LunaSensorType.registerSensors();
     LunaEntityTypeTags.registerEntityTags();
     LunaEnchantments.initalizeLunaEnchantments();
+    LunaPowerFactory.register();
 
     LOGGER.info("Wow I have a mod now this is great");
 

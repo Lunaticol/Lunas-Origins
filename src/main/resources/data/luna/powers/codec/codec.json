@@ -29,7 +29,7 @@
   },
   "hunger": {
     "type": "origins:exhaust",
-    "interval": 100,
+    "interval": 400,
     "exhaustion": 4
   },
   "i_hate_wood_planks": {

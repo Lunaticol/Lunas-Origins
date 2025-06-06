@@ -1,6 +1,6 @@
 {
   "name": "Secrets of the Craft",
-  "description": "By exploring the world, you can find new recipes.",
+  "description": "By exploring the world, you can find new recipes.\nYou carry a portable crafting table everywhere you go.",
   "type": "origins:multiple",
   "echo": {
     "type": "origins:recipe",
@@ -72,6 +72,14 @@
     "condition": {
       "type": "origins:advancement",
       "advancement": "luna:crafter/soulberry"
+    }
+  },
+  "crafting_table": {
+    "type": "origins:active_self",
+    "cooldown": 0,
+    "key": "key.origins.quaternary_active",
+    "entity_action": {
+      "type": "origins:crafting_table"
     }
   }
 }

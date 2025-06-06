@@ -1,5 +1,6 @@
 {
   "name": "Piercing Shot",
   "description": "Pierce through 6 enemys with the Plasma Railgun.",
+  "icon": "minecraft:crossbow",
   "powers": ["luna:titans/northstar/kits/piercingshot"]
 }

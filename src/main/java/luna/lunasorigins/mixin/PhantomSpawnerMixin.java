@@ -60,7 +60,10 @@ public abstract class PhantomSpawnerMixin implements Spawner {
                   1,
                   Integer.MAX_VALUE);
               if (timeSinceRest >= 72000) {
-                System.out.println("timeSinceRest: " + timeSinceRest);
+
+                if (world.getServer() != null && world.getServer().isDedicated() == false) {
+                  System.out.println("timeSinceRest: " + timeSinceRest);
+                }
                 BlockPos spawnPos = playerPos.up(20 + random.nextInt(15))
                     .east(-10 + random.nextInt(21))
                     .south(-10 + random.nextInt(21));

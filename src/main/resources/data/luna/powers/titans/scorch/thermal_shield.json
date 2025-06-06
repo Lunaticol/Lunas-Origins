@@ -21,6 +21,13 @@
           "change": -2,
           "operation": "add",
           "resource": "*:*_flame_fuel"
+        },
+        {
+          "type": "origins:play_sound",
+          "category": "master",
+          "pitch": 2,
+          "sound": "minecraft:block.fire.ambient",
+          "volume": 1
         }
       ]
     },

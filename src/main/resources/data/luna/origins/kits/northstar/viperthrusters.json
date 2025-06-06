@@ -1,5 +1,6 @@
 {
   "name": "Viper Thrusters",
   "description": "Increased movement speed while airborne.\nOnly applys to VTOL Hover & Flight Core.",
+  "icon": "minecraft:elytra",
   "powers": ["luna:titans/northstar/kits/viperthrusters"]
 }

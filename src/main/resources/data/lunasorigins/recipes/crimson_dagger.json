@@ -1,0 +1,12 @@
+{
+  "type": "crafting_shaped",
+  "key": {
+    "S": { "item": "minecraft:stick" },
+    "M": { "item": "lunasorigins:crimson_membrane" },
+    "I": { "item": "minecraft:iron_ingot" }
+  },
+  "pattern": ["  I", " M ", "S  "],
+  "result": {
+    "item": "lunasorigins:crimson_dagger"
+  }
+}

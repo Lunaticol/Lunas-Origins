@@ -66,8 +66,7 @@
     "bientity_condition": {
       "type": "origins:target_condition",
       "condition": {
-        "type": "origins:living",
-        "inverted": true
+        "type": "origins:living"
       }
     }
   },

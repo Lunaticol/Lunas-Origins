@@ -14,5 +14,9 @@
   "crimson_ult": {
     "subtitle": "sound.lunasorigins.crimson_ult",
     "sounds": [{ "name": "lunasorigins:crimson_ult" }]
+  },
+  "luna_ult": {
+    "subtitle": "sound.lunasorigins.luna_ult",
+    "sounds": [{ "name": "lunasorigins:luna_ult" }]
   }
 }
